@@ -142,6 +142,7 @@ def main() -> int:
                 target_normatives = changes.new_normatives
             
             # 3. 下载 PDF（可选）
+            downloaded_files: list[str] = []
             if not args.no_download:
                 logger.info("步骤 3/4: 下载 PDF...")
                 download_dir = "downloads"
@@ -154,6 +155,7 @@ def main() -> int:
                     
                     if crawler.download_pdf(doc, save_path):
                         downloaded_count += 1
+                        downloaded_files.append(save_path)
                     else:
                         logger.warning(f"下载失败: {doc.doc_number} {doc.title}")
                 
@@ -169,7 +171,13 @@ def main() -> int:
                     target_normatives,
                 )
                 
-                results = notifier.send_all(title, text_content, html_content)
+                # 传入下载的 PDF 作为附件
+                results = notifier.send_all(
+                    title, 
+                    text_content, 
+                    html_content,
+                    attachments=downloaded_files if downloaded_files else None,
+                )
                 
                 if results:
                     success_count = sum(1 for v in results.values() if v)

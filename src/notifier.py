@@ -9,9 +9,11 @@ import os
 import smtplib
 from datetime import datetime, timezone, timedelta
 from email.header import Header
+from email.mime.application import MIMEApplication
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import formataddr
+from pathlib import Path
 from typing import Literal, Optional
 
 import httpx
@@ -66,6 +68,7 @@ class Notifier:
         title: str,
         content: str,
         html_content: Optional[str] = None,
+        attachments: Optional[list[str]] = None,
     ) -> dict[str, bool]:
         """发送通知到所有配置的渠道
         
@@ -73,6 +76,7 @@ class Notifier:
             title: 通知标题
             content: 纯文本内容
             html_content: HTML 内容（可选，用于邮件）
+            attachments: 附件文件路径列表（可选，用于邮件）
         
         Returns:
             各渠道发送结果
@@ -82,7 +86,12 @@ class Notifier:
         # Email
         if self.email_user and self.email_pass and self.email_to:
             try:
-                self._send_email(title, html_content or content, "html" if html_content else "text")
+                self._send_email(
+                    title, 
+                    html_content or content, 
+                    "html" if html_content else "text",
+                    attachments=attachments,
+                )
                 logger.success(f"[Email] 推送成功 -> {self.email_to}")
                 results["Email"] = True
             except Exception as e:
@@ -120,19 +129,54 @@ class Notifier:
         title: str,
         content: str,
         msg_type: Literal["text", "html"] = "text",
+        attachments: Optional[list[str]] = None,
     ):
-        """发送邮件通知"""
+        """发送邮件通知
+        
+        Args:
+            title: 邮件标题
+            content: 邮件内容
+            msg_type: 内容类型 ("text" 或 "html")
+            attachments: 附件文件路径列表
+        """
         if not self.email_user or not self.email_pass or not self.email_to:
             raise ValueError("Email 配置不完整")
         
-        # 创建邮件
-        msg = MIMEMultipart("alternative")
+        # 创建邮件（mixed 类型支持附件）
+        msg = MIMEMultipart("mixed")
         
+        # 邮件正文部分
+        body_part = MIMEMultipart("alternative")
         if msg_type == "html":
-            msg.attach(MIMEText("请使用支持 HTML 的邮件客户端查看此邮件。", "plain", "utf-8"))
-            msg.attach(MIMEText(content, "html", "utf-8"))
+            body_part.attach(MIMEText("请使用支持 HTML 的邮件客户端查看此邮件。", "plain", "utf-8"))
+            body_part.attach(MIMEText(content, "html", "utf-8"))
         else:
-            msg.attach(MIMEText(content, "plain", "utf-8"))
+            body_part.attach(MIMEText(content, "plain", "utf-8"))
+        msg.attach(body_part)
+        
+        # 添加附件
+        if attachments:
+            for file_path in attachments:
+                path = Path(file_path)
+                if not path.exists():
+                    logger.warning(f"附件不存在，跳过: {file_path}")
+                    continue
+                
+                try:
+                    with open(path, "rb") as f:
+                        attachment = MIMEApplication(f.read(), _subtype="pdf")
+                    
+                    # 使用 RFC 2231 编码中文文件名
+                    filename = path.name
+                    attachment.add_header(
+                        "Content-Disposition",
+                        "attachment",
+                        filename=("utf-8", "", filename),
+                    )
+                    msg.attach(attachment)
+                    logger.info(f"添加附件: {filename}")
+                except Exception as e:
+                    logger.warning(f"添加附件失败 {file_path}: {e}")
         
         # ⚠️ From 字段格式必须正确，否则 502 错误
         msg["From"] = formataddr((Header(self.email_sender, "utf-8").encode(), self.email_user))
