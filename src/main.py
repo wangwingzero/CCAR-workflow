@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-CAAC 规章更新监控 - 主入口
+CAAC Regulation Update Monitor - Main Entry
 
-流程:
-1. 爬取 CAAC 官网规章列表
-2. 对比历史状态，检测变更
-3. 如有变更：下载 PDF + 发送通知
-4. 更新状态文件
+Flow:
+1. Crawl CAAC website regulation list
+2. Compare with historical state, detect changes
+3. If changes: download PDF + send notification
+4. Update state file
 """
 
 import argparse
@@ -22,7 +22,7 @@ from .storage import Storage, filter_by_days
 
 
 def setup_logging():
-    """配置日志"""
+    """Configure logging"""
     logger.remove()
     logger.add(
         sys.stdout,
@@ -33,13 +33,12 @@ def setup_logging():
 
 
 def parse_args() -> argparse.Namespace:
-    """解析命令行参数"""
+    """Parse command line arguments"""
     parser = argparse.ArgumentParser(
-        description="CAAC 规章更新监控",
+        description="CAAC Regulation Update Monitor",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     
-    # 从环境变量读取默认值
     default_days = os.getenv("DAYS")
     if default_days:
         try:
@@ -52,99 +51,95 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=default_days,
         metavar="N",
-        help="只发送最近 N 天发布的规章（默认：检测新增，N 必须 > 0，可通过 DAYS 环境变量设置）",
+        help="Only send regulations from last N days (default: detect new, N must be > 0, can set via DAYS env var)",
     )
     parser.add_argument(
         "--no-download",
         action="store_true",
-        help="跳过 PDF 下载",
+        help="Skip PDF download",
     )
     parser.add_argument(
         "--no-notify",
         action="store_true",
-        help="跳过发送通知",
+        help="Skip sending notifications",
     )
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="试运行，不更新状态文件",
+        help="Dry run, don't update state file",
     )
     return parser.parse_args()
 
 
 def main() -> int:
-    """主函数
+    """Main function
     
     Returns:
-        退出码：0 成功，1 失败
+        Exit code: 0 success, 1 failure
     """
     setup_logging()
     args = parse_args()
     
-    # 参数验证
     if args.days is not None and args.days <= 0:
-        logger.error("--days 参数必须大于 0")
+        logger.error("--days must be greater than 0")
         return 1
     
     logger.info("=" * 50)
-    logger.info("CAAC 规章更新监控 - 开始运行")
+    logger.info("CAAC Regulation Update Monitor - Starting")
     if args.days:
-        logger.info(f"模式: 发送最近 {args.days} 天的规章")
+        logger.info(f"Mode: Send regulations from last {args.days} days")
     else:
-        logger.info("模式: 检测新增规章")
+        logger.info("Mode: Detect new regulations")
     logger.info("=" * 50)
     
     exit_code = 0
     
     try:
-        # 初始化组件
         storage = Storage("data/regulations.json")
         
         with CaacCrawler() as crawler, Notifier() as notifier:
-            # 1. 爬取最新规章列表
-            logger.info("步骤 1/4: 爬取规章列表...")
+            # 1. Crawl latest regulation list
+            logger.info("Step 1/4: Crawling regulation list...")
             regulations = crawler.fetch_regulations()
             normatives = crawler.fetch_normatives()
             
             if not regulations and not normatives:
-                logger.error("未获取到任何规章数据，可能被反爬拦截")
+                logger.error("No regulation data fetched, may be blocked by anti-crawler")
                 return 1
             
-            logger.info(f"获取完成: {len(regulations)} 条规章, {len(normatives)} 条规范性文件")
+            logger.info(f"Fetch complete: {len(regulations)} regulations, {len(normatives)} normative documents")
             
-            # 2. 检测变更或按天数过滤
-            logger.info("步骤 2/4: 筛选规章...")
+            # 2. Detect changes or filter by days
+            logger.info("Step 2/4: Filtering regulations...")
             
             if args.days:
-                # 按天数过滤模式
                 filtered_regulations = filter_by_days(regulations, args.days)
                 filtered_normatives = filter_by_days(normatives, args.days)
                 
                 if not filtered_regulations and not filtered_normatives:
-                    logger.info(f"最近 {args.days} 天没有发布新规章")
+                    logger.info(f"No regulations published in last {args.days} days")
                     return 0
                 
-                logger.info(f"最近 {args.days} 天: {len(filtered_regulations)} 条规章, {len(filtered_normatives)} 条规范性文件")
+                logger.info(f"Last {args.days} days: {len(filtered_regulations)} regulations, {len(filtered_normatives)} normatives")
                 target_regulations = filtered_regulations
                 target_normatives = filtered_normatives
             else:
-                # 检测新增模式
                 changes = storage.detect_changes(regulations, normatives)
                 
                 if not changes.has_changes:
-                    logger.info("未检测到新增规章，本次运行结束")
+                    logger.info("No new regulations detected, run complete")
                     if not args.dry_run:
                         storage.update_state(regulations, normatives)
                     return 0
                 
-                logger.info(f"检测到 {changes.total_count} 条新增规章/规范性文件")
+                logger.info(f"Detected {changes.total_count} new regulations/normatives")
                 target_regulations = changes.new_regulations
                 target_normatives = changes.new_normatives
             
-            # 3. 下载 PDF（可选）
+            # 3. Download PDF (optional)
             downloaded_files: list[str] = []
             if not args.no_download:
-                logger.info("步骤 3/4: 下载 PDF...")
+                logger.info("Step 3/4: Downloading PDFs...")
                 download_dir = "downloads"
                 os.makedirs(download_dir, exist_ok=True)
                 
@@ -157,21 +152,20 @@ def main() -> int:
                         downloaded_count += 1
                         downloaded_files.append(save_path)
                     else:
-                        logger.warning(f"下载失败: {doc.doc_number} {doc.title}")
+                        logger.warning(f"Download failed: {doc.doc_number} {doc.title}")
                 
-                logger.info(f"下载完成: {downloaded_count}/{len(target_regulations) + len(target_normatives)} 个文件")
+                logger.info(f"Download complete: {downloaded_count}/{len(target_regulations) + len(target_normatives)} files")
             else:
-                logger.info("步骤 3/4: 跳过 PDF 下载")
+                logger.info("Step 3/4: Skipping PDF download")
             
-            # 4. 发送通知
+            # 4. Send notification
             if not args.no_notify:
-                logger.info("步骤 4/4: 发送通知...")
+                logger.info("Step 4/4: Sending notifications...")
                 title, text_content, html_content = notifier.format_update_message(
                     target_regulations,
                     target_normatives,
                 )
                 
-                # 传入下载的 PDF 作为附件
                 results = notifier.send_all(
                     title, 
                     text_content, 
@@ -182,29 +176,29 @@ def main() -> int:
                 if results:
                     success_count = sum(1 for v in results.values() if v)
                     failed_count = len(results) - success_count
-                    logger.info(f"通知发送完成: {success_count}/{len(results)} 个渠道成功")
+                    logger.info(f"Notification complete: {success_count}/{len(results)} channels succeeded")
                     
                     if success_count == 0 and failed_count > 0:
-                        logger.warning("所有通知渠道都失败了")
+                        logger.warning("All notification channels failed")
                         exit_code = 1
             else:
-                logger.info("步骤 4/4: 跳过发送通知")
+                logger.info("Step 4/4: Skipping notifications")
             
-            # 5. 更新状态（仅在非 --days 模式且非 dry-run 时）
+            # 5. Update state (only in non-days mode and non-dry-run)
             if not args.days and not args.dry_run:
                 storage.update_state(regulations, normatives)
             
             logger.info("=" * 50)
-            logger.info("CAAC 规章更新监控 - 运行完成")
-            logger.info(f"规章: {len(target_regulations)} 条")
-            logger.info(f"规范性文件: {len(target_normatives)} 条")
+            logger.info("CAAC Regulation Update Monitor - Complete")
+            logger.info(f"Regulations: {len(target_regulations)}")
+            logger.info(f"Normatives: {len(target_normatives)}")
             logger.info("=" * 50)
     
     except KeyboardInterrupt:
-        logger.warning("用户中断运行")
+        logger.warning("User interrupted")
         exit_code = 130
     except Exception as e:
-        logger.error(f"运行出错: {e}")
+        logger.error(f"Error: {e}")
         logger.error(traceback.format_exc())
         exit_code = 1
     

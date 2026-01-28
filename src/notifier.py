@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-通知模块
+Notification Module
 
-支持多种推送渠道：Email、PushPlus、Telegram。
+Supports multiple push channels: Email, PushPlus, Telegram.
 """
 
 import os
@@ -23,35 +23,33 @@ from .crawler import RegulationDocument, generate_filename
 
 
 class Notifier:
-    """通知管理器"""
+    """Notification manager"""
 
     def __init__(self):
-        # Email 配置
+        # Email config
         self.email_user = os.getenv("EMAIL_USER")
         self.email_pass = os.getenv("EMAIL_PASS")
-        # EMAIL_TO 不填则默认发送给 EMAIL_USER
         self.email_to = os.getenv("EMAIL_TO") or self.email_user
         self.email_sender = os.getenv("EMAIL_SENDER", "CAAC 规章监控")
         
-        # PushPlus 配置 (https://www.pushplus.plus/)
+        # PushPlus config
         self.pushplus_token = os.getenv("PUSHPLUS_TOKEN")
         
-        # Telegram 配置
+        # Telegram config
         self.telegram_bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
         self.telegram_chat_id = os.getenv("TELEGRAM_CHAT_ID")
         
-        # HTTP 客户端
         self._client: Optional[httpx.Client] = None
 
     @property
     def client(self) -> httpx.Client:
-        """获取 HTTP 客户端（懒加载）"""
+        """Get HTTP client (lazy loading)"""
         if self._client is None:
             self._client = httpx.Client(timeout=30.0)
         return self._client
 
     def close(self):
-        """关闭资源"""
+        """Close resources"""
         if self._client is not None:
             self._client.close()
             self._client = None
@@ -70,16 +68,16 @@ class Notifier:
         html_content: Optional[str] = None,
         attachments: Optional[list[str]] = None,
     ) -> dict[str, bool]:
-        """发送通知到所有配置的渠道
+        """Send notification to all configured channels
         
         Args:
-            title: 通知标题
-            content: 纯文本内容
-            html_content: HTML 内容（可选，用于邮件）
-            attachments: 附件文件路径列表（可选，用于邮件）
+            title: Notification title
+            content: Plain text content
+            html_content: HTML content (optional, for email)
+            attachments: Attachment file paths (optional, for email)
         
         Returns:
-            各渠道发送结果
+            Send results for each channel
         """
         results: dict[str, bool] = {}
         
@@ -92,34 +90,34 @@ class Notifier:
                     "html" if html_content else "text",
                     attachments=attachments,
                 )
-                logger.success(f"[Email] 推送成功 -> {self.email_to}")
+                logger.success(f"[Email] Push succeeded -> {self.email_to}")
                 results["Email"] = True
             except Exception as e:
-                logger.error(f"[Email] 推送失败: {e}")
+                logger.error(f"[Email] Push failed: {e}")
                 results["Email"] = False
         
         # PushPlus
         if self.pushplus_token:
             try:
                 self._send_pushplus(title, html_content or content, "html" if html_content else "text")
-                logger.success("[PushPlus] 推送成功")
+                logger.success("[PushPlus] Push succeeded")
                 results["PushPlus"] = True
             except Exception as e:
-                logger.error(f"[PushPlus] 推送失败: {e}")
+                logger.error(f"[PushPlus] Push failed: {e}")
                 results["PushPlus"] = False
         
         # Telegram
         if self.telegram_bot_token and self.telegram_chat_id:
             try:
                 self._send_telegram(title, content)
-                logger.success("[Telegram] 推送成功")
+                logger.success("[Telegram] Push succeeded")
                 results["Telegram"] = True
             except Exception as e:
-                logger.error(f"[Telegram] 推送失败: {e}")
+                logger.error(f"[Telegram] Push failed: {e}")
                 results["Telegram"] = False
         
         if not results:
-            logger.warning("未配置任何通知渠道")
+            logger.warning("No notification channels configured")
         
         return results
 
@@ -131,21 +129,19 @@ class Notifier:
         msg_type: Literal["text", "html"] = "text",
         attachments: Optional[list[str]] = None,
     ):
-        """发送邮件通知
+        """Send email notification
         
         Args:
-            title: 邮件标题
-            content: 邮件内容
-            msg_type: 内容类型 ("text" 或 "html")
-            attachments: 附件文件路径列表
+            title: Email subject
+            content: Email content
+            msg_type: Content type ("text" or "html")
+            attachments: Attachment file paths
         """
         if not self.email_user or not self.email_pass or not self.email_to:
-            raise ValueError("Email 配置不完整")
+            raise ValueError("Email configuration incomplete")
         
-        # 创建邮件（mixed 类型支持附件）
         msg = MIMEMultipart("mixed")
         
-        # 邮件正文部分
         body_part = MIMEMultipart("alternative")
         if msg_type == "html":
             body_part.attach(MIMEText("请使用支持 HTML 的邮件客户端查看此邮件。", "plain", "utf-8"))
@@ -154,19 +150,17 @@ class Notifier:
             body_part.attach(MIMEText(content, "plain", "utf-8"))
         msg.attach(body_part)
         
-        # 添加附件
         if attachments:
             for file_path in attachments:
                 path = Path(file_path)
                 if not path.exists():
-                    logger.warning(f"附件不存在，跳过: {file_path}")
+                    logger.warning(f"Attachment not found, skipping: {file_path}")
                     continue
                 
                 try:
                     with open(path, "rb") as f:
                         attachment = MIMEApplication(f.read(), _subtype="pdf")
                     
-                    # 使用 RFC 2231 编码中文文件名
                     filename = path.name
                     attachment.add_header(
                         "Content-Disposition",
@@ -174,20 +168,17 @@ class Notifier:
                         filename=("utf-8", "", filename),
                     )
                     msg.attach(attachment)
-                    logger.info(f"添加附件: {filename}")
+                    logger.info(f"Added attachment: {filename}")
                 except Exception as e:
-                    logger.warning(f"添加附件失败 {file_path}: {e}")
+                    logger.warning(f"Failed to add attachment {file_path}: {e}")
         
-        # ⚠️ From 字段格式必须正确，否则 502 错误
         msg["From"] = formataddr((Header(self.email_sender, "utf-8").encode(), self.email_user))
         msg["To"] = self.email_to
         msg["Subject"] = Header(title, "utf-8")
         
-        # 确定 SMTP 服务器
         domain = self.email_user.split("@")[1]
         smtp_server = f"smtp.{domain}"
         
-        # 使用 SSL 465 端口
         with smtplib.SMTP_SSL(smtp_server, 465) as server:
             server.login(self.email_user, self.email_pass)
             server.sendmail(self.email_user, [self.email_to], msg.as_string())
@@ -198,9 +189,9 @@ class Notifier:
         content: str,
         msg_type: Literal["text", "html"] = "text",
     ):
-        """发送 PushPlus 通知"""
+        """Send PushPlus notification"""
         if not self.pushplus_token:
-            raise ValueError("PushPlus 配置不完整")
+            raise ValueError("PushPlus configuration incomplete")
         
         url = "https://www.pushplus.plus/send"
         payload = {
@@ -214,21 +205,19 @@ class Notifier:
         response.raise_for_status()
 
     def _send_telegram(self, title: str, content: str):
-        """发送 Telegram 通知"""
+        """Send Telegram notification"""
         if not self.telegram_bot_token or not self.telegram_chat_id:
-            raise ValueError("Telegram 配置不完整")
+            raise ValueError("Telegram configuration incomplete")
         
         url = f"https://api.telegram.org/bot{self.telegram_bot_token}/sendMessage"
         
-        # 转义 Markdown 特殊字符，避免解析错误
         def escape_markdown(text: str) -> str:
-            """转义 Markdown 特殊字符"""
+            """Escape Markdown special characters"""
             special_chars = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!']
             for char in special_chars:
                 text = text.replace(char, f'\\{char}')
             return text
         
-        # 使用 MarkdownV2 格式，需要转义特殊字符
         escaped_title = escape_markdown(title)
         escaped_content = escape_markdown(content)
         text = f"*{escaped_title}*\n\n{escaped_content}"
@@ -247,20 +236,19 @@ class Notifier:
         new_regulations: list[RegulationDocument],
         new_normatives: list[RegulationDocument],
     ) -> tuple[str, str, str]:
-        """格式化更新通知消息
+        """Format update notification message
         
         Returns:
-            (标题, 纯文本内容, HTML内容)
+            (title, plain text content, HTML content)
         """
         total = len(new_regulations) + len(new_normatives)
-        # 使用北京时间 (UTC+8)
         beijing_tz = timezone(timedelta(hours=8))
         timestamp = datetime.now(beijing_tz)
         
-        # 标题
+        # Title (Chinese for email display)
         title = f"📋 CAAC 规章更新通知 ({total} 条)"
         
-        # 纯文本内容
+        # Plain text content (Chinese)
         lines = [
             f"检测时间: {timestamp.strftime('%Y-%m-%d %H:%M:%S')}",
             f"新增规章: {len(new_regulations)} 条",
@@ -303,7 +291,6 @@ class Notifier:
         
         text_content = "\n".join(lines)
         
-        # HTML 内容
         html_content = self._generate_html_email(new_regulations, new_normatives, timestamp)
         
         return title, text_content, html_content
@@ -315,24 +302,22 @@ class Notifier:
         new_normatives: list[RegulationDocument],
         timestamp: datetime,
     ) -> str:
-        """生成 HTML 邮件内容 - Apple 风格简洁设计"""
+        """Generate HTML email content - Apple style clean design"""
         total = len(new_regulations) + len(new_normatives)
         
-        # 状态判断
         if total > 0:
             status_icon = "✓"
-            status_bg = "#34C759"  # Apple Green
+            status_bg = "#34C759"
             status_text = "检测完成"
         else:
             status_icon = "−"
-            status_bg = "#86868B"  # Apple Gray
+            status_bg = "#86868B"
             status_text = "暂无更新"
         
         def render_doc_item(doc: RegulationDocument, index: int) -> str:
-            """渲染单个文档项"""
+            """Render single document item"""
             filename = generate_filename(doc)
             
-            # 状态颜色和图标
             if doc.validity == "有效":
                 validity_color = "#34C759"
                 validity_icon = "✓"
@@ -340,7 +325,6 @@ class Notifier:
                 validity_color = "#FF3B30"
                 validity_icon = "✗"
             
-            # 构建详情
             details = []
             if doc.publish_date:
                 details.append(f"📅 {doc.publish_date}")
@@ -350,7 +334,6 @@ class Notifier:
                 details.append(f"🏢 {doc.office_unit}")
             details_html = " · ".join(details) if details else ""
             
-            # 分隔线（非第一项）- 更明显的分隔
             separator = '<div style="height: 2px; background: linear-gradient(to right, #E5E5EA, #F5F5F7, #E5E5EA); margin: 20px 0;"></div>' if index > 0 else ""
             
             return f'''{separator}
@@ -365,7 +348,6 @@ class Notifier:
                     <div style="font-size: 12px; color: #AEAEB2;">📁 {filename}</div>
                 </div>'''
         
-        # 生成规章卡片
         regulations_card = ""
         if new_regulations:
             items_html = ""
@@ -373,7 +355,7 @@ class Notifier:
                 items_html += render_doc_item(doc, i)
             
             regulations_card = f'''
-    <!-- 规章卡片 -->
+    <!-- Regulations Card -->
     <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
         <div style="display: flex; align-items: center; margin-bottom: 20px;">
             <span style="font-size: 24px; margin-right: 12px;">📜</span>
@@ -383,7 +365,6 @@ class Notifier:
         {items_html}
     </div>'''
         
-        # 生成规范性文件卡片
         normatives_card = ""
         if new_normatives:
             items_html = ""
@@ -391,7 +372,7 @@ class Notifier:
                 items_html += render_doc_item(doc, i)
             
             normatives_card = f'''
-    <!-- 规范性文件卡片 -->
+    <!-- Normative Documents Card -->
     <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
         <div style="display: flex; align-items: center; margin-bottom: 20px;">
             <span style="font-size: 24px; margin-right: 12px;">📋</span>
@@ -410,7 +391,7 @@ class Notifier:
 <body style="margin: 0; padding: 0; background-color: #F5F5F7;">
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 40px 20px; background-color: #F5F5F7; -webkit-font-smoothing: antialiased;">
     
-    <!-- 状态指示器 -->
+    <!-- Status Indicator -->
     <div style="text-align: center; margin-bottom: 32px;">
         <div style="display: inline-block; width: 64px; height: 64px; background: {status_bg}; border-radius: 50%; line-height: 64px; margin-bottom: 16px;">
             <span style="color: white; font-size: 32px; font-weight: 300;">{status_icon}</span>
@@ -419,7 +400,7 @@ class Notifier:
         <p style="margin: 8px 0 0 0; font-size: 15px; color: #86868B;">{timestamp.strftime('%Y年%m月%d日 %H:%M')}</p>
     </div>
     
-    <!-- 统计卡片 -->
+    <!-- Statistics Card -->
     <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
         <div style="display: flex; justify-content: space-around; text-align: center;">
             <div>
@@ -437,7 +418,7 @@ class Notifier:
     {regulations_card}
     {normatives_card}
     
-    <!-- 页脚 -->
+    <!-- Footer -->
     <div style="text-align: center; padding: 20px 0;">
         <p style="font-size: 12px; color: #AEAEB2; margin: 0;">CAAC 规章监控系统 · 自动发送</p>
     </div>

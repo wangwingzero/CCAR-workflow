@@ -1,17 +1,16 @@
-name: CAAC 规章更新检查
+name: CAAC Regulation Update Check
 
 on:
   schedule:
-    # 每天 UTC 7:00 运行（北京时间 15:00）
-    # 如需修改运行时间，直接改这里的 cron 表达式
-    # 北京时间 = UTC + 8，例如：
-    #   北京 8:00  → UTC 0:00  → cron: '0 0 * * *'
-    #   北京 15:00 → UTC 7:00  → cron: '0 7 * * *'
-    #   北京 20:00 → UTC 12:00 → cron: '0 12 * * *'
+    # Daily at UTC 7:00 (Beijing Time 15:00)
+    # Beijing Time = UTC + 8
+    #   Beijing 8:00  → UTC 0:00  → cron: '0 0 * * *'
+    #   Beijing 15:00 → UTC 7:00  → cron: '0 7 * * *'
+    #   Beijing 20:00 → UTC 12:00 → cron: '0 12 * * *'
     - cron: '0 7 * * *'
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:  # Allow manual trigger
 
-# 防止并发运行
+# Prevent concurrent runs
 concurrency:
   group: caac-check
   cancel-in-progress: true
@@ -21,16 +20,15 @@ jobs:
     runs-on: ubuntu-22.04
     
     permissions:
-      contents: write  # 需要写权限来 commit 状态文件
-      actions: write   # 清理旧的 workflow runs
+      contents: write  # Required for committing state file
+      actions: write   # Clean up old workflow runs
     
     steps:
-      - name: 检出代码
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
       
-      # 安装 uv（与 sign-in 项目保持一致）
       - name: Install uv
         uses: astral-sh/setup-uv@v4
         with:
@@ -42,44 +40,43 @@ jobs:
       - name: Install dependencies
         run: uv sync
       
-      # 安装 Patchright 浏览器（反检测）
-      # --with-deps 安装系统依赖（libgbm, libasound2 等）
+      # Install Patchright browser (anti-detection)
+      # --with-deps installs system dependencies (libgbm, libasound2, etc.)
       - name: Install Patchright browsers
         run: uv run patchright install --with-deps chromium
       
-      - name: 运行检查
+      - name: Run check
         env:
-          # Playwright/Patchright 超时配置（CI 环境需要更长时间）
+          # Playwright/Patchright timeout (CI needs longer)
           PLAYWRIGHT_TIMEOUT: "60000"
           
-          # 发送最近 N 天的规章（不填则检测新增）
+          # Send regulations from last N days (empty = detect new)
           DAYS: ${{ secrets.DAYS }}
           
-          # 通知配置 - Email（支持任意邮箱）
-          # EMAIL_TO 不填则默认发送给 EMAIL_USER
+          # Notification - Email
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
           
-          # 通知配置 - PushPlus (https://www.pushplus.plus/)
+          # Notification - PushPlus
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
           
-          # 通知配置 - Telegram
+          # Notification - Telegram
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           uv run python -m src.main
       
-      - name: 提交状态更新
+      - name: Commit state update
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add data/regulations.json
-          git diff --staged --quiet || git commit -m "chore: 更新规章状态 $(date +'%Y-%m-%d')"
+          git diff --staged --quiet || git commit -m "chore: update regulation state $(date +'%Y-%m-%d')"
           git push
       
-      - name: 上传下载的文件
+      - name: Upload downloaded files
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -88,7 +85,7 @@ jobs:
           retention-days: 30
           if-no-files-found: ignore
       
-      # 清理旧的工作流运行记录
+      # Clean up old workflow runs
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
