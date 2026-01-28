@@ -226,14 +226,34 @@ class Notifier:
             lines.append("【新增规章】")
             for doc in new_regulations:
                 lines.append(f"  • {doc.doc_number} {doc.title}")
-                lines.append(f"    状态: {doc.validity} | 发布: {doc.publish_date}")
+                details = [f"状态: {doc.validity}"]
+                if doc.publish_date:
+                    details.append(f"发布: {doc.publish_date}")
+                if doc.sign_date:
+                    details.append(f"签发: {doc.sign_date}")
+                if doc.office_unit:
+                    details.append(f"单位: {doc.office_unit}")
+                lines.append(f"    {' | '.join(details)}")
+                lines.append(f"    详情: {doc.url}")
+                if doc.pdf_url:
+                    lines.append(f"    下载: {doc.pdf_url}")
             lines.append("")
         
         if new_normatives:
             lines.append("【新增规范性文件】")
             for doc in new_normatives:
                 lines.append(f"  • {doc.doc_number} {doc.title}")
-                lines.append(f"    状态: {doc.validity} | 发布: {doc.publish_date}")
+                details = [f"状态: {doc.validity}"]
+                if doc.publish_date:
+                    details.append(f"发布: {doc.publish_date}")
+                if doc.sign_date:
+                    details.append(f"签发: {doc.sign_date}")
+                if doc.office_unit:
+                    details.append(f"单位: {doc.office_unit}")
+                lines.append(f"    {' | '.join(details)}")
+                lines.append(f"    详情: {doc.url}")
+                if doc.pdf_url:
+                    lines.append(f"    下载: {doc.pdf_url}")
         
         text_content = "\n".join(lines)
         
@@ -252,48 +272,56 @@ class Notifier:
         """生成 HTML 邮件内容"""
         total = len(new_regulations) + len(new_normatives)
         
+        def render_doc_card(doc: RegulationDocument, color: str) -> str:
+            """渲染单个文档卡片"""
+            filename = generate_filename(doc)
+            validity_color = "#34C759" if doc.validity == "有效" else "#FF3B30"
+            validity_icon = "✅" if doc.validity == "有效" else "❌"
+            
+            # 构建详情行
+            details = []
+            if doc.publish_date:
+                details.append(f"📅 发布：{doc.publish_date}")
+            if doc.sign_date:
+                details.append(f"✍️ 签发：{doc.sign_date}")
+            if doc.office_unit:
+                details.append(f"🏢 {doc.office_unit}")
+            details_html = " | ".join(details) if details else ""
+            
+            # 下载按钮（如果有 PDF 链接）
+            download_btn = ""
+            if doc.pdf_url:
+                download_btn = f'''<a href="{doc.pdf_url}" style="display: inline-block; background: #34C759; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px; margin-right: 8px;">⬇️ 下载 PDF</a>'''
+            
+            return f'''
+            <div style="background: white; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid {color};">
+                <div style="margin-bottom: 8px;">
+                    <a href="{doc.url}" style="font-weight: bold; color: {color}; text-decoration: none; font-size: 15px;">
+                        {doc.doc_number} {doc.title}
+                    </a>
+                    <span style="color: {validity_color}; margin-left: 8px;">{validity_icon} {doc.validity}</span>
+                </div>
+                <div style="color: #666; font-size: 13px; margin-bottom: 10px;">
+                    {details_html}
+                </div>
+                <div style="font-size: 12px; color: #999; margin-bottom: 10px;">
+                    📁 文件名：{filename}
+                </div>
+                <div>
+                    {download_btn}
+                    <a href="{doc.url}" style="display: inline-block; background: {color}; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">📄 查看详情</a>
+                </div>
+            </div>
+            '''
+        
         # 生成规章列表 HTML
         items_html = ""
         
         for doc in new_regulations:
-            filename = generate_filename(doc)
-            validity_color = "#34C759" if doc.validity == "有效" else "#FF3B30"
-            items_html += f'''
-            <div style="background: white; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #1a73e8;">
-                <div style="font-weight: bold; color: #1a73e8; margin-bottom: 8px;">
-                    {doc.doc_number} {doc.title}
-                </div>
-                <div style="color: #666; font-size: 14px;">
-                    📅 发布日期：{doc.publish_date or "未知"} | 
-                    🏢 发布单位：{doc.office_unit or "中国民用航空局"} | 
-                    <span style="color: {validity_color};">✅ {doc.validity}</span>
-                </div>
-                <div style="margin-top: 10px;">
-                    <a href="{doc.url}" style="display: inline-block; background: #1a73e8; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px; margin-right: 8px;">📄 查看详情</a>
-                    <span style="color: #999; font-size: 12px;">文件名: {filename}</span>
-                </div>
-            </div>
-            '''
+            items_html += render_doc_card(doc, "#1a73e8")
         
         for doc in new_normatives:
-            filename = generate_filename(doc)
-            validity_color = "#34C759" if doc.validity == "有效" else "#FF3B30"
-            items_html += f'''
-            <div style="background: white; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #FF9500;">
-                <div style="font-weight: bold; color: #FF9500; margin-bottom: 8px;">
-                    {doc.doc_number} {doc.title}
-                </div>
-                <div style="color: #666; font-size: 14px;">
-                    📅 发布日期：{doc.publish_date or "未知"} | 
-                    🏢 发布单位：{doc.office_unit or "中国民用航空局"} | 
-                    <span style="color: {validity_color};">✅ {doc.validity}</span>
-                </div>
-                <div style="margin-top: 10px;">
-                    <a href="{doc.url}" style="display: inline-block; background: #FF9500; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px; margin-right: 8px;">📄 查看详情</a>
-                    <span style="color: #999; font-size: 12px;">文件名: {filename}</span>
-                </div>
-            </div>
-            '''
+            items_html += render_doc_card(doc, "#FF9500")
         
         html = f'''<!DOCTYPE html>
 <html>
