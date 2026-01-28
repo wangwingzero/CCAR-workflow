@@ -2,7 +2,7 @@
 """
 通知模块
 
-支持多种推送渠道：Email (QQ邮箱)、PushPlus、Server酱 Turbo、Telegram 等。
+支持多种推送渠道：Email、PushPlus、Telegram。
 """
 
 import os
@@ -121,7 +121,7 @@ class Notifier:
         content: str,
         msg_type: Literal["text", "html"] = "text",
     ):
-        """发送邮件通知（QQ 邮箱）"""
+        """发送邮件通知"""
         if not self.email_user or not self.email_pass or not self.email_to:
             raise ValueError("Email 配置不完整")
         
