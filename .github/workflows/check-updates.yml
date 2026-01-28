@@ -1,0 +1,93 @@
+name: CAAC 规章更新检查
+
+on:
+  schedule:
+    # 每天 UTC 0:00 运行（北京时间 8:00）
+    - cron: '0 0 * * *'
+  workflow_dispatch:  # 允许手动触发
+
+# 防止并发运行
+concurrency:
+  group: caac-check
+  cancel-in-progress: true
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-22.04
+    
+    permissions:
+      contents: write  # 需要写权限来 commit 状态文件
+      actions: write   # 清理旧的 workflow runs
+    
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      # 安装 uv（与 sign-in 项目保持一致）
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+      
+      - name: Set up Python
+        run: uv python install 3.12
+      
+      - name: Install dependencies
+        run: uv sync
+      
+      # 安装 Patchright 浏览器（反检测）
+      # --with-deps 安装系统依赖（libgbm, libasound2 等）
+      - name: Install Patchright browsers
+        run: uv run patchright install --with-deps chromium
+      
+      - name: 运行检查
+        # CI 环境性能差，增加超时时间
+        env:
+          # Playwright/Patchright 超时配置（CI 环境需要更长时间）
+          PLAYWRIGHT_TIMEOUT: "60000"
+          
+          # 通知配置 - Email (QQ 邮箱)
+          EMAIL_USER: ${{ secrets.EMAIL_USER }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
+          
+          # 通知配置 - PushPlus
+          PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+          
+          # 通知配置 - Server酱 Turbo
+          SC3_PUSH_KEY: ${{ secrets.SC3_PUSH_KEY }}
+          
+          # 通知配置 - Telegram
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          uv run python -m src.main
+      
+      - name: 提交状态更新
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/regulations.json
+          git diff --staged --quiet || git commit -m "chore: 更新规章状态 $(date +'%Y-%m-%d')"
+          git push
+      
+      - name: 上传下载的文件
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: downloaded-regulations-${{ github.run_number }}
+          path: downloads/
+          retention-days: 30
+          if-no-files-found: ignore
+      
+      # 清理旧的工作流运行记录
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 10
+          keep_minimum_runs: 6
