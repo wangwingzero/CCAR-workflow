@@ -51,7 +51,7 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=default_days,
         metavar="N",
-        help="Only send regulations from last N days (default: detect new, N must be > 0, can set via DAYS env var)",
+        help="Only send regulations from last N days (default: detect new with 30-day limit, use --days to override, can set via DAYS env var)",
     )
     parser.add_argument(
         "--no-download",
@@ -112,7 +112,11 @@ def main() -> int:
             # 2. Detect changes or filter by days
             logger.info("Step 2/4: Filtering regulations...")
             
+            # Default max days limit (unless user explicitly specifies --days)
+            DEFAULT_MAX_DAYS = 30
+            
             if args.days:
+                # User explicitly specified --days, use their value
                 filtered_regulations = filter_by_days(regulations, args.days)
                 filtered_normatives = filter_by_days(normatives, args.days)
                 
@@ -124,6 +128,7 @@ def main() -> int:
                 target_regulations = filtered_regulations
                 target_normatives = filtered_normatives
             else:
+                # Default mode: detect new, but limit to last 30 days max
                 changes = storage.detect_changes(regulations, normatives)
                 
                 if not changes.has_changes:
@@ -132,9 +137,23 @@ def main() -> int:
                         storage.update_state(regulations, normatives)
                     return 0
                 
-                logger.info(f"Detected {changes.total_count} new regulations/normatives")
-                target_regulations = changes.new_regulations
-                target_normatives = changes.new_normatives
+                # Apply 30-day limit to prevent email flood on first run
+                target_regulations = filter_by_days(changes.new_regulations, DEFAULT_MAX_DAYS)
+                target_normatives = filter_by_days(changes.new_normatives, DEFAULT_MAX_DAYS)
+                
+                original_count = changes.total_count
+                filtered_count = len(target_regulations) + len(target_normatives)
+                
+                if filtered_count < original_count:
+                    logger.info(f"Detected {original_count} new, limited to last {DEFAULT_MAX_DAYS} days: {filtered_count}")
+                else:
+                    logger.info(f"Detected {filtered_count} new regulations/normatives")
+                
+                if filtered_count == 0:
+                    logger.info(f"No new regulations in last {DEFAULT_MAX_DAYS} days")
+                    if not args.dry_run:
+                        storage.update_state(regulations, normatives)
+                    return 0
             
             # 3. Download PDF (optional)
             downloaded_files: list[str] = []
