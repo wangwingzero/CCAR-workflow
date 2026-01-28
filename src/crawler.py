@@ -204,6 +204,10 @@ class CaacCrawler:
         
         Returns:
             页面 HTML 内容
+            
+        Note:
+            使用 domcontentloaded 而非 networkidle，因为政府网站常有
+            统计脚本/地图服务等导致网络永远不"空闲"，容易超时。
         """
         last_error = None
         
@@ -216,8 +220,19 @@ class CaacCrawler:
                 context = browser.new_context()
                 try:
                     page = context.new_page()
-                    # CI 环境性能差，增加超时时间
-                    page.goto(url, wait_until="networkidle", timeout=60000)
+                    # 使用 domcontentloaded 避免政府网站统计脚本导致的超时
+                    page.goto(url, wait_until="domcontentloaded", timeout=30000)
+                    
+                    # 等待页面核心内容加载（表格或文章内容）
+                    try:
+                        page.wait_for_selector(
+                            "table.t_table, .article-content, .TRS_Editor, .content",
+                            timeout=10000
+                        )
+                    except Exception:
+                        # 如果找不到特定元素，等待一小段时间让 JS 执行
+                        page.wait_for_timeout(2000)
+                    
                     content = page.content()
                     logger.info(f"页面获取成功: {len(content)} 字符")
                     return content
