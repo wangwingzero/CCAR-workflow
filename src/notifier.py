@@ -269,102 +269,144 @@ class Notifier:
         new_normatives: list[RegulationDocument],
         timestamp: datetime,
     ) -> str:
-        """生成 HTML 邮件内容"""
+        """生成 HTML 邮件内容 - Apple 风格简洁设计"""
         total = len(new_regulations) + len(new_normatives)
         
-        def render_doc_card(doc: RegulationDocument, color: str) -> str:
-            """渲染单个文档卡片"""
+        # 状态判断
+        if total > 0:
+            status_icon = "✓"
+            status_bg = "#34C759"  # Apple Green
+            status_text = "检测完成"
+        else:
+            status_icon = "−"
+            status_bg = "#86868B"  # Apple Gray
+            status_text = "暂无更新"
+        
+        def render_doc_item(doc: RegulationDocument, index: int) -> str:
+            """渲染单个文档项"""
             filename = generate_filename(doc)
-            validity_color = "#34C759" if doc.validity == "有效" else "#FF3B30"
-            validity_icon = "✅" if doc.validity == "有效" else "❌"
             
-            # 构建详情行
+            # 状态颜色和图标
+            if doc.validity == "有效":
+                validity_color = "#34C759"
+                validity_icon = "✓"
+            else:
+                validity_color = "#FF3B30"
+                validity_icon = "✗"
+            
+            # 构建详情
             details = []
             if doc.publish_date:
-                details.append(f"📅 发布：{doc.publish_date}")
+                details.append(f"📅 {doc.publish_date}")
             if doc.sign_date:
-                details.append(f"✍️ 签发：{doc.sign_date}")
+                details.append(f"✍️ {doc.sign_date}")
             if doc.office_unit:
                 details.append(f"🏢 {doc.office_unit}")
-            details_html = " | ".join(details) if details else ""
+            details_html = " · ".join(details) if details else ""
             
-            # 下载按钮（如果有 PDF 链接）
+            # 下载按钮
             download_btn = ""
             if doc.pdf_url:
-                download_btn = f'''<a href="{doc.pdf_url}" style="display: inline-block; background: #34C759; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px; margin-right: 8px;">⬇️ 下载 PDF</a>'''
+                download_btn = f'''
+                    <a href="{doc.pdf_url}" style="display: inline-block; background: #34C759; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 500; margin-right: 8px;">⬇️ 下载</a>'''
             
-            return f'''
-            <div style="background: white; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid {color};">
-                <div style="margin-bottom: 8px;">
-                    <a href="{doc.url}" style="font-weight: bold; color: {color}; text-decoration: none; font-size: 15px;">
-                        {doc.doc_number} {doc.title}
-                    </a>
-                    <span style="color: {validity_color}; margin-left: 8px;">{validity_icon} {doc.validity}</span>
-                </div>
-                <div style="color: #666; font-size: 13px; margin-bottom: 10px;">
-                    {details_html}
-                </div>
-                <div style="font-size: 12px; color: #999; margin-bottom: 10px;">
-                    📁 文件名：{filename}
-                </div>
+            # 分隔线（非第一项）
+            separator = '<div style="height: 1px; background: #F5F5F7; margin: 16px 0;"></div>' if index > 0 else ""
+            
+            return f'''{separator}
                 <div>
-                    {download_btn}
-                    <a href="{doc.url}" style="display: inline-block; background: {color}; color: white; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-size: 13px;">📄 查看详情</a>
-                </div>
-            </div>
-            '''
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                        <a href="{doc.url}" style="font-size: 15px; font-weight: 600; color: #1D1D1F; text-decoration: none; line-height: 1.4; flex: 1;">{doc.doc_number} {doc.title}</a>
+                        <div style="width: 24px; height: 24px; background: {validity_color}; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 12px; flex-shrink: 0;">
+                            <span style="color: white; font-size: 14px;">{validity_icon}</span>
+                        </div>
+                    </div>
+                    <div style="font-size: 13px; color: #86868B; margin-bottom: 8px;">{details_html}</div>
+                    <div style="font-size: 12px; color: #AEAEB2; margin-bottom: 12px;">📁 {filename}</div>
+                    <div>
+                        {download_btn}
+                        <a href="{doc.url}" style="display: inline-block; background: #007AFF; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 500;">📄 详情</a>
+                    </div>
+                </div>'''
         
-        # 生成规章列表 HTML
-        items_html = ""
+        # 生成规章卡片
+        regulations_card = ""
+        if new_regulations:
+            items_html = ""
+            for i, doc in enumerate(new_regulations):
+                items_html += render_doc_item(doc, i)
+            
+            regulations_card = f'''
+    <!-- 规章卡片 -->
+    <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+            <span style="font-size: 24px; margin-right: 12px;">📜</span>
+            <span style="font-size: 17px; font-weight: 600; color: #1D1D1F;">民航规章</span>
+            <span style="background: #007AFF; color: white; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 8px;">{len(new_regulations)}</span>
+        </div>
+        {items_html}
+    </div>'''
         
-        for doc in new_regulations:
-            items_html += render_doc_card(doc, "#1a73e8")
-        
-        for doc in new_normatives:
-            items_html += render_doc_card(doc, "#FF9500")
+        # 生成规范性文件卡片
+        normatives_card = ""
+        if new_normatives:
+            items_html = ""
+            for i, doc in enumerate(new_normatives):
+                items_html += render_doc_item(doc, i)
+            
+            normatives_card = f'''
+    <!-- 规范性文件卡片 -->
+    <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+            <span style="font-size: 24px; margin-right: 12px;">📋</span>
+            <span style="font-size: 17px; font-weight: 600; color: #1D1D1F;">规范性文件</span>
+            <span style="background: #FF9500; color: white; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 8px;">{len(new_normatives)}</span>
+        </div>
+        {items_html}
+    </div>'''
         
         html = f'''<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
-    <style>
-        body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }}
-        .container {{ max-width: 600px; margin: 0 auto; padding: 20px; }}
-        .header {{ background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; padding: 24px; border-radius: 12px 12px 0 0; text-align: center; }}
-        .header h2 {{ margin: 0 0 8px 0; font-size: 22px; }}
-        .header p {{ margin: 0; opacity: 0.9; font-size: 14px; }}
-        .content {{ background: #f8f9fa; padding: 20px; border-radius: 0 0 12px 12px; }}
-        .stats {{ display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; }}
-        .stat {{ text-align: center; }}
-        .stat-number {{ font-size: 28px; font-weight: bold; color: #1a73e8; }}
-        .stat-label {{ font-size: 12px; color: #666; }}
-        .footer {{ text-align: center; color: #999; font-size: 12px; margin-top: 20px; padding: 15px; }}
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h2>📋 CAAC 规章更新通知</h2>
-            <p>检测到 {total} 条新规章/规范性文件</p>
+<body style="margin: 0; padding: 0; background-color: #F5F5F7;">
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 40px 20px; background-color: #F5F5F7; -webkit-font-smoothing: antialiased;">
+    
+    <!-- 状态指示器 -->
+    <div style="text-align: center; margin-bottom: 32px;">
+        <div style="display: inline-block; width: 64px; height: 64px; background: {status_bg}; border-radius: 50%; line-height: 64px; margin-bottom: 16px;">
+            <span style="color: white; font-size: 32px; font-weight: 300;">{status_icon}</span>
         </div>
-        <div class="content">
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">{len(new_regulations)}</div>
-                    <div class="stat-label">新增规章</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">{len(new_normatives)}</div>
-                    <div class="stat-label">新增规范性文件</div>
-                </div>
+        <h1 style="margin: 0; font-size: 28px; font-weight: 600; color: #1D1D1F; letter-spacing: -0.5px;">{status_text}</h1>
+        <p style="margin: 8px 0 0 0; font-size: 15px; color: #86868B;">{timestamp.strftime('%Y年%m月%d日 %H:%M')}</p>
+    </div>
+    
+    <!-- 统计卡片 -->
+    <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+        <div style="display: flex; justify-content: space-around; text-align: center;">
+            <div>
+                <div style="font-size: 34px; font-weight: 600; color: #007AFF; letter-spacing: -1px;">{len(new_regulations)}</div>
+                <div style="font-size: 13px; color: #86868B; margin-top: 4px;">民航规章</div>
             </div>
-            {items_html}
-        </div>
-        <div class="footer">
-            <p>此邮件由 CAAC 规章监控系统自动发送</p>
-            <p>检测时间：{timestamp.strftime('%Y-%m-%d %H:%M:%S')}</p>
+            <div style="width: 1px; background: #F5F5F7;"></div>
+            <div>
+                <div style="font-size: 34px; font-weight: 600; color: #FF9500; letter-spacing: -1px;">{len(new_normatives)}</div>
+                <div style="font-size: 13px; color: #86868B; margin-top: 4px;">规范性文件</div>
+            </div>
         </div>
     </div>
+    
+    {regulations_card}
+    {normatives_card}
+    
+    <!-- 页脚 -->
+    <div style="text-align: center; padding: 20px 0;">
+        <p style="font-size: 12px; color: #AEAEB2; margin: 0;">CAAC 规章监控系统 · 自动发送</p>
+    </div>
+    
+</div>
 </body>
 </html>'''
         
