@@ -27,14 +27,12 @@ class Notifier:
         # Email 配置
         self.email_user = os.getenv("EMAIL_USER")
         self.email_pass = os.getenv("EMAIL_PASS")
-        self.email_to = os.getenv("EMAIL_TO")
+        # EMAIL_TO 不填则默认发送给 EMAIL_USER
+        self.email_to = os.getenv("EMAIL_TO") or self.email_user
         self.email_sender = os.getenv("EMAIL_SENDER", "CAAC 规章监控")
         
-        # PushPlus 配置
+        # PushPlus 配置 (https://www.pushplus.plus/)
         self.pushplus_token = os.getenv("PUSHPLUS_TOKEN")
-        
-        # Server酱 Turbo (SCT) 配置
-        self.sc3_push_key = os.getenv("SC3_PUSH_KEY")
         
         # Telegram 配置
         self.telegram_bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -85,7 +83,7 @@ class Notifier:
         if self.email_user and self.email_pass and self.email_to:
             try:
                 self._send_email(title, html_content or content, "html" if html_content else "text")
-                logger.success("[Email] 推送成功")
+                logger.success(f"[Email] 推送成功 -> {self.email_to}")
                 results["Email"] = True
             except Exception as e:
                 logger.error(f"[Email] 推送失败: {e}")
@@ -100,16 +98,6 @@ class Notifier:
             except Exception as e:
                 logger.error(f"[PushPlus] 推送失败: {e}")
                 results["PushPlus"] = False
-        
-        # Server酱 Turbo
-        if self.sc3_push_key:
-            try:
-                self._send_sc3(title, content)
-                logger.success("[Server酱] 推送成功")
-                results["Server酱"] = True
-            except Exception as e:
-                logger.error(f"[Server酱] 推送失败: {e}")
-                results["Server酱"] = False
         
         # Telegram
         if self.telegram_bot_token and self.telegram_chat_id:
@@ -179,20 +167,6 @@ class Notifier:
         }
         
         response = self.client.post(url, json=payload)
-        response.raise_for_status()
-
-    def _send_sc3(self, title: str, content: str):
-        """发送 Server酱 Turbo (SCT) 通知"""
-        if not self.sc3_push_key:
-            raise ValueError("Server酱 配置不完整")
-        
-        url = f"https://sctapi.ftqq.com/{self.sc3_push_key}.send"
-        payload = {
-            "title": title[:32],  # 标题最大 32 字符
-            "desp": content,
-        }
-        
-        response = self.client.post(url, data=payload)
         response.raise_for_status()
 
     def _send_telegram(self, title: str, content: str):

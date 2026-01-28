@@ -38,12 +38,21 @@ def parse_args() -> argparse.Namespace:
         description="CAAC 规章更新监控",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
+    
+    # 从环境变量读取默认值
+    default_days = os.getenv("DAYS")
+    if default_days:
+        try:
+            default_days = int(default_days)
+        except ValueError:
+            default_days = None
+    
     parser.add_argument(
         "--days",
         type=int,
-        default=None,
+        default=default_days,
         metavar="N",
-        help="只发送最近 N 天发布的规章（默认：检测新增，N 必须 > 0）",
+        help="只发送最近 N 天发布的规章（默认：检测新增，N 必须 > 0，可通过 DAYS 环境变量设置）",
     )
     parser.add_argument(
         "--no-download",

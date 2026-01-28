@@ -3,6 +3,10 @@ name: CAAC 规章更新检查
 on:
   schedule:
     # 每天 UTC 0:00 运行（北京时间 8:00）
+    # 如需修改运行时间，直接改这里的 cron 表达式
+    # 北京时间 = UTC + 8，例如：
+    #   北京 8:00  → UTC 0:00  → cron: '0 0 * * *'
+    #   北京 20:00 → UTC 12:00 → cron: '0 12 * * *'
     - cron: '0 0 * * *'
   workflow_dispatch:  # 允许手动触发
 
@@ -43,22 +47,22 @@ jobs:
         run: uv run patchright install --with-deps chromium
       
       - name: 运行检查
-        # CI 环境性能差，增加超时时间
         env:
           # Playwright/Patchright 超时配置（CI 环境需要更长时间）
           PLAYWRIGHT_TIMEOUT: "60000"
           
-          # 通知配置 - Email (QQ 邮箱)
+          # 发送最近 N 天的规章（不填则检测新增）
+          DAYS: ${{ secrets.DAYS }}
+          
+          # 通知配置 - Email（支持任意邮箱）
+          # EMAIL_TO 不填则默认发送给 EMAIL_USER
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
           
-          # 通知配置 - PushPlus
+          # 通知配置 - PushPlus (https://www.pushplus.plus/)
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-          
-          # 通知配置 - Server酱 Turbo
-          SC3_PUSH_KEY: ${{ secrets.SC3_PUSH_KEY }}
           
           # 通知配置 - Telegram
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
