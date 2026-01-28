@@ -7,7 +7,7 @@
 
 import os
 import smtplib
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from email.header import Header
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
@@ -209,7 +209,9 @@ class Notifier:
             (标题, 纯文本内容, HTML内容)
         """
         total = len(new_regulations) + len(new_normatives)
-        timestamp = datetime.now()
+        # 使用北京时间 (UTC+8)
+        beijing_tz = timezone(timedelta(hours=8))
+        timestamp = datetime.now(beijing_tz)
         
         # 标题
         title = f"📋 CAAC 规章更新通知 ({total} 条)"
