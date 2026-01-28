@@ -350,14 +350,8 @@ class Notifier:
                 details.append(f"🏢 {doc.office_unit}")
             details_html = " · ".join(details) if details else ""
             
-            # 下载按钮
-            download_btn = ""
-            if doc.pdf_url:
-                download_btn = f'''
-                    <a href="{doc.pdf_url}" style="display: inline-block; background: #34C759; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 500; margin-right: 8px;">⬇️ 下载</a>'''
-            
-            # 分隔线（非第一项）
-            separator = '<div style="height: 1px; background: #F5F5F7; margin: 16px 0;"></div>' if index > 0 else ""
+            # 分隔线（非第一项）- 更明显的分隔
+            separator = '<div style="height: 2px; background: linear-gradient(to right, #E5E5EA, #F5F5F7, #E5E5EA); margin: 20px 0;"></div>' if index > 0 else ""
             
             return f'''{separator}
                 <div>
@@ -368,11 +362,7 @@ class Notifier:
                         </div>
                     </div>
                     <div style="font-size: 13px; color: #86868B; margin-bottom: 8px;">{details_html}</div>
-                    <div style="font-size: 12px; color: #AEAEB2; margin-bottom: 12px;">📁 {filename}</div>
-                    <div>
-                        {download_btn}
-                        <a href="{doc.url}" style="display: inline-block; background: #007AFF; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 500;">📄 详情</a>
-                    </div>
+                    <div style="font-size: 12px; color: #AEAEB2;">📁 {filename}</div>
                 </div>'''
         
         # 生成规章卡片
