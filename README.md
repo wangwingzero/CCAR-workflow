@@ -36,13 +36,14 @@
 
 ### 3. 修改运行时间（可选）
 
-默认每天北京时间 8:00 运行。如需修改，编辑 `.github/workflows/check-updates.yml` 中的 cron 表达式：
+默认每天北京时间 15:00 运行。如需修改，编辑 `.github/workflows/check-updates.yml` 中的 cron 表达式：
 
 ```yaml
 # 北京时间 = UTC + 8
 # 北京 8:00  → UTC 0:00  → cron: '0 0 * * *'
+# 北京 15:00 → UTC 7:00  → cron: '0 7 * * *'
 # 北京 20:00 → UTC 12:00 → cron: '0 12 * * *'
-- cron: '0 0 * * *'
+- cron: '0 7 * * *'
 ```
 
 ### 4. 启用 Actions
