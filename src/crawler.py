@@ -28,6 +28,7 @@ NORMATIVE_CHANNEL = "238066"   # Normative documents channel
 # Category IDs (fl parameter)
 REGULATION_FL = "13"   # Regulations category
 NORMATIVE_FL = "14"    # Normative documents category
+STANDARD_FL = "15"     # Standards category (标准规范)
 
 
 @dataclass
@@ -38,7 +39,7 @@ class RegulationDocument:
     validity: str  # "有效", "失效", "废止"
     doc_number: str  # Document number
     office_unit: str  # Publishing unit
-    doc_type: str  # "regulation" or "normative"
+    doc_type: str  # "regulation", "normative", or "standard"
     sign_date: str = ""  # Signing date
     publish_date: str = ""  # Publishing date
     pdf_url: str = ""  # PDF attachment URL
@@ -265,6 +266,29 @@ class CaacCrawler:
         
         return []
 
+    def fetch_standards(self, keyword: str = "") -> list[RegulationDocument]:
+        """Fetch standards list (标准规范)"""
+        logger.info("Starting to fetch standards list...")
+        
+        if keyword:
+            search_url = f"{WAS5_SEARCH_URL}?channelid={NORMATIVE_CHANNEL}&sw={quote(keyword)}&perpage=100&orderby=-fabuDate&fl={STANDARD_FL}"
+        else:
+            search_url = f"{WAS5_SEARCH_URL}?channelid={NORMATIVE_CHANNEL}&perpage=100&orderby=-fabuDate&fl={STANDARD_FL}"
+
+        logger.info(f"Standards search URL: {search_url}")
+        
+        try:
+            self._random_delay()
+            html_content = self._fetch_with_browser(search_url)
+            if html_content:
+                documents = self._parse_standard_page(html_content)
+                logger.info(f"Standards list fetched: {len(documents)} items")
+                return documents
+        except Exception as e:
+            logger.error(f"Failed to fetch standards list: {e}")
+        
+        return []
+
     def _parse_regulation_page(self, html_content: str) -> list[RegulationDocument]:
         """Parse regulation search result page"""
         documents = []
@@ -423,6 +447,104 @@ class CaacCrawler:
 
         except Exception as e:
             logger.error(f"Failed to parse normative document page: {e}")
+
+        return documents
+
+    def _parse_standard_page(self, html_content: str) -> list[RegulationDocument]:
+        """Parse standards search result page (标准规范)"""
+        documents = []
+
+        try:
+            soup = BeautifulSoup(html_content, "lxml")
+            table = soup.find("table", class_="t_table")
+
+            if not table:
+                tables = soup.find_all("table")
+                table = tables[0] if tables else None
+
+            if not table:
+                logger.warning("Standards table not found")
+                return documents
+
+            tbody = table.find("tbody")
+            rows = tbody.find_all("tr") if tbody else table.find_all("tr")[1:]
+
+            for row in rows:
+                cells = row.find_all("td")
+                if len(cells) < 4:
+                    continue
+
+                try:
+                    title_cell = row.find("td", class_="tdMC")
+                    if not title_cell and len(cells) > 1:
+                        title_cell = cells[1]
+                    if not title_cell:
+                        continue
+
+                    link = title_cell.find("a", href=True)
+                    if not link:
+                        continue
+
+                    title = link.get_text(strip=True)
+                    href = link.get("href", "")
+                    full_url = urljoin(BASE_URL, href)
+
+                    # Get document number (文号)
+                    doc_number = ""
+                    doc_number_cell = row.find("td", class_="strFL")
+                    if doc_number_cell:
+                        doc_number = doc_number_cell.get_text(strip=True)
+
+                    # Get validity (有效性)
+                    validity = ""
+                    validity_cell = row.find("td", class_="strGF")
+                    if validity_cell:
+                        validity = validity_cell.get_text(strip=True)
+
+                    # Get dates (成文日期, 发文日期)
+                    sign_date = ""
+                    publish_date = ""
+                    date_cells = row.find_all("td", class_="tdRQ")
+                    if len(date_cells) >= 1:
+                        sign_date = normalize_date(date_cells[0].get_text(strip=True))
+                    if len(date_cells) >= 2:
+                        publish_date = normalize_date(date_cells[1].get_text(strip=True))
+
+                    # Get office unit from detail div
+                    office_unit = ""
+                    detail_div = title_cell.find("div", class_="t_l_content")
+                    if detail_div:
+                        unit_li = detail_div.find("li", class_="t_l_content_left")
+                        if unit_li:
+                            unit_text = unit_li.get_text(strip=True)
+                            if "办文单位：" in unit_text:
+                                office_unit = unit_text.replace("办文单位：", "").strip()
+                        
+                        # Also try to get validity from detail div if not found
+                        if not validity:
+                            for li in detail_div.find_all("li"):
+                                li_text = li.get_text(strip=True)
+                                if "有效性" in li_text or "有 效 性" in li_text:
+                                    validity = re.sub(r"有\s*效\s*性\s*[：:]", "", li_text).strip()
+                                    break
+
+                    if title:
+                        documents.append(RegulationDocument(
+                            title=title,
+                            url=full_url,
+                            validity=validity,
+                            doc_number=doc_number,
+                            office_unit=office_unit,
+                            doc_type="standard",
+                            sign_date=sign_date,
+                            publish_date=publish_date,
+                        ))
+                except Exception as e:
+                    logger.warning(f"Failed to parse standard row: {e}")
+                    continue
+
+        except Exception as e:
+            logger.error(f"Failed to parse standards page: {e}")
 
         return documents
 

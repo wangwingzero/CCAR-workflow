@@ -55,6 +55,7 @@ class StorageState:
     last_check: str = ""
     regulations: list[dict] = field(default_factory=list)
     normatives: list[dict] = field(default_factory=list)
+    standards: list[dict] = field(default_factory=list)
 
 
 @dataclass
@@ -62,14 +63,15 @@ class ChangeResult:
     """Change detection result"""
     new_regulations: list[RegulationDocument] = field(default_factory=list)
     new_normatives: list[RegulationDocument] = field(default_factory=list)
+    new_standards: list[RegulationDocument] = field(default_factory=list)
     
     @property
     def has_changes(self) -> bool:
-        return len(self.new_regulations) > 0 or len(self.new_normatives) > 0
+        return len(self.new_regulations) > 0 or len(self.new_normatives) > 0 or len(self.new_standards) > 0
     
     @property
     def total_count(self) -> int:
-        return len(self.new_regulations) + len(self.new_normatives)
+        return len(self.new_regulations) + len(self.new_normatives) + len(self.new_standards)
 
 
 def atomic_write_json(file_path: str, data: dict) -> None:
@@ -117,8 +119,9 @@ class Storage:
                 last_check=data.get("last_check", ""),
                 regulations=data.get("regulations", []),
                 normatives=data.get("normatives", []),
+                standards=data.get("standards", []),
             )
-            logger.info(f"State loaded: {len(self._state.regulations)} regulations, {len(self._state.normatives)} normatives")
+            logger.info(f"State loaded: {len(self._state.regulations)} regulations, {len(self._state.normatives)} normatives, {len(self._state.standards)} standards")
             return self._state
             
         except json.JSONDecodeError as e:
@@ -143,22 +146,25 @@ class Storage:
             "last_check": state.last_check,
             "regulations": state.regulations,
             "normatives": state.normatives,
+            "standards": state.standards,
         }
         
         atomic_write_json(self.data_path, data)
         self._state = state
-        logger.info(f"State saved: {len(state.regulations)} regulations, {len(state.normatives)} normatives")
+        logger.info(f"State saved: {len(state.regulations)} regulations, {len(state.normatives)} normatives, {len(state.standards)} standards")
 
     def detect_changes(
         self,
         current_regulations: list[RegulationDocument],
         current_normatives: list[RegulationDocument],
+        current_standards: list[RegulationDocument],
     ) -> ChangeResult:
         """Detect changes by URL"""
         state = self.load()
         
         known_regulation_urls = {doc["url"] for doc in state.regulations}
         known_normative_urls = {doc["url"] for doc in state.normatives}
+        known_standard_urls = {doc["url"] for doc in state.standards}
         
         new_regulations = [
             doc for doc in current_regulations
@@ -170,13 +176,19 @@ class Storage:
             if doc.url not in known_normative_urls
         ]
         
+        new_standards = [
+            doc for doc in current_standards
+            if doc.url not in known_standard_urls
+        ]
+        
         result = ChangeResult(
             new_regulations=new_regulations,
             new_normatives=new_normatives,
+            new_standards=new_standards,
         )
         
         if result.has_changes:
-            logger.info(f"Changes detected: {len(new_regulations)} regulations, {len(new_normatives)} normatives")
+            logger.info(f"Changes detected: {len(new_regulations)} regulations, {len(new_normatives)} normatives, {len(new_standards)} standards")
         else:
             logger.info("No changes detected")
         
@@ -186,11 +198,13 @@ class Storage:
         self,
         current_regulations: list[RegulationDocument],
         current_normatives: list[RegulationDocument],
+        current_standards: list[RegulationDocument],
     ) -> None:
         """Update state with current document list"""
         state = StorageState(
             last_check=datetime.now().isoformat(),
             regulations=[doc.to_dict() for doc in current_regulations],
             normatives=[doc.to_dict() for doc in current_normatives],
+            standards=[doc.to_dict() for doc in current_standards],
         )
         self.save(state)

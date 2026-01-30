@@ -235,13 +235,17 @@ class Notifier:
         self,
         new_regulations: list[RegulationDocument],
         new_normatives: list[RegulationDocument],
+        new_standards: list[RegulationDocument] = None,
     ) -> tuple[str, str, str]:
         """Format update notification message
         
         Returns:
             (title, plain text content, HTML content)
         """
-        total = len(new_regulations) + len(new_normatives)
+        if new_standards is None:
+            new_standards = []
+        
+        total = len(new_regulations) + len(new_normatives) + len(new_standards)
         beijing_tz = timezone(timedelta(hours=8))
         timestamp = datetime.now(beijing_tz)
         
@@ -253,6 +257,7 @@ class Notifier:
             f"检测时间: {timestamp.strftime('%Y-%m-%d %H:%M:%S')}",
             f"新增规章: {len(new_regulations)} 条",
             f"新增规范性文件: {len(new_normatives)} 条",
+            f"新增标准规范: {len(new_standards)} 条",
             "",
         ]
         
@@ -288,10 +293,27 @@ class Notifier:
                 lines.append(f"    详情: {doc.url}")
                 if doc.pdf_url:
                     lines.append(f"    下载: {doc.pdf_url}")
+            lines.append("")
+        
+        if new_standards:
+            lines.append("【新增标准规范】")
+            for doc in new_standards:
+                lines.append(f"  • {doc.doc_number} {doc.title}")
+                details = [f"状态: {doc.validity}"]
+                if doc.publish_date:
+                    details.append(f"发布: {doc.publish_date}")
+                if doc.sign_date:
+                    details.append(f"成文: {doc.sign_date}")
+                if doc.office_unit:
+                    details.append(f"单位: {doc.office_unit}")
+                lines.append(f"    {' | '.join(details)}")
+                lines.append(f"    详情: {doc.url}")
+                if doc.pdf_url:
+                    lines.append(f"    下载: {doc.pdf_url}")
         
         text_content = "\n".join(lines)
         
-        html_content = self._generate_html_email(new_regulations, new_normatives, timestamp)
+        html_content = self._generate_html_email(new_regulations, new_normatives, new_standards, timestamp)
         
         return title, text_content, html_content
 
@@ -300,10 +322,11 @@ class Notifier:
         self,
         new_regulations: list[RegulationDocument],
         new_normatives: list[RegulationDocument],
+        new_standards: list[RegulationDocument],
         timestamp: datetime,
     ) -> str:
         """Generate HTML email content - Apple style clean design"""
-        total = len(new_regulations) + len(new_normatives)
+        total = len(new_regulations) + len(new_normatives) + len(new_standards)
         
         if total > 0:
             status_icon = "✓"
@@ -382,6 +405,23 @@ class Notifier:
         {items_html}
     </div>'''
         
+        standards_card = ""
+        if new_standards:
+            items_html = ""
+            for i, doc in enumerate(new_standards):
+                items_html += render_doc_item(doc, i)
+            
+            standards_card = f'''
+    <!-- Standards Card -->
+    <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+        <div style="display: flex; align-items: center; margin-bottom: 20px;">
+            <span style="font-size: 24px; margin-right: 12px;">📐</span>
+            <span style="font-size: 17px; font-weight: 600; color: #1D1D1F;">标准规范</span>
+            <span style="background: #5856D6; color: white; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 8px;">{len(new_standards)}</span>
+        </div>
+        {items_html}
+    </div>'''
+        
         html = f'''<!DOCTYPE html>
 <html>
 <head>
@@ -412,11 +452,17 @@ class Notifier:
                 <div style="font-size: 34px; font-weight: 600; color: #FF9500; letter-spacing: -1px;">{len(new_normatives)}</div>
                 <div style="font-size: 13px; color: #86868B; margin-top: 4px;">规范性文件</div>
             </div>
+            <div style="width: 1px; background: #F5F5F7;"></div>
+            <div>
+                <div style="font-size: 34px; font-weight: 600; color: #5856D6; letter-spacing: -1px;">{len(new_standards)}</div>
+                <div style="font-size: 13px; color: #86868B; margin-top: 4px;">标准规范</div>
+            </div>
         </div>
     </div>
     
     {regulations_card}
     {normatives_card}
+    {standards_card}
     
     <!-- Footer -->
     <div style="text-align: center; padding: 20px 0;">

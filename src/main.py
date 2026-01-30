@@ -103,18 +103,19 @@ def main() -> int:
         
         with CaacCrawler() as crawler, Notifier() as notifier:
             # 1. Crawl latest regulation list
-            logger.info("Step 1/4: Crawling regulation list...")
+            logger.info("Step 1/5: Crawling regulation list...")
             regulations = crawler.fetch_regulations()
             normatives = crawler.fetch_normatives()
+            standards = crawler.fetch_standards()
             
-            if not regulations and not normatives:
+            if not regulations and not normatives and not standards:
                 logger.error("No regulation data fetched, may be blocked by anti-crawler")
                 return 1
             
-            logger.info(f"Fetch complete: {len(regulations)} regulations, {len(normatives)} normative documents")
+            logger.info(f"Fetch complete: {len(regulations)} regulations, {len(normatives)} normatives, {len(standards)} standards")
             
             # 2. Detect changes or filter by days
-            logger.info("Step 2/4: Filtering regulations...")
+            logger.info("Step 2/5: Filtering regulations...")
             
             # Default max days limit (unless user explicitly specifies --days)
             DEFAULT_MAX_DAYS = 30
@@ -123,51 +124,55 @@ def main() -> int:
                 # User explicitly specified --days, use their value
                 filtered_regulations = filter_by_days(regulations, args.days)
                 filtered_normatives = filter_by_days(normatives, args.days)
+                filtered_standards = filter_by_days(standards, args.days)
                 
-                if not filtered_regulations and not filtered_normatives:
+                if not filtered_regulations and not filtered_normatives and not filtered_standards:
                     logger.info(f"No regulations published in last {args.days} days")
                     return 0
                 
-                logger.info(f"Last {args.days} days: {len(filtered_regulations)} regulations, {len(filtered_normatives)} normatives")
+                logger.info(f"Last {args.days} days: {len(filtered_regulations)} regulations, {len(filtered_normatives)} normatives, {len(filtered_standards)} standards")
                 target_regulations = filtered_regulations
                 target_normatives = filtered_normatives
+                target_standards = filtered_standards
             else:
                 # Default mode: detect new, but limit to last 30 days max
-                changes = storage.detect_changes(regulations, normatives)
+                changes = storage.detect_changes(regulations, normatives, standards)
                 
                 if not changes.has_changes:
                     logger.info("No new regulations detected, run complete")
                     if not args.dry_run:
-                        storage.update_state(regulations, normatives)
+                        storage.update_state(regulations, normatives, standards)
                     return 0
                 
                 # Apply 30-day limit to prevent email flood on first run
                 target_regulations = filter_by_days(changes.new_regulations, DEFAULT_MAX_DAYS)
                 target_normatives = filter_by_days(changes.new_normatives, DEFAULT_MAX_DAYS)
+                target_standards = filter_by_days(changes.new_standards, DEFAULT_MAX_DAYS)
                 
                 original_count = changes.total_count
-                filtered_count = len(target_regulations) + len(target_normatives)
+                filtered_count = len(target_regulations) + len(target_normatives) + len(target_standards)
                 
                 if filtered_count < original_count:
                     logger.info(f"Detected {original_count} new, limited to last {DEFAULT_MAX_DAYS} days: {filtered_count}")
                 else:
-                    logger.info(f"Detected {filtered_count} new regulations/normatives")
+                    logger.info(f"Detected {filtered_count} new regulations/normatives/standards")
                 
                 if filtered_count == 0:
                     logger.info(f"No new regulations in last {DEFAULT_MAX_DAYS} days")
                     if not args.dry_run:
-                        storage.update_state(regulations, normatives)
+                        storage.update_state(regulations, normatives, standards)
                     return 0
             
             # 3. Download PDF (optional)
             downloaded_files: list[str] = []
             if not args.no_download:
-                logger.info("Step 3/4: Downloading PDFs...")
+                logger.info("Step 3/5: Downloading PDFs...")
                 download_dir = "downloads"
                 os.makedirs(download_dir, exist_ok=True)
                 
+                all_docs = target_regulations + target_normatives + target_standards
                 downloaded_count = 0
-                for doc in target_regulations + target_normatives:
+                for doc in all_docs:
                     filename = generate_filename(doc)
                     save_path = os.path.join(download_dir, filename)
                     
@@ -177,16 +182,17 @@ def main() -> int:
                     else:
                         logger.warning(f"Download failed: {doc.doc_number} {doc.title}")
                 
-                logger.info(f"Download complete: {downloaded_count}/{len(target_regulations) + len(target_normatives)} files")
+                logger.info(f"Download complete: {downloaded_count}/{len(all_docs)} files")
             else:
-                logger.info("Step 3/4: Skipping PDF download")
+                logger.info("Step 3/5: Skipping PDF download")
             
             # 4. Send notification
             if not args.no_notify:
-                logger.info("Step 4/4: Sending notifications...")
+                logger.info("Step 4/5: Sending notifications...")
                 title, text_content, html_content = notifier.format_update_message(
                     target_regulations,
                     target_normatives,
+                    target_standards,
                 )
                 
                 results = notifier.send_all(
@@ -205,16 +211,17 @@ def main() -> int:
                         logger.warning("All notification channels failed")
                         exit_code = 1
             else:
-                logger.info("Step 4/4: Skipping notifications")
+                logger.info("Step 4/5: Skipping notifications")
             
             # 5. Update state (only in non-days mode and non-dry-run)
             if not args.days and not args.dry_run:
-                storage.update_state(regulations, normatives)
+                storage.update_state(regulations, normatives, standards)
             
             logger.info("=" * 50)
             logger.info("CAAC Regulation Update Monitor - Complete")
             logger.info(f"Regulations: {len(target_regulations)}")
             logger.info(f"Normatives: {len(target_normatives)}")
+            logger.info(f"Standards: {len(target_standards)}")
             logger.info("=" * 50)
     
     except KeyboardInterrupt:
