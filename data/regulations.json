@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-01-30T07:38:00.043832",
+  "last_check": "2026-01-30T17:39:29.171153",
   "regulations": [
     {
       "title": "运输类旋翼航空器适航规定",
@@ -761,10 +761,10 @@
       "pdf_url": ""
     },
     {
-      "title": "航空安全员合格审定规则",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191933.html",
-      "validity": "有效",
-      "doc_number": "CCAR-69-R1",
+      "title": "运输机场使用许可规定",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191930.html",
+      "validity": "失效",
+      "doc_number": "CCAR-139CA-R2",
       "office_unit": "政策法规司",
       "doc_type": "regulation",
       "sign_date": "",
@@ -772,10 +772,10 @@
       "pdf_url": ""
     },
     {
-      "title": "运输机场使用许可规定",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191930.html",
-      "validity": "失效",
-      "doc_number": "CCAR-139CA-R2",
+      "title": "航空安全员合格审定规则",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191933.html",
+      "validity": "有效",
+      "doc_number": "CCAR-69-R1",
       "office_unit": "政策法规司",
       "doc_type": "regulation",
       "sign_date": "",
