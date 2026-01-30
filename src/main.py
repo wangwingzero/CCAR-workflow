@@ -80,9 +80,13 @@ def main() -> int:
     setup_logging()
     args = parse_args()
     
-    if args.days is not None and args.days <= 0:
-        logger.error("--days must be greater than 0")
+    if args.days is not None and args.days < 0:
+        logger.error("--days must be >= 0")
         return 1
+    
+    # days=0 means incremental detection mode (same as not specifying --days)
+    if args.days == 0:
+        args.days = None
     
     logger.info("=" * 50)
     logger.info("CAAC Regulation Update Monitor - Starting")
