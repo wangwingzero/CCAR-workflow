@@ -68,6 +68,14 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Dry run, don't update state file",
     )
+    parser.add_argument(
+        "--notify",
+        type=int,
+        choices=[0, 1],
+        default=0,
+        metavar="0|1",
+        help="Force send notification: 0=normal (default), 1=force send even if no new regulations",
+    )
     return parser.parse_args()
 
 
@@ -139,10 +147,17 @@ def main() -> int:
                 changes = storage.detect_changes(regulations, normatives, standards)
                 
                 if not changes.has_changes:
-                    logger.info("No new regulations detected, run complete")
-                    if not args.dry_run:
-                        storage.update_state(regulations, normatives, standards)
-                    return 0
+                    logger.info("No new regulations detected")
+                    if args.notify == 1:
+                        logger.info("Force notify enabled, will send notification with empty results")
+                        target_regulations = []
+                        target_normatives = []
+                        target_standards = []
+                    else:
+                        logger.info("Run complete")
+                        if not args.dry_run:
+                            storage.update_state(regulations, normatives, standards)
+                        return 0
                 
                 # Apply 30-day limit to prevent email flood on first run
                 target_regulations = filter_by_days(changes.new_regulations, DEFAULT_MAX_DAYS)
@@ -159,9 +174,15 @@ def main() -> int:
                 
                 if filtered_count == 0:
                     logger.info(f"No new regulations in last {DEFAULT_MAX_DAYS} days")
-                    if not args.dry_run:
-                        storage.update_state(regulations, normatives, standards)
-                    return 0
+                    if args.notify == 1:
+                        logger.info("Force notify enabled, will send notification with empty results")
+                        target_regulations = []
+                        target_normatives = []
+                        target_standards = []
+                    else:
+                        if not args.dry_run:
+                            storage.update_state(regulations, normatives, standards)
+                        return 0
             
             # 3. Download PDF (optional)
             downloaded_files: list[str] = []
