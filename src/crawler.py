@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-CAAC Regulation Crawler Module
+CAAC Document Crawler Module
 
-Uses Patchright (anti-detection Playwright) to crawl CAAC website regulation list.
+Uses Patchright (anti-detection Playwright) to crawl CAAC website documents.
+Supports all categories under "法定主动公开内容".
 """
 
 import random
@@ -21,54 +22,79 @@ from patchright.sync_api import sync_playwright
 BASE_URL = "https://www.caac.gov.cn"
 WAS5_SEARCH_URL = "https://www.caac.gov.cn/was5/web/search"
 
-# Channel IDs
-REGULATION_CHANNEL = "269689"  # Regulations channel
-NORMATIVE_CHANNEL = "238066"   # Normative documents channel
+# Channel ID for search
+SEARCH_CHANNEL = "211383"
 
-# Category IDs (fl parameter)
-REGULATION_FL = "13"   # Regulations category
-NORMATIVE_FL = "14"    # Normative documents category
-STANDARD_FL = "15"     # Standards category (标准规范)
+# Category definitions (fl parameter values and names)
+# Based on the website's "法定主动公开内容 > 主题分类"
+CATEGORIES = {
+    "9": "通知公告",
+    "10": "政策发布",
+    "11": "政策解读",
+    "12": "统计数据",
+    "47": "法律法规",
+    "13": "民航规章",
+    "14": "规范性文件",
+    "15": "标准规范",
+    "16": "对外关系",
+    "17": "港澳台合作",
+    "18": "国际公约",
+    "19": "人事信息",
+    "20": "财政信息",
+    "21": "发展规划",
+    "22": "重大项目",
+    "23": "行政权力",
+    "24": "政府公文",
+    "25": "机构职能",
+    "26": "对外政策",
+    "27": "执法典型案例",
+    "28": "建议提案答复",
+    "29": "政府网站年度报表",
+}
 
 
 @dataclass
-class RegulationDocument:
-    """Regulation document data model"""
+class Document:
+    """Document data model"""
     title: str
     url: str
-    validity: str  # "有效", "失效", "废止"
-    doc_number: str  # Document number
-    office_unit: str  # Publishing unit
-    doc_type: str  # "regulation", "normative", or "standard"
-    sign_date: str = ""  # Signing date
-    publish_date: str = ""  # Publishing date
+    category: str  # Category name (e.g., "通知公告", "民航规章")
+    category_id: str  # Category ID (fl parameter)
+    doc_number: str  # Document number (文号)
+    office_unit: str  # Publishing unit (办文单位)
+    sign_date: str = ""  # Signing date (成文日期)
+    publish_date: str = ""  # Publishing date (发文日期)
+    validity: str = ""  # Validity status (有效性)
     pdf_url: str = ""  # PDF attachment URL
+    has_pdf: bool = False  # Whether document has PDF attachment
 
     def to_dict(self) -> dict:
         """Convert to dictionary"""
         return asdict(self)
 
     @classmethod
-    def from_dict(cls, data: dict) -> "RegulationDocument":
+    def from_dict(cls, data: dict) -> "Document":
         """Create from dictionary"""
         return cls(
             title=data.get("title", ""),
             url=data.get("url", ""),
-            validity=data.get("validity", ""),
+            category=data.get("category", ""),
+            category_id=data.get("category_id", ""),
             doc_number=data.get("doc_number", ""),
             office_unit=data.get("office_unit", ""),
-            doc_type=data.get("doc_type", "regulation"),
             sign_date=data.get("sign_date", ""),
             publish_date=data.get("publish_date", ""),
+            validity=data.get("validity", ""),
             pdf_url=data.get("pdf_url", ""),
+            has_pdf=data.get("has_pdf", False),
         )
 
 
-def generate_filename(document: RegulationDocument) -> str:
+def generate_filename(document: Document) -> str:
     """Generate PDF filename
     
-    Format: {doc_number}{title}.pdf
-    Invalid regulations get "失效!" prefix
+    Format: [{category}]{doc_number}{title}.pdf
+    Invalid documents get "失效!" prefix
     """
     def sanitize(text: str) -> str:
         """Replace illegal filename characters"""
@@ -79,6 +105,11 @@ def generate_filename(document: RegulationDocument) -> str:
     validity = document.validity.strip()
     if validity in ("失效", "废止"):
         parts.append("失效!")
+
+    # Add category prefix
+    category = sanitize(document.category.strip())
+    if category:
+        parts.append(f"[{category}]")
 
     doc_number = sanitize(document.doc_number.strip())
     if doc_number:
@@ -121,7 +152,7 @@ def extract_date_from_url(url: str) -> str:
 
 
 class CaacCrawler:
-    """CAAC Regulation Crawler"""
+    """CAAC Document Crawler"""
 
     def __init__(self):
         self._http_client: Optional[httpx.Client] = None
@@ -215,94 +246,93 @@ class CaacCrawler:
         logger.error(f"Failed to fetch page after all retries: {last_error}")
         return ""
 
-    def _random_delay(self, min_sec: float = 2.0, max_sec: float = 5.0):
+    def _random_delay(self, min_sec: float = 1.0, max_sec: float = 3.0):
         """Random delay to avoid rate limiting"""
         delay = random.uniform(min_sec, max_sec)
         logger.debug(f"Random delay {delay:.1f} seconds")
         time.sleep(delay)
 
-    def fetch_regulations(self, keyword: str = "") -> list[RegulationDocument]:
-        """Fetch regulation list"""
-        logger.info("Starting to fetch regulation list...")
+    def fetch_category(self, category_id: str, perpage: int = 50) -> list[Document]:
+        """Fetch documents from a specific category
         
-        if keyword:
-            search_url = f"{WAS5_SEARCH_URL}?channelid={REGULATION_CHANNEL}&sw={quote(keyword)}&perpage=100&orderby=-fabuDate&fl={REGULATION_FL}"
-        else:
-            search_url = f"{WAS5_SEARCH_URL}?channelid={REGULATION_CHANNEL}&perpage=100&orderby=-fabuDate&fl={REGULATION_FL}"
-
-        logger.info(f"Regulation search URL: {search_url}")
+        Args:
+            category_id: Category ID (fl parameter)
+            perpage: Number of results per page
+        
+        Returns:
+            List of documents
+        """
+        category_name = CATEGORIES.get(category_id, f"未知分类({category_id})")
+        logger.info(f"Fetching category: {category_name} (ID: {category_id})")
+        
+        # Build search URL
+        search_url = (
+            f"{WAS5_SEARCH_URL}?"
+            f"channelid={SEARCH_CHANNEL}&"
+            f"was_custom_expr=+PARENTID%3D%27{category_id}%27+or+CLASSINFOID%3D%27{category_id}%27+&"
+            f"perpage={perpage}&"
+            f"orderby=-fabuDate&"
+            f"fl={category_id}"
+        )
+        
+        logger.debug(f"Search URL: {search_url}")
         
         try:
             html_content = self._fetch_with_browser(search_url)
             if html_content:
-                documents = self._parse_regulation_page(html_content)
-                logger.info(f"Regulation list fetched: {len(documents)} items")
+                documents = self._parse_list_page(html_content, category_id, category_name)
+                logger.info(f"Category {category_name}: {len(documents)} documents")
                 return documents
         except Exception as e:
-            logger.error(f"Failed to fetch regulation list: {e}")
+            logger.error(f"Failed to fetch category {category_name}: {e}")
         
         return []
 
-    def fetch_normatives(self, keyword: str = "") -> list[RegulationDocument]:
-        """Fetch normative document list"""
-        logger.info("Starting to fetch normative document list...")
+    def fetch_all_categories(self, category_ids: list[str] = None, perpage: int = 50) -> dict[str, list[Document]]:
+        """Fetch documents from all or specified categories
         
-        if keyword:
-            search_url = f"{WAS5_SEARCH_URL}?channelid={NORMATIVE_CHANNEL}&sw={quote(keyword)}&perpage=100&orderby=-fabuDate&fl={NORMATIVE_FL}"
-        else:
-            search_url = f"{WAS5_SEARCH_URL}?channelid={NORMATIVE_CHANNEL}&perpage=100&orderby=-fabuDate&fl={NORMATIVE_FL}"
+        Args:
+            category_ids: List of category IDs to fetch. If None, fetch all.
+            perpage: Number of results per page
+        
+        Returns:
+            Dictionary mapping category_id to list of documents
+        """
+        if category_ids is None:
+            category_ids = list(CATEGORIES.keys())
+        
+        results = {}
+        total_docs = 0
+        
+        for i, cat_id in enumerate(category_ids):
+            if i > 0:
+                self._random_delay()
+            
+            docs = self.fetch_category(cat_id, perpage)
+            results[cat_id] = docs
+            total_docs += len(docs)
+        
+        logger.info(f"Total: {total_docs} documents from {len(category_ids)} categories")
+        return results
 
-        logger.info(f"Normative document search URL: {search_url}")
-        
-        try:
-            self._random_delay()
-            html_content = self._fetch_with_browser(search_url)
-            if html_content:
-                documents = self._parse_normative_page(html_content)
-                logger.info(f"Normative document list fetched: {len(documents)} items")
-                return documents
-        except Exception as e:
-            logger.error(f"Failed to fetch normative document list: {e}")
-        
-        return []
-
-    def fetch_standards(self, keyword: str = "") -> list[RegulationDocument]:
-        """Fetch standards list (标准规范)"""
-        logger.info("Starting to fetch standards list...")
-        
-        if keyword:
-            search_url = f"{WAS5_SEARCH_URL}?channelid={NORMATIVE_CHANNEL}&sw={quote(keyword)}&perpage=100&orderby=-fabuDate&fl={STANDARD_FL}"
-        else:
-            search_url = f"{WAS5_SEARCH_URL}?channelid={NORMATIVE_CHANNEL}&perpage=100&orderby=-fabuDate&fl={STANDARD_FL}"
-
-        logger.info(f"Standards search URL: {search_url}")
-        
-        try:
-            self._random_delay()
-            html_content = self._fetch_with_browser(search_url)
-            if html_content:
-                documents = self._parse_standard_page(html_content)
-                logger.info(f"Standards list fetched: {len(documents)} items")
-                return documents
-        except Exception as e:
-            logger.error(f"Failed to fetch standards list: {e}")
-        
-        return []
-
-    def _parse_regulation_page(self, html_content: str) -> list[RegulationDocument]:
-        """Parse regulation search result page"""
+    def _parse_list_page(self, html_content: str, category_id: str, category_name: str) -> list[Document]:
+        """Parse document list page"""
         documents = []
 
         try:
             soup = BeautifulSoup(html_content, "lxml")
+            
+            # Find the main table
             table = soup.find("table", class_="t_table")
-
             if not table:
                 tables = soup.find_all("table")
-                table = tables[0] if tables else None
+                for t in tables:
+                    if t.find("th") or t.find("td", class_="tdMC"):
+                        table = t
+                        break
 
             if not table:
-                logger.warning("Regulation table not found")
+                logger.warning(f"Table not found for category {category_name}")
                 return documents
 
             tbody = table.find("tbody")
@@ -310,11 +340,12 @@ class CaacCrawler:
 
             for row in rows:
                 cells = row.find_all("td")
-                if len(cells) < 4:
+                if len(cells) < 2:
                     continue
 
                 try:
-                    title_cell = row.find("td", class_="t_l")
+                    # Find title cell (may have different class names)
+                    title_cell = row.find("td", class_="tdMC") or row.find("td", class_="t_l")
                     if not title_cell and len(cells) > 1:
                         title_cell = cells[1]
                     if not title_cell:
@@ -328,10 +359,36 @@ class CaacCrawler:
                     href = link.get("href", "")
                     full_url = urljoin(BASE_URL, href)
 
-                    doc_number = cells[2].get_text(strip=True) if len(cells) > 2 else ""
-                    validity = cells[3].get_text(strip=True) if len(cells) > 3 else ""
-                    publish_date = extract_date_from_url(full_url)
+                    # Get document number
+                    doc_number = ""
+                    doc_number_cell = row.find("td", class_="strFL")
+                    if doc_number_cell:
+                        doc_number = doc_number_cell.get_text(strip=True)
+                    elif len(cells) > 2:
+                        doc_number = cells[2].get_text(strip=True)
 
+                    # Get validity
+                    validity = ""
+                    validity_cell = row.find("td", class_="strGF")
+                    if validity_cell:
+                        validity = validity_cell.get_text(strip=True)
+                    elif len(cells) > 3:
+                        validity = cells[3].get_text(strip=True)
+
+                    # Get dates
+                    sign_date = ""
+                    publish_date = ""
+                    date_cells = row.find_all("td", class_="tdRQ")
+                    if len(date_cells) >= 1:
+                        sign_date = normalize_date(date_cells[0].get_text(strip=True))
+                    if len(date_cells) >= 2:
+                        publish_date = normalize_date(date_cells[1].get_text(strip=True))
+                    
+                    # Fallback: extract date from URL
+                    if not publish_date:
+                        publish_date = extract_date_from_url(full_url)
+
+                    # Get office unit from detail div
                     office_unit = ""
                     detail_div = title_cell.find("div", class_="t_l_content")
                     if detail_div:
@@ -346,214 +403,40 @@ class CaacCrawler:
                                 validity = re.sub(r"有\s*效\s*性\s*[：:]", "", li_text).strip()
 
                     if title:
-                        documents.append(RegulationDocument(
+                        documents.append(Document(
                             title=title,
                             url=full_url,
-                            validity=validity,
+                            category=category_name,
+                            category_id=category_id,
                             doc_number=doc_number,
                             office_unit=office_unit,
-                            doc_type="regulation",
-                            publish_date=publish_date,
-                        ))
-                except Exception as e:
-                    logger.warning(f"Failed to parse regulation row: {e}")
-                    continue
-
-        except Exception as e:
-            logger.error(f"Failed to parse regulation page: {e}")
-
-        return documents
-
-    def _parse_normative_page(self, html_content: str) -> list[RegulationDocument]:
-        """Parse normative document search result page"""
-        documents = []
-
-        try:
-            soup = BeautifulSoup(html_content, "lxml")
-            table = soup.find("table", class_="t_table")
-
-            if not table:
-                tables = soup.find_all("table")
-                table = tables[0] if tables else None
-
-            if not table:
-                logger.warning("Normative document table not found")
-                return documents
-
-            tbody = table.find("tbody")
-            rows = tbody.find_all("tr") if tbody else table.find_all("tr")[1:]
-
-            for row in rows:
-                cells = row.find_all("td")
-                if len(cells) < 4:
-                    continue
-
-                try:
-                    title_cell = row.find("td", class_="tdMC")
-                    if not title_cell and len(cells) > 1:
-                        title_cell = cells[1]
-                    if not title_cell:
-                        continue
-
-                    link = title_cell.find("a", href=True)
-                    if not link:
-                        continue
-
-                    title = link.get_text(strip=True)
-                    href = link.get("href", "")
-                    full_url = urljoin(BASE_URL, href)
-
-                    doc_number = ""
-                    doc_number_cell = row.find("td", class_="strFL")
-                    if doc_number_cell:
-                        doc_number = doc_number_cell.get_text(strip=True)
-
-                    validity = ""
-                    validity_cell = row.find("td", class_="strGF")
-                    if validity_cell:
-                        validity = validity_cell.get_text(strip=True)
-
-                    sign_date = ""
-                    publish_date = ""
-                    date_cells = row.find_all("td", class_="tdRQ")
-                    if len(date_cells) >= 1:
-                        sign_date = normalize_date(date_cells[0].get_text(strip=True))
-                    if len(date_cells) >= 2:
-                        publish_date = normalize_date(date_cells[1].get_text(strip=True))
-
-                    office_unit = ""
-                    detail_div = title_cell.find("div", class_="t_l_content")
-                    if detail_div:
-                        unit_li = detail_div.find("li", class_="t_l_content_left")
-                        if unit_li:
-                            unit_text = unit_li.get_text(strip=True)
-                            if "办文单位：" in unit_text:
-                                office_unit = unit_text.replace("办文单位：", "").strip()
-
-                    if title:
-                        documents.append(RegulationDocument(
-                            title=title,
-                            url=full_url,
-                            validity=validity,
-                            doc_number=doc_number,
-                            office_unit=office_unit,
-                            doc_type="normative",
                             sign_date=sign_date,
                             publish_date=publish_date,
-                        ))
-                except Exception as e:
-                    logger.warning(f"Failed to parse normative document row: {e}")
-                    continue
-
-        except Exception as e:
-            logger.error(f"Failed to parse normative document page: {e}")
-
-        return documents
-
-    def _parse_standard_page(self, html_content: str) -> list[RegulationDocument]:
-        """Parse standards search result page (标准规范)"""
-        documents = []
-
-        try:
-            soup = BeautifulSoup(html_content, "lxml")
-            table = soup.find("table", class_="t_table")
-
-            if not table:
-                tables = soup.find_all("table")
-                table = tables[0] if tables else None
-
-            if not table:
-                logger.warning("Standards table not found")
-                return documents
-
-            tbody = table.find("tbody")
-            rows = tbody.find_all("tr") if tbody else table.find_all("tr")[1:]
-
-            for row in rows:
-                cells = row.find_all("td")
-                if len(cells) < 4:
-                    continue
-
-                try:
-                    title_cell = row.find("td", class_="tdMC")
-                    if not title_cell and len(cells) > 1:
-                        title_cell = cells[1]
-                    if not title_cell:
-                        continue
-
-                    link = title_cell.find("a", href=True)
-                    if not link:
-                        continue
-
-                    title = link.get_text(strip=True)
-                    href = link.get("href", "")
-                    full_url = urljoin(BASE_URL, href)
-
-                    # Get document number (文号)
-                    doc_number = ""
-                    doc_number_cell = row.find("td", class_="strFL")
-                    if doc_number_cell:
-                        doc_number = doc_number_cell.get_text(strip=True)
-
-                    # Get validity (有效性)
-                    validity = ""
-                    validity_cell = row.find("td", class_="strGF")
-                    if validity_cell:
-                        validity = validity_cell.get_text(strip=True)
-
-                    # Get dates (成文日期, 发文日期)
-                    sign_date = ""
-                    publish_date = ""
-                    date_cells = row.find_all("td", class_="tdRQ")
-                    if len(date_cells) >= 1:
-                        sign_date = normalize_date(date_cells[0].get_text(strip=True))
-                    if len(date_cells) >= 2:
-                        publish_date = normalize_date(date_cells[1].get_text(strip=True))
-
-                    # Get office unit from detail div
-                    office_unit = ""
-                    detail_div = title_cell.find("div", class_="t_l_content")
-                    if detail_div:
-                        unit_li = detail_div.find("li", class_="t_l_content_left")
-                        if unit_li:
-                            unit_text = unit_li.get_text(strip=True)
-                            if "办文单位：" in unit_text:
-                                office_unit = unit_text.replace("办文单位：", "").strip()
-                        
-                        # Also try to get validity from detail div if not found
-                        if not validity:
-                            for li in detail_div.find_all("li"):
-                                li_text = li.get_text(strip=True)
-                                if "有效性" in li_text or "有 效 性" in li_text:
-                                    validity = re.sub(r"有\s*效\s*性\s*[：:]", "", li_text).strip()
-                                    break
-
-                    if title:
-                        documents.append(RegulationDocument(
-                            title=title,
-                            url=full_url,
                             validity=validity,
-                            doc_number=doc_number,
-                            office_unit=office_unit,
-                            doc_type="standard",
-                            sign_date=sign_date,
-                            publish_date=publish_date,
                         ))
                 except Exception as e:
-                    logger.warning(f"Failed to parse standard row: {e}")
+                    logger.warning(f"Failed to parse row: {e}")
                     continue
 
         except Exception as e:
-            logger.error(f"Failed to parse standards page: {e}")
+            logger.error(f"Failed to parse list page: {e}")
 
         return documents
 
-    def download_pdf(self, document: RegulationDocument, save_path: str) -> bool:
-        """Download PDF file (streaming to avoid memory overflow)"""
-        logger.info(f"Downloading PDF: {document.doc_number} {document.title}")
+    def check_pdf_and_download(self, document: Document, save_path: str) -> bool:
+        """Check if document has PDF and download it
+        
+        Args:
+            document: Document to check
+            save_path: Path to save PDF
+        
+        Returns:
+            True if PDF was downloaded successfully
+        """
+        logger.info(f"Checking PDF: [{document.category}] {document.doc_number} {document.title}")
         
         try:
-            self._random_delay(1.0, 3.0)
+            self._random_delay(0.5, 1.5)
             html_content = self._fetch_with_browser(document.url)
             
             if not html_content:
@@ -564,8 +447,11 @@ class CaacCrawler:
             pdf_link = self._find_pdf_link(soup, document.url)
             
             if not pdf_link:
-                logger.warning(f"PDF link not found: {document.url}")
+                logger.debug(f"No PDF found: {document.url}")
                 return False
+            
+            document.pdf_url = pdf_link
+            document.has_pdf = True
             
             logger.info(f"Downloading PDF: {pdf_link}")
             
@@ -641,3 +527,14 @@ class CaacCrawler:
             link = link[2:]
         
         return f"{doc_dir}/{link}"
+
+
+# Legacy compatibility - map old types to new categories
+def get_legacy_doc_type(category_id: str) -> str:
+    """Map category ID to legacy doc_type for backward compatibility"""
+    mapping = {
+        "13": "regulation",
+        "14": "normative",
+        "15": "standard",
+    }
+    return mapping.get(category_id, "document")

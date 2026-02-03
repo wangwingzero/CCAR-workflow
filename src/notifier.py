@@ -19,7 +19,7 @@ from typing import Literal, Optional
 import httpx
 from loguru import logger
 
-from .crawler import RegulationDocument, generate_filename
+from .crawler import Document, generate_filename, CATEGORIES
 
 
 class Notifier:
@@ -30,7 +30,7 @@ class Notifier:
         self.email_user = os.getenv("EMAIL_USER")
         self.email_pass = os.getenv("EMAIL_PASS")
         self.email_to = os.getenv("EMAIL_TO") or self.email_user
-        self.email_sender = os.getenv("EMAIL_SENDER", "CAAC 规章监控")
+        self.email_sender = os.getenv("EMAIL_SENDER", "CAAC 文件监控")
         
         # PushPlus config
         self.pushplus_token = os.getenv("PUSHPLUS_TOKEN")
@@ -68,17 +68,7 @@ class Notifier:
         html_content: Optional[str] = None,
         attachments: Optional[list[str]] = None,
     ) -> dict[str, bool]:
-        """Send notification to all configured channels
-        
-        Args:
-            title: Notification title
-            content: Plain text content
-            html_content: HTML content (optional, for email)
-            attachments: Attachment file paths (optional, for email)
-        
-        Returns:
-            Send results for each channel
-        """
+        """Send notification to all configured channels"""
         results: dict[str, bool] = {}
         
         # Email
@@ -121,7 +111,6 @@ class Notifier:
         
         return results
 
-
     def _send_email(
         self,
         title: str,
@@ -129,14 +118,7 @@ class Notifier:
         msg_type: Literal["text", "html"] = "text",
         attachments: Optional[list[str]] = None,
     ):
-        """Send email notification
-        
-        Args:
-            title: Email subject
-            content: Email content
-            msg_type: Content type ("text" or "html")
-            attachments: Attachment file paths
-        """
+        """Send email notification"""
         if not self.email_user or not self.email_pass or not self.email_to:
             raise ValueError("Email configuration incomplete")
         
@@ -233,100 +215,60 @@ class Notifier:
 
     def format_update_message(
         self,
-        new_regulations: list[RegulationDocument],
-        new_normatives: list[RegulationDocument],
-        new_standards: list[RegulationDocument] = None,
+        documents_by_category: dict,
     ) -> tuple[str, str, str]:
         """Format update notification message
+        
+        Args:
+            documents_by_category: Dict mapping category name to list of documents
         
         Returns:
             (title, plain text content, HTML content)
         """
-        if new_standards is None:
-            new_standards = []
-        
-        total = len(new_regulations) + len(new_normatives) + len(new_standards)
+        total = sum(len(docs) for docs in documents_by_category.values())
         beijing_tz = timezone(timedelta(hours=8))
         timestamp = datetime.now(beijing_tz)
         
-        # Title (Chinese for email display)
-        title = f"📋 CAAC 规章更新通知 ({total} 条)"
+        # Title
+        title = f"📋 CAAC 文件更新通知 ({total} 条)"
         
-        # Plain text content (Chinese)
+        # Plain text content
         lines = [
             f"检测时间: {timestamp.strftime('%Y-%m-%d %H:%M:%S')}",
-            f"新增规章: {len(new_regulations)} 条",
-            f"新增规范性文件: {len(new_normatives)} 条",
-            f"新增标准规范: {len(new_standards)} 条",
+            f"新增文件: {total} 条",
             "",
         ]
         
-        if new_regulations:
-            lines.append("【新增规章】")
-            for doc in new_regulations:
-                lines.append(f"  • {doc.doc_number} {doc.title}")
-                details = [f"状态: {doc.validity}"]
+        for cat_name, docs in documents_by_category.items():
+            if not docs:
+                continue
+            lines.append(f"【{cat_name}】({len(docs)} 条)")
+            for doc in docs:
+                lines.append(f"  • {doc.doc_number} {doc.title}" if doc.doc_number else f"  • {doc.title}")
+                details = []
+                if doc.validity:
+                    details.append(f"状态: {doc.validity}")
                 if doc.publish_date:
                     details.append(f"发布: {doc.publish_date}")
-                if doc.sign_date:
-                    details.append(f"签发: {doc.sign_date}")
                 if doc.office_unit:
                     details.append(f"单位: {doc.office_unit}")
-                lines.append(f"    {' | '.join(details)}")
+                if details:
+                    lines.append(f"    {' | '.join(details)}")
                 lines.append(f"    详情: {doc.url}")
-                if doc.pdf_url:
-                    lines.append(f"    下载: {doc.pdf_url}")
             lines.append("")
-        
-        if new_normatives:
-            lines.append("【新增规范性文件】")
-            for doc in new_normatives:
-                lines.append(f"  • {doc.doc_number} {doc.title}")
-                details = [f"状态: {doc.validity}"]
-                if doc.publish_date:
-                    details.append(f"发布: {doc.publish_date}")
-                if doc.sign_date:
-                    details.append(f"签发: {doc.sign_date}")
-                if doc.office_unit:
-                    details.append(f"单位: {doc.office_unit}")
-                lines.append(f"    {' | '.join(details)}")
-                lines.append(f"    详情: {doc.url}")
-                if doc.pdf_url:
-                    lines.append(f"    下载: {doc.pdf_url}")
-            lines.append("")
-        
-        if new_standards:
-            lines.append("【新增标准规范】")
-            for doc in new_standards:
-                lines.append(f"  • {doc.doc_number} {doc.title}")
-                details = [f"状态: {doc.validity}"]
-                if doc.publish_date:
-                    details.append(f"发布: {doc.publish_date}")
-                if doc.sign_date:
-                    details.append(f"成文: {doc.sign_date}")
-                if doc.office_unit:
-                    details.append(f"单位: {doc.office_unit}")
-                lines.append(f"    {' | '.join(details)}")
-                lines.append(f"    详情: {doc.url}")
-                if doc.pdf_url:
-                    lines.append(f"    下载: {doc.pdf_url}")
         
         text_content = "\n".join(lines)
-        
-        html_content = self._generate_html_email(new_regulations, new_normatives, new_standards, timestamp)
+        html_content = self._generate_html_email(documents_by_category, timestamp)
         
         return title, text_content, html_content
 
-
     def _generate_html_email(
         self,
-        new_regulations: list[RegulationDocument],
-        new_normatives: list[RegulationDocument],
-        new_standards: list[RegulationDocument],
+        documents_by_category: dict,
         timestamp: datetime,
     ) -> str:
         """Generate HTML email content - Apple style clean design"""
-        total = len(new_regulations) + len(new_normatives) + len(new_standards)
+        total = sum(len(docs) for docs in documents_by_category.values())
         
         if total > 0:
             status_icon = "✓"
@@ -337,90 +279,132 @@ class Notifier:
             status_bg = "#86868B"
             status_text = "暂无更新"
         
-        def render_doc_item(doc: RegulationDocument, index: int) -> str:
+        # Category colors
+        category_colors = {
+            "通知公告": "#007AFF",
+            "政策发布": "#FF9500",
+            "政策解读": "#5856D6",
+            "统计数据": "#00C7BE",
+            "法律法规": "#FF2D55",
+            "民航规章": "#007AFF",
+            "规范性文件": "#FF9500",
+            "标准规范": "#5856D6",
+            "对外关系": "#34C759",
+            "港澳台合作": "#FF3B30",
+            "国际公约": "#AF52DE",
+            "人事信息": "#FF9500",
+            "财政信息": "#00C7BE",
+            "发展规划": "#007AFF",
+            "重大项目": "#FF2D55",
+            "行政权力": "#5856D6",
+            "政府公文": "#34C759",
+            "机构职能": "#FF9500",
+            "对外政策": "#007AFF",
+            "执法典型案例": "#FF3B30",
+            "建议提案答复": "#AF52DE",
+            "政府网站年度报表": "#00C7BE",
+        }
+        
+        # Category icons
+        category_icons = {
+            "通知公告": "📢",
+            "政策发布": "📜",
+            "政策解读": "📖",
+            "统计数据": "📊",
+            "法律法规": "⚖️",
+            "民航规章": "✈️",
+            "规范性文件": "📋",
+            "标准规范": "📐",
+            "对外关系": "🌍",
+            "港澳台合作": "🤝",
+            "国际公约": "🌐",
+            "人事信息": "👤",
+            "财政信息": "💰",
+            "发展规划": "📈",
+            "重大项目": "🏗️",
+            "行政权力": "🏛️",
+            "政府公文": "📄",
+            "机构职能": "🏢",
+            "对外政策": "🌏",
+            "执法典型案例": "⚖️",
+            "建议提案答复": "💬",
+            "政府网站年度报表": "📑",
+        }
+        
+        def render_doc_item(doc: Document, index: int) -> str:
             """Render single document item"""
-            filename = generate_filename(doc)
-            
             if doc.validity == "有效":
                 validity_color = "#34C759"
                 validity_icon = "✓"
-            else:
+            elif doc.validity in ("失效", "废止"):
                 validity_color = "#FF3B30"
                 validity_icon = "✗"
+            else:
+                validity_color = "#86868B"
+                validity_icon = "−"
             
             details = []
             if doc.publish_date:
                 details.append(f"📅 {doc.publish_date}")
-            if doc.sign_date:
-                details.append(f"✍️ {doc.sign_date}")
             if doc.office_unit:
                 details.append(f"🏢 {doc.office_unit}")
             details_html = " · ".join(details) if details else ""
             
-            separator = '<div style="height: 2px; background: linear-gradient(to right, #E5E5EA, #F5F5F7, #E5E5EA); margin: 20px 0;"></div>' if index > 0 else ""
+            doc_title = f"{doc.doc_number} {doc.title}" if doc.doc_number else doc.title
+            
+            separator = '<div style="height: 1px; background: #E5E5EA; margin: 16px 0;"></div>' if index > 0 else ""
+            
+            validity_badge = ""
+            if doc.validity:
+                validity_badge = f'''
+                    <div style="width: 20px; height: 20px; background: {validity_color}; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-left: 8px; flex-shrink: 0;">
+                        <span style="color: white; font-size: 12px;">{validity_icon}</span>
+                    </div>'''
             
             return f'''{separator}
-                <div>
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
-                        <a href="{doc.url}" style="font-size: 15px; font-weight: 600; color: #1D1D1F; text-decoration: none; line-height: 1.4; flex: 1;">{doc.doc_number} {doc.title}</a>
-                        <div style="width: 24px; height: 24px; background: {validity_color}; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-left: 12px; flex-shrink: 0;">
-                            <span style="color: white; font-size: 14px;">{validity_icon}</span>
-                        </div>
+                <div style="padding: 4px 0;">
+                    <div style="display: flex; align-items: flex-start; margin-bottom: 6px;">
+                        <a href="{doc.url}" style="font-size: 14px; font-weight: 500; color: #1D1D1F; text-decoration: none; line-height: 1.4; flex: 1;">{doc_title}</a>
+                        {validity_badge}
                     </div>
-                    <div style="font-size: 13px; color: #86868B; margin-bottom: 8px;">{details_html}</div>
-                    <div style="font-size: 12px; color: #AEAEB2;">📁 {filename}</div>
+                    <div style="font-size: 12px; color: #86868B;">{details_html}</div>
                 </div>'''
         
-        regulations_card = ""
-        if new_regulations:
+        # Build category cards
+        category_cards = ""
+        for cat_name, docs in documents_by_category.items():
+            if not docs:
+                continue
+            
+            color = category_colors.get(cat_name, "#007AFF")
+            icon = category_icons.get(cat_name, "📄")
+            
             items_html = ""
-            for i, doc in enumerate(new_regulations):
+            for i, doc in enumerate(docs):
                 items_html += render_doc_item(doc, i)
             
-            regulations_card = f'''
-    <!-- Regulations Card -->
-    <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
-        <div style="display: flex; align-items: center; margin-bottom: 20px;">
-            <span style="font-size: 24px; margin-right: 12px;">📜</span>
-            <span style="font-size: 17px; font-weight: 600; color: #1D1D1F;">民航规章</span>
-            <span style="background: #007AFF; color: white; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 8px;">{len(new_regulations)}</span>
+            category_cards += f'''
+    <!-- {cat_name} Card -->
+    <div style="background: #FFFFFF; border-radius: 16px; padding: 20px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div style="display: flex; align-items: center; margin-bottom: 16px;">
+            <span style="font-size: 20px; margin-right: 10px;">{icon}</span>
+            <span style="font-size: 15px; font-weight: 600; color: #1D1D1F;">{cat_name}</span>
+            <span style="background: {color}; color: white; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 8px;">{len(docs)}</span>
         </div>
         {items_html}
     </div>'''
         
-        normatives_card = ""
-        if new_normatives:
-            items_html = ""
-            for i, doc in enumerate(new_normatives):
-                items_html += render_doc_item(doc, i)
-            
-            normatives_card = f'''
-    <!-- Normative Documents Card -->
-    <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
-        <div style="display: flex; align-items: center; margin-bottom: 20px;">
-            <span style="font-size: 24px; margin-right: 12px;">📋</span>
-            <span style="font-size: 17px; font-weight: 600; color: #1D1D1F;">规范性文件</span>
-            <span style="background: #FF9500; color: white; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 8px;">{len(new_normatives)}</span>
-        </div>
-        {items_html}
-    </div>'''
-        
-        standards_card = ""
-        if new_standards:
-            items_html = ""
-            for i, doc in enumerate(new_standards):
-                items_html += render_doc_item(doc, i)
-            
-            standards_card = f'''
-    <!-- Standards Card -->
-    <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
-        <div style="display: flex; align-items: center; margin-bottom: 20px;">
-            <span style="font-size: 24px; margin-right: 12px;">📐</span>
-            <span style="font-size: 17px; font-weight: 600; color: #1D1D1F;">标准规范</span>
-            <span style="background: #5856D6; color: white; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 8px;">{len(new_standards)}</span>
-        </div>
-        {items_html}
-    </div>'''
+        # Build statistics
+        stats_items = ""
+        for cat_name, docs in documents_by_category.items():
+            if not docs:
+                continue
+            color = category_colors.get(cat_name, "#007AFF")
+            stats_items += f'''
+            <div style="text-align: center; padding: 0 8px;">
+                <div style="font-size: 24px; font-weight: 600; color: {color};">{len(docs)}</div>
+                <div style="font-size: 11px; color: #86868B; margin-top: 2px;">{cat_name}</div>
+            </div>'''
         
         html = f'''<!DOCTYPE html>
 <html>
@@ -429,44 +413,29 @@ class Notifier:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body style="margin: 0; padding: 0; background-color: #F5F5F7;">
-<div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 40px 20px; background-color: #F5F5F7; -webkit-font-smoothing: antialiased;">
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif; max-width: 500px; margin: 0 auto; padding: 32px 16px; background-color: #F5F5F7;">
     
     <!-- Status Indicator -->
-    <div style="text-align: center; margin-bottom: 32px;">
-        <div style="display: inline-block; width: 64px; height: 64px; background: {status_bg}; border-radius: 50%; line-height: 64px; margin-bottom: 16px;">
-            <span style="color: white; font-size: 32px; font-weight: 300;">{status_icon}</span>
+    <div style="text-align: center; margin-bottom: 24px;">
+        <div style="display: inline-block; width: 56px; height: 56px; background: {status_bg}; border-radius: 50%; line-height: 56px; margin-bottom: 12px;">
+            <span style="color: white; font-size: 28px; font-weight: 300;">{status_icon}</span>
         </div>
-        <h1 style="margin: 0; font-size: 28px; font-weight: 600; color: #1D1D1F; letter-spacing: -0.5px;">{status_text}</h1>
-        <p style="margin: 8px 0 0 0; font-size: 15px; color: #86868B;">{timestamp.strftime('%Y年%m月%d日 %H:%M')}</p>
+        <h1 style="margin: 0; font-size: 24px; font-weight: 600; color: #1D1D1F;">{status_text}</h1>
+        <p style="margin: 6px 0 0 0; font-size: 13px; color: #86868B;">{timestamp.strftime('%Y年%m月%d日 %H:%M')}</p>
     </div>
     
     <!-- Statistics Card -->
-    <div style="background: #FFFFFF; border-radius: 18px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
-        <div style="display: flex; justify-content: space-around; text-align: center;">
-            <div>
-                <div style="font-size: 34px; font-weight: 600; color: #007AFF; letter-spacing: -1px;">{len(new_regulations)}</div>
-                <div style="font-size: 13px; color: #86868B; margin-top: 4px;">民航规章</div>
-            </div>
-            <div style="width: 1px; background: #F5F5F7;"></div>
-            <div>
-                <div style="font-size: 34px; font-weight: 600; color: #FF9500; letter-spacing: -1px;">{len(new_normatives)}</div>
-                <div style="font-size: 13px; color: #86868B; margin-top: 4px;">规范性文件</div>
-            </div>
-            <div style="width: 1px; background: #F5F5F7;"></div>
-            <div>
-                <div style="font-size: 34px; font-weight: 600; color: #5856D6; letter-spacing: -1px;">{len(new_standards)}</div>
-                <div style="font-size: 13px; color: #86868B; margin-top: 4px;">标准规范</div>
-            </div>
+    <div style="background: #FFFFFF; border-radius: 16px; padding: 20px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 16px;">
+            {stats_items}
         </div>
     </div>
     
-    {regulations_card}
-    {normatives_card}
-    {standards_card}
+    {category_cards}
     
     <!-- Footer -->
-    <div style="text-align: center; padding: 20px 0;">
-        <p style="font-size: 12px; color: #AEAEB2; margin: 0;">CAAC 规章监控系统 · 自动发送</p>
+    <div style="text-align: center; padding: 16px 0;">
+        <p style="font-size: 11px; color: #AEAEB2; margin: 0;">CAAC 文件监控系统 · 自动发送</p>
     </div>
     
 </div>

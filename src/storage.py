@@ -2,7 +2,7 @@
 """
 State Storage Module
 
-Manages persistent storage and change detection for regulation state.
+Manages persistent storage and change detection for document state.
 """
 
 import json
@@ -14,10 +14,10 @@ from typing import Optional
 
 from loguru import logger
 
-from .crawler import RegulationDocument
+from .crawler import Document, CATEGORIES
 
 
-def filter_by_days(documents: list[RegulationDocument], days: int) -> list[RegulationDocument]:
+def filter_by_days(documents: list[Document], days: int) -> list[Document]:
     """Filter documents by publish date, keep only last N days
     
     Args:
@@ -53,25 +53,37 @@ def filter_by_days(documents: list[RegulationDocument], days: int) -> list[Regul
 class StorageState:
     """Storage state"""
     last_check: str = ""
-    regulations: list[dict] = field(default_factory=list)
-    normatives: list[dict] = field(default_factory=list)
-    standards: list[dict] = field(default_factory=list)
+    documents: dict = field(default_factory=dict)
 
 
 @dataclass
 class ChangeResult:
     """Change detection result"""
-    new_regulations: list[RegulationDocument] = field(default_factory=list)
-    new_normatives: list[RegulationDocument] = field(default_factory=list)
-    new_standards: list[RegulationDocument] = field(default_factory=list)
+    new_documents: dict = field(default_factory=dict)
     
     @property
     def has_changes(self) -> bool:
-        return len(self.new_regulations) > 0 or len(self.new_normatives) > 0 or len(self.new_standards) > 0
+        return any(len(docs) > 0 for docs in self.new_documents.values())
     
     @property
     def total_count(self) -> int:
-        return len(self.new_regulations) + len(self.new_normatives) + len(self.new_standards)
+        return sum(len(docs) for docs in self.new_documents.values())
+    
+    def get_all_documents(self) -> list:
+        """Get all new documents as a flat list"""
+        result = []
+        for docs in self.new_documents.values():
+            result.extend(docs)
+        return result
+    
+    def get_documents_by_category(self) -> dict:
+        """Get new documents grouped by category name"""
+        result = {}
+        for cat_id, docs in self.new_documents.items():
+            if docs:
+                cat_name = CATEGORIES.get(cat_id, f"未知分类({cat_id})")
+                result[cat_name] = docs
+        return result
 
 
 def atomic_write_json(file_path: str, data: dict) -> None:
@@ -97,7 +109,7 @@ def atomic_write_json(file_path: str, data: dict) -> None:
 class Storage:
     """State storage manager"""
 
-    def __init__(self, data_path: str = "data/regulations.json"):
+    def __init__(self, data_path: str = "data/documents.json"):
         self.data_path = data_path
         self._state: Optional[StorageState] = None
 
@@ -117,11 +129,11 @@ class Storage:
             
             self._state = StorageState(
                 last_check=data.get("last_check", ""),
-                regulations=data.get("regulations", []),
-                normatives=data.get("normatives", []),
-                standards=data.get("standards", []),
+                documents=data.get("documents", {}),
             )
-            logger.info(f"State loaded: {len(self._state.regulations)} regulations, {len(self._state.normatives)} normatives, {len(self._state.standards)} standards")
+            
+            total_docs = sum(len(docs) for docs in self._state.documents.values())
+            logger.info(f"State loaded: {total_docs} documents in {len(self._state.documents)} categories")
             return self._state
             
         except json.JSONDecodeError as e:
@@ -144,67 +156,59 @@ class Storage:
         """Save state"""
         data = {
             "last_check": state.last_check,
-            "regulations": state.regulations,
-            "normatives": state.normatives,
-            "standards": state.standards,
+            "documents": state.documents,
         }
         
         atomic_write_json(self.data_path, data)
         self._state = state
-        logger.info(f"State saved: {len(state.regulations)} regulations, {len(state.normatives)} normatives, {len(state.standards)} standards")
+        
+        total_docs = sum(len(docs) for docs in state.documents.values())
+        logger.info(f"State saved: {total_docs} documents in {len(state.documents)} categories")
 
-    def detect_changes(
-        self,
-        current_regulations: list[RegulationDocument],
-        current_normatives: list[RegulationDocument],
-        current_standards: list[RegulationDocument],
-    ) -> ChangeResult:
-        """Detect changes by URL"""
+    def detect_changes(self, current_documents: dict) -> ChangeResult:
+        """Detect changes by URL
+        
+        Args:
+            current_documents: Dictionary mapping category_id to list of documents
+        
+        Returns:
+            ChangeResult with new documents
+        """
         state = self.load()
         
-        known_regulation_urls = {doc["url"] for doc in state.regulations}
-        known_normative_urls = {doc["url"] for doc in state.normatives}
-        known_standard_urls = {doc["url"] for doc in state.standards}
+        new_documents = {}
+        total_new = 0
         
-        new_regulations = [
-            doc for doc in current_regulations
-            if doc.url not in known_regulation_urls
-        ]
+        for cat_id, docs in current_documents.items():
+            known_urls = set()
+            if cat_id in state.documents:
+                known_urls = {doc["url"] for doc in state.documents[cat_id]}
+            
+            new_docs = [doc for doc in docs if doc.url not in known_urls]
+            
+            if new_docs:
+                new_documents[cat_id] = new_docs
+                total_new += len(new_docs)
+                cat_name = CATEGORIES.get(cat_id, cat_id)
+                logger.info(f"New in {cat_name}: {len(new_docs)} documents")
         
-        new_normatives = [
-            doc for doc in current_normatives
-            if doc.url not in known_normative_urls
-        ]
-        
-        new_standards = [
-            doc for doc in current_standards
-            if doc.url not in known_standard_urls
-        ]
-        
-        result = ChangeResult(
-            new_regulations=new_regulations,
-            new_normatives=new_normatives,
-            new_standards=new_standards,
-        )
+        result = ChangeResult(new_documents=new_documents)
         
         if result.has_changes:
-            logger.info(f"Changes detected: {len(new_regulations)} regulations, {len(new_normatives)} normatives, {len(new_standards)} standards")
+            logger.info(f"Total changes detected: {total_new} new documents")
         else:
             logger.info("No changes detected")
         
         return result
 
-    def update_state(
-        self,
-        current_regulations: list[RegulationDocument],
-        current_normatives: list[RegulationDocument],
-        current_standards: list[RegulationDocument],
-    ) -> None:
+    def update_state(self, current_documents: dict) -> None:
         """Update state with current document list"""
+        documents_dict = {}
+        for cat_id, docs in current_documents.items():
+            documents_dict[cat_id] = [doc.to_dict() for doc in docs]
+        
         state = StorageState(
             last_check=datetime.now().isoformat(),
-            regulations=[doc.to_dict() for doc in current_regulations],
-            normatives=[doc.to_dict() for doc in current_normatives],
-            standards=[doc.to_dict() for doc in current_standards],
+            documents=documents_dict,
         )
         self.save(state)
