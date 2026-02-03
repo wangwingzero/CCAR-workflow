@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-02-02T07:46:27.049247",
+  "last_check": "2026-02-03T07:34:50.130656",
   "regulations": [
     {
       "title": "运输类旋翼航空器适航规定",
@@ -1104,6 +1104,17 @@
   ],
   "normatives": [
     {
+      "title": "基于计算机的民用无人驾驶航空器运行控制系统管理办法",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260202_229945.html",
+      "validity": "有效",
+      "doc_number": "AC-92-FS-002",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2026-01-16",
+      "publish_date": "2026-01-16",
+      "pdf_url": ""
+    },
+    {
       "title": "民航飞行学生体能训练与锻炼指南（试行）",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202601/t20260126_229877.html",
       "validity": "有效",
@@ -2190,17 +2201,6 @@
       "doc_type": "normative",
       "sign_date": "2024-09-04",
       "publish_date": "2024-09-04",
-      "pdf_url": ""
-    },
-    {
-      "title": "大型飞机公共航空运输航空卫生工作要求",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202409/t20240905_225291.html",
-      "validity": "有效",
-      "doc_number": "AC-121-FS-101R2",
-      "office_unit": "飞行标准司",
-      "doc_type": "normative",
-      "sign_date": "2024-08-30",
-      "publish_date": "2024-08-30",
       "pdf_url": ""
     }
   ],
