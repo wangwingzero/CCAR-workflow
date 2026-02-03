@@ -74,13 +74,14 @@ class Notifier:
         # Email
         if self.email_user and self.email_pass and self.email_to:
             try:
+                recipients = [addr.strip() for addr in self.email_to.split(",") if addr.strip()]
                 self._send_email(
                     title, 
                     html_content or content, 
                     "html" if html_content else "text",
                     attachments=attachments,
                 )
-                logger.success(f"[Email] Push succeeded -> {self.email_to}")
+                logger.success(f"[Email] Push succeeded -> {', '.join(recipients)}")
                 results["Email"] = True
             except Exception as e:
                 logger.error(f"[Email] Push failed: {e}")
@@ -154,8 +155,11 @@ class Notifier:
                 except Exception as e:
                     logger.warning(f"Failed to add attachment {file_path}: {e}")
         
+        # Support multiple recipients (comma-separated)
+        recipients = [addr.strip() for addr in self.email_to.split(",") if addr.strip()]
+        
         msg["From"] = formataddr((Header(self.email_sender, "utf-8").encode(), self.email_user))
-        msg["To"] = self.email_to
+        msg["To"] = ", ".join(recipients)
         msg["Subject"] = Header(title, "utf-8")
         
         domain = self.email_user.split("@")[1]
@@ -163,7 +167,7 @@ class Notifier:
         
         with smtplib.SMTP_SSL(smtp_server, 465) as server:
             server.login(self.email_user, self.email_pass)
-            server.sendmail(self.email_user, [self.email_to], msg.as_string())
+            server.sendmail(self.email_user, recipients, msg.as_string())
 
     def _send_pushplus(
         self,
