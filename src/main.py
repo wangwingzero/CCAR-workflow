@@ -53,7 +53,7 @@ def parse_args() -> argparse.Namespace:
         type=int,
         default=default_days,
         metavar="N",
-        help="Only send documents from last N days (default: detect new with 30-day limit)",
+        help="Send documents from last N days; 0 or unset = incremental (detect new, 30-day cap)",
     )
     parser.add_argument(
         "--categories",
@@ -86,9 +86,9 @@ def parse_args() -> argparse.Namespace:
         "--notify",
         type=int,
         choices=[0, 1],
-        default=0,
+        default=1,
         metavar="0|1",
-        help="Force send notification: 0=normal (default), 1=force send even if no new documents",
+        help="Force send notification: 0=only when new, 1=send even if no new (default)",
     )
     parser.add_argument(
         "--perpage",
@@ -152,7 +152,7 @@ def main() -> int:
     exit_code = 0
     
     try:
-        storage = Storage("data/documents.json")
+        storage = Storage("data/regulations.json")
         
         with CaacCrawler() as crawler, Notifier() as notifier:
             # 1. Crawl document list from all categories

@@ -109,7 +109,7 @@ def atomic_write_json(file_path: str, data: dict) -> None:
 class Storage:
     """State storage manager"""
 
-    def __init__(self, data_path: str = "data/documents.json"):
+    def __init__(self, data_path: str = "data/regulations.json"):
         self.data_path = data_path
         self._state: Optional[StorageState] = None
 
