@@ -19,6 +19,7 @@ downloads/
 .vscode/
 *.swp
 *.swo
+AGENTS.md
 
 # OS
 .DS_Store
@@ -29,3 +30,6 @@ Thumbs.db
 
 # Personal notes
 说明/
+机场司/
+日志/
+

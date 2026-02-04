@@ -1,5 +1,6 @@
 # Repository Guidelines
 
+## 始终使用中文进行交流
 ## Project Structure & Module Organization
 
 - `src/` holds the Python package: `main.py` (entry point), `crawler.py`, `notifier.py`, `storage.py`.
