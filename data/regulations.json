@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-02-05T07:49:39.223168",
+  "last_check": "2026-02-06T07:45:26.623077",
   "documents": {
     "9": [
+      {
+        "title": "全国通用航空企业经营许可信息（2026年1月）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229983.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-02-05",
+        "publish_date": "2026-02-05",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "关于公示交通运输英才工程技术能手民航行业拟推荐对象名单的通知",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229985.html",
@@ -14,19 +27,6 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "全国通用航空企业经营许可信息（2026年1月）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229983.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2026-02-05",
-        "publish_date": "2026-02-05",
-        "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/P020260205358193520731.pdf",
-        "has_pdf": true
       },
       {
         "title": "关于2026年度中国青年五四奖章暨新时代青年先锋奖拟推报对象的公示",
@@ -63,19 +63,6 @@
         "office_unit": "",
         "sign_date": "2026-02-02",
         "publish_date": "2026-02-02",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于普通高等教育本科国家级规划教材拟推荐名单的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202601/t20260130_229931.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2026-01-30",
-        "publish_date": "2026-01-30",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -648,6 +635,19 @@
         "office_unit": "",
         "sign_date": "2025-10-13",
         "publish_date": "2025-10-13",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "关于2026年民航发展基金相关补贴资金预算方案的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202510/t20251011_228782.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2025-10-11",
+        "publish_date": "2025-10-11",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -3225,6 +3225,19 @@
     ],
     "14": [
       {
+        "title": "最后进近阶段相关飞行技术",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260206_229996.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "IB-FS-OPS-019",
+        "office_unit": "飞行标准司",
+        "sign_date": "2026-01-29",
+        "publish_date": "2026-01-29",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260206407674505103.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "基于计算机的民用无人驾驶航空器运行控制系统管理办法",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260202_229945.html",
         "category": "规范性文件",
@@ -3857,19 +3870,6 @@
         "office_unit": "飞行标准司",
         "sign_date": "2025-03-27",
         "publish_date": "2025-03-27",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民航数据共享管理办法（试行）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202503/t20250331_227079.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "",
-        "office_unit": "发展计划司",
-        "sign_date": "2025-03-24",
-        "publish_date": "2025-03-24",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -6967,8 +6967,8 @@
     "27": [],
     "28": [
       {
-        "title": "关于公示交通运输英才工程技术能手民航行业拟推荐对象名单的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229985.html",
+        "title": "全国通用航空企业经营许可信息（2026年1月）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229983.html",
         "category": "建议提案答复",
         "category_id": "28",
         "doc_number": "",
@@ -6980,8 +6980,8 @@
         "has_pdf": false
       },
       {
-        "title": "全国通用航空企业经营许可信息（2026年1月）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229983.html",
+        "title": "关于公示交通运输英才工程技术能手民航行业拟推荐对象名单的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229985.html",
         "category": "建议提案答复",
         "category_id": "28",
         "doc_number": "",
@@ -6989,8 +6989,8 @@
         "sign_date": "2026-02-05",
         "publish_date": "2026-02-05",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/P020260205358193520731.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "关于2026年度中国青年五四奖章暨新时代青年先锋奖拟推报对象的公示",
@@ -7027,19 +7027,6 @@
         "office_unit": "",
         "sign_date": "2026-02-02",
         "publish_date": "2026-02-02",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于普通高等教育本科国家级规划教材拟推荐名单的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202601/t20260130_229931.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2026-01-30",
-        "publish_date": "2026-01-30",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -7612,6 +7599,19 @@
         "office_unit": "",
         "sign_date": "2025-10-13",
         "publish_date": "2025-10-13",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "关于2026年民航发展基金相关补贴资金预算方案的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202510/t20251011_228782.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2025-10-11",
+        "publish_date": "2025-10-11",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
