@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-02-07T07:31:17.345916",
+  "last_check": "2026-02-08T07:37:51.765685",
   "documents": {
     "9": [
       {
@@ -3886,8 +3886,8 @@
         "sign_date": "2026-01-30",
         "publish_date": "2026-01-30",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202602/P020260206560854931308.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "民用无人驾驶航空器降落伞系统规范",
