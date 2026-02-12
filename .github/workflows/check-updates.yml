@@ -9,6 +9,54 @@ on:
     #   Beijing 20:00 → UTC 12:00 → cron: '0 12 * * *'
     - cron: '0 7 * * *'
   workflow_dispatch:  # Allow manual trigger
+    inputs:
+      categories:
+        description: |
+          要监控的分类ID（逗号分隔），留空 = 全部分类
+          ┌─────┬──────────────────┐
+          │ ID  │ 分类名称         │
+          ├─────┼──────────────────┤
+          │  9  │ 通知公告         │
+          │ 10  │ 政策发布         │
+          │ 11  │ 政策解读         │
+          │ 12  │ 统计数据         │
+          │ 47  │ 法律法规         │
+          │ 13  │ 民航规章         │
+          │ 14  │ 规范性文件       │
+          │ 15  │ 标准规范         │
+          │ 16  │ 对外关系         │
+          │ 17  │ 港澳台合作       │
+          │ 18  │ 国际公约         │
+          │ 19  │ 人事信息         │
+          │ 20  │ 财政信息         │
+          │ 21  │ 发展规划         │
+          │ 22  │ 重大项目         │
+          │ 23  │ 行政权力         │
+          │ 24  │ 政府公文         │
+          │ 25  │ 机构职能         │
+          │ 26  │ 对外政策         │
+          │ 27  │ 执法典型案例     │
+          │ 28  │ 建议提案答复     │
+          │ 29  │ 政府网站年度报表 │
+          └─────┴──────────────────┘
+          示例: 9,13,14,15
+        required: false
+        type: string
+        default: ''
+      days:
+        description: |
+          发送最近 N 天内的文件（0 或留空 = 增量检测新文件）
+        required: false
+        type: string
+        default: ''
+      notify:
+        description: '是否强制发送通知: 1=始终发送, 0=仅有新文件时发送'
+        required: false
+        type: choice
+        options:
+          - '1'
+          - '0'
+        default: '1'
 
 # Prevent concurrent runs
 concurrency:
@@ -51,7 +99,8 @@ jobs:
           PLAYWRIGHT_TIMEOUT: "60000"
           
           # Send regulations from last N days (empty = detect new)
-          DAYS: ${{ secrets.DAYS }}
+          # 手动触发时优先用 github.event.inputs，定时任务用 secrets
+          DAYS: ${{ github.event.inputs.days || secrets.DAYS }}
           
           # Notification - Email
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
@@ -66,13 +115,36 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          uv run python -m src.main --notify ${{ secrets.NOTIFY || '1' }}
+          # 构建命令参数
+          CMD=(uv run python -m src.main)
+
+          # --categories: 手动触发时用 github.event.inputs，定时任务用 secrets（都可选）
+          CATS="${{ github.event.inputs.categories || secrets.CATEGORIES }}"
+          if [ -n "$CATS" ]; then
+            CMD+=(--categories "$CATS")
+          fi
+
+          # --notify: 手动触发时用 github.event.inputs，定时任务用 secrets
+          CMD+=(--notify "${{ github.event.inputs.notify || secrets.NOTIFY || '1' }}")
+
+          # 固定每个分类抓取条数，提高 JS 更新覆盖率
+          CMD+=(--perpage 200)
+
+          echo "Running: ${CMD[*]}"
+          "${CMD[@]}"
       
       - name: Commit state update
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add data/regulations.json
+          if [ -d JS ]; then
+            shopt -s nullglob
+            js_files=(JS/*.js)
+            if [ ${#js_files[@]} -gt 0 ]; then
+              git add "${js_files[@]}"
+            fi
+          fi
           git diff --staged --quiet || git commit -m "chore: update regulation state $(date +'%Y-%m-%d')"
           git push
       
