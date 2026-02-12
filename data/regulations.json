@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-02-12T07:52:03.918817",
+  "last_check": "2026-02-12T16:45:58.823376",
   "documents": {
     "9": [
       {
@@ -655,6 +655,19 @@
     ],
     "10": [
       {
+        "title": "发布丨国家发展改革委 金融监管总局 中国民航局关于推动低空保险高质量发展的实施意见",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202602/t20260212_230056.html",
+        "category": "政策发布",
+        "category_id": "10",
+        "doc_number": "发改低空〔2026〕123号",
+        "office_unit": "运输司",
+        "sign_date": "2026-02-12",
+        "publish_date": "2026-02-12",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "发布丨民航局关于修订《民航工程建设行业标准管理办法》的通知",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202601/t20260114_229754.html",
         "category": "政策发布",
@@ -1287,19 +1300,6 @@
         "office_unit": "发展计划司",
         "sign_date": "2017-02-28",
         "publish_date": "2017-02-28",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "发布 | 通用航空“十三五”发展规划",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/201702/t20170217_42570.html",
-        "category": "政策发布",
-        "category_id": "10",
-        "doc_number": "",
-        "office_unit": "运输司",
-        "sign_date": "2017-02-17",
-        "publish_date": "2017-02-17",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -3234,8 +3234,8 @@
         "sign_date": "2026-02-12",
         "publish_date": "2026-02-12",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260212323275569079.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "最后进近阶段相关飞行技术",
@@ -3260,8 +3260,8 @@
         "sign_date": "2026-01-27",
         "publish_date": "2026-01-27",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260204582783346318.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "基于计算机的民用无人驾驶航空器运行控制系统管理办法",
