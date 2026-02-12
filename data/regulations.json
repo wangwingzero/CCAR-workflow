@@ -1,23 +1,36 @@
 {
-  "last_check": "2026-02-11T07:55:16.504322",
+  "last_check": "2026-02-12T07:52:03.918817",
   "documents": {
     "9": [
       {
-        "title": "全国通用航空企业经营许可信息（2026年1月）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229983.html",
+        "title": "关于大连润宇空港建设工程有限公司等1家资质企业追加动态核查核定意见的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230042.html",
         "category": "通知公告",
         "category_id": "9",
         "doc_number": "",
         "office_unit": "",
-        "sign_date": "2026-02-05",
-        "publish_date": "2026-02-05",
+        "sign_date": "2026-02-11",
+        "publish_date": "2026-02-11",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
       },
       {
-        "title": "关于公示交通运输英才工程技术能手民航行业拟推荐对象名单的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229985.html",
+        "title": "关于浩邦建设集团有限公司等3家资质企业追加动态核查核定结论的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230043.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-02-11",
+        "publish_date": "2026-02-11",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "全国通用航空企业经营许可信息（2026年1月）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229983.html",
         "category": "通知公告",
         "category_id": "9",
         "doc_number": "",
@@ -89,19 +102,6 @@
         "office_unit": "",
         "sign_date": "2026-01-29",
         "publish_date": "2026-01-29",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "全天候运行规定",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260203_229954.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "AC-91-FS/CA/TM-2026-16R2",
-        "office_unit": "",
-        "sign_date": "2026-01-27",
-        "publish_date": "2026-02-03",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -3225,6 +3225,19 @@
     ],
     "14": [
       {
+        "title": "《循证证训练（EBT）实施管理规定》",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-121-FS-138R2",
+        "office_unit": "",
+        "sign_date": "2026-02-12",
+        "publish_date": "2026-02-12",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260212323275569079.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "最后进近阶段相关飞行技术",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260206_229996.html",
         "category": "规范性文件",
@@ -3236,6 +3249,19 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
+      },
+      {
+        "title": "全天候运行规定",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260203_229954.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-91-FS/CA/TM-2026-16R2",
+        "office_unit": "飞行标准司",
+        "sign_date": "2026-01-27",
+        "publish_date": "2026-01-27",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260204582783346318.pdf",
+        "has_pdf": true
       },
       {
         "title": "基于计算机的民用无人驾驶航空器运行控制系统管理办法",
@@ -3844,32 +3870,6 @@
         "office_unit": "飞行标准司",
         "sign_date": "2025-04-21",
         "publish_date": "2025-04-21",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "基于性能导航（PBN）运行和批准指南",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202504/t20250407_227123.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AC-91-FS-001R2",
-        "office_unit": "飞行标准司",
-        "sign_date": "2025-04-02",
-        "publish_date": "2025-04-02",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "飞行学生心理健康工作管理办法",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202504/t20250410_227149.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "MD-141-FS-101",
-        "office_unit": "飞行标准司",
-        "sign_date": "2025-03-27",
-        "publish_date": "2025-03-27",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -6967,21 +6967,34 @@
     "27": [],
     "28": [
       {
-        "title": "全国通用航空企业经营许可信息（2026年1月）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229983.html",
+        "title": "关于大连润宇空港建设工程有限公司等1家资质企业追加动态核查核定意见的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230042.html",
         "category": "建议提案答复",
         "category_id": "28",
         "doc_number": "",
         "office_unit": "",
-        "sign_date": "2026-02-05",
-        "publish_date": "2026-02-05",
+        "sign_date": "2026-02-11",
+        "publish_date": "2026-02-11",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
       },
       {
-        "title": "关于公示交通运输英才工程技术能手民航行业拟推荐对象名单的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229985.html",
+        "title": "关于浩邦建设集团有限公司等3家资质企业追加动态核查核定结论的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230043.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-02-11",
+        "publish_date": "2026-02-11",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "全国通用航空企业经营许可信息（2026年1月）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260205_229983.html",
         "category": "建议提案答复",
         "category_id": "28",
         "doc_number": "",
@@ -7053,19 +7066,6 @@
         "office_unit": "",
         "sign_date": "2026-01-29",
         "publish_date": "2026-01-29",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "全天候运行规定",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260203_229954.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "AC-91-FS/CA/TM-2026-16R2",
-        "office_unit": "",
-        "sign_date": "2026-01-27",
-        "publish_date": "2026-02-03",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
