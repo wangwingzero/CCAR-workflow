@@ -7,14 +7,41 @@ Manages persistent storage and change detection for document state.
 
 import json
 import os
+import re
 import tempfile
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
-from typing import Optional
+from pathlib import Path
+from typing import Any, Optional
 
 from loguru import logger
 
-from .crawler import Document, CATEGORIES
+from .crawler import CATEGORIES, Document, get_legacy_doc_type
+
+
+LEGACY_STATE_KEYS = {
+    "13": "regulations",
+    "14": "normatives",
+    "15": "standards",
+}
+
+JS_EXPORT_CONFIG = {
+    "13": {
+        "filename": "regulation.js",
+        "export_name": "regulationData",
+        "doc_type": "CCAR规章",
+    },
+    "14": {
+        "filename": "normative.js",
+        "export_name": "normativeData",
+        "doc_type": "规范性文件",
+    },
+    "15": {
+        "filename": "specification.js",
+        "export_name": "standardData",
+        "doc_type": "标准规范",
+    },
+}
 
 
 def filter_by_days(documents: list[Document], days: int) -> list[Document]:
@@ -106,6 +133,160 @@ def atomic_write_json(file_path: str, data: dict) -> None:
         raise
 
 
+def _normalize_documents(raw_documents: dict[Any, Any]) -> dict[str, list[dict]]:
+    """Normalize loaded state documents"""
+    normalized = {}
+    for cat_id, docs in raw_documents.items():
+        if isinstance(docs, list):
+            normalized[str(cat_id)] = docs
+    return normalized
+
+
+def _load_legacy_documents(data: dict) -> dict[str, list[dict]]:
+    """Load legacy state format to category-id keyed documents"""
+    documents = {}
+    for cat_id, state_key in LEGACY_STATE_KEYS.items():
+        docs = data.get(state_key)
+        if isinstance(docs, list):
+            documents[cat_id] = docs
+
+    for cat_id in CATEGORIES:
+        docs = data.get(cat_id)
+        if isinstance(docs, list):
+            documents[cat_id] = docs
+
+    return documents
+
+
+def _build_legacy_record(doc: dict, cat_id: str) -> dict:
+    """Build legacy record format for backward compatibility"""
+    return {
+        "title": doc.get("title", ""),
+        "url": doc.get("url", ""),
+        "validity": doc.get("validity", ""),
+        "doc_number": doc.get("doc_number", ""),
+        "office_unit": doc.get("office_unit", ""),
+        "doc_type": get_legacy_doc_type(cat_id),
+        "sign_date": doc.get("sign_date", ""),
+        "publish_date": doc.get("publish_date", ""),
+        "pdf_url": doc.get("pdf_url", ""),
+    }
+
+
+def _format_js_date(date_str: str) -> str:
+    """Format date to JS output style (YYYY年MM月DD日)"""
+    value = (date_str or "").strip()
+    if not value:
+        return ""
+
+    iso_match = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", value)
+    if iso_match:
+        year, month, day = iso_match.groups()
+        return f"{year}年{month}月{day}日"
+
+    cn_match = re.fullmatch(r"(\d{4})年(\d{1,2})月(\d{1,2})日", value)
+    if cn_match:
+        year, month, day = cn_match.groups()
+        return f"{year}年{month.zfill(2)}月{day.zfill(2)}日"
+
+    return value
+
+
+def _read_js_data(file_path: Path) -> list[dict]:
+    """Read JS data array from file"""
+    if not file_path.exists():
+        return []
+
+    try:
+        content = file_path.read_text(encoding="utf-8")
+    except Exception as e:
+        logger.warning(f"Failed to read JS file {file_path}: {e}")
+        return []
+
+    marker_pos = content.find("var data")
+    if marker_pos < 0:
+        logger.warning(f"Invalid JS format, missing 'var data': {file_path}")
+        return []
+
+    list_start = content.find("[", marker_pos)
+    list_end = content.rfind("];")
+    if list_start < 0 or list_end < list_start:
+        logger.warning(f"Invalid JS format, missing array section: {file_path}")
+        return []
+
+    try:
+        parsed = json.loads(content[list_start:list_end + 1])
+    except json.JSONDecodeError as e:
+        logger.warning(f"Failed to parse JS data array from {file_path}: {e}")
+        return []
+
+    if not isinstance(parsed, list):
+        return []
+    return [item for item in parsed if isinstance(item, dict)]
+
+
+def _write_js_data(file_path: Path, records: list[dict], export_name: str) -> None:
+    """Write JS module with stable format"""
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    serialized = json.dumps(records, ensure_ascii=False, indent=2)
+    content = (
+        f"var data = {serialized};\n\n"
+        f"module.exports = {{\n"
+        f"  {export_name}: data\n"
+        f"}};\n"
+    )
+    file_path.write_text(content, encoding="utf-8")
+
+
+def _build_regulation_record(doc: Document, doc_type: str) -> dict:
+    """Build regulation JS record"""
+    return {
+        "title": doc.title or "",
+        "url": doc.url or "",
+        "doc_type": doc_type,
+        "validity": doc.validity or "",
+        "doc_number": doc.doc_number or "",
+        "office_unit": doc.office_unit or "",
+    }
+
+
+def _build_normative_record(doc: Document, doc_type: str, cached_file_number: str) -> dict:
+    """Build normative JS record"""
+    record = {
+        "title": doc.title or "",
+        "url": doc.url or "",
+        "doc_type": doc_type,
+        "validity": doc.validity or "",
+        "sign_date": _format_js_date(doc.sign_date),
+        "publish_date": _format_js_date(doc.publish_date),
+        "doc_number": doc.doc_number or "",
+    }
+
+    office_unit = (doc.office_unit or "").strip()
+    if office_unit:
+        record["office_unit"] = office_unit
+
+    if cached_file_number:
+        file_number = cached_file_number
+    else:
+        file_number = f"文号：{doc.doc_number}" if doc.doc_number else ""
+    record["file_number"] = file_number
+    return record
+
+
+def _build_standard_record(doc: Document, doc_type: str) -> dict:
+    """Build standard JS record"""
+    return {
+        "title": doc.title or "",
+        "url": doc.url or "",
+        "doc_type": doc_type,
+        "validity": doc.validity or "",
+        "publish_date": _format_js_date(doc.publish_date),
+        "doc_number": doc.doc_number or "",
+        "office_unit": doc.office_unit or "",
+    }
+
+
 class Storage:
     """State storage manager"""
 
@@ -126,10 +307,14 @@ class Storage:
         try:
             with open(self.data_path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
-            
+
+            loaded_documents = data.get("documents", {})
+            if not isinstance(loaded_documents, dict) or not loaded_documents:
+                loaded_documents = _load_legacy_documents(data)
+
             self._state = StorageState(
                 last_check=data.get("last_check", ""),
-                documents=data.get("documents", {}),
+                documents=_normalize_documents(loaded_documents),
             )
             
             total_docs = sum(len(docs) for docs in self._state.documents.values())
@@ -158,6 +343,13 @@ class Storage:
             "last_check": state.last_check,
             "documents": state.documents,
         }
+
+        for cat_id, state_key in LEGACY_STATE_KEYS.items():
+            docs = state.documents.get(cat_id, [])
+            if not isinstance(docs, list):
+                docs = []
+            legacy_docs = [_build_legacy_record(doc, cat_id) for doc in docs if isinstance(doc, dict)]
+            data[state_key] = legacy_docs
         
         atomic_write_json(self.data_path, data)
         self._state = state
@@ -182,7 +374,13 @@ class Storage:
         for cat_id, docs in current_documents.items():
             known_urls = set()
             if cat_id in state.documents:
-                known_urls = {doc["url"] for doc in state.documents[cat_id]}
+                for known_doc in state.documents[cat_id]:
+                    if isinstance(known_doc, dict):
+                        known_url = known_doc.get("url", "")
+                    else:
+                        known_url = getattr(known_doc, "url", "")
+                    if known_url:
+                        known_urls.add(known_url)
             
             new_docs = [doc for doc in docs if doc.url not in known_urls]
             
@@ -212,3 +410,64 @@ class Storage:
             documents=documents_dict,
         )
         self.save(state)
+
+    def sync_js_files(self, current_documents: dict[str, list[Document]], js_dir: str = "JS") -> dict[str, int]:
+        """Sync JS data files for 13/14/15 categories"""
+        js_root = Path(js_dir)
+        summary = {}
+
+        normative_cfg = JS_EXPORT_CONFIG["14"]
+        normative_path = js_root / normative_cfg["filename"]
+        existing_normative_data = _read_js_data(normative_path)
+        existing_file_number_by_url = {}
+        for row in existing_normative_data:
+            url = str(row.get("url", "")).strip()
+            file_number = str(row.get("file_number", "")).strip()
+            if url and file_number:
+                existing_file_number_by_url[url] = file_number
+
+        for cat_id, config in JS_EXPORT_CONFIG.items():
+            file_path = js_root / config["filename"]
+            export_name = config["export_name"]
+            doc_type = config["doc_type"]
+            docs = current_documents.get(cat_id)
+            cat_name = CATEGORIES.get(cat_id, cat_id)
+            existing_rows = _read_js_data(file_path)
+
+            if not docs:
+                if existing_rows:
+                    reason = "未抓取该分类" if docs is None else "该分类本次抓取为空"
+                    logger.warning(f"{cat_name}: {reason}，保留现有 JS 文件 {file_path}")
+                    summary[file_path.name] = len(existing_rows)
+                    continue
+
+                logger.warning(f"{cat_name}: 无可用数据，写入空 JS 文件 {file_path}")
+                _write_js_data(file_path, [], export_name)
+                summary[file_path.name] = 0
+                continue
+
+            if cat_id == "13":
+                records = [_build_regulation_record(doc, doc_type) for doc in docs]
+            elif cat_id == "14":
+                records = [
+                    _build_normative_record(doc, doc_type, existing_file_number_by_url.get(doc.url, ""))
+                    for doc in docs
+                ]
+            else:
+                records = [_build_standard_record(doc, doc_type) for doc in docs]
+
+            # Keep existing history to avoid truncating JS when perpage is small.
+            seen_urls = {row.get("url", "") for row in records if row.get("url")}
+            merged_records = records + [
+                row for row in existing_rows
+                if not row.get("url") or row.get("url") not in seen_urls
+            ]
+
+            _write_js_data(file_path, merged_records, export_name)
+            summary[file_path.name] = len(merged_records)
+            logger.info(
+                f"JS updated: {file_path} "
+                f"(new={len(records)}, kept={len(merged_records) - len(records)}, total={len(merged_records)})"
+            )
+
+        return summary

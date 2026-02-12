@@ -156,7 +156,7 @@ def main() -> int:
         
         with CaacCrawler() as crawler, Notifier() as notifier:
             # 1. Crawl document list from all categories
-            logger.info("Step 1/5: Crawling document list...")
+            logger.info("Step 1/6: Crawling document list...")
             all_documents = crawler.fetch_all_categories(category_ids, args.perpage)
             
             total_docs = sum(len(docs) for docs in all_documents.values())
@@ -165,9 +165,16 @@ def main() -> int:
                 return 1
             
             logger.info(f"Fetch complete: {total_docs} documents from {len(all_documents)} categories")
+
+            # 2. Sync JS files for categories 13/14/15
+            logger.info("Step 2/6: Syncing JS data files...")
+            js_summary = storage.sync_js_files(all_documents, "JS")
+            if js_summary:
+                summary_text = ", ".join(f"{name}={count}" for name, count in js_summary.items())
+                logger.info(f"JS sync complete: {summary_text}")
             
-            # 2. Detect changes or filter by days
-            logger.info("Step 2/5: Filtering documents...")
+            # 3. Detect changes or filter by days
+            logger.info("Step 3/6: Filtering documents...")
             
             DEFAULT_MAX_DAYS = 30
             
@@ -229,7 +236,7 @@ def main() -> int:
             # 3. Download PDFs (optional)
             downloaded_files: list[str] = []
             if not args.no_download:
-                logger.info("Step 3/5: Downloading PDFs...")
+                logger.info("Step 4/6: Downloading PDFs...")
                 download_dir = "downloads"
                 os.makedirs(download_dir, exist_ok=True)
                 
@@ -250,11 +257,11 @@ def main() -> int:
                 
                 logger.info(f"Download complete: {downloaded_count}/{len(all_target_docs)} files with PDF")
             else:
-                logger.info("Step 3/5: Skipping PDF download")
+                logger.info("Step 4/6: Skipping PDF download")
             
-            # 4. Send notification
+            # 5. Send notification
             if not args.no_notify:
-                logger.info("Step 4/5: Sending notifications...")
+                logger.info("Step 5/6: Sending notifications...")
                 
                 # Group by category name for notification
                 docs_by_category = {}
@@ -280,10 +287,11 @@ def main() -> int:
                         logger.warning("All notification channels failed")
                         exit_code = 1
             else:
-                logger.info("Step 4/5: Skipping notifications")
+                logger.info("Step 5/6: Skipping notifications")
             
-            # 5. Update state
+            # 6. Update state
             if not args.days and not args.dry_run:
+                logger.info("Step 6/6: Updating state file...")
                 storage.update_state(all_documents)
             
             total_target = sum(len(docs) for docs in target_documents.values())
