@@ -12,7 +12,7 @@ ENV/
 uv.lock
 
 # Downloads
-downloads/
+# tracked in git for incremental archive
 
 # IDE
 .idea/

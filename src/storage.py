@@ -43,6 +43,15 @@ JS_EXPORT_CONFIG = {
     },
 }
 
+TRACKED_CHANGE_FIELDS = (
+    "title",
+    "doc_number",
+    "validity",
+    "office_unit",
+    "sign_date",
+    "publish_date",
+)
+
 
 def filter_by_days(documents: list[Document], days: int) -> list[Document]:
     """Filter documents by publish date, keep only last N days
@@ -87,14 +96,31 @@ class StorageState:
 class ChangeResult:
     """Change detection result"""
     new_documents: dict = field(default_factory=dict)
+    updated_documents: dict = field(default_factory=dict)
     
     @property
     def has_changes(self) -> bool:
-        return any(len(docs) > 0 for docs in self.new_documents.values())
+        return self.new_count > 0 or self.updated_count > 0
+
+    @property
+    def has_new_documents(self) -> bool:
+        return self.new_count > 0
+
+    @property
+    def has_updated_documents(self) -> bool:
+        return self.updated_count > 0
+
+    @property
+    def new_count(self) -> int:
+        return sum(len(docs) for docs in self.new_documents.values())
+
+    @property
+    def updated_count(self) -> int:
+        return sum(len(docs) for docs in self.updated_documents.values())
     
     @property
     def total_count(self) -> int:
-        return sum(len(docs) for docs in self.new_documents.values())
+        return self.new_count + self.updated_count
     
     def get_all_documents(self) -> list:
         """Get all new documents as a flat list"""
@@ -171,6 +197,20 @@ def _build_legacy_record(doc: dict, cat_id: str) -> dict:
         "publish_date": doc.get("publish_date", ""),
         "pdf_url": doc.get("pdf_url", ""),
     }
+
+
+def _doc_field_value(doc_data: Any, field_name: str) -> str:
+    """Read a normalized string field from dict or object"""
+    if isinstance(doc_data, dict):
+        value = doc_data.get(field_name, "")
+    else:
+        value = getattr(doc_data, field_name, "")
+    return str(value or "").strip()
+
+
+def _doc_signature(doc_data: Any) -> tuple[str, ...]:
+    """Build a comparable signature for change detection"""
+    return tuple(_doc_field_value(doc_data, name) for name in TRACKED_CHANGE_FIELDS)
 
 
 def _format_js_date(date_str: str) -> str:
@@ -292,6 +332,7 @@ class Storage:
 
     def __init__(self, data_path: str = "data/regulations.json"):
         self.data_path = data_path
+        self.download_index_path = str(Path(data_path).with_name("downloads.json"))
         self._state: Optional[StorageState] = None
 
     def load(self) -> StorageState:
@@ -369,35 +410,87 @@ class Storage:
         state = self.load()
         
         new_documents = {}
-        total_new = 0
-        
+        updated_documents = {}
+
         for cat_id, docs in current_documents.items():
-            known_urls = set()
-            if cat_id in state.documents:
-                for known_doc in state.documents[cat_id]:
-                    if isinstance(known_doc, dict):
-                        known_url = known_doc.get("url", "")
-                    else:
-                        known_url = getattr(known_doc, "url", "")
-                    if known_url:
-                        known_urls.add(known_url)
-            
-            new_docs = [doc for doc in docs if doc.url not in known_urls]
-            
+            known_by_url = {}
+            for known_doc in state.documents.get(cat_id, []):
+                known_url = _doc_field_value(known_doc, "url")
+                if known_url:
+                    known_by_url[known_url] = known_doc
+
+            new_docs = []
+            changed_docs = []
+
+            for doc in docs:
+                known_doc = known_by_url.get(doc.url)
+                if known_doc is None:
+                    new_docs.append(doc)
+                elif _doc_signature(known_doc) != _doc_signature(doc):
+                    changed_docs.append(doc)
+
             if new_docs:
                 new_documents[cat_id] = new_docs
-                total_new += len(new_docs)
                 cat_name = CATEGORIES.get(cat_id, cat_id)
                 logger.info(f"New in {cat_name}: {len(new_docs)} documents")
+
+            if changed_docs:
+                updated_documents[cat_id] = changed_docs
+                cat_name = CATEGORIES.get(cat_id, cat_id)
+                logger.info(f"Updated in {cat_name}: {len(changed_docs)} documents")
         
-        result = ChangeResult(new_documents=new_documents)
+        result = ChangeResult(
+            new_documents=new_documents,
+            updated_documents=updated_documents,
+        )
         
         if result.has_changes:
-            logger.info(f"Total changes detected: {total_new} new documents")
+            logger.info(
+                f"Total changes detected: new={result.new_count}, "
+                f"updated={result.updated_count}, total={result.total_count}"
+            )
         else:
             logger.info("No changes detected")
         
         return result
+
+    def load_download_index(self) -> dict[str, dict]:
+        """Load URL -> local file path index for downloaded files"""
+        if not os.path.exists(self.download_index_path):
+            return {}
+
+        try:
+            with open(self.download_index_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            raw_records = data.get("records", data) if isinstance(data, dict) else {}
+            if not isinstance(raw_records, dict):
+                return {}
+
+            records: dict[str, dict] = {}
+            for url, record in raw_records.items():
+                if not isinstance(url, str) or not isinstance(record, dict):
+                    continue
+                rel_path = str(record.get("relative_path", "")).strip()
+                if not rel_path:
+                    continue
+                records[url] = {
+                    "relative_path": rel_path,
+                    "updated_at": str(record.get("updated_at", "")).strip(),
+                }
+            return records
+        except Exception as e:
+            logger.warning(f"Failed to load download index {self.download_index_path}: {e}")
+            return {}
+
+    def save_download_index(self, records: dict[str, dict]) -> None:
+        """Save URL -> local file path index"""
+        payload = {
+            "last_update": datetime.now().isoformat(),
+            "records": records,
+        }
+        atomic_write_json(self.download_index_path, payload)
+        logger.info(f"Download index saved: {len(records)} entries")
 
     def update_state(self, current_documents: dict) -> None:
         """Update state with current document list"""

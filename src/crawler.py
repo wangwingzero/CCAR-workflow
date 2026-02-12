@@ -9,9 +9,11 @@ Supports all categories under "法定主动公开内容".
 import random
 import re
 import time
+from datetime import datetime
 from dataclasses import dataclass, asdict
+import os
 from typing import Optional
-from urllib.parse import urljoin, quote
+from urllib.parse import urljoin
 
 import httpx
 from bs4 import BeautifulSoup
@@ -52,6 +54,12 @@ CATEGORIES = {
     "29": "政府网站年度报表",
 }
 
+DOWNLOAD_SUBDIRS = {
+    "13": "regulation",
+    "14": "normative",
+    "15": "specification",
+}
+
 
 @dataclass
 class Document:
@@ -90,11 +98,11 @@ class Document:
         )
 
 
-def generate_filename(document: Document) -> str:
-    """Generate PDF filename
+def generate_filename(document: Document, extension: str = ".pdf") -> str:
+    """Generate local filename
     
-    Format: [{category}]{doc_number}{title}.pdf
-    Invalid documents get "失效!" prefix
+    Format: {validity!}{doc_number}{title}{ext}
+    Validity prefix is only added when validity is not "有效".
     """
     def sanitize(text: str) -> str:
         """Replace illegal filename characters"""
@@ -103,27 +111,39 @@ def generate_filename(document: Document) -> str:
     parts = []
 
     validity = document.validity.strip()
-    if validity in ("失效", "废止"):
-        parts.append("失效!")
-
-    # Add category prefix
-    category = sanitize(document.category.strip())
-    if category:
-        parts.append(f"[{category}]")
+    if validity and validity != "有效":
+        parts.append(f"{sanitize(validity)}!")
 
     doc_number = sanitize(document.doc_number.strip())
     if doc_number:
         parts.append(doc_number)
 
     title = sanitize(document.title.strip())
-    parts.append(title)
+    parts.append(title or "未命名文件")
 
-    filename = "".join(parts) + ".pdf"
+    ext = extension.strip()
+    if ext and not ext.startswith("."):
+        ext = f".{ext}"
+    ext_tail = ext.lstrip(".")
+
+    filename = "".join(parts)
+    if ext_tail:
+        filename = f"{filename}.{ext_tail}"
 
     if len(filename) > 200:
-        filename = filename[:197] + "....pdf"
+        base = "".join(parts)
+        if ext_tail:
+            max_base_len = max(1, 200 - 4 - len(ext_tail))
+            filename = f"{base[:max_base_len]}....{ext_tail}"
+        else:
+            filename = base[:200]
 
     return filename
+
+
+def get_download_subdir(category_id: str) -> str:
+    """Map category ID to local download subdirectory"""
+    return DOWNLOAD_SUBDIRS.get(category_id, "other")
 
 
 def normalize_date(date_str: str) -> str:
@@ -183,8 +203,17 @@ class CaacCrawler:
         """Get browser instance (reuse)"""
         if self._playwright is None:
             self._playwright = sync_playwright().start()
-            self._browser = self._playwright.chromium.launch(headless=True)
-            logger.info("Browser instance started")
+
+        if self._browser is None:
+            try:
+                self._browser = self._playwright.chromium.launch(headless=True)
+                logger.info("Browser instance started")
+            except Exception:
+                if self._playwright is not None:
+                    self._playwright.stop()
+                    self._playwright = None
+                self._browser = None
+                raise
         return self._browser
 
     def close(self):
@@ -424,91 +453,236 @@ class CaacCrawler:
         return documents
 
     def check_pdf_and_download(self, document: Document, save_path: str) -> bool:
-        """Check if document has PDF and download it
-        
-        Args:
-            document: Document to check
-            save_path: Path to save PDF
-        
+        """Backward-compatible helper: download file and report PDF-only success"""
+        base_path, _ = os.path.splitext(save_path)
+        saved_path = self.download_document_file(document, base_path, preferred_ext=".pdf")
+        return bool(saved_path and saved_path.lower().endswith(".pdf"))
+
+    def download_document_file(
+        self,
+        document: Document,
+        save_base_path: str,
+        preferred_ext: str = ".pdf",
+    ) -> Optional[str]:
+        """Download attachment or fallback to text extraction.
+
         Returns:
-            True if PDF was downloaded successfully
+            Saved local path if success, otherwise None.
         """
-        logger.info(f"Checking PDF: [{document.category}] {document.doc_number} {document.title}")
-        
+        logger.info(f"Checking attachment: [{document.category}] {document.doc_number} {document.title}")
+
         try:
             self._random_delay(0.5, 1.5)
             html_content = self._fetch_with_browser(document.url)
-            
+
             if not html_content:
                 logger.warning("Failed to access detail page")
-                return False
-            
+                return None
+
             soup = BeautifulSoup(html_content, "lxml")
-            pdf_link = self._find_pdf_link(soup, document.url)
-            
-            if not pdf_link:
-                logger.debug(f"No PDF found: {document.url}")
-                return False
-            
-            document.pdf_url = pdf_link
-            document.has_pdf = True
-            
-            logger.info(f"Downloading PDF: {pdf_link}")
-            
-            import os
-            os.makedirs(os.path.dirname(save_path) or ".", exist_ok=True)
-            
-            with self._get_http_client().stream("GET", pdf_link) as response:
+            attachment_link = self._find_attachment_link(soup, document.url)
+
+            if attachment_link:
+                file_ext = self._guess_file_extension(attachment_link, preferred_ext)
+                save_path = f"{save_base_path}{file_ext}"
+
+                if self._download_binary_file(attachment_link, save_path):
+                    if file_ext.lower() == ".pdf":
+                        document.pdf_url = attachment_link
+                        document.has_pdf = True
+                    else:
+                        document.pdf_url = ""
+                        document.has_pdf = False
+                    return save_path
+
+                logger.warning(f"Attachment download failed, fallback to text: {attachment_link}")
+            else:
+                logger.debug(f"No attachment link found: {document.url}")
+
+            txt_path = f"{save_base_path}.txt"
+            if self._extract_and_save_text_content(document, soup, txt_path):
+                document.pdf_url = ""
+                document.has_pdf = False
+                return txt_path
+
+            return None
+        except Exception as e:
+            logger.error(f"Failed to download document file: {e}")
+            return None
+
+    def _download_binary_file(self, file_url: str, save_path: str) -> bool:
+        """Download binary file to local path"""
+        logger.info(f"Downloading file: {file_url}")
+        os.makedirs(os.path.dirname(save_path) or ".", exist_ok=True)
+
+        try:
+            with self._get_http_client().stream("GET", file_url) as response:
                 if response.status_code != 200:
                     logger.warning(f"Download failed: HTTP {response.status_code}")
                     return False
-                
+
                 content_length = response.headers.get("content-length")
                 if content_length:
                     logger.info(f"File size: {int(content_length) / 1024:.1f} KB")
-                
+
                 total_size = 0
                 with open(save_path, "wb") as f:
                     for chunk in response.iter_bytes(chunk_size=8192):
                         f.write(chunk)
                         total_size += len(chunk)
-            
+
             if total_size < 1024:
                 logger.warning(f"Downloaded file too small ({total_size} bytes)")
-                os.remove(save_path)
+                if os.path.exists(save_path):
+                    os.remove(save_path)
                 return False
-            
-            logger.info(f"PDF saved: {save_path} ({total_size / 1024:.1f} KB)")
+
+            logger.info(f"File saved: {save_path} ({total_size / 1024:.1f} KB)")
             return True
-            
         except Exception as e:
-            logger.error(f"Failed to download PDF: {e}")
+            logger.warning(f"Download exception: {e}")
+            if os.path.exists(save_path):
+                os.remove(save_path)
             return False
 
-    def _find_pdf_link(self, soup: BeautifulSoup, doc_url: str) -> Optional[str]:
-        """Find PDF download link in detail page"""
-        
-        # Pattern 1: Find attachment area
-        attachment_texts = soup.find_all(string=re.compile(r'附件[：:]?', re.I))
+    def _guess_file_extension(self, file_url: str, default_ext: str = ".pdf") -> str:
+        """Guess extension from URL, fallback to default"""
+        match = re.search(r"\.(pdf|docx?)($|[?#])", file_url, re.I)
+        if match:
+            return f".{match.group(1).lower()}"
+
+        ext = default_ext.strip() if default_ext else ".pdf"
+        if ext and not ext.startswith("."):
+            ext = f".{ext}"
+        return ext or ".pdf"
+
+    def _find_attachment_link(self, soup: BeautifulSoup, doc_url: str) -> Optional[str]:
+        """Find downloadable attachment link in detail page"""
+        file_pattern = re.compile(r"\.(pdf|doc|docx)$", re.I)
+
+        # Pattern 1: links near "附件"
+        attachment_texts = soup.find_all(string=re.compile(r"附件[：:]?", re.I))
         for text in attachment_texts:
             parent = text.parent
-            if parent:
-                container = parent.parent or parent
-                pdf_pattern = re.compile(r'\.pdf$', re.I)
-                links = container.find_all('a', href=pdf_pattern)
-                if links:
-                    return self._build_full_url(links[0].get('href'), doc_url)
-        
-        # Pattern 2: Find all PDF links directly
-        pdf_pattern = re.compile(r'\.pdf$', re.I)
-        links = soup.find_all('a', href=pdf_pattern)
-        if links:
-            return self._build_full_url(links[0].get('href'), doc_url)
-        
+            if not parent:
+                continue
+            container = parent.parent or parent
+            links = container.find_all("a", href=file_pattern)
+            if links:
+                full_url = self._build_full_url(links[0].get("href"), doc_url)
+                if full_url:
+                    return full_url
+
+        # Pattern 2: all file links, prefer official XXGK path or absolute URL
+        file_links = soup.find_all("a", href=file_pattern)
+        for link in file_links:
+            href = link.get("href", "")
+            if href and ("/XXGK/" in href or href.startswith("http")):
+                full_url = self._build_full_url(href, doc_url)
+                if full_url:
+                    return full_url
+        if file_links:
+            full_url = self._build_full_url(file_links[0].get("href"), doc_url)
+            if full_url:
+                return full_url
+
+        # Pattern 3: keyword links (download / attachment)
+        keyword_links = soup.find_all("a")
+        for link in keyword_links:
+            href = link.get("href", "")
+            text = link.get_text(strip=True)
+            if not href:
+                continue
+            href_lower = href.lower()
+            if (
+                "download" in href_lower
+                or "attachment" in href_lower
+                or ".pdf" in href_lower
+                or ".doc" in href_lower
+                or "附件" in text
+                or "下载" in text
+            ):
+                full_url = self._build_full_url(href, doc_url)
+                if full_url:
+                    return full_url
+
+        # Pattern 4: onclick embedded file URL
+        onclick_links = soup.find_all("a", onclick=True)
+        for link in onclick_links:
+            onclick = link.get("onclick", "")
+            match = re.search(r"['\"]([^'\"]*(?:\.pdf|\.doc|\.docx|download|attachment)[^'\"]*)['\"]", onclick, re.I)
+            if match:
+                full_url = self._build_full_url(match.group(1), doc_url)
+                if full_url:
+                    return full_url
+
         return None
+
+    def _extract_and_save_text_content(self, document: Document, soup: BeautifulSoup, txt_path: str) -> bool:
+        """Extract main text from detail page and save as .txt"""
+        try:
+            content_text = ""
+
+            main_content = soup.find("div", class_="content") or soup.find("div", class_="main-content")
+            if main_content:
+                content_text = main_content.get_text(separator="\n", strip=True)
+
+            if not content_text:
+                article_content = soup.find("div", class_="article") or soup.find("article")
+                if article_content:
+                    content_text = article_content.get_text(separator="\n", strip=True)
+
+            if not content_text:
+                for div in soup.find_all("div"):
+                    div_text = div.get_text(strip=True)
+                    if len(div_text) > 500 and ("第一条" in div_text or "总则" in div_text or "第一章" in div_text):
+                        content_text = div.get_text(separator="\n", strip=True)
+                        break
+
+            if not content_text:
+                for element in soup.find_all(["nav", "header", "footer", "aside"]):
+                    element.decompose()
+                body_content = soup.find("body")
+                if body_content:
+                    full_text = body_content.get_text(separator="\n", strip=True)
+                    title = document.title or ""
+                    if title and title in full_text:
+                        content_text = full_text[full_text.find(title):]
+                    else:
+                        content_text = full_text
+
+            if not content_text:
+                logger.warning(f"No text content extracted: {document.url}")
+                return False
+
+            lines = [line.strip() for line in content_text.split("\n") if line.strip()]
+            normalized = "\n".join(lines)
+            if len(normalized) > 50000:
+                normalized = normalized[:50000] + "\n\n[内容过长，已截取前50KB]"
+
+            os.makedirs(os.path.dirname(txt_path) or ".", exist_ok=True)
+            with open(txt_path, "w", encoding="utf-8") as f:
+                f.write(f"文档标题: {document.title}\n")
+                f.write(f"文档链接: {document.url}\n")
+                f.write(f"提取时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+                f.write("=" * 50 + "\n\n")
+                f.write(normalized)
+
+            logger.info(f"Text saved: {txt_path}")
+            return True
+        except Exception as e:
+            logger.warning(f"Failed to extract text content: {e}")
+            return False
 
     def _build_full_url(self, link: str, doc_url: str) -> str:
         """Build full URL"""
+        if not link:
+            return ""
+
+        link = link.strip()
+        if link.lower().startswith("javascript:"):
+            return ""
+
         if link.startswith('http'):
             return link
         
