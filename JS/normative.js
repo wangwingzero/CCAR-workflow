@@ -76,17 +76,6 @@ var data = [
     "file_number": "文号：IB-FS-MED-015"
   },
   {
-    "title": "机场助航灯光系统低电流供电实施指南",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202512/t20251231_229638.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2025年12月26日",
-    "publish_date": "2025年12月26日",
-    "doc_number": "IB-CA-2025-01",
-    "office_unit": "机场司",
-    "file_number": "文号：IB-CA-2025-01"
-  },
-  {
     "title": "民用机场助航灯光监控系统检测规范",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202512/t20251231_229637.html",
     "doc_type": "规范性文件",
@@ -96,6 +85,17 @@ var data = [
     "doc_number": "AC-137-CA-2025-06",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2025-06"
+  },
+  {
+    "title": "机场助航灯光系统低电流供电实施指南",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202512/t20251231_229638.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2025年12月26日",
+    "publish_date": "2025年12月26日",
+    "doc_number": "IB-CA-2025-01",
+    "office_unit": "机场司",
+    "file_number": "文号：IB-CA-2025-01"
   },
   {
     "title": "进口民用航空产品和零部件认可审定程序",
@@ -142,17 +142,6 @@ var data = [
     "file_number": "文号：AC-137-CA-2025-05"
   },
   {
-    "title": "民航从业人员安全工作作风建设管理办法",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202512/t20251226_229590.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2025年12月08日",
-    "publish_date": "2025年12月08日",
-    "doc_number": "AC-398-09",
-    "office_unit": "航空安全办公室",
-    "file_number": "民航规〔2025〕29 号"
-  },
-  {
     "title": "民航安全文化建设管理办法",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202512/t20251226_229589.html",
     "doc_type": "规范性文件",
@@ -162,6 +151,17 @@ var data = [
     "doc_number": "AC-398-08",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2025〕28 号"
+  },
+  {
+    "title": "民航从业人员安全工作作风建设管理办法",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202512/t20251226_229590.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2025年12月08日",
+    "publish_date": "2025年12月08日",
+    "doc_number": "AC-398-09",
+    "office_unit": "航空安全办公室",
+    "file_number": "民航规〔2025〕29 号"
   },
   {
     "title": "驾驶员资格规范（PQS）应用指南",
@@ -263,17 +263,6 @@ var data = [
     "file_number": ""
   },
   {
-    "title": "运输类旋翼航空器审定",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202509/t20250922_228684.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2025年09月16日",
-    "publish_date": "2025年09月16日",
-    "doc_number": "AC-29-AA-2025-01R1",
-    "office_unit": "航空器适航审定司",
-    "file_number": "文号：AC-29-AA-2025-01R1"
-  },
-  {
     "title": "正常类旋翼航空器审定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202509/t20250922_228683.html",
     "doc_type": "规范性文件",
@@ -283,6 +272,17 @@ var data = [
     "doc_number": "AC-27-AA-2025-01R1",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-27-AA-2025-01R1"
+  },
+  {
+    "title": "运输类旋翼航空器审定",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202509/t20250922_228684.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2025年09月16日",
+    "publish_date": "2025年09月16日",
+    "doc_number": "AC-29-AA-2025-01R1",
+    "office_unit": "航空器适航审定司",
+    "file_number": "文号：AC-29-AA-2025-01R1"
   },
   {
     "title": "空中游览市场管理暂行办法",
@@ -397,7 +397,7 @@ var data = [
   {
     "title": "民用机场飞行区场地基础性维护技术规范",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202507/t20250709_227909.html",
-    "doc_type": "标准规范",
+    "doc_type": "规范性文件",
     "validity": "有效",
     "sign_date": "2025年06月21日",
     "publish_date": "2025年06月21日",
@@ -408,7 +408,7 @@ var data = [
   {
     "title": "民用机场沥青混凝土道面维护技术规范",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202507/t20250709_227907.html",
-    "doc_type": "标准规范",
+    "doc_type": "规范性文件",
     "validity": "有效",
     "sign_date": "2025年06月21日",
     "publish_date": "2025年06月21日",
@@ -577,6 +577,7 @@ var data = [
     "sign_date": "2025年03月24日",
     "publish_date": "2025年03月24日",
     "doc_number": "",
+    "office_unit": "发展计划司",
     "file_number": ""
   },
   {
@@ -587,6 +588,7 @@ var data = [
     "sign_date": "2025年03月24日",
     "publish_date": "2025年03月24日",
     "doc_number": "",
+    "office_unit": "发展计划司",
     "file_number": ""
   },
   {
@@ -799,15 +801,15 @@ var data = [
     "file_number": ""
   },
   {
-    "title": "内地至香港、澳门航线航班管理办法",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202412/t20241219_226169.html",
+    "title": "公共航空危险品运输批准和豁免管理程序",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202412/t20241219_226166.html",
     "doc_type": "规范性文件",
     "validity": "有效",
     "sign_date": "2024年12月19日",
     "publish_date": "2024年12月19日",
-    "doc_number": "",
+    "doc_number": "AP-276R2-TR-2024-03",
     "office_unit": "运输司",
-    "file_number": ""
+    "file_number": "民航规〔2024〕58 号"
   },
   {
     "title": "公共航空危险品运输事件判定和报告管理办法",
@@ -821,15 +823,15 @@ var data = [
     "file_number": "民航规〔2024〕55 号"
   },
   {
-    "title": "公共航空危险品运输批准和豁免管理程序",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202412/t20241219_226166.html",
+    "title": "内地至香港、澳门航线航班管理办法",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202412/t20241219_226169.html",
     "doc_type": "规范性文件",
     "validity": "有效",
     "sign_date": "2024年12月19日",
     "publish_date": "2024年12月19日",
-    "doc_number": "AP-276R2-TR-2024-03",
+    "doc_number": "",
     "office_unit": "运输司",
-    "file_number": "民航规〔2024〕58 号"
+    "file_number": ""
   },
   {
     "title": "旅客行李处理系统 （系统集成）检测规范",
@@ -975,17 +977,6 @@ var data = [
     "file_number": "民航规〔2024〕62 号"
   },
   {
-    "title": "进口航空器的运行符合性评审",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202501/t20250106_226321.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2024年12月05日",
-    "publish_date": "2024年12月05日",
-    "doc_number": "AC-91-FS-013R2",
-    "office_unit": "飞行标准司",
-    "file_number": "民航规〔2024〕57 号"
-  },
-  {
     "title": "国产航空器的运行符合性评审",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202501/t20250106_226320.html",
     "doc_type": "规范性文件",
@@ -995,6 +986,17 @@ var data = [
     "doc_number": "AC-91-QS-010R3",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕56 号"
+  },
+  {
+    "title": "进口航空器的运行符合性评审",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202501/t20250106_226321.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2024年12月05日",
+    "publish_date": "2024年12月05日",
+    "doc_number": "AC-91-FS-013R2",
+    "office_unit": "飞行标准司",
+    "file_number": "民航规〔2024〕57 号"
   },
   {
     "title": "飞机国际通用航空运行",
@@ -1206,17 +1208,6 @@ var data = [
     "file_number": "民航规〔2024〕43 号"
   },
   {
-    "title": "民用航空招收飞行学生体检鉴定管理办法",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202408/t20240807_224976.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2024年07月24日",
-    "publish_date": "2024年07月24日",
-    "doc_number": "",
-    "office_unit": "飞行标准司",
-    "file_number": ""
-  },
-  {
     "title": "民用航空体检鉴定医学标准实施细则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202408/t20240807_224975.html",
     "doc_type": "规范性文件",
@@ -1226,6 +1217,17 @@ var data = [
     "doc_number": "AC-67-FS-001R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕42 号"
+  },
+  {
+    "title": "民用航空招收飞行学生体检鉴定管理办法",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202408/t20240807_224976.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2024年07月24日",
+    "publish_date": "2024年07月24日",
+    "doc_number": "",
+    "office_unit": "飞行标准司",
+    "file_number": ""
   },
   {
     "title": "中型民用无人驾驶航空器系统适航标准及符合性指导材料（试行）",
@@ -1272,17 +1274,6 @@ var data = [
     "file_number": "民航规〔2024〕39 号"
   },
   {
-    "title": "外国公共航空运输承运人CCAR-129部运行规范管理规定",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202406/t20240620_224536.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2024年06月04日",
-    "publish_date": "2024年06月04日",
-    "doc_number": "AC-129-FS-001-R2",
-    "office_unit": "飞行标准司",
-    "file_number": "民航规〔2024〕38 号"
-  },
-  {
     "title": "外国公共航空运输承运人运行评估管理程序",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202406/t20240620_224532.html",
     "doc_type": "规范性文件",
@@ -1292,6 +1283,17 @@ var data = [
     "doc_number": "AC-129-FS-003",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕37 号"
+  },
+  {
+    "title": "外国公共航空运输承运人CCAR-129部运行规范管理规定",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202406/t20240620_224536.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2024年06月04日",
+    "publish_date": "2024年06月04日",
+    "doc_number": "AC-129-FS-001-R2",
+    "office_unit": "飞行标准司",
+    "file_number": "民航规〔2024〕38 号"
   },
   {
     "title": "机场道面外来物探测设备技术要求",
@@ -1375,7 +1377,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202405/t20240529_224309.html",
     "doc_type": "规范性文件",
     "validity": "有效",
-    "sign_date": "2024年04月19日",
+    "sign_date": "2024年04月25日",
     "publish_date": "2024年04月25日",
     "doc_number": "",
     "office_unit": "机场司",
@@ -1553,6 +1555,7 @@ var data = [
     "sign_date": "2024年03月20日",
     "publish_date": "2024年03月20日",
     "doc_number": "",
+    "office_unit": "发展计划司",
     "file_number": ""
   },
   {
@@ -1589,17 +1592,6 @@ var data = [
     "file_number": "民航适函〔2024〕11 号"
   },
   {
-    "title": "机组标准操作程序",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202403/t20240319_223250.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2024年03月01日",
-    "publish_date": "2024年03月01日",
-    "doc_number": "AC-121-FS-22R2",
-    "office_unit": "飞行标准司",
-    "file_number": "民航规〔2024〕25 号"
-  },
-  {
     "title": "CCAR121部合格证持有人的疲劳管理要求",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202403/t20240311_223179.html",
     "doc_type": "规范性文件",
@@ -1609,6 +1601,17 @@ var data = [
     "doc_number": "AC-121-FS-014R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕24 号"
+  },
+  {
+    "title": "机组标准操作程序",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202403/t20240319_223250.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2024年03月01日",
+    "publish_date": "2024年03月01日",
+    "doc_number": "AC-121-FS-22R2",
+    "office_unit": "飞行标准司",
+    "file_number": "民航规〔2024〕25 号"
   },
   {
     "title": "飞行标准监察员手册（第八卷）-外航监察员手册（FSIH V8）",
@@ -1809,17 +1812,6 @@ var data = [
     "file_number": "民航规〔2024〕8 号"
   },
   {
-    "title": "飞行程序设计单位质量管理体系",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202402/t20240218_222965.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2024年01月10日",
-    "publish_date": "2024年01月10日",
-    "doc_number": "AC-97-FS-007",
-    "office_unit": "飞行标准司",
-    "file_number": "民航规〔2024〕7 号"
-  },
-  {
     "title": "民用运输机场仪表飞行程序质量保证管理规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202402/t20240218_222964.html",
     "doc_type": "规范性文件",
@@ -1829,6 +1821,17 @@ var data = [
     "doc_number": "AC-97-FS-006",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕6 号"
+  },
+  {
+    "title": "飞行程序设计单位质量管理体系",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202402/t20240218_222965.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2024年01月10日",
+    "publish_date": "2024年01月10日",
+    "doc_number": "AC-97-FS-007",
+    "office_unit": "飞行标准司",
+    "file_number": "民航规〔2024〕7 号"
   },
   {
     "title": "民用航空空中交通管制培训机构审定和监察程序",
@@ -1930,6 +1933,17 @@ var data = [
     "file_number": "民航规 〔2023〕54 号"
   },
   {
+    "title": "民用航空空中交通流量管理规定",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231204_222224.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2023年12月27日",
+    "publish_date": "2023年12月27日",
+    "doc_number": "AP-93-TM-2023-01",
+    "office_unit": "空管行业管理办公室",
+    "file_number": "文号：AP-93-TM-2023-01"
+  },
+  {
     "title": "空中交通管制容量评估管理规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240105_222574.html",
     "doc_type": "规范性文件",
@@ -1952,15 +1966,15 @@ var data = [
     "file_number": ""
   },
   {
-    "title": "民用航空空中交通流量管理规定",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231204_222224.html",
+    "title": "民用航空空中交通管制员选用指南",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231204_222220.html",
     "doc_type": "规范性文件",
     "validity": "有效",
-    "sign_date": "2023年12月27日",
-    "publish_date": "2023年12月27日",
-    "doc_number": "AP-93-TM-2023-01",
+    "sign_date": "2023年12月25日",
+    "publish_date": "2023年12月25日",
+    "doc_number": "AC-93-TM-2023-05",
     "office_unit": "空管行业管理办公室",
-    "file_number": "文号：AP-93-TM-2023-01"
+    "file_number": "文号：AC-93-TM-2023-05"
   },
   {
     "title": "民航空中交通服务应急计划管理规范",
@@ -1972,17 +1986,6 @@ var data = [
     "doc_number": "AP-93-TM-2023-03",
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AP-93-TM-2023-03"
-  },
-  {
-    "title": "管制员航空器驾驶员数据链通信和契约式自动相关监视空中交通服务规范",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231204_222223.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2023年12月25日",
-    "publish_date": "2023年12月25日",
-    "doc_number": "AC-93-TM-2023-04",
-    "office_unit": "空管行业管理办公室",
-    "file_number": "文号：AC-93-TM-2023-04"
   },
   {
     "title": "空中交通服务协调工作补充规范",
@@ -2007,15 +2010,15 @@ var data = [
     "file_number": "文号：AC-93-TM-2023-02"
   },
   {
-    "title": "民用航空空中交通管制员选用指南",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231204_222220.html",
+    "title": "管制员航空器驾驶员数据链通信和契约式自动相关监视空中交通服务规范",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231204_222223.html",
     "doc_type": "规范性文件",
     "validity": "有效",
     "sign_date": "2023年12月25日",
     "publish_date": "2023年12月25日",
-    "doc_number": "AC-93-TM-2023-05",
+    "doc_number": "AC-93-TM-2023-04",
     "office_unit": "空管行业管理办公室",
-    "file_number": "文号：AC-93-TM-2023-05"
+    "file_number": "文号：AC-93-TM-2023-04"
   },
   {
     "title": "电动式航空器地面服务设备通用技术要求",
@@ -2088,7 +2091,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222394.html",
     "doc_type": "规范性文件",
     "validity": "有效",
-    "sign_date": "2023年12月11日",
+    "sign_date": "2023年12月13日",
     "publish_date": "2023年12月13日",
     "doc_number": "",
     "office_unit": "运输司",
@@ -2115,6 +2118,28 @@ var data = [
     "doc_number": "AP-66I-TM-2023-04",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规 〔2023〕48 号"
+  },
+  {
+    "title": "进口民用航空产品和零部件认可审定程序",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222433.html",
+    "doc_type": "规范性文件",
+    "validity": "废止",
+    "sign_date": "2023年12月06日",
+    "publish_date": "2023年12月06日",
+    "doc_number": "AP-21-AA-2023-15",
+    "office_unit": "航空器适航审定司",
+    "file_number": "民航规〔2023〕42 号"
+  },
+  {
+    "title": "民用航空器适航批准审定程序",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222430.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2023年12月06日",
+    "publish_date": "2023年12月06日",
+    "doc_number": "AP-21-AA-2023-51R1",
+    "office_unit": "航空器适航审定司",
+    "file_number": "民航规〔2023〕40 号"
   },
   {
     "title": "型号合格审定程序",
@@ -2161,17 +2186,6 @@ var data = [
     "file_number": "民航规〔2023〕43 号"
   },
   {
-    "title": "进口民用航空产品和零部件认可审定程序",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222433.html",
-    "doc_type": "规范性文件",
-    "validity": "废止",
-    "sign_date": "2023年12月06日",
-    "publish_date": "2023年12月06日",
-    "doc_number": "AP-21-AA-2023-15",
-    "office_unit": "航空器适航审定司",
-    "file_number": "民航规〔2023〕42 号"
-  },
-  {
     "title": "民用航空产品和零部件持续适航事件报告和处理程序",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222432.html",
     "doc_type": "规范性文件",
@@ -2181,17 +2195,6 @@ var data = [
     "doc_number": "AP-21-AA-2023-16R2",
     "office_unit": "航空器适航审定司",
     "file_number": "民航规〔2023〕41 号"
-  },
-  {
-    "title": "民用航空器适航批准审定程序",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222430.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2023年12月06日",
-    "publish_date": "2023年12月06日",
-    "doc_number": "AP-21-AA-2023-51R1",
-    "office_unit": "航空器适航审定司",
-    "file_number": "民航规〔2023〕40 号"
   },
   {
     "title": "民用航空产品补充型号合格证和改装设计批准书合格审定程序",

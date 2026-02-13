@@ -1,10 +1,18 @@
 var data = [
   {
+    "title": "解读丨《正常类旋翼航空器适航规定》",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html",
+    "doc_type": "CCAR规章",
+    "validity": "有效",
+    "doc_number": "",
+    "office_unit": "政策法规司"
+  },
+  {
     "title": "运输类旋翼航空器适航规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202512/t20251217_229435.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-29-R3",
+    "doc_number": "交通运输部令2025年第9号",
     "office_unit": "政策法规司"
   },
   {
@@ -12,7 +20,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202512/t20251217_229433.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-27-R3",
+    "doc_number": "交通运输部令2025年第8号",
     "office_unit": "政策法规司"
   },
   {
@@ -20,7 +28,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202512/t20251217_229431.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-35-R1",
+    "doc_number": "交通运输部令2025年第7号",
     "office_unit": "政策法规司"
   },
   {
@@ -28,7 +36,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202512/t20251205_229325.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-398-R1",
+    "doc_number": "交通运输部令2025年第6号",
     "office_unit": "政策法规司"
   },
   {
@@ -36,7 +44,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202512/t20251201_229272.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-139B",
+    "doc_number": "交通运输部令2025年第5号",
     "office_unit": "政策法规司"
   },
   {
@@ -44,7 +52,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202501/t20250117_226454.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-14-R2",
+    "doc_number": "交通运输部令2024年第12号",
     "office_unit": "政策法规司"
   },
   {
@@ -52,7 +60,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202412/t20241218_226157.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-138",
+    "doc_number": "交通运输部令2024年第11号",
     "office_unit": "政策法规司"
   },
   {
@@ -60,7 +68,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202408/t20240827_225172.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-137CA-R5",
+    "doc_number": "交通运输部令2024年第10号",
     "office_unit": "政策法规司"
   },
   {
@@ -68,7 +76,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202407/t20240709_224699.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-275",
+    "doc_number": "交通运输部令2024年第8号",
     "office_unit": "政策法规司"
   },
   {
@@ -76,7 +84,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202404/t20240415_223517.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-121-R8",
+    "doc_number": "交通运输部令2024年第7号",
     "office_unit": "政策法规司"
   },
   {
@@ -84,7 +92,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202404/t20240422_223929.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-379SE-R1",
+    "doc_number": "交通运输部令2024年第6号",
     "office_unit": "政策法规司"
   },
   {
@@ -92,7 +100,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202403/t20240313_223201.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-21-R5",
+    "doc_number": "交通运输部令2024年第5号",
     "office_unit": "政策法规司"
   },
   {
@@ -100,7 +108,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202402/t20240205_222909.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-276-R2",
+    "doc_number": "交通运输部令2024年第4号",
     "office_unit": "政策法规司"
   },
   {
@@ -108,7 +116,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202401/t20240103_222566.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-92",
+    "doc_number": "交通运输部令2024年第1号",
     "office_unit": "政策法规司"
   },
   {
@@ -116,7 +124,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202305/t20230525_220095.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "",
+    "doc_number": "交通运输部令2023年第6号",
     "office_unit": "政策法规司"
   },
   {
@@ -124,7 +132,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202303/t20230331_217934.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-93TM-R6",
+    "doc_number": "交通运输部令2022年第36号",
     "office_unit": "政策法规司"
   },
   {
@@ -132,7 +140,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202304/t20230414_218210.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-98TM-R1",
+    "doc_number": "交通运输部令2023年第1号",
     "office_unit": "政策法规司"
   },
   {
@@ -140,7 +148,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202303/t20230306_217464.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-36-R3",
+    "doc_number": "交通运输部令2022年第41号",
     "office_unit": "政策法规司"
   },
   {
@@ -148,7 +156,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202301/t20230119_216961.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-34-R1",
+    "doc_number": "交通运输部令2022年第40号",
     "office_unit": "政策法规司"
   },
   {
@@ -156,7 +164,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202301/t20230105_216764.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-175TM-R2",
+    "doc_number": "交通运输部令2022年第35号",
     "office_unit": "政策法规司"
   },
   {
@@ -164,7 +172,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202301/t20230105_216762.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-395-R3",
+    "doc_number": "交通运输部令2022年第34号",
     "office_unit": "政策法规司"
   },
   {
@@ -172,7 +180,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202209/t20220915_215336.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-65FS-R3",
+    "doc_number": "交通运输部令2022年第23号",
     "office_unit": "政策法规司"
   },
   {
@@ -180,7 +188,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202208/t20220815_214953.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-45-R3",
+    "doc_number": "交通运输部令2022年第22号",
     "office_unit": "政策法规司"
   },
   {
@@ -188,7 +196,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202208/t20220815_214955.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-31-R1",
+    "doc_number": "交通运输部令2022年第21号",
     "office_unit": "政策法规司"
   },
   {
@@ -196,7 +204,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202207/t20220718_214443.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-396-R4",
+    "doc_number": "交通运输部令2022年第18号",
     "office_unit": "政策法规司"
   },
   {
@@ -204,7 +212,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202207/t20220708_214046.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-139CA-R4",
+    "doc_number": "交通运输部令2022年第17号",
     "office_unit": "政策法规司"
   },
   {
@@ -212,7 +220,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202205/t20220531_213498.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-23-R4",
+    "doc_number": "交通运输部令2022年第16号",
     "office_unit": "政策法规司"
   },
   {
@@ -220,7 +228,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202204/t20220429_213093.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-333",
+    "doc_number": "交通运输部令2022年第13号",
     "office_unit": "政策法规司"
   },
   {
@@ -228,7 +236,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202207/t20220708_214045.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "",
+    "doc_number": "交通运输部令2022年第14号",
     "office_unit": "政策法规司"
   },
   {
@@ -236,7 +244,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220302_212120.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-147R1",
+    "doc_number": "交通运输部令2022年第9号",
     "office_unit": "政策法规司"
   },
   {
@@ -244,7 +252,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220302_212092.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-145R4",
+    "doc_number": "交通运输部令2022年第8号",
     "office_unit": "政策法规司"
   },
   {
@@ -252,7 +260,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220304_212182.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-140-R2",
+    "doc_number": "交通运输部令2022年第7号",
     "office_unit": "政策法规司"
   },
   {
@@ -260,7 +268,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202201/t20220125_211271.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-45-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -268,7 +276,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202202/t20220209_211633.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-91-R4",
+    "doc_number": "交通运输部令2022年第3号",
     "office_unit": "政策法规司"
   },
   {
@@ -276,7 +284,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202202/t20220209_211630.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-141R3",
+    "doc_number": "交通运输部令2022年第5号",
     "office_unit": "政策法规司"
   },
   {
@@ -284,7 +292,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202202/t20220209_211632.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-136",
+    "doc_number": "交通运输部令2022年第6号",
     "office_unit": "政策法规司"
   },
   {
@@ -292,7 +300,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202202/t20220209_211634.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-135R3",
+    "doc_number": "交通运输部令2022年第4号",
     "office_unit": "政策法规司"
   },
   {
@@ -300,7 +308,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202201/t20220117_211018.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-165-R1",
+    "doc_number": "交通运输部令2022年第2号",
     "office_unit": "政策法规司"
   },
   {
@@ -308,7 +316,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202112/t20211213_210494.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-14-R1",
+    "doc_number": "交通运输部令2021年第30号",
     "office_unit": "政策法规司"
   },
   {
@@ -316,7 +324,15 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202107/t20210722_208568.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-86-R1",
+    "doc_number": "交通运输部令2021年第7号",
+    "office_unit": "政策法规司"
+  },
+  {
+    "title": "解读 |《关于修改〈大型飞机公共航空运输承运人运行合格审定规则〉的决定》",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202104/t20210415_207174.html",
+    "doc_type": "CCAR规章",
+    "validity": "有效",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -324,7 +340,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202104/t20210415_207173.html",
     "doc_type": "CCAR规章",
     "validity": "废止",
-    "doc_number": "CCAR-121-R7",
+    "doc_number": "交通运输部令2021年第5号",
     "office_unit": "政策法规司"
   },
   {
@@ -332,7 +348,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202103/t20210315_206814.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-273",
+    "doc_number": "交通运输部令2021年第3号",
     "office_unit": "政策法规司"
   },
   {
@@ -340,7 +356,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202104/t20210402_207032.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-85-R2",
+    "doc_number": "交通运输部令2021年第2号",
     "office_unit": "政策法规司"
   },
   {
@@ -348,7 +364,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202101/t20210126_206183.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "",
+    "doc_number": "交通运输部令2020年第23号",
     "office_unit": "政策法规司"
   },
   {
@@ -356,7 +372,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202010/t20201028_204988.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-221",
+    "doc_number": "交通运输部令2020年第19号",
     "office_unit": "综合司"
   },
   {
@@ -364,7 +380,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202008/t20200827_204256.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-290-R3",
+    "doc_number": "交通运输部令2020年第18号",
     "office_unit": "政策法规司"
   },
   {
@@ -372,7 +388,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202006/t20200608_202988.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-66-R3",
+    "doc_number": "交通运输部令2020年第10号",
     "office_unit": "政策法规司"
   },
   {
@@ -380,7 +396,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202006/t20200609_203000.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-121-R6",
+    "doc_number": "交通运输部令2020年第9号",
     "office_unit": "政策法规司"
   },
   {
@@ -388,7 +404,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202004/t20200410_201976.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-18R4",
+    "doc_number": "交通运输部令2020年第7号",
     "office_unit": "政策法规司"
   },
   {
@@ -396,7 +412,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202002/t20200227_201174.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "",
+    "doc_number": "交通运输部令2020年第3号",
     "office_unit": "政策法规司"
   },
   {
@@ -404,7 +420,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202002/t20200203_200633.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-395-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -412,7 +428,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201912/t20191219_199898.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-290-R2",
+    "doc_number": "交通运输部令2019年第30号",
     "office_unit": "政策法规司"
   },
   {
@@ -420,7 +436,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201912/t20191219_199897.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "",
+    "doc_number": "交通运输部令2019年第27号",
     "office_unit": "政策法规司"
   },
   {
@@ -428,7 +444,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201911/t20191129_199644.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-139CA-R3",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -436,7 +452,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201911/t20191129_199642.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-277TR-R3",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -444,7 +460,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201908/t20190828_198303.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-60-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -452,7 +468,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193581.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-141-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -460,7 +476,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193583.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-91-R3",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -468,7 +484,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193577.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-43-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -476,7 +492,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193582.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-135-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -484,7 +500,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193579.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-290-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -492,7 +508,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193580.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-61-R5",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -500,7 +516,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193578.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-343-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -508,7 +524,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193576.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-140-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -516,7 +532,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193574.html",
     "doc_type": "CCAR规章",
     "validity": "废止",
-    "doc_number": "CCAR-229-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -524,7 +540,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193575.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-158-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -532,7 +548,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201812/t20181219_193572.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-67FS-R4",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -540,7 +556,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201811/t20181120_192999.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-277TR-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -548,7 +564,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201811/t20181120_192998.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-115TM-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -556,7 +572,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191930.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-139CA-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -564,7 +580,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191933.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-69-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -572,7 +588,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191932.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-201-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -580,7 +596,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191931.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-63FS-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -588,7 +604,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201806/t20180613_188559.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-212-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -596,7 +612,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201803/t20180313_55750.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-398",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -604,7 +620,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201811/t20181120_192997.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "",
+    "doc_number": "公安部、交通运输部令第147号",
     "office_unit": "政策法规司"
   },
   {
@@ -612,7 +628,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201801/t20180112_48534.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-129R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -620,7 +636,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201801/t20180112_48532.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-209R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -628,7 +644,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201802/t20180226_49665.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-36-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -636,7 +652,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201710/t20171009_47120.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-121-R5",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -644,7 +660,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201712/t20171221_48126.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-93TM-R5",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -652,7 +668,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201711/t20171116_47594.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-183AA-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -660,7 +676,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201706/t20170613_44723.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-277TR-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -668,7 +684,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201707/t20170717_45368.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-21-R4",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -676,7 +692,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201706/t20170612_44708.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-67FS-R3",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -684,7 +700,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201706/t20170612_44706.html",
     "doc_type": "CCAR规章",
     "validity": "历史版本",
-    "doc_number": "CCAR-29-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -692,7 +708,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201706/t20170612_44705.html",
     "doc_type": "CCAR规章",
     "validity": "历史版本",
-    "doc_number": "CCAR-27-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -700,7 +716,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201706/t20170612_44707.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-137CA-R4",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -708,7 +724,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201705/t20170505_43977.html",
     "doc_type": "CCAR规章",
     "validity": "废止",
-    "doc_number": "CCAR-201LR-Ⅵ",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -716,7 +732,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201705/t20170505_43979.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-246",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -724,7 +740,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201703/t20170310_43071.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-332-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -732,7 +748,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201703/t20170310_43070.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-135-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -740,7 +756,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201701/t20170119_41830.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-141-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -748,7 +764,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201701/t20170119_41829.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-241-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -756,7 +772,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201610/t20161028_40361.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-339-R1",
+    "doc_number": "",
     "office_unit": "公安局"
   },
   {
@@ -764,7 +780,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201610/t20161028_40362.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-97FS-R3",
+    "doc_number": "",
     "office_unit": "飞行标准司"
   },
   {
@@ -772,7 +788,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8612.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-65TM-IV-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -780,7 +796,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201706/t20170621_44917.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-300",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -788,7 +804,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160526_37589.html",
     "doc_type": "CCAR规章",
     "validity": "废止",
-    "doc_number": "CCAR-201LR-V",
+    "doc_number": "交通运输部令2016年第54号",
     "office_unit": "政策法规司"
   },
   {
@@ -796,7 +812,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160526_37591.html",
     "doc_type": "CCAR规章",
     "validity": "废止",
-    "doc_number": "CCAR-201LR-IV",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -804,7 +820,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201606/t20160622_38641.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-329",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -812,7 +828,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201606/t20160622_38642.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-70TM-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -820,7 +836,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201606/t20160622_38640.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-343",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -828,7 +844,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201606/t20160622_38637.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-158-R1",
+    "doc_number": "民航局第215号令",
     "office_unit": "政策法规司"
   },
   {
@@ -836,7 +852,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160526_37592.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-20LR-I",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -844,7 +860,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201606/t20160622_38643.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-139-II-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -852,7 +868,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160526_37595.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-276-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -860,7 +876,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160526_37596.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-229-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -868,7 +884,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160526_37598.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-137CA-R3",
+    "doc_number": "",
     "office_unit": "机场司"
   },
   {
@@ -876,7 +892,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160526_37597.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-13-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -884,7 +900,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160526_37599.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-20TR",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -892,7 +908,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37621.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-290",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -900,7 +916,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37620.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-66-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -908,7 +924,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201606/t20160601_37711.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-61-R4",
+    "doc_number": "",
     "office_unit": "飞行标准司"
   },
   {
@@ -916,21 +932,23 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37631.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-117-R2"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "外国航空运输企业在中国境内指定的销售代理直接进入和使用外国计算机订座系统许可管理暂行规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37632.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-315"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "民用航空通信导航监视设备飞行校验管理规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37628.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-86",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -938,7 +956,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37629.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-85-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -946,14 +964,15 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37627.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-18-R3"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "民用航空标准化管理规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37622.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-375SE-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -961,7 +980,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37623.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-115TM-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -969,7 +988,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37626.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-243-R1",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -977,7 +996,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201701/t20170119_41846.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-26",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -985,7 +1004,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201606/t20160622_38639.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-33-R2",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -993,7 +1012,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201606/t20160622_38638.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-25-R4",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -1001,84 +1020,95 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37656.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-175TM-R1"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "中国民用航空应急管理规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37657.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-397"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "民用航空人员体检合格证管理规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37649.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-67FS-R2"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "民用航空气象人员执照管理规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37651.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-65TM-II-R3"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "民用航空空中交通管制员执照管理规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37652.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-66TM-I-R4"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "民用航空电信人员执照管理规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37653.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-65TM-I-R3"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "民用航空情报员执照管理规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37654.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-65TM-III-R4"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "民用航空空中交通管理运行单位安全管理规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37650.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-83"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "民用航空飞行签派员执照管理规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37634.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-65FS-R2"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "外国航空运输企业航线经营许可规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37662.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-287"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "民用航空安全信息管理规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37658.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-396-R3"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "大型飞机公共航空运输承运人运行合格审定规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37660.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-121-R4",
+    "doc_number": "",
     "office_unit": "政策法规司"
   },
   {
@@ -1086,7 +1116,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37661.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-332",
+    "doc_number": "",
     "office_unit": "公安局"
   },
   {
@@ -1094,14 +1124,15 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160530_37659.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-116-R1"
+    "doc_number": "",
+    "office_unit": ""
   },
   {
     "title": "国际航班载运人员信息预报实施办法",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8439.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "",
+    "doc_number": "公安部，民航总局第99号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1109,7 +1140,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8441.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-140",
+    "doc_number": "民航总局第191号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1117,7 +1148,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8443.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-93TM-R4",
+    "doc_number": "民航总局第190号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1125,7 +1156,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8442.html",
     "doc_type": "CCAR规章",
     "validity": "废止",
-    "doc_number": "CCAR-201LR-Ⅲ",
+    "doc_number": "民航总局第189号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1133,7 +1164,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8446.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-19LR-II",
+    "doc_number": "民航总局第186号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1141,7 +1172,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8445.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-12LR-R1",
+    "doc_number": "民航总局第187号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1149,7 +1180,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8444.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-91-R2",
+    "doc_number": "民航总局第188号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1157,7 +1188,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8447.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-12",
+    "doc_number": "民航总局第185号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1165,7 +1196,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8449.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-21-R3",
+    "doc_number": "民航总局第183号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1173,7 +1204,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8448.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-69",
+    "doc_number": "民航总局第184号令",
     "office_unit": "公安局"
   },
   {
@@ -1181,7 +1212,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8450.html",
     "doc_type": "CCAR规章",
     "validity": "历史版本",
-    "doc_number": "CCAR-36-R1",
+    "doc_number": "民航总局第182号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1189,7 +1220,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8451.html",
     "doc_type": "CCAR规章",
     "validity": "历史版本",
-    "doc_number": "CCAR-31",
+    "doc_number": "民航总局第181号令",
     "office_unit": "航空器适航审定司"
   },
   {
@@ -1197,7 +1228,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8453.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-395-R1",
+    "doc_number": "民航总局第179号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1205,7 +1236,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8452.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-396-R1",
+    "doc_number": "民航总局第180号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1213,7 +1244,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8454.html",
     "doc_type": "CCAR规章",
     "validity": "废止",
-    "doc_number": "CCAR-165",
+    "doc_number": "民航总局第178号令",
     "office_unit": "机场司"
   },
   {
@@ -1221,7 +1252,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8455.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-91-R1",
+    "doc_number": "民航总局第177号令",
     "office_unit": "飞行标准司"
   },
   {
@@ -1229,7 +1260,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8456.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-135TR-R3",
+    "doc_number": "民航总局第176号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1237,7 +1268,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8458.html",
     "doc_type": "CCAR规章",
     "validity": "废止",
-    "doc_number": "CCAR-201LR-Ⅱ",
+    "doc_number": "民航总局第174号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1245,7 +1276,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8457.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-65TM-I-R2",
+    "doc_number": "民航总局第175号令",
     "office_unit": "空管局"
   },
   {
@@ -1253,7 +1284,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201605/t20160511_37226.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-121-R3",
+    "doc_number": "民航总局第173号令",
     "office_unit": "飞行标准司"
   },
   {
@@ -1261,7 +1292,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8459.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-61-R3",
+    "doc_number": "民航总局第173号令",
     "office_unit": "飞行标准司"
   },
   {
@@ -1269,7 +1300,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8460.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-85",
+    "doc_number": "民航总局第172号令",
     "office_unit": "空管行业管理办公室"
   },
   {
@@ -1277,7 +1308,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8461.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-65TM-II-R2",
+    "doc_number": "民航总局第171号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1285,7 +1316,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8462.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-331SB-R1",
+    "doc_number": "民航总局第170号令",
     "office_unit": "公安局"
   },
   {
@@ -1293,7 +1324,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8464.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-66TM-Ι-R3",
+    "doc_number": "民航总局第168号令",
     "office_unit": "空管局"
   },
   {
@@ -1301,7 +1332,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8465.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-119TR-R1",
+    "doc_number": "民航总局第167号令",
     "office_unit": "国际司（港澳台办公室）"
   },
   {
@@ -1309,7 +1340,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8463.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-65TM-Ⅲ-R3",
+    "doc_number": "民航总局第169号令",
     "office_unit": "空管行业管理办公室"
   },
   {
@@ -1317,7 +1348,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8467.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-212",
+    "doc_number": "民航总局第165号令",
     "office_unit": "国际司（港澳台办公室）"
   },
   {
@@ -1325,7 +1356,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8466.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-73",
+    "doc_number": "民航总局第166号令",
     "office_unit": "空管行业管理办公室"
   },
   {
@@ -1333,7 +1364,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8471.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-15",
+    "doc_number": "民航总局第161号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1341,7 +1372,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8470.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-19",
+    "doc_number": "民航总局第162号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1349,7 +1380,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8469.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-13",
+    "doc_number": "民航总局第163号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1357,7 +1388,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8473.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-43",
+    "doc_number": "民航总局第159号令",
     "office_unit": "飞行标准司"
   },
   {
@@ -1365,7 +1396,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8472.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-289TR-R1",
+    "doc_number": "民航总局第160号令",
     "office_unit": "运输司"
   },
   {
@@ -1373,7 +1404,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8474.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-116",
+    "doc_number": "民航总局第158号令",
     "office_unit": "空管行业管理办公室"
   },
   {
@@ -1381,7 +1412,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8475.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-17",
+    "doc_number": "民航总局第157号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1389,7 +1420,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8476.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-139CA-R1",
+    "doc_number": "民航总局第156号令",
     "office_unit": "机场司"
   },
   {
@@ -1397,7 +1428,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8477.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-399",
+    "doc_number": "民航总局第155号令",
     "office_unit": "航空安全办公室"
   },
   {
@@ -1405,7 +1436,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8478.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-147",
+    "doc_number": "民航总局第154号令",
     "office_unit": "飞行标准司"
   },
   {
@@ -1413,7 +1444,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8480.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-145-R3",
+    "doc_number": "民航总局第152号令",
     "office_unit": "飞行标准司"
   },
   {
@@ -1421,7 +1452,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8479.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-66-R1",
+    "doc_number": "民航总局第153号令",
     "office_unit": "飞行标准司"
   },
   {
@@ -1429,7 +1460,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8481.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-135",
+    "doc_number": "民航总局第151号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1437,7 +1468,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8482.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-137CA-R2",
+    "doc_number": "民航总局第150号令",
     "office_unit": "机场司"
   },
   {
@@ -1445,7 +1476,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8483.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-229",
+    "doc_number": "民航总局第149号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1453,14 +1484,15 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8484.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-209"
+    "doc_number": "民航总局第148号令",
+    "office_unit": "发展计划司"
   },
   {
     "title": "中国民用航空总局关于废止部分民用航空规章和规章性文件的决定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8485.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-19LR-I",
+    "doc_number": "民航总局第147号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1468,7 +1500,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8486.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-117-R1",
+    "doc_number": "民航总局第146号令",
     "office_unit": "空管行业管理办公室"
   },
   {
@@ -1476,7 +1508,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8487.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-55",
+    "doc_number": "民航总局第145号令",
     "office_unit": "机场司"
   },
   {
@@ -1484,7 +1516,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8491.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-60",
+    "doc_number": "民航总局第141号令",
     "office_unit": "飞行标准司"
   },
   {
@@ -1492,7 +1524,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8489.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-396",
+    "doc_number": "民航总局第143号令",
     "office_unit": "航空安全办公室"
   },
   {
@@ -1500,14 +1532,15 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8490.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-243"
+    "doc_number": "民航总局第142号令",
+    "office_unit": "发展计划司"
   },
   {
     "title": "中国民用航空监察员规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8488.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-18R2",
+    "doc_number": "民航总局第144号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1515,7 +1548,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8492.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-121-R2",
+    "doc_number": "民航总局第140号令",
     "office_unit": "飞行标准司"
   },
   {
@@ -1523,7 +1556,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8493.html",
     "doc_type": "CCAR规章",
     "validity": "废止",
-    "doc_number": "CCAR-201LR-I",
+    "doc_number": "民航总局第139号令",
     "office_unit": "政策法规司"
   },
   {
@@ -1531,7 +1564,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8495.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-61-R2",
+    "doc_number": "民航总局第137号令",
     "office_unit": "飞行标准司"
   },
   {
@@ -1539,7 +1572,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8496.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-65FS-R1",
+    "doc_number": "民航总局第136号令",
     "office_unit": "空管局"
   },
   {
@@ -1547,7 +1580,7 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8494.html",
     "doc_type": "CCAR规章",
     "validity": "有效",
-    "doc_number": "CCAR-201",
+    "doc_number": "民航总局第138号令",
     "office_unit": "运输司"
   },
   {
@@ -1555,14 +1588,15 @@ var data = [
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8498.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-241-R1"
+    "doc_number": "民航总局第134号令",
+    "office_unit": "发展计划司"
   },
   {
     "title": "民用机场建设管理规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8503.html",
     "doc_type": "CCAR规章",
     "validity": "失效",
-    "doc_number": "CCAR-158",
+    "doc_number": "民航总局第129号令",
     "office_unit": "机场司"
   },
   {

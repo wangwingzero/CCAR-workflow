@@ -180,7 +180,7 @@ var data = [
     "office_unit": "航空器适航审定司"
   },
   {
-    "title": "民用航空VoIP语音通信技术规范  第7部分：测试方法",
+    "title": "民用航空VoIP语音通信技术规范 第7部分：测试方法",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202512/t20251231_229630.html",
     "doc_type": "标准规范",
     "validity": "有效",
@@ -234,7 +234,7 @@ var data = [
     "office_unit": "航空器适航审定司"
   },
   {
-    "title": "民用航空VoIP语音通信技术规范  第1部分：通用技术要求",
+    "title": "民用航空VoIP语音通信技术规范 第1部分：通用技术要求",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202512/t20251231_229624.html",
     "doc_type": "标准规范",
     "validity": "有效",
@@ -405,7 +405,7 @@ var data = [
     "office_unit": "航空器适航审定司"
   },
   {
-    "title": "航空涡轮发动机润滑油性能测试方法  第3部分：承载能力  高速齿轮法",
+    "title": "航空涡轮发动机润滑油性能测试方法 第3部分：承载能力 高速齿轮法",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202507/t20250724_228065.html",
     "doc_type": "标准规范",
     "validity": "有效",
@@ -414,7 +414,7 @@ var data = [
     "office_unit": "航空器适航审定司"
   },
   {
-    "title": "航空涡轮发动机润滑油性能测试方法  第2部分：气相结焦倾向",
+    "title": "航空涡轮发动机润滑油性能测试方法 第2部分：气相结焦倾向",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202507/t20250724_228064.html",
     "doc_type": "标准规范",
     "validity": "有效",
@@ -423,7 +423,7 @@ var data = [
     "office_unit": "航空器适航审定司"
   },
   {
-    "title": "航空涡轮发动机润滑油性能测试方法  第1部分：高温轴承沉积性能",
+    "title": "航空涡轮发动机润滑油性能测试方法 第1部分：高温轴承沉积性能",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202507/t20250724_228063.html",
     "doc_type": "标准规范",
     "validity": "有效",
@@ -540,7 +540,7 @@ var data = [
     "office_unit": "机场司"
   },
   {
-    "title": "民用无人驾驶航空器系统分布式操作  自动化等级测试",
+    "title": "民用无人驾驶航空器系统分布式操作 自动化等级测试",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202506/t20250627_227816.html",
     "doc_type": "标准规范",
     "validity": "有效",
@@ -954,7 +954,7 @@ var data = [
     "office_unit": "机场司"
   },
   {
-    "title": "航空货运信息规范  第4部分：数据报文接口",
+    "title": "航空货运信息规范 第4部分：数据报文接口",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202412/t20241205_226019.html",
     "doc_type": "标准规范",
     "validity": "有效",
@@ -963,7 +963,7 @@ var data = [
     "office_unit": "航空器适航审定司"
   },
   {
-    "title": "航空货运信息规范  第3部分：交互数据定义",
+    "title": "航空货运信息规范 第3部分：交互数据定义",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202412/t20241205_226018.html",
     "doc_type": "标准规范",
     "validity": "有效",
@@ -972,7 +972,7 @@ var data = [
     "office_unit": "航空器适航审定司"
   },
   {
-    "title": "航空货运信息规范  第2部分：信息交互流程",
+    "title": "航空货运信息规范 第2部分：信息交互流程",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202412/t20241205_226017.html",
     "doc_type": "标准规范",
     "validity": "有效",
@@ -981,7 +981,7 @@ var data = [
     "office_unit": "航空器适航审定司"
   },
   {
-    "title": "航空货运信息规范  第1部分：国内电子运单",
+    "title": "航空货运信息规范 第1部分：国内电子运单",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202412/t20241205_226016.html",
     "doc_type": "标准规范",
     "validity": "有效",
@@ -1751,7 +1751,8 @@ var data = [
     "doc_type": "标准规范",
     "validity": "有效",
     "publish_date": "2023年04月25日",
-    "doc_number": "MH/T 5067-2023"
+    "doc_number": "MH/T 5067-2023",
+    "office_unit": "发展计划司"
   },
   {
     "title": "智慧民航数据治理规范 数据共享",
@@ -1759,7 +1760,8 @@ var data = [
     "doc_type": "标准规范",
     "validity": "有效",
     "publish_date": "2023年04月25日",
-    "doc_number": "MH/T 5066-2023"
+    "doc_number": "MH/T 5066-2023",
+    "office_unit": "发展计划司"
   },
   {
     "title": "运输机场离港系统检测规范",
