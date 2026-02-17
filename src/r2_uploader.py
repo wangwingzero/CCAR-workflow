@@ -67,6 +67,58 @@ class R2Uploader:
         )
         self.enabled = True
         logger.info(f"R2 uploader initialized: bucket={self.bucket}, domain={self.domain}")
+        self._diagnose_connectivity()
+
+    def _diagnose_connectivity(self):
+        """Log diagnostic info for R2 endpoint connectivity."""
+        import socket
+        import ssl
+        import subprocess
+
+        host = f"{self.account_id}.r2.cloudflarestorage.com"
+        logger.info(f"R2 diagnostics: Python ssl.OPENSSL_VERSION={ssl.OPENSSL_VERSION}")
+
+        # 1. DNS resolution
+        try:
+            ips = socket.getaddrinfo(host, 443, socket.AF_INET)
+            logger.info(f"R2 diagnostics: DNS resolved {host} -> {ips[0][4][0]}")
+        except Exception as e:
+            logger.warning(f"R2 diagnostics: DNS failed for {host}: {e}")
+            return
+
+        # 2. TCP connectivity
+        try:
+            sock = socket.create_connection((host, 443), timeout=5)
+            sock.close()
+            logger.info("R2 diagnostics: TCP connection OK")
+        except Exception as e:
+            logger.warning(f"R2 diagnostics: TCP connection failed: {e}")
+            return
+
+        # 3. OpenSSL s_client test
+        try:
+            result = subprocess.run(
+                ["openssl", "s_client", "-connect", f"{host}:443",
+                 "-servername", host, "-brief"],
+                capture_output=True, text=True, timeout=10,
+                input=""
+            )
+            output = (result.stdout + result.stderr)[:500]
+            logger.info(f"R2 diagnostics: openssl s_client output: {output}")
+        except Exception as e:
+            logger.warning(f"R2 diagnostics: openssl s_client failed: {e}")
+
+        # 4. Python ssl wrap test
+        try:
+            ctx = ssl.create_default_context()
+            with socket.create_connection((host, 443), timeout=5) as sock:
+                with ctx.wrap_socket(sock, server_hostname=host) as ssock:
+                    logger.info(
+                        f"R2 diagnostics: Python TLS OK, version={ssock.version()}, "
+                        f"cipher={ssock.cipher()}"
+                    )
+        except Exception as e:
+            logger.warning(f"R2 diagnostics: Python TLS wrap failed: {e}")
 
     def _get_content_type(self, file_path: str) -> str:
         ext = os.path.splitext(file_path)[1].lower()
