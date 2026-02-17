@@ -51,33 +51,19 @@ class R2Uploader:
             self._client = None
             return
 
-        # Verify API token by listing buckets
         self._client = httpx.Client(
             timeout=httpx.Timeout(connect=10, read=120, write=120, pool=10),
             headers={
                 "Authorization": f"Bearer {self._api_token}",
             },
         )
-        try:
-            resp = self._client.get(
-                f"{self.API_BASE}/{self.account_id}/r2/buckets"
-            )
-            if resp.status_code != 200:
-                raise RuntimeError(
-                    f"API token verification failed: HTTP {resp.status_code} "
-                    f"{resp.text[:200]}"
-                )
-            logger.info(
-                f"R2 uploader initialized (REST API): "
-                f"bucket={self.bucket}, domain={self.domain}"
-            )
-            self.enabled = True
-        except httpx.ConnectError as e:
-            logger.warning(f"R2 upload disabled: cannot reach Cloudflare API: {e}")
-            self.enabled = False
-        except Exception as e:
-            logger.warning(f"R2 upload disabled: API check failed: {e}")
-            self.enabled = False
+        self.enabled = True
+        logger.info(
+            f"R2 uploader initialized (REST API): "
+            f"bucket={self.bucket}, domain={self.domain}, "
+            f"token_len={len(self._api_token)}, "
+            f"token_prefix={self._api_token[:4]}...{self._api_token[-4:]}"
+        )
 
     def _get_content_type(self, file_path: str) -> str:
         ext = os.path.splitext(file_path)[1].lower()
