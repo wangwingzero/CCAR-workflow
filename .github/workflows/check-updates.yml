@@ -93,6 +93,33 @@ jobs:
       - name: Install Patchright browsers
         run: uv run patchright install --with-deps chromium
 
+      - name: Debug R2 API access
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+        run: |
+          echo "=== Test 1: List R2 buckets ==="
+          curl -s -w "\nHTTP_STATUS: %{http_code}\n" \
+            "https://api.cloudflare.com/client/v4/accounts/${R2_ACCOUNT_ID}/r2/buckets" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" | head -200
+
+          echo ""
+          echo "=== Test 2: Upload small test file ==="
+          echo "hello from CI" > /tmp/test-r2.txt
+          curl -s -w "\nHTTP_STATUS: %{http_code}\n" \
+            -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${R2_ACCOUNT_ID}/r2/buckets/${R2_BUCKET}/objects/test-ci.txt" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: text/plain" \
+            --data-binary @/tmp/test-r2.txt | head -200
+
+          echo ""
+          echo "=== Test 3: Token info (first 4 / last 4 chars) ==="
+          echo "Token length: ${#CLOUDFLARE_API_TOKEN}"
+          echo "Token prefix: ${CLOUDFLARE_API_TOKEN:0:4}...${CLOUDFLARE_API_TOKEN: -4}"
+
       - name: Run check
         env:
           # Playwright/Patchright timeout (CI needs longer)
