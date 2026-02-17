@@ -1,21 +1,29 @@
 {
-  "last_update": "2026-02-17T11:55:24.183774",
+  "last_update": "2026-02-17T12:07:50.051964",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
-      "updated_at": "2026-02-17T11:55:24.183639"
+      "updated_at": "2026-02-17T12:07:27.847023"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202512/t20251217_229435.html": {
       "relative_path": "regulation/交通运输部令2025年第9号运输类旋翼航空器适航规定.pdf",
-      "updated_at": "2026-02-17T11:55:24.183698"
+      "updated_at": "2026-02-17T12:07:27.847087"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202512/t20251217_229433.html": {
       "relative_path": "regulation/交通运输部令2025年第8号正常类旋翼航空器适航规定.pdf",
-      "updated_at": "2026-02-17T11:55:24.183737"
+      "updated_at": "2026-02-17T12:07:27.847133"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202512/t20251217_229431.html": {
       "relative_path": "regulation/交通运输部令2025年第7号螺旋桨适航规定.pdf",
-      "updated_at": "2026-02-17T11:55:24.183771"
+      "updated_at": "2026-02-17T12:07:27.847176"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202512/t20251205_229325.html": {
+      "relative_path": "regulation/交通运输部令2025年第6号民用航空安全管理规定.pdf",
+      "updated_at": "2026-02-17T12:07:38.423637"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202512/t20251201_229272.html": {
+      "relative_path": "regulation/交通运输部令2025年第5号运输机场运行安全管理规定.pdf",
+      "updated_at": "2026-02-17T12:07:50.051949"
     }
   }
 }
