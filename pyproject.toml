@@ -10,7 +10,10 @@ dependencies = [
     "beautifulsoup4>=4.12.0",
     "lxml>=5.0.0",  # BeautifulSoup parser
     "httpx>=0.27.0",
-    
+
+    # Cloud storage (R2)
+    "boto3>=1.35.0",
+
     # Logging
     "loguru>=0.7.0",
 ]

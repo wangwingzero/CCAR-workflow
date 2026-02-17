@@ -278,9 +278,9 @@ def _write_js_data(file_path: Path, records: list[dict], export_name: str) -> No
     file_path.write_text(content, encoding="utf-8")
 
 
-def _build_regulation_record(doc: Document, doc_type: str) -> dict:
+def _build_regulation_record(doc: Document, doc_type: str, pdf_url: str = "") -> dict:
     """Build regulation JS record"""
-    return {
+    record = {
         "title": doc.title or "",
         "url": doc.url or "",
         "doc_type": doc_type,
@@ -288,9 +288,12 @@ def _build_regulation_record(doc: Document, doc_type: str) -> dict:
         "doc_number": doc.doc_number or "",
         "office_unit": doc.office_unit or "",
     }
+    if pdf_url:
+        record["pdf_url"] = pdf_url
+    return record
 
 
-def _build_normative_record(doc: Document, doc_type: str, cached_file_number: str) -> dict:
+def _build_normative_record(doc: Document, doc_type: str, cached_file_number: str, pdf_url: str = "") -> dict:
     """Build normative JS record"""
     record = {
         "title": doc.title or "",
@@ -311,12 +314,15 @@ def _build_normative_record(doc: Document, doc_type: str, cached_file_number: st
     else:
         file_number = f"文号：{doc.doc_number}" if doc.doc_number else ""
     record["file_number"] = file_number
+
+    if pdf_url:
+        record["pdf_url"] = pdf_url
     return record
 
 
-def _build_standard_record(doc: Document, doc_type: str) -> dict:
+def _build_standard_record(doc: Document, doc_type: str, pdf_url: str = "") -> dict:
     """Build standard JS record"""
-    return {
+    record = {
         "title": doc.title or "",
         "url": doc.url or "",
         "doc_type": doc_type,
@@ -325,6 +331,9 @@ def _build_standard_record(doc: Document, doc_type: str) -> dict:
         "doc_number": doc.doc_number or "",
         "office_unit": doc.office_unit or "",
     }
+    if pdf_url:
+        record["pdf_url"] = pdf_url
+    return record
 
 
 class Storage:
@@ -504,10 +513,17 @@ class Storage:
         )
         self.save(state)
 
-    def sync_js_files(self, current_documents: dict[str, list[Document]], js_dir: str = "JS") -> dict[str, int]:
-        """Sync JS data files for 13/14/15 categories"""
+    def sync_js_files(self, current_documents: dict[str, list[Document]], js_dir: str = "JS", r2_url_map: dict[str, str] | None = None) -> dict[str, int]:
+        """Sync JS data files for 13/14/15 categories
+
+        Args:
+            current_documents: Category-id keyed document lists
+            js_dir: Output directory for JS files
+            r2_url_map: Optional mapping from CAAC page URL to R2 PDF URL
+        """
         js_root = Path(js_dir)
         summary = {}
+        url_map = r2_url_map or {}
 
         normative_cfg = JS_EXPORT_CONFIG["14"]
         normative_path = js_root / normative_cfg["filename"]
@@ -527,6 +543,14 @@ class Storage:
             cat_name = CATEGORIES.get(cat_id, cat_id)
             existing_rows = _read_js_data(file_path)
 
+            # Build lookup for existing pdf_url to preserve during merge
+            existing_pdf_url_by_url = {}
+            for row in existing_rows:
+                row_url = str(row.get("url", "")).strip()
+                row_pdf_url = str(row.get("pdf_url", "")).strip()
+                if row_url and row_pdf_url:
+                    existing_pdf_url_by_url[row_url] = row_pdf_url
+
             if not docs:
                 if existing_rows:
                     reason = "未抓取该分类" if docs is None else "该分类本次抓取为空"
@@ -540,14 +564,30 @@ class Storage:
                 continue
 
             if cat_id == "13":
-                records = [_build_regulation_record(doc, doc_type) for doc in docs]
+                records = [
+                    _build_regulation_record(
+                        doc, doc_type,
+                        pdf_url=url_map.get(doc.url, existing_pdf_url_by_url.get(doc.url, ""))
+                    )
+                    for doc in docs
+                ]
             elif cat_id == "14":
                 records = [
-                    _build_normative_record(doc, doc_type, existing_file_number_by_url.get(doc.url, ""))
+                    _build_normative_record(
+                        doc, doc_type,
+                        existing_file_number_by_url.get(doc.url, ""),
+                        pdf_url=url_map.get(doc.url, existing_pdf_url_by_url.get(doc.url, ""))
+                    )
                     for doc in docs
                 ]
             else:
-                records = [_build_standard_record(doc, doc_type) for doc in docs]
+                records = [
+                    _build_standard_record(
+                        doc, doc_type,
+                        pdf_url=url_map.get(doc.url, existing_pdf_url_by_url.get(doc.url, ""))
+                    )
+                    for doc in docs
+                ]
 
             # Keep existing history to avoid truncating JS when perpage is small.
             seen_urls = {row.get("url", "") for row in records if row.get("url")}

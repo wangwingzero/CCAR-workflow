@@ -16,11 +16,13 @@ import os
 import sys
 import traceback
 from datetime import datetime
+from pathlib import Path
 
 from loguru import logger
 
 from .crawler import CaacCrawler, generate_filename, get_download_subdir, CATEGORIES, Document
 from .notifier import Notifier
+from .r2_uploader import R2Uploader
 from .storage import Storage, filter_by_days
 
 
@@ -182,25 +184,18 @@ def main() -> int:
         
         with CaacCrawler() as crawler, Notifier() as notifier:
             # 1. Crawl document list from all categories
-            logger.info("Step 1/6: Crawling document list...")
+            logger.info("Step 1/7: Crawling document list...")
             all_documents = crawler.fetch_all_categories(category_ids, args.perpage)
-            
+
             total_docs = sum(len(docs) for docs in all_documents.values())
             if total_docs == 0:
                 logger.error("No documents fetched, may be blocked by anti-crawler")
                 return 1
-            
+
             logger.info(f"Fetch complete: {total_docs} documents from {len(all_documents)} categories")
 
-            # 2. Sync JS files for categories 13/14/15
-            logger.info("Step 2/6: Syncing JS data files...")
-            js_summary = storage.sync_js_files(all_documents, "JS")
-            if js_summary:
-                summary_text = ", ".join(f"{name}={count}" for name, count in js_summary.items())
-                logger.info(f"JS sync complete: {summary_text}")
-            
-            # 3. Detect changes or filter by days
-            logger.info("Step 3/6: Filtering documents...")
+            # 2. Detect changes or filter by days
+            logger.info("Step 2/7: Filtering documents...")
             
             DEFAULT_MAX_DAYS = 30
             download_documents: dict[str, list[Document]] = {}
@@ -271,10 +266,10 @@ def main() -> int:
                                 storage.update_state(all_documents)
                             return 0
             
-            # 4. Download/rename files (optional)
+            # 3. Download/rename files (optional)
             downloaded_files: list[str] = []
             if not args.no_download:
-                logger.info("Step 4/6: Syncing download files...")
+                logger.info("Step 3/7: Syncing download files...")
                 download_dir = "downloads"
                 os.makedirs(download_dir, exist_ok=True)
                 docs_to_sync = _flatten_documents(download_documents)
@@ -358,15 +353,40 @@ def main() -> int:
                         f"renamed={renamed_count}, failed={failed_count}"
                     )
             else:
-                logger.info("Step 4/6: Skipping file download")
-            
-            # 5. Send notification
+                logger.info("Step 3/7: Skipping file download")
+
+            # 4. Upload to R2 (optional)
+            r2_url_map: dict[str, str] = {}
+            r2 = R2Uploader()
+            if r2.enabled and not args.no_download:
+                logger.info("Step 4/7: Uploading files to R2...")
+                try:
+                    download_index = storage.load_download_index()
+                    r2_index_path = str(Path(storage.data_path).parent / "r2_uploads.json")
+                    r2_url_map = r2.upload_downloads(download_index, "downloads", r2_index_path)
+                    logger.info(f"R2 upload complete: {len(r2_url_map)} URLs mapped")
+                except Exception as e:
+                    logger.warning(f"R2 upload failed (non-fatal): {e}")
+            else:
+                if not r2.enabled:
+                    logger.info("Step 4/7: R2 not configured, skipping upload")
+                else:
+                    logger.info("Step 4/7: Skipping R2 upload (no-download mode)")
+
+            # 5. Sync JS files for categories 13/14/15
+            logger.info("Step 5/7: Syncing JS data files...")
+            js_summary = storage.sync_js_files(all_documents, "JS", r2_url_map=r2_url_map or None)
+            if js_summary:
+                summary_text = ", ".join(f"{name}={count}" for name, count in js_summary.items())
+                logger.info(f"JS sync complete: {summary_text}")
+
+            # 6. Send notification
             if not args.no_notify:
                 notify_total = sum(len(docs) for docs in target_documents.values())
                 if args.notify == 0 and notify_total == 0:
-                    logger.info("Step 5/6: Skipping notifications (no new documents)")
+                    logger.info("Step 6/7: Skipping notifications (no new documents)")
                 else:
-                    logger.info("Step 5/6: Sending notifications...")
+                    logger.info("Step 6/7: Sending notifications...")
 
                     # Group by category name for notification
                     docs_by_category = {}
@@ -392,11 +412,11 @@ def main() -> int:
                             logger.warning("All notification channels failed")
                             exit_code = 1
             else:
-                logger.info("Step 5/6: Skipping notifications")
-            
-            # 6. Update state
+                logger.info("Step 6/7: Skipping notifications")
+
+            # 7. Update state
             if not args.days and not args.dry_run:
-                logger.info("Step 6/6: Updating state file...")
+                logger.info("Step 7/7: Updating state file...")
                 storage.update_state(all_documents)
             
             total_target = sum(len(docs) for docs in target_documents.values())
