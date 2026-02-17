@@ -2,23 +2,26 @@
 Cloudflare R2 Upload Module
 
 Uploads downloaded PDF files to R2 via S3-compatible API.
+Uses botocore for SigV4 signing + httpx for HTTP (avoids boto3 urllib3 SSL issues).
 Gracefully degrades when credentials are not configured.
 
 Required env vars:
   R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET, R2_DOMAIN
 """
 
+import hashlib
 import json
 import os
 from pathlib import Path
 from typing import Optional
 from urllib.parse import quote
 
+import httpx
 from loguru import logger
 
 
 class R2Uploader:
-    """Cloudflare R2 file uploader using boto3 S3-compatible API."""
+    """Cloudflare R2 file uploader using botocore SigV4 + httpx."""
 
     CONTENT_TYPES = {
         ".pdf": "application/pdf",
@@ -46,25 +49,21 @@ class R2Uploader:
         if missing:
             logger.warning(f"R2 upload disabled, missing env vars: {missing}")
             self.enabled = False
-            self._client = None
             return
 
         try:
-            import boto3
-            import certifi
-        except ImportError as e:
-            logger.warning(f"R2 upload disabled: missing dependency ({e})")
+            from botocore.auth import SigV4Auth
+            from botocore.credentials import Credentials
+
+            self._credentials = Credentials(access_key, secret_key)
+            self._signer_cls = SigV4Auth
+        except ImportError:
+            logger.warning("R2 upload disabled: botocore not installed")
             self.enabled = False
-            self._client = None
             return
 
-        self._client = boto3.client(
-            "s3",
-            endpoint_url=f"https://{self.account_id}.r2.cloudflarestorage.com",
-            aws_access_key_id=access_key,
-            aws_secret_access_key=secret_key,
-            region_name="auto",
-            verify=certifi.where(),
+        self._endpoint_url = (
+            f"https://{self.account_id}.r2.cloudflarestorage.com"
         )
         self.enabled = True
         logger.info(f"R2 uploader initialized: bucket={self.bucket}, domain={self.domain}")
@@ -79,19 +78,39 @@ class R2Uploader:
 
     def upload_file(self, local_path: str, r2_key: str) -> Optional[str]:
         """Upload a single file to R2. Returns public URL or None on failure."""
-        if not self.enabled or not self._client:
+        if not self.enabled:
             return None
         try:
+            from botocore.awsrequest import AWSRequest
+
             content_type = self._get_content_type(local_path)
-            self._client.upload_file(
-                local_path,
-                self.bucket,
-                r2_key,
-                ExtraArgs={"ContentType": content_type},
-            )
-            url = self._build_public_url(r2_key)
+
+            with open(local_path, "rb") as f:
+                data = f.read()
+
+            content_sha256 = hashlib.sha256(data).hexdigest()
+            url = f"{self._endpoint_url}/{self.bucket}/{quote(r2_key, safe='/')}"
+
+            headers = {
+                "Content-Type": content_type,
+                "x-amz-content-sha256": content_sha256,
+                "Content-Length": str(len(data)),
+            }
+
+            aws_request = AWSRequest(method="PUT", url=url, headers=headers, data=data)
+            self._signer_cls(self._credentials, "s3", "auto").add_auth(aws_request)
+
+            with httpx.Client(timeout=120) as client:
+                response = client.put(
+                    url,
+                    headers=dict(aws_request.headers),
+                    content=data,
+                )
+                response.raise_for_status()
+
+            public_url = self._build_public_url(r2_key)
             logger.debug(f"Uploaded to R2: {r2_key}")
-            return url
+            return public_url
         except Exception as e:
             logger.warning(f"R2 upload failed for {r2_key}: {e}")
             return None
@@ -197,7 +216,7 @@ class R2Uploader:
         os.replace(tmp_path, path)
 
     def close(self):
-        self._client = None
+        pass
 
     def __enter__(self):
         return self

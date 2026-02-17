@@ -11,9 +11,8 @@ dependencies = [
     "lxml>=5.0.0",  # BeautifulSoup parser
     "httpx>=0.27.0",
 
-    # Cloud storage (R2)
+    # Cloud storage (R2) - only botocore needed for SigV4 signing, httpx handles HTTP
     "boto3>=1.35.0",
-    "certifi>=2024.0.0",
 
     # Logging
     "loguru>=0.7.0",
