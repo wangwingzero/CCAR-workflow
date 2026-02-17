@@ -90,6 +90,7 @@ class R2Uploader:
                     f"{self.bucket}/{r2_key}",
                     f"--file={local_path}",
                     f"--content-type={content_type}",
+                    "--remote",
                 ],
                 capture_output=True, text=True, timeout=120, env=env,
             )
