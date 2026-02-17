@@ -13,7 +13,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2025年第9号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "正常类旋翼航空器适航规定",
@@ -21,7 +22,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2025年第8号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC8%E5%8F%B7%E6%AD%A3%E5%B8%B8%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "螺旋桨适航规定",
@@ -29,7 +31,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2025年第7号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC7%E5%8F%B7%E8%9E%BA%E6%97%8B%E6%A1%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空安全管理规定",
