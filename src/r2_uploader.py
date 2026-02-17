@@ -1,7 +1,7 @@
 """
 Cloudflare R2 Upload Module
 
-Uploads downloaded PDF files to R2 via wrangler CLI (Cloudflare REST API).
+Uploads downloaded PDF files to R2 via Cloudflare REST API.
 Gracefully degrades when credentials are not configured.
 
 Required env vars:
@@ -10,16 +10,19 @@ Required env vars:
 
 import json
 import os
-import subprocess
 from pathlib import Path
 from typing import Optional
 from urllib.parse import quote
 
+import httpx
 from loguru import logger
 
 
 class R2Uploader:
-    """Cloudflare R2 file uploader using wrangler CLI."""
+    """Cloudflare R2 file uploader using Cloudflare REST API."""
+
+    # REST API base URL
+    API_BASE = "https://api.cloudflare.com/client/v4/accounts"
 
     CONTENT_TYPES = {
         ".pdf": "application/pdf",
@@ -45,26 +48,35 @@ class R2Uploader:
         if missing:
             logger.warning(f"R2 upload disabled, missing env vars: {missing}")
             self.enabled = False
+            self._client = None
             return
 
-        # Verify wrangler is available
+        # Verify API token by listing buckets
+        self._client = httpx.Client(
+            timeout=httpx.Timeout(connect=10, read=120, write=120, pool=10),
+            headers={
+                "Authorization": f"Bearer {self._api_token}",
+            },
+        )
         try:
-            result = subprocess.run(
-                ["wrangler", "--version"],
-                capture_output=True, text=True, timeout=15,
+            resp = self._client.get(
+                f"{self.API_BASE}/{self.account_id}/r2/buckets"
             )
-            if result.returncode != 0:
-                raise RuntimeError(f"wrangler failed: {result.stderr}")
+            if resp.status_code != 200:
+                raise RuntimeError(
+                    f"API token verification failed: HTTP {resp.status_code} "
+                    f"{resp.text[:200]}"
+                )
             logger.info(
-                f"R2 uploader initialized: bucket={self.bucket}, "
-                f"domain={self.domain}, wrangler={result.stdout.strip()}"
+                f"R2 uploader initialized (REST API): "
+                f"bucket={self.bucket}, domain={self.domain}"
             )
             self.enabled = True
-        except FileNotFoundError:
-            logger.warning("R2 upload disabled: wrangler not found")
+        except httpx.ConnectError as e:
+            logger.warning(f"R2 upload disabled: cannot reach Cloudflare API: {e}")
             self.enabled = False
         except Exception as e:
-            logger.warning(f"R2 upload disabled: wrangler check failed: {e}")
+            logger.warning(f"R2 upload disabled: API check failed: {e}")
             self.enabled = False
 
     def _get_content_type(self, file_path: str) -> str:
@@ -76,31 +88,31 @@ class R2Uploader:
         return f"https://{self.domain}/{encoded_key}"
 
     def upload_file(self, local_path: str, r2_key: str) -> Optional[str]:
-        """Upload a single file to R2 via wrangler. Returns public URL or None."""
+        """Upload a single file to R2 via Cloudflare REST API. Returns public URL or None."""
         if not self.enabled:
             return None
         try:
             content_type = self._get_content_type(local_path)
-            env = {
-                **os.environ,
-                "CLOUDFLARE_API_TOKEN": self._api_token,
-                "CLOUDFLARE_ACCOUNT_ID": self.account_id,
-            }
+            encoded_key = quote(r2_key, safe="")
 
-            result = subprocess.run(
-                [
-                    "wrangler", "r2", "object", "put",
-                    f"{self.bucket}/{r2_key}",
-                    f"--file={local_path}",
-                    f"--content-type={content_type}",
-                    "--remote",
-                ],
-                capture_output=True, text=True, timeout=120, env=env,
+            url = (
+                f"{self.API_BASE}/{self.account_id}"
+                f"/r2/buckets/{self.bucket}/objects/{encoded_key}"
             )
 
-            if result.returncode != 0:
-                error_msg = result.stderr.strip() or result.stdout.strip()
-                raise RuntimeError(error_msg[:500])
+            with open(local_path, "rb") as f:
+                file_data = f.read()
+
+            resp = self._client.put(
+                url,
+                content=file_data,
+                headers={"Content-Type": content_type},
+            )
+
+            if resp.status_code != 200:
+                raise RuntimeError(
+                    f"HTTP {resp.status_code}: {resp.text[:300]}"
+                )
 
             public_url = self._build_public_url(r2_key)
             logger.debug(f"Uploaded to R2: {r2_key}")
@@ -211,7 +223,8 @@ class R2Uploader:
         os.replace(tmp_path, path)
 
     def close(self):
-        pass
+        if self._client:
+            self._client.close()
 
     def __enter__(self):
         return self

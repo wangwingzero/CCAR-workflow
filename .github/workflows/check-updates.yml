@@ -93,9 +93,6 @@ jobs:
       - name: Install Patchright browsers
         run: uv run patchright install --with-deps chromium
 
-      - name: Install wrangler
-        run: npm install -g wrangler
-
       - name: Run check
         env:
           # Playwright/Patchright timeout (CI needs longer)
