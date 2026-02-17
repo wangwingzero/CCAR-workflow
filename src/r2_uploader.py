@@ -1,28 +1,27 @@
 """
 Cloudflare R2 Upload Module
 
-Uploads downloaded PDF files to R2 via Cloudflare REST API.
+Uploads downloaded PDF files to R2 via rclone (S3-compatible API).
+Uses rclone (Go binary) to bypass Python OpenSSL TLS issues.
 Gracefully degrades when credentials are not configured.
 
 Required env vars:
-  CLOUDFLARE_API_TOKEN, R2_ACCOUNT_ID, R2_BUCKET, R2_DOMAIN
+  R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_ACCOUNT_ID, R2_BUCKET, R2_DOMAIN
 """
 
 import json
 import os
+import subprocess
+import tempfile
 from pathlib import Path
 from typing import Optional
 from urllib.parse import quote
 
-import httpx
 from loguru import logger
 
 
 class R2Uploader:
-    """Cloudflare R2 file uploader using Cloudflare REST API."""
-
-    # REST API base URL
-    API_BASE = "https://api.cloudflare.com/client/v4/accounts"
+    """Cloudflare R2 file uploader using rclone."""
 
     CONTENT_TYPES = {
         ".pdf": "application/pdf",
@@ -35,34 +34,65 @@ class R2Uploader:
         self.account_id = os.environ.get("R2_ACCOUNT_ID", "").strip()
         self.bucket = os.environ.get("R2_BUCKET", "").strip()
         self.domain = os.environ.get("R2_DOMAIN", "").strip().rstrip("/")
-        self._api_token = os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
+        self._access_key_id = os.environ.get("R2_ACCESS_KEY_ID", "").strip()
+        self._secret_access_key = os.environ.get("R2_SECRET_ACCESS_KEY", "").strip()
 
         required = {
             "R2_ACCOUNT_ID": self.account_id,
             "R2_BUCKET": self.bucket,
             "R2_DOMAIN": self.domain,
-            "CLOUDFLARE_API_TOKEN": self._api_token,
+            "R2_ACCESS_KEY_ID": self._access_key_id,
+            "R2_SECRET_ACCESS_KEY": self._secret_access_key,
         }
         missing = [name for name, val in required.items() if not val]
 
         if missing:
             logger.warning(f"R2 upload disabled, missing env vars: {missing}")
             self.enabled = False
-            self._client = None
+            self._rclone_conf = None
             return
 
-        self._client = httpx.Client(
-            timeout=httpx.Timeout(connect=10, read=120, write=120, pool=10),
-            headers={
-                "Authorization": f"Bearer {self._api_token}",
-            },
+        # Verify rclone is available
+        try:
+            result = subprocess.run(
+                ["rclone", "version"],
+                capture_output=True, text=True, timeout=15,
+            )
+            if result.returncode != 0:
+                raise RuntimeError(f"rclone failed: {result.stderr}")
+            version_line = result.stdout.strip().split("\n")[0]
+            logger.info(f"rclone found: {version_line}")
+        except FileNotFoundError:
+            logger.warning("R2 upload disabled: rclone not found")
+            self.enabled = False
+            self._rclone_conf = None
+            return
+        except Exception as e:
+            logger.warning(f"R2 upload disabled: rclone check failed: {e}")
+            self.enabled = False
+            self._rclone_conf = None
+            return
+
+        # Create temporary rclone config
+        self._rclone_conf = tempfile.NamedTemporaryFile(
+            mode="w", suffix=".conf", prefix="rclone_r2_", delete=False,
         )
+        self._rclone_conf.write(
+            f"[r2]\n"
+            f"type = s3\n"
+            f"provider = Cloudflare\n"
+            f"access_key_id = {self._access_key_id}\n"
+            f"secret_access_key = {self._secret_access_key}\n"
+            f"endpoint = https://{self.account_id}.r2.cloudflarestorage.com\n"
+            f"acl = private\n"
+            f"no_check_bucket = true\n"
+        )
+        self._rclone_conf.close()
+
         self.enabled = True
         logger.info(
-            f"R2 uploader initialized (REST API): "
-            f"bucket={self.bucket}, domain={self.domain}, "
-            f"token_len={len(self._api_token)}, "
-            f"token_prefix={self._api_token[:4]}...{self._api_token[-4:]}"
+            f"R2 uploader initialized (rclone): "
+            f"bucket={self.bucket}, domain={self.domain}"
         )
 
     def _get_content_type(self, file_path: str) -> str:
@@ -74,31 +104,28 @@ class R2Uploader:
         return f"https://{self.domain}/{encoded_key}"
 
     def upload_file(self, local_path: str, r2_key: str) -> Optional[str]:
-        """Upload a single file to R2 via Cloudflare REST API. Returns public URL or None."""
+        """Upload a single file to R2 via rclone. Returns public URL or None."""
         if not self.enabled:
             return None
         try:
             content_type = self._get_content_type(local_path)
-            encoded_key = quote(r2_key, safe="")
+            dest = f"r2:{self.bucket}/{r2_key}"
 
-            url = (
-                f"{self.API_BASE}/{self.account_id}"
-                f"/r2/buckets/{self.bucket}/objects/{encoded_key}"
+            result = subprocess.run(
+                [
+                    "rclone", "copyto",
+                    local_path, dest,
+                    f"--config={self._rclone_conf.name}",
+                    f"--header-upload=Content-Type: {content_type}",
+                    "--no-check-dest",
+                    "-v",
+                ],
+                capture_output=True, text=True, timeout=120,
             )
 
-            with open(local_path, "rb") as f:
-                file_data = f.read()
-
-            resp = self._client.put(
-                url,
-                content=file_data,
-                headers={"Content-Type": content_type},
-            )
-
-            if resp.status_code != 200:
-                raise RuntimeError(
-                    f"HTTP {resp.status_code}: {resp.text[:300]}"
-                )
+            if result.returncode != 0:
+                error_msg = result.stderr.strip() or result.stdout.strip()
+                raise RuntimeError(error_msg[:500])
 
             public_url = self._build_public_url(r2_key)
             logger.debug(f"Uploaded to R2: {r2_key}")
@@ -209,8 +236,11 @@ class R2Uploader:
         os.replace(tmp_path, path)
 
     def close(self):
-        if self._client:
-            self._client.close()
+        if self._rclone_conf and os.path.exists(self._rclone_conf.name):
+            try:
+                os.unlink(self._rclone_conf.name)
+            except OSError:
+                pass
 
     def __enter__(self):
         return self

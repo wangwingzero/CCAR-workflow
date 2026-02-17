@@ -66,91 +66,64 @@ concurrency:
 jobs:
   check-updates:
     runs-on: ubuntu-22.04
-    
+
     permissions:
       contents: write  # Required for committing state file
       actions: write   # Clean up old workflow runs
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - name: Install uv
         uses: astral-sh/setup-uv@v4
         with:
           version: "latest"
-      
+
       - name: Set up Python
         run: uv python install 3.12
-      
+
       - name: Install dependencies
         run: uv sync
-      
+
       # Install Patchright browser (anti-detection)
       # --with-deps installs system dependencies (libgbm, libasound2, etc.)
       - name: Install Patchright browsers
         run: uv run patchright install --with-deps chromium
 
-      - name: Debug R2 API access
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+      - name: Install rclone
         run: |
-          echo "=== Test 0: Verify token ==="
-          curl -s -w "\nHTTP_STATUS: %{http_code}\n" \
-            "https://api.cloudflare.com/client/v4/user/tokens/verify" \
-            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
-
-          echo ""
-          echo "=== Test 1: List R2 buckets ==="
-          curl -s -w "\nHTTP_STATUS: %{http_code}\n" \
-            "https://api.cloudflare.com/client/v4/accounts/${R2_ACCOUNT_ID}/r2/buckets" \
-            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" | head -200
-
-          echo ""
-          echo "=== Test 2: Upload small test file ==="
-          echo "hello from CI" > /tmp/test-r2.txt
-          curl -s -w "\nHTTP_STATUS: %{http_code}\n" \
-            -X PUT \
-            "https://api.cloudflare.com/client/v4/accounts/${R2_ACCOUNT_ID}/r2/buckets/${R2_BUCKET}/objects/test-ci.txt" \
-            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
-            -H "Content-Type: text/plain" \
-            --data-binary @/tmp/test-r2.txt | head -200
-
-          echo ""
-          echo "=== Test 3: Token info ==="
-          echo "Token length: ${#CLOUDFLARE_API_TOKEN}"
-          echo "Token prefix: ${CLOUDFLARE_API_TOKEN:0:4}...${CLOUDFLARE_API_TOKEN: -4}"
-          echo "Token hex (first 8 bytes): $(echo -n "${CLOUDFLARE_API_TOKEN}" | xxd -l 8 -p)"
+          curl -fsSL https://rclone.org/install.sh | sudo bash
+          rclone version
 
       - name: Run check
         env:
           # Playwright/Patchright timeout (CI needs longer)
           PLAYWRIGHT_TIMEOUT: "60000"
-          
+
           # Send regulations from last N days (empty = detect new)
           # 手动触发时优先用 github.event.inputs，定时任务用 secrets
           DAYS: ${{ github.event.inputs.days || secrets.DAYS }}
-          
+
           # Notification - Email
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
           EMAIL_SENDER: ${{ secrets.EMAIL_SENDER }}
-          
+
           # Notification - PushPlus
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-          
+
           # Notification - Telegram
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
-          # Cloudflare R2 (optional, for PDF hosting)
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Cloudflare R2 (optional, for PDF hosting via rclone S3 API)
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           R2_DOMAIN: ${{ secrets.R2_DOMAIN }}
         run: |
@@ -171,7 +144,7 @@ jobs:
 
           echo "Running: ${CMD[*]}"
           "${CMD[@]}"
-      
+
       - name: Commit state update
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -195,7 +168,7 @@ jobs:
           fi
           git diff --staged --quiet || git commit -m "chore: update regulation state $(date +'%Y-%m-%d')"
           git push
-      
+
       - name: Upload downloaded files
         if: always()
         uses: actions/upload-artifact@v4
@@ -204,7 +177,7 @@ jobs:
           path: downloads/
           retention-days: 30
           if-no-files-found: ignore
-      
+
       # Clean up old workflow runs
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
