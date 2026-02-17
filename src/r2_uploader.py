@@ -51,8 +51,9 @@ class R2Uploader:
 
         try:
             import boto3
-        except ImportError:
-            logger.warning("R2 upload disabled: boto3 not installed")
+            import certifi
+        except ImportError as e:
+            logger.warning(f"R2 upload disabled: missing dependency ({e})")
             self.enabled = False
             self._client = None
             return
@@ -63,6 +64,7 @@ class R2Uploader:
             aws_access_key_id=access_key,
             aws_secret_access_key=secret_key,
             region_name="auto",
+            verify=certifi.where(),
         )
         self.enabled = True
         logger.info(f"R2 uploader initialized: bucket={self.bucket}, domain={self.domain}")
