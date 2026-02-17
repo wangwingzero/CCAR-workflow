@@ -1,12 +1,11 @@
 """
 Cloudflare R2 Upload Module
 
-Uploads downloaded PDF files to R2 via Node.js AWS S3 SDK.
-Node.js uses BoringSSL which bypasses OpenSSL 3.5.x TLS issues on CI.
+Uploads downloaded PDF files to R2 via wrangler CLI (Cloudflare REST API).
 Gracefully degrades when credentials are not configured.
 
 Required env vars:
-  R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, R2_SECRET_ACCESS_KEY, R2_BUCKET, R2_DOMAIN
+  CLOUDFLARE_API_TOKEN, R2_ACCOUNT_ID, R2_BUCKET, R2_DOMAIN
 """
 
 import json
@@ -20,7 +19,7 @@ from loguru import logger
 
 
 class R2Uploader:
-    """Cloudflare R2 file uploader using Node.js S3 SDK."""
+    """Cloudflare R2 file uploader using wrangler CLI."""
 
     CONTENT_TYPES = {
         ".pdf": "application/pdf",
@@ -33,15 +32,13 @@ class R2Uploader:
         self.account_id = os.environ.get("R2_ACCOUNT_ID", "").strip()
         self.bucket = os.environ.get("R2_BUCKET", "").strip()
         self.domain = os.environ.get("R2_DOMAIN", "").strip().rstrip("/")
-        self._access_key = os.environ.get("R2_ACCESS_KEY_ID", "").strip()
-        self._secret_key = os.environ.get("R2_SECRET_ACCESS_KEY", "").strip()
+        self._api_token = os.environ.get("CLOUDFLARE_API_TOKEN", "").strip()
 
         required = {
             "R2_ACCOUNT_ID": self.account_id,
             "R2_BUCKET": self.bucket,
             "R2_DOMAIN": self.domain,
-            "R2_ACCESS_KEY_ID": self._access_key,
-            "R2_SECRET_ACCESS_KEY": self._secret_key,
+            "CLOUDFLARE_API_TOKEN": self._api_token,
         }
         missing = [name for name, val in required.items() if not val]
 
@@ -50,33 +47,24 @@ class R2Uploader:
             self.enabled = False
             return
 
-        # Find the upload script
-        self._script_path = str(
-            Path(__file__).parent.parent / "scripts" / "r2-upload.mjs"
-        )
-        if not os.path.exists(self._script_path):
-            logger.warning(f"R2 upload disabled: script not found at {self._script_path}")
-            self.enabled = False
-            return
-
-        # Verify node is available
+        # Verify wrangler is available
         try:
             result = subprocess.run(
-                ["node", "--version"],
-                capture_output=True, text=True, timeout=10,
+                ["wrangler", "--version"],
+                capture_output=True, text=True, timeout=15,
             )
             if result.returncode != 0:
-                raise RuntimeError(f"node failed: {result.stderr}")
-            self.enabled = True
+                raise RuntimeError(f"wrangler failed: {result.stderr}")
             logger.info(
                 f"R2 uploader initialized: bucket={self.bucket}, "
-                f"domain={self.domain}, node={result.stdout.strip()}"
+                f"domain={self.domain}, wrangler={result.stdout.strip()}"
             )
+            self.enabled = True
         except FileNotFoundError:
-            logger.warning("R2 upload disabled: node not found")
+            logger.warning("R2 upload disabled: wrangler not found")
             self.enabled = False
         except Exception as e:
-            logger.warning(f"R2 upload disabled: node check failed: {e}")
+            logger.warning(f"R2 upload disabled: wrangler check failed: {e}")
             self.enabled = False
 
     def _get_content_type(self, file_path: str) -> str:
@@ -88,21 +76,25 @@ class R2Uploader:
         return f"https://{self.domain}/{encoded_key}"
 
     def upload_file(self, local_path: str, r2_key: str) -> Optional[str]:
-        """Upload a single file to R2 via Node.js script. Returns public URL or None."""
+        """Upload a single file to R2 via wrangler. Returns public URL or None."""
         if not self.enabled:
             return None
         try:
             content_type = self._get_content_type(local_path)
             env = {
                 **os.environ,
-                "R2_ACCOUNT_ID": self.account_id,
-                "R2_ACCESS_KEY_ID": self._access_key,
-                "R2_SECRET_ACCESS_KEY": self._secret_key,
-                "R2_BUCKET": self.bucket,
+                "CLOUDFLARE_API_TOKEN": self._api_token,
+                "CLOUDFLARE_ACCOUNT_ID": self.account_id,
             }
 
             result = subprocess.run(
-                ["node", self._script_path, local_path, r2_key, content_type],
+                [
+                    "wrangler", "r2", "object", "put",
+                    f"{self.bucket}/{r2_key}",
+                    f"--file={local_path}",
+                    f"--content-type={content_type}",
+                    "--remote",
+                ],
                 capture_output=True, text=True, timeout=120, env=env,
             )
 
