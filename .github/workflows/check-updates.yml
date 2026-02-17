@@ -99,6 +99,12 @@ jobs:
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
         run: |
+          echo "=== Test 0: Verify token ==="
+          curl -s -w "\nHTTP_STATUS: %{http_code}\n" \
+            "https://api.cloudflare.com/client/v4/user/tokens/verify" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}"
+
+          echo ""
           echo "=== Test 1: List R2 buckets ==="
           curl -s -w "\nHTTP_STATUS: %{http_code}\n" \
             "https://api.cloudflare.com/client/v4/accounts/${R2_ACCOUNT_ID}/r2/buckets" \
@@ -115,9 +121,10 @@ jobs:
             --data-binary @/tmp/test-r2.txt | head -200
 
           echo ""
-          echo "=== Test 3: Token info (first 4 / last 4 chars) ==="
+          echo "=== Test 3: Token info ==="
           echo "Token length: ${#CLOUDFLARE_API_TOKEN}"
           echo "Token prefix: ${CLOUDFLARE_API_TOKEN:0:4}...${CLOUDFLARE_API_TOKEN: -4}"
+          echo "Token hex (first 8 bytes): $(echo -n "${CLOUDFLARE_API_TOKEN}" | xxd -l 8 -p)"
 
       - name: Run check
         env:
