@@ -95,30 +95,45 @@ class R2Uploader:
             logger.warning(f"R2 diagnostics: TCP connection failed: {e}")
             return
 
-        # 3. OpenSSL s_client test
+        # 3. OpenSSL s_client test (force TLS 1.2)
         try:
             result = subprocess.run(
                 ["openssl", "s_client", "-connect", f"{host}:443",
-                 "-servername", host, "-brief"],
+                 "-servername", host, "-brief", "-tls1_2"],
                 capture_output=True, text=True, timeout=10,
                 input=""
             )
             output = (result.stdout + result.stderr)[:500]
-            logger.info(f"R2 diagnostics: openssl s_client output: {output}")
+            logger.info(f"R2 diagnostics: openssl s_client -tls1_2: {output}")
         except Exception as e:
             logger.warning(f"R2 diagnostics: openssl s_client failed: {e}")
 
-        # 4. Python ssl wrap test
+        # 4. Python ssl wrap test (force TLS 1.2)
+        try:
+            ctx = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+            ctx.maximum_version = ssl.TLSVersion.TLSv1_2
+            ctx.minimum_version = ssl.TLSVersion.TLSv1_2
+            ctx.load_default_certs()
+            with socket.create_connection((host, 443), timeout=5) as sock:
+                with ctx.wrap_socket(sock, server_hostname=host) as ssock:
+                    logger.info(
+                        f"R2 diagnostics: Python TLS 1.2 OK, version={ssock.version()}, "
+                        f"cipher={ssock.cipher()}"
+                    )
+        except Exception as e:
+            logger.warning(f"R2 diagnostics: Python TLS 1.2 wrap failed: {e}")
+
+        # 5. Python ssl wrap test (default TLS)
         try:
             ctx = ssl.create_default_context()
             with socket.create_connection((host, 443), timeout=5) as sock:
                 with ctx.wrap_socket(sock, server_hostname=host) as ssock:
                     logger.info(
-                        f"R2 diagnostics: Python TLS OK, version={ssock.version()}, "
+                        f"R2 diagnostics: Python TLS default OK, version={ssock.version()}, "
                         f"cipher={ssock.cipher()}"
                     )
         except Exception as e:
-            logger.warning(f"R2 diagnostics: Python TLS wrap failed: {e}")
+            logger.warning(f"R2 diagnostics: Python TLS default failed: {e}")
 
     def _get_content_type(self, file_path: str) -> str:
         ext = os.path.splitext(file_path)[1].lower()
@@ -152,11 +167,13 @@ class R2Uploader:
             aws_request = AWSRequest(method="PUT", url=url, headers=headers, data=data)
             self._signer_cls(self._credentials, "s3", "auto").add_auth(aws_request)
 
-            # Custom SSL context to work around OpenSSL 3.0 cipher issues
+            # Force TLS 1.2 to work around OpenSSL 3.5.x handshake issues with R2
             import ssl
 
-            ssl_context = ssl.create_default_context()
-            ssl_context.set_ciphers("DEFAULT@SECLEVEL=1")
+            ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS_CLIENT)
+            ssl_context.maximum_version = ssl.TLSVersion.TLSv1_2
+            ssl_context.minimum_version = ssl.TLSVersion.TLSv1_2
+            ssl_context.load_default_certs()
 
             with httpx.Client(timeout=120, verify=ssl_context) as client:
                 response = client.put(
