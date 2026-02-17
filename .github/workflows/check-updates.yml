@@ -93,11 +93,6 @@ jobs:
       - name: Install Patchright browsers
         run: uv run patchright install --with-deps chromium
 
-      - name: Install rclone
-        run: |
-          curl -fsSL https://rclone.org/install.sh | sudo bash
-          rclone version
-
       - name: Run check
         env:
           # Playwright/Patchright timeout (CI needs longer)
@@ -120,11 +115,9 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
-          # Cloudflare R2 (optional, for PDF hosting via rclone S3 API)
-          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+          # Cloudflare R2 (optional, for PDF hosting via Worker proxy)
+          R2_WORKER_URL: ${{ secrets.R2_WORKER_URL }}
+          R2_WORKER_SECRET: ${{ secrets.R2_WORKER_SECRET }}
           R2_DOMAIN: ${{ secrets.R2_DOMAIN }}
         run: |
           # 构建命令参数
