@@ -40,7 +40,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2025年第6号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC6%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "运输机场运行安全管理规定",
@@ -48,7 +49,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2025年第5号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC5%E5%8F%B7%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空行政处罚实施办法",
