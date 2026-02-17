@@ -92,6 +92,9 @@ jobs:
       # --with-deps installs system dependencies (libgbm, libasound2, etc.)
       - name: Install Patchright browsers
         run: uv run patchright install --with-deps chromium
+
+      - name: Install wrangler
+        run: npm install -g wrangler
       
       - name: Run check
         env:
@@ -116,9 +119,8 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
           # Cloudflare R2 (optional, for PDF hosting)
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
           R2_DOMAIN: ${{ secrets.R2_DOMAIN }}
         run: |
