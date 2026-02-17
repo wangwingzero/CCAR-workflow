@@ -100,7 +100,13 @@ class R2Uploader:
             aws_request = AWSRequest(method="PUT", url=url, headers=headers, data=data)
             self._signer_cls(self._credentials, "s3", "auto").add_auth(aws_request)
 
-            with httpx.Client(timeout=120) as client:
+            # Custom SSL context to work around OpenSSL 3.0 cipher issues
+            import ssl
+
+            ssl_context = ssl.create_default_context()
+            ssl_context.set_ciphers("DEFAULT@SECLEVEL=1")
+
+            with httpx.Client(timeout=120, verify=ssl_context) as client:
                 response = client.put(
                     url,
                     headers=dict(aws_request.headers),
