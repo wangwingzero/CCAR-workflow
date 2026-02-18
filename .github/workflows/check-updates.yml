@@ -162,6 +162,61 @@ jobs:
           git diff --staged --quiet || git commit -m "chore: update regulation state $(date +'%Y-%m-%d')"
           git push
 
+      # Sync JS data files to FlightToolbox miniprogram
+      # Pushes regulation.js / normative.js / specification.js → triggers WeChat CI
+      - name: Sync JS to FlightToolbox
+        env:
+          FLIGHTTOOLBOX_TOKEN: ${{ secrets.FLIGHTTOOLBOX_TOKEN }}
+        run: |
+          if [ -z "$FLIGHTTOOLBOX_TOKEN" ]; then
+            echo "⏭️ FLIGHTTOOLBOX_TOKEN not set, skipping sync"
+            exit 0
+          fi
+          if [ ! -d JS ] || [ -z "$(ls JS/*.js 2>/dev/null)" ]; then
+            echo "⏭️ No JS files to sync"
+            exit 0
+          fi
+
+          REPO_URL="https://x-access-token:${FLIGHTTOOLBOX_TOKEN}@github.com/wangwingzero/FlightToolbox.git"
+          CLONE_DIR="/tmp/FlightToolbox"
+          TARGET_DIR="miniprogram/packageCCAR"
+
+          git clone --depth 1 "$REPO_URL" "$CLONE_DIR"
+
+          CHANGED=0
+          for js_file in JS/*.js; do
+            filename=$(basename "$js_file")
+            target="$CLONE_DIR/$TARGET_DIR/$filename"
+            if [ -f "$target" ]; then
+              if ! diff -q "$js_file" "$target" > /dev/null 2>&1; then
+                cp "$js_file" "$target"
+                echo "📝 Updated: $filename"
+                CHANGED=1
+              else
+                echo "✅ No change: $filename"
+              fi
+            else
+              cp "$js_file" "$target"
+              echo "📝 New file: $filename"
+              CHANGED=1
+            fi
+          done
+
+          if [ "$CHANGED" -eq 0 ]; then
+            echo "⏭️ All JS files unchanged, skipping push"
+            exit 0
+          fi
+
+          cd "$CLONE_DIR"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add "$TARGET_DIR/regulation.js" "$TARGET_DIR/normative.js" "$TARGET_DIR/specification.js"
+          git diff --staged --quiet || {
+            git commit -m "chore(ccar): sync regulation data $(date +'%Y-%m-%d')"
+            git push
+            echo "🚀 Pushed to FlightToolbox → WeChat CI will auto-trigger"
+          }
+
       - name: Upload downloaded files
         if: always()
         uses: actions/upload-artifact@v4
