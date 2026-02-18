@@ -278,6 +278,15 @@ def _write_js_data(file_path: Path, records: list[dict], export_name: str) -> No
     file_path.write_text(content, encoding="utf-8")
 
 
+def _write_json_data(file_path: Path, records: list[dict]) -> None:
+    """Write pure JSON array for R2 hot-update endpoint"""
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    file_path.write_text(
+        json.dumps(records, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+
 def _build_regulation_record(doc: Document, doc_type: str, pdf_url: str = "") -> dict:
     """Build regulation JS record"""
     record = {
@@ -597,6 +606,8 @@ class Storage:
             ]
 
             _write_js_data(file_path, merged_records, export_name)
+            json_path = file_path.with_suffix(".json")
+            _write_json_data(json_path, merged_records)
             summary[file_path.name] = len(merged_records)
             logger.info(
                 f"JS updated: {file_path} "

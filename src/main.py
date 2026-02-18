@@ -23,7 +23,7 @@ from loguru import logger
 from .crawler import CaacCrawler, generate_filename, get_download_subdir, CATEGORIES, Document
 from .notifier import Notifier
 from .r2_uploader import R2Uploader
-from .storage import Storage, filter_by_days
+from .storage import Storage, filter_by_days, JS_EXPORT_CONFIG
 
 
 def _merge_documents(*documents_by_category: dict[str, list[Document]]) -> dict[str, list[Document]]:
@@ -379,6 +379,23 @@ def main() -> int:
             if js_summary:
                 summary_text = ", ".join(f"{name}={count}" for name, count in js_summary.items())
                 logger.info(f"JS sync complete: {summary_text}")
+
+            # 5b. Upload JSON data to R2 for mini program hot-update
+            if r2.enabled:
+                logger.info("Step 5b: Uploading JSON data to R2...")
+                json_uploaded = 0
+                for cat_id, config in JS_EXPORT_CONFIG.items():
+                    json_filename = config["filename"].replace(".js", ".json")
+                    json_local = os.path.join("JS", json_filename)
+                    if os.path.exists(json_local):
+                        r2_key = f"data/v1/{json_filename}"
+                        url = r2.upload_file(json_local, r2_key)
+                        if url:
+                            json_uploaded += 1
+                            logger.info(f"JSON uploaded to R2: {r2_key}")
+                        else:
+                            logger.warning(f"JSON upload failed: {r2_key}")
+                logger.info(f"JSON data upload complete: {json_uploaded} files")
 
             # 6. Send notification
             if not args.no_notify:

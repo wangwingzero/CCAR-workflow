@@ -156,9 +156,7 @@ jobs:
               git add "${js_files[@]}"
             fi
           fi
-          if [ -d downloads ]; then
-            git add downloads
-          fi
+          # downloads/ no longer committed to repo — PDFs hosted on R2 only
           git diff --staged --quiet || git commit -m "chore: update regulation state $(date +'%Y-%m-%d')"
           git push
 
