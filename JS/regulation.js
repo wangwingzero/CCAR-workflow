@@ -66,7 +66,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2024年第11号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42024%E5%B9%B4%E7%AC%AC11%E5%8F%B7%E9%80%9A%E7%94%A8%E6%9C%BA%E5%9C%BA%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用机场专用设备管理规定",
@@ -74,7 +75,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2024年第10号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42024%E5%B9%B4%E7%AC%AC10%E5%8F%B7%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%B8%93%E7%94%A8%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空货物运输管理规定",
@@ -90,7 +92,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2024年第7号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42024%E5%B9%B4%E7%AC%AC7%E5%8F%B7%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空计量管理规定",
@@ -98,7 +101,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2024年第6号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42024%E5%B9%B4%E7%AC%AC6%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E8%AE%A1%E9%87%8F%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《民用航空产品和零部件合格审定规定》的决定",
@@ -106,7 +110,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2024年第5号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42024%E5%B9%B4%E7%AC%AC5%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空危险品运输管理规定",
@@ -114,7 +119,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2024年第4号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42024%E5%B9%B4%E7%AC%AC4%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用无人驾驶航空器运行安全管理规则",
@@ -122,7 +128,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2024年第1号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42024%E5%B9%B4%E7%AC%AC1%E5%8F%B7%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "交通运输部关于废止《民用航空企业及机场联合重组改制管理规定》的决定",
@@ -138,7 +145,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第36号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC36%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《平行跑道同时仪表运行管理规定》的决定",
@@ -146,7 +154,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2023年第1号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42023%E5%B9%B4%E7%AC%AC1%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E5%B9%B3%E8%A1%8C%E8%B7%91%E9%81%93%E5%90%8C%E6%97%B6%E4%BB%AA%E8%A1%A8%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《航空器型号和适航合格审定噪声规定》的决定",
@@ -154,7 +163,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第41号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC41%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9E%8B%E5%8F%B7%E5%92%8C%E9%80%82%E8%88%AA%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E5%99%AA%E5%A3%B0%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《涡轮发动机飞机燃油排泄和排气排出物规定》的决定",
@@ -162,7 +172,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第40号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC40%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B6%A1%E8%BD%AE%E5%8F%91%E5%8A%A8%E6%9C%BA%E9%A3%9E%E6%9C%BA%E7%87%83%E6%B2%B9%E6%8E%92%E6%B3%84%E5%92%8C%E6%8E%92%E6%B0%94%E6%8E%92%E5%87%BA%E7%89%A9%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《民用航空情报工作规则》的决定",
@@ -170,7 +181,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第35号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC35%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%83%85%E6%8A%A5%E5%B7%A5%E4%BD%9C%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《民用航空器事件调查规定》的决定",
@@ -178,7 +190,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第34号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC34%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E4%BA%8B%E4%BB%B6%E8%B0%83%E6%9F%A5%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空飞行签派员执照和训练机构管理规则",
@@ -186,7 +199,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第23号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC23%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E9%A3%9E%E8%A1%8C%E7%AD%BE%E6%B4%BE%E5%91%98%E6%89%A7%E7%85%A7%E5%92%8C%E8%AE%AD%E7%BB%83%E6%9C%BA%E6%9E%84%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "交通运输部关于修改《民用航空器国籍登记规定》的决定",
@@ -226,7 +240,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第16号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC16%E5%8F%B7%E6%AD%A3%E5%B8%B8%E7%B1%BB%E9%A3%9E%E6%9C%BA%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "通用航空安全保卫规则",
@@ -250,7 +265,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第9号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E5%9F%B9%E8%AE%AD%E6%9C%BA%E6%9E%84%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空器维修单位合格审定规则",
@@ -258,7 +274,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第8号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC8%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E5%8D%95%E4%BD%8D%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "交通运输部关于修改《运输机场运行安全管理规定》的决定",
@@ -266,7 +283,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第7号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC7%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空器国籍登记规定",
@@ -282,7 +300,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第3号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC3%E5%8F%B7%E4%B8%80%E8%88%AC%E8%BF%90%E8%A1%8C%E5%92%8C%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空器驾驶员学校合格审定规则",
@@ -290,7 +309,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第5号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC5%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A9%BE%E9%A9%B6%E5%91%98%E5%AD%A6%E6%A0%A1%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "特殊商业和私用大型航空器运营人运行合格审定规则",
@@ -298,7 +318,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第6号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC6%E5%8F%B7%E7%89%B9%E6%AE%8A%E5%95%86%E4%B8%9A%E5%92%8C%E7%A7%81%E7%94%A8%E5%A4%A7%E5%9E%8B%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%90%A5%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "小型商业运输和空中游览运营人运行合格审定规则",
@@ -306,7 +327,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第4号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC4%E5%8F%B7%E5%B0%8F%E5%9E%8B%E5%95%86%E4%B8%9A%E8%BF%90%E8%BE%93%E5%92%8C%E7%A9%BA%E4%B8%AD%E6%B8%B8%E8%A7%88%E8%BF%90%E8%90%A5%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "运输机场专业工程建设质量和安全生产监督管理规定",
@@ -314,7 +336,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2022年第2号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC2%E5%8F%B7%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E5%BB%BA%E8%AE%BE%E8%B4%A8%E9%87%8F%E5%92%8C%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E7%9B%91%E7%9D%A3%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《民用航空行政处罚实施办法》的决定",
@@ -322,7 +345,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "交通运输部令2021年第30号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42021%E5%B9%B4%E7%AC%AC30%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E8%A1%8C%E6%94%BF%E5%A4%84%E7%BD%9A%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空通信导航监视设备飞行校验管理规则",
@@ -346,7 +370,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "废止",
     "doc_number": "交通运输部令2021年第5号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%BA%9F%E6%AD%A2%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42021%E5%B9%B4%E7%AC%AC5%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "公共航空运输旅客服务管理规定",
@@ -354,7 +379,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2021年第3号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42021%E5%B9%B4%E7%AC%AC3%E5%8F%B7%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%97%85%E5%AE%A2%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空导航设备开放与运行管理规定",
@@ -370,7 +396,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2020年第23号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42020%E5%B9%B4%E7%AC%AC23%E5%8F%B7%E5%85%B3%E4%BA%8E%E5%BA%9F%E6%AD%A2%E3%80%8A%E5%A4%96%E5%95%86%E6%8A%95%E8%B5%84%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%B8%9A%E8%A7%84%E5%AE%9A%E3%80%8B%E5%8F%8A%E5%85%B66%E4%B8%AA%E8%A1%A5%E5%85%85%E8%A7%84%E5%AE%9A%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "国际航空运输价格管理规定",
@@ -378,7 +405,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2020年第19号",
-    "office_unit": "综合司"
+    "office_unit": "综合司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42020%E5%B9%B4%E7%AC%AC19%E5%8F%B7%E5%9B%BD%E9%99%85%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E4%BB%B7%E6%A0%BC%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "通用航空经营许可管理规定",
@@ -386,7 +414,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2020年第18号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42020%E5%B9%B4%E7%AC%AC18%E5%8F%B7%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空器维修人员执照管理规则",
@@ -394,7 +423,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2020年第10号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42020%E5%B9%B4%E7%AC%AC10%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E4%BA%BA%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "交通运输部关于修改《大型飞机公共航空运输承运人运行合格审定规则》的决定",
@@ -402,7 +432,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "交通运输部令2020年第9号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42020%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "中国民用航空监察员管理规定",
@@ -410,7 +441,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "交通运输部令2020年第7号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42020%E5%B9%B4%E7%AC%AC7%E5%8F%B7%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%9B%91%E5%AF%9F%E5%91%98%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于废止3件规章的决定",
@@ -434,7 +466,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "交通运输部令2019年第30号",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42019%E5%B9%B4%E7%AC%AC30%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于废止《中国民用航空总局职能部门规范性文件制定程序规定》的决定",
@@ -450,7 +483,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E4%BD%BF%E7%94%A8%E8%AE%B8%E5%8F%AF%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《定期国际航空运输管理规定》的决定",
@@ -458,7 +492,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E5%AE%9A%E6%9C%9F%E5%9B%BD%E9%99%85%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "飞行模拟训练设备管理和运行规则",
@@ -466,7 +501,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E9%A3%9E%E8%A1%8C%E6%A8%A1%E6%8B%9F%E8%AE%AD%E7%BB%83%E8%AE%BE%E5%A4%87%E7%AE%A1%E7%90%86%E5%92%8C%E8%BF%90%E8%A1%8C%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "交通运输部关于修改《民用航空器驾驶员学校合格审定规则》的决定",
@@ -474,7 +510,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A9%BE%E9%A9%B6%E5%91%98%E5%AD%A6%E6%A0%A1%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《一般运行和飞行规则》的决定",
@@ -482,7 +519,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E4%B8%80%E8%88%AC%E8%BF%90%E8%A1%8C%E5%92%8C%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《维修和改装一般规则》的决定",
@@ -490,7 +528,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E7%BB%B4%E4%BF%AE%E5%92%8C%E6%94%B9%E8%A3%85%E4%B8%80%E8%88%AC%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《小型航空器商业运输运营人运行合格审定规则》的决定",
@@ -498,7 +537,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E5%B0%8F%E5%9E%8B%E8%88%AA%E7%A9%BA%E5%99%A8%E5%95%86%E4%B8%9A%E8%BF%90%E8%BE%93%E8%BF%90%E8%90%A5%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《通用航空经营许可管理规定》的决定",
@@ -514,7 +554,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A9%BE%E9%A9%B6%E5%91%98%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《公共航空运输企业航空安全保卫规则》的决定",
@@ -538,7 +579,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "废止",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%BA%9F%E6%AD%A2%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BC%81%E4%B8%9A%E5%8F%8A%E6%9C%BA%E5%9C%BA%E8%81%94%E5%90%88%E9%87%8D%E7%BB%84%E6%94%B9%E5%88%B6%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《民用机场建设管理规定》的决定",
@@ -554,7 +596,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%BA%E5%91%98%E4%BD%93%E6%A3%80%E5%90%88%E6%A0%BC%E8%AF%81%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《定期国际航空运输管理规定》的决定",
@@ -562,7 +605,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E5%AE%9A%E6%9C%9F%E5%9B%BD%E9%99%85%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《民用航空通信导航监视工作规则》的决定",
@@ -610,7 +654,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%96%E5%9B%BD%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E4%BC%81%E4%B8%9A%E5%B8%B8%E9%A9%BB%E4%BB%A3%E8%A1%A8%E6%9C%BA%E6%9E%84%E5%AE%A1%E6%89%B9%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用航空安全管理规定",
@@ -634,7 +679,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%96%E5%9B%BD%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "国内投资民用航空业规定",
@@ -642,7 +688,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%9B%BD%E5%86%85%E6%8A%95%E8%B5%84%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%B8%9A%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "航空器型号和适航合格审定噪声规定",
@@ -650,7 +697,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9E%8B%E5%8F%B7%E5%92%8C%E9%80%82%E8%88%AA%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E5%99%AA%E5%A3%B0%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "大型飞机公共航空运输承运人运行合格审定规则",
@@ -658,7 +706,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空空中交通管理规则",
@@ -666,7 +715,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空适航委任代表和委任单位代表管理规定",
@@ -698,7 +748,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%BA%E5%91%98%E4%BD%93%E6%A3%80%E5%90%88%E6%A0%BC%E8%AF%81%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《运输类旋翼航空器适航规定》的决定",
@@ -706,7 +757,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "历史版本",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《正常类旋翼航空器适航规定》的决定",
@@ -714,7 +766,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "历史版本",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E6%AD%A3%E5%B8%B8%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "民用机场专用设备管理规定",
@@ -754,7 +807,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E5%B0%8F%E5%9E%8B%E8%88%AA%E7%A9%BA%E5%99%A8%E5%95%86%E4%B8%9A%E8%BF%90%E8%BE%93%E8%BF%90%E8%90%A5%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空器驾驶员学校合格审定规则",
@@ -762,7 +816,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A9%BE%E9%A9%B6%E5%91%98%E5%AD%A6%E6%A0%A1%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空统计管理规定",
@@ -778,7 +833,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "公安局"
+    "office_unit": "公安局",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E6%A3%80%E6%9F%A5%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用机场飞行程序和运行最低标准管理规定",
@@ -786,7 +842,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F%E5%92%8C%E8%BF%90%E8%A1%8C%E6%9C%80%E4%BD%8E%E6%A0%87%E5%87%86%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空情报培训管理规则",
@@ -834,7 +891,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "公共航空运输企业航空安全保卫规则",
@@ -874,7 +932,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空企业及机场联合重组改制管理规定",
@@ -882,7 +941,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BC%81%E4%B8%9A%E5%8F%8A%E6%9C%BA%E5%9C%BA%E8%81%94%E5%90%88%E9%87%8D%E7%BB%84%E6%94%B9%E5%88%B6%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用机场专用设备管理规定",
@@ -914,7 +974,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空器维修人员执照管理规则",
@@ -922,7 +983,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E4%BA%BA%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空器驾驶员合格审定规则",
@@ -930,7 +992,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A9%BE%E9%A9%B6%E5%91%98%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "中国民用航空气象工作规则",
@@ -962,7 +1025,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AF%BC%E8%88%AA%E8%AE%BE%E5%A4%87%E5%BC%80%E6%94%BE%E4%B8%8E%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "中国民用航空监察员管理规定",
@@ -970,7 +1034,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": ""
+    "office_unit": "",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%9B%91%E5%AF%9F%E5%91%98%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空标准化管理规定",
@@ -1002,7 +1067,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E8%BF%90%E8%BE%93%E7%B1%BB%E9%A3%9E%E6%9C%BA%E7%9A%84%E6%8C%81%E7%BB%AD%E9%80%82%E8%88%AA%E5%92%8C%E5%AE%89%E5%85%A8%E6%94%B9%E8%BF%9B%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "航空发动机适航规定",
@@ -1010,7 +1076,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E8%88%AA%E7%A9%BA%E5%8F%91%E5%8A%A8%E6%9C%BA%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "运输类飞机适航标准",
@@ -1018,7 +1085,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E8%BF%90%E8%BE%93%E7%B1%BB%E9%A3%9E%E6%9C%BA%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
   },
   {
     "title": "民用航空情报工作规则",
@@ -1042,7 +1110,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "",
-    "office_unit": ""
+    "office_unit": "",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%BA%E5%91%98%E4%BD%93%E6%A3%80%E5%90%88%E6%A0%BC%E8%AF%81%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空气象人员执照管理规则",
@@ -1090,7 +1159,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": ""
+    "office_unit": "",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E9%A3%9E%E8%A1%8C%E7%AD%BE%E6%B4%BE%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "外国航空运输企业航线经营许可规定",
@@ -1114,7 +1184,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "公共航空旅客运输飞行中安全保卫规则",
@@ -1138,7 +1209,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "公安部，民航总局第99号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E5%85%AC%E5%AE%89%E9%83%A8%EF%BC%8C%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC99%E5%8F%B7%E4%BB%A4%E5%9B%BD%E9%99%85%E8%88%AA%E7%8F%AD%E8%BD%BD%E8%BF%90%E4%BA%BA%E5%91%98%E4%BF%A1%E6%81%AF%E9%A2%84%E6%8A%A5%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用机场运行安全管理规定",
@@ -1146,7 +1218,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第191号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC191%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "关于修订《中国民用航空空中交通管理规则》的决定",
@@ -1154,7 +1227,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第190号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC190%E5%8F%B7%E4%BB%A4%E5%85%B3%E4%BA%8E%E4%BF%AE%E8%AE%A2%E3%80%8A%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "《外商投资民用航空业规定》的补充规定（三）",
@@ -1162,7 +1236,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "废止",
     "doc_number": "民航总局第189号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%BA%9F%E6%AD%A2%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC189%E5%8F%B7%E4%BB%A4%E3%80%8A%E5%A4%96%E5%95%86%E6%8A%95%E8%B5%84%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%B8%9A%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E8%A1%A5%E5%85%85%E8%A7%84%E5%AE%9A%EF%BC%88%E4%B8%89%EF%BC%89.pdf"
   },
   {
     "title": "中国民用航空总局关于废止部分民用航空规章和规章性文件的决定",
@@ -1170,7 +1245,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第186号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC186%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%80%BB%E5%B1%80%E5%85%B3%E4%BA%8E%E5%BA%9F%E6%AD%A2%E9%83%A8%E5%88%86%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E8%A7%84%E7%AB%A0%E5%92%8C%E8%A7%84%E7%AB%A0%E6%80%A7%E6%96%87%E4%BB%B6%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "中国民用航空总局职能部门规范性文件制定程序规定",
@@ -1178,7 +1254,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第187号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC187%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%80%BB%E5%B1%80%E8%81%8C%E8%83%BD%E9%83%A8%E9%97%A8%E8%A7%84%E8%8C%83%E6%80%A7%E6%96%87%E4%BB%B6%E5%88%B6%E5%AE%9A%E7%A8%8B%E5%BA%8F%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "一般运行和飞行规则",
@@ -1186,7 +1263,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第188号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC188%E5%8F%B7%E4%BB%A4%E4%B8%80%E8%88%AC%E8%BF%90%E8%A1%8C%E5%92%8C%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "中国民用航空总局规章制定程序规定",
@@ -1194,7 +1272,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第185号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC185%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%80%BB%E5%B1%80%E8%A7%84%E7%AB%A0%E5%88%B6%E5%AE%9A%E7%A8%8B%E5%BA%8F%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空产品和零部件合格审定规定",
@@ -1202,7 +1281,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第183号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC183%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "航空安全员合格审定规则",
@@ -1210,7 +1290,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第184号令",
-    "office_unit": "公安局"
+    "office_unit": "公安局",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC184%E5%8F%B7%E4%BB%A4%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E5%91%98%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "航空器型号和适航合格审定噪声规定",
@@ -1218,7 +1299,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "历史版本",
     "doc_number": "民航总局第182号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC182%E5%8F%B7%E4%BB%A4%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9E%8B%E5%8F%B7%E5%92%8C%E9%80%82%E8%88%AA%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E5%99%AA%E5%A3%B0%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "载人自由气球适航规定",
@@ -1226,7 +1308,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "历史版本",
     "doc_number": "民航总局第181号令",
-    "office_unit": "航空器适航审定司"
+    "office_unit": "航空器适航审定司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC181%E5%8F%B7%E4%BB%A4%E8%BD%BD%E4%BA%BA%E8%87%AA%E7%94%B1%E6%B0%94%E7%90%83%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空器事故和飞行事故征候调查规定",
@@ -1234,7 +1317,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第179号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC179%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E4%BA%8B%E6%95%85%E5%92%8C%E9%A3%9E%E8%A1%8C%E4%BA%8B%E6%95%85%E5%BE%81%E5%80%99%E8%B0%83%E6%9F%A5%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "中国民用航空总局关于修订《民用航空安全信息管理规定》的决定",
@@ -1242,7 +1326,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第180号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC180%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%80%BB%E5%B1%80%E5%85%B3%E4%BA%8E%E4%BF%AE%E8%AE%A2%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "民航专业工程质量监督管理规定",
@@ -1250,7 +1335,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "废止",
     "doc_number": "民航总局第178号令",
-    "office_unit": "机场司"
+    "office_unit": "机场司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%BA%9F%E6%AD%A2%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC178%E5%8F%B7%E4%BB%A4%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E8%B4%A8%E9%87%8F%E7%9B%91%E7%9D%A3%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "一般运行和飞行规则",
@@ -1258,7 +1344,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第177号令",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC177%E5%8F%B7%E4%BB%A4%E4%B8%80%E8%88%AC%E8%BF%90%E8%A1%8C%E5%92%8C%E9%A3%9E%E8%A1%8C%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "通用航空经营许可管理规定",
@@ -1266,7 +1353,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第176号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC176%E5%8F%B7%E4%BB%A4%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "《外商投资民用航空业规定》的补充规定（二）",
@@ -1274,7 +1362,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "废止",
     "doc_number": "民航总局第174号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%BA%9F%E6%AD%A2%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC174%E5%8F%B7%E4%BB%A4%E3%80%8A%E5%A4%96%E5%95%86%E6%8A%95%E8%B5%84%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%B8%9A%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E8%A1%A5%E5%85%85%E8%A7%84%E5%AE%9A%EF%BC%88%E4%BA%8C%EF%BC%89.pdf"
   },
   {
     "title": "民用航空电信人员执照管理规则",
@@ -1282,7 +1371,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第175号令",
-    "office_unit": "空管局"
+    "office_unit": "空管局",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC175%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%94%B5%E4%BF%A1%E4%BA%BA%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "中国民用航空总局关于修订<民用航空器驾驶员、飞行教员和地面教员合格审定规则>、<大型飞机公共航空运输承运人运行合格审定规则>的决定",
@@ -1290,7 +1380,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第173号令",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC173%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%80%BB%E5%B1%80%E5%85%B3%E4%BA%8E%E4%BF%AE%E8%AE%A2_%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A9%BE%E9%A9%B6%E5%91%98%E3%80%81%E9%A3%9E%E8%A1%8C%E6%95%99%E5%91%98%E5%92%8C%E5%9C%B0%E9%9D%A2%E6%95%99%E5%91%98%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99_%E3%80%81_%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99_%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "中国民用航空总局关于修订<民用航空器驾驶员、飞行教员和地面教员合格审定规则>、<大型飞机公共航空运输承运人运行合格审定规则>的决定",
@@ -1298,7 +1389,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第173号令",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC173%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%80%BB%E5%B1%80%E5%85%B3%E4%BA%8E%E4%BF%AE%E8%AE%A2_%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A9%BE%E9%A9%B6%E5%91%98%E3%80%81%E9%A3%9E%E8%A1%8C%E6%95%99%E5%91%98%E5%92%8C%E5%9C%B0%E9%9D%A2%E6%95%99%E5%91%98%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99_%E3%80%81_%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99_%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空空中交通管理设备开放、运行管理规则",
@@ -1306,7 +1398,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第172号令",
-    "office_unit": "空管行业管理办公室"
+    "office_unit": "空管行业管理办公室",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC172%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E7%90%86%E8%AE%BE%E5%A4%87%E5%BC%80%E6%94%BE%E3%80%81%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空气象人员执照管理规则",
@@ -1314,7 +1407,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第171号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC171%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%B0%94%E8%B1%A1%E4%BA%BA%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用机场航空器活动区道路交通安全管理规则",
@@ -1322,7 +1416,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第170号令",
-    "office_unit": "公安局"
+    "office_unit": "公安局",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC170%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E8%88%AA%E7%A9%BA%E5%99%A8%E6%B4%BB%E5%8A%A8%E5%8C%BA%E9%81%93%E8%B7%AF%E4%BA%A4%E9%80%9A%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空空中交通管制员执照管理规则",
@@ -1330,7 +1425,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第168号令",
-    "office_unit": "空管局"
+    "office_unit": "空管局",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC168%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "外国航空运输企业不定期飞行经营许可细则",
@@ -1338,7 +1434,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第167号令",
-    "office_unit": "国际司（港澳台办公室）"
+    "office_unit": "国际司（港澳台办公室）",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC167%E5%8F%B7%E4%BB%A4%E5%A4%96%E5%9B%BD%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E4%BC%81%E4%B8%9A%E4%B8%8D%E5%AE%9A%E6%9C%9F%E9%A3%9E%E8%A1%8C%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E7%BB%86%E5%88%99.pdf"
   },
   {
     "title": "民用航空情报员执照管理规则",
@@ -1346,7 +1443,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第169号令",
-    "office_unit": "空管行业管理办公室"
+    "office_unit": "空管行业管理办公室",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC169%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%83%85%E6%8A%A5%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "外国航空运输企业常驻代表机构审批管理办法",
@@ -1354,7 +1452,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第165号令",
-    "office_unit": "国际司（港澳台办公室）"
+    "office_unit": "国际司（港澳台办公室）",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC165%E5%8F%B7%E4%BB%A4%E5%A4%96%E5%9B%BD%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E4%BC%81%E4%B8%9A%E5%B8%B8%E9%A9%BB%E4%BB%A3%E8%A1%A8%E6%9C%BA%E6%9E%84%E5%AE%A1%E6%89%B9%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用航空预先飞行计划管理办法",
@@ -1362,7 +1461,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第166号令",
-    "office_unit": "空管行业管理办公室"
+    "office_unit": "空管行业管理办公室",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC166%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E9%A2%84%E5%85%88%E9%A3%9E%E8%A1%8C%E8%AE%A1%E5%88%92%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用航空行政许可工作规则",
@@ -1370,7 +1470,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第161号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC161%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E8%A1%8C%E6%94%BF%E8%AE%B8%E5%8F%AF%E5%B7%A5%E4%BD%9C%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民航总局行政复议办法",
@@ -1378,7 +1479,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第162号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC162%E5%8F%B7%E4%BB%A4%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E8%A1%8C%E6%94%BF%E5%A4%8D%E8%AE%AE%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用航空行政检查工作规则",
@@ -1386,7 +1488,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第163号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC163%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E8%A1%8C%E6%94%BF%E6%A3%80%E6%9F%A5%E5%B7%A5%E4%BD%9C%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "维修和改装一般规则",
@@ -1394,7 +1497,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第159号令",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC159%E5%8F%B7%E4%BB%A4%E7%BB%B4%E4%BF%AE%E5%92%8C%E6%94%B9%E8%A3%85%E4%B8%80%E8%88%AC%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "中国民用航空国内航线经营许可规定",
@@ -1402,7 +1506,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第160号令",
-    "office_unit": "运输司"
+    "office_unit": "运输司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC160%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%9B%BD%E5%86%85%E8%88%AA%E7%BA%BF%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空气象探测环境管理办法",
@@ -1410,7 +1515,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第158号令",
-    "office_unit": "空管行业管理办公室"
+    "office_unit": "空管行业管理办公室",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC158%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%B0%94%E8%B1%A1%E6%8E%A2%E6%B5%8B%E7%8E%AF%E5%A2%83%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民航行政机关行政赔偿办法",
@@ -1418,7 +1524,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第157号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC157%E5%8F%B7%E4%BB%A4%E6%B0%91%E8%88%AA%E8%A1%8C%E6%94%BF%E6%9C%BA%E5%85%B3%E8%A1%8C%E6%94%BF%E8%B5%94%E5%81%BF%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用机场使用许可规定",
@@ -1426,7 +1533,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第156号令",
-    "office_unit": "机场司"
+    "office_unit": "机场司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC156%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%BD%BF%E7%94%A8%E8%AE%B8%E5%8F%AF%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空器飞行事故应急反应和家属援助规定",
@@ -1434,7 +1542,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第155号令",
-    "office_unit": "航空安全办公室"
+    "office_unit": "航空安全办公室",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC155%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A3%9E%E8%A1%8C%E4%BA%8B%E6%95%85%E5%BA%94%E6%80%A5%E5%8F%8D%E5%BA%94%E5%92%8C%E5%AE%B6%E5%B1%9E%E6%8F%B4%E5%8A%A9%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空器维修培训机构合格审定规定",
@@ -1442,7 +1551,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第154号令",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC154%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E5%9F%B9%E8%AE%AD%E6%9C%BA%E6%9E%84%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空器维修单位合格审定规定",
@@ -1450,7 +1560,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第152号令",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC152%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E5%8D%95%E4%BD%8D%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空器维修人员执照管理规则",
@@ -1458,7 +1569,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第153号令",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC153%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E4%BA%BA%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "小型航空器商业运输运营人运行合格审定规则",
@@ -1466,7 +1578,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第151号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC151%E5%8F%B7%E4%BB%A4%E5%B0%8F%E5%9E%8B%E8%88%AA%E7%A9%BA%E5%99%A8%E5%95%86%E4%B8%9A%E8%BF%90%E8%BE%93%E8%BF%90%E8%90%A5%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用机场专用设备使用管理规定",
@@ -1474,7 +1587,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第150号令",
-    "office_unit": "机场司"
+    "office_unit": "机场司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC150%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%B8%93%E7%94%A8%E8%AE%BE%E5%A4%87%E4%BD%BF%E7%94%A8%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空企业机场联合重组改制管理规定",
@@ -1482,7 +1596,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第149号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC149%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BC%81%E4%B8%9A%E6%9C%BA%E5%9C%BA%E8%81%94%E5%90%88%E9%87%8D%E7%BB%84%E6%94%B9%E5%88%B6%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "国内投资民用航空业规定（试行）",
@@ -1490,7 +1605,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第148号令",
-    "office_unit": "发展计划司"
+    "office_unit": "发展计划司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC148%E5%8F%B7%E4%BB%A4%E5%9B%BD%E5%86%85%E6%8A%95%E8%B5%84%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%B8%9A%E8%A7%84%E5%AE%9A%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "中国民用航空总局关于废止部分民用航空规章和规章性文件的决定",
@@ -1498,7 +1614,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第147号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC147%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%80%BB%E5%B1%80%E5%85%B3%E4%BA%8E%E5%BA%9F%E6%AD%A2%E9%83%A8%E5%88%86%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E8%A7%84%E7%AB%A0%E5%92%8C%E8%A7%84%E7%AB%A0%E6%80%A7%E6%96%87%E4%BB%B6%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "中国民用航空气象工作规则",
@@ -1506,7 +1623,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第146号令",
-    "office_unit": "空管行业管理办公室"
+    "office_unit": "空管行业管理办公室",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC146%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%B0%94%E8%B1%A1%E5%B7%A5%E4%BD%9C%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空油料适航规定",
@@ -1514,7 +1632,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第145号令",
-    "office_unit": "机场司"
+    "office_unit": "机场司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC145%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%B2%B9%E6%96%99%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "飞行模拟设备的鉴定和使用规则",
@@ -1522,7 +1641,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第141号令",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC141%E5%8F%B7%E4%BB%A4%E9%A3%9E%E8%A1%8C%E6%A8%A1%E6%8B%9F%E8%AE%BE%E5%A4%87%E7%9A%84%E9%89%B4%E5%AE%9A%E5%92%8C%E4%BD%BF%E7%94%A8%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "民用航空安全信息管理规定",
@@ -1530,7 +1650,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第143号令",
-    "office_unit": "航空安全办公室"
+    "office_unit": "航空安全办公室",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC143%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空财经信息采集办法",
@@ -1538,7 +1659,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第142号令",
-    "office_unit": "发展计划司"
+    "office_unit": "发展计划司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC142%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E8%B4%A2%E7%BB%8F%E4%BF%A1%E6%81%AF%E9%87%87%E9%9B%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "中国民用航空监察员规定",
@@ -1546,7 +1668,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第144号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC144%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%9B%91%E5%AF%9F%E5%91%98%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "大型飞机公共航空运输承运人运行合格审定规则",
@@ -1554,7 +1677,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第140号令",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC140%E5%8F%B7%E4%BB%A4%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "《外商投资民用航空业规定》的补充规定",
@@ -1562,7 +1686,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "废止",
     "doc_number": "民航总局第139号令",
-    "office_unit": "政策法规司"
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%BA%9F%E6%AD%A2%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC139%E5%8F%B7%E4%BB%A4%E3%80%8A%E5%A4%96%E5%95%86%E6%8A%95%E8%B5%84%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%B8%9A%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E8%A1%A5%E5%85%85%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "中国民用航空总局关于修订《民用航空器驾驶员、飞行教员和地面教员合格审定规则》的决定",
@@ -1570,7 +1695,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第137号令",
-    "office_unit": "飞行标准司"
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC137%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%80%BB%E5%B1%80%E5%85%B3%E4%BA%8E%E4%BF%AE%E8%AE%A2%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A9%BE%E9%A9%B6%E5%91%98%E3%80%81%E9%A3%9E%E8%A1%8C%E6%95%99%E5%91%98%E5%92%8C%E5%9C%B0%E9%9D%A2%E6%95%99%E5%91%98%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空签派员执照管理规则",
@@ -1578,7 +1704,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第136号令",
-    "office_unit": "空管局"
+    "office_unit": "空管局",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC136%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%AD%BE%E6%B4%BE%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "公共航空运输企业经营许可规定",
@@ -1586,7 +1713,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "民航总局第138号令",
-    "office_unit": "运输司"
+    "office_unit": "运输司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC138%E5%8F%B7%E4%BB%A4%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E4%BC%81%E4%B8%9A%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "中国民用航空统计管理办法",
@@ -1594,7 +1722,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第134号令",
-    "office_unit": "发展计划司"
+    "office_unit": "发展计划司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC134%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%BB%9F%E8%AE%A1%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用机场建设管理规定",
@@ -1602,7 +1731,8 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "失效",
     "doc_number": "民航总局第129号令",
-    "office_unit": "机场司"
+    "office_unit": "机场司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC129%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%BB%BA%E8%AE%BE%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "飞行训练中心合格审定规则",
