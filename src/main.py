@@ -417,7 +417,7 @@ def main() -> int:
                         title,
                         text_content,
                         html_content,
-                        attachments=downloaded_files if downloaded_files else None,
+                        attachments=downloaded_files[:10] if downloaded_files else None,
                     )
 
                     if results:
@@ -426,8 +426,7 @@ def main() -> int:
                         logger.info(f"Notification complete: {success_count}/{len(results)} channels succeeded")
 
                         if success_count == 0 and failed_count > 0:
-                            logger.warning("All notification channels failed")
-                            exit_code = 1
+                            logger.warning("All notification channels failed (non-fatal)")
             else:
                 logger.info("Step 6/7: Skipping notifications")
 

@@ -220,34 +220,42 @@ class Notifier:
     def format_update_message(
         self,
         documents_by_category: dict,
+        max_docs_per_category: int = 50,
     ) -> tuple[str, str, str]:
         """Format update notification message
-        
+
         Args:
             documents_by_category: Dict mapping category name to list of documents
-        
+            max_docs_per_category: Max documents to show per category (rest summarized)
+
         Returns:
             (title, plain text content, HTML content)
         """
         total = sum(len(docs) for docs in documents_by_category.values())
         beijing_tz = timezone(timedelta(hours=8))
         timestamp = datetime.now(beijing_tz)
-        
+
         # Title
         title = f"📋 CAAC 文件更新通知 ({total} 条)"
-        
+
+        # Truncate for display
+        truncated = {}
+        for cat_name, docs in documents_by_category.items():
+            truncated[cat_name] = docs[:max_docs_per_category]
+
         # Plain text content
         lines = [
             f"检测时间: {timestamp.strftime('%Y-%m-%d %H:%M:%S')}",
             f"新增文件: {total} 条",
             "",
         ]
-        
+
         for cat_name, docs in documents_by_category.items():
             if not docs:
                 continue
             lines.append(f"【{cat_name}】({len(docs)} 条)")
-            for doc in docs:
+            display_docs = truncated[cat_name]
+            for doc in display_docs:
                 lines.append(f"  • {doc.doc_number} {doc.title}" if doc.doc_number else f"  • {doc.title}")
                 details = []
                 if doc.validity:
@@ -259,20 +267,32 @@ class Notifier:
                 if details:
                     lines.append(f"    {' | '.join(details)}")
                 lines.append(f"    详情: {doc.url}")
+            remaining = len(docs) - len(display_docs)
+            if remaining > 0:
+                lines.append(f"  ... 还有 {remaining} 条，已省略")
             lines.append("")
-        
+
         text_content = "\n".join(lines)
-        html_content = self._generate_html_email(documents_by_category, timestamp)
-        
+        html_content = self._generate_html_email(truncated, timestamp, documents_by_category)
+
         return title, text_content, html_content
 
     def _generate_html_email(
         self,
         documents_by_category: dict,
         timestamp: datetime,
+        full_counts: Optional[dict] = None,
     ) -> str:
-        """Generate HTML email content - Apple style clean design"""
-        total = sum(len(docs) for docs in documents_by_category.values())
+        """Generate HTML email content - Apple style clean design
+
+        Args:
+            documents_by_category: Possibly truncated dict of docs to render
+            timestamp: Current timestamp
+            full_counts: Original full dict for accurate counts (optional)
+        """
+        if full_counts is None:
+            full_counts = documents_by_category
+        total = sum(len(docs) for docs in full_counts.values())
         
         if total > 0:
             status_icon = "✓"
@@ -379,28 +399,37 @@ class Notifier:
         for cat_name, docs in documents_by_category.items():
             if not docs:
                 continue
-            
+
             color = category_colors.get(cat_name, "#007AFF")
             icon = category_icons.get(cat_name, "📄")
-            
+            full_count = len(full_counts.get(cat_name, docs))
+
             items_html = ""
             for i, doc in enumerate(docs):
                 items_html += render_doc_item(doc, i)
-            
+
+            remaining = full_count - len(docs)
+            if remaining > 0:
+                items_html += f'''
+                <div style="height: 1px; background: #E5E5EA; margin: 16px 0;"></div>
+                <div style="text-align: center; padding: 8px 0; font-size: 13px; color: #86868B;">
+                    ... 还有 {remaining} 条，已省略
+                </div>'''
+
             category_cards += f'''
     <!-- {cat_name} Card -->
     <div style="background: #FFFFFF; border-radius: 16px; padding: 20px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
         <div style="display: flex; align-items: center; margin-bottom: 16px;">
             <span style="font-size: 20px; margin-right: 10px;">{icon}</span>
             <span style="font-size: 15px; font-weight: 600; color: #1D1D1F;">{cat_name}</span>
-            <span style="background: {color}; color: white; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 8px;">{len(docs)}</span>
+            <span style="background: {color}; color: white; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; margin-left: 8px;">{full_count}</span>
         </div>
         {items_html}
     </div>'''
         
         # Build statistics
         stats_items = ""
-        for cat_name, docs in documents_by_category.items():
+        for cat_name, docs in full_counts.items():
             if not docs:
                 continue
             color = category_colors.get(cat_name, "#007AFF")
