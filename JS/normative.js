@@ -35,6 +35,17 @@ var data = [
     "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS_CA_TM-2026-16R2%E5%85%A8%E5%A4%A9%E5%80%99%E8%BF%90%E8%A1%8C%E8%A7%84%E5%AE%9A.pdf"
   },
   {
+    "title": "地面运行安全间距保持指南",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230102.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年01月20日",
+    "publish_date": "2026年01月20日",
+    "doc_number": "OSB-2026-01",
+    "office_unit": "飞行标准司",
+    "file_number": "文号：OSB-2026-01"
+  },
+  {
     "title": "基于计算机的民用无人驾驶航空器运行控制系统管理办法",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260202_229945.html",
     "doc_type": "规范性文件",
@@ -117,6 +128,17 @@ var data = [
     "office_unit": "航空器适航审定司",
     "file_number": "民航规〔2025〕32 号",
     "pdf_url": "https://ccar.hudawang.cn/normative/AP-21-AA-2025-15R1%E8%BF%9B%E5%8F%A3%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E8%AE%A4%E5%8F%AF%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
+  },
+  {
+    "title": "发动机孔探检查管理规范",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230103.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2025年12月18日",
+    "publish_date": "2025年12月18日",
+    "doc_number": "MD-MAT-FS-006R1",
+    "office_unit": "飞行标准司",
+    "file_number": "文号：MD-MAT-FS-006R1"
   },
   {
     "title": "基于卫星定位的机场地面车辆和人员跑道侵入防范系统技术要求",

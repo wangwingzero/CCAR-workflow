@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-02-19T03:42:22.649431",
+  "last_update": "2026-02-24T07:58:26.552836",
   "records": {
     "regulation/交通运输部令2025年第9号运输类旋翼航空器适航规定.pdf": {
       "r2_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf",
@@ -2148,6 +2148,10 @@
     "specification/CTSO-2C607独立式北斗机载导航有源单频天线（B1C 频段）.pdf": {
       "r2_url": "https://ccar.hudawang.cn/specification/CTSO-2C607%E7%8B%AC%E7%AB%8B%E5%BC%8F%E5%8C%97%E6%96%97%E6%9C%BA%E8%BD%BD%E5%AF%BC%E8%88%AA%E6%9C%89%E6%BA%90%E5%8D%95%E9%A2%91%E5%A4%A9%E7%BA%BF%EF%BC%88B1C%20%E9%A2%91%E6%AE%B5%EF%BC%89.pdf",
       "file_size": 297401
+    },
+    "other/国际航线审批结果公开（C2025012）.pdf": {
+      "r2_url": "https://ccar.hudawang.cn/other/%E5%9B%BD%E9%99%85%E8%88%AA%E7%BA%BF%E5%AE%A1%E6%89%B9%E7%BB%93%E6%9E%9C%E5%85%AC%E5%BC%80%EF%BC%88C2025012%EF%BC%89.pdf",
+      "file_size": 157265
     }
   }
 }

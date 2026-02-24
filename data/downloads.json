@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-02-19T03:28:13.269864",
+  "last_update": "2026-02-24T07:58:24.655127",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2464,6 +2464,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202304/t20230406_217979.html": {
       "relative_path": "specification/CTSO-2C607独立式北斗机载导航有源单频天线（B1C 频段）.pdf",
       "updated_at": "2026-02-19T03:28:13.269852"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260224_230101.html": {
+      "relative_path": "other/国际航线审批结果公开（C2025012）.pdf",
+      "updated_at": "2026-02-24T07:58:24.655121"
     }
   }
 }

@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-02-23T08:01:47.397311",
+  "last_check": "2026-02-24T07:58:33.601381",
   "documents": {
     "9": [
+      {
+        "title": "国际航线审批结果公开（C2025012）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260224_230101.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-02-13",
+        "publish_date": "2026-02-24",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/P020260224507272507070.pdf",
+        "has_pdf": true
+      },
       {
         "title": "关于大连润宇空港建设工程有限公司等1家资质企业追加动态核查核定意见的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230042.html",
@@ -2585,19 +2598,6 @@
         "office_unit": "",
         "sign_date": "2024-08-20",
         "publish_date": "2024-08-20",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "中国民用航空局机关服务局2023年度部门决算",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225080.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-16",
-        "publish_date": "2024-08-16",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -10505,6 +10505,19 @@
         "has_pdf": false
       },
       {
+        "title": "地面运行安全间距保持指南",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230102.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "OSB-2026-01",
+        "office_unit": "飞行标准司",
+        "sign_date": "2026-01-20",
+        "publish_date": "2026-01-20",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "基于计算机的民用无人驾驶航空器运行控制系统管理办法",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260202_229945.html",
         "category": "规范性文件",
@@ -10591,6 +10604,19 @@
         "office_unit": "航空器适航审定司",
         "sign_date": "2025-12-25",
         "publish_date": "2025-12-25",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "发动机孔探检查管理规范",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230103.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "MD-MAT-FS-006R1",
+        "office_unit": "飞行标准司",
+        "sign_date": "2025-12-18",
+        "publish_date": "2025-12-18",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -13032,32 +13058,6 @@
         "category": "规范性文件",
         "category_id": "14",
         "doc_number": "AP-39-AA-2023-01R2",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2023-12-06",
-        "publish_date": "2023-12-06",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "轻小型航空器生产许可及适航批准审定程序",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222434.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AP-21-AA-2023-32R1",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2023-12-06",
-        "publish_date": "2023-12-06",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民用航空产品和零部件持续适航事件报告和处理程序",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222432.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AP-21-AA-2023-16R2",
         "office_unit": "航空器适航审定司",
         "sign_date": "2023-12-06",
         "publish_date": "2023-12-06",
@@ -19889,6 +19889,19 @@
     "27": [],
     "28": [
       {
+        "title": "国际航线审批结果公开（C2025012）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260224_230101.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-02-13",
+        "publish_date": "2026-02-24",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "关于大连润宇空港建设工程有限公司等1家资质企业追加动态核查核定意见的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230042.html",
         "category": "建议提案答复",
@@ -22474,19 +22487,6 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "中国民用航空局机关服务局2023年度部门决算",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225080.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-16",
-        "publish_date": "2024-08-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
       }
     ],
     "29": [
@@ -24950,6 +24950,17 @@
       "pdf_url": ""
     },
     {
+      "title": "地面运行安全间距保持指南",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230102.html",
+      "validity": "有效",
+      "doc_number": "OSB-2026-01",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2026-01-20",
+      "publish_date": "2026-01-20",
+      "pdf_url": ""
+    },
+    {
       "title": "基于计算机的民用无人驾驶航空器运行控制系统管理办法",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260202_229945.html",
       "validity": "有效",
@@ -25024,6 +25035,17 @@
       "doc_type": "normative",
       "sign_date": "2025-12-25",
       "publish_date": "2025-12-25",
+      "pdf_url": ""
+    },
+    {
+      "title": "发动机孔探检查管理规范",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230103.html",
+      "validity": "有效",
+      "doc_number": "MD-MAT-FS-006R1",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2025-12-18",
+      "publish_date": "2025-12-18",
       "pdf_url": ""
     },
     {
@@ -27088,28 +27110,6 @@
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222435.html",
       "validity": "有效",
       "doc_number": "AP-39-AA-2023-01R2",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2023-12-06",
-      "publish_date": "2023-12-06",
-      "pdf_url": ""
-    },
-    {
-      "title": "轻小型航空器生产许可及适航批准审定程序",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222434.html",
-      "validity": "有效",
-      "doc_number": "AP-21-AA-2023-32R1",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2023-12-06",
-      "publish_date": "2023-12-06",
-      "pdf_url": ""
-    },
-    {
-      "title": "民用航空产品和零部件持续适航事件报告和处理程序",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222432.html",
-      "validity": "有效",
-      "doc_number": "AP-21-AA-2023-16R2",
       "office_unit": "航空器适航审定司",
       "doc_type": "normative",
       "sign_date": "2023-12-06",
