@@ -35,6 +35,17 @@ var data = [
     "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS_CA_TM-2026-16R2%E5%85%A8%E5%A4%A9%E5%80%99%E8%BF%90%E8%A1%8C%E8%A7%84%E5%AE%9A.pdf"
   },
   {
+    "title": "运输机场飞行区地面设备自用流动加油管理指南",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230104.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年01月23日",
+    "publish_date": "2026年01月23日",
+    "doc_number": "AC-139-CA-2026-01",
+    "office_unit": "机场司",
+    "file_number": "文号：AC-139-CA-2026-01"
+  },
+  {
     "title": "地面运行安全间距保持指南",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230102.html",
     "doc_type": "规范性文件",
