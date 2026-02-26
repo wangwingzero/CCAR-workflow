@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-02-25T07:59:57.073942",
+  "last_update": "2026-02-26T07:58:36.012243",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2472,6 +2472,22 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202602/t20260225_230108.html": {
       "relative_path": "other/中国民航2026年1月份主要生产指标统计.pdf",
       "updated_at": "2026-02-25T07:59:57.073926"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202602/t20260226_230119.html": {
+      "relative_path": "other/2025年全国民用运输机场生产统计公报.pdf",
+      "updated_at": "2026-02-26T07:57:57.005012"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230117.html": {
+      "relative_path": "normative/AC-21-AA-2026-44限用类无人驾驶航空器系统适航标准.pdf",
+      "updated_at": "2026-02-26T07:58:13.737523"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260226_230128.html": {
+      "relative_path": "other/关于追加北京城建十建设工程有限公司等2家企业进行资质核查的通知.txt",
+      "updated_at": "2026-02-26T07:58:22.161609"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260226_230127.html": {
+      "relative_path": "other/关于2026年第三批民航专业工程建设企业资质申报材料的公示.pdf",
+      "updated_at": "2026-02-26T07:58:36.012229"
     }
   }
 }

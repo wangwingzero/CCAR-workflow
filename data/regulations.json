@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-02-25T08:00:06.103186",
+  "last_check": "2026-02-26T07:58:49.387126",
   "documents": {
     "9": [
       {
@@ -4648,6 +4648,19 @@
     ],
     "11": [
       {
+        "title": "2025年全国民用运输机场生产统计公报",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202602/t20260226_230119.html",
+        "category": "政策解读",
+        "category_id": "11",
+        "doc_number": "",
+        "office_unit": "发展计划司",
+        "sign_date": "2026-02-26",
+        "publish_date": "2026-02-26",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202602/P020260226360830234339.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "中国民航2026年1月份主要生产指标统计",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202602/t20260225_230108.html",
         "category": "政策解读",
@@ -4657,8 +4670,8 @@
         "sign_date": "2026-02-25",
         "publish_date": "2026-02-25",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202602/P020260225326831328751.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "中国民航2025年12月份主要生产指标统计",
@@ -7230,19 +7243,6 @@
         "office_unit": "运输司",
         "sign_date": "2017-01-25",
         "publish_date": "2017-01-25",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "中国民航2016年11月份主要运输生产指标统计",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/201701/t20170120_41867.html",
-        "category": "政策解读",
-        "category_id": "11",
-        "doc_number": "",
-        "office_unit": "发展计划司",
-        "sign_date": "2017-01-20",
-        "publish_date": "2017-01-20",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -10466,6 +10466,19 @@
     ],
     "14": [
       {
+        "title": "限用类无人驾驶航空器系统适航标准",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230117.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-21-AA-2026-44",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-02-12",
+        "publish_date": "2026-02-12",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260226338705668572.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "《循证证训练（EBT）实施管理规定》",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
         "category": "规范性文件",
@@ -10505,6 +10518,19 @@
         "has_pdf": false
       },
       {
+        "title": "民航残损航空器搬移实训基地认定管理办法",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230116.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AP-139-CA-2026-01",
+        "office_unit": "机场司",
+        "sign_date": "2026-01-26",
+        "publish_date": "2026-01-26",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "运输机场飞行区地面设备自用流动加油管理指南",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230104.html",
         "category": "规范性文件",
@@ -10539,6 +10565,19 @@
         "office_unit": "飞行标准司",
         "sign_date": "2026-01-16",
         "publish_date": "2026-01-16",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "动力提升航空器适航标准",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-21-AA-2026-45",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-01-12",
+        "publish_date": "2026-01-12",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -13023,45 +13062,6 @@
         "sign_date": "2023-12-06",
         "publish_date": "2023-12-06",
         "validity": "废止",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民用航空器适航批准审定程序",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222430.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AP-21-AA-2023-51R1",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2023-12-06",
-        "publish_date": "2023-12-06",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "型号合格审定程序",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222437.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AP-21-AA-2023-11R1",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2023-12-06",
-        "publish_date": "2023-12-06",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民用航空器国籍登记管理程序",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222436.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AP-45-AA-2023-01R5",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2023-12-06",
-        "publish_date": "2023-12-06",
-        "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
       }
@@ -19889,6 +19889,32 @@
     "27": [],
     "28": [
       {
+        "title": "关于追加北京城建十建设工程有限公司等2家企业进行资质核查的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260226_230128.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-02-26",
+        "publish_date": "2026-02-26",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "关于2026年第三批民航专业工程建设企业资质申报材料的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260226_230127.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-02-26",
+        "publish_date": "2026-02-26",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/P020260226567949534463.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "国际航线审批结果公开（C2025012）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260224_230101.html",
         "category": "建议提案答复",
@@ -22461,32 +22487,6 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "关于2024年度民航专业工程资质动态核查追加企业第二批核定结果的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240822_225126.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-22",
-        "publish_date": "2024-08-22",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于2023年度民航专业工程资质动态核查第五批企业整改核定结果的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240820_225100.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-20",
-        "publish_date": "2024-08-20",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
       }
     ],
     "29": [
@@ -24917,6 +24917,17 @@
   ],
   "normatives": [
     {
+      "title": "限用类无人驾驶航空器系统适航标准",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230117.html",
+      "validity": "有效",
+      "doc_number": "AC-21-AA-2026-44",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "normative",
+      "sign_date": "2026-02-12",
+      "publish_date": "2026-02-12",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260226338705668572.pdf"
+    },
+    {
       "title": "《循证证训练（EBT）实施管理规定》",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
       "validity": "有效",
@@ -24950,6 +24961,17 @@
       "pdf_url": ""
     },
     {
+      "title": "民航残损航空器搬移实训基地认定管理办法",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230116.html",
+      "validity": "有效",
+      "doc_number": "AP-139-CA-2026-01",
+      "office_unit": "机场司",
+      "doc_type": "normative",
+      "sign_date": "2026-01-26",
+      "publish_date": "2026-01-26",
+      "pdf_url": ""
+    },
+    {
       "title": "运输机场飞行区地面设备自用流动加油管理指南",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230104.html",
       "validity": "有效",
@@ -24980,6 +25002,17 @@
       "doc_type": "normative",
       "sign_date": "2026-01-16",
       "publish_date": "2026-01-16",
+      "pdf_url": ""
+    },
+    {
+      "title": "动力提升航空器适航标准",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html",
+      "validity": "有效",
+      "doc_number": "AC-21-AA-2026-45",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "normative",
+      "sign_date": "2026-01-12",
+      "publish_date": "2026-01-12",
       "pdf_url": ""
     },
     {
@@ -27077,39 +27110,6 @@
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222433.html",
       "validity": "废止",
       "doc_number": "AP-21-AA-2023-15",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2023-12-06",
-      "publish_date": "2023-12-06",
-      "pdf_url": ""
-    },
-    {
-      "title": "民用航空器适航批准审定程序",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222430.html",
-      "validity": "有效",
-      "doc_number": "AP-21-AA-2023-51R1",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2023-12-06",
-      "publish_date": "2023-12-06",
-      "pdf_url": ""
-    },
-    {
-      "title": "型号合格审定程序",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222437.html",
-      "validity": "有效",
-      "doc_number": "AP-21-AA-2023-11R1",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2023-12-06",
-      "publish_date": "2023-12-06",
-      "pdf_url": ""
-    },
-    {
-      "title": "民用航空器国籍登记管理程序",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222436.html",
-      "validity": "有效",
-      "doc_number": "AP-45-AA-2023-01R5",
       "office_unit": "航空器适航审定司",
       "doc_type": "normative",
       "sign_date": "2023-12-06",

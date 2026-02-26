@@ -1,5 +1,17 @@
 var data = [
   {
+    "title": "限用类无人驾驶航空器系统适航标准",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230117.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年02月12日",
+    "publish_date": "2026年02月12日",
+    "doc_number": "AC-21-AA-2026-44",
+    "office_unit": "航空器适航审定司",
+    "file_number": "文号：AC-21-AA-2026-44",
+    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-44%E9%99%90%E7%94%A8%E7%B1%BB%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
+  },
+  {
     "title": "《循证证训练（EBT）实施管理规定》",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
     "doc_type": "规范性文件",
@@ -35,6 +47,17 @@ var data = [
     "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS_CA_TM-2026-16R2%E5%85%A8%E5%A4%A9%E5%80%99%E8%BF%90%E8%A1%8C%E8%A7%84%E5%AE%9A.pdf"
   },
   {
+    "title": "民航残损航空器搬移实训基地认定管理办法",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230116.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年01月26日",
+    "publish_date": "2026年01月26日",
+    "doc_number": "AP-139-CA-2026-01",
+    "office_unit": "机场司",
+    "file_number": "文号：AP-139-CA-2026-01"
+  },
+  {
     "title": "运输机场飞行区地面设备自用流动加油管理指南",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230104.html",
     "doc_type": "规范性文件",
@@ -67,6 +90,17 @@ var data = [
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2026〕2 号",
     "pdf_url": "https://ccar.hudawang.cn/normative/AC-92-FS-002%E5%9F%BA%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+  },
+  {
+    "title": "动力提升航空器适航标准",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年01月12日",
+    "publish_date": "2026年01月12日",
+    "doc_number": "AC-21-AA-2026-45",
+    "office_unit": "航空器适航审定司",
+    "file_number": "文号：AC-21-AA-2026-45"
   },
   {
     "title": "民航飞行学生体能训练与锻炼指南（试行）",
