@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-02-27T07:54:13.050155",
+  "last_check": "2026-02-28T07:37:05.022373",
   "documents": {
     "9": [
       {
@@ -25,8 +25,8 @@
         "sign_date": "2026-02-26",
         "publish_date": "2026-02-26",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/P020260226567949534463.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "国际航线审批结果公开（C2025012）",
@@ -13068,6 +13068,19 @@
     ],
     "15": [
       {
+        "title": "机载互联网协议语音（VoIP）话机",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202602/t20260228_230140.html",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "CTSO-2C612",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-02-26",
+        "publish_date": "2026-02-26",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202602/P020260228516602713517.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "民用飞机舵面偏度参数试飞测试装置校准规范",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202602/t20260206_229997.html",
         "category": "标准规范",
@@ -13518,6 +13531,19 @@
         "office_unit": "航空器适航审定司",
         "sign_date": "2025-11-04",
         "publish_date": "2025-11-04",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "民用机场水泥混凝土道面接缝材料应用技术规范",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202602/t20260228_230142.html",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "MH/T 5090-2025",
+        "office_unit": "机场司",
+        "sign_date": "2025-10-31",
+        "publish_date": "2025-10-31",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -15634,32 +15660,6 @@
         "category": "标准规范",
         "category_id": "15",
         "doc_number": "CTSO-2C609",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2023-03-24",
-        "publish_date": "2023-03-24",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "独立式北斗机载导航有源双频天线（B1C 和B2a 频段）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202304/t20230406_217980.html",
-        "category": "标准规范",
-        "category_id": "15",
-        "doc_number": "CTSO-2C608",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2023-03-24",
-        "publish_date": "2023-03-24",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "独立式北斗机载导航有源单频天线（B1C 频段）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202304/t20230406_217979.html",
-        "category": "标准规范",
-        "category_id": "15",
-        "doc_number": "CTSO-2C607",
         "office_unit": "航空器适航审定司",
         "sign_date": "2023-03-24",
         "publish_date": "2023-03-24",
@@ -27119,6 +27119,17 @@
   ],
   "standards": [
     {
+      "title": "机载互联网协议语音（VoIP）话机",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202602/t20260228_230140.html",
+      "validity": "有效",
+      "doc_number": "CTSO-2C612",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "standard",
+      "sign_date": "2026-02-26",
+      "publish_date": "2026-02-26",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202602/P020260228516602713517.pdf"
+    },
+    {
       "title": "民用飞机舵面偏度参数试飞测试装置校准规范",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202602/t20260206_229997.html",
       "validity": "有效",
@@ -27501,6 +27512,17 @@
       "doc_type": "standard",
       "sign_date": "2025-11-04",
       "publish_date": "2025-11-04",
+      "pdf_url": ""
+    },
+    {
+      "title": "民用机场水泥混凝土道面接缝材料应用技术规范",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202602/t20260228_230142.html",
+      "validity": "有效",
+      "doc_number": "MH/T 5090-2025",
+      "office_unit": "机场司",
+      "doc_type": "standard",
+      "sign_date": "2025-10-31",
+      "publish_date": "2025-10-31",
       "pdf_url": ""
     },
     {
@@ -29290,28 +29312,6 @@
       "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202304/t20230406_217981.html",
       "validity": "有效",
       "doc_number": "CTSO-2C609",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "standard",
-      "sign_date": "2023-03-24",
-      "publish_date": "2023-03-24",
-      "pdf_url": ""
-    },
-    {
-      "title": "独立式北斗机载导航有源双频天线（B1C 和B2a 频段）",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202304/t20230406_217980.html",
-      "validity": "有效",
-      "doc_number": "CTSO-2C608",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "standard",
-      "sign_date": "2023-03-24",
-      "publish_date": "2023-03-24",
-      "pdf_url": ""
-    },
-    {
-      "title": "独立式北斗机载导航有源单频天线（B1C 频段）",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202304/t20230406_217979.html",
-      "validity": "有效",
-      "doc_number": "CTSO-2C607",
       "office_unit": "航空器适航审定司",
       "doc_type": "standard",
       "sign_date": "2023-03-24",

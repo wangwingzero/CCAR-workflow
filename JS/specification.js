@@ -1,5 +1,15 @@
 var data = [
   {
+    "title": "机载互联网协议语音（VoIP）话机",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202602/t20260228_230140.html",
+    "doc_type": "标准规范",
+    "validity": "有效",
+    "publish_date": "2026年02月26日",
+    "doc_number": "CTSO-2C612",
+    "office_unit": "航空器适航审定司",
+    "pdf_url": "https://ccar.hudawang.cn/specification/CTSO-2C612%E6%9C%BA%E8%BD%BD%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E8%AF%AD%E9%9F%B3%EF%BC%88VoIP%EF%BC%89%E8%AF%9D%E6%9C%BA.pdf"
+  },
+  {
     "title": "民用飞机舵面偏度参数试飞测试装置校准规范",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202602/t20260206_229997.html",
     "doc_type": "标准规范",
@@ -348,6 +358,15 @@ var data = [
     "doc_number": "MH/T 1083-2025",
     "office_unit": "航空器适航审定司",
     "pdf_url": "https://ccar.hudawang.cn/specification/MH_T%201083-2025%E5%8D%B1%E9%99%A9%E5%93%81%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E5%9F%B9%E8%AE%AD%E5%8F%8A%E8%AF%84%E4%BB%B7%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83.pdf"
+  },
+  {
+    "title": "民用机场水泥混凝土道面接缝材料应用技术规范",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202602/t20260228_230142.html",
+    "doc_type": "标准规范",
+    "validity": "有效",
+    "publish_date": "2025年10月31日",
+    "doc_number": "MH/T 5090-2025",
+    "office_unit": "机场司"
   },
   {
     "title": "民用无人驾驶航空器实名登记和激活要求",
