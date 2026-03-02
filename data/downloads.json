@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-02-28T07:36:58.373282",
+  "last_update": "2026-03-02T07:58:01.641674",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2492,6 +2492,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202602/t20260228_230140.html": {
       "relative_path": "specification/CTSO-2C612机载互联网协议语音（VoIP）话机.pdf",
       "updated_at": "2026-02-28T07:36:58.373268"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8504.html": {
+      "relative_path": "regulation/民航总局第128号令飞行训练中心合格审定规则.pdf",
+      "updated_at": "2026-03-02T07:58:01.641660"
     }
   }
 }
