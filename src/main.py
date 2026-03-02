@@ -197,7 +197,6 @@ def main() -> int:
             # 2. Detect changes or filter by days
             logger.info("Step 2/7: Filtering documents...")
             
-            DEFAULT_MAX_DAYS = 30
             download_documents: dict[str, list[Document]] = {}
             
             if args.days:
@@ -232,39 +231,21 @@ def main() -> int:
                             storage.update_state(all_documents)
                         return 0
                 else:
-                    # New documents are notification targets (with 30-day cap)
-                    target_documents = {}
-                    for cat_id, docs in changes.new_documents.items():
-                        filtered = filter_by_days(docs, DEFAULT_MAX_DAYS)
-                        if filtered:
-                            target_documents[cat_id] = filtered
-                    
-                    new_original_count = changes.new_count
-                    new_filtered_count = sum(len(docs) for docs in target_documents.values())
+                    # New documents are notification targets.
+                    # No date filtering here — documents detected as new via URL
+                    # comparison are genuinely new to the website, even if their
+                    # editorial publish_date is old (CAAC retroactive additions).
+                    target_documents = dict(changes.new_documents)
+
+                    new_count = changes.new_count
                     updated_count = changes.updated_count
-                    
-                    if new_filtered_count < new_original_count:
-                        logger.info(
-                            f"Detected {new_original_count} new, limited to last {DEFAULT_MAX_DAYS} days: "
-                            f"{new_filtered_count}"
-                        )
-                    else:
-                        logger.info(f"Detected {new_filtered_count} new documents")
+
+                    logger.info(f"Detected {new_count} new documents")
 
                     if updated_count > 0:
                         logger.info(f"Detected {updated_count} updated documents (status/title/doc_number etc.)")
 
                     download_documents = _merge_documents(target_documents, changes.updated_documents)
-                    
-                    if new_filtered_count == 0 and updated_count == 0:
-                        logger.info(f"No new documents in last {DEFAULT_MAX_DAYS} days")
-                        if args.notify == 1:
-                            logger.info("Force notify enabled, will send notification with empty results")
-                            target_documents = {}
-                        else:
-                            if not args.dry_run:
-                                storage.update_state(all_documents)
-                            return 0
             
             # 3. Download/rename files (optional)
             downloaded_files: list[str] = []

@@ -281,41 +281,75 @@ class CaacCrawler:
         logger.debug(f"Random delay {delay:.1f} seconds")
         time.sleep(delay)
 
-    def fetch_category(self, category_id: str, perpage: int = 50) -> list[Document]:
-        """Fetch documents from a specific category
-        
-        Args:
-            category_id: Category ID (fl parameter)
-            perpage: Number of results per page
-        
-        Returns:
-            List of documents
-        """
-        category_name = CATEGORIES.get(category_id, f"未知分类({category_id})")
-        logger.info(f"Fetching category: {category_name} (ID: {category_id})")
-        
-        # Build search URL
-        search_url = (
+    def _build_search_url(self, category_id: str, perpage: int, orderby: str) -> str:
+        """Build WAS5 search URL for a category"""
+        return (
             f"{WAS5_SEARCH_URL}?"
             f"channelid={SEARCH_CHANNEL}&"
             f"was_custom_expr=+PARENTID%3D%27{category_id}%27+or+CLASSINFOID%3D%27{category_id}%27+&"
             f"perpage={perpage}&"
-            f"orderby=-fabuDate&"
+            f"orderby={orderby}&"
             f"fl={category_id}"
         )
-        
-        logger.debug(f"Search URL: {search_url}")
-        
+
+    def fetch_category(self, category_id: str, perpage: int = 50) -> list[Document]:
+        """Fetch documents from a specific category
+
+        Uses a dual-query strategy:
+        1. Primary query sorted by -fabuDate (editorial publication date)
+        2. Supplementary query sorted by -DOCRELTIME (CMS upload time)
+
+        This catches documents that CAAC adds retroactively with old publication
+        dates, which would otherwise be buried beyond the perpage limit.
+
+        Args:
+            category_id: Category ID (fl parameter)
+            perpage: Number of results per page
+
+        Returns:
+            List of documents (merged and deduplicated by URL)
+        """
+        category_name = CATEGORIES.get(category_id, f"未知分类({category_id})")
+        logger.info(f"Fetching category: {category_name} (ID: {category_id})")
+
+        # Primary query: sorted by editorial publication date
+        primary_url = self._build_search_url(category_id, perpage, "-fabuDate")
+        documents = []
+
         try:
-            html_content = self._fetch_with_browser(search_url)
+            html_content = self._fetch_with_browser(primary_url)
             if html_content:
                 documents = self._parse_list_page(html_content, category_id, category_name)
-                logger.info(f"Category {category_name}: {len(documents)} documents")
-                return documents
+                logger.info(f"Category {category_name} (primary): {len(documents)} documents")
         except Exception as e:
-            logger.error(f"Failed to fetch category {category_name}: {e}")
-        
-        return []
+            logger.error(f"Failed to fetch category {category_name} (primary): {e}")
+
+        # Supplementary query: sorted by CMS upload time (DOCRELTIME)
+        # Catches retroactively added documents with old fabuDate
+        suppl_perpage = min(50, perpage)
+        suppl_url = self._build_search_url(category_id, suppl_perpage, "-DOCRELTIME")
+
+        try:
+            self._random_delay(0.5, 1.5)
+            html_content = self._fetch_with_browser(suppl_url)
+            if html_content:
+                suppl_docs = self._parse_list_page(html_content, category_id, category_name)
+                logger.info(f"Category {category_name} (DOCRELTIME): {len(suppl_docs)} documents")
+
+                # Merge: deduplicate by URL, primary results take precedence
+                seen_urls = {doc.url for doc in documents}
+                new_from_suppl = [doc for doc in suppl_docs if doc.url not in seen_urls]
+                if new_from_suppl:
+                    logger.info(
+                        f"Category {category_name}: {len(new_from_suppl)} extra documents "
+                        f"found via DOCRELTIME (possibly retroactively added)"
+                    )
+                    documents.extend(new_from_suppl)
+        except Exception as e:
+            logger.warning(f"Supplementary DOCRELTIME query failed for {category_name} (non-fatal): {e}")
+
+        logger.info(f"Category {category_name}: {len(documents)} documents total")
+        return documents
 
     def fetch_all_categories(self, category_ids: list[str] = None, perpage: int = 50) -> dict[str, list[Document]]:
         """Fetch documents from all or specified categories
