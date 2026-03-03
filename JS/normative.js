@@ -1,5 +1,17 @@
 var data = [
   {
+    "title": "循证训练（EBT）实施管理规定",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年02月12日",
+    "publish_date": "2026年02月12日",
+    "doc_number": "AC-121-FS-138R2",
+    "office_unit": "飞行标准司",
+    "file_number": "文号：AC-121-FS-138R2",
+    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-138R2%E5%BE%AA%E8%AF%81%E8%AE%AD%E7%BB%83%EF%BC%88EBT%EF%BC%89%E5%AE%9E%E6%96%BD%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+  },
+  {
     "title": "限用类无人驾驶航空器系统适航标准",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230117.html",
     "doc_type": "规范性文件",
@@ -10,17 +22,6 @@ var data = [
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2026-44",
     "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-44%E9%99%90%E7%94%A8%E7%B1%BB%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
-  },
-  {
-    "title": "《循证证训练（EBT）实施管理规定》",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2026年02月12日",
-    "publish_date": "2026年02月12日",
-    "doc_number": "AC-121-FS-138R2",
-    "file_number": "文号：AC-121-FS-138R2",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-138R2%E3%80%8A%E5%BE%AA%E8%AF%81%E8%AF%81%E8%AE%AD%E7%BB%83%EF%BC%88EBT%EF%BC%89%E5%AE%9E%E6%96%BD%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%E3%80%8B.pdf"
   },
   {
     "title": "最后进近阶段相关飞行技术",
@@ -1040,13 +1041,13 @@ var data = [
     "title": "连续下降最后进近（CDFA）",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202412/t20241224_226224.html",
     "doc_type": "规范性文件",
-    "validity": "有效",
+    "validity": "废止",
     "sign_date": "2024年12月17日",
     "publish_date": "2024年12月17日",
     "doc_number": "AC-135-FS-016",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕69 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-135-FS-016%E8%BF%9E%E7%BB%AD%E4%B8%8B%E9%99%8D%E6%9C%80%E5%90%8E%E8%BF%9B%E8%BF%91%EF%BC%88CDFA%EF%BC%89.pdf"
+    "pdf_url": "https://ccar.hudawang.cn/normative/%E5%BA%9F%E6%AD%A2%21AC-135-FS-016%E8%BF%9E%E7%BB%AD%E4%B8%8B%E9%99%8D%E6%9C%80%E5%90%8E%E8%BF%9B%E8%BF%91%EF%BC%88CDFA%EF%BC%89.pdf"
   },
   {
     "title": "客舱运行管理",

@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-03-02T07:58:11.809751",
+  "last_check": "2026-03-03T07:52:17.377653",
   "documents": {
     "9": [
       {
@@ -10460,11 +10460,24 @@
         "sign_date": "2004-10-12",
         "publish_date": "2004-10-12",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/P020151103350063438091.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       }
     ],
     "14": [
+      {
+        "title": "循证训练（EBT）实施管理规定",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-121-FS-138R2",
+        "office_unit": "飞行标准司",
+        "sign_date": "2026-02-12",
+        "publish_date": "2026-02-12",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260303524232067246.pdf",
+        "has_pdf": true
+      },
       {
         "title": "限用类无人驾驶航空器系统适航标准",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230117.html",
@@ -10472,19 +10485,6 @@
         "category_id": "14",
         "doc_number": "AC-21-AA-2026-44",
         "office_unit": "航空器适航审定司",
-        "sign_date": "2026-02-12",
-        "publish_date": "2026-02-12",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "《循证证训练（EBT）实施管理规定》",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AC-121-FS-138R2",
-        "office_unit": "",
         "sign_date": "2026-02-12",
         "publish_date": "2026-02-12",
         "validity": "有效",
@@ -11605,9 +11605,9 @@
         "office_unit": "飞行标准司",
         "sign_date": "2024-12-17",
         "publish_date": "2024-12-17",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
+        "validity": "废止",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202412/P020241224334413477616.pdf",
+        "has_pdf": true
       },
       {
         "title": "客舱运行管理",
@@ -24912,27 +24912,27 @@
       "doc_type": "regulation",
       "sign_date": "2004-10-12",
       "publish_date": "2004-10-12",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/P020151103350063438091.pdf"
+      "pdf_url": ""
     }
   ],
   "normatives": [
+    {
+      "title": "循证训练（EBT）实施管理规定",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
+      "validity": "有效",
+      "doc_number": "AC-121-FS-138R2",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2026-02-12",
+      "publish_date": "2026-02-12",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260303524232067246.pdf"
+    },
     {
       "title": "限用类无人驾驶航空器系统适航标准",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230117.html",
       "validity": "有效",
       "doc_number": "AC-21-AA-2026-44",
       "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2026-02-12",
-      "publish_date": "2026-02-12",
-      "pdf_url": ""
-    },
-    {
-      "title": "《循证证训练（EBT）实施管理规定》",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
-      "validity": "有效",
-      "doc_number": "AC-121-FS-138R2",
-      "office_unit": "",
       "doc_type": "normative",
       "sign_date": "2026-02-12",
       "publish_date": "2026-02-12",
@@ -25876,13 +25876,13 @@
     {
       "title": "连续下降最后进近（CDFA）",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202412/t20241224_226224.html",
-      "validity": "有效",
+      "validity": "废止",
       "doc_number": "AC-135-FS-016",
       "office_unit": "飞行标准司",
       "doc_type": "normative",
       "sign_date": "2024-12-17",
       "publish_date": "2024-12-17",
-      "pdf_url": ""
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202412/P020241224334413477616.pdf"
     },
     {
       "title": "客舱运行管理",
