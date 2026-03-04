@@ -260,6 +260,15 @@ var data = [
     "office_unit": "政策法规司"
   },
   {
+    "title": "交通运输部关于修改《运输机场运行安全管理规定》的决定",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220304_212182.html",
+    "doc_type": "CCAR规章",
+    "validity": "失效",
+    "doc_number": "交通运输部令2022年第7号",
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC7%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
+  },
+  {
     "title": "民用航空器维修培训机构合格审定规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220302_212120.html",
     "doc_type": "CCAR规章",
@@ -276,15 +285,6 @@ var data = [
     "doc_number": "交通运输部令2022年第8号",
     "office_unit": "政策法规司",
     "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC8%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E5%8D%95%E4%BD%8D%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
-  },
-  {
-    "title": "交通运输部关于修改《运输机场运行安全管理规定》的决定",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220304_212182.html",
-    "doc_type": "CCAR规章",
-    "validity": "有效",
-    "doc_number": "交通运输部令2022年第7号",
-    "office_unit": "政策法规司",
-    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC7%E5%8F%B7%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E5%85%B3%E4%BA%8E%E4%BF%AE%E6%94%B9%E3%80%8A%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E5%86%B3%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空器国籍登记规定",

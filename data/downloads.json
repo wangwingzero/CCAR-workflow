@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-03T07:52:01.580163",
+  "last_update": "2026-03-04T07:47:05.573934",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -194,8 +194,8 @@
       "updated_at": "2026-02-19T00:38:43.728579"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220304_212182.html": {
-      "relative_path": "regulation/交通运输部令2022年第7号交通运输部关于修改《运输机场运行安全管理规定》的决定.pdf",
-      "updated_at": "2026-02-19T00:38:58.868131"
+      "relative_path": "regulation/失效!交通运输部令2022年第7号交通运输部关于修改《运输机场运行安全管理规定》的决定.pdf",
+      "updated_at": "2026-03-04T07:47:05.573913"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202201/t20220125_211271.html": {
       "relative_path": "regulation/失效!民用航空器国籍登记规定.txt",
@@ -2496,6 +2496,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8504.html": {
       "relative_path": "regulation/民航总局第128号令飞行训练中心合格审定规则.pdf",
       "updated_at": "2026-03-02T07:58:01.641660"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260303_230152.html": {
+      "relative_path": "other/关于2026年全国工人先锋号拟推荐对象的公示.pdf",
+      "updated_at": "2026-03-04T07:46:51.110739"
     }
   }
 }

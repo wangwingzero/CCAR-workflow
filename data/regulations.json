@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-03-03T07:52:17.377653",
+  "last_check": "2026-03-04T07:47:13.538031",
   "documents": {
     "9": [
+      {
+        "title": "关于2026年全国工人先锋号拟推荐对象的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260303_230152.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-03",
+        "publish_date": "2026-03-03",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260303633542209607.pdf",
+        "has_pdf": true
+      },
       {
         "title": "关于追加北京城建十建设工程有限公司等2家企业进行资质核查的通知",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260226_230128.html",
@@ -2579,19 +2592,6 @@
       {
         "title": "关于民航局2024年法律顾问律所选聘结果的公告",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240822_225136.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-22",
-        "publish_date": "2024-08-22",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于2024年度民航专业工程资质动态核查追加企业第二批核定结果的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240822_225126.html",
         "category": "通知公告",
         "category_id": "9",
         "doc_number": "",
@@ -8254,6 +8254,19 @@
         "has_pdf": false
       },
       {
+        "title": "交通运输部关于修改《运输机场运行安全管理规定》的决定",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220304_212182.html",
+        "category": "民航规章",
+        "category_id": "13",
+        "doc_number": "交通运输部令2022年第7号",
+        "office_unit": "政策法规司",
+        "sign_date": "2022-02-11",
+        "publish_date": "2022-02-11",
+        "validity": "失效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/P020220314606769100532.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "民用航空器维修培训机构合格审定规则",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220302_212120.html",
         "category": "民航规章",
@@ -8272,19 +8285,6 @@
         "category": "民航规章",
         "category_id": "13",
         "doc_number": "交通运输部令2022年第8号",
-        "office_unit": "政策法规司",
-        "sign_date": "2022-02-11",
-        "publish_date": "2022-02-11",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "交通运输部关于修改《运输机场运行安全管理规定》的决定",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220304_212182.html",
-        "category": "民航规章",
-        "category_id": "13",
-        "doc_number": "交通运输部令2022年第7号",
         "office_unit": "政策法规司",
         "sign_date": "2022-02-11",
         "publish_date": "2022-02-11",
@@ -10475,8 +10475,8 @@
         "sign_date": "2026-02-12",
         "publish_date": "2026-02-12",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260303524232067246.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "限用类无人驾驶航空器系统适航标准",
@@ -11606,8 +11606,8 @@
         "sign_date": "2024-12-17",
         "publish_date": "2024-12-17",
         "validity": "废止",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202412/P020241224334413477616.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "客舱运行管理",
@@ -19889,6 +19889,19 @@
     "27": [],
     "28": [
       {
+        "title": "关于2026年全国工人先锋号拟推荐对象的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260303_230152.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-03",
+        "publish_date": "2026-03-03",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "关于追加北京城建十建设工程有限公司等2家企业进行资质核查的通知",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260226_230128.html",
         "category": "建议提案答复",
@@ -22474,19 +22487,6 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "关于2024年度民航专业工程资质动态核查追加企业第二批核定结果的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240822_225126.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-22",
-        "publish_date": "2024-08-22",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
       }
     ],
     "29": [
@@ -23045,6 +23045,17 @@
       "pdf_url": ""
     },
     {
+      "title": "交通运输部关于修改《运输机场运行安全管理规定》的决定",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220304_212182.html",
+      "validity": "失效",
+      "doc_number": "交通运输部令2022年第7号",
+      "office_unit": "政策法规司",
+      "doc_type": "regulation",
+      "sign_date": "2022-02-11",
+      "publish_date": "2022-02-11",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/P020220314606769100532.pdf"
+    },
+    {
       "title": "民用航空器维修培训机构合格审定规则",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220302_212120.html",
       "validity": "有效",
@@ -23060,17 +23071,6 @@
       "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220302_212092.html",
       "validity": "有效",
       "doc_number": "交通运输部令2022年第8号",
-      "office_unit": "政策法规司",
-      "doc_type": "regulation",
-      "sign_date": "2022-02-11",
-      "publish_date": "2022-02-11",
-      "pdf_url": ""
-    },
-    {
-      "title": "交通运输部关于修改《运输机场运行安全管理规定》的决定",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/t20220304_212182.html",
-      "validity": "有效",
-      "doc_number": "交通运输部令2022年第7号",
       "office_unit": "政策法规司",
       "doc_type": "regulation",
       "sign_date": "2022-02-11",
@@ -24925,7 +24925,7 @@
       "doc_type": "normative",
       "sign_date": "2026-02-12",
       "publish_date": "2026-02-12",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260303524232067246.pdf"
+      "pdf_url": ""
     },
     {
       "title": "限用类无人驾驶航空器系统适航标准",
@@ -25882,7 +25882,7 @@
       "doc_type": "normative",
       "sign_date": "2024-12-17",
       "publish_date": "2024-12-17",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202412/P020241224334413477616.pdf"
+      "pdf_url": ""
     },
     {
       "title": "客舱运行管理",
