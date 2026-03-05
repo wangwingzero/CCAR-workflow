@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-03-04T07:47:13.538031",
+  "last_check": "2026-03-05T07:52:22.517326",
   "documents": {
     "9": [
       {
@@ -12,8 +12,8 @@
         "sign_date": "2026-03-03",
         "publish_date": "2026-03-03",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260303633542209607.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "关于追加北京城建十建设工程有限公司等2家企业进行资质核查的通知",
@@ -8263,8 +8263,8 @@
         "sign_date": "2022-02-11",
         "publish_date": "2022-02-11",
         "validity": "失效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/P020220314606769100532.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "民用航空器维修培训机构合格审定规则",
@@ -23053,7 +23053,7 @@
       "doc_type": "regulation",
       "sign_date": "2022-02-11",
       "publish_date": "2022-02-11",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202203/P020220314606769100532.pdf"
+      "pdf_url": ""
     },
     {
       "title": "民用航空器维修培训机构合格审定规则",
