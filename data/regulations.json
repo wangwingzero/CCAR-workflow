@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-03-05T07:52:22.517326",
+  "last_check": "2026-03-06T07:47:15.750846",
   "documents": {
     "9": [
+      {
+        "title": "全国通用航空企业经营许可信息（2026年2月）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230228.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-06",
+        "publish_date": "2026-03-06",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260306521039667452.pdf",
+        "has_pdf": true
+      },
       {
         "title": "关于2026年全国工人先锋号拟推荐对象的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260303_230152.html",
@@ -2585,19 +2598,6 @@
         "office_unit": "",
         "sign_date": "2024-08-30",
         "publish_date": "2024-08-30",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于民航局2024年法律顾问律所选聘结果的公告",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240822_225136.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-22",
-        "publish_date": "2024-08-22",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -10466,6 +10466,19 @@
     ],
     "14": [
       {
+        "title": "动力提升航空器适航标准",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-21-AA-2026-45",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-02-12",
+        "publish_date": "2026-02-12",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260226344192407264.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "循证训练（EBT）实施管理规定",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
         "category": "规范性文件",
@@ -10565,19 +10578,6 @@
         "office_unit": "飞行标准司",
         "sign_date": "2026-01-16",
         "publish_date": "2026-01-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "动力提升航空器适航标准",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AC-21-AA-2026-45",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2026-01-12",
-        "publish_date": "2026-01-12",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -19889,6 +19889,19 @@
     "27": [],
     "28": [
       {
+        "title": "全国通用航空企业经营许可信息（2026年2月）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230228.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-06",
+        "publish_date": "2026-03-06",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "关于2026年全国工人先锋号拟推荐对象的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260303_230152.html",
         "category": "建议提案答复",
@@ -22474,19 +22487,6 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "关于民航局2024年法律顾问律所选聘结果的公告",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240822_225136.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-22",
-        "publish_date": "2024-08-22",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
       }
     ],
     "29": [
@@ -24917,6 +24917,17 @@
   ],
   "normatives": [
     {
+      "title": "动力提升航空器适航标准",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html",
+      "validity": "有效",
+      "doc_number": "AC-21-AA-2026-45",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "normative",
+      "sign_date": "2026-02-12",
+      "publish_date": "2026-02-12",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260226344192407264.pdf"
+    },
+    {
       "title": "循证训练（EBT）实施管理规定",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html",
       "validity": "有效",
@@ -25002,17 +25013,6 @@
       "doc_type": "normative",
       "sign_date": "2026-01-16",
       "publish_date": "2026-01-16",
-      "pdf_url": ""
-    },
-    {
-      "title": "动力提升航空器适航标准",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html",
-      "validity": "有效",
-      "doc_number": "AC-21-AA-2026-45",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2026-01-12",
-      "publish_date": "2026-01-12",
       "pdf_url": ""
     },
     {

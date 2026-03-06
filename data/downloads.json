@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-04T07:47:05.573934",
+  "last_update": "2026-03-06T07:47:03.982864",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2500,6 +2500,14 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260303_230152.html": {
       "relative_path": "other/关于2026年全国工人先锋号拟推荐对象的公示.pdf",
       "updated_at": "2026-03-04T07:46:51.110739"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230228.html": {
+      "relative_path": "other/全国通用航空企业经营许可信息（2026年2月）.pdf",
+      "updated_at": "2026-03-06T07:46:51.496406"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html": {
+      "relative_path": "normative/AC-21-AA-2026-45动力提升航空器适航标准.pdf",
+      "updated_at": "2026-03-06T07:47:03.982849"
     }
   }
 }
