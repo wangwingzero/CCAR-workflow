@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-06T07:47:03.982864",
+  "last_update": "2026-03-07T07:50:20.802435",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2508,6 +2508,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html": {
       "relative_path": "normative/AC-21-AA-2026-45动力提升航空器适航标准.pdf",
       "updated_at": "2026-03-06T07:47:03.982849"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230233.html": {
+      "relative_path": "other/关于民用无人驾驶航空器系统网络式运行识别有关事项的公告.pdf",
+      "updated_at": "2026-03-07T07:50:20.802428"
     }
   }
 }

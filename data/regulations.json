@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-03-06T07:47:15.750846",
+  "last_check": "2026-03-07T07:50:29.509247",
   "documents": {
     "9": [
+      {
+        "title": "关于民用无人驾驶航空器系统网络式运行识别有关事项的公告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230233.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-06",
+        "publish_date": "2026-03-06",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260306730349409250.pdf",
+        "has_pdf": true
+      },
       {
         "title": "全国通用航空企业经营许可信息（2026年2月）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230228.html",
@@ -12,8 +25,8 @@
         "sign_date": "2026-03-06",
         "publish_date": "2026-03-06",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260306521039667452.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "关于2026年全国工人先锋号拟推荐对象的公示",
@@ -2585,19 +2598,6 @@
         "office_unit": "",
         "sign_date": "2024-09-02",
         "publish_date": "2024-09-03",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于再次公示首批运输机场残损航空器搬移专家名单的公告",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240830_225219.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-30",
-        "publish_date": "2024-08-30",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -10475,8 +10475,8 @@
         "sign_date": "2026-02-12",
         "publish_date": "2026-02-12",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260226344192407264.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "循证训练（EBT）实施管理规定",
@@ -19889,6 +19889,19 @@
     "27": [],
     "28": [
       {
+        "title": "关于民用无人驾驶航空器系统网络式运行识别有关事项的公告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230233.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-06",
+        "publish_date": "2026-03-06",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "全国通用航空企业经营许可信息（2026年2月）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230228.html",
         "category": "建议提案答复",
@@ -22474,19 +22487,6 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "关于再次公示首批运输机场残损航空器搬移专家名单的公告",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240830_225219.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-30",
-        "publish_date": "2024-08-30",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
       }
     ],
     "29": [
@@ -24925,7 +24925,7 @@
       "doc_type": "normative",
       "sign_date": "2026-02-12",
       "publish_date": "2026-02-12",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/P020260226344192407264.pdf"
+      "pdf_url": ""
     },
     {
       "title": "循证训练（EBT）实施管理规定",
