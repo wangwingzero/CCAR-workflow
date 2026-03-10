@@ -60,6 +60,13 @@ DOWNLOAD_SUBDIRS = {
     "15": "specification",
 }
 
+# 中文子目录名映射（用于 --cn-dirs 模式）
+DOWNLOAD_SUBDIRS_CN = {
+    "13": "CCAR规章",
+    "14": "规范性文件",
+    "15": "标准规范",
+}
+
 
 @dataclass
 class Document:
@@ -141,9 +148,15 @@ def generate_filename(document: Document, extension: str = ".pdf") -> str:
     return filename
 
 
-def get_download_subdir(category_id: str) -> str:
-    """Map category ID to local download subdirectory"""
-    return DOWNLOAD_SUBDIRS.get(category_id, "other")
+def get_download_subdir(category_id: str, use_cn: bool = False) -> str:
+    """Map category ID to local download subdirectory
+    
+    Args:
+        category_id: 分类 ID
+        use_cn: 是否使用中文目录名
+    """
+    mapping = DOWNLOAD_SUBDIRS_CN if use_cn else DOWNLOAD_SUBDIRS
+    return mapping.get(category_id, "other")
 
 
 def normalize_date(date_str: str) -> str:

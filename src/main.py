@@ -96,6 +96,18 @@ def parse_args() -> argparse.Namespace:
         help="List all available category IDs and exit",
     )
     parser.add_argument(
+        "--download-dir",
+        type=str,
+        default="downloads",
+        metavar="DIR",
+        help="Base directory for file downloads (default: downloads)",
+    )
+    parser.add_argument(
+        "--cn-dirs",
+        action="store_true",
+        help="Use Chinese subdirectory names (CCAR规章/规范性文件/标准规范) instead of English",
+    )
+    parser.add_argument(
         "--no-download",
         action="store_true",
         help="Skip file download",
@@ -175,6 +187,10 @@ def main() -> int:
         logger.info(f"Categories: {', '.join(CATEGORIES[c] for c in category_ids)}")
     else:
         logger.info(f"Categories: All ({len(CATEGORIES)} categories)")
+    if args.download_dir != "downloads":
+        logger.info(f"Download dir: {args.download_dir}")
+    if args.cn_dirs:
+        logger.info("Using Chinese subdirectory names")
     logger.info("=" * 50)
     
     exit_code = 0
@@ -251,7 +267,7 @@ def main() -> int:
             downloaded_files: list[str] = []
             if not args.no_download:
                 logger.info("Step 3/7: Syncing download files...")
-                download_dir = "downloads"
+                download_dir = args.download_dir
                 os.makedirs(download_dir, exist_ok=True)
                 docs_to_sync = _flatten_documents(download_documents)
                 if not docs_to_sync:
@@ -263,7 +279,7 @@ def main() -> int:
                     failed_count = 0
 
                     for doc in docs_to_sync:
-                        subdir = get_download_subdir(doc.category_id)
+                        subdir = get_download_subdir(doc.category_id, use_cn=args.cn_dirs)
                         base_dir = os.path.join(download_dir, subdir)
                         base_name = generate_filename(doc, extension="")
                         save_base_path = os.path.join(base_dir, base_name)
