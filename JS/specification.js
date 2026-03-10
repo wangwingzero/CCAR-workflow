@@ -10,6 +10,16 @@ var data = [
     "pdf_url": "https://ccar.hudawang.cn/specification/CTSO-2C612%E6%9C%BA%E8%BD%BD%E4%BA%92%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE%E8%AF%AD%E9%9F%B3%EF%BC%88VoIP%EF%BC%89%E8%AF%9D%E6%9C%BA.pdf"
   },
   {
+    "title": "民用航空大气透射仪校准规范",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202603/t20260309_230234.html",
+    "doc_type": "标准规范",
+    "validity": "有效",
+    "publish_date": "2026年02月09日",
+    "doc_number": "JJF(民航)0125-2026",
+    "office_unit": "航空器适航审定司",
+    "pdf_url": "https://ccar.hudawang.cn/specification/JJF%28%E6%B0%91%E8%88%AA%290125-2026%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%A4%A7%E6%B0%94%E9%80%8F%E5%B0%84%E4%BB%AA%E6%A0%A1%E5%87%86%E8%A7%84%E8%8C%83.pdf"
+  },
+  {
     "title": "民用飞机舵面偏度参数试飞测试装置校准规范",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202602/t20260206_229997.html",
     "doc_type": "标准规范",

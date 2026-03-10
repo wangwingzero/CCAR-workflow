@@ -1,7 +1,33 @@
 {
-  "last_check": "2026-03-09T07:59:32.239225",
+  "last_check": "2026-03-10T07:53:35.391055",
   "documents": {
     "9": [
+      {
+        "title": "中国民用航空局机关 2026年度公开遴选公务员面试公告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260309_230236.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-09",
+        "publish_date": "2026-03-09",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "民航系统2026年度考试录用公务员面试公告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260309_230235.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-09",
+        "publish_date": "2026-03-09",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "关于民用无人驾驶航空器系统网络式运行识别有关事项的公告",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230233.html",
@@ -2571,32 +2597,6 @@
         "doc_number": "",
         "office_unit": "",
         "sign_date": "2024-09-03",
-        "publish_date": "2024-09-03",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于公布2024年度民航专业工程资质动态核查追加企业第二批核定结论的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240903_225277.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-02",
-        "publish_date": "2024-09-03",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于公布2023年度民航专业工程资质动态核查第五批企业整改核定结论的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240903_225276.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-02",
         "publish_date": "2024-09-03",
         "validity": "有效",
         "pdf_url": "",
@@ -13081,6 +13081,19 @@
         "has_pdf": false
       },
       {
+        "title": "民用航空大气透射仪校准规范",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202603/t20260309_230234.html",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "JJF(民航)0125-2026",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-02-09",
+        "publish_date": "2026-02-09",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202603/P020260309587992695696.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "民用飞机舵面偏度参数试飞测试装置校准规范",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202602/t20260206_229997.html",
         "category": "标准规范",
@@ -15650,19 +15663,6 @@
         "office_unit": "机场司",
         "sign_date": "2023-04-25",
         "publish_date": "2023-04-25",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "独立式北斗机载导航设备",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202304/t20230406_217981.html",
-        "category": "标准规范",
-        "category_id": "15",
-        "doc_number": "CTSO-2C609",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2023-03-24",
-        "publish_date": "2023-03-24",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -19889,6 +19889,32 @@
     "27": [],
     "28": [
       {
+        "title": "中国民用航空局机关 2026年度公开遴选公务员面试公告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260309_230236.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-09",
+        "publish_date": "2026-03-09",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "民航系统2026年度考试录用公务员面试公告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260309_230235.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-09",
+        "publish_date": "2026-03-09",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "关于民用无人驾驶航空器系统网络式运行识别有关事项的公告",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230233.html",
         "category": "建议提案答复",
@@ -22457,32 +22483,6 @@
         "doc_number": "",
         "office_unit": "",
         "sign_date": "2024-09-03",
-        "publish_date": "2024-09-03",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于公布2024年度民航专业工程资质动态核查追加企业第二批核定结论的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240903_225277.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-02",
-        "publish_date": "2024-09-03",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于公布2023年度民航专业工程资质动态核查第五批企业整改核定结论的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240903_225276.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-02",
         "publish_date": "2024-09-03",
         "validity": "有效",
         "pdf_url": "",
@@ -27130,6 +27130,17 @@
       "pdf_url": ""
     },
     {
+      "title": "民用航空大气透射仪校准规范",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202603/t20260309_230234.html",
+      "validity": "有效",
+      "doc_number": "JJF(民航)0125-2026",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "standard",
+      "sign_date": "2026-02-09",
+      "publish_date": "2026-02-09",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202603/P020260309587992695696.pdf"
+    },
+    {
       "title": "民用飞机舵面偏度参数试飞测试装置校准规范",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202602/t20260206_229997.html",
       "validity": "有效",
@@ -29305,17 +29316,6 @@
       "doc_type": "standard",
       "sign_date": "2023-04-25",
       "publish_date": "2023-04-25",
-      "pdf_url": ""
-    },
-    {
-      "title": "独立式北斗机载导航设备",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202304/t20230406_217981.html",
-      "validity": "有效",
-      "doc_number": "CTSO-2C609",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "standard",
-      "sign_date": "2023-03-24",
-      "publish_date": "2023-03-24",
       "pdf_url": ""
     }
   ]

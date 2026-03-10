@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-07T07:50:20.802435",
+  "last_update": "2026-03-10T07:53:23.811720",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2512,6 +2512,18 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260306_230233.html": {
       "relative_path": "other/关于民用无人驾驶航空器系统网络式运行识别有关事项的公告.pdf",
       "updated_at": "2026-03-07T07:50:20.802428"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260309_230236.html": {
+      "relative_path": "other/中国民用航空局机关 2026年度公开遴选公务员面试公告.doc",
+      "updated_at": "2026-03-10T07:53:23.811645"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260309_230235.html": {
+      "relative_path": "other/民航系统2026年度考试录用公务员面试公告.docx",
+      "updated_at": "2026-03-10T07:53:23.811714"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202603/t20260309_230234.html": {
+      "relative_path": "specification/JJF(民航)0125-2026民用航空大气透射仪校准规范.pdf",
+      "updated_at": "2026-03-10T07:53:23.811499"
     }
   }
 }
