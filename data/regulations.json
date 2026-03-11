@@ -1,7 +1,33 @@
 {
-  "last_check": "2026-03-10T07:53:35.391055",
+  "last_check": "2026-03-11T07:55:15.794351",
   "documents": {
     "9": [
+      {
+        "title": "关于追加中山空港建设有限公司等1家企业进行资质核查的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260311_230241.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-10",
+        "publish_date": "2026-03-11",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "关于2026年第四批民航专业工程建设企业资质申报材料的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260311_230240.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-10",
+        "publish_date": "2026-03-11",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260311305474347673.pdf",
+        "has_pdf": true
+      },
       {
         "title": "中国民用航空局机关 2026年度公开遴选公务员面试公告",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260309_230236.html",
@@ -2572,32 +2598,6 @@
         "office_unit": "",
         "sign_date": "2024-09-05",
         "publish_date": "2025-04-18",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于2024年度民航专业工程资质核查部分追加核定不达标企业整改材料的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240905_225292.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-05",
-        "publish_date": "2024-09-05",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "国际航线审批结果公开（C2024009）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240903_225278.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-03",
-        "publish_date": "2024-09-03",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -13090,8 +13090,8 @@
         "sign_date": "2026-02-09",
         "publish_date": "2026-02-09",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202603/P020260309587992695696.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "民用飞机舵面偏度参数试飞测试装置校准规范",
@@ -19889,6 +19889,32 @@
     "27": [],
     "28": [
       {
+        "title": "关于追加中山空港建设有限公司等1家企业进行资质核查的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260311_230241.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-10",
+        "publish_date": "2026-03-11",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "关于2026年第四批民航专业工程建设企业资质申报材料的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260311_230240.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-10",
+        "publish_date": "2026-03-11",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "中国民用航空局机关 2026年度公开遴选公务员面试公告",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260309_230236.html",
         "category": "建议提案答复",
@@ -22458,32 +22484,6 @@
         "office_unit": "",
         "sign_date": "2024-09-05",
         "publish_date": "2025-04-18",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于2024年度民航专业工程资质核查部分追加核定不达标企业整改材料的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240905_225292.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-05",
-        "publish_date": "2024-09-05",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "国际航线审批结果公开（C2024009）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240903_225278.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-03",
-        "publish_date": "2024-09-03",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -27138,7 +27138,7 @@
       "doc_type": "standard",
       "sign_date": "2026-02-09",
       "publish_date": "2026-02-09",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202603/P020260309587992695696.pdf"
+      "pdf_url": ""
     },
     {
       "title": "民用飞机舵面偏度参数试飞测试装置校准规范",
