@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-03-11T07:55:15.794351",
+  "last_check": "2026-03-12T07:55:55.414732",
   "documents": {
     "9": [
       {
@@ -25,8 +25,8 @@
         "sign_date": "2026-03-10",
         "publish_date": "2026-03-11",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260311305474347673.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "中国民用航空局机关 2026年度公开遴选公务员面试公告",
