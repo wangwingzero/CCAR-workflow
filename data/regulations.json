@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-03-12T07:55:55.414732",
+  "last_check": "2026-03-13T07:56:03.195437",
   "documents": {
     "9": [
+      {
+        "title": "民航系统2026年度考试录用公务员面试递补公告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260312_230254.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-12",
+        "publish_date": "2026-03-12",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "关于追加中山空港建设有限公司等1家企业进行资质核查的通知",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260311_230241.html",
@@ -2585,19 +2598,6 @@
         "office_unit": "",
         "sign_date": "2024-09-06",
         "publish_date": "2024-09-06",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民航工程建设标准化技术委员会管理办法",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202504/t20250418_227243.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-05",
-        "publish_date": "2025-04-18",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -19889,6 +19889,19 @@
     "27": [],
     "28": [
       {
+        "title": "民航系统2026年度考试录用公务员面试递补公告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260312_230254.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-12",
+        "publish_date": "2026-03-12",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "关于追加中山空港建设有限公司等1家企业进行资质核查的通知",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260311_230241.html",
         "category": "建议提案答复",
@@ -22471,19 +22484,6 @@
         "office_unit": "",
         "sign_date": "2024-09-06",
         "publish_date": "2024-09-06",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民航工程建设标准化技术委员会管理办法",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202504/t20250418_227243.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-05",
-        "publish_date": "2025-04-18",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false

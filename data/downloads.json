@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-11T07:53:46.866656",
+  "last_update": "2026-03-13T07:55:56.835239",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2532,6 +2532,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260311_230240.html": {
       "relative_path": "other/关于2026年第四批民航专业工程建设企业资质申报材料的公示.pdf",
       "updated_at": "2026-03-11T07:53:46.866651"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260312_230254.html": {
+      "relative_path": "other/民航系统2026年度考试录用公务员面试递补公告.doc",
+      "updated_at": "2026-03-13T07:55:56.835233"
     }
   }
 }
