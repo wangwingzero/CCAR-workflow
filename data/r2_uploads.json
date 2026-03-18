@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-11T07:53:48.794915",
+  "last_update": "2026-03-18T08:02:14.658364",
   "records": {
     "regulation/交通运输部令2025年第9号运输类旋翼航空器适航规定.pdf": {
       "r2_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf",
@@ -11156,7 +11156,14 @@
     "specification/民航适发〔2020〕2 号通用航空油料质量控制和航空器加油技术规范.pdf": {
       "r2_url": "https://ccar.hudawang.cn/specification/%E6%B0%91%E8%88%AA%E9%80%82%E5%8F%91%E3%80%942020%E3%80%952%20%E5%8F%B7%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E6%B2%B9%E6%96%99%E8%B4%A8%E9%87%8F%E6%8E%A7%E5%88%B6%E5%92%8C%E8%88%AA%E7%A9%BA%E5%99%A8%E5%8A%A0%E6%B2%B9%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83.pdf",
       "file_size": 335235
+    },
+    "other/关于中铁十局集团第八工程有限公司1家企业追加资质动态核查材料的公示.pdf": {
+      "r2_url": "https://ccar.hudawang.cn/other/%E5%85%B3%E4%BA%8E%E4%B8%AD%E9%93%81%E5%8D%81%E5%B1%80%E9%9B%86%E5%9B%A2%E7%AC%AC%E5%85%AB%E5%B7%A5%E7%A8%8B%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B81%E5%AE%B6%E4%BC%81%E4%B8%9A%E8%BF%BD%E5%8A%A0%E8%B5%84%E8%B4%A8%E5%8A%A8%E6%80%81%E6%A0%B8%E6%9F%A5%E6%9D%90%E6%96%99%E7%9A%84%E5%85%AC%E7%A4%BA.pdf",
+      "file_size": 99509
+    },
+    "other/关于北京筑航建设有限公司1家企业民航专业工程资质动态核查整改材料的公示.pdf": {
+      "r2_url": "https://ccar.hudawang.cn/other/%E5%85%B3%E4%BA%8E%E5%8C%97%E4%BA%AC%E7%AD%91%E8%88%AA%E5%BB%BA%E8%AE%BE%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B81%E5%AE%B6%E4%BC%81%E4%B8%9A%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E8%B5%84%E8%B4%A8%E5%8A%A8%E6%80%81%E6%A0%B8%E6%9F%A5%E6%95%B4%E6%94%B9%E6%9D%90%E6%96%99%E7%9A%84%E5%85%AC%E7%A4%BA.pdf",
+      "file_size": 116403
     }
-  },
-  "total_files": 2789
+  }
 }
