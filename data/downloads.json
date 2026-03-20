@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-18T08:02:12.913925",
+  "last_update": "2026-03-20T07:56:09.731219",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2548,6 +2548,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260317_230287.html": {
       "relative_path": "other/关于北京筑航建设有限公司1家企业民航专业工程资质动态核查整改材料的公示.pdf",
       "updated_at": "2026-03-18T08:02:12.913920"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202603/t20260320_230310.html": {
+      "relative_path": "other/中国民航2026年2月份主要生产指标统计.pdf",
+      "updated_at": "2026-03-20T07:56:09.731201"
     }
   }
 }

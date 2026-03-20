@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-03-19T07:56:50.757607",
+  "last_check": "2026-03-20T07:56:18.387074",
   "documents": {
     "9": [
       {
@@ -4648,6 +4648,19 @@
     ],
     "11": [
       {
+        "title": "中国民航2026年2月份主要生产指标统计",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202603/t20260320_230310.html",
+        "category": "政策解读",
+        "category_id": "11",
+        "doc_number": "",
+        "office_unit": "发展计划司",
+        "sign_date": "2026-03-20",
+        "publish_date": "2026-03-20",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202603/P020260320375235309251.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "2025年全国民用运输机场生产统计公报",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202602/t20260226_230119.html",
         "category": "政策解读",
@@ -7230,19 +7243,6 @@
         "office_unit": "发展计划司",
         "sign_date": "2017-02-20",
         "publish_date": "2017-02-20",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "2016年12月航空运输消费者投诉情况通报",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/201701/t20170125_42286.html",
-        "category": "政策解读",
-        "category_id": "11",
-        "doc_number": "",
-        "office_unit": "运输司",
-        "sign_date": "2017-01-25",
-        "publish_date": "2017-01-25",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
