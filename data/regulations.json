@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-03-20T07:56:18.387074",
+  "last_check": "2026-03-21T07:42:57.387686",
   "documents": {
     "9": [
       {
@@ -4657,8 +4657,8 @@
         "sign_date": "2026-03-20",
         "publish_date": "2026-03-20",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202603/P020260320375235309251.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "2025年全国民用运输机场生产统计公报",
