@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-20T07:56:09.731219",
+  "last_update": "2026-03-23T08:10:36.855734",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2552,6 +2552,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202603/t20260320_230310.html": {
       "relative_path": "other/中国民航2026年2月份主要生产指标统计.pdf",
       "updated_at": "2026-03-20T07:56:09.731201"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230317.html": {
+      "relative_path": "other/民航局2026年夏秋航季换季颁发、换发、注销国内航线经营许可信息通告.pdf",
+      "updated_at": "2026-03-23T08:10:36.855727"
     }
   }
 }

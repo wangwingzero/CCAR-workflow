@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-03-22T07:47:35.309562",
+  "last_check": "2026-03-23T08:10:46.446360",
   "documents": {
     "9": [
+      {
+        "title": "民航局2026年夏秋航季换季颁发、换发、注销国内航线经营许可信息通告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230317.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-19",
+        "publish_date": "2026-03-23",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260323513975216641.pdf",
+        "has_pdf": true
+      },
       {
         "title": "关于中铁十局集团第八工程有限公司1家企业追加资质动态核查材料的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260317_230288.html",
@@ -2585,19 +2598,6 @@
         "office_unit": "",
         "sign_date": "2024-09-23",
         "publish_date": "2024-09-24",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于2023年度民航专业工程资质核查部分企业整改材料的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240919_225434.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-18",
-        "publish_date": "2024-09-19",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -19889,6 +19889,19 @@
     "27": [],
     "28": [
       {
+        "title": "民航局2026年夏秋航季换季颁发、换发、注销国内航线经营许可信息通告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230317.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-19",
+        "publish_date": "2026-03-23",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "关于中铁十局集团第八工程有限公司1家企业追加资质动态核查材料的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260317_230288.html",
         "category": "建议提案答复",
@@ -22471,19 +22484,6 @@
         "office_unit": "",
         "sign_date": "2024-09-23",
         "publish_date": "2024-09-24",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于2023年度民航专业工程资质核查部分企业整改材料的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240919_225434.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-18",
-        "publish_date": "2024-09-19",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false

@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-20T07:56:10.782706",
+  "last_update": "2026-03-23T08:10:38.288371",
   "records": {
     "regulation/交通运输部令2025年第9号运输类旋翼航空器适航规定.pdf": {
       "r2_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf",
@@ -11168,6 +11168,10 @@
     "other/中国民航2026年2月份主要生产指标统计.pdf": {
       "r2_url": "https://ccar.hudawang.cn/other/%E4%B8%AD%E5%9B%BD%E6%B0%91%E8%88%AA2026%E5%B9%B42%E6%9C%88%E4%BB%BD%E4%B8%BB%E8%A6%81%E7%94%9F%E4%BA%A7%E6%8C%87%E6%A0%87%E7%BB%9F%E8%AE%A1.pdf",
       "file_size": 138838
+    },
+    "other/民航局2026年夏秋航季换季颁发、换发、注销国内航线经营许可信息通告.pdf": {
+      "r2_url": "https://ccar.hudawang.cn/other/%E6%B0%91%E8%88%AA%E5%B1%802026%E5%B9%B4%E5%A4%8F%E7%A7%8B%E8%88%AA%E5%AD%A3%E6%8D%A2%E5%AD%A3%E9%A2%81%E5%8F%91%E3%80%81%E6%8D%A2%E5%8F%91%E3%80%81%E6%B3%A8%E9%94%80%E5%9B%BD%E5%86%85%E8%88%AA%E7%BA%BF%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E4%BF%A1%E6%81%AF%E9%80%9A%E5%91%8A.pdf",
+      "file_size": 109246
     }
   }
 }
