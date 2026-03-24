@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-23T08:10:36.855734",
+  "last_update": "2026-03-24T08:03:50.659236",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2556,6 +2556,18 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230317.html": {
       "relative_path": "other/民航局2026年夏秋航季换季颁发、换发、注销国内航线经营许可信息通告.pdf",
       "updated_at": "2026-03-23T08:10:36.855727"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230323.html": {
+      "relative_path": "other/关于2026年全国五四红旗团委（团支部）、全国优秀共青团员、全国优秀共青团干部拟推报对象的公示.pdf",
+      "updated_at": "2026-03-24T08:03:50.659176"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230320.html": {
+      "relative_path": "other/关于拟推荐申报交通运输部直属机关工会先进集体和个人名单的公示.txt",
+      "updated_at": "2026-03-24T08:03:50.659231"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230326.html": {
+      "relative_path": "normative/MD-OPS-FS-010中国民航飞行员岗位胜任力评估专家组工作规则.pdf",
+      "updated_at": "2026-03-24T08:03:50.659069"
     }
   }
 }

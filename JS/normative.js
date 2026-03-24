@@ -1,5 +1,17 @@
 var data = [
   {
+    "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230326.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年03月17日",
+    "publish_date": "2026年03月17日",
+    "doc_number": "MD-OPS-FS-010",
+    "office_unit": "飞行标准司",
+    "file_number": "文号：MD-OPS-FS-010",
+    "pdf_url": "https://ccar.hudawang.cn/normative/MD-OPS-FS-010%E4%B8%AD%E5%9B%BD%E6%B0%91%E8%88%AA%E9%A3%9E%E8%A1%8C%E5%91%98%E5%B2%97%E4%BD%8D%E8%83%9C%E4%BB%BB%E5%8A%9B%E8%AF%84%E4%BC%B0%E4%B8%93%E5%AE%B6%E7%BB%84%E5%B7%A5%E4%BD%9C%E8%A7%84%E5%88%99.pdf"
+  },
+  {
     "title": "动力提升航空器适航标准",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html",
     "doc_type": "规范性文件",

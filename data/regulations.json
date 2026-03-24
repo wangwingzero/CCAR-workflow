@@ -1,7 +1,33 @@
 {
-  "last_check": "2026-03-23T08:10:46.446360",
+  "last_check": "2026-03-24T08:04:00.636068",
   "documents": {
     "9": [
+      {
+        "title": "关于2026年全国五四红旗团委（团支部）、全国优秀共青团员、全国优秀共青团干部拟推报对象的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230323.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-23",
+        "publish_date": "2026-03-23",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260323631517237398.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "关于拟推荐申报交通运输部直属机关工会先进集体和个人名单的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230320.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-23",
+        "publish_date": "2026-03-23",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "民航局2026年夏秋航季换季颁发、换发、注销国内航线经营许可信息通告",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230317.html",
@@ -12,8 +38,8 @@
         "sign_date": "2026-03-19",
         "publish_date": "2026-03-23",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260323513975216641.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "关于中铁十局集团第八工程有限公司1家企业追加资质动态核查材料的公示",
@@ -2572,32 +2598,6 @@
         "office_unit": "",
         "sign_date": "2024-09-30",
         "publish_date": "2024-09-30",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于2024年度民航专业工程资质动态核查第二批追加企业整改核定结果的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240924_225471.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-23",
-        "publish_date": "2024-09-24",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于公布2023年度民航专业工程资质动态核查第六批企业整改核定结论的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240924_225470.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-23",
-        "publish_date": "2024-09-24",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -10466,6 +10466,19 @@
     ],
     "14": [
       {
+        "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230326.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "MD-OPS-FS-010",
+        "office_unit": "飞行标准司",
+        "sign_date": "2026-03-17",
+        "publish_date": "2026-03-17",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/P020260324492914722067.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "动力提升航空器适航标准",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html",
         "category": "规范性文件",
@@ -13049,19 +13062,6 @@
         "sign_date": "2023-12-08",
         "publish_date": "2023-12-08",
         "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "进口民用航空产品和零部件认可审定程序",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222433.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AP-21-AA-2023-15",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2023-12-06",
-        "publish_date": "2023-12-06",
-        "validity": "废止",
         "pdf_url": "",
         "has_pdf": false
       }
@@ -19889,6 +19889,32 @@
     "27": [],
     "28": [
       {
+        "title": "关于2026年全国五四红旗团委（团支部）、全国优秀共青团员、全国优秀共青团干部拟推报对象的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230323.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-23",
+        "publish_date": "2026-03-23",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "关于拟推荐申报交通运输部直属机关工会先进集体和个人名单的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230320.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-23",
+        "publish_date": "2026-03-23",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "民航局2026年夏秋航季换季颁发、换发、注销国内航线经营许可信息通告",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260323_230317.html",
         "category": "建议提案答复",
@@ -22461,32 +22487,6 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "关于2024年度民航专业工程资质动态核查第二批追加企业整改核定结果的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240924_225471.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-23",
-        "publish_date": "2024-09-24",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于公布2023年度民航专业工程资质动态核查第六批企业整改核定结论的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240924_225470.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-23",
-        "publish_date": "2024-09-24",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
       }
     ],
     "29": [
@@ -24917,6 +24917,17 @@
   ],
   "normatives": [
     {
+      "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230326.html",
+      "validity": "有效",
+      "doc_number": "MD-OPS-FS-010",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2026-03-17",
+      "publish_date": "2026-03-17",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/P020260324492914722067.pdf"
+    },
+    {
       "title": "动力提升航空器适航标准",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260226_230118.html",
       "validity": "有效",
@@ -27103,17 +27114,6 @@
       "doc_type": "normative",
       "sign_date": "2023-12-08",
       "publish_date": "2023-12-08",
-      "pdf_url": ""
-    },
-    {
-      "title": "进口民用航空产品和零部件认可审定程序",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231223_222433.html",
-      "validity": "废止",
-      "doc_number": "AP-21-AA-2023-15",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2023-12-06",
-      "publish_date": "2023-12-06",
       "pdf_url": ""
     }
   ],
