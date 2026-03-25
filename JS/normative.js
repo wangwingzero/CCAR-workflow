@@ -129,6 +129,17 @@ var data = [
     "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-01X%E6%B0%91%E8%88%AA%E9%A3%9E%E8%A1%8C%E5%AD%A6%E7%94%9F%E4%BD%93%E8%83%BD%E8%AE%AD%E7%BB%83%E4%B8%8E%E9%94%BB%E7%82%BC%E6%8C%87%E5%8D%97%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
+    "title": "航空发动机道路运输安全技术规范",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230341.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年01月04日",
+    "publish_date": "2026年01月04日",
+    "doc_number": "IB-FS-RAT-002",
+    "office_unit": "飞行标准司",
+    "file_number": "文号：IB-FS-RAT-002"
+  },
+  {
     "title": "国外维修单位的申请和批准",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260203_229957.html",
     "doc_type": "规范性文件",

@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-03-24T08:04:00.636068",
+  "last_check": "2026-03-25T08:07:53.478073",
   "documents": {
     "9": [
       {
@@ -12,8 +12,8 @@
         "sign_date": "2026-03-23",
         "publish_date": "2026-03-23",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260323631517237398.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "关于拟推荐申报交通运输部直属机关工会先进集体和个人名单的公示",
@@ -10475,8 +10475,8 @@
         "sign_date": "2026-03-17",
         "publish_date": "2026-03-17",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/P020260324492914722067.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "动力提升航空器适航标准",
@@ -10604,6 +10604,19 @@
         "office_unit": "飞行标准司",
         "sign_date": "2026-01-12",
         "publish_date": "2026-01-12",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "航空发动机道路运输安全技术规范",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230341.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "IB-FS-RAT-002",
+        "office_unit": "飞行标准司",
+        "sign_date": "2026-01-04",
+        "publish_date": "2026-01-04",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -13045,19 +13058,6 @@
         "category": "规范性文件",
         "category_id": "14",
         "doc_number": "AP-66I-TM-2023-03",
-        "office_unit": "空管行业管理办公室",
-        "sign_date": "2023-12-08",
-        "publish_date": "2023-12-08",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民用航空空中交通管制检查员管理办法",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222392.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AP-66I-TM-2023-04",
         "office_unit": "空管行业管理办公室",
         "sign_date": "2023-12-08",
         "publish_date": "2023-12-08",
@@ -24925,7 +24925,7 @@
       "doc_type": "normative",
       "sign_date": "2026-03-17",
       "publish_date": "2026-03-17",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/P020260324492914722067.pdf"
+      "pdf_url": ""
     },
     {
       "title": "动力提升航空器适航标准",
@@ -25035,6 +25035,17 @@
       "doc_type": "normative",
       "sign_date": "2026-01-12",
       "publish_date": "2026-01-12",
+      "pdf_url": ""
+    },
+    {
+      "title": "航空发动机道路运输安全技术规范",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230341.html",
+      "validity": "有效",
+      "doc_number": "IB-FS-RAT-002",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2026-01-04",
+      "publish_date": "2026-01-04",
       "pdf_url": ""
     },
     {
@@ -27099,17 +27110,6 @@
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222393.html",
       "validity": "有效",
       "doc_number": "AP-66I-TM-2023-03",
-      "office_unit": "空管行业管理办公室",
-      "doc_type": "normative",
-      "sign_date": "2023-12-08",
-      "publish_date": "2023-12-08",
-      "pdf_url": ""
-    },
-    {
-      "title": "民用航空空中交通管制检查员管理办法",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222392.html",
-      "validity": "有效",
-      "doc_number": "AP-66I-TM-2023-04",
       "office_unit": "空管行业管理办公室",
       "doc_type": "normative",
       "sign_date": "2023-12-08",
