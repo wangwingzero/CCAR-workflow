@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-25T08:07:46.626207",
+  "last_update": "2026-03-26T08:09:55.862681",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2572,6 +2572,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230341.html": {
       "relative_path": "normative/IB-FS-RAT-002航空发动机道路运输安全技术规范.txt",
       "updated_at": "2026-03-25T08:07:46.626187"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/CZXX/202603/t20260326_230347.html": {
+      "relative_path": "other/中国民用航空局部门预算（2026年）.pdf",
+      "updated_at": "2026-03-26T08:09:55.862666"
     }
   }
 }
