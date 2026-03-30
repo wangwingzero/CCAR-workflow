@@ -1,7 +1,33 @@
 {
-  "last_check": "2026-03-29T07:59:45.675938",
+  "last_check": "2026-03-30T08:29:59.336263",
   "documents": {
     "9": [
+      {
+        "title": "关于2026年全国五一劳动奖拟推荐对象的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260330_230370.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-30",
+        "publish_date": "2026-03-30",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260330554418220560.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "关于公布大连润宇空港建设工程有限公司等1家资质企业追加核定结论的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260330_230367.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-30",
+        "publish_date": "2026-03-30",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "关于对参与民航工程设计市场的工程设计综合资质甲级企业专业技术人员配备情况抽查结论的通报",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260326_230349.html",
@@ -2572,32 +2598,6 @@
         "office_unit": "",
         "sign_date": "2024-10-16",
         "publish_date": "2024-10-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于2025年民航发展基金相关补贴资金预算方案的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202410/t20241014_225600.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-10-14",
-        "publish_date": "2024-10-14",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于发布民用机场专用设备目录的公告",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202410/t20241017_225625.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-10-09",
-        "publish_date": "2024-10-17",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -19902,6 +19902,32 @@
     "27": [],
     "28": [
       {
+        "title": "关于2026年全国五一劳动奖拟推荐对象的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260330_230370.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-30",
+        "publish_date": "2026-03-30",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "关于公布大连润宇空港建设工程有限公司等1家资质企业追加核定结论的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260330_230367.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-03-30",
+        "publish_date": "2026-03-30",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "关于对参与民航工程设计市场的工程设计综合资质甲级企业专业技术人员配备情况抽查结论的通报",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260326_230349.html",
         "category": "建议提案答复",
@@ -22471,32 +22497,6 @@
         "office_unit": "",
         "sign_date": "2024-10-16",
         "publish_date": "2024-10-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于2025年民航发展基金相关补贴资金预算方案的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202410/t20241014_225600.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-10-14",
-        "publish_date": "2024-10-14",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于发布民用机场专用设备目录的公告",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202410/t20241017_225625.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-10-09",
-        "publish_date": "2024-10-17",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
