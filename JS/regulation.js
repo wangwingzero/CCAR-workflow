@@ -295,15 +295,6 @@ var data = [
     "office_unit": "政策法规司"
   },
   {
-    "title": "运输机场专业工程建设质量和安全生产监督管理规定",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202201/t20220117_211018.html",
-    "doc_type": "CCAR规章",
-    "validity": "有效",
-    "doc_number": "交通运输部令2022年第2号",
-    "office_unit": "政策法规司",
-    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC2%E5%8F%B7%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E5%BB%BA%E8%AE%BE%E8%B4%A8%E9%87%8F%E5%92%8C%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E7%9B%91%E7%9D%A3%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
-  },
-  {
     "title": "一般运行和飞行规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202202/t20220209_211633.html",
     "doc_type": "CCAR规章",
@@ -338,6 +329,15 @@ var data = [
     "doc_number": "交通运输部令2022年第4号",
     "office_unit": "政策法规司",
     "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC4%E5%8F%B7%E5%B0%8F%E5%9E%8B%E5%95%86%E4%B8%9A%E8%BF%90%E8%BE%93%E5%92%8C%E7%A9%BA%E4%B8%AD%E6%B8%B8%E8%A7%88%E8%BF%90%E8%90%A5%E4%BA%BA%E8%BF%90%E8%A1%8C%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
+  },
+  {
+    "title": "运输机场专业工程建设质量和安全生产监督管理规定",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202201/t20220117_211018.html",
+    "doc_type": "CCAR规章",
+    "validity": "有效",
+    "doc_number": "交通运输部令2022年第2号",
+    "office_unit": "政策法规司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42022%E5%B9%B4%E7%AC%AC2%E5%8F%B7%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E5%BB%BA%E8%AE%BE%E8%B4%A8%E9%87%8F%E5%92%8C%E5%AE%89%E5%85%A8%E7%94%9F%E4%BA%A7%E7%9B%91%E7%9D%A3%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "交通运输部关于修改《民用航空行政处罚实施办法》的决定",
@@ -1726,15 +1726,6 @@ var data = [
     "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC134%E5%8F%B7%E4%BB%A4%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%BB%9F%E8%AE%A1%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
-    "title": "飞行训练中心合格审定规则",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8504.html",
-    "doc_type": "CCAR规章",
-    "validity": "有效",
-    "doc_number": "民航总局第128号令",
-    "office_unit": "飞行标准司",
-    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC128%E5%8F%B7%E4%BB%A4%E9%A3%9E%E8%A1%8C%E8%AE%AD%E7%BB%83%E4%B8%AD%E5%BF%83%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
-  },
-  {
     "title": "民用机场建设管理规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8503.html",
     "doc_type": "CCAR规章",
@@ -1742,6 +1733,15 @@ var data = [
     "doc_number": "民航总局第129号令",
     "office_unit": "机场司",
     "pdf_url": "https://ccar.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC129%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%BB%BA%E8%AE%BE%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+  },
+  {
+    "title": "飞行训练中心合格审定规则",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8504.html",
+    "doc_type": "CCAR规章",
+    "validity": "有效",
+    "doc_number": "民航总局第128号令",
+    "office_unit": "飞行标准司",
+    "pdf_url": "https://ccar.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC128%E5%8F%B7%E4%BB%A4%E9%A3%9E%E8%A1%8C%E8%AE%AD%E7%BB%83%E4%B8%AD%E5%BF%83%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "正常类、实用类、特技类和通勤类飞机适航规定",

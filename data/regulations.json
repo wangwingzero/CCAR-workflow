@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-03-30T08:29:59.336263",
+  "last_check": "2026-03-31T08:19:36.463519",
   "documents": {
     "9": [
       {
@@ -12,8 +12,8 @@
         "sign_date": "2026-03-30",
         "publish_date": "2026-03-30",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/P020260330554418220560.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "关于公布大连润宇空港建设工程有限公司等1家资质企业追加核定结论的通知",
@@ -276,8 +276,8 @@
         "has_pdf": false
       },
       {
-        "title": "关于大连润宇空港建设工程有限公司等1家资质企业追加动态核查核定意见的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230042.html",
+        "title": "关于浩邦建设集团有限公司等3家资质企业追加动态核查核定结论的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230043.html",
         "category": "通知公告",
         "category_id": "9",
         "doc_number": "",
@@ -289,8 +289,8 @@
         "has_pdf": false
       },
       {
-        "title": "关于浩邦建设集团有限公司等3家资质企业追加动态核查核定结论的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230043.html",
+        "title": "关于大连润宇空港建设工程有限公司等1家资质企业追加动态核查核定意见的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230042.html",
         "category": "通知公告",
         "category_id": "9",
         "doc_number": "",
@@ -8306,19 +8306,6 @@
         "has_pdf": false
       },
       {
-        "title": "运输机场专业工程建设质量和安全生产监督管理规定",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202201/t20220117_211018.html",
-        "category": "民航规章",
-        "category_id": "13",
-        "doc_number": "交通运输部令2022年第2号",
-        "office_unit": "政策法规司",
-        "sign_date": "2022-01-04",
-        "publish_date": "2022-01-04",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
         "title": "一般运行和飞行规则",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202202/t20220209_211633.html",
         "category": "民航规章",
@@ -8363,6 +8350,19 @@
         "category": "民航规章",
         "category_id": "13",
         "doc_number": "交通运输部令2022年第4号",
+        "office_unit": "政策法规司",
+        "sign_date": "2022-01-04",
+        "publish_date": "2022-01-04",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "运输机场专业工程建设质量和安全生产监督管理规定",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202201/t20220117_211018.html",
+        "category": "民航规章",
+        "category_id": "13",
+        "doc_number": "交通运输部令2022年第2号",
         "office_unit": "政策法规司",
         "sign_date": "2022-01-04",
         "publish_date": "2022-01-04",
@@ -10451,15 +10451,15 @@
         "has_pdf": false
       },
       {
-        "title": "飞行训练中心合格审定规则",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8504.html",
+        "title": "民用机场建设管理规定",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8503.html",
         "category": "民航规章",
         "category_id": "13",
-        "doc_number": "民航总局第128号令",
-        "office_unit": "飞行标准司",
+        "doc_number": "民航总局第129号令",
+        "office_unit": "机场司",
         "sign_date": "2004-10-12",
         "publish_date": "2004-10-12",
-        "validity": "有效",
+        "validity": "失效",
         "pdf_url": "",
         "has_pdf": false
       }
@@ -13068,6 +13068,19 @@
     ],
     "15": [
       {
+        "title": "AC332型直升机AEO 30分钟功率状态专用条件",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/t20260330_230383.html",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "SC-29-06",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-03-25",
+        "publish_date": "2026-03-25",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/P020260330585962385676.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "机载互联网协议语音（VoIP）话机",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202602/t20260228_230140.html",
         "category": "标准规范",
@@ -15648,19 +15661,6 @@
         "category_id": "15",
         "doc_number": "MH/T 5066-2023",
         "office_unit": "发展计划司",
-        "sign_date": "2023-04-25",
-        "publish_date": "2023-04-25",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "运输机场离港系统检测规范",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202304/t20230426_218409.html",
-        "category": "标准规范",
-        "category_id": "15",
-        "doc_number": "MH/T 5068-2023",
-        "office_unit": "机场司",
         "sign_date": "2023-04-25",
         "publish_date": "2023-04-25",
         "validity": "有效",
@@ -20175,8 +20175,8 @@
         "has_pdf": false
       },
       {
-        "title": "关于大连润宇空港建设工程有限公司等1家资质企业追加动态核查核定意见的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230042.html",
+        "title": "关于浩邦建设集团有限公司等3家资质企业追加动态核查核定结论的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230043.html",
         "category": "建议提案答复",
         "category_id": "28",
         "doc_number": "",
@@ -20188,8 +20188,8 @@
         "has_pdf": false
       },
       {
-        "title": "关于浩邦建设集团有限公司等3家资质企业追加动态核查核定结论的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230043.html",
+        "title": "关于大连润宇空港建设工程有限公司等1家资质企业追加动态核查核定意见的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202602/t20260211_230042.html",
         "category": "建议提案答复",
         "category_id": "28",
         "doc_number": "",
@@ -23102,17 +23102,6 @@
       "pdf_url": ""
     },
     {
-      "title": "运输机场专业工程建设质量和安全生产监督管理规定",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202201/t20220117_211018.html",
-      "validity": "有效",
-      "doc_number": "交通运输部令2022年第2号",
-      "office_unit": "政策法规司",
-      "doc_type": "regulation",
-      "sign_date": "2022-01-04",
-      "publish_date": "2022-01-04",
-      "pdf_url": ""
-    },
-    {
       "title": "一般运行和飞行规则",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202202/t20220209_211633.html",
       "validity": "有效",
@@ -23150,6 +23139,17 @@
       "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202202/t20220209_211634.html",
       "validity": "有效",
       "doc_number": "交通运输部令2022年第4号",
+      "office_unit": "政策法规司",
+      "doc_type": "regulation",
+      "sign_date": "2022-01-04",
+      "publish_date": "2022-01-04",
+      "pdf_url": ""
+    },
+    {
+      "title": "运输机场专业工程建设质量和安全生产监督管理规定",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202201/t20220117_211018.html",
+      "validity": "有效",
+      "doc_number": "交通运输部令2022年第2号",
       "office_unit": "政策法规司",
       "doc_type": "regulation",
       "sign_date": "2022-01-04",
@@ -24917,11 +24917,11 @@
       "pdf_url": ""
     },
     {
-      "title": "飞行训练中心合格审定规则",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8504.html",
-      "validity": "有效",
-      "doc_number": "民航总局第128号令",
-      "office_unit": "飞行标准司",
+      "title": "民用机场建设管理规定",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8503.html",
+      "validity": "失效",
+      "doc_number": "民航总局第129号令",
+      "office_unit": "机场司",
       "doc_type": "regulation",
       "sign_date": "2004-10-12",
       "publish_date": "2004-10-12",
@@ -27132,6 +27132,17 @@
   ],
   "standards": [
     {
+      "title": "AC332型直升机AEO 30分钟功率状态专用条件",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/t20260330_230383.html",
+      "validity": "有效",
+      "doc_number": "SC-29-06",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "standard",
+      "sign_date": "2026-03-25",
+      "publish_date": "2026-03-25",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/P020260330585962385676.pdf"
+    },
+    {
       "title": "机载互联网协议语音（VoIP）话机",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202602/t20260228_230140.html",
       "validity": "有效",
@@ -29315,17 +29326,6 @@
       "validity": "有效",
       "doc_number": "MH/T 5066-2023",
       "office_unit": "发展计划司",
-      "doc_type": "standard",
-      "sign_date": "2023-04-25",
-      "publish_date": "2023-04-25",
-      "pdf_url": ""
-    },
-    {
-      "title": "运输机场离港系统检测规范",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202304/t20230426_218409.html",
-      "validity": "有效",
-      "doc_number": "MH/T 5068-2023",
-      "office_unit": "机场司",
       "doc_type": "standard",
       "sign_date": "2023-04-25",
       "publish_date": "2023-04-25",

@@ -1,5 +1,15 @@
 var data = [
   {
+    "title": "AC332型直升机AEO 30分钟功率状态专用条件",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/t20260330_230383.html",
+    "doc_type": "标准规范",
+    "validity": "有效",
+    "publish_date": "2026年03月25日",
+    "doc_number": "SC-29-06",
+    "office_unit": "航空器适航审定司",
+    "pdf_url": "https://ccar.hudawang.cn/specification/SC-29-06AC332%E5%9E%8B%E7%9B%B4%E5%8D%87%E6%9C%BAAEO%2030%E5%88%86%E9%92%9F%E5%8A%9F%E7%8E%87%E7%8A%B6%E6%80%81%E4%B8%93%E7%94%A8%E6%9D%A1%E4%BB%B6.pdf"
+  },
+  {
     "title": "机载互联网协议语音（VoIP）话机",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202602/t20260228_230140.html",
     "doc_type": "标准规范",

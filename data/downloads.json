@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-30T08:29:48.187449",
+  "last_update": "2026-03-31T08:19:29.461382",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -862,8 +862,8 @@
       "updated_at": "2026-02-19T01:15:19.830523"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8503.html": {
-      "relative_path": "regulation/失效!民航总局第129号令民用机场建设管理规定.pdf",
-      "updated_at": "2026-02-19T01:15:31.848505"
+      "relative_path": "regulation/失效!民航总局第129号令民用机场建设管理规定.txt",
+      "updated_at": "2026-03-31T08:19:15.486023"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260212_230052.html": {
       "relative_path": "normative/AC-121-FS-138R2循证训练（EBT）实施管理规定.pdf",
@@ -2592,6 +2592,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202603/t20260330_230367.html": {
       "relative_path": "other/关于公布大连润宇空港建设工程有限公司等1家资质企业追加核定结论的通知.txt",
       "updated_at": "2026-03-30T08:29:48.187443"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/t20260330_230383.html": {
+      "relative_path": "specification/SC-29-06AC332型直升机AEO 30分钟功率状态专用条件.pdf",
+      "updated_at": "2026-03-31T08:19:29.461364"
     }
   }
 }
