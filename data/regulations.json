@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-03-31T08:19:36.463519",
+  "last_check": "2026-04-01T08:23:21.957583",
   "documents": {
     "9": [
       {
@@ -13077,8 +13077,8 @@
         "sign_date": "2026-03-25",
         "publish_date": "2026-03-25",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/P020260330585962385676.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "机载互联网协议语音（VoIP）话机",
@@ -27140,7 +27140,7 @@
       "doc_type": "standard",
       "sign_date": "2026-03-25",
       "publish_date": "2026-03-25",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/P020260330585962385676.pdf"
+      "pdf_url": ""
     },
     {
       "title": "机载互联网协议语音（VoIP）话机",
