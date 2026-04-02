@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-03-31T08:19:29.461382",
+  "last_update": "2026-04-02T08:16:45.829341",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2596,6 +2596,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/t20260330_230383.html": {
       "relative_path": "specification/SC-29-06AC332型直升机AEO 30分钟功率状态专用条件.pdf",
       "updated_at": "2026-03-31T08:19:29.461364"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260402_230403.html": {
+      "relative_path": "other/民航专业工程招标投标领域违法违规典型案例通报（第一批）.txt",
+      "updated_at": "2026-04-02T08:16:45.829335"
     }
   }
 }
