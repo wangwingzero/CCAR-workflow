@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-04-02T08:16:45.829341",
+  "last_update": "2026-04-07T08:21:46.460349",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2600,6 +2600,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260402_230403.html": {
       "relative_path": "other/民航专业工程招标投标领域违法违规典型案例通报（第一批）.txt",
       "updated_at": "2026-04-02T08:16:45.829335"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260407_230423.html": {
+      "relative_path": "normative/IB-FS-MED-016民用航空人员安全用药指南 （第一版）.pdf",
+      "updated_at": "2026-04-07T08:21:46.460332"
     }
   }
 }

@@ -1,5 +1,17 @@
 var data = [
   {
+    "title": "民用航空人员安全用药指南 （第一版）",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260407_230423.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年04月07日",
+    "publish_date": "2026年04月07日",
+    "doc_number": "IB-FS-MED-016",
+    "office_unit": "飞行标准司",
+    "file_number": "文号：IB-FS-MED-016",
+    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-016%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%BA%E5%91%98%E5%AE%89%E5%85%A8%E7%94%A8%E8%8D%AF%E6%8C%87%E5%8D%97%20%EF%BC%88%E7%AC%AC%E4%B8%80%E7%89%88%EF%BC%89.pdf"
+  },
+  {
     "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230326.html",
     "doc_type": "规范性文件",
