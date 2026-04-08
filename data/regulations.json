@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-04-07T08:21:57.891090",
+  "last_check": "2026-04-08T08:21:30.275545",
   "documents": {
     "9": [
+      {
+        "title": "全国通用航空企业经营许可信息（2026年3月）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260408_230480.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-08",
+        "publish_date": "2026-04-08",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/P020260408386574396858.pdf",
+        "has_pdf": true
+      },
       {
         "title": "民航专业工程招标投标领域违法违规典型案例通报（第一批）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260402_230403.html",
@@ -2585,19 +2598,6 @@
         "office_unit": "",
         "sign_date": "2024-10-18",
         "publish_date": "2024-10-18",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "国际航线审批结果公开（C2024009）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202410/t20241021_225652.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-10-17",
-        "publish_date": "2024-10-21",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -10475,8 +10475,8 @@
         "sign_date": "2026-04-07",
         "publish_date": "2026-04-07",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260407548603022591.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
@@ -19902,6 +19902,19 @@
     "27": [],
     "28": [
       {
+        "title": "全国通用航空企业经营许可信息（2026年3月）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260408_230480.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-08",
+        "publish_date": "2026-04-08",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "民航专业工程招标投标领域违法违规典型案例通报（第一批）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260402_230403.html",
         "category": "建议提案答复",
@@ -22487,19 +22500,6 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "国际航线审批结果公开（C2024009）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202410/t20241021_225652.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-10-17",
-        "publish_date": "2024-10-21",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
       }
     ],
     "29": [
@@ -24938,7 +24938,7 @@
       "doc_type": "normative",
       "sign_date": "2026-04-07",
       "publish_date": "2026-04-07",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260407548603022591.pdf"
+      "pdf_url": ""
     },
     {
       "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
