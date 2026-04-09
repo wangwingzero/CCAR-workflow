@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-04-08T08:21:30.275545",
+  "last_check": "2026-04-09T08:28:26.345027",
   "documents": {
     "9": [
       {
@@ -12,8 +12,8 @@
         "sign_date": "2026-04-08",
         "publish_date": "2026-04-08",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/P020260408386574396858.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "民航专业工程招标投标领域违法违规典型案例通报（第一批）",
