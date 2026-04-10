@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-04-09T08:28:26.345027",
+  "last_check": "2026-04-10T08:29:02.884061",
   "documents": {
     "9": [
       {
@@ -7864,6 +7864,19 @@
     "47": [],
     "13": [
       {
+        "title": "民用航空空中交通管制员执照管理规则",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202604/t20260410_230516.html",
+        "category": "民航规章",
+        "category_id": "13",
+        "doc_number": "交通运输部令2026年第9号",
+        "office_unit": "政策法规司",
+        "sign_date": "2026-03-26",
+        "publish_date": "2026-03-26",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "解读丨《正常类旋翼航空器适航规定》",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html",
         "category": "民航规章",
@@ -10449,22 +10462,35 @@
         "validity": "失效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "民用机场建设管理规定",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8503.html",
-        "category": "民航规章",
-        "category_id": "13",
-        "doc_number": "民航总局第129号令",
-        "office_unit": "机场司",
-        "sign_date": "2004-10-12",
-        "publish_date": "2004-10-12",
-        "validity": "失效",
-        "pdf_url": "",
-        "has_pdf": false
       }
     ],
     "14": [
+      {
+        "title": "关于印发《正常类多旋翼无人驾驶航空器系统 （不载人）适航标准》咨询通告的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260410_230524.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-21-AA-2026-46",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-04-10",
+        "publish_date": "2026-04-10",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260410559410457021.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "关于印发《正常类动力提升无人驾驶航空器系统（不载人）适航标准》咨询通告的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260410_230523.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-21-AA-2026-47",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-04-10",
+        "publish_date": "2026-04-10",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260410557908368089.pdf",
+        "has_pdf": true
+      },
       {
         "title": "民用航空人员安全用药指南 （第一版）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260407_230423.html",
@@ -13035,32 +13061,6 @@
         "office_unit": "航空安全办公室",
         "sign_date": "2023-12-19",
         "publish_date": "2023-12-19",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民航局印发《关于落实民航安全责任的管理办法》的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222407.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AC-398-05",
-        "office_unit": "航空安全办公室",
-        "sign_date": "2023-12-15",
-        "publish_date": "2023-12-15",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民航局关于印发《通用航空短途运输运营服务管理办法》的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222394.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "",
-        "office_unit": "运输司",
-        "sign_date": "2023-12-13",
-        "publish_date": "2023-12-13",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -22728,6 +22728,17 @@
   },
   "regulations": [
     {
+      "title": "民用航空空中交通管制员执照管理规则",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202604/t20260410_230516.html",
+      "validity": "有效",
+      "doc_number": "交通运输部令2026年第9号",
+      "office_unit": "政策法规司",
+      "doc_type": "regulation",
+      "sign_date": "2026-03-26",
+      "publish_date": "2026-03-26",
+      "pdf_url": ""
+    },
+    {
       "title": "解读丨《正常类旋翼航空器适航规定》",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html",
       "validity": "有效",
@@ -24915,20 +24926,31 @@
       "sign_date": "2004-11-09",
       "publish_date": "2004-11-09",
       "pdf_url": ""
-    },
-    {
-      "title": "民用机场建设管理规定",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8503.html",
-      "validity": "失效",
-      "doc_number": "民航总局第129号令",
-      "office_unit": "机场司",
-      "doc_type": "regulation",
-      "sign_date": "2004-10-12",
-      "publish_date": "2004-10-12",
-      "pdf_url": ""
     }
   ],
   "normatives": [
+    {
+      "title": "关于印发《正常类多旋翼无人驾驶航空器系统 （不载人）适航标准》咨询通告的通知",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260410_230524.html",
+      "validity": "有效",
+      "doc_number": "AC-21-AA-2026-46",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "normative",
+      "sign_date": "2026-04-10",
+      "publish_date": "2026-04-10",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260410559410457021.pdf"
+    },
+    {
+      "title": "关于印发《正常类动力提升无人驾驶航空器系统（不载人）适航标准》咨询通告的通知",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260410_230523.html",
+      "validity": "有效",
+      "doc_number": "AC-21-AA-2026-47",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "normative",
+      "sign_date": "2026-04-10",
+      "publish_date": "2026-04-10",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260410557908368089.pdf"
+    },
     {
       "title": "民用航空人员安全用药指南 （第一版）",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260407_230423.html",
@@ -27105,28 +27127,6 @@
       "doc_type": "normative",
       "sign_date": "2023-12-19",
       "publish_date": "2023-12-19",
-      "pdf_url": ""
-    },
-    {
-      "title": "民航局印发《关于落实民航安全责任的管理办法》的通知",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222407.html",
-      "validity": "有效",
-      "doc_number": "AC-398-05",
-      "office_unit": "航空安全办公室",
-      "doc_type": "normative",
-      "sign_date": "2023-12-15",
-      "publish_date": "2023-12-15",
-      "pdf_url": ""
-    },
-    {
-      "title": "民航局关于印发《通用航空短途运输运营服务管理办法》的通知",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222394.html",
-      "validity": "有效",
-      "doc_number": "",
-      "office_unit": "运输司",
-      "doc_type": "normative",
-      "sign_date": "2023-12-13",
-      "publish_date": "2023-12-13",
       "pdf_url": ""
     }
   ],

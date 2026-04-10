@@ -1,5 +1,13 @@
 var data = [
   {
+    "title": "民用航空空中交通管制员执照管理规则",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202604/t20260410_230516.html",
+    "doc_type": "CCAR规章",
+    "validity": "有效",
+    "doc_number": "交通运输部令2026年第9号",
+    "office_unit": "政策法规司"
+  },
+  {
     "title": "解读丨《正常类旋翼航空器适航规定》",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html",
     "doc_type": "CCAR规章",

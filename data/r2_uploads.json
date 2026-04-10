@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-04-08T08:21:22.401872",
+  "last_update": "2026-04-10T08:28:56.168665",
   "records": {
     "regulation/交通运输部令2025年第9号运输类旋翼航空器适航规定.pdf": {
       "r2_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf",
@@ -11208,6 +11208,14 @@
     "other/全国通用航空企业经营许可信息（2026年3月）.pdf": {
       "r2_url": "https://ccar.hudawang.cn/other/%E5%85%A8%E5%9B%BD%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BC%81%E4%B8%9A%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E4%BF%A1%E6%81%AF%EF%BC%882026%E5%B9%B43%E6%9C%88%EF%BC%89.pdf",
       "file_size": 956842
+    },
+    "normative/AC-21-AA-2026-46关于印发《正常类多旋翼无人驾驶航空器系统 （不载人）适航标准》咨询通告的通知.pdf": {
+      "r2_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-46%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%A4%9A%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%20%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86%E3%80%8B%E5%92%A8%E8%AF%A2%E9%80%9A%E5%91%8A%E7%9A%84%E9%80%9A%E7%9F%A5.pdf",
+      "file_size": 801398
+    },
+    "normative/AC-21-AA-2026-47关于印发《正常类动力提升无人驾驶航空器系统（不载人）适航标准》咨询通告的通知.pdf": {
+      "r2_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-47%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%8A%A8%E5%8A%9B%E6%8F%90%E5%8D%87%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86%E3%80%8B%E5%92%A8%E8%AF%A2%E9%80%9A%E5%91%8A%E7%9A%84%E9%80%9A%E7%9F%A5.pdf",
+      "file_size": 848148
     }
   }
 }

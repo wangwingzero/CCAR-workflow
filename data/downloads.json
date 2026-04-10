@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-04-08T08:21:20.426679",
+  "last_update": "2026-04-10T08:28:54.298070",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2608,6 +2608,18 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260408_230480.html": {
       "relative_path": "other/全国通用航空企业经营许可信息（2026年3月）.pdf",
       "updated_at": "2026-04-08T08:21:20.426674"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202604/t20260410_230516.html": {
+      "relative_path": "regulation/交通运输部令2026年第9号民用航空空中交通管制员执照管理规则.doc",
+      "updated_at": "2026-04-10T08:28:37.046649"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260410_230524.html": {
+      "relative_path": "normative/AC-21-AA-2026-46关于印发《正常类多旋翼无人驾驶航空器系统 （不载人）适航标准》咨询通告的通知.pdf",
+      "updated_at": "2026-04-10T08:28:46.597359"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260410_230523.html": {
+      "relative_path": "normative/AC-21-AA-2026-47关于印发《正常类动力提升无人驾驶航空器系统（不载人）适航标准》咨询通告的通知.pdf",
+      "updated_at": "2026-04-10T08:28:54.298055"
     }
   }
 }
