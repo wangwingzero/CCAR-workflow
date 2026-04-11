@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-04-10T08:29:02.884061",
+  "last_check": "2026-04-11T07:59:38.057568",
   "documents": {
     "9": [
       {
@@ -10475,8 +10475,8 @@
         "sign_date": "2026-04-10",
         "publish_date": "2026-04-10",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260410559410457021.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "关于印发《正常类动力提升无人驾驶航空器系统（不载人）适航标准》咨询通告的通知",
@@ -10488,8 +10488,8 @@
         "sign_date": "2026-04-10",
         "publish_date": "2026-04-10",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260410557908368089.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "民用航空人员安全用药指南 （第一版）",
@@ -24938,7 +24938,7 @@
       "doc_type": "normative",
       "sign_date": "2026-04-10",
       "publish_date": "2026-04-10",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260410559410457021.pdf"
+      "pdf_url": ""
     },
     {
       "title": "关于印发《正常类动力提升无人驾驶航空器系统（不载人）适航标准》咨询通告的通知",
@@ -24949,7 +24949,7 @@
       "doc_type": "normative",
       "sign_date": "2026-04-10",
       "publish_date": "2026-04-10",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260410557908368089.pdf"
+      "pdf_url": ""
     },
     {
       "title": "民用航空人员安全用药指南 （第一版）",
