@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-04-14T08:52:59.927114",
+  "last_check": "2026-04-15T08:55:04.381621",
   "documents": {
     "9": [
       {
@@ -10479,32 +10479,6 @@
         "has_pdf": false
       },
       {
-        "title": "正常类动力提升无人驾驶航空器系统（不载人）适航标准",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260413_230538.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AC-21-AA-2026-47",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2026-04-03",
-        "publish_date": "2026-04-03",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "正常类多旋翼无人驾驶航空器系统（不载人）适航标准",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260413_230536.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AC-21-AA-2026-46",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2026-04-03",
-        "publish_date": "2026-04-03",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
         "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230326.html",
         "category": "规范性文件",
@@ -13064,6 +13038,32 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
+      },
+      {
+        "title": "民航局印发《关于落实民航安全责任的管理办法》的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222407.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-398-05",
+        "office_unit": "航空安全办公室",
+        "sign_date": "2023-12-15",
+        "publish_date": "2023-12-15",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/P020231221520634988838.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "民航局关于印发《通用航空短途运输运营服务管理办法》的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222394.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "运输司",
+        "sign_date": "2023-12-13",
+        "publish_date": "2023-12-13",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/P020231221343404348083.pdf",
+        "has_pdf": true
       }
     ],
     "15": [
@@ -25006,28 +25006,6 @@
       "pdf_url": ""
     },
     {
-      "title": "正常类动力提升无人驾驶航空器系统（不载人）适航标准",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260413_230538.html",
-      "validity": "有效",
-      "doc_number": "AC-21-AA-2026-47",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2026-04-03",
-      "publish_date": "2026-04-03",
-      "pdf_url": ""
-    },
-    {
-      "title": "正常类多旋翼无人驾驶航空器系统（不载人）适航标准",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260413_230536.html",
-      "validity": "有效",
-      "doc_number": "AC-21-AA-2026-46",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2026-04-03",
-      "publish_date": "2026-04-03",
-      "pdf_url": ""
-    },
-    {
       "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202603/t20260324_230326.html",
       "validity": "有效",
@@ -27193,6 +27171,28 @@
       "sign_date": "2023-12-19",
       "publish_date": "2023-12-19",
       "pdf_url": ""
+    },
+    {
+      "title": "民航局印发《关于落实民航安全责任的管理办法》的通知",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222407.html",
+      "validity": "有效",
+      "doc_number": "AC-398-05",
+      "office_unit": "航空安全办公室",
+      "doc_type": "normative",
+      "sign_date": "2023-12-15",
+      "publish_date": "2023-12-15",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/P020231221520634988838.pdf"
+    },
+    {
+      "title": "民航局关于印发《通用航空短途运输运营服务管理办法》的通知",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222394.html",
+      "validity": "有效",
+      "doc_number": "",
+      "office_unit": "运输司",
+      "doc_type": "normative",
+      "sign_date": "2023-12-13",
+      "publish_date": "2023-12-13",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/P020231221343404348083.pdf"
     }
   ],
   "standards": [
