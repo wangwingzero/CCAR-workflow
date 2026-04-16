@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-04-15T08:55:04.381621",
+  "last_check": "2026-04-16T08:54:05.932264",
   "documents": {
     "9": [
+      {
+        "title": "关于追加中航机场系统设施建设有限公司等1家企业进行资质核查的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260416_230559.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-16",
+        "publish_date": "2026-04-16",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "全国通用航空企业经营许可信息（2026年3月）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260408_230480.html",
@@ -11,6 +24,19 @@
         "office_unit": "",
         "sign_date": "2026-04-08",
         "publish_date": "2026-04-08",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "民航专业工程招标投标领域违法违规典型案例通报（第一批）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260402_230403.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-01",
+        "publish_date": "2026-04-02",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -2572,32 +2598,6 @@
         "office_unit": "",
         "sign_date": "2024-08-16",
         "publish_date": "2024-08-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于开展民用运输机场边坡稳定性和飞机荷载桥结构安全监测工作的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240820_225106.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-15",
-        "publish_date": "2024-08-20",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "国际航线审批结果公开（C2024008）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240814_225033.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-09",
-        "publish_date": "2024-08-14",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -13049,8 +13049,8 @@
         "sign_date": "2023-12-15",
         "publish_date": "2023-12-15",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/P020231221520634988838.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "民航局关于印发《通用航空短途运输运营服务管理办法》的通知",
@@ -13062,8 +13062,8 @@
         "sign_date": "2023-12-13",
         "publish_date": "2023-12-13",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/P020231221343404348083.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       }
     ],
     "15": [
@@ -19967,6 +19967,19 @@
     "27": [],
     "28": [
       {
+        "title": "关于追加中航机场系统设施建设有限公司等1家企业进行资质核查的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260416_230559.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-16",
+        "publish_date": "2026-04-16",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "全国通用航空企业经营许可信息（2026年3月）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260408_230480.html",
         "category": "建议提案答复",
@@ -19975,6 +19988,19 @@
         "office_unit": "",
         "sign_date": "2026-04-08",
         "publish_date": "2026-04-08",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "民航专业工程招标投标领域违法违规典型案例通报（第一批）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260402_230403.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-01",
+        "publish_date": "2026-04-02",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -22536,32 +22562,6 @@
         "office_unit": "",
         "sign_date": "2024-08-16",
         "publish_date": "2024-08-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "关于开展民用运输机场边坡稳定性和飞机荷载桥结构安全监测工作的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240820_225106.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-15",
-        "publish_date": "2024-08-20",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "国际航线审批结果公开（C2024008）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240814_225033.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-09",
-        "publish_date": "2024-08-14",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -27181,7 +27181,7 @@
       "doc_type": "normative",
       "sign_date": "2023-12-15",
       "publish_date": "2023-12-15",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/P020231221520634988838.pdf"
+      "pdf_url": ""
     },
     {
       "title": "民航局关于印发《通用航空短途运输运营服务管理办法》的通知",
@@ -27192,7 +27192,7 @@
       "doc_type": "normative",
       "sign_date": "2023-12-13",
       "publish_date": "2023-12-13",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/P020231221343404348083.pdf"
+      "pdf_url": ""
     }
   ],
   "standards": [
