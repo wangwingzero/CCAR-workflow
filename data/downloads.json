@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-04-16T08:53:59.746349",
+  "last_update": "2026-04-17T08:55:36.503798",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2602,8 +2602,8 @@
       "updated_at": "2026-04-16T08:53:59.746345"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260407_230423.html": {
-      "relative_path": "normative/IB-FS-MED-016民用航空人员安全用药指南 （第一版）.pdf",
-      "updated_at": "2026-04-07T08:21:46.460332"
+      "relative_path": "normative/IB-FS-MED-016民用航空人员安全用药指南（第一版）.pdf",
+      "updated_at": "2026-04-17T08:54:21.359568"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260408_230480.html": {
       "relative_path": "other/全国通用航空企业经营许可信息（2026年3月）.pdf",
@@ -2764,6 +2764,30 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260416_230559.html": {
       "relative_path": "other/关于追加中航机场系统设施建设有限公司等1家企业进行资质核查的通知.txt",
       "updated_at": "2026-04-16T08:53:59.746298"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260417_230567.html": {
+      "relative_path": "other/关于2026年第五批民航专业工程建设企业资质申报材料的公示.pdf",
+      "updated_at": "2026-04-17T08:55:36.503723"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260417_230566.html": {
+      "relative_path": "other/关于北京筑航建设有限公司等4家资质企业动态核查核定意见的公示.txt",
+      "updated_at": "2026-04-17T08:55:36.503793"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230570.html": {
+      "relative_path": "normative/AC-21-AA-2026-47正常类动力提升无人驾驶航空器系统（不载人）适航标准.pdf",
+      "updated_at": "2026-04-17T08:53:46.014173"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230569.html": {
+      "relative_path": "normative/AC-21-AA-2026-46正常类多旋翼无人驾驶航空器系统（不载人）适航标准.pdf",
+      "updated_at": "2026-04-17T08:53:58.725014"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230571.html": {
+      "relative_path": "normative/民航局关于印发《民航专业工程质量事故报告和调查处理办法（试行）》的通知.pdf",
+      "updated_at": "2026-04-17T08:54:07.052868"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202604/t20260416_230560.html": {
+      "relative_path": "specification/MH_T 5092-2026高原运输机场建设指南.pdf",
+      "updated_at": "2026-04-17T08:55:36.503632"
     }
   }
 }

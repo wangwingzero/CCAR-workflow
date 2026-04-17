@@ -1,7 +1,33 @@
 {
-  "last_check": "2026-04-16T08:54:05.932264",
+  "last_check": "2026-04-17T08:55:59.389149",
   "documents": {
     "9": [
+      {
+        "title": "关于2026年第五批民航专业工程建设企业资质申报材料的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260417_230567.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-17",
+        "publish_date": "2026-04-17",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/P020260417411919348922.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "关于北京筑航建设有限公司等4家资质企业动态核查核定意见的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260417_230566.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-17",
+        "publish_date": "2026-04-17",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "关于追加中航机场系统设施建设有限公司等1家企业进行资质核查的通知",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260416_230559.html",
@@ -2566,32 +2592,6 @@
       {
         "title": "中国民用航空局离退休干部局2023年部门决算公开",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225075.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-16",
-        "publish_date": "2024-08-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "中国民航空中警察总队2023年部门决算",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225073.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-16",
-        "publish_date": "2024-08-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "中国民用航空局关于发布《民用机场飞行区技术标准（第三修订案）》的公告",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225067.html",
         "category": "通知公告",
         "category_id": "9",
         "doc_number": "",
@@ -10466,7 +10466,7 @@
     ],
     "14": [
       {
-        "title": "民用航空人员安全用药指南 （第一版）",
+        "title": "民用航空人员安全用药指南（第一版）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260407_230423.html",
         "category": "规范性文件",
         "category_id": "14",
@@ -10475,8 +10475,47 @@
         "sign_date": "2026-04-07",
         "publish_date": "2026-04-07",
         "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260407548603022591.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "正常类动力提升无人驾驶航空器系统（不载人）适航标准",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230570.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-21-AA-2026-47",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-04-03",
+        "publish_date": "2026-04-03",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417552626968757.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "正常类多旋翼无人驾驶航空器系统（不载人）适航标准",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230569.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-21-AA-2026-46",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-04-03",
+        "publish_date": "2026-04-03",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417551228059844.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "民航局关于印发《民航专业工程质量事故报告和调查处理办法（试行）》的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230571.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "机场司",
+        "sign_date": "2026-03-31",
+        "publish_date": "2026-03-31",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417566630871128.pdf",
+        "has_pdf": true
       },
       {
         "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
@@ -13025,48 +13064,22 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "民用航空器事件调查员培训管理办法",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222794.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "MD-395-AS-06R1",
-        "office_unit": "航空安全办公室",
-        "sign_date": "2023-12-19",
-        "publish_date": "2023-12-19",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民航局印发《关于落实民航安全责任的管理办法》的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222407.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AC-398-05",
-        "office_unit": "航空安全办公室",
-        "sign_date": "2023-12-15",
-        "publish_date": "2023-12-15",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "民航局关于印发《通用航空短途运输运营服务管理办法》的通知",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222394.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "",
-        "office_unit": "运输司",
-        "sign_date": "2023-12-13",
-        "publish_date": "2023-12-13",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
       }
     ],
     "15": [
+      {
+        "title": "高原运输机场建设指南",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202604/t20260416_230560.html",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "MH/T 5092-2026",
+        "office_unit": "机场司",
+        "sign_date": "2026-04-03",
+        "publish_date": "2026-04-03",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202604/P020260416597712046293.pdf",
+        "has_pdf": true
+      },
       {
         "title": "AC332型直升机AEO 30分钟功率状态专用条件",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/t20260330_230383.html",
@@ -15647,19 +15660,6 @@
         "category": "标准规范",
         "category_id": "15",
         "doc_number": "MH/T 5067-2023",
-        "office_unit": "发展计划司",
-        "sign_date": "2023-04-25",
-        "publish_date": "2023-04-25",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "智慧民航数据治理规范 数据共享",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202305/t20230506_218495.html",
-        "category": "标准规范",
-        "category_id": "15",
-        "doc_number": "MH/T 5066-2023",
         "office_unit": "发展计划司",
         "sign_date": "2023-04-25",
         "publish_date": "2023-04-25",
@@ -19967,6 +19967,32 @@
     "27": [],
     "28": [
       {
+        "title": "关于2026年第五批民航专业工程建设企业资质申报材料的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260417_230567.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-17",
+        "publish_date": "2026-04-17",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "关于北京筑航建设有限公司等4家资质企业动态核查核定意见的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260417_230566.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-17",
+        "publish_date": "2026-04-17",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "关于追加中航机场系统设施建设有限公司等1家企业进行资质核查的通知",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260416_230559.html",
         "category": "建议提案答复",
@@ -22539,32 +22565,6 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "中国民航空中警察总队2023年部门决算",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225073.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-16",
-        "publish_date": "2024-08-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "中国民用航空局关于发布《民用机场飞行区技术标准（第三修订案）》的公告",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225067.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-16",
-        "publish_date": "2024-08-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
       }
     ],
     "29": [
@@ -24995,7 +24995,7 @@
   ],
   "normatives": [
     {
-      "title": "民用航空人员安全用药指南 （第一版）",
+      "title": "民用航空人员安全用药指南（第一版）",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260407_230423.html",
       "validity": "有效",
       "doc_number": "IB-FS-MED-016",
@@ -25003,7 +25003,40 @@
       "doc_type": "normative",
       "sign_date": "2026-04-07",
       "publish_date": "2026-04-07",
-      "pdf_url": ""
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260407548603022591.pdf"
+    },
+    {
+      "title": "正常类动力提升无人驾驶航空器系统（不载人）适航标准",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230570.html",
+      "validity": "有效",
+      "doc_number": "AC-21-AA-2026-47",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "normative",
+      "sign_date": "2026-04-03",
+      "publish_date": "2026-04-03",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417552626968757.pdf"
+    },
+    {
+      "title": "正常类多旋翼无人驾驶航空器系统（不载人）适航标准",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230569.html",
+      "validity": "有效",
+      "doc_number": "AC-21-AA-2026-46",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "normative",
+      "sign_date": "2026-04-03",
+      "publish_date": "2026-04-03",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417551228059844.pdf"
+    },
+    {
+      "title": "民航局关于印发《民航专业工程质量事故报告和调查处理办法（试行）》的通知",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230571.html",
+      "validity": "有效",
+      "doc_number": "",
+      "office_unit": "机场司",
+      "doc_type": "normative",
+      "sign_date": "2026-03-31",
+      "publish_date": "2026-03-31",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417566630871128.pdf"
     },
     {
       "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
@@ -27160,42 +27193,20 @@
       "sign_date": "2023-12-19",
       "publish_date": "2023-12-19",
       "pdf_url": ""
-    },
-    {
-      "title": "民用航空器事件调查员培训管理办法",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222794.html",
-      "validity": "有效",
-      "doc_number": "MD-395-AS-06R1",
-      "office_unit": "航空安全办公室",
-      "doc_type": "normative",
-      "sign_date": "2023-12-19",
-      "publish_date": "2023-12-19",
-      "pdf_url": ""
-    },
-    {
-      "title": "民航局印发《关于落实民航安全责任的管理办法》的通知",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222407.html",
-      "validity": "有效",
-      "doc_number": "AC-398-05",
-      "office_unit": "航空安全办公室",
-      "doc_type": "normative",
-      "sign_date": "2023-12-15",
-      "publish_date": "2023-12-15",
-      "pdf_url": ""
-    },
-    {
-      "title": "民航局关于印发《通用航空短途运输运营服务管理办法》的通知",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231221_222394.html",
-      "validity": "有效",
-      "doc_number": "",
-      "office_unit": "运输司",
-      "doc_type": "normative",
-      "sign_date": "2023-12-13",
-      "publish_date": "2023-12-13",
-      "pdf_url": ""
     }
   ],
   "standards": [
+    {
+      "title": "高原运输机场建设指南",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202604/t20260416_230560.html",
+      "validity": "有效",
+      "doc_number": "MH/T 5092-2026",
+      "office_unit": "机场司",
+      "doc_type": "standard",
+      "sign_date": "2026-04-03",
+      "publish_date": "2026-04-03",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202604/P020260416597712046293.pdf"
+    },
     {
       "title": "AC332型直升机AEO 30分钟功率状态专用条件",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/t20260330_230383.html",
@@ -29379,17 +29390,6 @@
       "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202305/t20230506_218496.html",
       "validity": "有效",
       "doc_number": "MH/T 5067-2023",
-      "office_unit": "发展计划司",
-      "doc_type": "standard",
-      "sign_date": "2023-04-25",
-      "publish_date": "2023-04-25",
-      "pdf_url": ""
-    },
-    {
-      "title": "智慧民航数据治理规范 数据共享",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202305/t20230506_218495.html",
-      "validity": "有效",
-      "doc_number": "MH/T 5066-2023",
       "office_unit": "发展计划司",
       "doc_type": "standard",
       "sign_date": "2023-04-25",

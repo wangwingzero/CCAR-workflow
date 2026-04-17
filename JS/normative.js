@@ -1,6 +1,6 @@
 var data = [
   {
-    "title": "民用航空人员安全用药指南 （第一版）",
+    "title": "民用航空人员安全用药指南（第一版）",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260407_230423.html",
     "doc_type": "规范性文件",
     "validity": "有效",
@@ -9,7 +9,43 @@ var data = [
     "doc_number": "IB-FS-MED-016",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-MED-016",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-016%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%BA%E5%91%98%E5%AE%89%E5%85%A8%E7%94%A8%E8%8D%AF%E6%8C%87%E5%8D%97%20%EF%BC%88%E7%AC%AC%E4%B8%80%E7%89%88%EF%BC%89.pdf"
+    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-016%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%BA%E5%91%98%E5%AE%89%E5%85%A8%E7%94%A8%E8%8D%AF%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC%E4%B8%80%E7%89%88%EF%BC%89.pdf"
+  },
+  {
+    "title": "正常类动力提升无人驾驶航空器系统（不载人）适航标准",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230570.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年04月03日",
+    "publish_date": "2026年04月03日",
+    "doc_number": "AC-21-AA-2026-47",
+    "office_unit": "航空器适航审定司",
+    "file_number": "文号：AC-21-AA-2026-47",
+    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-47%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%8A%A8%E5%8A%9B%E6%8F%90%E5%8D%87%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
+  },
+  {
+    "title": "正常类多旋翼无人驾驶航空器系统（不载人）适航标准",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230569.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年04月03日",
+    "publish_date": "2026年04月03日",
+    "doc_number": "AC-21-AA-2026-46",
+    "office_unit": "航空器适航审定司",
+    "file_number": "文号：AC-21-AA-2026-46",
+    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-46%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%A4%9A%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
+  },
+  {
+    "title": "民航局关于印发《民航专业工程质量事故报告和调查处理办法（试行）》的通知",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260417_230571.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年03月31日",
+    "publish_date": "2026年03月31日",
+    "doc_number": "",
+    "office_unit": "机场司",
+    "file_number": "",
+    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E8%B4%A8%E9%87%8F%E4%BA%8B%E6%95%85%E6%8A%A5%E5%91%8A%E5%92%8C%E8%B0%83%E6%9F%A5%E5%A4%84%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "中国民航飞行员岗位胜任力评估专家组工作规则",

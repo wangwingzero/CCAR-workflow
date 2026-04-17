@@ -1,5 +1,15 @@
 var data = [
   {
+    "title": "高原运输机场建设指南",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202604/t20260416_230560.html",
+    "doc_type": "标准规范",
+    "validity": "有效",
+    "publish_date": "2026年04月03日",
+    "doc_number": "MH/T 5092-2026",
+    "office_unit": "机场司",
+    "pdf_url": "https://ccar.hudawang.cn/specification/MH_T%205092-2026%E9%AB%98%E5%8E%9F%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E5%BB%BA%E8%AE%BE%E6%8C%87%E5%8D%97.pdf"
+  },
+  {
     "title": "AC332型直升机AEO 30分钟功率状态专用条件",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/ZYTJHHM/202603/t20260330_230383.html",
     "doc_type": "标准规范",
