@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-04-17T08:55:36.503798",
+  "last_update": "2026-04-18T08:07:09.782727",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2788,6 +2788,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202604/t20260416_230560.html": {
       "relative_path": "specification/MH_T 5092-2026高原运输机场建设指南.pdf",
       "updated_at": "2026-04-17T08:55:36.503632"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202604/t20260417_230601.html": {
+      "relative_path": "other/2025年民航行业发展统计公报.pdf",
+      "updated_at": "2026-04-18T08:07:09.782711"
     }
   }
 }

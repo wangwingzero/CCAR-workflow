@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-04-17T08:55:44.918778",
+  "last_update": "2026-04-18T08:07:12.766964",
   "records": {
     "regulation/交通运输部令2025年第9号运输类旋翼航空器适航规定.pdf": {
       "r2_url": "https://ccar.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf",
@@ -11352,6 +11352,10 @@
     "specification/MH_T 5092-2026高原运输机场建设指南.pdf": {
       "r2_url": "https://ccar.hudawang.cn/specification/MH_T%205092-2026%E9%AB%98%E5%8E%9F%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E5%BB%BA%E8%AE%BE%E6%8C%87%E5%8D%97.pdf",
       "file_size": 12052687
+    },
+    "other/2025年民航行业发展统计公报.pdf": {
+      "r2_url": "https://ccar.hudawang.cn/other/2025%E5%B9%B4%E6%B0%91%E8%88%AA%E8%A1%8C%E4%B8%9A%E5%8F%91%E5%B1%95%E7%BB%9F%E8%AE%A1%E5%85%AC%E6%8A%A5.pdf",
+      "file_size": 1278044
     }
   }
 }

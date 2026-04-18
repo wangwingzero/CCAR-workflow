@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-04-17T08:55:59.389149",
+  "last_check": "2026-04-18T08:07:20.855619",
   "documents": {
     "9": [
       {
@@ -12,8 +12,8 @@
         "sign_date": "2026-04-17",
         "publish_date": "2026-04-17",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/P020260417411919348922.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "关于北京筑航建设有限公司等4家资质企业动态核查核定意见的公示",
@@ -4648,6 +4648,19 @@
     ],
     "11": [
       {
+        "title": "2025年民航行业发展统计公报",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202604/t20260417_230601.html",
+        "category": "政策解读",
+        "category_id": "11",
+        "doc_number": "",
+        "office_unit": "发展计划司",
+        "sign_date": "2026-04-17",
+        "publish_date": "2026-04-17",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202604/P020260417665629030648.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "中国民航2026年2月份主要生产指标统计",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202603/t20260320_230310.html",
         "category": "政策解读",
@@ -7230,19 +7243,6 @@
         "office_unit": "发展计划司",
         "sign_date": "2017-02-24",
         "publish_date": "2017-02-24",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "中国民航2016年12月份主要运输生产指标统计",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/201702/t20170220_42599.html",
-        "category": "政策解读",
-        "category_id": "11",
-        "doc_number": "",
-        "office_unit": "发展计划司",
-        "sign_date": "2017-02-20",
-        "publish_date": "2017-02-20",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -10475,8 +10475,8 @@
         "sign_date": "2026-04-07",
         "publish_date": "2026-04-07",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260407548603022591.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "正常类动力提升无人驾驶航空器系统（不载人）适航标准",
@@ -10488,8 +10488,8 @@
         "sign_date": "2026-04-03",
         "publish_date": "2026-04-03",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417552626968757.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "正常类多旋翼无人驾驶航空器系统（不载人）适航标准",
@@ -10501,8 +10501,8 @@
         "sign_date": "2026-04-03",
         "publish_date": "2026-04-03",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417551228059844.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "民航局关于印发《民航专业工程质量事故报告和调查处理办法（试行）》的通知",
@@ -10514,8 +10514,8 @@
         "sign_date": "2026-03-31",
         "publish_date": "2026-03-31",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417566630871128.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
@@ -13077,8 +13077,8 @@
         "sign_date": "2026-04-03",
         "publish_date": "2026-04-03",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202604/P020260416597712046293.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "AC332型直升机AEO 30分钟功率状态专用条件",
@@ -16417,6 +16417,19 @@
     ],
     "19": [
       {
+        "title": "中国民航空中警察总队部门预算（2026年）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/CZXX/202604/t20260413_230541.html",
+        "category": "人事信息",
+        "category_id": "19",
+        "doc_number": "",
+        "office_unit": "公安局",
+        "sign_date": "2026-04-13",
+        "publish_date": "2026-04-13",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "中国民用航空局档案馆2026年部门预算",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/CZXX/202604/t20260413_230543.html",
         "category": "人事信息",
@@ -16436,19 +16449,6 @@
         "category_id": "19",
         "doc_number": "",
         "office_unit": "财务司",
-        "sign_date": "2026-04-13",
-        "publish_date": "2026-04-13",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "中国民航空中警察总队部门预算（2026年）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/CZXX/202604/t20260413_230541.html",
-        "category": "人事信息",
-        "category_id": "19",
-        "doc_number": "",
-        "office_unit": "公安局",
         "sign_date": "2026-04-13",
         "publish_date": "2026-04-13",
         "validity": "有效",
@@ -25003,7 +25003,7 @@
       "doc_type": "normative",
       "sign_date": "2026-04-07",
       "publish_date": "2026-04-07",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260407548603022591.pdf"
+      "pdf_url": ""
     },
     {
       "title": "正常类动力提升无人驾驶航空器系统（不载人）适航标准",
@@ -25014,7 +25014,7 @@
       "doc_type": "normative",
       "sign_date": "2026-04-03",
       "publish_date": "2026-04-03",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417552626968757.pdf"
+      "pdf_url": ""
     },
     {
       "title": "正常类多旋翼无人驾驶航空器系统（不载人）适航标准",
@@ -25025,7 +25025,7 @@
       "doc_type": "normative",
       "sign_date": "2026-04-03",
       "publish_date": "2026-04-03",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417551228059844.pdf"
+      "pdf_url": ""
     },
     {
       "title": "民航局关于印发《民航专业工程质量事故报告和调查处理办法（试行）》的通知",
@@ -25036,7 +25036,7 @@
       "doc_type": "normative",
       "sign_date": "2026-03-31",
       "publish_date": "2026-03-31",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/P020260417566630871128.pdf"
+      "pdf_url": ""
     },
     {
       "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
@@ -27205,7 +27205,7 @@
       "doc_type": "standard",
       "sign_date": "2026-04-03",
       "publish_date": "2026-04-03",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202604/P020260416597712046293.pdf"
+      "pdf_url": ""
     },
     {
       "title": "AC332型直升机AEO 30分钟功率状态专用条件",
