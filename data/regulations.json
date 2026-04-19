@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-04-18T08:07:20.855619",
+  "last_check": "2026-04-19T08:14:31.937112",
   "documents": {
     "9": [
       {
@@ -4657,8 +4657,8 @@
         "sign_date": "2026-04-17",
         "publish_date": "2026-04-17",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202604/P020260417665629030648.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "中国民航2026年2月份主要生产指标统计",
