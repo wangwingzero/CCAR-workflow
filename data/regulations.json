@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-04-19T08:14:31.937112",
+  "last_check": "2026-04-20T09:16:09.202046",
   "documents": {
     "9": [
       {
@@ -4648,6 +4648,19 @@
     ],
     "11": [
       {
+        "title": "中国民航2026年3月份主要生产指标统计",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202604/t20260420_230606.html",
+        "category": "政策解读",
+        "category_id": "11",
+        "doc_number": "",
+        "office_unit": "发展计划司",
+        "sign_date": "2026-04-20",
+        "publish_date": "2026-04-20",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202604/P020260420412011187009.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "2025年民航行业发展统计公报",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202604/t20260417_230601.html",
         "category": "政策解读",
@@ -7230,19 +7243,6 @@
         "office_unit": "运输司",
         "sign_date": "2017-03-15",
         "publish_date": "2017-03-15",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "2016年民航机场生产统计公报",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/201702/t20170224_42760.html",
-        "category": "政策解读",
-        "category_id": "11",
-        "doc_number": "",
-        "office_unit": "发展计划司",
-        "sign_date": "2017-02-24",
-        "publish_date": "2017-02-24",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
