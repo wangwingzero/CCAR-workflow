@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-04-21T09:02:43.517567",
+  "last_update": "2026-04-24T09:15:51.044369",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2800,6 +2800,14 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260421_230619.html": {
       "relative_path": "other/关于2026年度民航先锋拟宣传选树对象的公示.txt",
       "updated_at": "2026-04-21T09:02:43.517562"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/CZXX/202604/t20260424_230686.html": {
+      "relative_path": "other/中国民用航空局基建维修中心部门预算（2026 年）.pdf",
+      "updated_at": "2026-04-24T09:15:37.488014"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/CZXX/202604/t20260424_230687.html": {
+      "relative_path": "other/中国民用航空局机关服务局本级部门预算（2026年）.pdf",
+      "updated_at": "2026-04-24T09:15:51.044353"
     }
   }
 }
