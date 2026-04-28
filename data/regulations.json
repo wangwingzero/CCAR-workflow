@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-04-27T09:30:10.518697",
+  "last_check": "2026-04-28T09:34:11.937734",
   "documents": {
     "9": [
       {
@@ -12,8 +12,8 @@
         "sign_date": "2026-04-27",
         "publish_date": "2026-04-27",
         "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/P020260427389913785746.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "关于2026年度民航先锋拟宣传选树对象的公示",
@@ -2434,19 +2434,6 @@
         "has_pdf": false
       },
       {
-        "title": "关于中国青年志愿者协会会员拟提名名单的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240909_225316.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-09",
-        "publish_date": "2024-09-09",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
         "title": "关于2024年度民航专业工程建筑业企业资质动态核查结果的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240906_225302.html",
         "category": "通知公告",
@@ -2601,6 +2588,19 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
+      },
+      {
+        "title": "中国民用航空局本级2023年度部门决算公开",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225077.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2024-08-16",
+        "publish_date": "2024-08-16",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/P020240816507290130474.pdf",
+        "has_pdf": true
       }
     ],
     "10": [
@@ -22424,19 +22424,6 @@
         "has_pdf": false
       },
       {
-        "title": "关于中国青年志愿者协会会员拟提名名单的公示",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240909_225316.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-09-09",
-        "publish_date": "2024-09-09",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
         "title": "关于2024年度民航专业工程建筑业企业资质动态核查结果的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240906_225302.html",
         "category": "建议提案答复",
@@ -22582,6 +22569,19 @@
       {
         "title": "中国民用航空局机关服务局2023年度部门决算",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225080.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2024-08-16",
+        "publish_date": "2024-08-16",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "中国民用航空局本级2023年度部门决算公开",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225077.html",
         "category": "建议提案答复",
         "category_id": "28",
         "doc_number": "",
