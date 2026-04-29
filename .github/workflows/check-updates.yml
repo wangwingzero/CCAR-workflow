@@ -185,66 +185,6 @@ jobs:
           print(f"Generated JS/manifest.json totalCount={manifest['totalCount']}")
           PY
 
-      - name: Publish data JSON to static server
-        env:
-          STATIC_SSH_HOST: ${{ secrets.STATIC_SSH_HOST || '154.9.27.44' }}
-          STATIC_SSH_PORT: ${{ secrets.STATIC_SSH_PORT || '7668' }}
-          STATIC_SSH_USER: ${{ secrets.STATIC_SSH_USER || 'root' }}
-          STATIC_SSH_KEY: ${{ secrets.STATIC_SSH_KEY }}
-          STATIC_ROOT: ${{ secrets.STATIC_ROOT || '/www/wwwroot/flighttoolbox-static/current' }}
-        run: |
-          set -euo pipefail
-
-          if [ -z "${STATIC_SSH_KEY:-}" ]; then
-            echo "❌ STATIC_SSH_KEY secret is required for static server upload"
-            exit 1
-          fi
-
-          for file in regulation.json normative.json specification.json manifest.json; do
-            if [ ! -s "JS/$file" ]; then
-              echo "❌ JS/$file not found or empty"
-              exit 1
-            fi
-          done
-
-          rm -rf static-data ccar-data-v1.tgz
-          mkdir -p static-data/data/v1
-          cp JS/regulation.json static-data/data/v1/regulation.json
-          cp JS/normative.json static-data/data/v1/normative.json
-          cp JS/specification.json static-data/data/v1/specification.json
-          cp JS/manifest.json static-data/data/v1/manifest.json
-          tar -czf ccar-data-v1.tgz -C static-data data
-
-          install -d -m 700 ~/.ssh
-          printf '%s\n' "$STATIC_SSH_KEY" > ~/.ssh/ccar_static_deploy
-          chmod 600 ~/.ssh/ccar_static_deploy
-          ssh-keyscan -p "$STATIC_SSH_PORT" -H "$STATIC_SSH_HOST" >> ~/.ssh/known_hosts
-
-          SSH_TARGET="$STATIC_SSH_USER@$STATIC_SSH_HOST"
-          REMOTE_ARCHIVE="/tmp/ccar-data-v1-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}.tgz"
-
-          scp -i ~/.ssh/ccar_static_deploy -P "$STATIC_SSH_PORT" ccar-data-v1.tgz "$SSH_TARGET:$REMOTE_ARCHIVE"
-          ssh -i ~/.ssh/ccar_static_deploy -p "$STATIC_SSH_PORT" "$SSH_TARGET" \
-            "STATIC_ROOT='$STATIC_ROOT' REMOTE_ARCHIVE='$REMOTE_ARCHIVE' bash -s" <<'SH'
-          set -euo pipefail
-
-          mkdir -p "$STATIC_ROOT/data/v1"
-          tar -xzf "$REMOTE_ARCHIVE" -C "$STATIC_ROOT"
-
-          if id www >/dev/null 2>&1; then
-            chown -R www:www "$STATIC_ROOT/data/v1"
-          fi
-          find "$STATIC_ROOT/data/v1" -type d -exec chmod 0755 {} \;
-          find "$STATIC_ROOT/data/v1" -type f -name '*.json' -exec chmod 0644 {} \;
-          rm -f "$REMOTE_ARCHIVE"
-
-          for file in regulation.json normative.json specification.json manifest.json; do
-            test -s "$STATIC_ROOT/data/v1/$file"
-          done
-          SH
-
-          echo "✅ Published CCAR JSON to $STATIC_ROOT/data/v1"
-
       - name: Commit state update
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -259,14 +199,15 @@ jobs:
           if [ -d JS ]; then
             shopt -s nullglob
             js_files=(JS/*.js)
+            json_files=(JS/*.json)
             if [ ${#js_files[@]} -gt 0 ]; then
               git add "${js_files[@]}"
             fi
-            if [ -f JS/manifest.json ]; then
-              git add JS/manifest.json
+            if [ ${#json_files[@]} -gt 0 ]; then
+              git add "${json_files[@]}"
             fi
           fi
-          # downloads/ no longer committed to repo. Published JSON is served by flighttoolbox.hudawang.cn/data/v1/.
+          # downloads/ no longer committed to repo. The server mirrors JS/*.json to flighttoolbox.hudawang.cn/data/v1/.
           git diff --staged --quiet || git commit -m "chore: update regulation state $(date +'%Y-%m-%d')"
           git push
 
