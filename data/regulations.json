@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-04-28T09:34:11.937734",
+  "last_check": "2026-04-29T09:20:17.950079",
   "documents": {
     "9": [
+      {
+        "title": "关于公布北京筑航建设有限公司等4家资质企业动态核查结论的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260429_230721.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-29",
+        "publish_date": "2026-04-29",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "关于中航机场系统设施建设有限公司1家企业追加资质动态核查材料的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260427_230693.html",
@@ -2588,19 +2601,6 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
-      },
-      {
-        "title": "中国民用航空局本级2023年度部门决算公开",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225077.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-16",
-        "publish_date": "2024-08-16",
-        "validity": "有效",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/P020240816507290130474.pdf",
-        "has_pdf": true
       }
     ],
     "10": [
@@ -19993,6 +19993,19 @@
     "27": [],
     "28": [
       {
+        "title": "关于公布北京筑航建设有限公司等4家资质企业动态核查结论的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260429_230721.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-04-29",
+        "publish_date": "2026-04-29",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "关于中航机场系统设施建设有限公司1家企业追加资质动态核查材料的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260427_230693.html",
         "category": "建议提案答复",
@@ -22569,19 +22582,6 @@
       {
         "title": "中国民用航空局机关服务局2023年度部门决算",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225080.html",
-        "category": "建议提案答复",
-        "category_id": "28",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "2024-08-16",
-        "publish_date": "2024-08-16",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "中国民用航空局本级2023年度部门决算公开",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202408/t20240816_225077.html",
         "category": "建议提案答复",
         "category_id": "28",
         "doc_number": "",

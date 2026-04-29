@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-04-28T09:34:05.535039",
+  "last_update": "2026-04-29T09:20:13.536052",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2812,6 +2812,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260427_230693.html": {
       "relative_path": "other/关于中航机场系统设施建设有限公司1家企业追加资质动态核查材料的公示.pdf",
       "updated_at": "2026-04-27T09:30:04.861053"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202604/t20260429_230721.html": {
+      "relative_path": "other/关于公布北京筑航建设有限公司等4家资质企业动态核查结论的通知.txt",
+      "updated_at": "2026-04-29T09:20:13.536047"
     }
   }
 }
