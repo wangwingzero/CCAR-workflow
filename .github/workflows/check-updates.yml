@@ -138,6 +138,79 @@ jobs:
           echo "Running: ${CMD[*]}"
           "${CMD[@]}"
 
+      - name: Generate data manifest
+        run: |
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          files = {
+              "regulation": {"label": "民航规章", "filename": "regulation.json"},
+              "normative": {"label": "规范性文件", "filename": "normative.json"},
+              "specification": {"label": "标准规范", "filename": "specification.json"},
+          }
+          js_dir = Path("JS")
+          manifest = {
+              "version": 1,
+              "source": "CAAC",
+              "lastUpdated": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+              "basePath": "data/v1",
+              "files": {},
+              "totalCount": 0,
+          }
+
+          for data_type, info in files.items():
+              local_path = js_dir / info["filename"]
+              records = []
+              sha256 = ""
+              if local_path.exists():
+                  raw = local_path.read_bytes()
+                  sha256 = hashlib.sha256(raw).hexdigest()
+                  parsed = json.loads(raw.decode("utf-8"))
+                  if isinstance(parsed, list):
+                      records = parsed
+
+              count = len(records)
+              manifest["files"][data_type] = {
+                  "label": info["label"],
+                  "filename": info["filename"],
+                  "path": f"data/v1/{info['filename']}",
+                  "count": count,
+                  "sha256": sha256,
+              }
+              manifest["totalCount"] += count
+
+          js_dir.mkdir(parents=True, exist_ok=True)
+          (js_dir / "manifest.json").write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(f"Generated JS/manifest.json totalCount={manifest['totalCount']}")
+          PY
+
+      - name: Upload data manifest to R2
+        env:
+          R2_WORKER_URL: ${{ secrets.R2_WORKER_URL }}
+          R2_WORKER_SECRET: ${{ secrets.R2_WORKER_SECRET }}
+        run: |
+          if [ -z "$R2_WORKER_URL" ] || [ -z "$R2_WORKER_SECRET" ]; then
+            echo "⏭️ R2 worker secrets not set, skipping manifest upload"
+            exit 0
+          fi
+          if [ ! -f JS/manifest.json ]; then
+            echo "⏭️ JS/manifest.json not found, skipping manifest upload"
+            exit 0
+          fi
+
+          R2_WORKER_URL="${R2_WORKER_URL%/}"
+          curl -fS -X PUT "$R2_WORKER_URL/data/v1/manifest.json" \
+            -H "X-Auth-Token: $R2_WORKER_SECRET" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data-binary @JS/manifest.json
+          echo "✅ Uploaded data/v1/manifest.json"
+
       - name: Commit state update
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -154,6 +227,9 @@ jobs:
             js_files=(JS/*.js)
             if [ ${#js_files[@]} -gt 0 ]; then
               git add "${js_files[@]}"
+            fi
+            if [ -f JS/manifest.json ]; then
+              git add JS/manifest.json
             fi
           fi
           # downloads/ no longer committed to repo — PDFs hosted on R2 only
