@@ -4,9 +4,9 @@ on:
   schedule:
     # Daily at UTC 7:00 (Beijing Time 15:00)
     # Beijing Time = UTC + 8
-    #   Beijing 8:00  → UTC 0:00  → cron: '0 0 * * *'
-    #   Beijing 15:00 → UTC 7:00  → cron: '0 7 * * *'
-    #   Beijing 20:00 → UTC 12:00 → cron: '0 12 * * *'
+    #   Beijing 8:00  -> UTC 0:00  -> cron: '0 0 * * *'
+    #   Beijing 15:00 -> UTC 7:00  -> cron: '0 7 * * *'
+    #   Beijing 20:00 -> UTC 12:00 -> cron: '0 12 * * *'
     - cron: '0 7 * * *'
   workflow_dispatch:  # Allow manual trigger
     inputs:
@@ -114,11 +114,6 @@ jobs:
           # Notification - Telegram
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-
-          # Cloudflare R2 (optional, for PDF hosting via Worker proxy)
-          R2_WORKER_URL: ${{ secrets.R2_WORKER_URL }}
-          R2_WORKER_SECRET: ${{ secrets.R2_WORKER_SECRET }}
-          R2_DOMAIN: ${{ secrets.R2_DOMAIN }}
         run: |
           # 构建命令参数
           CMD=(uv run python -m src.main)
@@ -132,11 +127,63 @@ jobs:
           # --notify: 手动触发时用 github.event.inputs，定时任务用 secrets
           CMD+=(--notify "${{ github.event.inputs.notify || secrets.NOTIFY || '1' }}")
 
-          # 固定每个分类抓取条数，提高 JS 更新覆盖率
+          # 固定每个分类抓取条数，提高 JSON 更新覆盖率
           CMD+=(--perpage 200)
 
           echo "Running: ${CMD[*]}"
           "${CMD[@]}"
+
+      - name: Generate data manifest
+        run: |
+          uv run python - <<'PY'
+          import hashlib
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          files = {
+              "regulation": {"label": "民航规章", "filename": "regulation.json"},
+              "normative": {"label": "规范性文件", "filename": "normative.json"},
+              "specification": {"label": "标准规范", "filename": "specification.json"},
+          }
+          js_dir = Path("JS")
+          manifest = {
+              "version": 1,
+              "source": "CAAC",
+              "lastUpdated": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+              "basePath": "data/v1",
+              "files": {},
+              "totalCount": 0,
+          }
+
+          for data_type, info in files.items():
+              local_path = js_dir / info["filename"]
+              records = []
+              sha256 = ""
+              if local_path.exists():
+                  raw = local_path.read_bytes()
+                  sha256 = hashlib.sha256(raw).hexdigest()
+                  parsed = json.loads(raw.decode("utf-8"))
+                  if isinstance(parsed, list):
+                      records = parsed
+
+              count = len(records)
+              manifest["files"][data_type] = {
+                  "label": info["label"],
+                  "filename": info["filename"],
+                  "path": f"data/v1/{info['filename']}",
+                  "count": count,
+                  "sha256": sha256,
+              }
+              manifest["totalCount"] += count
+
+          js_dir.mkdir(parents=True, exist_ok=True)
+          (js_dir / "manifest.json").write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
+              encoding="utf-8",
+          )
+          print(f"Generated JS/manifest.json totalCount={manifest['totalCount']}")
+          PY
 
       - name: Commit state update
         run: |
@@ -152,68 +199,17 @@ jobs:
           if [ -d JS ]; then
             shopt -s nullglob
             js_files=(JS/*.js)
+            json_files=(JS/*.json)
             if [ ${#js_files[@]} -gt 0 ]; then
               git add "${js_files[@]}"
             fi
+            if [ ${#json_files[@]} -gt 0 ]; then
+              git add "${json_files[@]}"
+            fi
           fi
-          # downloads/ no longer committed to repo — PDFs hosted on R2 only
+          # downloads/ no longer committed to repo. The server mirrors JS/*.json to flighttoolbox.hudawang.cn/data/v1/.
           git diff --staged --quiet || git commit -m "chore: update regulation state $(date +'%Y-%m-%d')"
           git push
-
-      # Sync JS data files to FlightToolbox miniprogram
-      # Pushes regulation.js / normative.js / specification.js → triggers WeChat CI
-      - name: Sync JS to FlightToolbox
-        env:
-          FLIGHTTOOLBOX_TOKEN: ${{ secrets.FLIGHTTOOLBOX_TOKEN }}
-        run: |
-          if [ -z "$FLIGHTTOOLBOX_TOKEN" ]; then
-            echo "⏭️ FLIGHTTOOLBOX_TOKEN not set, skipping sync"
-            exit 0
-          fi
-          if [ ! -d JS ] || [ -z "$(ls JS/*.js 2>/dev/null)" ]; then
-            echo "⏭️ No JS files to sync"
-            exit 0
-          fi
-
-          REPO_URL="https://x-access-token:${FLIGHTTOOLBOX_TOKEN}@github.com/wangwingzero/FlightToolbox.git"
-          CLONE_DIR="/tmp/FlightToolbox"
-          TARGET_DIR="miniprogram/packageCCAR"
-
-          git clone --depth 1 "$REPO_URL" "$CLONE_DIR"
-
-          CHANGED=0
-          for js_file in JS/*.js; do
-            filename=$(basename "$js_file")
-            target="$CLONE_DIR/$TARGET_DIR/$filename"
-            if [ -f "$target" ]; then
-              if ! diff -q "$js_file" "$target" > /dev/null 2>&1; then
-                cp "$js_file" "$target"
-                echo "📝 Updated: $filename"
-                CHANGED=1
-              else
-                echo "✅ No change: $filename"
-              fi
-            else
-              cp "$js_file" "$target"
-              echo "📝 New file: $filename"
-              CHANGED=1
-            fi
-          done
-
-          if [ "$CHANGED" -eq 0 ]; then
-            echo "⏭️ All JS files unchanged, skipping push"
-            exit 0
-          fi
-
-          cd "$CLONE_DIR"
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add "$TARGET_DIR/regulation.js" "$TARGET_DIR/normative.js" "$TARGET_DIR/specification.js"
-          git diff --staged --quiet || {
-            git commit -m "chore(ccar): sync regulation data $(date +'%Y-%m-%d')"
-            git push
-            echo "🚀 Pushed to FlightToolbox → WeChat CI will auto-trigger"
-          }
 
       - name: Upload downloaded files
         if: always()
