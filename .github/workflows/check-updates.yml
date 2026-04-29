@@ -4,9 +4,9 @@ on:
   schedule:
     # Daily at UTC 7:00 (Beijing Time 15:00)
     # Beijing Time = UTC + 8
-    #   Beijing 8:00  → UTC 0:00  → cron: '0 0 * * *'
-    #   Beijing 15:00 → UTC 7:00 → cron: '0 7 * * *'
-    #   Beijing 20:00 → UTC 12:00 → cron: '0 12 * * *'
+    #   Beijing 8:00  -> UTC 0:00  -> cron: '0 0 * * *'
+    #   Beijing 15:00 -> UTC 7:00  -> cron: '0 7 * * *'
+    #   Beijing 20:00 -> UTC 12:00 -> cron: '0 12 * * *'
     - cron: '0 7 * * *'
   workflow_dispatch:  # Allow manual trigger
     inputs:
@@ -114,11 +114,6 @@ jobs:
           # Notification - Telegram
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-
-          # Cloudflare R2 (optional, for PDF/JSON hosting via Worker proxy)
-          R2_WORKER_URL: ${{ secrets.R2_WORKER_URL }}
-          R2_WORKER_SECRET: ${{ secrets.R2_WORKER_SECRET }}
-          R2_DOMAIN: ${{ secrets.R2_DOMAIN }}
         run: |
           # 构建命令参数
           CMD=(uv run python -m src.main)
@@ -190,26 +185,65 @@ jobs:
           print(f"Generated JS/manifest.json totalCount={manifest['totalCount']}")
           PY
 
-      - name: Upload data manifest to R2
+      - name: Publish data JSON to static server
         env:
-          R2_WORKER_URL: ${{ secrets.R2_WORKER_URL }}
-          R2_WORKER_SECRET: ${{ secrets.R2_WORKER_SECRET }}
+          STATIC_SSH_HOST: ${{ secrets.STATIC_SSH_HOST || '154.9.27.44' }}
+          STATIC_SSH_PORT: ${{ secrets.STATIC_SSH_PORT || '7668' }}
+          STATIC_SSH_USER: ${{ secrets.STATIC_SSH_USER || 'root' }}
+          STATIC_SSH_KEY: ${{ secrets.STATIC_SSH_KEY }}
+          STATIC_ROOT: ${{ secrets.STATIC_ROOT || '/www/wwwroot/flighttoolbox-static/current' }}
         run: |
-          if [ -z "$R2_WORKER_URL" ] || [ -z "$R2_WORKER_SECRET" ]; then
-            echo "⏭️ R2 worker secrets not set, skipping manifest upload"
-            exit 0
-          fi
-          if [ ! -f JS/manifest.json ]; then
-            echo "⏭️ JS/manifest.json not found, skipping manifest upload"
-            exit 0
+          set -euo pipefail
+
+          if [ -z "${STATIC_SSH_KEY:-}" ]; then
+            echo "❌ STATIC_SSH_KEY secret is required for static server upload"
+            exit 1
           fi
 
-          R2_WORKER_URL="${R2_WORKER_URL%/}"
-          curl -fS -X PUT "$R2_WORKER_URL/data/v1/manifest.json" \
-            -H "X-Auth-Token: $R2_WORKER_SECRET" \
-            -H "Content-Type: application/json; charset=utf-8" \
-            --data-binary @JS/manifest.json
-          echo "✅ Uploaded data/v1/manifest.json"
+          for file in regulation.json normative.json specification.json manifest.json; do
+            if [ ! -s "JS/$file" ]; then
+              echo "❌ JS/$file not found or empty"
+              exit 1
+            fi
+          done
+
+          rm -rf static-data ccar-data-v1.tgz
+          mkdir -p static-data/data/v1
+          cp JS/regulation.json static-data/data/v1/regulation.json
+          cp JS/normative.json static-data/data/v1/normative.json
+          cp JS/specification.json static-data/data/v1/specification.json
+          cp JS/manifest.json static-data/data/v1/manifest.json
+          tar -czf ccar-data-v1.tgz -C static-data data
+
+          install -d -m 700 ~/.ssh
+          printf '%s\n' "$STATIC_SSH_KEY" > ~/.ssh/ccar_static_deploy
+          chmod 600 ~/.ssh/ccar_static_deploy
+          ssh-keyscan -p "$STATIC_SSH_PORT" -H "$STATIC_SSH_HOST" >> ~/.ssh/known_hosts
+
+          SSH_TARGET="$STATIC_SSH_USER@$STATIC_SSH_HOST"
+          REMOTE_ARCHIVE="/tmp/ccar-data-v1-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}.tgz"
+
+          scp -i ~/.ssh/ccar_static_deploy -P "$STATIC_SSH_PORT" ccar-data-v1.tgz "$SSH_TARGET:$REMOTE_ARCHIVE"
+          ssh -i ~/.ssh/ccar_static_deploy -p "$STATIC_SSH_PORT" "$SSH_TARGET" \
+            "STATIC_ROOT='$STATIC_ROOT' REMOTE_ARCHIVE='$REMOTE_ARCHIVE' bash -s" <<'SH'
+          set -euo pipefail
+
+          mkdir -p "$STATIC_ROOT/data/v1"
+          tar -xzf "$REMOTE_ARCHIVE" -C "$STATIC_ROOT"
+
+          if id www >/dev/null 2>&1; then
+            chown -R www:www "$STATIC_ROOT/data/v1"
+          fi
+          find "$STATIC_ROOT/data/v1" -type d -exec chmod 0755 {} \;
+          find "$STATIC_ROOT/data/v1" -type f -name '*.json' -exec chmod 0644 {} \;
+          rm -f "$REMOTE_ARCHIVE"
+
+          for file in regulation.json normative.json specification.json manifest.json; do
+            test -s "$STATIC_ROOT/data/v1/$file"
+          done
+          SH
+
+          echo "✅ Published CCAR JSON to $STATIC_ROOT/data/v1"
 
       - name: Commit state update
         run: |
@@ -232,7 +266,7 @@ jobs:
               git add JS/manifest.json
             fi
           fi
-          # downloads/ no longer committed to repo — PDFs hosted on R2 only
+          # downloads/ no longer committed to repo. Published JSON is served by flighttoolbox.hudawang.cn/data/v1/.
           git diff --staged --quiet || git commit -m "chore: update regulation state $(date +'%Y-%m-%d')"
           git push
 
