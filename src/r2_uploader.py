@@ -9,7 +9,7 @@ issues encountered when connecting to R2 from GitHub Actions.
 Required env vars:
   R2_WORKER_URL  - Worker endpoint (e.g. https://r2-upload.xxx.workers.dev)
   R2_WORKER_SECRET - Shared secret for X-Auth-Token header
-  R2_DOMAIN - Custom domain for public URLs (e.g. ccar.hudawang.cn)
+  R2_DOMAIN - Custom domain for public URLs (e.g. flighttoolbox.hudawang.cn)
 """
 
 import json
@@ -20,6 +20,26 @@ from urllib.parse import quote
 
 import httpx
 from loguru import logger
+
+
+LEGACY_STATIC_HOST = "https://ccar.hudawang.cn/"
+STATIC_HOST = "https://flighttoolbox.hudawang.cn/"
+
+
+def normalize_public_url(url: str) -> str:
+    """Normalize cached public URLs from the retired static host."""
+    value = (url or "").strip()
+    if value.startswith(LEGACY_STATIC_HOST):
+        return STATIC_HOST + value[len(LEGACY_STATIC_HOST):]
+    return value
+
+
+def normalize_public_domain(domain: str) -> str:
+    """Normalize retired public host values from CI secrets."""
+    value = (domain or "").strip().rstrip("/")
+    if value == "ccar.hudawang.cn":
+        return "flighttoolbox.hudawang.cn"
+    return value
 
 
 class R2Uploader:
@@ -35,7 +55,7 @@ class R2Uploader:
     def __init__(self):
         self.worker_url = os.environ.get("R2_WORKER_URL", "").strip().rstrip("/")
         self._secret = os.environ.get("R2_WORKER_SECRET", "").strip()
-        self.domain = os.environ.get("R2_DOMAIN", "").strip().rstrip("/")
+        self.domain = normalize_public_domain(os.environ.get("R2_DOMAIN", ""))
 
         required = {
             "R2_WORKER_URL": self.worker_url,
@@ -138,7 +158,7 @@ class R2Uploader:
             file_size = os.path.getsize(local_path)
             cached_record = r2_index.get(rel_path)
             if cached_record and cached_record.get("file_size") == file_size:
-                r2_url_map[caac_url] = cached_record["r2_url"]
+                r2_url_map[caac_url] = normalize_public_url(cached_record["r2_url"])
                 cached += 1
                 continue
 
@@ -153,7 +173,7 @@ class R2Uploader:
             else:
                 # Still use cached URL if upload fails
                 if cached_record:
-                    r2_url_map[caac_url] = cached_record["r2_url"]
+                    r2_url_map[caac_url] = normalize_public_url(cached_record["r2_url"])
                     cached += 1
                 else:
                     failed += 1

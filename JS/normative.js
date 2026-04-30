@@ -9,7 +9,7 @@ var data = [
     "doc_number": "IB-FS-MED-016",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-MED-016",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-016%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%BA%E5%91%98%E5%AE%89%E5%85%A8%E7%94%A8%E8%8D%AF%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC%E4%B8%80%E7%89%88%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-MED-016%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%BA%E5%91%98%E5%AE%89%E5%85%A8%E7%94%A8%E8%8D%AF%E6%8C%87%E5%8D%97%EF%BC%88%E7%AC%AC%E4%B8%80%E7%89%88%EF%BC%89.pdf"
   },
   {
     "title": "正常类动力提升无人驾驶航空器系统（不载人）适航标准",
@@ -21,7 +21,7 @@ var data = [
     "doc_number": "AC-21-AA-2026-47",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2026-47",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-47%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%8A%A8%E5%8A%9B%E6%8F%90%E5%8D%87%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2026-47%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%8A%A8%E5%8A%9B%E6%8F%90%E5%8D%87%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
   },
   {
     "title": "正常类多旋翼无人驾驶航空器系统（不载人）适航标准",
@@ -33,7 +33,7 @@ var data = [
     "doc_number": "AC-21-AA-2026-46",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2026-46",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-46%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%A4%9A%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2026-46%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%A4%9A%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
   },
   {
     "title": "民航局关于印发《民航专业工程质量事故报告和调查处理办法（试行）》的通知",
@@ -45,7 +45,7 @@ var data = [
     "doc_number": "",
     "office_unit": "机场司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E8%B4%A8%E9%87%8F%E4%BA%8B%E6%95%85%E6%8A%A5%E5%91%8A%E5%92%8C%E8%B0%83%E6%9F%A5%E5%A4%84%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E8%B4%A8%E9%87%8F%E4%BA%8B%E6%95%85%E6%8A%A5%E5%91%8A%E5%92%8C%E8%B0%83%E6%9F%A5%E5%A4%84%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "中国民航飞行员岗位胜任力评估专家组工作规则",
@@ -57,7 +57,7 @@ var data = [
     "doc_number": "MD-OPS-FS-010",
     "office_unit": "飞行标准司",
     "file_number": "文号：MD-OPS-FS-010",
-    "pdf_url": "https://ccar.hudawang.cn/normative/MD-OPS-FS-010%E4%B8%AD%E5%9B%BD%E6%B0%91%E8%88%AA%E9%A3%9E%E8%A1%8C%E5%91%98%E5%B2%97%E4%BD%8D%E8%83%9C%E4%BB%BB%E5%8A%9B%E8%AF%84%E4%BC%B0%E4%B8%93%E5%AE%B6%E7%BB%84%E5%B7%A5%E4%BD%9C%E8%A7%84%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/MD-OPS-FS-010%E4%B8%AD%E5%9B%BD%E6%B0%91%E8%88%AA%E9%A3%9E%E8%A1%8C%E5%91%98%E5%B2%97%E4%BD%8D%E8%83%9C%E4%BB%BB%E5%8A%9B%E8%AF%84%E4%BC%B0%E4%B8%93%E5%AE%B6%E7%BB%84%E5%B7%A5%E4%BD%9C%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "动力提升航空器适航标准",
@@ -69,7 +69,7 @@ var data = [
     "doc_number": "AC-21-AA-2026-45",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2026-45",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-45%E5%8A%A8%E5%8A%9B%E6%8F%90%E5%8D%87%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2026-45%E5%8A%A8%E5%8A%9B%E6%8F%90%E5%8D%87%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
   },
   {
     "title": "循证训练（EBT）实施管理规定",
@@ -81,7 +81,7 @@ var data = [
     "doc_number": "AC-121-FS-138R2",
     "office_unit": "飞行标准司",
     "file_number": "文号：AC-121-FS-138R2",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-138R2%E5%BE%AA%E8%AF%81%E8%AE%AD%E7%BB%83%EF%BC%88EBT%EF%BC%89%E5%AE%9E%E6%96%BD%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-121-FS-138R2%E5%BE%AA%E8%AF%81%E8%AE%AD%E7%BB%83%EF%BC%88EBT%EF%BC%89%E5%AE%9E%E6%96%BD%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "限用类无人驾驶航空器系统适航标准",
@@ -93,7 +93,7 @@ var data = [
     "doc_number": "AC-21-AA-2026-44",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2026-44",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-44%E9%99%90%E7%94%A8%E7%B1%BB%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2026-44%E9%99%90%E7%94%A8%E7%B1%BB%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
   },
   {
     "title": "最后进近阶段相关飞行技术",
@@ -105,7 +105,7 @@ var data = [
     "doc_number": "IB-FS-OPS-019",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPS-019",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPS-019%E6%9C%80%E5%90%8E%E8%BF%9B%E8%BF%91%E9%98%B6%E6%AE%B5%E7%9B%B8%E5%85%B3%E9%A3%9E%E8%A1%8C%E6%8A%80%E6%9C%AF.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPS-019%E6%9C%80%E5%90%8E%E8%BF%9B%E8%BF%91%E9%98%B6%E6%AE%B5%E7%9B%B8%E5%85%B3%E9%A3%9E%E8%A1%8C%E6%8A%80%E6%9C%AF.pdf"
   },
   {
     "title": "全天候运行规定",
@@ -117,7 +117,7 @@ var data = [
     "doc_number": "AC-91-FS/CA/TM-2026-16R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2026〕3 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS_CA_TM-2026-16R2%E5%85%A8%E5%A4%A9%E5%80%99%E8%BF%90%E8%A1%8C%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS_CA_TM-2026-16R2%E5%85%A8%E5%A4%A9%E5%80%99%E8%BF%90%E8%A1%8C%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民航残损航空器搬移实训基地认定管理办法",
@@ -162,7 +162,7 @@ var data = [
     "doc_number": "AC-92-FS-002",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2026〕2 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-92-FS-002%E5%9F%BA%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-92-FS-002%E5%9F%BA%E4%BA%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民航飞行学生体能训练与锻炼指南（试行）",
@@ -174,7 +174,7 @@ var data = [
     "doc_number": "IB-FS-MED-01X",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-MED-01X",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-01X%E6%B0%91%E8%88%AA%E9%A3%9E%E8%A1%8C%E5%AD%A6%E7%94%9F%E4%BD%93%E8%83%BD%E8%AE%AD%E7%BB%83%E4%B8%8E%E9%94%BB%E7%82%BC%E6%8C%87%E5%8D%97%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-MED-01X%E6%B0%91%E8%88%AA%E9%A3%9E%E8%A1%8C%E5%AD%A6%E7%94%9F%E4%BD%93%E8%83%BD%E8%AE%AD%E7%BB%83%E4%B8%8E%E9%94%BB%E7%82%BC%E6%8C%87%E5%8D%97%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "航空发动机道路运输安全技术规范",
@@ -197,7 +197,7 @@ var data = [
     "doc_number": "AC-145-FS-002R3",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕33 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-145-FS-002R3%E5%9B%BD%E5%A4%96%E7%BB%B4%E4%BF%AE%E5%8D%95%E4%BD%8D%E7%9A%84%E7%94%B3%E8%AF%B7%E5%92%8C%E6%89%B9%E5%87%86.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-145-FS-002R3%E5%9B%BD%E5%A4%96%E7%BB%B4%E4%BF%AE%E5%8D%95%E4%BD%8D%E7%9A%84%E7%94%B3%E8%AF%B7%E5%92%8C%E6%89%B9%E5%87%86.pdf"
   },
   {
     "title": "民航突发公共卫生事件应急演练指南",
@@ -209,7 +209,7 @@ var data = [
     "doc_number": "IB-FS-MED-015",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-MED-015",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-015%E6%B0%91%E8%88%AA%E7%AA%81%E5%8F%91%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F%E4%BA%8B%E4%BB%B6%E5%BA%94%E6%80%A5%E6%BC%94%E7%BB%83%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-MED-015%E6%B0%91%E8%88%AA%E7%AA%81%E5%8F%91%E5%85%AC%E5%85%B1%E5%8D%AB%E7%94%9F%E4%BA%8B%E4%BB%B6%E5%BA%94%E6%80%A5%E6%BC%94%E7%BB%83%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民用机场助航灯光监控系统检测规范",
@@ -221,7 +221,7 @@ var data = [
     "doc_number": "AC-137-CA-2025-06",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2025-06",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2025-06%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%8A%A9%E8%88%AA%E7%81%AF%E5%85%89%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E6%A3%80%E6%B5%8B%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2025-06%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%8A%A9%E8%88%AA%E7%81%AF%E5%85%89%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E6%A3%80%E6%B5%8B%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "机场助航灯光系统低电流供电实施指南",
@@ -233,7 +233,7 @@ var data = [
     "doc_number": "IB-CA-2025-01",
     "office_unit": "机场司",
     "file_number": "文号：IB-CA-2025-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-CA-2025-01%E6%9C%BA%E5%9C%BA%E5%8A%A9%E8%88%AA%E7%81%AF%E5%85%89%E7%B3%BB%E7%BB%9F%E4%BD%8E%E7%94%B5%E6%B5%81%E4%BE%9B%E7%94%B5%E5%AE%9E%E6%96%BD%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-CA-2025-01%E6%9C%BA%E5%9C%BA%E5%8A%A9%E8%88%AA%E7%81%AF%E5%85%89%E7%B3%BB%E7%BB%9F%E4%BD%8E%E7%94%B5%E6%B5%81%E4%BE%9B%E7%94%B5%E5%AE%9E%E6%96%BD%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "进口民用航空产品和零部件认可审定程序",
@@ -245,7 +245,7 @@ var data = [
     "doc_number": "AP-21-AA-2025-15R1",
     "office_unit": "航空器适航审定司",
     "file_number": "民航规〔2025〕32 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-21-AA-2025-15R1%E8%BF%9B%E5%8F%A3%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E8%AE%A4%E5%8F%AF%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-21-AA-2025-15R1%E8%BF%9B%E5%8F%A3%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E8%AE%A4%E5%8F%AF%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "发动机孔探检查管理规范",
@@ -268,7 +268,7 @@ var data = [
     "doc_number": "IB-CA-2025-02",
     "office_unit": "机场司",
     "file_number": "文号：IB-CA-2025-02",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-CA-2025-02%E5%9F%BA%E4%BA%8E%E5%8D%AB%E6%98%9F%E5%AE%9A%E4%BD%8D%E7%9A%84%E6%9C%BA%E5%9C%BA%E5%9C%B0%E9%9D%A2%E8%BD%A6%E8%BE%86%E5%92%8C%E4%BA%BA%E5%91%98%E8%B7%91%E9%81%93%E4%BE%B5%E5%85%A5%E9%98%B2%E8%8C%83%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-CA-2025-02%E5%9F%BA%E4%BA%8E%E5%8D%AB%E6%98%9F%E5%AE%9A%E4%BD%8D%E7%9A%84%E6%9C%BA%E5%9C%BA%E5%9C%B0%E9%9D%A2%E8%BD%A6%E8%BE%86%E5%92%8C%E4%BA%BA%E5%91%98%E8%B7%91%E9%81%93%E4%BE%B5%E5%85%A5%E9%98%B2%E8%8C%83%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "航空卫生培训管理办法（试行）",
@@ -280,7 +280,7 @@ var data = [
     "doc_number": "IB-FS-MED-013",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-MED-013",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-013%E8%88%AA%E7%A9%BA%E5%8D%AB%E7%94%9F%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-MED-013%E8%88%AA%E7%A9%BA%E5%8D%AB%E7%94%9F%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "航空器地面服务设备年度评估技术指南",
@@ -292,7 +292,7 @@ var data = [
     "doc_number": "AC-137-CA-2025-05",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2025-05",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2025-05%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9C%B0%E9%9D%A2%E6%9C%8D%E5%8A%A1%E8%AE%BE%E5%A4%87%E5%B9%B4%E5%BA%A6%E8%AF%84%E4%BC%B0%E6%8A%80%E6%9C%AF%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2025-05%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9C%B0%E9%9D%A2%E6%9C%8D%E5%8A%A1%E8%AE%BE%E5%A4%87%E5%B9%B4%E5%BA%A6%E8%AF%84%E4%BC%B0%E6%8A%80%E6%9C%AF%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民航安全文化建设管理办法",
@@ -304,7 +304,7 @@ var data = [
     "doc_number": "AC-398-08",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2025〕28 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-398-08%E6%B0%91%E8%88%AA%E5%AE%89%E5%85%A8%E6%96%87%E5%8C%96%E5%BB%BA%E8%AE%BE%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-398-08%E6%B0%91%E8%88%AA%E5%AE%89%E5%85%A8%E6%96%87%E5%8C%96%E5%BB%BA%E8%AE%BE%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民航从业人员安全工作作风建设管理办法",
@@ -316,7 +316,7 @@ var data = [
     "doc_number": "AC-398-09",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2025〕29 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-398-09%E6%B0%91%E8%88%AA%E4%BB%8E%E4%B8%9A%E4%BA%BA%E5%91%98%E5%AE%89%E5%85%A8%E5%B7%A5%E4%BD%9C%E4%BD%9C%E9%A3%8E%E5%BB%BA%E8%AE%BE%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-398-09%E6%B0%91%E8%88%AA%E4%BB%8E%E4%B8%9A%E4%BA%BA%E5%91%98%E5%AE%89%E5%85%A8%E5%B7%A5%E4%BD%9C%E4%BD%9C%E9%A3%8E%E5%BB%BA%E8%AE%BE%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "驾驶员资格规范（PQS）应用指南",
@@ -328,7 +328,7 @@ var data = [
     "doc_number": "IB-FS-OPS-018",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPS-018",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPS-018%E9%A9%BE%E9%A9%B6%E5%91%98%E8%B5%84%E6%A0%BC%E8%A7%84%E8%8C%83%EF%BC%88PQS%EF%BC%89%E5%BA%94%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPS-018%E9%A9%BE%E9%A9%B6%E5%91%98%E8%B5%84%E6%A0%BC%E8%A7%84%E8%8C%83%EF%BC%88PQS%EF%BC%89%E5%BA%94%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民用机场专用设备质量一致性审核办法",
@@ -340,7 +340,7 @@ var data = [
     "doc_number": "AP-137-CA-2025-01",
     "office_unit": "机场司",
     "file_number": "民航规〔2025〕27 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-137-CA-2025-01%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%B8%93%E7%94%A8%E8%AE%BE%E5%A4%87%E8%B4%A8%E9%87%8F%E4%B8%80%E8%87%B4%E6%80%A7%E5%AE%A1%E6%A0%B8%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-137-CA-2025-01%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%B8%93%E7%94%A8%E8%AE%BE%E5%A4%87%E8%B4%A8%E9%87%8F%E4%B8%80%E8%87%B4%E6%80%A7%E5%AE%A1%E6%A0%B8%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民航机组成员定期疗养工作指南",
@@ -352,7 +352,7 @@ var data = [
     "doc_number": "IB-FS-MED-012",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-MED-012",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-012%E6%B0%91%E8%88%AA%E6%9C%BA%E7%BB%84%E6%88%90%E5%91%98%E5%AE%9A%E6%9C%9F%E7%96%97%E5%85%BB%E5%B7%A5%E4%BD%9C%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-MED-012%E6%B0%91%E8%88%AA%E6%9C%BA%E7%BB%84%E6%88%90%E5%91%98%E5%AE%9A%E6%9C%9F%E7%96%97%E5%85%BB%E5%B7%A5%E4%BD%9C%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "涡轮发动机飞机排放审定",
@@ -364,7 +364,7 @@ var data = [
     "doc_number": "AC-34-AA-2025-01",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-34-AA-2025-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-34-AA-2025-01%E6%B6%A1%E8%BD%AE%E5%8F%91%E5%8A%A8%E6%9C%BA%E9%A3%9E%E6%9C%BA%E6%8E%92%E6%94%BE%E5%AE%A1%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-34-AA-2025-01%E6%B6%A1%E8%BD%AE%E5%8F%91%E5%8A%A8%E6%9C%BA%E9%A3%9E%E6%9C%BA%E6%8E%92%E6%94%BE%E5%AE%A1%E5%AE%9A.pdf"
   },
   {
     "title": "民航空勤人员膳食指南",
@@ -376,7 +376,7 @@ var data = [
     "doc_number": "IB-FS-MED-011",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-MED-011",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-011%E6%B0%91%E8%88%AA%E7%A9%BA%E5%8B%A4%E4%BA%BA%E5%91%98%E8%86%B3%E9%A3%9F%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-MED-011%E6%B0%91%E8%88%AA%E7%A9%BA%E5%8B%A4%E4%BA%BA%E5%91%98%E8%86%B3%E9%A3%9F%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民用航空电信人员岗位培训管理办法",
@@ -388,7 +388,7 @@ var data = [
     "doc_number": "AP-65I-TM-2025-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规〔2025〕25 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-65I-TM-2025-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%94%B5%E4%BF%A1%E4%BA%BA%E5%91%98%E5%B2%97%E4%BD%8D%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-65I-TM-2025-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%94%B5%E4%BF%A1%E4%BA%BA%E5%91%98%E5%B2%97%E4%BD%8D%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用航空航行通告系列管理规定",
@@ -400,7 +400,7 @@ var data = [
     "doc_number": "AC-175-TM-2025-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规〔2025〕26 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-175-TM-2025-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E8%88%AA%E8%A1%8C%E9%80%9A%E5%91%8A%E7%B3%BB%E5%88%97%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-175-TM-2025-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E8%88%AA%E8%A1%8C%E9%80%9A%E5%91%8A%E7%B3%BB%E5%88%97%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "事件信息填报和处理规范",
@@ -412,7 +412,7 @@ var data = [
     "doc_number": "AC-396-03R2",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2025〕24 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-396-03R2%E4%BA%8B%E4%BB%B6%E4%BF%A1%E6%81%AF%E5%A1%AB%E6%8A%A5%E5%92%8C%E5%A4%84%E7%90%86%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-396-03R2%E4%BA%8B%E4%BB%B6%E4%BF%A1%E6%81%AF%E5%A1%AB%E6%8A%A5%E5%92%8C%E5%A4%84%E7%90%86%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "民航重大安全隐患判定标准 (2025 年修订版 )",
@@ -424,7 +424,7 @@ var data = [
     "doc_number": "",
     "office_unit": "航空安全办公室",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E9%87%8D%E5%A4%A7%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86%20%282025%20%E5%B9%B4%E4%BF%AE%E8%AE%A2%E7%89%88%20%29.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E9%87%8D%E5%A4%A7%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3%E5%88%A4%E5%AE%9A%E6%A0%87%E5%87%86%20%282025%20%E5%B9%B4%E4%BF%AE%E8%AE%A2%E7%89%88%20%29.pdf"
   },
   {
     "title": "正常类旋翼航空器审定",
@@ -436,7 +436,7 @@ var data = [
     "doc_number": "AC-27-AA-2025-01R1",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-27-AA-2025-01R1",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-27-AA-2025-01R1%E6%AD%A3%E5%B8%B8%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E5%AE%A1%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-27-AA-2025-01R1%E6%AD%A3%E5%B8%B8%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E5%AE%A1%E5%AE%9A.pdf"
   },
   {
     "title": "运输类旋翼航空器审定",
@@ -448,7 +448,7 @@ var data = [
     "doc_number": "AC-29-AA-2025-01R1",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-29-AA-2025-01R1",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-29-AA-2025-01R1%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E5%AE%A1%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-29-AA-2025-01R1%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E5%AE%A1%E5%AE%9A.pdf"
   },
   {
     "title": "空中游览市场管理暂行办法",
@@ -460,7 +460,7 @@ var data = [
     "doc_number": "",
     "office_unit": "运输司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E7%A9%BA%E4%B8%AD%E6%B8%B8%E8%A7%88%E5%B8%82%E5%9C%BA%E7%AE%A1%E7%90%86%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E7%A9%BA%E4%B8%AD%E6%B8%B8%E8%A7%88%E5%B8%82%E5%9C%BA%E7%AE%A1%E7%90%86%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "跳伞飞行服务市场管理暂行办法",
@@ -472,7 +472,7 @@ var data = [
     "doc_number": "",
     "office_unit": "运输司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E8%B7%B3%E4%BC%9E%E9%A3%9E%E8%A1%8C%E6%9C%8D%E5%8A%A1%E5%B8%82%E5%9C%BA%E7%AE%A1%E7%90%86%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E8%B7%B3%E4%BC%9E%E9%A3%9E%E8%A1%8C%E6%9C%8D%E5%8A%A1%E5%B8%82%E5%9C%BA%E7%AE%A1%E7%90%86%E6%9A%82%E8%A1%8C%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用机场航空燃油供应安全运营管理办法（试行）",
@@ -484,7 +484,7 @@ var data = [
     "doc_number": "AP-156-CA-2025-01",
     "office_unit": "机场司",
     "file_number": "民航规〔2025〕22 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-156-CA-2025-01%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E8%88%AA%E7%A9%BA%E7%87%83%E6%B2%B9%E4%BE%9B%E5%BA%94%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-156-CA-2025-01%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E8%88%AA%E7%A9%BA%E7%87%83%E6%B2%B9%E4%BE%9B%E5%BA%94%E5%AE%89%E5%85%A8%E8%BF%90%E8%90%A5%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "民用航空器维修人员执照实作培训实施规范",
@@ -496,7 +496,7 @@ var data = [
     "doc_number": "AC-147-FS-003",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕21 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-147-FS-003%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E4%BA%BA%E5%91%98%E6%89%A7%E7%85%A7%E5%AE%9E%E4%BD%9C%E5%9F%B9%E8%AE%AD%E5%AE%9E%E6%96%BD%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-147-FS-003%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E4%BA%BA%E5%91%98%E6%89%A7%E7%85%A7%E5%AE%9E%E4%BD%9C%E5%9F%B9%E8%AE%AD%E5%AE%9E%E6%96%BD%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "机载航空数据处理及相关数据库符合性指南",
@@ -508,7 +508,7 @@ var data = [
     "doc_number": "AC-21-AA-2025-43",
     "office_unit": "航空器适航审定司",
     "file_number": "民航适函〔2025〕94号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2025-43%E6%9C%BA%E8%BD%BD%E8%88%AA%E7%A9%BA%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%A6%E5%90%88%E6%80%A7%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2025-43%E6%9C%BA%E8%BD%BD%E8%88%AA%E7%A9%BA%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%A6%E5%90%88%E6%80%A7%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "目视进近程序图制作指南",
@@ -520,7 +520,7 @@ var data = [
     "doc_number": "IB-FS-OPC-007",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPC-007",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPC-007%E7%9B%AE%E8%A7%86%E8%BF%9B%E8%BF%91%E7%A8%8B%E5%BA%8F%E5%9B%BE%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPC-007%E7%9B%AE%E8%A7%86%E8%BF%9B%E8%BF%91%E7%A8%8B%E5%BA%8F%E5%9B%BE%E5%88%B6%E4%BD%9C%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "跑道状态灯灯光子系统技术要求",
@@ -532,7 +532,7 @@ var data = [
     "doc_number": "AC-137-CA-2025-02",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2025-02",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2025-02%E8%B7%91%E9%81%93%E7%8A%B6%E6%80%81%E7%81%AF%E7%81%AF%E5%85%89%E5%AD%90%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2025-02%E8%B7%91%E9%81%93%E7%8A%B6%E6%80%81%E7%81%AF%E7%81%AF%E5%85%89%E5%AD%90%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "关于修订《旅客登机梯检测规范》的通知",
@@ -544,7 +544,7 @@ var data = [
     "doc_number": "",
     "office_unit": "机场司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E5%85%B3%E4%BA%8E%E4%BF%AE%E8%AE%A2%E3%80%8A%E6%97%85%E5%AE%A2%E7%99%BB%E6%9C%BA%E6%A2%AF%E6%A3%80%E6%B5%8B%E8%A7%84%E8%8C%83%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E5%85%B3%E4%BA%8E%E4%BF%AE%E8%AE%A2%E3%80%8A%E6%97%85%E5%AE%A2%E7%99%BB%E6%9C%BA%E6%A2%AF%E6%A3%80%E6%B5%8B%E8%A7%84%E8%8C%83%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "降低运输机场飞行区运行风险设计指南",
@@ -556,7 +556,7 @@ var data = [
     "doc_number": "AC-158-CA-2025-03R1",
     "office_unit": "机场司",
     "file_number": "文号：AC-158-CA-2025-03R1",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-158-CA-2025-03R1%E9%99%8D%E4%BD%8E%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E5%8C%BA%E8%BF%90%E8%A1%8C%E9%A3%8E%E9%99%A9%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-158-CA-2025-03R1%E9%99%8D%E4%BD%8E%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E5%8C%BA%E8%BF%90%E8%A1%8C%E9%A3%8E%E9%99%A9%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民航使用空域管理业务培训管理规定",
@@ -568,7 +568,7 @@ var data = [
     "doc_number": "AP-71-TM-2025-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规〔2025〕18 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-71-TM-2025-01%E6%B0%91%E8%88%AA%E4%BD%BF%E7%94%A8%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86%E4%B8%9A%E5%8A%A1%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-71-TM-2025-01%E6%B0%91%E8%88%AA%E4%BD%BF%E7%94%A8%E7%A9%BA%E5%9F%9F%E7%AE%A1%E7%90%86%E4%B8%9A%E5%8A%A1%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用机场飞行区场地基础性维护技术规范",
@@ -580,7 +580,7 @@ var data = [
     "doc_number": "MH/T 5086-2025",
     "office_unit": "机场司",
     "file_number": "文号：MH/T 5086-2025",
-    "pdf_url": "https://ccar.hudawang.cn/normative/MH_T%205086-2025%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E5%8C%BA%E5%9C%BA%E5%9C%B0%E5%9F%BA%E7%A1%80%E6%80%A7%E7%BB%B4%E6%8A%A4%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/MH_T%205086-2025%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E5%8C%BA%E5%9C%BA%E5%9C%B0%E5%9F%BA%E7%A1%80%E6%80%A7%E7%BB%B4%E6%8A%A4%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "民用机场沥青混凝土道面维护技术规范",
@@ -592,7 +592,7 @@ var data = [
     "doc_number": "MH/T 5085-2025",
     "office_unit": "机场司",
     "file_number": "文号：MH/T 5085-2025",
-    "pdf_url": "https://ccar.hudawang.cn/normative/MH_T%205085-2025%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E6%B2%A5%E9%9D%92%E6%B7%B7%E5%87%9D%E5%9C%9F%E9%81%93%E9%9D%A2%E7%BB%B4%E6%8A%A4%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/MH_T%205085-2025%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E6%B2%A5%E9%9D%92%E6%B7%B7%E5%87%9D%E5%9C%9F%E9%81%93%E9%9D%A2%E7%BB%B4%E6%8A%A4%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "空中游览和体验带飞",
@@ -604,7 +604,7 @@ var data = [
     "doc_number": "AC-91-FS-033R3",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕17号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-033R3%E7%A9%BA%E4%B8%AD%E6%B8%B8%E8%A7%88%E5%92%8C%E4%BD%93%E9%AA%8C%E5%B8%A6%E9%A3%9E.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-033R3%E7%A9%BA%E4%B8%AD%E6%B8%B8%E8%A7%88%E5%92%8C%E4%BD%93%E9%AA%8C%E5%B8%A6%E9%A3%9E.pdf"
   },
   {
     "title": "正常类和通勤类飞艇的型号合格审定",
@@ -616,7 +616,7 @@ var data = [
     "doc_number": "AC-21-AA-2025-09R2",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2025-09R2",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2025-09R2%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%92%8C%E9%80%9A%E5%8B%A4%E7%B1%BB%E9%A3%9E%E8%89%87%E7%9A%84%E5%9E%8B%E5%8F%B7%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2025-09R2%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%92%8C%E9%80%9A%E5%8B%A4%E7%B1%BB%E9%A3%9E%E8%89%87%E7%9A%84%E5%9E%8B%E5%8F%B7%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A.pdf"
   },
   {
     "title": "运输类飞艇的型号合格审定",
@@ -628,7 +628,7 @@ var data = [
     "doc_number": "AC-21-AA-2025-42",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2025-42",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2025-42%E8%BF%90%E8%BE%93%E7%B1%BB%E9%A3%9E%E8%89%87%E7%9A%84%E5%9E%8B%E5%8F%B7%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2025-42%E8%BF%90%E8%BE%93%E7%B1%BB%E9%A3%9E%E8%89%87%E7%9A%84%E5%9E%8B%E5%8F%B7%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A.pdf"
   },
   {
     "title": "民航应急演练管理办法",
@@ -639,7 +639,7 @@ var data = [
     "publish_date": "2025年06月11日",
     "doc_number": "",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%BA%94%E6%80%A5%E6%BC%94%E7%BB%83%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%BA%94%E6%80%A5%E6%BC%94%E7%BB%83%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "锂电池机上应急处置指南",
@@ -651,7 +651,7 @@ var data = [
     "doc_number": "MD-TR-2025-01",
     "office_unit": "运输司",
     "file_number": "文号：MD-TR-2025-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/MD-TR-2025-01%E9%94%82%E7%94%B5%E6%B1%A0%E6%9C%BA%E4%B8%8A%E5%BA%94%E6%80%A5%E5%A4%84%E7%BD%AE%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/MD-TR-2025-01%E9%94%82%E7%94%B5%E6%B1%A0%E6%9C%BA%E4%B8%8A%E5%BA%94%E6%80%A5%E5%A4%84%E7%BD%AE%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民用航空安全信息主动报告管理办法",
@@ -663,7 +663,7 @@ var data = [
     "doc_number": "AC-396-10R1",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2025〕14 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-396-10R1%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E4%BF%A1%E6%81%AF%E4%B8%BB%E5%8A%A8%E6%8A%A5%E5%91%8A%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-396-10R1%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E4%BF%A1%E6%81%AF%E4%B8%BB%E5%8A%A8%E6%8A%A5%E5%91%8A%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "航空器维修基础知识和实作培训大纲",
@@ -675,7 +675,7 @@ var data = [
     "doc_number": "AC-66-FS-002R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕13号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-66-FS-002R2%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%92%8C%E5%AE%9E%E4%BD%9C%E5%9F%B9%E8%AE%AD%E5%A4%A7%E7%BA%B2.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-66-FS-002R2%E8%88%AA%E7%A9%BA%E5%99%A8%E7%BB%B4%E4%BF%AE%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E5%92%8C%E5%AE%9E%E4%BD%9C%E5%9F%B9%E8%AE%AD%E5%A4%A7%E7%BA%B2.pdf"
   },
   {
     "title": "民用无人驾驶航空器事件信息管理办法",
@@ -687,7 +687,7 @@ var data = [
     "doc_number": "AC-396-05",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2025〕15 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-396-05%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E4%BA%8B%E4%BB%B6%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-396-05%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E4%BA%8B%E4%BB%B6%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "涡轮发动机飞机旅客供氧要求",
@@ -699,7 +699,7 @@ var data = [
     "doc_number": "IB-FS-OPC-006",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPC-006",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPC-006%E6%B6%A1%E8%BD%AE%E5%8F%91%E5%8A%A8%E6%9C%BA%E9%A3%9E%E6%9C%BA%E6%97%85%E5%AE%A2%E4%BE%9B%E6%B0%A7%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPC-006%E6%B6%A1%E8%BD%AE%E5%8F%91%E5%8A%A8%E6%9C%BA%E9%A3%9E%E6%9C%BA%E6%97%85%E5%AE%A2%E4%BE%9B%E6%B0%A7%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "运输机场旅客航站区无障碍环境规划建设指南",
@@ -711,7 +711,7 @@ var data = [
     "doc_number": "AC-158-CA-2025-01",
     "office_unit": "机场司",
     "file_number": "文号：AC-158-CA-2025-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-158-CA-2025-01%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E6%97%85%E5%AE%A2%E8%88%AA%E7%AB%99%E5%8C%BA%E6%97%A0%E9%9A%9C%E7%A2%8D%E7%8E%AF%E5%A2%83%E8%A7%84%E5%88%92%E5%BB%BA%E8%AE%BE%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-158-CA-2025-01%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E6%97%85%E5%AE%A2%E8%88%AA%E7%AB%99%E5%8C%BA%E6%97%A0%E9%9A%9C%E7%A2%8D%E7%8E%AF%E5%A2%83%E8%A7%84%E5%88%92%E5%BB%BA%E8%AE%BE%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "全天候运行驾驶员训练指南",
@@ -723,7 +723,7 @@ var data = [
     "doc_number": "IB-FS-OPS-017",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPS-017",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPS-017%E5%85%A8%E5%A4%A9%E5%80%99%E8%BF%90%E8%A1%8C%E9%A9%BE%E9%A9%B6%E5%91%98%E8%AE%AD%E7%BB%83%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPS-017%E5%85%A8%E5%A4%A9%E5%80%99%E8%BF%90%E8%A1%8C%E9%A9%BE%E9%A9%B6%E5%91%98%E8%AE%AD%E7%BB%83%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "国内航线航空器蚊虫、鼠类等病媒生物防制指南",
@@ -735,7 +735,7 @@ var data = [
     "doc_number": "IB-FS-MED-009",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-MED-009",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MED-009%E5%9B%BD%E5%86%85%E8%88%AA%E7%BA%BF%E8%88%AA%E7%A9%BA%E5%99%A8%E8%9A%8A%E8%99%AB%E3%80%81%E9%BC%A0%E7%B1%BB%E7%AD%89%E7%97%85%E5%AA%92%E7%94%9F%E7%89%A9%E9%98%B2%E5%88%B6%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-MED-009%E5%9B%BD%E5%86%85%E8%88%AA%E7%BA%BF%E8%88%AA%E7%A9%BA%E5%99%A8%E8%9A%8A%E8%99%AB%E3%80%81%E9%BC%A0%E7%B1%BB%E7%AD%89%E7%97%85%E5%AA%92%E7%94%9F%E7%89%A9%E9%98%B2%E5%88%B6%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "基于性能导航（PBN）运行和批准指南",
@@ -747,7 +747,7 @@ var data = [
     "doc_number": "AC-91-FS-001R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕11 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-001R2%E5%9F%BA%E4%BA%8E%E6%80%A7%E8%83%BD%E5%AF%BC%E8%88%AA%EF%BC%88PBN%EF%BC%89%E8%BF%90%E8%A1%8C%E5%92%8C%E6%89%B9%E5%87%86%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-001R2%E5%9F%BA%E4%BA%8E%E6%80%A7%E8%83%BD%E5%AF%BC%E8%88%AA%EF%BC%88PBN%EF%BC%89%E8%BF%90%E8%A1%8C%E5%92%8C%E6%89%B9%E5%87%86%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "飞行学生心理健康工作管理办法",
@@ -759,7 +759,7 @@ var data = [
     "doc_number": "MD-141-FS-101",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕10 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/MD-141-FS-101%E9%A3%9E%E8%A1%8C%E5%AD%A6%E7%94%9F%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/MD-141-FS-101%E9%A3%9E%E8%A1%8C%E5%AD%A6%E7%94%9F%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E5%B7%A5%E4%BD%9C%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民航数据共享管理办法（试行）",
@@ -771,7 +771,7 @@ var data = [
     "doc_number": "",
     "office_unit": "发展计划司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E6%95%B0%E6%8D%AE%E5%85%B1%E4%BA%AB%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E6%95%B0%E6%8D%AE%E5%85%B1%E4%BA%AB%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "民航数据管理办法（试行）",
@@ -783,7 +783,7 @@ var data = [
     "doc_number": "",
     "office_unit": "发展计划司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "民用航空体检鉴定医学标准实施细则",
@@ -795,7 +795,7 @@ var data = [
     "doc_number": "AC-67FS-001R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕7 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-67FS-001R2%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BD%93%E6%A3%80%E9%89%B4%E5%AE%9A%E5%8C%BB%E5%AD%A6%E6%A0%87%E5%87%86%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-67FS-001R2%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BD%93%E6%A3%80%E9%89%B4%E5%AE%9A%E5%8C%BB%E5%AD%A6%E6%A0%87%E5%87%86%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
   },
   {
     "title": "农用无人驾驶航空器操控员培训管理规定（试行）",
@@ -807,7 +807,7 @@ var data = [
     "doc_number": "",
     "office_unit": "综合司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E5%86%9C%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E6%93%8D%E6%8E%A7%E5%91%98%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E5%86%9C%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E6%93%8D%E6%8E%A7%E5%91%98%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "训练模块提要样例",
@@ -819,7 +819,7 @@ var data = [
     "doc_number": "IB-FS-OPS-013",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPS-013",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPS-013%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9D%97%E6%8F%90%E8%A6%81%E6%A0%B7%E4%BE%8B.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPS-013%E8%AE%AD%E7%BB%83%E6%A8%A1%E5%9D%97%E6%8F%90%E8%A6%81%E6%A0%B7%E4%BE%8B.pdf"
   },
   {
     "title": "运输航空驾驶员训练大纲制定和实施管理规定",
@@ -831,7 +831,7 @@ var data = [
     "doc_number": "AC-121-FS-139",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕5 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-139%E8%BF%90%E8%BE%93%E8%88%AA%E7%A9%BA%E9%A9%BE%E9%A9%B6%E5%91%98%E8%AE%AD%E7%BB%83%E5%A4%A7%E7%BA%B2%E5%88%B6%E5%AE%9A%E5%92%8C%E5%AE%9E%E6%96%BD%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-121-FS-139%E8%BF%90%E8%BE%93%E8%88%AA%E7%A9%BA%E9%A9%BE%E9%A9%B6%E5%91%98%E8%AE%AD%E7%BB%83%E5%A4%A7%E7%BA%B2%E5%88%B6%E5%AE%9A%E5%92%8C%E5%AE%9E%E6%96%BD%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "公共航空危险品运输培训管理办法",
@@ -843,7 +843,7 @@ var data = [
     "doc_number": "AC-276R2-TR-2025-01",
     "office_unit": "运输司",
     "file_number": "民航规〔2025〕6 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-276R2-TR-2025-01%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-276R2-TR-2025-01%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "绿色QAR实施方法指南",
@@ -855,7 +855,7 @@ var data = [
     "doc_number": "IB-FS-OPS-015",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPS-015",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPS-015%E7%BB%BF%E8%89%B2QAR%E5%AE%9E%E6%96%BD%E6%96%B9%E6%B3%95%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPS-015%E7%BB%BF%E8%89%B2QAR%E5%AE%9E%E6%96%BD%E6%96%B9%E6%B3%95%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "航空器运行-航空器操作程序",
@@ -867,7 +867,7 @@ var data = [
     "doc_number": "AC-91-FS-041",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕4 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-041%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C-%E8%88%AA%E7%A9%BA%E5%99%A8%E6%93%8D%E4%BD%9C%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-041%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C-%E8%88%AA%E7%A9%BA%E5%99%A8%E6%93%8D%E4%BD%9C%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "无管制机场飞行运行规则",
@@ -879,7 +879,7 @@ var data = [
     "doc_number": "AP-91-FS-2025-02R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕3 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-91-FS-2025-02R1%E6%97%A0%E7%AE%A1%E5%88%B6%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E8%BF%90%E8%A1%8C%E8%A7%84%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-91-FS-2025-02R1%E6%97%A0%E7%AE%A1%E5%88%B6%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E8%BF%90%E8%A1%8C%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "合格的航材",
@@ -891,7 +891,7 @@ var data = [
     "doc_number": "AC-120-FS-058R5",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2025〕1 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-120-FS-058R5%E5%90%88%E6%A0%BC%E7%9A%84%E8%88%AA%E6%9D%90.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-120-FS-058R5%E5%90%88%E6%A0%BC%E7%9A%84%E8%88%AA%E6%9D%90.pdf"
   },
   {
     "title": "航材分销商评估",
@@ -903,7 +903,7 @@ var data = [
     "doc_number": "IB-FS-MAT-001R2",
     "office_unit": "飞行标准司",
     "file_number": "民航飞函〔2024〕52 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MAT-001R2%E8%88%AA%E6%9D%90%E5%88%86%E9%94%80%E5%95%86%E8%AF%84%E4%BC%B0.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-MAT-001R2%E8%88%AA%E6%9D%90%E5%88%86%E9%94%80%E5%95%86%E8%AF%84%E4%BC%B0.pdf"
   },
   {
     "title": "运输机场残损航空器搬移管理办法",
@@ -915,7 +915,7 @@ var data = [
     "doc_number": "AP-139-II-CA-2024-05",
     "office_unit": "机场司",
     "file_number": "民航规〔2024〕75 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-139-II-CA-2024-05%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E6%AE%8B%E6%8D%9F%E8%88%AA%E7%A9%BA%E5%99%A8%E6%90%AC%E7%A7%BB%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-139-II-CA-2024-05%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E6%AE%8B%E6%8D%9F%E8%88%AA%E7%A9%BA%E5%99%A8%E6%90%AC%E7%A7%BB%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "飞行标准管理手册(FSMH) 第五卷-航空器评审手册",
@@ -927,7 +927,7 @@ var data = [
     "doc_number": "",
     "office_unit": "飞行标准司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%AE%A1%E7%90%86%E6%89%8B%E5%86%8C%28FSMH%29%20%E7%AC%AC%E4%BA%94%E5%8D%B7-%E8%88%AA%E7%A9%BA%E5%99%A8%E8%AF%84%E5%AE%A1%E6%89%8B%E5%86%8C.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%AE%A1%E7%90%86%E6%89%8B%E5%86%8C%28FSMH%29%20%E7%AC%AC%E4%BA%94%E5%8D%B7-%E8%88%AA%E7%A9%BA%E5%99%A8%E8%AF%84%E5%AE%A1%E6%89%8B%E5%86%8C.pdf"
   },
   {
     "title": "威胁与差错管理（TEM）模型应用指南",
@@ -939,7 +939,7 @@ var data = [
     "doc_number": "IB-FS-OPS-014",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPS-014",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPS-014%E5%A8%81%E8%83%81%E4%B8%8E%E5%B7%AE%E9%94%99%E7%AE%A1%E7%90%86%EF%BC%88TEM%EF%BC%89%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPS-014%E5%A8%81%E8%83%81%E4%B8%8E%E5%B7%AE%E9%94%99%E7%AE%A1%E7%90%86%EF%BC%88TEM%EF%BC%89%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "中国民航循证训练（EBT）数据报告",
@@ -951,7 +951,7 @@ var data = [
     "doc_number": "IB-FS-OPS-012",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPS-012",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPS-012%E4%B8%AD%E5%9B%BD%E6%B0%91%E8%88%AA%E5%BE%AA%E8%AF%81%E8%AE%AD%E7%BB%83%EF%BC%88EBT%EF%BC%89%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%91%8A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPS-012%E4%B8%AD%E5%9B%BD%E6%B0%91%E8%88%AA%E5%BE%AA%E8%AF%81%E8%AE%AD%E7%BB%83%EF%BC%88EBT%EF%BC%89%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%91%8A.pdf"
   },
   {
     "title": "航空器运行-飞行程序",
@@ -963,7 +963,7 @@ var data = [
     "doc_number": "AC-91-FS-027R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕72 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-027R1%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C-%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-027R1%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C-%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "飞行数据分析方案实施与管理要求",
@@ -975,7 +975,7 @@ var data = [
     "doc_number": "AC-121-FS-45R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕74 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-45R2%E9%A3%9E%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%96%B9%E6%A1%88%E5%AE%9E%E6%96%BD%E4%B8%8E%E7%AE%A1%E7%90%86%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-121-FS-45R2%E9%A3%9E%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E6%96%B9%E6%A1%88%E5%AE%9E%E6%96%BD%E4%B8%8E%E7%AE%A1%E7%90%86%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "航空器存储管理规范",
@@ -987,7 +987,7 @@ var data = [
     "doc_number": "MD-MAT-FS-008",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕73 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/MD-MAT-FS-008%E8%88%AA%E7%A9%BA%E5%99%A8%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/MD-MAT-FS-008%E8%88%AA%E7%A9%BA%E5%99%A8%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "直升机医疗救护运行",
@@ -999,7 +999,7 @@ var data = [
     "doc_number": "AC-135-FS-015",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕71 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-135-FS-015%E7%9B%B4%E5%8D%87%E6%9C%BA%E5%8C%BB%E7%96%97%E6%95%91%E6%8A%A4%E8%BF%90%E8%A1%8C.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-135-FS-015%E7%9B%B4%E5%8D%87%E6%9C%BA%E5%8C%BB%E7%96%97%E6%95%91%E6%8A%A4%E8%BF%90%E8%A1%8C.pdf"
   },
   {
     "title": "空管防跑道侵入技术应用指导意见",
@@ -1011,7 +1011,7 @@ var data = [
     "doc_number": "",
     "office_unit": "空管行业管理办公室",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E7%A9%BA%E7%AE%A1%E9%98%B2%E8%B7%91%E9%81%93%E4%BE%B5%E5%85%A5%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8%E6%8C%87%E5%AF%BC%E6%84%8F%E8%A7%81.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E7%A9%BA%E7%AE%A1%E9%98%B2%E8%B7%91%E9%81%93%E4%BE%B5%E5%85%A5%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8%E6%8C%87%E5%AF%BC%E6%84%8F%E8%A7%81.pdf"
   },
   {
     "title": "公共航空危险品运输批准和豁免管理程序",
@@ -1023,7 +1023,7 @@ var data = [
     "doc_number": "AP-276R2-TR-2024-03",
     "office_unit": "运输司",
     "file_number": "民航规〔2024〕58 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-276R2-TR-2024-03%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E6%89%B9%E5%87%86%E5%92%8C%E8%B1%81%E5%85%8D%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-276R2-TR-2024-03%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E6%89%B9%E5%87%86%E5%92%8C%E8%B1%81%E5%85%8D%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "公共航空危险品运输事件判定和报告管理办法",
@@ -1035,7 +1035,7 @@ var data = [
     "doc_number": "AC-276R2-TR-2024-01",
     "office_unit": "运输司",
     "file_number": "民航规〔2024〕55 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-276R2-TR-2024-01%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E4%BA%8B%E4%BB%B6%E5%88%A4%E5%AE%9A%E5%92%8C%E6%8A%A5%E5%91%8A%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-276R2-TR-2024-01%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E4%BA%8B%E4%BB%B6%E5%88%A4%E5%AE%9A%E5%92%8C%E6%8A%A5%E5%91%8A%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "内地至香港、澳门航线航班管理办法",
@@ -1047,7 +1047,7 @@ var data = [
     "doc_number": "",
     "office_unit": "运输司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E5%86%85%E5%9C%B0%E8%87%B3%E9%A6%99%E6%B8%AF%E3%80%81%E6%BE%B3%E9%97%A8%E8%88%AA%E7%BA%BF%E8%88%AA%E7%8F%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E5%86%85%E5%9C%B0%E8%87%B3%E9%A6%99%E6%B8%AF%E3%80%81%E6%BE%B3%E9%97%A8%E8%88%AA%E7%BA%BF%E8%88%AA%E7%8F%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "旅客行李处理系统 （系统集成）检测规范",
@@ -1059,7 +1059,7 @@ var data = [
     "doc_number": "AC-137-CA-2024-06",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2024-06",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2024-06%E6%97%85%E5%AE%A2%E8%A1%8C%E6%9D%8E%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F%20%EF%BC%88%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%EF%BC%89%E6%A3%80%E6%B5%8B%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2024-06%E6%97%85%E5%AE%A2%E8%A1%8C%E6%9D%8E%E5%A4%84%E7%90%86%E7%B3%BB%E7%BB%9F%20%EF%BC%88%E7%B3%BB%E7%BB%9F%E9%9B%86%E6%88%90%EF%BC%89%E6%A3%80%E6%B5%8B%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "航空器地面服务设备勤务接头安全联锁技术要求和检测规范",
@@ -1071,7 +1071,7 @@ var data = [
     "doc_number": "AC-137-CA-2024-07",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2024-07",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2024-07%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9C%B0%E9%9D%A2%E6%9C%8D%E5%8A%A1%E8%AE%BE%E5%A4%87%E5%8B%A4%E5%8A%A1%E6%8E%A5%E5%A4%B4%E5%AE%89%E5%85%A8%E8%81%94%E9%94%81%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82%E5%92%8C%E6%A3%80%E6%B5%8B%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2024-07%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9C%B0%E9%9D%A2%E6%9C%8D%E5%8A%A1%E8%AE%BE%E5%A4%87%E5%8B%A4%E5%8A%A1%E6%8E%A5%E5%A4%B4%E5%AE%89%E5%85%A8%E8%81%94%E9%94%81%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82%E5%92%8C%E6%A3%80%E6%B5%8B%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "民用机场助航灯光监控系统技术要求",
@@ -1083,7 +1083,7 @@ var data = [
     "doc_number": "AC-137-CA-2024-05R2",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2024-05R2",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2024-05R2%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%8A%A9%E8%88%AA%E7%81%AF%E5%85%89%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2024-05R2%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%8A%A9%E8%88%AA%E7%81%AF%E5%85%89%E7%9B%91%E6%8E%A7%E7%B3%BB%E7%BB%9F%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "公共航空危险品运输数据报送管理办法",
@@ -1095,7 +1095,7 @@ var data = [
     "doc_number": "AC-276R2-TR-2024-02",
     "office_unit": "运输司",
     "file_number": "民航规〔2024〕68 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-276R2-TR-2024-02%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E6%95%B0%E6%8D%AE%E6%8A%A5%E9%80%81%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-276R2-TR-2024-02%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E6%95%B0%E6%8D%AE%E6%8A%A5%E9%80%81%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "航空器主最低设备清单的制订和批准",
@@ -1107,7 +1107,7 @@ var data = [
     "doc_number": "AC-91-FS-037R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕70 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-037R1%E8%88%AA%E7%A9%BA%E5%99%A8%E4%B8%BB%E6%9C%80%E4%BD%8E%E8%AE%BE%E5%A4%87%E6%B8%85%E5%8D%95%E7%9A%84%E5%88%B6%E8%AE%A2%E5%92%8C%E6%89%B9%E5%87%86.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-037R1%E8%88%AA%E7%A9%BA%E5%99%A8%E4%B8%BB%E6%9C%80%E4%BD%8E%E8%AE%BE%E5%A4%87%E6%B8%85%E5%8D%95%E7%9A%84%E5%88%B6%E8%AE%A2%E5%92%8C%E6%89%B9%E5%87%86.pdf"
   },
   {
     "title": "连续下降最后进近（CDFA）",
@@ -1119,7 +1119,7 @@ var data = [
     "doc_number": "AC-135-FS-016",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕69 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E5%BA%9F%E6%AD%A2%21AC-135-FS-016%E8%BF%9E%E7%BB%AD%E4%B8%8B%E9%99%8D%E6%9C%80%E5%90%8E%E8%BF%9B%E8%BF%91%EF%BC%88CDFA%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E5%BA%9F%E6%AD%A2%21AC-135-FS-016%E8%BF%9E%E7%BB%AD%E4%B8%8B%E9%99%8D%E6%9C%80%E5%90%8E%E8%BF%9B%E8%BF%91%EF%BC%88CDFA%EF%BC%89.pdf"
   },
   {
     "title": "客舱运行管理",
@@ -1131,7 +1131,7 @@ var data = [
     "doc_number": "AC-121-FS-131R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕60 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-131R1%E5%AE%A2%E8%88%B1%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-121-FS-131R1%E5%AE%A2%E8%88%B1%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86.pdf"
   },
   {
     "title": "民用航空安全自愿报告管理办法",
@@ -1143,7 +1143,7 @@ var data = [
     "doc_number": "AC-396-02",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2024〕59 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-396-02%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E8%87%AA%E6%84%BF%E6%8A%A5%E5%91%8A%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-396-02%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E8%87%AA%E6%84%BF%E6%8A%A5%E5%91%8A%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "航空器的运行文件",
@@ -1155,7 +1155,7 @@ var data = [
     "doc_number": "AC-91-FS-024R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕65 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-024R2%E8%88%AA%E7%A9%BA%E5%99%A8%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%87%E4%BB%B6.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-024R2%E8%88%AA%E7%A9%BA%E5%99%A8%E7%9A%84%E8%BF%90%E8%A1%8C%E6%96%87%E4%BB%B6.pdf"
   },
   {
     "title": "维修人员机型资格规范评审及评审结论的应用",
@@ -1167,7 +1167,7 @@ var data = [
     "doc_number": "AC-66-FS-008-R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕63 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-66-FS-008-R1%E7%BB%B4%E4%BF%AE%E4%BA%BA%E5%91%98%E6%9C%BA%E5%9E%8B%E8%B5%84%E6%A0%BC%E8%A7%84%E8%8C%83%E8%AF%84%E5%AE%A1%E5%8F%8A%E8%AF%84%E5%AE%A1%E7%BB%93%E8%AE%BA%E7%9A%84%E5%BA%94%E7%94%A8.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-66-FS-008-R1%E7%BB%B4%E4%BF%AE%E4%BA%BA%E5%91%98%E6%9C%BA%E5%9E%8B%E8%B5%84%E6%A0%BC%E8%A7%84%E8%8C%83%E8%AF%84%E5%AE%A1%E5%8F%8A%E8%AF%84%E5%AE%A1%E7%BB%93%E8%AE%BA%E7%9A%84%E5%BA%94%E7%94%A8.pdf"
   },
   {
     "title": "航空器计划维修要求的编制",
@@ -1179,7 +1179,7 @@ var data = [
     "doc_number": "AC-91-FS-026R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕61 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-026R2%E8%88%AA%E7%A9%BA%E5%99%A8%E8%AE%A1%E5%88%92%E7%BB%B4%E4%BF%AE%E8%A6%81%E6%B1%82%E7%9A%84%E7%BC%96%E5%88%B6.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-026R2%E8%88%AA%E7%A9%BA%E5%99%A8%E8%AE%A1%E5%88%92%E7%BB%B4%E4%BF%AE%E8%A6%81%E6%B1%82%E7%9A%84%E7%BC%96%E5%88%B6.pdf"
   },
   {
     "title": "驾驶员机型资格规范评审及评审结论的应用",
@@ -1191,7 +1191,7 @@ var data = [
     "doc_number": "AC-61-FS-023R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕64 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-61-FS-023R1%E9%A9%BE%E9%A9%B6%E5%91%98%E6%9C%BA%E5%9E%8B%E8%B5%84%E6%A0%BC%E8%A7%84%E8%8C%83%E8%AF%84%E5%AE%A1%E5%8F%8A%E8%AF%84%E5%AE%A1%E7%BB%93%E8%AE%BA%E7%9A%84%E5%BA%94%E7%94%A8.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-61-FS-023R1%E9%A9%BE%E9%A9%B6%E5%91%98%E6%9C%BA%E5%9E%8B%E8%B5%84%E6%A0%BC%E8%A7%84%E8%8C%83%E8%AF%84%E5%AE%A1%E5%8F%8A%E8%AF%84%E5%AE%A1%E7%BB%93%E8%AE%BA%E7%9A%84%E5%BA%94%E7%94%A8.pdf"
   },
   {
     "title": "航空器的持续适航文件",
@@ -1203,7 +1203,7 @@ var data = [
     "doc_number": "AC-91-FS-011R3",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕62 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-011R3%E8%88%AA%E7%A9%BA%E5%99%A8%E7%9A%84%E6%8C%81%E7%BB%AD%E9%80%82%E8%88%AA%E6%96%87%E4%BB%B6.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-011R3%E8%88%AA%E7%A9%BA%E5%99%A8%E7%9A%84%E6%8C%81%E7%BB%AD%E9%80%82%E8%88%AA%E6%96%87%E4%BB%B6.pdf"
   },
   {
     "title": "国产航空器的运行符合性评审",
@@ -1215,7 +1215,7 @@ var data = [
     "doc_number": "AC-91-QS-010R3",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕56 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-QS-010R3%E5%9B%BD%E4%BA%A7%E8%88%AA%E7%A9%BA%E5%99%A8%E7%9A%84%E8%BF%90%E8%A1%8C%E7%AC%A6%E5%90%88%E6%80%A7%E8%AF%84%E5%AE%A1.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-QS-010R3%E5%9B%BD%E4%BA%A7%E8%88%AA%E7%A9%BA%E5%99%A8%E7%9A%84%E8%BF%90%E8%A1%8C%E7%AC%A6%E5%90%88%E6%80%A7%E8%AF%84%E5%AE%A1.pdf"
   },
   {
     "title": "进口航空器的运行符合性评审",
@@ -1227,7 +1227,7 @@ var data = [
     "doc_number": "AC-91-FS-013R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕57 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-013R2%E8%BF%9B%E5%8F%A3%E8%88%AA%E7%A9%BA%E5%99%A8%E7%9A%84%E8%BF%90%E8%A1%8C%E7%AC%A6%E5%90%88%E6%80%A7%E8%AF%84%E5%AE%A1.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-013R2%E8%BF%9B%E5%8F%A3%E8%88%AA%E7%A9%BA%E5%99%A8%E7%9A%84%E8%BF%90%E8%A1%8C%E7%AC%A6%E5%90%88%E6%80%A7%E8%AF%84%E5%AE%A1.pdf"
   },
   {
     "title": "飞机国际通用航空运行",
@@ -1239,7 +1239,7 @@ var data = [
     "doc_number": "AC-91-FS-40",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕54 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-40%E9%A3%9E%E6%9C%BA%E5%9B%BD%E9%99%85%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E8%BF%90%E8%A1%8C.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-40%E9%A3%9E%E6%9C%BA%E5%9B%BD%E9%99%85%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E8%BF%90%E8%A1%8C.pdf"
   },
   {
     "title": "直升机国际运行",
@@ -1251,7 +1251,7 @@ var data = [
     "doc_number": "AC-91-FS-2024-39",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕53 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-91-FS-2024-39%E7%9B%B4%E5%8D%87%E6%9C%BA%E5%9B%BD%E9%99%85%E8%BF%90%E8%A1%8C.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-91-FS-2024-39%E7%9B%B4%E5%8D%87%E6%9C%BA%E5%9B%BD%E9%99%85%E8%BF%90%E8%A1%8C.pdf"
   },
   {
     "title": "运输机场专业工程施工组织设计编制指南",
@@ -1263,7 +1263,7 @@ var data = [
     "doc_number": "IB-CA-2024-01",
     "office_unit": "机场司",
     "file_number": "文号：IB-CA-2024-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-CA-2024-01%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E7%BB%84%E7%BB%87%E8%AE%BE%E8%AE%A1%E7%BC%96%E5%88%B6%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-CA-2024-01%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E7%BB%84%E7%BB%87%E8%AE%BE%E8%AE%A1%E7%BC%96%E5%88%B6%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民用航空通信监视设备开放与运行管理规定",
@@ -1275,7 +1275,7 @@ var data = [
     "doc_number": "AP-115-TM-2024-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规〔2024〕52 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-115-TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E9%80%9A%E4%BF%A1%E7%9B%91%E8%A7%86%E8%AE%BE%E5%A4%87%E5%BC%80%E6%94%BE%E4%B8%8E%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-115-TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E9%80%9A%E4%BF%A1%E7%9B%91%E8%A7%86%E8%AE%BE%E5%A4%87%E5%BC%80%E6%94%BE%E4%B8%8E%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "飞行签派员和飞行员联合训练指南",
@@ -1287,7 +1287,7 @@ var data = [
     "doc_number": "IB-FS-OPC-005",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPC-005",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPC-005%E9%A3%9E%E8%A1%8C%E7%AD%BE%E6%B4%BE%E5%91%98%E5%92%8C%E9%A3%9E%E8%A1%8C%E5%91%98%E8%81%94%E5%90%88%E8%AE%AD%E7%BB%83%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPC-005%E9%A3%9E%E8%A1%8C%E7%AD%BE%E6%B4%BE%E5%91%98%E5%92%8C%E9%A3%9E%E8%A1%8C%E5%91%98%E8%81%94%E5%90%88%E8%AE%AD%E7%BB%83%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "地面结冰条件下的运行",
@@ -1299,7 +1299,7 @@ var data = [
     "doc_number": "AC-121-50R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规 〔2024〕51 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-50R2%E5%9C%B0%E9%9D%A2%E7%BB%93%E5%86%B0%E6%9D%A1%E4%BB%B6%E4%B8%8B%E7%9A%84%E8%BF%90%E8%A1%8C.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-121-50R2%E5%9C%B0%E9%9D%A2%E7%BB%93%E5%86%B0%E6%9D%A1%E4%BB%B6%E4%B8%8B%E7%9A%84%E8%BF%90%E8%A1%8C.pdf"
   },
   {
     "title": "飞行品质监控信息管理办法",
@@ -1311,7 +1311,7 @@ var data = [
     "doc_number": "AC-396-09R1",
     "office_unit": "航空安全办公室",
     "file_number": "文号：AC-396-09R1",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-396-09R1%E9%A3%9E%E8%A1%8C%E5%93%81%E8%B4%A8%E7%9B%91%E6%8E%A7%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-396-09R1%E9%A3%9E%E8%A1%8C%E5%93%81%E8%B4%A8%E7%9B%91%E6%8E%A7%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "机场地图数据集(AMDB)制作及发布规范",
@@ -1323,7 +1323,7 @@ var data = [
     "doc_number": "AC-175-TM-2024-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AC-175-TM-2024-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-175-TM-2024-01%E6%9C%BA%E5%9C%BA%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE%E9%9B%86%28AMDB%29%E5%88%B6%E4%BD%9C%E5%8F%8A%E5%8F%91%E5%B8%83%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-175-TM-2024-01%E6%9C%BA%E5%9C%BA%E5%9C%B0%E5%9B%BE%E6%95%B0%E6%8D%AE%E9%9B%86%28AMDB%29%E5%88%B6%E4%BD%9C%E5%8F%8A%E5%8F%91%E5%B8%83%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "飞行签派实践应用虚拟案例汇编",
@@ -1335,7 +1335,7 @@ var data = [
     "doc_number": "IB-FS-OPC-003R1",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPC-003R1",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPC-003R1%E9%A3%9E%E8%A1%8C%E7%AD%BE%E6%B4%BE%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E8%99%9A%E6%8B%9F%E6%A1%88%E4%BE%8B%E6%B1%87%E7%BC%96.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPC-003R1%E9%A3%9E%E8%A1%8C%E7%AD%BE%E6%B4%BE%E5%AE%9E%E8%B7%B5%E5%BA%94%E7%94%A8%E8%99%9A%E6%8B%9F%E6%A1%88%E4%BE%8B%E6%B1%87%E7%BC%96.pdf"
   },
   {
     "title": "飞行签派员航空理论知识点汇编",
@@ -1347,7 +1347,7 @@ var data = [
     "doc_number": "IB-FS-OPC-002R1",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPC-002R1",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPC-002R1%E9%A3%9E%E8%A1%8C%E7%AD%BE%E6%B4%BE%E5%91%98%E8%88%AA%E7%A9%BA%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E7%BC%96.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPC-002R1%E9%A3%9E%E8%A1%8C%E7%AD%BE%E6%B4%BE%E5%91%98%E8%88%AA%E7%A9%BA%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E7%BC%96.pdf"
   },
   {
     "title": "飞行员心理健康促进工作指南",
@@ -1359,7 +1359,7 @@ var data = [
     "doc_number": "MD-121-FS-101-R1",
     "office_unit": "飞行标准司",
     "file_number": "文号：MD-121-FS-101-R1",
-    "pdf_url": "https://ccar.hudawang.cn/normative/MD-121-FS-101-R1%E9%A3%9E%E8%A1%8C%E5%91%98%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E4%BF%83%E8%BF%9B%E5%B7%A5%E4%BD%9C%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/MD-121-FS-101-R1%E9%A3%9E%E8%A1%8C%E5%91%98%E5%BF%83%E7%90%86%E5%81%A5%E5%BA%B7%E4%BF%83%E8%BF%9B%E5%B7%A5%E4%BD%9C%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "平行仪表跑道EoR运行规程（暂行）",
@@ -1371,7 +1371,7 @@ var data = [
     "doc_number": "AP-93-TM-2024-02",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规〔2024〕47 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-93-TM-2024-02%E5%B9%B3%E8%A1%8C%E4%BB%AA%E8%A1%A8%E8%B7%91%E9%81%93EoR%E8%BF%90%E8%A1%8C%E8%A7%84%E7%A8%8B%EF%BC%88%E6%9A%82%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-93-TM-2024-02%E5%B9%B3%E8%A1%8C%E4%BB%AA%E8%A1%A8%E8%B7%91%E9%81%93EoR%E8%BF%90%E8%A1%8C%E8%A7%84%E7%A8%8B%EF%BC%88%E6%9A%82%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "电动式航空器地面服务设备通用技术要求",
@@ -1383,7 +1383,7 @@ var data = [
     "doc_number": "AC-137-CA-2024-04R3",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2024-04R3",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2024-04R3%E7%94%B5%E5%8A%A8%E5%BC%8F%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9C%B0%E9%9D%A2%E6%9C%8D%E5%8A%A1%E8%AE%BE%E5%A4%87%E9%80%9A%E7%94%A8%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2024-04R3%E7%94%B5%E5%8A%A8%E5%BC%8F%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9C%B0%E9%9D%A2%E6%9C%8D%E5%8A%A1%E8%AE%BE%E5%A4%87%E9%80%9A%E7%94%A8%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "大型飞机公共航空运输航空卫生工作要求",
@@ -1395,7 +1395,7 @@ var data = [
     "doc_number": "AC-121-FS-101R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕46 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-101R2%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E8%88%AA%E7%A9%BA%E5%8D%AB%E7%94%9F%E5%B7%A5%E4%BD%9C%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-121-FS-101R2%E5%A4%A7%E5%9E%8B%E9%A3%9E%E6%9C%BA%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E8%88%AA%E7%A9%BA%E5%8D%AB%E7%94%9F%E5%B7%A5%E4%BD%9C%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "循证训练（EBT）相关人员培训规范",
@@ -1407,7 +1407,7 @@ var data = [
     "doc_number": "IB-FS-OPS-011",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPS-011",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPS-011%E5%BE%AA%E8%AF%81%E8%AE%AD%E7%BB%83%EF%BC%88EBT%EF%BC%89%E7%9B%B8%E5%85%B3%E4%BA%BA%E5%91%98%E5%9F%B9%E8%AE%AD%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPS-011%E5%BE%AA%E8%AF%81%E8%AE%AD%E7%BB%83%EF%BC%88EBT%EF%BC%89%E7%9B%B8%E5%85%B3%E4%BA%BA%E5%91%98%E5%9F%B9%E8%AE%AD%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "民用机场专用设备检验办法",
@@ -1419,7 +1419,7 @@ var data = [
     "doc_number": "AC-137-CA-2024-03",
     "office_unit": "机场司",
     "file_number": "民航规〔2024〕45 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2024-03%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%B8%93%E7%94%A8%E8%AE%BE%E5%A4%87%E6%A3%80%E9%AA%8C%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2024-03%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%B8%93%E7%94%A8%E8%AE%BE%E5%A4%87%E6%A3%80%E9%AA%8C%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "电推进系统专用条件编制指南",
@@ -1431,7 +1431,7 @@ var data = [
     "doc_number": "AC-21-AA-2024-20",
     "office_unit": "航空器适航审定司",
     "file_number": "民航适函〔2024〕56 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2024-20%E7%94%B5%E6%8E%A8%E8%BF%9B%E7%B3%BB%E7%BB%9F%E4%B8%93%E7%94%A8%E6%9D%A1%E4%BB%B6%E7%BC%96%E5%88%B6%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2024-20%E7%94%B5%E6%8E%A8%E8%BF%9B%E7%B3%BB%E7%BB%9F%E4%B8%93%E7%94%A8%E6%9D%A1%E4%BB%B6%E7%BC%96%E5%88%B6%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民用机场专用设备检验机构认定和管理办法",
@@ -1443,7 +1443,7 @@ var data = [
     "doc_number": "AC-137-CA-2024-02",
     "office_unit": "机场司",
     "file_number": "民航规〔2024〕44 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2024-02%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%B8%93%E7%94%A8%E8%AE%BE%E5%A4%87%E6%A3%80%E9%AA%8C%E6%9C%BA%E6%9E%84%E8%AE%A4%E5%AE%9A%E5%92%8C%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2024-02%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%B8%93%E7%94%A8%E8%AE%BE%E5%A4%87%E6%A3%80%E9%AA%8C%E6%9C%BA%E6%9E%84%E8%AE%A4%E5%AE%9A%E5%92%8C%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "公共航空危险品运输地面服务代理人备案管理办法",
@@ -1455,7 +1455,7 @@ var data = [
     "doc_number": "AP-276R2-TR-2024-02",
     "office_unit": "运输司",
     "file_number": "民航规〔2024〕43 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-276R2-TR-2024-02%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E5%9C%B0%E9%9D%A2%E6%9C%8D%E5%8A%A1%E4%BB%A3%E7%90%86%E4%BA%BA%E5%A4%87%E6%A1%88%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-276R2-TR-2024-02%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%BF%90%E8%BE%93%E5%9C%B0%E9%9D%A2%E6%9C%8D%E5%8A%A1%E4%BB%A3%E7%90%86%E4%BA%BA%E5%A4%87%E6%A1%88%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用航空体检鉴定医学标准实施细则",
@@ -1467,7 +1467,7 @@ var data = [
     "doc_number": "AC-67-FS-001R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕42 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E5%BA%9F%E6%AD%A2%21AC-67-FS-001R1%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BD%93%E6%A3%80%E9%89%B4%E5%AE%9A%E5%8C%BB%E5%AD%A6%E6%A0%87%E5%87%86%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E5%BA%9F%E6%AD%A2%21AC-67-FS-001R1%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BD%93%E6%A3%80%E9%89%B4%E5%AE%9A%E5%8C%BB%E5%AD%A6%E6%A0%87%E5%87%86%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
   },
   {
     "title": "民用航空招收飞行学生体检鉴定管理办法",
@@ -1479,7 +1479,7 @@ var data = [
     "doc_number": "",
     "office_unit": "飞行标准司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%8B%9B%E6%94%B6%E9%A3%9E%E8%A1%8C%E5%AD%A6%E7%94%9F%E4%BD%93%E6%A3%80%E9%89%B4%E5%AE%9A%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%8B%9B%E6%94%B6%E9%A3%9E%E8%A1%8C%E5%AD%A6%E7%94%9F%E4%BD%93%E6%A3%80%E9%89%B4%E5%AE%9A%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "中型民用无人驾驶航空器系统适航标准及符合性指导材料（试行）",
@@ -1491,7 +1491,7 @@ var data = [
     "doc_number": "AC-92-AA-2024-02",
     "office_unit": "航空器适航审定司",
     "file_number": "民航适函〔2024〕52号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-92-AA-2024-02%E4%B8%AD%E5%9E%8B%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86%E5%8F%8A%E7%AC%A6%E5%90%88%E6%80%A7%E6%8C%87%E5%AF%BC%E6%9D%90%E6%96%99%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-92-AA-2024-02%E4%B8%AD%E5%9E%8B%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86%E5%8F%8A%E7%AC%A6%E5%90%88%E6%80%A7%E6%8C%87%E5%AF%BC%E6%9D%90%E6%96%99%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "公共航空运输承运人危险品航空运输许可管理程序",
@@ -1503,7 +1503,7 @@ var data = [
     "doc_number": "AP-276R2-TR-2024-01",
     "office_unit": "运输司",
     "file_number": "民航规〔2024〕40 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-276R2-TR-2024-01%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E8%AE%B8%E5%8F%AF%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-276R2-TR-2024-01%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E5%8D%B1%E9%99%A9%E5%93%81%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E8%AE%B8%E5%8F%AF%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "民航安全管理体系审核员培训管理办法",
@@ -1515,7 +1515,7 @@ var data = [
     "doc_number": "AC-398-07",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2024〕4 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-398-07%E6%B0%91%E8%88%AA%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%E5%AE%A1%E6%A0%B8%E5%91%98%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-398-07%E6%B0%91%E8%88%AA%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%E5%AE%A1%E6%A0%B8%E5%91%98%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民航安全管理体系审核管理办法（2024年修订版）",
@@ -1527,7 +1527,7 @@ var data = [
     "doc_number": "AC-398-06",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2024〕39 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-398-06%E6%B0%91%E8%88%AA%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%E5%AE%A1%E6%A0%B8%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%882024%E5%B9%B4%E4%BF%AE%E8%AE%A2%E7%89%88%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-398-06%E6%B0%91%E8%88%AA%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%E5%AE%A1%E6%A0%B8%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%882024%E5%B9%B4%E4%BF%AE%E8%AE%A2%E7%89%88%EF%BC%89.pdf"
   },
   {
     "title": "外国公共航空运输承运人运行评估管理程序",
@@ -1539,7 +1539,7 @@ var data = [
     "doc_number": "AC-129-FS-003",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕37 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-129-FS-003%E5%A4%96%E5%9B%BD%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E8%AF%84%E4%BC%B0%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-129-FS-003%E5%A4%96%E5%9B%BD%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BA%E8%BF%90%E8%A1%8C%E8%AF%84%E4%BC%B0%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "外国公共航空运输承运人CCAR-129部运行规范管理规定",
@@ -1551,7 +1551,7 @@ var data = [
     "doc_number": "AC-129-FS-001-R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕38 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-129-FS-001-R2%E5%A4%96%E5%9B%BD%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BACCAR-129%E9%83%A8%E8%BF%90%E8%A1%8C%E8%A7%84%E8%8C%83%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-129-FS-001-R2%E5%A4%96%E5%9B%BD%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E6%89%BF%E8%BF%90%E4%BA%BACCAR-129%E9%83%A8%E8%BF%90%E8%A1%8C%E8%A7%84%E8%8C%83%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "机场道面外来物探测设备技术要求",
@@ -1563,7 +1563,7 @@ var data = [
     "doc_number": "AC-137-CA-2024-01",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2024-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2024-01%E6%9C%BA%E5%9C%BA%E9%81%93%E9%9D%A2%E5%A4%96%E6%9D%A5%E7%89%A9%E6%8E%A2%E6%B5%8B%E8%AE%BE%E5%A4%87%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2024-01%E6%9C%BA%E5%9C%BA%E9%81%93%E9%9D%A2%E5%A4%96%E6%9D%A5%E7%89%A9%E6%8E%A2%E6%B5%8B%E8%AE%BE%E5%A4%87%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "运输机场工程设计变更及概算调整管理办法",
@@ -1575,7 +1575,7 @@ var data = [
     "doc_number": "AP-158-CA-2024-01",
     "office_unit": "机场司",
     "file_number": "民航规〔2024〕36 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-158-CA-2024-01%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E5%B7%A5%E7%A8%8B%E8%AE%BE%E8%AE%A1%E5%8F%98%E6%9B%B4%E5%8F%8A%E6%A6%82%E7%AE%97%E8%B0%83%E6%95%B4%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-158-CA-2024-01%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E5%B7%A5%E7%A8%8B%E8%AE%BE%E8%AE%A1%E5%8F%98%E6%9B%B4%E5%8F%8A%E6%A6%82%E7%AE%97%E8%B0%83%E6%95%B4%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "航空发动机审定",
@@ -1587,7 +1587,7 @@ var data = [
     "doc_number": "AC-33-AA-2024-01R1",
     "office_unit": "航空器适航审定司",
     "file_number": "民航适函〔2024〕38号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-33-AA-2024-01R1%E8%88%AA%E7%A9%BA%E5%8F%91%E5%8A%A8%E6%9C%BA%E5%AE%A1%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-33-AA-2024-01R1%E8%88%AA%E7%A9%BA%E5%8F%91%E5%8A%A8%E6%9C%BA%E5%AE%A1%E5%AE%9A.pdf"
   },
   {
     "title": "运输机场鸟击及动物侵入防范方案（范本）",
@@ -1599,7 +1599,7 @@ var data = [
     "doc_number": "AC-140-CA-2024-03",
     "office_unit": "机场司",
     "file_number": "民航综机发〔2024〕15 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-140-CA-2024-03%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E9%B8%9F%E5%87%BB%E5%8F%8A%E5%8A%A8%E7%89%A9%E4%BE%B5%E5%85%A5%E9%98%B2%E8%8C%83%E6%96%B9%E6%A1%88%EF%BC%88%E8%8C%83%E6%9C%AC%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-140-CA-2024-03%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E9%B8%9F%E5%87%BB%E5%8F%8A%E5%8A%A8%E7%89%A9%E4%BE%B5%E5%85%A5%E9%98%B2%E8%8C%83%E6%96%B9%E6%A1%88%EF%BC%88%E8%8C%83%E6%9C%AC%EF%BC%89.pdf"
   },
   {
     "title": "运输机场飞行区土面区植被建植指南",
@@ -1611,7 +1611,7 @@ var data = [
     "doc_number": "AC-140-CA-2024-02",
     "office_unit": "机场司",
     "file_number": "民航综机发〔2024〕14 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-140-CA-2024-02%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E5%8C%BA%E5%9C%9F%E9%9D%A2%E5%8C%BA%E6%A4%8D%E8%A2%AB%E5%BB%BA%E6%A4%8D%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-140-CA-2024-02%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E5%8C%BA%E5%9C%9F%E9%9D%A2%E5%8C%BA%E6%A4%8D%E8%A2%AB%E5%BB%BA%E6%A4%8D%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民用运输机场建筑信息模型应用管理指南",
@@ -1623,7 +1623,7 @@ var data = [
     "doc_number": "AC-158-CA-2024-05",
     "office_unit": "机场司",
     "file_number": "文号：AC-158-CA-2024-05",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-158-CA-2024-05%E6%B0%91%E7%94%A8%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E5%BB%BA%E7%AD%91%E4%BF%A1%E6%81%AF%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-158-CA-2024-05%E6%B0%91%E7%94%A8%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E5%BB%BA%E7%AD%91%E4%BF%A1%E6%81%AF%E6%A8%A1%E5%9E%8B%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "运输机场职工工间休息区规划设计指南",
@@ -1635,7 +1635,7 @@ var data = [
     "doc_number": "AC-158-CA-2024-06",
     "office_unit": "机场司",
     "file_number": "文号：AC-158-CA-2024-06",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-158-CA-2024-06%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%81%8C%E5%B7%A5%E5%B7%A5%E9%97%B4%E4%BC%91%E6%81%AF%E5%8C%BA%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-158-CA-2024-06%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%81%8C%E5%B7%A5%E5%B7%A5%E9%97%B4%E4%BC%91%E6%81%AF%E5%8C%BA%E8%A7%84%E5%88%92%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民航局关于印发 《民航专业工程建设项目评标专家和专家库管理办法》的通知",
@@ -1647,7 +1647,7 @@ var data = [
     "doc_number": "",
     "office_unit": "机场司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%20%E3%80%8A%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E5%BB%BA%E8%AE%BE%E9%A1%B9%E7%9B%AE%E8%AF%84%E6%A0%87%E4%B8%93%E5%AE%B6%E5%92%8C%E4%B8%93%E5%AE%B6%E5%BA%93%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%20%E3%80%8A%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E5%BB%BA%E8%AE%BE%E9%A1%B9%E7%9B%AE%E8%AF%84%E6%A0%87%E4%B8%93%E5%AE%B6%E5%92%8C%E4%B8%93%E5%AE%B6%E5%BA%93%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "放射性物品航空运输管理程序",
@@ -1659,7 +1659,7 @@ var data = [
     "doc_number": "",
     "office_unit": "运输司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%94%BE%E5%B0%84%E6%80%A7%E7%89%A9%E5%93%81%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%94%BE%E5%B0%84%E6%80%A7%E7%89%A9%E5%93%81%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "飞行标准监察员手册（第二卷）-运行监察员手册",
@@ -1671,7 +1671,7 @@ var data = [
     "doc_number": "",
     "office_unit": "飞行标准司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%8D%B7%EF%BC%89-%E8%BF%90%E8%A1%8C%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%8D%B7%EF%BC%89-%E8%BF%90%E8%A1%8C%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C.pdf"
   },
   {
     "title": "飞行标准管理手册",
@@ -1683,7 +1683,7 @@ var data = [
     "doc_number": "",
     "office_unit": "飞行标准司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%AE%A1%E7%90%86%E6%89%8B%E5%86%8C.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%AE%A1%E7%90%86%E6%89%8B%E5%86%8C.pdf"
   },
   {
     "title": "民用航空协同运行管理办法",
@@ -1694,7 +1694,7 @@ var data = [
     "publish_date": "2024年04月17日",
     "doc_number": "民航规〔2024〕32 号",
     "file_number": "民航规〔2024〕32 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E8%A7%84%E3%80%942024%E3%80%9532%20%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%8D%8F%E5%90%8C%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E8%A7%84%E3%80%942024%E3%80%9532%20%E5%8F%B7%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%8D%8F%E5%90%8C%E8%BF%90%E8%A1%8C%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用无人驾驶航空器固定设施设备巡检标准场景",
@@ -1706,7 +1706,7 @@ var data = [
     "doc_number": "IB-FS-OPS-011",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPS-011",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPS-011%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9B%BA%E5%AE%9A%E8%AE%BE%E6%96%BD%E8%AE%BE%E5%A4%87%E5%B7%A1%E6%A3%80%E6%A0%87%E5%87%86%E5%9C%BA%E6%99%AF.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPS-011%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9B%BA%E5%AE%9A%E8%AE%BE%E6%96%BD%E8%AE%BE%E5%A4%87%E5%B7%A1%E6%A3%80%E6%A0%87%E5%87%86%E5%9C%BA%E6%99%AF.pdf"
   },
   {
     "title": "飞行记录器管理规范",
@@ -1718,7 +1718,7 @@ var data = [
     "doc_number": "MD-MAT-FS-007",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕31 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/MD-MAT-FS-007%E9%A3%9E%E8%A1%8C%E8%AE%B0%E5%BD%95%E5%99%A8%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/MD-MAT-FS-007%E9%A3%9E%E8%A1%8C%E8%AE%B0%E5%BD%95%E5%99%A8%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "民用机场地面活动引导与控制系统（SMGCS）建设及运行指南实施细则",
@@ -1730,7 +1730,7 @@ var data = [
     "doc_number": "AP-140-CA-2024-04",
     "office_unit": "机场司",
     "file_number": "民航规〔2024〕5 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-140-CA-2024-04%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%9C%B0%E9%9D%A2%E6%B4%BB%E5%8A%A8%E5%BC%95%E5%AF%BC%E4%B8%8E%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%EF%BC%88SMGCS%EF%BC%89%E5%BB%BA%E8%AE%BE%E5%8F%8A%E8%BF%90%E8%A1%8C%E6%8C%87%E5%8D%97%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-140-CA-2024-04%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%9C%B0%E9%9D%A2%E6%B4%BB%E5%8A%A8%E5%BC%95%E5%AF%BC%E4%B8%8E%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%EF%BC%88SMGCS%EF%BC%89%E5%BB%BA%E8%AE%BE%E5%8F%8A%E8%BF%90%E8%A1%8C%E6%8C%87%E5%8D%97%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
   },
   {
     "title": "运输机场跑道表面状况评估操作规程（试行）",
@@ -1742,7 +1742,7 @@ var data = [
     "doc_number": "AC-140-CA-2024-01",
     "office_unit": "机场司",
     "file_number": "民航机函〔2024〕10 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-140-CA-2024-01%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%B7%91%E9%81%93%E8%A1%A8%E9%9D%A2%E7%8A%B6%E5%86%B5%E8%AF%84%E4%BC%B0%E6%93%8D%E4%BD%9C%E8%A7%84%E7%A8%8B%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-140-CA-2024-01%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%B7%91%E9%81%93%E8%A1%A8%E9%9D%A2%E7%8A%B6%E5%86%B5%E8%AF%84%E4%BC%B0%E6%93%8D%E4%BD%9C%E8%A7%84%E7%A8%8B%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "民用航空情报质量管理规定",
@@ -1754,7 +1754,7 @@ var data = [
     "doc_number": "AP-175-TM-2024-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规〔2024〕28 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-175-TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%83%85%E6%8A%A5%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-175-TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%83%85%E6%8A%A5%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "最低监视引导高度规程",
@@ -1766,7 +1766,7 @@ var data = [
     "doc_number": "AP-93-TM-2024-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规〔2024〕29 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-93-TM-2024-01%E6%9C%80%E4%BD%8E%E7%9B%91%E8%A7%86%E5%BC%95%E5%AF%BC%E9%AB%98%E5%BA%A6%E8%A7%84%E7%A8%8B.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-93-TM-2024-01%E6%9C%80%E4%BD%8E%E7%9B%91%E8%A7%86%E5%BC%95%E5%AF%BC%E9%AB%98%E5%BA%A6%E8%A7%84%E7%A8%8B.pdf"
   },
   {
     "title": "飞行标准监察员手册(FSIH) 第四卷-飞行程序监察员手册",
@@ -1778,7 +1778,7 @@ var data = [
     "doc_number": "",
     "office_unit": "飞行标准司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%28FSIH%29%20%E7%AC%AC%E5%9B%9B%E5%8D%B7-%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%28FSIH%29%20%E7%AC%AC%E5%9B%9B%E5%8D%B7-%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C.pdf"
   },
   {
     "title": "民用航空情报岗位培训大纲",
@@ -1790,7 +1790,7 @@ var data = [
     "doc_number": "WM-TM-2024-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规〔2024〕27 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/WM-TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%83%85%E6%8A%A5%E5%B2%97%E4%BD%8D%E5%9F%B9%E8%AE%AD%E5%A4%A7%E7%BA%B2.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/WM-TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E6%83%85%E6%8A%A5%E5%B2%97%E4%BD%8D%E5%9F%B9%E8%AE%AD%E5%A4%A7%E7%BA%B2.pdf"
   },
   {
     "title": "运输机场选址数字化辅助技术应用指南",
@@ -1802,7 +1802,7 @@ var data = [
     "doc_number": "AC-158-CA-2024-04",
     "office_unit": "机场司",
     "file_number": "文号：AC-158-CA-2024-04",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-158-CA-2024-04%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E9%80%89%E5%9D%80%E6%95%B0%E5%AD%97%E5%8C%96%E8%BE%85%E5%8A%A9%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-158-CA-2024-04%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E9%80%89%E5%9D%80%E6%95%B0%E5%AD%97%E5%8C%96%E8%BE%85%E5%8A%A9%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "危险品监察员手册",
@@ -1814,7 +1814,7 @@ var data = [
     "doc_number": "WM-TR-2024-01",
     "office_unit": "运输司",
     "file_number": "文号：WM-TR-2024-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/WM-TR-2024-01%E5%8D%B1%E9%99%A9%E5%93%81%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/WM-TR-2024-01%E5%8D%B1%E9%99%A9%E5%93%81%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C.pdf"
   },
   {
     "title": "2023年通用和小型运输运行概况",
@@ -1826,7 +1826,7 @@ var data = [
     "doc_number": "IB-FS-OPS-010",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-OPS-010",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-OPS-0102023%E5%B9%B4%E9%80%9A%E7%94%A8%E5%92%8C%E5%B0%8F%E5%9E%8B%E8%BF%90%E8%BE%93%E8%BF%90%E8%A1%8C%E6%A6%82%E5%86%B5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-OPS-0102023%E5%B9%B4%E9%80%9A%E7%94%A8%E5%92%8C%E5%B0%8F%E5%9E%8B%E8%BF%90%E8%BE%93%E8%BF%90%E8%A1%8C%E6%A6%82%E5%86%B5.pdf"
   },
   {
     "title": "民航空管收费行为规则",
@@ -1838,7 +1838,7 @@ var data = [
     "doc_number": "",
     "office_unit": "发展计划司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E7%A9%BA%E7%AE%A1%E6%94%B6%E8%B4%B9%E8%A1%8C%E4%B8%BA%E8%A7%84%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E7%A9%BA%E7%AE%A1%E6%94%B6%E8%B4%B9%E8%A1%8C%E4%B8%BA%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "中国民航国内航线航班评审规则",
@@ -1850,7 +1850,7 @@ var data = [
     "doc_number": "",
     "office_unit": "运输司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E4%B8%AD%E5%9B%BD%E6%B0%91%E8%88%AA%E5%9B%BD%E5%86%85%E8%88%AA%E7%BA%BF%E8%88%AA%E7%8F%AD%E8%AF%84%E5%AE%A1%E8%A7%84%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E4%B8%AD%E5%9B%BD%E6%B0%91%E8%88%AA%E5%9B%BD%E5%86%85%E8%88%AA%E7%BA%BF%E8%88%AA%E7%8F%AD%E8%AF%84%E5%AE%A1%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "航站楼旅客便携式电子设备充电设施建设指南",
@@ -1862,7 +1862,7 @@ var data = [
     "doc_number": "AC-158-CA-2024-02",
     "office_unit": "机场司",
     "file_number": "文号：AC-158-CA-2024-02",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-158-CA-2024-02%E8%88%AA%E7%AB%99%E6%A5%BC%E6%97%85%E5%AE%A2%E4%BE%BF%E6%90%BA%E5%BC%8F%E7%94%B5%E5%AD%90%E8%AE%BE%E5%A4%87%E5%85%85%E7%94%B5%E8%AE%BE%E6%96%BD%E5%BB%BA%E8%AE%BE%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-158-CA-2024-02%E8%88%AA%E7%AB%99%E6%A5%BC%E6%97%85%E5%AE%A2%E4%BE%BF%E6%90%BA%E5%BC%8F%E7%94%B5%E5%AD%90%E8%AE%BE%E5%A4%87%E5%85%85%E7%94%B5%E8%AE%BE%E6%96%BD%E5%BB%BA%E8%AE%BE%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民用航空产品设计批准过程中局方审查范围和深度的确定准则",
@@ -1874,7 +1874,7 @@ var data = [
     "doc_number": "AC-21-AA-2024-41",
     "office_unit": "航空器适航审定司",
     "file_number": "民航适函〔2024〕11 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2024-41%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E6%89%B9%E5%87%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%B1%80%E6%96%B9%E5%AE%A1%E6%9F%A5%E8%8C%83%E5%9B%B4%E5%92%8C%E6%B7%B1%E5%BA%A6%E7%9A%84%E7%A1%AE%E5%AE%9A%E5%87%86%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2024-41%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E8%AE%BE%E8%AE%A1%E6%89%B9%E5%87%86%E8%BF%87%E7%A8%8B%E4%B8%AD%E5%B1%80%E6%96%B9%E5%AE%A1%E6%9F%A5%E8%8C%83%E5%9B%B4%E5%92%8C%E6%B7%B1%E5%BA%A6%E7%9A%84%E7%A1%AE%E5%AE%9A%E5%87%86%E5%88%99.pdf"
   },
   {
     "title": "CCAR121部合格证持有人的疲劳管理要求",
@@ -1886,7 +1886,7 @@ var data = [
     "doc_number": "AC-121-FS-014R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕24 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-014R1CCAR121%E9%83%A8%E5%90%88%E6%A0%BC%E8%AF%81%E6%8C%81%E6%9C%89%E4%BA%BA%E7%9A%84%E7%96%B2%E5%8A%B3%E7%AE%A1%E7%90%86%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-121-FS-014R1CCAR121%E9%83%A8%E5%90%88%E6%A0%BC%E8%AF%81%E6%8C%81%E6%9C%89%E4%BA%BA%E7%9A%84%E7%96%B2%E5%8A%B3%E7%AE%A1%E7%90%86%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "机组标准操作程序",
@@ -1898,7 +1898,7 @@ var data = [
     "doc_number": "AC-121-FS-22R2",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕25 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-22R2%E6%9C%BA%E7%BB%84%E6%A0%87%E5%87%86%E6%93%8D%E4%BD%9C%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-121-FS-22R2%E6%9C%BA%E7%BB%84%E6%A0%87%E5%87%86%E6%93%8D%E4%BD%9C%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "飞行标准监察员手册（第八卷）-外航监察员手册（FSIH V8）",
@@ -1910,7 +1910,7 @@ var data = [
     "doc_number": "",
     "office_unit": "飞行标准司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%EF%BC%88%E7%AC%AC%E5%85%AB%E5%8D%B7%EF%BC%89-%E5%A4%96%E8%88%AA%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%EF%BC%88FSIH%20V8%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%EF%BC%88%E7%AC%AC%E5%85%AB%E5%8D%B7%EF%BC%89-%E5%A4%96%E8%88%AA%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%EF%BC%88FSIH%20V8%EF%BC%89.pdf"
   },
   {
     "title": "关于运输机场航空地面服务业务运营秩序有关问题的通知",
@@ -1933,7 +1933,7 @@ var data = [
     "doc_number": "",
     "office_unit": "机场司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E5%BB%BA%E8%AE%BE%E9%A1%B9%E7%9B%AE%E6%8B%9B%E6%A0%87%E6%8A%95%E6%A0%87%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E5%BB%BA%E8%AE%BE%E9%A1%B9%E7%9B%AE%E6%8B%9B%E6%A0%87%E6%8A%95%E6%A0%87%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "A 类通用机场运行安全管理实施细则",
@@ -1945,7 +1945,7 @@ var data = [
     "doc_number": "",
     "office_unit": "机场司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/A%20%E7%B1%BB%E9%80%9A%E7%94%A8%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/A%20%E7%B1%BB%E9%80%9A%E7%94%A8%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
   },
   {
     "title": "民用航空通信导航监视新技术应用管理办法",
@@ -1957,7 +1957,7 @@ var data = [
     "doc_number": "AP-115TM-2024-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规〔2024〕16号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-115TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E9%80%9A%E4%BF%A1%E5%AF%BC%E8%88%AA%E7%9B%91%E8%A7%86%E6%96%B0%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-115TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E9%80%9A%E4%BF%A1%E5%AF%BC%E8%88%AA%E7%9B%91%E8%A7%86%E6%96%B0%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "航空运营人安全管理体系（SMS）建设要求",
@@ -1969,7 +1969,7 @@ var data = [
     "doc_number": "AC-121-FS-26R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规 〔2024〕15 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-26R1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%90%A5%E4%BA%BA%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%EF%BC%88SMS%EF%BC%89%E5%BB%BA%E8%AE%BE%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-121-FS-26R1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%90%A5%E4%BA%BA%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%EF%BC%88SMS%EF%BC%89%E5%BB%BA%E8%AE%BE%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "民航安全培训机构管理办法",
@@ -1981,7 +1981,7 @@ var data = [
     "doc_number": "",
     "office_unit": "航空安全办公室",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%AE%89%E5%85%A8%E5%9F%B9%E8%AE%AD%E6%9C%BA%E6%9E%84%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%AE%89%E5%85%A8%E5%9F%B9%E8%AE%AD%E6%9C%BA%E6%9E%84%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "中国民用航空局关于印发《通用航空安全保卫工作实施办法》的通知",
@@ -1993,7 +1993,7 @@ var data = [
     "doc_number": "",
     "office_unit": "公安局",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E4%BF%9D%E5%8D%AB%E5%B7%A5%E4%BD%9C%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E5%AE%89%E5%85%A8%E4%BF%9D%E5%8D%AB%E5%B7%A5%E4%BD%9C%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "民用机场航空器突发事件应急救援实施细则",
@@ -2005,7 +2005,7 @@ var data = [
     "doc_number": "AP-139-II-CA-2024-04",
     "office_unit": "机场司",
     "file_number": "民航规 〔2024〕14 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-139-II-CA-2024-04%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E8%88%AA%E7%A9%BA%E5%99%A8%E7%AA%81%E5%8F%91%E4%BA%8B%E4%BB%B6%E5%BA%94%E6%80%A5%E6%95%91%E6%8F%B4%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-139-II-CA-2024-04%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E8%88%AA%E7%A9%BA%E5%99%A8%E7%AA%81%E5%8F%91%E4%BA%8B%E4%BB%B6%E5%BA%94%E6%80%A5%E6%95%91%E6%8F%B4%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
   },
   {
     "title": "民用无人驾驶航空器系统适航安全评定指南",
@@ -2017,7 +2017,7 @@ var data = [
     "doc_number": "AC-92-AA-2024-01",
     "office_unit": "航空器适航审定司",
     "file_number": "民航适函 〔2024〕5 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-92-AA-2024-01%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%E9%80%82%E8%88%AA%E5%AE%89%E5%85%A8%E8%AF%84%E5%AE%9A%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-92-AA-2024-01%E6%B0%91%E7%94%A8%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%E9%80%82%E8%88%AA%E5%AE%89%E5%85%A8%E8%AF%84%E5%AE%9A%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "中国民用航空局关于印发《通用航空活动禁限带物品目录》的通知",
@@ -2040,7 +2040,7 @@ var data = [
     "doc_number": "AP-140-CA-2024-02",
     "office_unit": "机场司",
     "file_number": "民航规〔2024〕11 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-140-CA-2024-02%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E5%9C%B0%E9%9D%A2%E8%BD%A6%E8%BE%86%E5%92%8C%E4%BA%BA%E5%91%98%E8%B7%91%E9%81%93%E4%BE%B5%E5%85%A5%E9%98%B2%E8%8C%83%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-140-CA-2024-02%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E5%9C%B0%E9%9D%A2%E8%BD%A6%E8%BE%86%E5%92%8C%E4%BA%BA%E5%91%98%E8%B7%91%E9%81%93%E4%BE%B5%E5%85%A5%E9%98%B2%E8%8C%83%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "运输机场飞行区场地管理办法",
@@ -2052,7 +2052,7 @@ var data = [
     "doc_number": "",
     "office_unit": "机场司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E5%8C%BA%E5%9C%BA%E5%9C%B0%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E5%8C%BA%E5%9C%BA%E5%9C%B0%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用机场使用许可实施细则",
@@ -2064,7 +2064,7 @@ var data = [
     "doc_number": "AP-139-CA-2024-02",
     "office_unit": "机场司",
     "file_number": "民航规〔2024〕10 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-139-CA-2024-02%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%BD%BF%E7%94%A8%E8%AE%B8%E5%8F%AF%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-139-CA-2024-02%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%BD%BF%E7%94%A8%E8%AE%B8%E5%8F%AF%E5%AE%9E%E6%96%BD%E7%BB%86%E5%88%99.pdf"
   },
   {
     "title": "民用微轻小型无人驾驶航空器运行识别最低性能要求（试行）",
@@ -2076,7 +2076,7 @@ var data = [
     "doc_number": "IB-TM-2024-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规 〔2024〕9 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-TM-2024-01%E6%B0%91%E7%94%A8%E5%BE%AE%E8%BD%BB%E5%B0%8F%E5%9E%8B%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C%E8%AF%86%E5%88%AB%E6%9C%80%E4%BD%8E%E6%80%A7%E8%83%BD%E8%A6%81%E6%B1%82%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-TM-2024-01%E6%B0%91%E7%94%A8%E5%BE%AE%E8%BD%BB%E5%B0%8F%E5%9E%8B%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C%E8%AF%86%E5%88%AB%E6%9C%80%E4%BD%8E%E6%80%A7%E8%83%BD%E8%A6%81%E6%B1%82%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "民用微轻小型无人驾驶航空器运行识别最低性能要求 （试行）",
@@ -2088,7 +2088,7 @@ var data = [
     "doc_number": "IB-TM-2024-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规 〔2024〕9 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-TM-2024-01%E6%B0%91%E7%94%A8%E5%BE%AE%E8%BD%BB%E5%B0%8F%E5%9E%8B%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C%E8%AF%86%E5%88%AB%E6%9C%80%E4%BD%8E%E6%80%A7%E8%83%BD%E8%A6%81%E6%B1%82%20%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-TM-2024-01%E6%B0%91%E7%94%A8%E5%BE%AE%E8%BD%BB%E5%B0%8F%E5%9E%8B%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E8%BF%90%E8%A1%8C%E8%AF%86%E5%88%AB%E6%9C%80%E4%BD%8E%E6%80%A7%E8%83%BD%E8%A6%81%E6%B1%82%20%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "《民用机场使用手册》编制、审查与生效规则",
@@ -2100,7 +2100,7 @@ var data = [
     "doc_number": "AP-140-CA-2024-04",
     "office_unit": "机场司",
     "file_number": "民航规〔2024〕5 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-140-CA-2024-04%E3%80%8A%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C%E3%80%8B%E7%BC%96%E5%88%B6%E3%80%81%E5%AE%A1%E6%9F%A5%E4%B8%8E%E7%94%9F%E6%95%88%E8%A7%84%E5%88%99.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-140-CA-2024-04%E3%80%8A%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C%E3%80%8B%E7%BC%96%E5%88%B6%E3%80%81%E5%AE%A1%E6%9F%A5%E4%B8%8E%E7%94%9F%E6%95%88%E8%A7%84%E5%88%99.pdf"
   },
   {
     "title": "飞行程序设计单位备案管理规定",
@@ -2112,7 +2112,7 @@ var data = [
     "doc_number": "AC-97-FS-003R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕8 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-97-FS-003R1%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%8D%95%E4%BD%8D%E5%A4%87%E6%A1%88%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-97-FS-003R1%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%8D%95%E4%BD%8D%E5%A4%87%E6%A1%88%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "民用运输机场仪表飞行程序质量保证管理规定",
@@ -2124,7 +2124,7 @@ var data = [
     "doc_number": "AC-97-FS-006",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕6 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-97-FS-006%E6%B0%91%E7%94%A8%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E4%BB%AA%E8%A1%A8%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-97-FS-006%E6%B0%91%E7%94%A8%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E4%BB%AA%E8%A1%A8%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%B4%A8%E9%87%8F%E4%BF%9D%E8%AF%81%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "飞行程序设计单位质量管理体系",
@@ -2136,7 +2136,7 @@ var data = [
     "doc_number": "AC-97-FS-007",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕7 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-97-FS-007%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%8D%95%E4%BD%8D%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-97-FS-007%E9%A3%9E%E8%A1%8C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%8D%95%E4%BD%8D%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB.pdf"
   },
   {
     "title": "民用航空空中交通管制培训机构审定和监察程序",
@@ -2148,7 +2148,7 @@ var data = [
     "doc_number": "AP-70-TM-2024-01",
     "office_unit": "机场司",
     "file_number": "文号：AP-70-TM-2024-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-70-TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%9F%B9%E8%AE%AD%E6%9C%BA%E6%9E%84%E5%AE%A1%E5%AE%9A%E5%92%8C%E7%9B%91%E5%AF%9F%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-70-TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%9F%B9%E8%AE%AD%E6%9C%BA%E6%9E%84%E5%AE%A1%E5%AE%9A%E5%92%8C%E7%9B%91%E5%AF%9F%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "国际运行",
@@ -2160,7 +2160,7 @@ var data = [
     "doc_number": "AC-121-FS-132R1",
     "office_unit": "飞行标准司",
     "file_number": "民航规〔2024〕1 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-121-FS-132R1%E5%9B%BD%E9%99%85%E8%BF%90%E8%A1%8C.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-121-FS-132R1%E5%9B%BD%E9%99%85%E8%BF%90%E8%A1%8C.pdf"
   },
   {
     "title": "民用机场地面活动引导与控制系统（SMGCS）建设和运行指南",
@@ -2172,7 +2172,7 @@ var data = [
     "doc_number": "",
     "office_unit": "机场司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%9C%B0%E9%9D%A2%E6%B4%BB%E5%8A%A8%E5%BC%95%E5%AF%BC%E4%B8%8E%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%EF%BC%88SMGCS%EF%BC%89%E5%BB%BA%E8%AE%BE%E5%92%8C%E8%BF%90%E8%A1%8C%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%9C%B0%E9%9D%A2%E6%B4%BB%E5%8A%A8%E5%BC%95%E5%AF%BC%E4%B8%8E%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%EF%BC%88SMGCS%EF%BC%89%E5%BB%BA%E8%AE%BE%E5%92%8C%E8%BF%90%E8%A1%8C%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法（试行）",
@@ -2184,7 +2184,7 @@ var data = [
     "doc_number": "AP-140-CA-2024-03",
     "office_unit": "机场司",
     "file_number": "民航综机发〔2024〕1 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-140-CA-2024-03%E5%9F%BA%E4%BA%8E%E9%A3%9E%E8%A1%8C%E8%A7%86%E8%A7%92%E7%9A%84%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E4%BF%9D%E9%9A%9C%E8%83%BD%E5%8A%9B%E5%8F%8D%E9%A6%88%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-140-CA-2024-03%E5%9F%BA%E4%BA%8E%E9%A3%9E%E8%A1%8C%E8%A7%86%E8%A7%92%E7%9A%84%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E4%BF%9D%E9%9A%9C%E8%83%BD%E5%8A%9B%E5%8F%8D%E9%A6%88%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "关于管制员英语无线电通信能力的要求",
@@ -2196,7 +2196,7 @@ var data = [
     "doc_number": "AC-66I-TM-2024-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AC-66I-TM-2024-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-66I-TM-2024-01%E5%85%B3%E4%BA%8E%E7%AE%A1%E5%88%B6%E5%91%98%E8%8B%B1%E8%AF%AD%E6%97%A0%E7%BA%BF%E7%94%B5%E9%80%9A%E4%BF%A1%E8%83%BD%E5%8A%9B%E7%9A%84%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-66I-TM-2024-01%E5%85%B3%E4%BA%8E%E7%AE%A1%E5%88%B6%E5%91%98%E8%8B%B1%E8%AF%AD%E6%97%A0%E7%BA%BF%E7%94%B5%E9%80%9A%E4%BF%A1%E8%83%BD%E5%8A%9B%E7%9A%84%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "航空人员执照考试考点技术规范",
@@ -2208,7 +2208,7 @@ var data = [
     "doc_number": "IB-FS-MUL-002",
     "office_unit": "飞行标准司",
     "file_number": "文号：IB-FS-MUL-002",
-    "pdf_url": "https://ccar.hudawang.cn/normative/IB-FS-MUL-002%E8%88%AA%E7%A9%BA%E4%BA%BA%E5%91%98%E6%89%A7%E7%85%A7%E8%80%83%E8%AF%95%E8%80%83%E7%82%B9%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-MUL-002%E8%88%AA%E7%A9%BA%E4%BA%BA%E5%91%98%E6%89%A7%E7%85%A7%E8%80%83%E8%AF%95%E8%80%83%E7%82%B9%E6%8A%80%E6%9C%AF%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "飞行标准管理手册第三卷（维修监察员手册）",
@@ -2220,7 +2220,7 @@ var data = [
     "doc_number": "",
     "office_unit": "飞行标准司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%AE%A1%E7%90%86%E6%89%8B%E5%86%8C%E7%AC%AC%E4%B8%89%E5%8D%B7%EF%BC%88%E7%BB%B4%E4%BF%AE%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%EF%BC%89.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%AE%A1%E7%90%86%E6%89%8B%E5%86%8C%E7%AC%AC%E4%B8%89%E5%8D%B7%EF%BC%88%E7%BB%B4%E4%BF%AE%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%EF%BC%89.pdf"
   },
   {
     "title": "运输类飞机审定",
@@ -2232,7 +2232,7 @@ var data = [
     "doc_number": "AC-25-AA-2023-03",
     "office_unit": "航空器适航审定司",
     "file_number": "民航适函 〔2023〕48 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-25-AA-2023-03%E8%BF%90%E8%BE%93%E7%B1%BB%E9%A3%9E%E6%9C%BA%E5%AE%A1%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-25-AA-2023-03%E8%BF%90%E8%BE%93%E7%B1%BB%E9%A3%9E%E6%9C%BA%E5%AE%A1%E5%AE%9A.pdf"
   },
   {
     "title": "民用航空空中交通管制培训机构管理办法",
@@ -2244,7 +2244,7 @@ var data = [
     "doc_number": "AP-70-TM-2023-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规 〔2023〕54 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-70-TM-2023-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%9F%B9%E8%AE%AD%E6%9C%BA%E6%9E%84%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-70-TM-2023-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%9F%B9%E8%AE%AD%E6%9C%BA%E6%9E%84%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用航空空中交通流量管理规定",
@@ -2256,7 +2256,7 @@ var data = [
     "doc_number": "AP-93-TM-2023-01",
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AP-93-TM-2023-01",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-93-TM-2023-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-93-TM-2023-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "空中交通管制容量评估管理规定",
@@ -2268,7 +2268,7 @@ var data = [
     "doc_number": "AP-93-TM-2023-02",
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AP-93-TM-2023-02",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-93-TM-2023-02%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-93-TM-2023-02%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%AE%B9%E9%87%8F%E8%AF%84%E4%BC%B0%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "关于修订发布 《民用航空产品和零部件申请获得国外当局对我设计批准接受或认可的指南》的通知",
@@ -2280,7 +2280,7 @@ var data = [
     "doc_number": "",
     "office_unit": "航空器适航审定司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E5%85%B3%E4%BA%8E%E4%BF%AE%E8%AE%A2%E5%8F%91%E5%B8%83%20%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E7%94%B3%E8%AF%B7%E8%8E%B7%E5%BE%97%E5%9B%BD%E5%A4%96%E5%BD%93%E5%B1%80%E5%AF%B9%E6%88%91%E8%AE%BE%E8%AE%A1%E6%89%B9%E5%87%86%E6%8E%A5%E5%8F%97%E6%88%96%E8%AE%A4%E5%8F%AF%E7%9A%84%E6%8C%87%E5%8D%97%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E5%85%B3%E4%BA%8E%E4%BF%AE%E8%AE%A2%E5%8F%91%E5%B8%83%20%E3%80%8A%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E7%94%B3%E8%AF%B7%E8%8E%B7%E5%BE%97%E5%9B%BD%E5%A4%96%E5%BD%93%E5%B1%80%E5%AF%B9%E6%88%91%E8%AE%BE%E8%AE%A1%E6%89%B9%E5%87%86%E6%8E%A5%E5%8F%97%E6%88%96%E8%AE%A4%E5%8F%AF%E7%9A%84%E6%8C%87%E5%8D%97%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "民用航空空中交通管制员选用指南",
@@ -2292,7 +2292,7 @@ var data = [
     "doc_number": "AC-93-TM-2023-05",
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AC-93-TM-2023-05",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-93-TM-2023-05%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%91%98%E9%80%89%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-93-TM-2023-05%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%91%98%E9%80%89%E7%94%A8%E6%8C%87%E5%8D%97.pdf"
   },
   {
     "title": "民航空中交通服务应急计划管理规范",
@@ -2304,7 +2304,7 @@ var data = [
     "doc_number": "AP-93-TM-2023-03",
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AP-93-TM-2023-03",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-93-TM-2023-03%E6%B0%91%E8%88%AA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%9C%8D%E5%8A%A1%E5%BA%94%E6%80%A5%E8%AE%A1%E5%88%92%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-93-TM-2023-03%E6%B0%91%E8%88%AA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%9C%8D%E5%8A%A1%E5%BA%94%E6%80%A5%E8%AE%A1%E5%88%92%E7%AE%A1%E7%90%86%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "空中交通服务协调工作补充规范",
@@ -2316,7 +2316,7 @@ var data = [
     "doc_number": "AC-93-TM-2023-03",
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AC-93-TM-2023-03",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-93-TM-2023-03%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%9C%8D%E5%8A%A1%E5%8D%8F%E8%B0%83%E5%B7%A5%E4%BD%9C%E8%A1%A5%E5%85%85%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-93-TM-2023-03%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%9C%8D%E5%8A%A1%E5%8D%8F%E8%B0%83%E5%B7%A5%E4%BD%9C%E8%A1%A5%E5%85%85%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "空中交通服务通信设施补充规范",
@@ -2328,7 +2328,7 @@ var data = [
     "doc_number": "AC-93-TM-2023-02",
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AC-93-TM-2023-02",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-93-TM-2023-02%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E8%AE%BE%E6%96%BD%E8%A1%A5%E5%85%85%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-93-TM-2023-02%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%9C%8D%E5%8A%A1%E9%80%9A%E4%BF%A1%E8%AE%BE%E6%96%BD%E8%A1%A5%E5%85%85%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "管制员航空器驾驶员数据链通信和契约式自动相关监视空中交通服务规范",
@@ -2340,7 +2340,7 @@ var data = [
     "doc_number": "AC-93-TM-2023-04",
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AC-93-TM-2023-04",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-93-TM-2023-04%E7%AE%A1%E5%88%B6%E5%91%98%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A9%BE%E9%A9%B6%E5%91%98%E6%95%B0%E6%8D%AE%E9%93%BE%E9%80%9A%E4%BF%A1%E5%92%8C%E5%A5%91%E7%BA%A6%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%9B%B8%E5%85%B3%E7%9B%91%E8%A7%86%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%9C%8D%E5%8A%A1%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-93-TM-2023-04%E7%AE%A1%E5%88%B6%E5%91%98%E8%88%AA%E7%A9%BA%E5%99%A8%E9%A9%BE%E9%A9%B6%E5%91%98%E6%95%B0%E6%8D%AE%E9%93%BE%E9%80%9A%E4%BF%A1%E5%92%8C%E5%A5%91%E7%BA%A6%E5%BC%8F%E8%87%AA%E5%8A%A8%E7%9B%B8%E5%85%B3%E7%9B%91%E8%A7%86%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%9C%8D%E5%8A%A1%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "电动式航空器地面服务设备通用技术要求",
@@ -2363,7 +2363,7 @@ var data = [
     "doc_number": "AC-137-CA-2023-02",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2023-02",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2023-02%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E6%97%85%E5%AE%A2%E7%99%BB%E6%9C%BA%E6%A1%A5%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2023-02%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E6%97%85%E5%AE%A2%E7%99%BB%E6%9C%BA%E6%A1%A5%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf"
   },
   {
     "title": "民用机场无人驾驶旅客登机桥检测规范",
@@ -2375,7 +2375,7 @@ var data = [
     "doc_number": "AC-137-CA-2023-03",
     "office_unit": "机场司",
     "file_number": "文号：AC-137-CA-2023-03",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-137-CA-2023-03%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E6%97%85%E5%AE%A2%E7%99%BB%E6%9C%BA%E6%A1%A5%E6%A3%80%E6%B5%8B%E8%A7%84%E8%8C%83.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-137-CA-2023-03%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E6%97%85%E5%AE%A2%E7%99%BB%E6%9C%BA%E6%A1%A5%E6%A3%80%E6%B5%8B%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "民用航空器事件技术调查安全建议管理办法",
@@ -2387,7 +2387,7 @@ var data = [
     "doc_number": "AC-395-AS-02R1",
     "office_unit": "航空安全办公室",
     "file_number": "民航规 〔2023〕53 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-395-AS-02R1%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E4%BA%8B%E4%BB%B6%E6%8A%80%E6%9C%AF%E8%B0%83%E6%9F%A5%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%AE%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-395-AS-02R1%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E4%BA%8B%E4%BB%B6%E6%8A%80%E6%9C%AF%E8%B0%83%E6%9F%A5%E5%AE%89%E5%85%A8%E5%BB%BA%E8%AE%AE%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用航空器事件调查员培训管理办法",
@@ -2399,7 +2399,7 @@ var data = [
     "doc_number": "MD-395-AS-06R1",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2023〕52 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/MD-395-AS-06R1%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E4%BA%8B%E4%BB%B6%E8%B0%83%E6%9F%A5%E5%91%98%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/MD-395-AS-06R1%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E4%BA%8B%E4%BB%B6%E8%B0%83%E6%9F%A5%E5%91%98%E5%9F%B9%E8%AE%AD%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民航局印发《关于落实民航安全责任的管理办法》的通知",
@@ -2411,7 +2411,7 @@ var data = [
     "doc_number": "AC-398-05",
     "office_unit": "航空安全办公室",
     "file_number": "民航规〔2023〕51 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-398-05%E6%B0%91%E8%88%AA%E5%B1%80%E5%8D%B0%E5%8F%91%E3%80%8A%E5%85%B3%E4%BA%8E%E8%90%BD%E5%AE%9E%E6%B0%91%E8%88%AA%E5%AE%89%E5%85%A8%E8%B4%A3%E4%BB%BB%E7%9A%84%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-398-05%E6%B0%91%E8%88%AA%E5%B1%80%E5%8D%B0%E5%8F%91%E3%80%8A%E5%85%B3%E4%BA%8E%E8%90%BD%E5%AE%9E%E6%B0%91%E8%88%AA%E5%AE%89%E5%85%A8%E8%B4%A3%E4%BB%BB%E7%9A%84%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "民航局关于印发《通用航空短途运输运营服务管理办法》的通知",
@@ -2423,7 +2423,7 @@ var data = [
     "doc_number": "",
     "office_unit": "运输司",
     "file_number": "",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E7%9F%AD%E9%80%94%E8%BF%90%E8%BE%93%E8%BF%90%E8%90%A5%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E9%80%9A%E7%94%A8%E8%88%AA%E7%A9%BA%E7%9F%AD%E9%80%94%E8%BF%90%E8%BE%93%E8%BF%90%E8%90%A5%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "正常类动力提升无人驾驶航空器系统（不载人）适航标准",
@@ -2435,7 +2435,7 @@ var data = [
     "doc_number": "AC-21-AA-2026-47",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2026-47",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-47%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%8A%A8%E5%8A%9B%E6%8F%90%E5%8D%87%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2026-47%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%8A%A8%E5%8A%9B%E6%8F%90%E5%8D%87%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
   },
   {
     "title": "正常类多旋翼无人驾驶航空器系统（不载人）适航标准",
@@ -2447,7 +2447,7 @@ var data = [
     "doc_number": "AC-21-AA-2026-46",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2026-46",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-46%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%A4%9A%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2026-46%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%A4%9A%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
   },
   {
     "title": "关于印发《正常类多旋翼无人驾驶航空器系统 （不载人）适航标准》咨询通告的通知",
@@ -2459,7 +2459,7 @@ var data = [
     "doc_number": "AC-21-AA-2026-46",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2026-46",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-46%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%A4%9A%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%20%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86%E3%80%8B%E5%92%A8%E8%AF%A2%E9%80%9A%E5%91%8A%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2026-46%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%A4%9A%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%20%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86%E3%80%8B%E5%92%A8%E8%AF%A2%E9%80%9A%E5%91%8A%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "关于印发《正常类动力提升无人驾驶航空器系统（不载人）适航标准》咨询通告的通知",
@@ -2471,7 +2471,7 @@ var data = [
     "doc_number": "AC-21-AA-2026-47",
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2026-47",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AC-21-AA-2026-47%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%8A%A8%E5%8A%9B%E6%8F%90%E5%8D%87%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86%E3%80%8B%E5%92%A8%E8%AF%A2%E9%80%9A%E5%91%8A%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2026-47%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%E3%80%8A%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%8A%A8%E5%8A%9B%E6%8F%90%E5%8D%87%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86%E3%80%8B%E5%92%A8%E8%AF%A2%E9%80%9A%E5%91%8A%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "民用航空空中交通管制员执照管理办法",
@@ -2483,7 +2483,7 @@ var data = [
     "doc_number": "AP-66I-TM-2023-03",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规〔2023〕49 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-66I-TM-2023-03%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-66I-TM-2023-03%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "民用航空空中交通管制检查员管理办法",
@@ -2495,7 +2495,7 @@ var data = [
     "doc_number": "AP-66I-TM-2023-04",
     "office_unit": "空管行业管理办公室",
     "file_number": "民航规 〔2023〕48 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-66I-TM-2023-04%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E6%A3%80%E6%9F%A5%E5%91%98%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-66I-TM-2023-04%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E6%A3%80%E6%9F%A5%E5%91%98%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "进口民用航空产品和零部件认可审定程序",
@@ -2507,7 +2507,7 @@ var data = [
     "doc_number": "AP-21-AA-2023-15",
     "office_unit": "航空器适航审定司",
     "file_number": "民航规〔2023〕42 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/%E5%BA%9F%E6%AD%A2%21AP-21-AA-2023-15%E8%BF%9B%E5%8F%A3%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E8%AE%A4%E5%8F%AF%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E5%BA%9F%E6%AD%A2%21AP-21-AA-2023-15%E8%BF%9B%E5%8F%A3%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E8%AE%A4%E5%8F%AF%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "民用航空器适航批准审定程序",
@@ -2519,7 +2519,7 @@ var data = [
     "doc_number": "AP-21-AA-2023-51R1",
     "office_unit": "航空器适航审定司",
     "file_number": "民航规〔2023〕40 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-21-AA-2023-51R1%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E6%89%B9%E5%87%86%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-21-AA-2023-51R1%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E6%89%B9%E5%87%86%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "型号合格审定程序",
@@ -2531,7 +2531,7 @@ var data = [
     "doc_number": "AP-21-AA-2023-11R1",
     "office_unit": "航空器适航审定司",
     "file_number": "民航规〔2023〕46 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-21-AA-2023-11R1%E5%9E%8B%E5%8F%B7%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-21-AA-2023-11R1%E5%9E%8B%E5%8F%B7%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "民用航空器国籍登记管理程序",
@@ -2543,7 +2543,7 @@ var data = [
     "doc_number": "AP-45-AA-2023-01R5",
     "office_unit": "航空器适航审定司",
     "file_number": "民航规〔2023〕45 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-45-AA-2023-01R5%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9B%BD%E7%B1%8D%E7%99%BB%E8%AE%B0%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-45-AA-2023-01R5%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%99%A8%E5%9B%BD%E7%B1%8D%E7%99%BB%E8%AE%B0%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "适航指令的颁发和管理程序",
@@ -2555,7 +2555,7 @@ var data = [
     "doc_number": "AP-39-AA-2023-01R2",
     "office_unit": "航空器适航审定司",
     "file_number": "民航规〔2023〕44 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-39-AA-2023-01R2%E9%80%82%E8%88%AA%E6%8C%87%E4%BB%A4%E7%9A%84%E9%A2%81%E5%8F%91%E5%92%8C%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-39-AA-2023-01R2%E9%80%82%E8%88%AA%E6%8C%87%E4%BB%A4%E7%9A%84%E9%A2%81%E5%8F%91%E5%92%8C%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "轻小型航空器生产许可及适航批准审定程序",
@@ -2567,7 +2567,7 @@ var data = [
     "doc_number": "AP-21-AA-2023-32R1",
     "office_unit": "航空器适航审定司",
     "file_number": "民航规〔2023〕43 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-21-AA-2023-32R1%E8%BD%BB%E5%B0%8F%E5%9E%8B%E8%88%AA%E7%A9%BA%E5%99%A8%E7%94%9F%E4%BA%A7%E8%AE%B8%E5%8F%AF%E5%8F%8A%E9%80%82%E8%88%AA%E6%89%B9%E5%87%86%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-21-AA-2023-32R1%E8%BD%BB%E5%B0%8F%E5%9E%8B%E8%88%AA%E7%A9%BA%E5%99%A8%E7%94%9F%E4%BA%A7%E8%AE%B8%E5%8F%AF%E5%8F%8A%E9%80%82%E8%88%AA%E6%89%B9%E5%87%86%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "民用航空产品和零部件持续适航事件报告和处理程序",
@@ -2579,7 +2579,7 @@ var data = [
     "doc_number": "AP-21-AA-2023-16R2",
     "office_unit": "航空器适航审定司",
     "file_number": "民航规〔2023〕41 号",
-    "pdf_url": "https://ccar.hudawang.cn/normative/AP-21-AA-2023-16R2%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E6%8C%81%E7%BB%AD%E9%80%82%E8%88%AA%E4%BA%8B%E4%BB%B6%E6%8A%A5%E5%91%8A%E5%92%8C%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-21-AA-2023-16R2%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%BA%A7%E5%93%81%E5%92%8C%E9%9B%B6%E9%83%A8%E4%BB%B6%E6%8C%81%E7%BB%AD%E9%80%82%E8%88%AA%E4%BA%8B%E4%BB%B6%E6%8A%A5%E5%91%8A%E5%92%8C%E5%A4%84%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
     "title": "民用航空产品补充型号合格证和改装设计批准书合格审定程序",

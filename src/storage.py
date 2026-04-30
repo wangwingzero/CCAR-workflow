@@ -52,6 +52,17 @@ TRACKED_CHANGE_FIELDS = (
     "publish_date",
 )
 
+LEGACY_STATIC_HOST = "https://ccar.hudawang.cn/"
+STATIC_HOST = "https://flighttoolbox.hudawang.cn/"
+
+
+def _normalize_pdf_url(pdf_url: str) -> str:
+    """Normalize legacy mirror URLs to the current static host."""
+    value = (pdf_url or "").strip()
+    if value.startswith(LEGACY_STATIC_HOST):
+        return STATIC_HOST + value[len(LEGACY_STATIC_HOST):]
+    return value
+
 
 def filter_by_days(documents: list[Document], days: int) -> list[Document]:
     """Filter documents by publish date, keep only last N days
@@ -195,7 +206,7 @@ def _build_legacy_record(doc: dict, cat_id: str) -> dict:
         "doc_type": get_legacy_doc_type(cat_id),
         "sign_date": doc.get("sign_date", ""),
         "publish_date": doc.get("publish_date", ""),
-        "pdf_url": doc.get("pdf_url", ""),
+        "pdf_url": _normalize_pdf_url(doc.get("pdf_url", "")),
     }
 
 
@@ -556,7 +567,7 @@ class Storage:
             existing_pdf_url_by_url = {}
             for row in existing_rows:
                 row_url = str(row.get("url", "")).strip()
-                row_pdf_url = str(row.get("pdf_url", "")).strip()
+                row_pdf_url = _normalize_pdf_url(str(row.get("pdf_url", "")).strip())
                 if row_url and row_pdf_url:
                     existing_pdf_url_by_url[row_url] = row_pdf_url
 
@@ -576,7 +587,9 @@ class Storage:
                 records = [
                     _build_regulation_record(
                         doc, doc_type,
-                        pdf_url=url_map.get(doc.url, existing_pdf_url_by_url.get(doc.url, ""))
+                        pdf_url=_normalize_pdf_url(
+                            url_map.get(doc.url, existing_pdf_url_by_url.get(doc.url, ""))
+                        )
                     )
                     for doc in docs
                 ]
@@ -585,7 +598,9 @@ class Storage:
                     _build_normative_record(
                         doc, doc_type,
                         existing_file_number_by_url.get(doc.url, ""),
-                        pdf_url=url_map.get(doc.url, existing_pdf_url_by_url.get(doc.url, ""))
+                        pdf_url=_normalize_pdf_url(
+                            url_map.get(doc.url, existing_pdf_url_by_url.get(doc.url, ""))
+                        )
                     )
                     for doc in docs
                 ]
@@ -593,7 +608,9 @@ class Storage:
                 records = [
                     _build_standard_record(
                         doc, doc_type,
-                        pdf_url=url_map.get(doc.url, existing_pdf_url_by_url.get(doc.url, ""))
+                        pdf_url=_normalize_pdf_url(
+                            url_map.get(doc.url, existing_pdf_url_by_url.get(doc.url, ""))
+                        )
                     )
                     for doc in docs
                 ]
