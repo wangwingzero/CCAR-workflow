@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-08-30T13:04:40.138569",
+  "last_check": "2026-08-31T15:16:09.861060",
   "documents": {
     "9": [
       {
@@ -10868,19 +10868,6 @@
         "has_pdf": false
       },
       {
-        "title": "型号合格审定程序",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260701_231208.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AP-21-11R2",
-        "office_unit": "航空器适航审定司",
-        "sign_date": "2026-06-25",
-        "publish_date": "2026-06-25",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
         "title": "设计机构审定和监督程序",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260701_231203.html",
         "category": "规范性文件",
@@ -13411,6 +13398,19 @@
         "office_unit": "空管行业管理办公室",
         "sign_date": "2023-12-27",
         "publish_date": "2023-12-27",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "型号合格审定程序",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260701_231208.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AP-21-11R2",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-06-25",
+        "publish_date": "2026-06-25",
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
@@ -26383,17 +26383,6 @@
       "pdf_url": ""
     },
     {
-      "title": "型号合格审定程序",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260701_231208.html",
-      "validity": "有效",
-      "doc_number": "AP-21-11R2",
-      "office_unit": "航空器适航审定司",
-      "doc_type": "normative",
-      "sign_date": "2026-06-25",
-      "publish_date": "2026-06-25",
-      "pdf_url": ""
-    },
-    {
       "title": "设计机构审定和监督程序",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260701_231203.html",
       "validity": "有效",
@@ -28536,6 +28525,17 @@
       "doc_type": "normative",
       "sign_date": "2023-12-27",
       "publish_date": "2023-12-27",
+      "pdf_url": ""
+    },
+    {
+      "title": "型号合格审定程序",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260701_231208.html",
+      "validity": "有效",
+      "doc_number": "AP-21-11R2",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "normative",
+      "sign_date": "2026-06-25",
+      "publish_date": "2026-06-25",
       "pdf_url": ""
     },
     {

@@ -60,18 +60,6 @@ var data = [
     "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-142-FS-001%E9%A3%9E%E8%A1%8C%E8%AE%AD%E7%BB%83%E4%B8%AD%E5%BF%83%E8%B4%A8%E9%87%8F%E7%AE%A1%E7%90%86%E4%BD%93%E7%B3%BB%E5%BB%BA%E8%AE%BE%E8%A6%81%E6%B1%82.pdf"
   },
   {
-    "title": "型号合格审定程序",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260701_231208.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2026年06月25日",
-    "publish_date": "2026年06月25日",
-    "doc_number": "AP-21-11R2",
-    "office_unit": "航空器适航审定司",
-    "file_number": "文号：AP-21-11R2",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-21-11R2%E5%9E%8B%E5%8F%B7%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
-  },
-  {
     "title": "设计机构审定和监督程序",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260701_231203.html",
     "doc_type": "规范性文件",
@@ -2393,6 +2381,30 @@ var data = [
     "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-70-TM-2023-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%9F%B9%E8%AE%AD%E6%9C%BA%E6%9E%84%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95.pdf"
   },
   {
+    "title": "民用航空空中交通流量管理规定",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231204_222224.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2023年12月27日",
+    "publish_date": "2023年12月27日",
+    "doc_number": "AP-93-TM-2023-01",
+    "office_unit": "空管行业管理办公室",
+    "file_number": "文号：AP-93-TM-2023-01",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-93-TM-2023-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
+  },
+  {
+    "title": "型号合格审定程序",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202607/t20260701_231208.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年06月25日",
+    "publish_date": "2026年06月25日",
+    "doc_number": "AP-21-11R2",
+    "office_unit": "航空器适航审定司",
+    "file_number": "文号：AP-21-11R2",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-21-11R2%E5%9E%8B%E5%8F%B7%E5%90%88%E6%A0%BC%E5%AE%A1%E5%AE%9A%E7%A8%8B%E5%BA%8F.pdf"
+  },
+  {
     "title": "关于印发《正常类多旋翼无人驾驶航空器系统 （不载人）适航标准》咨询通告的通知",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202604/t20260410_230524.html",
     "doc_type": "规范性文件",
@@ -2439,18 +2451,6 @@ var data = [
     "office_unit": "航空器适航审定司",
     "file_number": "文号：AC-21-AA-2026-46",
     "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-21-AA-2026-46%E6%AD%A3%E5%B8%B8%E7%B1%BB%E5%A4%9A%E6%97%8B%E7%BF%BC%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E8%88%AA%E7%A9%BA%E5%99%A8%E7%B3%BB%E7%BB%9F%EF%BC%88%E4%B8%8D%E8%BD%BD%E4%BA%BA%EF%BC%89%E9%80%82%E8%88%AA%E6%A0%87%E5%87%86.pdf"
-  },
-  {
-    "title": "民用航空空中交通流量管理规定",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202312/t20231204_222224.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2023年12月27日",
-    "publish_date": "2023年12月27日",
-    "doc_number": "AP-93-TM-2023-01",
-    "office_unit": "空管行业管理办公室",
-    "file_number": "文号：AP-93-TM-2023-01",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-93-TM-2023-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E6%B5%81%E9%87%8F%E7%AE%A1%E7%90%86%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "空中交通管制容量评估管理规定",
