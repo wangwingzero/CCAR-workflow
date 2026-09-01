@@ -1,14 +1,5 @@
 var data = [
   {
-    "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202608/t20260825_231600.html",
-    "doc_type": "CCAR规章",
-    "validity": "有效",
-    "doc_number": "",
-    "office_unit": "机场司",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/regulation/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E8%A1%8C%E8%A7%86%E8%A7%92%E7%9A%84%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E4%BF%9D%E9%9A%9C%E8%83%BD%E5%8A%9B%E5%8F%8D%E9%A6%88%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95.pdf"
-  },
-  {
     "title": "通用航空经营管理规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202607/t20260717_231321.html",
     "doc_type": "CCAR规章",
@@ -1744,6 +1735,15 @@ var data = [
     "doc_number": "CCAR-201",
     "office_unit": "运输司",
     "pdf_url": "https://flighttoolbox.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC138%E5%8F%B7%E4%BB%A4%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E4%BC%81%E4%B8%9A%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E8%A7%84%E5%AE%9A.pdf"
+  },
+  {
+    "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202608/t20260825_231600.html",
+    "doc_type": "CCAR规章",
+    "validity": "有效",
+    "doc_number": "",
+    "office_unit": "机场司",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/regulation/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E8%A1%8C%E8%A7%86%E8%A7%92%E7%9A%84%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E4%BF%9D%E9%9A%9C%E8%83%BD%E5%8A%9B%E5%8F%8D%E9%A6%88%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95.pdf"
   },
   {
     "title": "中国民用航空统计管理办法",

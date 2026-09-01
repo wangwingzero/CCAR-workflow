@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-08-28T19:38:32.746118",
+  "last_update": "2026-09-01T12:42:36.554816",
   "records": {
     "regulation/交通运输部令2025年第9号运输类旋翼航空器适航规定.pdf": {
       "r2_url": "https://flighttoolbox.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf",
@@ -11688,6 +11688,10 @@
     "other/中国民航空中警察总队一支队2025年度部门决算.pdf": {
       "r2_url": "https://flighttoolbox.hudawang.cn/other/%E4%B8%AD%E5%9B%BD%E6%B0%91%E8%88%AA%E7%A9%BA%E4%B8%AD%E8%AD%A6%E5%AF%9F%E6%80%BB%E9%98%9F%E4%B8%80%E6%94%AF%E9%98%9F2025%E5%B9%B4%E5%BA%A6%E9%83%A8%E9%97%A8%E5%86%B3%E7%AE%97.pdf",
       "file_size": 843376
+    },
+    "normative/基于飞行视角的运输机场运行保障能力反馈工作机制实施办法.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/normative/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E8%A1%8C%E8%A7%86%E8%A7%92%E7%9A%84%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E4%BF%9D%E9%9A%9C%E8%83%BD%E5%8A%9B%E5%8F%8D%E9%A6%88%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95.pdf",
+      "file_size": 342586
     }
   }
 }
