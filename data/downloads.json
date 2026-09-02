@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-01T12:42:33.872718",
+  "last_update": "2026-09-02T12:16:05.905315",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6740,6 +6740,26 @@
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202608/t20260825_231600.html": {
       "relative_path": "normative/基于飞行视角的运输机场运行保障能力反馈工作机制实施办法.pdf",
       "updated_at": "2026-09-01T12:42:33.872702"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231666.html": {
+      "relative_path": "normative/《飞行标准监察员手册》-飞行签派员资质管理和训练机构（FSIH V2-5）.pdf",
+      "updated_at": "2026-09-02T12:14:07.906664"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231665.html": {
+      "relative_path": "normative/《飞行标准监察员手册》-飞行训练机构和设备（FSIH V2-4）.pdf",
+      "updated_at": "2026-09-02T12:14:31.145871"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231664.html": {
+      "relative_path": "normative/《飞行标准监察员手册》-驾驶员和飞行机械员资质管理（FSIH V2-3）.pdf",
+      "updated_at": "2026-09-02T12:15:10.790133"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231663.html": {
+      "relative_path": "normative/《飞行标准监察员手册》-非商业运输航空运营人（FSIH V2-2）.pdf",
+      "updated_at": "2026-09-02T12:15:30.383878"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231662.html": {
+      "relative_path": "normative/《飞行标准监察员手册》-商业航空运输运营人（FSIH V2-1）.pdf",
+      "updated_at": "2026-09-02T12:16:05.905300"
     }
   }
 }

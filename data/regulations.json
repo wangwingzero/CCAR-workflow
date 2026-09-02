@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-09-01T12:42:46.666405",
+  "last_check": "2026-09-02T12:16:26.516638",
   "documents": {
     "9": [
       {
@@ -10813,7 +10813,7 @@
         "publish_date": "2026-08-25",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202608/P020260825511208130342.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "型号合格审定程序",
@@ -11347,6 +11347,71 @@
         "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
+      },
+      {
+        "title": "《飞行标准监察员手册》-飞行签派员资质管理和训练机构（FSIH V2-5）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231666.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "飞行标准司",
+        "sign_date": "2025-11-17",
+        "publish_date": "2025-11-17",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902321239681277.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "《飞行标准监察员手册》-飞行训练机构和设备（FSIH V2-4）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231665.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "飞行标准司",
+        "sign_date": "2025-11-17",
+        "publish_date": "2025-11-17",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902320593792993.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "《飞行标准监察员手册》-驾驶员和飞行机械员资质管理（FSIH V2-3）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231664.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "飞行标准司",
+        "sign_date": "2025-11-17",
+        "publish_date": "2025-11-17",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902319580905671.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "《飞行标准监察员手册》-非商业运输航空运营人（FSIH V2-2）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231663.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "飞行标准司",
+        "sign_date": "2025-11-17",
+        "publish_date": "2025-11-17",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902317557637268.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "《飞行标准监察员手册》-商业航空运输运营人（FSIH V2-1）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231662.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "飞行标准司",
+        "sign_date": "2025-11-17",
+        "publish_date": "2025-11-17",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902316487153353.pdf",
+        "has_pdf": true
       },
       {
         "title": "涡轮发动机飞机排放审定",
@@ -12753,25 +12818,25 @@
         "has_pdf": false
       },
       {
-        "title": "放射性物品航空运输管理程序",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202404/t20240424_223961.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "",
-        "office_unit": "运输司",
-        "sign_date": "2024-04-24",
-        "publish_date": "2024-04-24",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
         "title": "飞行标准监察员手册（第二卷）-运行监察员手册",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202403/t20240311_223177.html",
         "category": "规范性文件",
         "category_id": "14",
         "doc_number": "",
         "office_unit": "飞行标准司",
+        "sign_date": "2024-04-24",
+        "publish_date": "2024-04-24",
+        "validity": "失效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
+        "title": "放射性物品航空运输管理程序",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202404/t20240424_223961.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "运输司",
         "sign_date": "2024-04-24",
         "publish_date": "2024-04-24",
         "validity": "有效",
@@ -13312,6 +13377,19 @@
         "has_pdf": false
       },
       {
+        "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法（试行）",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222796.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AP-140-CA-2024-03",
+        "office_unit": "机场司",
+        "sign_date": "2024-01-03",
+        "publish_date": "2024-01-03",
+        "validity": "失效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "国际运行",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222798.html",
         "category": "规范性文件",
@@ -13330,19 +13408,6 @@
         "category": "规范性文件",
         "category_id": "14",
         "doc_number": "",
-        "office_unit": "机场司",
-        "sign_date": "2024-01-03",
-        "publish_date": "2024-01-03",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法（试行）",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222796.html",
-        "category": "规范性文件",
-        "category_id": "14",
-        "doc_number": "AP-140-CA-2024-03",
         "office_unit": "机场司",
         "sign_date": "2024-01-03",
         "publish_date": "2024-01-03",
@@ -26803,6 +26868,61 @@
       "pdf_url": ""
     },
     {
+      "title": "《飞行标准监察员手册》-飞行签派员资质管理和训练机构（FSIH V2-5）",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231666.html",
+      "validity": "有效",
+      "doc_number": "",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2025-11-17",
+      "publish_date": "2025-11-17",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902321239681277.pdf"
+    },
+    {
+      "title": "《飞行标准监察员手册》-飞行训练机构和设备（FSIH V2-4）",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231665.html",
+      "validity": "有效",
+      "doc_number": "",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2025-11-17",
+      "publish_date": "2025-11-17",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902320593792993.pdf"
+    },
+    {
+      "title": "《飞行标准监察员手册》-驾驶员和飞行机械员资质管理（FSIH V2-3）",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231664.html",
+      "validity": "有效",
+      "doc_number": "",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2025-11-17",
+      "publish_date": "2025-11-17",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902319580905671.pdf"
+    },
+    {
+      "title": "《飞行标准监察员手册》-非商业运输航空运营人（FSIH V2-2）",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231663.html",
+      "validity": "有效",
+      "doc_number": "",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2025-11-17",
+      "publish_date": "2025-11-17",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902317557637268.pdf"
+    },
+    {
+      "title": "《飞行标准监察员手册》-商业航空运输运营人（FSIH V2-1）",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231662.html",
+      "validity": "有效",
+      "doc_number": "",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2025-11-17",
+      "publish_date": "2025-11-17",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902316487153353.pdf"
+    },
+    {
       "title": "涡轮发动机飞机排放审定",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202601/t20260105_229657.html",
       "validity": "有效",
@@ -27991,22 +28111,22 @@
       "pdf_url": ""
     },
     {
-      "title": "放射性物品航空运输管理程序",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202404/t20240424_223961.html",
-      "validity": "有效",
+      "title": "飞行标准监察员手册（第二卷）-运行监察员手册",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202403/t20240311_223177.html",
+      "validity": "失效",
       "doc_number": "",
-      "office_unit": "运输司",
+      "office_unit": "飞行标准司",
       "doc_type": "normative",
       "sign_date": "2024-04-24",
       "publish_date": "2024-04-24",
       "pdf_url": ""
     },
     {
-      "title": "飞行标准监察员手册（第二卷）-运行监察员手册",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202403/t20240311_223177.html",
+      "title": "放射性物品航空运输管理程序",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202404/t20240424_223961.html",
       "validity": "有效",
       "doc_number": "",
-      "office_unit": "飞行标准司",
+      "office_unit": "运输司",
       "doc_type": "normative",
       "sign_date": "2024-04-24",
       "publish_date": "2024-04-24",
@@ -28464,6 +28584,17 @@
       "pdf_url": ""
     },
     {
+      "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法（试行）",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222796.html",
+      "validity": "失效",
+      "doc_number": "AP-140-CA-2024-03",
+      "office_unit": "机场司",
+      "doc_type": "normative",
+      "sign_date": "2024-01-03",
+      "publish_date": "2024-01-03",
+      "pdf_url": ""
+    },
+    {
       "title": "国际运行",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222798.html",
       "validity": "有效",
@@ -28479,17 +28610,6 @@
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222797.html",
       "validity": "有效",
       "doc_number": "",
-      "office_unit": "机场司",
-      "doc_type": "normative",
-      "sign_date": "2024-01-03",
-      "publish_date": "2024-01-03",
-      "pdf_url": ""
-    },
-    {
-      "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法（试行）",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222796.html",
-      "validity": "有效",
-      "doc_number": "AP-140-CA-2024-03",
       "office_unit": "机场司",
       "doc_type": "normative",
       "sign_date": "2024-01-03",

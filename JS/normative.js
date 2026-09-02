@@ -500,6 +500,66 @@ var data = [
     "pdf_url": "https://flighttoolbox.hudawang.cn/normative/IB-FS-MED-012%E6%B0%91%E8%88%AA%E6%9C%BA%E7%BB%84%E6%88%90%E5%91%98%E5%AE%9A%E6%9C%9F%E7%96%97%E5%85%BB%E5%B7%A5%E4%BD%9C%E6%8C%87%E5%8D%97.pdf"
   },
   {
+    "title": "《飞行标准监察员手册》-飞行签派员资质管理和训练机构（FSIH V2-5）",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231666.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2025年11月17日",
+    "publish_date": "2025年11月17日",
+    "doc_number": "",
+    "office_unit": "飞行标准司",
+    "file_number": "",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E9%A3%9E%E8%A1%8C%E7%AD%BE%E6%B4%BE%E5%91%98%E8%B5%84%E8%B4%A8%E7%AE%A1%E7%90%86%E5%92%8C%E8%AE%AD%E7%BB%83%E6%9C%BA%E6%9E%84%EF%BC%88FSIH%20V2-5%EF%BC%89.pdf"
+  },
+  {
+    "title": "《飞行标准监察员手册》-飞行训练机构和设备（FSIH V2-4）",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231665.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2025年11月17日",
+    "publish_date": "2025年11月17日",
+    "doc_number": "",
+    "office_unit": "飞行标准司",
+    "file_number": "",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E9%A3%9E%E8%A1%8C%E8%AE%AD%E7%BB%83%E6%9C%BA%E6%9E%84%E5%92%8C%E8%AE%BE%E5%A4%87%EF%BC%88FSIH%20V2-4%EF%BC%89.pdf"
+  },
+  {
+    "title": "《飞行标准监察员手册》-驾驶员和飞行机械员资质管理（FSIH V2-3）",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231664.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2025年11月17日",
+    "publish_date": "2025年11月17日",
+    "doc_number": "",
+    "office_unit": "飞行标准司",
+    "file_number": "",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E9%A9%BE%E9%A9%B6%E5%91%98%E5%92%8C%E9%A3%9E%E8%A1%8C%E6%9C%BA%E6%A2%B0%E5%91%98%E8%B5%84%E8%B4%A8%E7%AE%A1%E7%90%86%EF%BC%88FSIH%20V2-3%EF%BC%89.pdf"
+  },
+  {
+    "title": "《飞行标准监察员手册》-非商业运输航空运营人（FSIH V2-2）",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231663.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2025年11月17日",
+    "publish_date": "2025年11月17日",
+    "doc_number": "",
+    "office_unit": "飞行标准司",
+    "file_number": "",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E9%9D%9E%E5%95%86%E4%B8%9A%E8%BF%90%E8%BE%93%E8%88%AA%E7%A9%BA%E8%BF%90%E8%90%A5%E4%BA%BA%EF%BC%88FSIH%20V2-2%EF%BC%89.pdf"
+  },
+  {
+    "title": "《飞行标准监察员手册》-商业航空运输运营人（FSIH V2-1）",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231662.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2025年11月17日",
+    "publish_date": "2025年11月17日",
+    "doc_number": "",
+    "office_unit": "飞行标准司",
+    "file_number": "",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E5%95%86%E4%B8%9A%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E8%BF%90%E8%90%A5%E4%BA%BA%EF%BC%88FSIH%20V2-1%EF%BC%89.pdf"
+  },
+  {
     "title": "涡轮发动机飞机排放审定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202601/t20260105_229657.html",
     "doc_type": "规范性文件",
@@ -1795,6 +1855,18 @@ var data = [
     "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%20%E3%80%8A%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E5%BB%BA%E8%AE%BE%E9%A1%B9%E7%9B%AE%E8%AF%84%E6%A0%87%E4%B8%93%E5%AE%B6%E5%92%8C%E4%B8%93%E5%AE%B6%E5%BA%93%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
+    "title": "飞行标准监察员手册（第二卷）-运行监察员手册",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202403/t20240311_223177.html",
+    "doc_type": "规范性文件",
+    "validity": "失效",
+    "sign_date": "2024年04月24日",
+    "publish_date": "2024年04月24日",
+    "doc_number": "",
+    "office_unit": "飞行标准司",
+    "file_number": "",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%8D%B7%EF%BC%89-%E8%BF%90%E8%A1%8C%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C.pdf"
+  },
+  {
     "title": "放射性物品航空运输管理程序",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202404/t20240424_223961.html",
     "doc_type": "规范性文件",
@@ -1805,18 +1877,6 @@ var data = [
     "office_unit": "运输司",
     "file_number": "",
     "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%94%BE%E5%B0%84%E6%80%A7%E7%89%A9%E5%93%81%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E7%AE%A1%E7%90%86%E7%A8%8B%E5%BA%8F.pdf"
-  },
-  {
-    "title": "飞行标准监察员手册（第二卷）-运行监察员手册",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202403/t20240311_223177.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2024年04月24日",
-    "publish_date": "2024年04月24日",
-    "doc_number": "",
-    "office_unit": "飞行标准司",
-    "file_number": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%EF%BC%88%E7%AC%AC%E4%BA%8C%E5%8D%B7%EF%BC%89-%E8%BF%90%E8%A1%8C%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C.pdf"
   },
   {
     "title": "飞行标准管理手册",
@@ -2309,6 +2369,18 @@ var data = [
     "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-70-TM-2024-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E5%9F%B9%E8%AE%AD%E6%9C%BA%E6%9E%84%E5%AE%A1%E5%AE%9A%E5%92%8C%E7%9B%91%E5%AF%9F%E7%A8%8B%E5%BA%8F.pdf"
   },
   {
+    "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法（试行）",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222796.html",
+    "doc_type": "规范性文件",
+    "validity": "失效",
+    "sign_date": "2024年01月03日",
+    "publish_date": "2024年01月03日",
+    "doc_number": "AP-140-CA-2024-03",
+    "office_unit": "机场司",
+    "file_number": "民航综机发〔2024〕1 号",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-140-CA-2024-03%E5%9F%BA%E4%BA%8E%E9%A3%9E%E8%A1%8C%E8%A7%86%E8%A7%92%E7%9A%84%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E4%BF%9D%E9%9A%9C%E8%83%BD%E5%8A%9B%E5%8F%8D%E9%A6%88%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
+  },
+  {
     "title": "国际运行",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222798.html",
     "doc_type": "规范性文件",
@@ -2331,18 +2403,6 @@ var data = [
     "office_unit": "机场司",
     "file_number": "",
     "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E5%9C%B0%E9%9D%A2%E6%B4%BB%E5%8A%A8%E5%BC%95%E5%AF%BC%E4%B8%8E%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%EF%BC%88SMGCS%EF%BC%89%E5%BB%BA%E8%AE%BE%E5%92%8C%E8%BF%90%E8%A1%8C%E6%8C%87%E5%8D%97.pdf"
-  },
-  {
-    "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法（试行）",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202401/t20240126_222796.html",
-    "doc_type": "规范性文件",
-    "validity": "有效",
-    "sign_date": "2024年01月03日",
-    "publish_date": "2024年01月03日",
-    "doc_number": "AP-140-CA-2024-03",
-    "office_unit": "机场司",
-    "file_number": "民航综机发〔2024〕1 号",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-140-CA-2024-03%E5%9F%BA%E4%BA%8E%E9%A3%9E%E8%A1%8C%E8%A7%86%E8%A7%92%E7%9A%84%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E4%BF%9D%E9%9A%9C%E8%83%BD%E5%8A%9B%E5%8F%8D%E9%A6%88%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95%EF%BC%88%E8%AF%95%E8%A1%8C%EF%BC%89.pdf"
   },
   {
     "title": "关于管制员英语无线电通信能力的要求",

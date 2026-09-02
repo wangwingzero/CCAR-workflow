@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-01T12:42:36.554816",
+  "last_update": "2026-09-02T12:16:13.091953",
   "records": {
     "regulation/交通运输部令2025年第9号运输类旋翼航空器适航规定.pdf": {
       "r2_url": "https://flighttoolbox.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf",
@@ -11692,6 +11692,26 @@
     "normative/基于飞行视角的运输机场运行保障能力反馈工作机制实施办法.pdf": {
       "r2_url": "https://flighttoolbox.hudawang.cn/normative/%E5%9F%BA%E4%BA%8E%E9%A3%9E%E8%A1%8C%E8%A7%86%E8%A7%92%E7%9A%84%E8%BF%90%E8%BE%93%E6%9C%BA%E5%9C%BA%E8%BF%90%E8%A1%8C%E4%BF%9D%E9%9A%9C%E8%83%BD%E5%8A%9B%E5%8F%8D%E9%A6%88%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6%E5%AE%9E%E6%96%BD%E5%8A%9E%E6%B3%95.pdf",
       "file_size": 342586
+    },
+    "normative/《飞行标准监察员手册》-飞行签派员资质管理和训练机构（FSIH V2-5）.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E9%A3%9E%E8%A1%8C%E7%AD%BE%E6%B4%BE%E5%91%98%E8%B5%84%E8%B4%A8%E7%AE%A1%E7%90%86%E5%92%8C%E8%AE%AD%E7%BB%83%E6%9C%BA%E6%9E%84%EF%BC%88FSIH%20V2-5%EF%BC%89.pdf",
+      "file_size": 1985912
+    },
+    "normative/《飞行标准监察员手册》-飞行训练机构和设备（FSIH V2-4）.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E9%A3%9E%E8%A1%8C%E8%AE%AD%E7%BB%83%E6%9C%BA%E6%9E%84%E5%92%8C%E8%AE%BE%E5%A4%87%EF%BC%88FSIH%20V2-4%EF%BC%89.pdf",
+      "file_size": 1279478
+    },
+    "normative/《飞行标准监察员手册》-驾驶员和飞行机械员资质管理（FSIH V2-3）.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E9%A9%BE%E9%A9%B6%E5%91%98%E5%92%8C%E9%A3%9E%E8%A1%8C%E6%9C%BA%E6%A2%B0%E5%91%98%E8%B5%84%E8%B4%A8%E7%AE%A1%E7%90%86%EF%BC%88FSIH%20V2-3%EF%BC%89.pdf",
+      "file_size": 5767782
+    },
+    "normative/《飞行标准监察员手册》-非商业运输航空运营人（FSIH V2-2）.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E9%9D%9E%E5%95%86%E4%B8%9A%E8%BF%90%E8%BE%93%E8%88%AA%E7%A9%BA%E8%BF%90%E8%90%A5%E4%BA%BA%EF%BC%88FSIH%20V2-2%EF%BC%89.pdf",
+      "file_size": 1250297
+    },
+    "normative/《飞行标准监察员手册》-商业航空运输运营人（FSIH V2-1）.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E5%95%86%E4%B8%9A%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E8%BF%90%E8%90%A5%E4%BA%BA%EF%BC%88FSIH%20V2-1%EF%BC%89.pdf",
+      "file_size": 5085590
     }
   }
 }
