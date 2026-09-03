@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-09-02T12:16:26.516638",
+  "last_check": "2026-09-03T12:12:51.475915",
   "documents": {
     "9": [
       {
@@ -11359,7 +11359,7 @@
         "publish_date": "2025-11-17",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902321239681277.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "《飞行标准监察员手册》-飞行训练机构和设备（FSIH V2-4）",
@@ -11372,7 +11372,7 @@
         "publish_date": "2025-11-17",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902320593792993.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "《飞行标准监察员手册》-驾驶员和飞行机械员资质管理（FSIH V2-3）",
@@ -11385,7 +11385,7 @@
         "publish_date": "2025-11-17",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902319580905671.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "《飞行标准监察员手册》-非商业运输航空运营人（FSIH V2-2）",
@@ -11398,7 +11398,7 @@
         "publish_date": "2025-11-17",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902317557637268.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "《飞行标准监察员手册》-商业航空运输运营人（FSIH V2-1）",
@@ -11411,7 +11411,7 @@
         "publish_date": "2025-11-17",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260902316487153353.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "涡轮发动机飞机排放审定",
