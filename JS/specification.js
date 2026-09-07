@@ -20,6 +20,16 @@ var data = [
     "pdf_url": "https://flighttoolbox.hudawang.cn/specification/CTSO-C63f%E6%9C%BA%E8%BD%BD%E6%B0%94%E8%B1%A1%E9%9B%B7%E8%BE%BE%E8%AE%BE%E5%A4%87.pdf"
   },
   {
+    "title": "民航相干多普勒测风激光雷达建设规范",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260907_231684.html",
+    "doc_type": "标准规范",
+    "validity": "有效",
+    "publish_date": "2026年08月04日",
+    "doc_number": "MH/T 5093-2026",
+    "office_unit": "空管行业管理办公室",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/MH_T%205093-2026%E6%B0%91%E8%88%AA%E7%9B%B8%E5%B9%B2%E5%A4%9A%E6%99%AE%E5%8B%92%E6%B5%8B%E9%A3%8E%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E5%BB%BA%E8%AE%BE%E8%A7%84%E8%8C%83.pdf"
+  },
+  {
     "title": "航空抗燃磷酸酯液压油性能测试方法  第2部分：耐腐蚀性能  流量控制阀测试法",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202607/t20260721_231345.html",
     "doc_type": "标准规范",

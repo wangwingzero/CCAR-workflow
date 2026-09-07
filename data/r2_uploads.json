@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-02T12:16:13.091953",
+  "last_update": "2026-09-07T13:38:38.137942",
   "records": {
     "regulation/交通运输部令2025年第9号运输类旋翼航空器适航规定.pdf": {
       "r2_url": "https://flighttoolbox.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf",
@@ -11712,6 +11712,10 @@
     "normative/《飞行标准监察员手册》-商业航空运输运营人（FSIH V2-1）.pdf": {
       "r2_url": "https://flighttoolbox.hudawang.cn/normative/%E3%80%8A%E9%A3%9E%E8%A1%8C%E6%A0%87%E5%87%86%E7%9B%91%E5%AF%9F%E5%91%98%E6%89%8B%E5%86%8C%E3%80%8B-%E5%95%86%E4%B8%9A%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E8%BF%90%E8%90%A5%E4%BA%BA%EF%BC%88FSIH%20V2-1%EF%BC%89.pdf",
       "file_size": 5085590
+    },
+    "specification/MH_T 5093-2026民航相干多普勒测风激光雷达建设规范.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/specification/MH_T%205093-2026%E6%B0%91%E8%88%AA%E7%9B%B8%E5%B9%B2%E5%A4%9A%E6%99%AE%E5%8B%92%E6%B5%8B%E9%A3%8E%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E5%BB%BA%E8%AE%BE%E8%A7%84%E8%8C%83.pdf",
+      "file_size": 1186026
     }
   }
 }

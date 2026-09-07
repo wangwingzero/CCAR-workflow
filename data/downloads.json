@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-02T12:16:05.905315",
+  "last_update": "2026-09-07T13:38:36.595347",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6760,6 +6760,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260902_231662.html": {
       "relative_path": "normative/《飞行标准监察员手册》-商业航空运输运营人（FSIH V2-1）.pdf",
       "updated_at": "2026-09-02T12:16:05.905300"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260907_231684.html": {
+      "relative_path": "specification/MH_T 5093-2026民航相干多普勒测风激光雷达建设规范.pdf",
+      "updated_at": "2026-09-07T13:38:36.595333"
     }
   }
 }

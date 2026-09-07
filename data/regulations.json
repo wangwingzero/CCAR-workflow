@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-09-06T11:46:02.178817",
+  "last_check": "2026-09-07T13:38:46.484392",
   "documents": {
     "9": [
       {
@@ -13637,6 +13637,19 @@
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202608/P020260821551915916750.pdf",
         "has_pdf": false
+      },
+      {
+        "title": "民航相干多普勒测风激光雷达建设规范",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260907_231684.html",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "MH/T 5093-2026",
+        "office_unit": "空管行业管理办公室",
+        "sign_date": "2026-08-04",
+        "publish_date": "2026-08-04",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260907615476163118.pdf",
+        "has_pdf": true
       },
       {
         "title": "航空抗燃磷酸酯液压油性能测试方法  第2部分：耐腐蚀性能  流量控制阀测试法",
@@ -28804,6 +28817,17 @@
       "sign_date": "2026-08-21",
       "publish_date": "2026-08-21",
       "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202608/P020260821551915916750.pdf"
+    },
+    {
+      "title": "民航相干多普勒测风激光雷达建设规范",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260907_231684.html",
+      "validity": "有效",
+      "doc_number": "MH/T 5093-2026",
+      "office_unit": "空管行业管理办公室",
+      "doc_type": "standard",
+      "sign_date": "2026-08-04",
+      "publish_date": "2026-08-04",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260907615476163118.pdf"
     },
     {
       "title": "航空抗燃磷酸酯液压油性能测试方法  第2部分：耐腐蚀性能  流量控制阀测试法",
