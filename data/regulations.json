@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-09-07T13:38:46.484392",
+  "last_check": "2026-09-08T12:15:46.842397",
   "documents": {
     "9": [
       {
@@ -13649,7 +13649,7 @@
         "publish_date": "2026-08-04",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260907615476163118.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "航空抗燃磷酸酯液压油性能测试方法  第2部分：耐腐蚀性能  流量控制阀测试法",
