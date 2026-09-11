@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-09T12:28:25.831566",
+  "last_update": "2026-09-11T12:20:03.753959",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6772,6 +6772,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260909_231689.html": {
       "relative_path": "other/关于对新疆天聚建设工程有限公司进行资质动态核查的通知.txt",
       "updated_at": "2026-09-09T12:28:25.831550"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260911_231708.html": {
+      "relative_path": "other/民航专业工程招标投标领域违法违规典型案例通报（第三批）.txt",
+      "updated_at": "2026-09-11T12:20:03.753945"
     }
   }
 }
