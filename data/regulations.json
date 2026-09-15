@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-09-14T14:19:30.853780",
+  "last_check": "2026-09-15T12:50:42.609567",
   "documents": {
     "9": [
+      {
+        "title": "关于2027年民航发展基金相关补贴资金预算方案的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260915_231717.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-09-15",
+        "publish_date": "2026-09-15",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "民航专业工程招标投标领域违法违规典型案例通报（第三批）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260911_231708.html",
@@ -9150,6 +9163,19 @@
         "has_pdf": false
       },
       {
+        "title": "交通运输部关于修改《公共航空运输企业经营许可规定》的决定",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191932.html",
+        "category": "民航规章",
+        "category_id": "13",
+        "doc_number": "CCAR-201-R1",
+        "office_unit": "政策法规司",
+        "sign_date": "",
+        "publish_date": "2018-08-31",
+        "validity": "失效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "运输机场使用许可规定",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191930.html",
         "category": "民航规章",
@@ -9168,19 +9194,6 @@
         "category": "民航规章",
         "category_id": "13",
         "doc_number": "CCAR-69-R1",
-        "office_unit": "政策法规司",
-        "sign_date": "",
-        "publish_date": "2018-08-31",
-        "validity": "有效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "交通运输部关于修改《公共航空运输企业经营许可规定》的决定",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191932.html",
-        "category": "民航规章",
-        "category_id": "13",
-        "doc_number": "CCAR-201-R1",
         "office_unit": "政策法规司",
         "sign_date": "",
         "publish_date": "2018-08-31",
@@ -10762,6 +10775,19 @@
         "has_pdf": false
       },
       {
+        "title": "公共航空运输企业经营许可规定",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8494.html",
+        "category": "民航规章",
+        "category_id": "13",
+        "doc_number": "CCAR-201",
+        "office_unit": "运输司",
+        "sign_date": "",
+        "publish_date": "2004-12-16",
+        "validity": "失效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "中国民用航空总局关于修订《民用航空器驾驶员、飞行教员和地面教员合格审定规则》的决定",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8495.html",
         "category": "民航规章",
@@ -10784,19 +10810,6 @@
         "sign_date": "",
         "publish_date": "2004-12-16",
         "validity": "失效",
-        "pdf_url": "",
-        "has_pdf": false
-      },
-      {
-        "title": "公共航空运输企业经营许可规定",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8494.html",
-        "category": "民航规章",
-        "category_id": "13",
-        "doc_number": "CCAR-201",
-        "office_unit": "运输司",
-        "sign_date": "",
-        "publish_date": "2004-12-16",
-        "validity": "有效",
         "pdf_url": "",
         "has_pdf": false
       },
@@ -21132,6 +21145,19 @@
     ],
     "28": [
       {
+        "title": "关于2027年民航发展基金相关补贴资金预算方案的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260915_231717.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-09-15",
+        "publish_date": "2026-09-15",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
+      {
         "title": "民航专业工程招标投标领域违法违规典型案例通报（第三批）",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260911_231708.html",
         "category": "建议提案答复",
@@ -25065,6 +25091,17 @@
       "pdf_url": ""
     },
     {
+      "title": "交通运输部关于修改《公共航空运输企业经营许可规定》的决定",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191932.html",
+      "validity": "失效",
+      "doc_number": "CCAR-201-R1",
+      "office_unit": "政策法规司",
+      "doc_type": "regulation",
+      "sign_date": "",
+      "publish_date": "2018-08-31",
+      "pdf_url": ""
+    },
+    {
       "title": "运输机场使用许可规定",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191930.html",
       "validity": "失效",
@@ -25080,17 +25117,6 @@
       "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191933.html",
       "validity": "有效",
       "doc_number": "CCAR-69-R1",
-      "office_unit": "政策法规司",
-      "doc_type": "regulation",
-      "sign_date": "",
-      "publish_date": "2018-08-31",
-      "pdf_url": ""
-    },
-    {
-      "title": "交通运输部关于修改《公共航空运输企业经营许可规定》的决定",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191932.html",
-      "validity": "有效",
-      "doc_number": "CCAR-201-R1",
       "office_unit": "政策法规司",
       "doc_type": "regulation",
       "sign_date": "",
@@ -26429,6 +26455,17 @@
       "pdf_url": ""
     },
     {
+      "title": "公共航空运输企业经营许可规定",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8494.html",
+      "validity": "失效",
+      "doc_number": "CCAR-201",
+      "office_unit": "运输司",
+      "doc_type": "regulation",
+      "sign_date": "",
+      "publish_date": "2004-12-16",
+      "pdf_url": ""
+    },
+    {
       "title": "中国民用航空总局关于修订《民用航空器驾驶员、飞行教员和地面教员合格审定规则》的决定",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8495.html",
       "validity": "失效",
@@ -26445,17 +26482,6 @@
       "validity": "失效",
       "doc_number": "CCAR-65FS-R1",
       "office_unit": "空管局",
-      "doc_type": "regulation",
-      "sign_date": "",
-      "publish_date": "2004-12-16",
-      "pdf_url": ""
-    },
-    {
-      "title": "公共航空运输企业经营许可规定",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8494.html",
-      "validity": "有效",
-      "doc_number": "CCAR-201",
-      "office_unit": "运输司",
       "doc_type": "regulation",
       "sign_date": "",
       "publish_date": "2004-12-16",

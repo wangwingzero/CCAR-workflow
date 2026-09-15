@@ -637,6 +637,14 @@ var data = [
     "office_unit": "政策法规司"
   },
   {
+    "title": "交通运输部关于修改《公共航空运输企业经营许可规定》的决定",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191932.html",
+    "doc_type": "CCAR规章",
+    "validity": "失效",
+    "doc_number": "CCAR-201-R1",
+    "office_unit": "政策法规司"
+  },
+  {
     "title": "运输机场使用许可规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191930.html",
     "doc_type": "CCAR规章",
@@ -650,14 +658,6 @@ var data = [
     "doc_type": "CCAR规章",
     "validity": "有效",
     "doc_number": "CCAR-69-R1",
-    "office_unit": "政策法规司"
-  },
-  {
-    "title": "交通运输部关于修改《公共航空运输企业经营许可规定》的决定",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201809/t20180930_191932.html",
-    "doc_type": "CCAR规章",
-    "validity": "有效",
-    "doc_number": "CCAR-201-R1",
     "office_unit": "政策法规司"
   },
   {
@@ -1710,6 +1710,15 @@ var data = [
     "pdf_url": "https://flighttoolbox.hudawang.cn/regulation/%E5%BA%9F%E6%AD%A2%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC139%E5%8F%B7%E4%BB%A4%E3%80%8A%E5%A4%96%E5%95%86%E6%8A%95%E8%B5%84%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E4%B8%9A%E8%A7%84%E5%AE%9A%E3%80%8B%E7%9A%84%E8%A1%A5%E5%85%85%E8%A7%84%E5%AE%9A.pdf"
   },
   {
+    "title": "公共航空运输企业经营许可规定",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8494.html",
+    "doc_type": "CCAR规章",
+    "validity": "失效",
+    "doc_number": "CCAR-201",
+    "office_unit": "运输司",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC138%E5%8F%B7%E4%BB%A4%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E4%BC%81%E4%B8%9A%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E8%A7%84%E5%AE%9A.pdf"
+  },
+  {
     "title": "中国民用航空总局关于修订《民用航空器驾驶员、飞行教员和地面教员合格审定规则》的决定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8495.html",
     "doc_type": "CCAR规章",
@@ -1726,15 +1735,6 @@ var data = [
     "doc_number": "CCAR-65FS-R1",
     "office_unit": "空管局",
     "pdf_url": "https://flighttoolbox.hudawang.cn/regulation/%E5%A4%B1%E6%95%88%21%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC136%E5%8F%B7%E4%BB%A4%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%AD%BE%E6%B4%BE%E5%91%98%E6%89%A7%E7%85%A7%E7%AE%A1%E7%90%86%E8%A7%84%E5%88%99.pdf"
-  },
-  {
-    "title": "公共航空运输企业经营许可规定",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/201511/t20151102_8494.html",
-    "doc_type": "CCAR规章",
-    "validity": "有效",
-    "doc_number": "CCAR-201",
-    "office_unit": "运输司",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/regulation/%E6%B0%91%E8%88%AA%E6%80%BB%E5%B1%80%E7%AC%AC138%E5%8F%B7%E4%BB%A4%E5%85%AC%E5%85%B1%E8%88%AA%E7%A9%BA%E8%BF%90%E8%BE%93%E4%BC%81%E4%B8%9A%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E8%A7%84%E5%AE%9A.pdf"
   },
   {
     "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法",
