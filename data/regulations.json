@@ -1,7 +1,20 @@
 {
-  "last_check": "2026-09-15T12:50:42.609567",
+  "last_check": "2026-09-16T12:45:26.284842",
   "documents": {
     "9": [
+      {
+        "title": "公示通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260916_231718.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-09-16",
+        "publish_date": "2026-09-16",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/P020260916328326494815.pdf",
+        "has_pdf": true
+      },
       {
         "title": "关于2027年民航发展基金相关补贴资金预算方案的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260915_231717.html",
@@ -2916,6 +2929,19 @@
       }
     ],
     "10": [
+      {
+        "title": "发布丨中国民用航空局 国家数据局关于印发《民航数据治理体系建设实施方案》的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202609/t20260916_231721.html",
+        "category": "政策发布",
+        "category_id": "10",
+        "doc_number": "",
+        "office_unit": "发展计划司",
+        "sign_date": "2026-08-18",
+        "publish_date": "2026-08-18",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202609/P020260916351036592193.pdf",
+        "has_pdf": true
+      },
       {
         "title": "发布丨国家发展改革委 金融监管总局 中国民航局关于推动低空保险高质量发展的实施意见",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202602/t20260212_230056.html",
@@ -13691,6 +13717,45 @@
         "has_pdf": false
       },
       {
+        "title": "民用无人驾驶航空器货物运输包装要求 人类生物样本",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260916_231733.html",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "MH/T 1087-2026",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-08-04",
+        "publish_date": "2026-08-04",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260916600780985928.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "民用无人驾驶航空器人类生物样本运输服务程序指南",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260916_231732.html",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "MH/T 1088-2026",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-08-04",
+        "publish_date": "2026-08-04",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260916599548211017.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "小型、中型民用无人驾驶航空器操控员训练要求",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260916_231731.html",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "MH/T 2021-2026",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-08-04",
+        "publish_date": "2026-08-04",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260916598107532288.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "民航相干多普勒测风激光雷达建设规范",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260907_231684.html",
         "category": "标准规范",
@@ -21144,6 +21209,19 @@
       }
     ],
     "28": [
+      {
+        "title": "公示通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260916_231718.html",
+        "category": "建议提案答复",
+        "category_id": "28",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "2026-09-16",
+        "publish_date": "2026-09-16",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "关于2027年民航发展基金相关补贴资金预算方案的公示",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260915_231717.html",
@@ -28921,6 +28999,39 @@
       "sign_date": "2026-08-21",
       "publish_date": "2026-08-21",
       "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/JSBZGD/202608/P020260821551915916750.pdf"
+    },
+    {
+      "title": "民用无人驾驶航空器货物运输包装要求 人类生物样本",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260916_231733.html",
+      "validity": "有效",
+      "doc_number": "MH/T 1087-2026",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "standard",
+      "sign_date": "2026-08-04",
+      "publish_date": "2026-08-04",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260916600780985928.pdf"
+    },
+    {
+      "title": "民用无人驾驶航空器人类生物样本运输服务程序指南",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260916_231732.html",
+      "validity": "有效",
+      "doc_number": "MH/T 1088-2026",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "standard",
+      "sign_date": "2026-08-04",
+      "publish_date": "2026-08-04",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260916599548211017.pdf"
+    },
+    {
+      "title": "小型、中型民用无人驾驶航空器操控员训练要求",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260916_231731.html",
+      "validity": "有效",
+      "doc_number": "MH/T 2021-2026",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "standard",
+      "sign_date": "2026-08-04",
+      "publish_date": "2026-08-04",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260916598107532288.pdf"
     },
     {
       "title": "民航相干多普勒测风激光雷达建设规范",
