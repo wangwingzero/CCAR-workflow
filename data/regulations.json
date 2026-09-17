@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-09-16T12:45:26.284842",
+  "last_check": "2026-09-17T12:43:56.353293",
   "documents": {
     "9": [
       {
@@ -13,7 +13,7 @@
         "publish_date": "2026-09-16",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/P020260916328326494815.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "关于2027年民航发展基金相关补贴资金预算方案的公示",
@@ -2940,7 +2940,7 @@
         "publish_date": "2026-08-18",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202609/P020260916351036592193.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "发布丨国家发展改革委 金融监管总局 中国民航局关于推动低空保险高质量发展的实施意见",
@@ -10881,6 +10881,19 @@
     ],
     "14": [
       {
+        "title": "民用航空飞行气象情报发布与交换规定",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260917_231740.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AP-117-TM-2026-01",
+        "office_unit": "空管行业管理办公室",
+        "sign_date": "2026-09-08",
+        "publish_date": "2026-09-08",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260917608044021612.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202608/t20260825_231600.html",
         "category": "规范性文件",
@@ -13727,7 +13740,7 @@
         "publish_date": "2026-08-04",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260916600780985928.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "民用无人驾驶航空器人类生物样本运输服务程序指南",
@@ -13740,7 +13753,7 @@
         "publish_date": "2026-08-04",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260916599548211017.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "小型、中型民用无人驾驶航空器操控员训练要求",
@@ -13753,7 +13766,7 @@
         "publish_date": "2026-08-04",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020260916598107532288.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "民航相干多普勒测风激光雷达建设规范",
@@ -26600,6 +26613,17 @@
     }
   ],
   "normatives": [
+    {
+      "title": "民用航空飞行气象情报发布与交换规定",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260917_231740.html",
+      "validity": "有效",
+      "doc_number": "AP-117-TM-2026-01",
+      "office_unit": "空管行业管理办公室",
+      "doc_type": "normative",
+      "sign_date": "2026-09-08",
+      "publish_date": "2026-09-08",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260917608044021612.pdf"
+    },
     {
       "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202608/t20260825_231600.html",
