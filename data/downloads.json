@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-17T12:43:47.156939",
+  "last_update": "2026-09-18T12:21:37.402208",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6804,6 +6804,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260917_231740.html": {
       "relative_path": "normative/AP-117-TM-2026-01民用航空飞行气象情报发布与交换规定.pdf",
       "updated_at": "2026-09-17T12:43:47.156918"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260918_231744.html": {
+      "relative_path": "specification/MH 5006-2026民用机场水泥混凝土面层施工技术规范.pdf",
+      "updated_at": "2026-09-18T12:21:37.402193"
     }
   }
 }
