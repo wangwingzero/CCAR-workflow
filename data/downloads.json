@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-18T12:21:37.402208",
+  "last_update": "2026-09-20T12:32:58.986608",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6808,6 +6808,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/t20260918_231744.html": {
       "relative_path": "specification/MH 5006-2026民用机场水泥混凝土面层施工技术规范.pdf",
       "updated_at": "2026-09-18T12:21:37.402193"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260920_231754.html": {
+      "relative_path": "other/关于工程设计民航行业乙级资质企业动态核查整改核定结论的公示.pdf",
+      "updated_at": "2026-09-20T12:32:58.986601"
     }
   }
 }
