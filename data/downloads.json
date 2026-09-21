@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-20T12:32:58.986608",
+  "last_update": "2026-09-21T14:25:38.980525",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6812,6 +6812,22 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/t20260920_231754.html": {
       "relative_path": "other/关于工程设计民航行业乙级资质企业动态核查整改核定结论的公示.pdf",
       "updated_at": "2026-09-20T12:32:58.986601"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202609/t20260921_231755.html": {
+      "relative_path": "other/中国民航2026年8月份主要生产指标统计.pdf",
+      "updated_at": "2026-09-21T14:24:43.548518"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260921_231761.html": {
+      "relative_path": "normative/民航局关于印发 《民航专业工程建设项目远程异地评标工作细则》的通知.pdf",
+      "updated_at": "2026-09-21T14:25:03.719314"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260921_231759.html": {
+      "relative_path": "normative/OSB-2026-03《雨中着陆》运行安全通告.pdf",
+      "updated_at": "2026-09-21T14:25:20.783387"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260921_231762.html": {
+      "relative_path": "normative/设计保证系统建设指南.pdf",
+      "updated_at": "2026-09-21T14:25:38.980509"
     }
   }
 }

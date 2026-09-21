@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-20T12:32:59.735369",
+  "last_update": "2026-09-21T14:25:44.822553",
   "records": {
     "regulation/交通运输部令2025年第9号运输类旋翼航空器适航规定.pdf": {
       "r2_url": "https://flighttoolbox.hudawang.cn/regulation/%E4%BA%A4%E9%80%9A%E8%BF%90%E8%BE%93%E9%83%A8%E4%BB%A42025%E5%B9%B4%E7%AC%AC9%E5%8F%B7%E8%BF%90%E8%BE%93%E7%B1%BB%E6%97%8B%E7%BF%BC%E8%88%AA%E7%A9%BA%E5%99%A8%E9%80%82%E8%88%AA%E8%A7%84%E5%AE%9A.pdf",
@@ -11752,6 +11752,22 @@
     "other/关于工程设计民航行业乙级资质企业动态核查整改核定结论的公示.pdf": {
       "r2_url": "https://flighttoolbox.hudawang.cn/other/%E5%85%B3%E4%BA%8E%E5%B7%A5%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%B0%91%E8%88%AA%E8%A1%8C%E4%B8%9A%E4%B9%99%E7%BA%A7%E8%B5%84%E8%B4%A8%E4%BC%81%E4%B8%9A%E5%8A%A8%E6%80%81%E6%A0%B8%E6%9F%A5%E6%95%B4%E6%94%B9%E6%A0%B8%E5%AE%9A%E7%BB%93%E8%AE%BA%E7%9A%84%E5%85%AC%E7%A4%BA.pdf",
       "file_size": 90632
+    },
+    "other/中国民航2026年8月份主要生产指标统计.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/other/%E4%B8%AD%E5%9B%BD%E6%B0%91%E8%88%AA2026%E5%B9%B48%E6%9C%88%E4%BB%BD%E4%B8%BB%E8%A6%81%E7%94%9F%E4%BA%A7%E6%8C%87%E6%A0%87%E7%BB%9F%E8%AE%A1.pdf",
+      "file_size": 138858
+    },
+    "normative/民航局关于印发 《民航专业工程建设项目远程异地评标工作细则》的通知.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8D%B0%E5%8F%91%20%E3%80%8A%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E5%BB%BA%E8%AE%BE%E9%A1%B9%E7%9B%AE%E8%BF%9C%E7%A8%8B%E5%BC%82%E5%9C%B0%E8%AF%84%E6%A0%87%E5%B7%A5%E4%BD%9C%E7%BB%86%E5%88%99%E3%80%8B%E7%9A%84%E9%80%9A%E7%9F%A5.pdf",
+      "file_size": 274585
+    },
+    "normative/OSB-2026-03《雨中着陆》运行安全通告.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/normative/OSB-2026-03%E3%80%8A%E9%9B%A8%E4%B8%AD%E7%9D%80%E9%99%86%E3%80%8B%E8%BF%90%E8%A1%8C%E5%AE%89%E5%85%A8%E9%80%9A%E5%91%8A.pdf",
+      "file_size": 183152
+    },
+    "normative/设计保证系统建设指南.pdf": {
+      "r2_url": "https://flighttoolbox.hudawang.cn/normative/%E8%AE%BE%E8%AE%A1%E4%BF%9D%E8%AF%81%E7%B3%BB%E7%BB%9F%E5%BB%BA%E8%AE%BE%E6%8C%87%E5%8D%97.pdf",
+      "file_size": 621056
     }
   }
 }

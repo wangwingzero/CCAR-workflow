@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-09-20T12:33:05.476106",
+  "last_check": "2026-09-21T14:25:57.351241",
   "documents": {
     "9": [
       {
@@ -13,7 +13,7 @@
         "publish_date": "2026-09-20",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202609/P020260920585657906157.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "公示通知",
@@ -4998,6 +4998,19 @@
       }
     ],
     "11": [
+      {
+        "title": "中国民航2026年8月份主要生产指标统计",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202609/t20260921_231755.html",
+        "category": "政策解读",
+        "category_id": "11",
+        "doc_number": "",
+        "office_unit": "发展计划司",
+        "sign_date": "2026-09-20",
+        "publish_date": "2026-09-20",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202609/P020260921289751630443.pdf",
+        "has_pdf": true
+      },
       {
         "title": "中国民航2026年7月份主要生产指标统计",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202608/t20260821_231551.html",
@@ -10894,6 +10907,45 @@
     ],
     "14": [
       {
+        "title": "民航局关于印发 《民航专业工程建设项目远程异地评标工作细则》的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260921_231761.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "机场司",
+        "sign_date": "2026-09-21",
+        "publish_date": "2026-09-21",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260921612249877562.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "《雨中着陆》运行安全通告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260921_231759.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "OSB-2026-03",
+        "office_unit": "飞行标准司",
+        "sign_date": "2026-09-20",
+        "publish_date": "2026-09-20",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260921492313280813.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "设计保证系统建设指南",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260921_231762.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "航空器适航审定司",
+        "sign_date": "2026-09-17",
+        "publish_date": "2026-09-17",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260921617424013037.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "民用航空飞行气象情报发布与交换规定",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260917_231740.html",
         "category": "规范性文件",
@@ -11219,7 +11271,7 @@
         "has_pdf": false
       },
       {
-        "title": "地面运行安全间距保持指南",
+        "title": "《地面运行安全间距保持指南》运行安全通告",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230102.html",
         "category": "规范性文件",
         "category_id": "14",
@@ -26653,6 +26705,39 @@
   ],
   "normatives": [
     {
+      "title": "民航局关于印发 《民航专业工程建设项目远程异地评标工作细则》的通知",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260921_231761.html",
+      "validity": "有效",
+      "doc_number": "",
+      "office_unit": "机场司",
+      "doc_type": "normative",
+      "sign_date": "2026-09-21",
+      "publish_date": "2026-09-21",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260921612249877562.pdf"
+    },
+    {
+      "title": "《雨中着陆》运行安全通告",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260921_231759.html",
+      "validity": "有效",
+      "doc_number": "OSB-2026-03",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2026-09-20",
+      "publish_date": "2026-09-20",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260921492313280813.pdf"
+    },
+    {
+      "title": "设计保证系统建设指南",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260921_231762.html",
+      "validity": "有效",
+      "doc_number": "",
+      "office_unit": "航空器适航审定司",
+      "doc_type": "normative",
+      "sign_date": "2026-09-17",
+      "publish_date": "2026-09-17",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260921617424013037.pdf"
+    },
+    {
       "title": "民用航空飞行气象情报发布与交换规定",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260917_231740.html",
       "validity": "有效",
@@ -26928,7 +27013,7 @@
       "pdf_url": ""
     },
     {
-      "title": "地面运行安全间距保持指南",
+      "title": "《地面运行安全间距保持指南》运行安全通告",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202602/t20260224_230102.html",
       "validity": "有效",
       "doc_number": "OSB-2026-01",
