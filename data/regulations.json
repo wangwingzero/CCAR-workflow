@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-09-21T14:25:57.351241",
+  "last_check": "2026-09-22T12:46:19.723659",
   "documents": {
     "9": [
       {
@@ -5009,7 +5009,7 @@
         "publish_date": "2026-09-20",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202609/P020260921289751630443.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "中国民航2026年7月份主要生产指标统计",
@@ -10917,7 +10917,7 @@
         "publish_date": "2026-09-21",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260921612249877562.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "《雨中着陆》运行安全通告",
@@ -10930,7 +10930,7 @@
         "publish_date": "2026-09-20",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260921492313280813.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "设计保证系统建设指南",
@@ -10943,7 +10943,7 @@
         "publish_date": "2026-09-17",
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260921617424013037.pdf",
-        "has_pdf": true
+        "has_pdf": false
       },
       {
         "title": "民用航空飞行气象情报发布与交换规定",
