@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-21T14:25:38.980525",
+  "last_update": "2026-09-23T12:55:04.551314",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -2627,23 +2627,23 @@
     },
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202410/t20241016_225622.html": {
       "relative_path": "other/关于2024年度民航专业工程资质核查部分企业整改材料的公示.pdf",
-      "updated_at": "2026-06-09T10:48:28.451868"
+      "updated_at": "2026-09-23T12:54:44.509170"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202410/t20241014_225600.html": {
       "relative_path": "other/关于2025年民航发展基金相关补贴资金预算方案的公示.txt",
-      "updated_at": "2026-06-09T10:48:38.112954"
+      "updated_at": "2026-09-23T12:54:58.699454"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202410/t20241017_225625.html": {
       "relative_path": "other/关于发布民用机场专用设备目录的公告.pdf",
-      "updated_at": "2026-04-30T12:29:51.719061"
+      "updated_at": "2026-09-23T12:54:58.699543"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240930_225546.html": {
       "relative_path": "other/关于公布2024年度民航专业工程资质动态核查第二批追加企业整改核定结论的通知.txt",
-      "updated_at": "2026-04-30T12:29:51.719089"
+      "updated_at": "2026-09-23T12:55:04.551231"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240930_225545.html": {
       "relative_path": "other/关于2024年度民航专业工程建筑业企业资质动态核查结论的通报.pdf",
-      "updated_at": "2026-04-30T12:29:51.719118"
+      "updated_at": "2026-09-23T12:55:04.551308"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202409/t20240924_225471.html": {
       "relative_path": "other/关于2024年度民航专业工程资质动态核查第二批追加企业整改核定结果的公示.pdf",
@@ -3411,7 +3411,7 @@
     },
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202410/t20241018_225639.html": {
       "relative_path": "other/重点研究课题征集公告.doc",
-      "updated_at": "2026-04-30T12:29:51.718931"
+      "updated_at": "2026-09-23T12:54:44.509109"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202601/t20260114_229754.html": {
       "relative_path": "other/民航发〔2026〕3 号发布丨民航局关于修订《民航工程建设行业标准管理办法》的通知.pdf",
@@ -6828,6 +6828,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260921_231762.html": {
       "relative_path": "normative/设计保证系统建设指南.pdf",
       "updated_at": "2026-09-21T14:25:38.980509"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260923_231775.html": {
+      "relative_path": "normative/民航专业工程建设项目 《建设工程质量管理条例》第六十四条行政处罚裁量基准.pdf",
+      "updated_at": "2026-09-23T12:54:44.509008"
     }
   }
 }
