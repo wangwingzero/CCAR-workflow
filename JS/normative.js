@@ -48,6 +48,18 @@ var data = [
     "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E8%AE%BE%E8%AE%A1%E4%BF%9D%E8%AF%81%E7%B3%BB%E7%BB%9F%E5%BB%BA%E8%AE%BE%E6%8C%87%E5%8D%97.pdf"
   },
   {
+    "title": "使用过的航材采购与送修管理",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261008_231812.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年09月10日",
+    "publish_date": "2026年09月10日",
+    "doc_number": "MD-MAT-FS-009",
+    "office_unit": "飞行标准司",
+    "file_number": "文号：MD-MAT-FS-009",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/MD-MAT-FS-009%E4%BD%BF%E7%94%A8%E8%BF%87%E7%9A%84%E8%88%AA%E6%9D%90%E9%87%87%E8%B4%AD%E4%B8%8E%E9%80%81%E4%BF%AE%E7%AE%A1%E7%90%86.pdf"
+  },
+  {
     "title": "民用航空飞行气象情报发布与交换规定",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260917_231740.html",
     "doc_type": "规范性文件",
@@ -58,6 +70,18 @@ var data = [
     "office_unit": "空管行业管理办公室",
     "file_number": "文号：AP-117-TM-2026-01",
     "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AP-117-TM-2026-01%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E9%A3%9E%E8%A1%8C%E6%B0%94%E8%B1%A1%E6%83%85%E6%8A%A5%E5%8F%91%E5%B8%83%E4%B8%8E%E4%BA%A4%E6%8D%A2%E8%A7%84%E5%AE%9A.pdf"
+  },
+  {
+    "title": "航空器拆解",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261008_231811.html",
+    "doc_type": "规范性文件",
+    "validity": "有效",
+    "sign_date": "2026年09月07日",
+    "publish_date": "2026年09月07日",
+    "doc_number": "AC-145-FS-017R1",
+    "office_unit": "飞行标准司",
+    "file_number": "文号：AC-145-FS-017R1",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/AC-145-FS-017R1%E8%88%AA%E7%A9%BA%E5%99%A8%E6%8B%86%E8%A7%A3.pdf"
   },
   {
     "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法",

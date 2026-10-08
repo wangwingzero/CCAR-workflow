@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-10-07T14:42:17.878355",
+  "last_check": "2026-10-08T14:47:14.863025",
   "documents": {
     "9": [
       {
@@ -3020,6 +3020,19 @@
       }
     ],
     "10": [
+      {
+        "title": "发布丨中国民用航空局关于印发《国内航线航班评审优化措施》的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202610/t20261008_231816.html",
+        "category": "政策发布",
+        "category_id": "10",
+        "doc_number": "民航规〔2026〕18号",
+        "office_unit": "运输司",
+        "sign_date": "2026-10-08",
+        "publish_date": "2026-10-08",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202610/P020261008720672091078.pdf",
+        "has_pdf": true
+      },
       {
         "title": "发布丨中国民用航空局 国家数据局关于印发《民航数据治理体系建设实施方案》的通知",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202609/t20260916_231721.html",
@@ -11037,6 +11050,19 @@
         "has_pdf": false
       },
       {
+        "title": "使用过的航材采购与送修管理",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261008_231812.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "MD-MAT-FS-009",
+        "office_unit": "飞行标准司",
+        "sign_date": "2026-09-10",
+        "publish_date": "2026-09-10",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261008402494072642.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "民用航空飞行气象情报发布与交换规定",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260917_231740.html",
         "category": "规范性文件",
@@ -11048,6 +11074,19 @@
         "validity": "有效",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260917608044021612.pdf",
         "has_pdf": false
+      },
+      {
+        "title": "航空器拆解",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261008_231811.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "AC-145-FS-017R1",
+        "office_unit": "飞行标准司",
+        "sign_date": "2026-09-07",
+        "publish_date": "2026-09-07",
+        "validity": "有效",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261008401650075346.pdf",
+        "has_pdf": true
       },
       {
         "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法",
@@ -26918,6 +26957,17 @@
       "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260921617424013037.pdf"
     },
     {
+      "title": "使用过的航材采购与送修管理",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261008_231812.html",
+      "validity": "有效",
+      "doc_number": "MD-MAT-FS-009",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2026-09-10",
+      "publish_date": "2026-09-10",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261008402494072642.pdf"
+    },
+    {
       "title": "民用航空飞行气象情报发布与交换规定",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260917_231740.html",
       "validity": "有效",
@@ -26927,6 +26977,17 @@
       "sign_date": "2026-09-08",
       "publish_date": "2026-09-08",
       "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/P020260917608044021612.pdf"
+    },
+    {
+      "title": "航空器拆解",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261008_231811.html",
+      "validity": "有效",
+      "doc_number": "AC-145-FS-017R1",
+      "office_unit": "飞行标准司",
+      "doc_type": "normative",
+      "sign_date": "2026-09-07",
+      "publish_date": "2026-09-07",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261008401650075346.pdf"
     },
     {
       "title": "基于飞行视角的运输机场运行保障能力反馈工作机制实施办法",

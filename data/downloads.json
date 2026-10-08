@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-09-30T14:00:00.697771",
+  "last_update": "2026-10-08T14:47:02.912148",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6832,6 +6832,18 @@
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260923_231775.html": {
       "relative_path": "normative/民航专业工程建设项目 《建设工程质量管理条例》第六十四条行政处罚裁量基准.pdf",
       "updated_at": "2026-09-23T12:54:44.509008"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202610/t20261008_231816.html": {
+      "relative_path": "other/民航规〔2026〕18号发布丨中国民用航空局关于印发《国内航线航班评审优化措施》的通知.pdf",
+      "updated_at": "2026-10-08T14:46:12.156319"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261008_231812.html": {
+      "relative_path": "normative/MD-MAT-FS-009使用过的航材采购与送修管理.pdf",
+      "updated_at": "2026-10-08T14:46:31.666793"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261008_231811.html": {
+      "relative_path": "normative/AC-145-FS-017R1航空器拆解.pdf",
+      "updated_at": "2026-10-08T14:47:02.912132"
     }
   }
 }
