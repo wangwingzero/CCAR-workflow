@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-10-08T14:47:02.912148",
+  "last_update": "2026-10-09T14:32:39.989226",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6844,6 +6844,22 @@
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261008_231811.html": {
       "relative_path": "normative/AC-145-FS-017R1航空器拆解.pdf",
       "updated_at": "2026-10-08T14:47:02.912132"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/t20261009_231822.html": {
+      "relative_path": "other/关于中航赛博（北京）机场建设有限公司等1家工程设计民航行业乙级资质企业动态核查整改材料的公示.pdf",
+      "updated_at": "2026-10-09T14:32:24.662170"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/t20261009_231821.html": {
+      "relative_path": "other/关于追加上海东航工程建设有限公司等3家企业进行资质核查的通知.txt",
+      "updated_at": "2026-10-09T14:32:33.028421"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/t20261009_231820.html": {
+      "relative_path": "other/关于2026年第八批民航专业工程建设企业资质申报材料的公示.pdf",
+      "updated_at": "2026-10-09T14:32:33.028505"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/t20261009_231819.html": {
+      "relative_path": "other/国际航线审批结果公开（C2026008）.txt",
+      "updated_at": "2026-10-09T14:32:39.989216"
     }
   }
 }
