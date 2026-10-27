@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-10-24T12:13:21.774918",
+  "last_update": "2026-10-27T13:36:13.796228",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6924,6 +6924,14 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202610/P020261019507186229399.pdf": {
       "relative_path": "other/中国民航2026年9月份主要生产指标统计.pdf.pdf",
       "updated_at": "2026-10-24T12:10:29.295960"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261027498349793521.pdf": {
+      "relative_path": "normative/关于加强民航专业工程施工工期管理的通知.pdf.pdf",
+      "updated_at": "2026-10-27T13:36:00.077678"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261027_231948.html": {
+      "relative_path": "normative/关于加强民航专业工程施工工期管理的通知.pdf",
+      "updated_at": "2026-10-27T13:36:13.796210"
     }
   }
 }

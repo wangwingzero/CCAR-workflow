@@ -1,20 +1,7 @@
 {
-  "last_check": "2026-10-26T14:29:52.710946",
+  "last_check": "2026-10-27T13:36:21.840513",
   "documents": {
     "9": [
-      {
-        "title": "民航局2026/27年冬春航季换季颁发、注销国内航线经营许可信息通告",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/t20261023_231927.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "",
-        "publish_date": "2026-10-23",
-        "validity": "",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/P020261023378688959993.pdf",
-        "has_pdf": false
-      },
       {
         "title": "民航局2026/27年冬春航季换季颁发、注销国内航线经营许可信息通告.pdf",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/P020261023378688959993.pdf",
@@ -27,6 +14,19 @@
         "validity": "",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/P020261023378688959993.pdf",
         "has_pdf": true
+      },
+      {
+        "title": "民航局2026/27年冬春航季换季颁发、注销国内航线经营许可信息通告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/t20261023_231927.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-10-23",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/P020261023378688959993.pdf",
+        "has_pdf": false
       },
       {
         "title": "中国民用航空局关于发布 《民用机场飞行区技术标准》第五修订案的公告",
@@ -11153,6 +11153,32 @@
       }
     ],
     "14": [
+      {
+        "title": "关于加强民航专业工程施工工期管理的通知.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261027498349793521.pdf",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-10-27",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261027498349793521.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "关于加强民航专业工程施工工期管理的通知",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261027_231948.html",
+        "category": "规范性文件",
+        "category_id": "14",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-10-27",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261027498349793521.pdf",
+        "has_pdf": true
+      },
       {
         "title": "民航专业工程建设项目 《建设工程质量管理条例》第六十四条行政处罚裁量基准",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260923_231775.html",
@@ -27302,6 +27328,28 @@
     }
   ],
   "normatives": [
+    {
+      "title": "关于加强民航专业工程施工工期管理的通知.pdf",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261027498349793521.pdf",
+      "validity": "",
+      "doc_number": "",
+      "office_unit": "",
+      "doc_type": "normative",
+      "sign_date": "",
+      "publish_date": "2026-10-27",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261027498349793521.pdf"
+    },
+    {
+      "title": "关于加强民航专业工程施工工期管理的通知",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261027_231948.html",
+      "validity": "",
+      "doc_number": "",
+      "office_unit": "",
+      "doc_type": "normative",
+      "sign_date": "",
+      "publish_date": "2026-10-27",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261027498349793521.pdf"
+    },
     {
       "title": "民航专业工程建设项目 《建设工程质量管理条例》第六十四条行政处罚裁量基准",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202609/t20260923_231775.html",
