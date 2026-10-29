@@ -1,5 +1,15 @@
 var data = [
   {
+    "title": "民航相干多普勒测风激光雷达建设规范.pdf",
+    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
+    "doc_type": "标准规范",
+    "validity": "",
+    "publish_date": "2026年10月23日",
+    "doc_number": "",
+    "office_unit": "",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E6%B0%91%E8%88%AA%E7%9B%B8%E5%B9%B2%E5%A4%9A%E6%99%AE%E5%8B%92%E6%B5%8B%E9%A3%8E%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E5%BB%BA%E8%AE%BE%E8%A7%84%E8%8C%83.pdf.pdf"
+  },
+  {
     "title": "中国民用航空局关于发布《民用机场飞行区技术标准》（MH 5001—2021）第五修订案的公告.pdf",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202610/P020261019510439724172.pdf",
     "doc_type": "标准规范",
@@ -17,16 +27,6 @@ var data = [
     "doc_number": "",
     "office_unit": "",
     "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E4%B8%AD%E5%9B%BD%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E5%B1%80%E5%85%B3%E4%BA%8E%E5%8F%91%E5%B8%83%20%E3%80%8A%E6%B0%91%E7%94%A8%E6%9C%BA%E5%9C%BA%E9%A3%9E%E8%A1%8C%E5%8C%BA%E6%8A%80%E6%9C%AF%E6%A0%87%E5%87%86%E3%80%8B%E7%AC%AC%E4%BA%94%E4%BF%AE%E8%AE%A2%E6%A1%88%E7%9A%84%E5%85%AC%E5%91%8A.pdf"
-  },
-  {
-    "title": "民航相干多普勒测风激光雷达建设规范.pdf",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
-    "doc_type": "标准规范",
-    "validity": "",
-    "publish_date": "2026年10月23日",
-    "doc_number": "",
-    "office_unit": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E6%B0%91%E8%88%AA%E7%9B%B8%E5%B9%B2%E5%A4%9A%E6%99%AE%E5%8B%92%E6%B5%8B%E9%A3%8E%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E5%BB%BA%E8%AE%BE%E8%A7%84%E8%8C%83.pdf.pdf"
   },
   {
     "title": "民用无人驾驶航空器综合管理平台与民用无人驾驶航空器航行服务提供方系统数据接口要求",

@@ -1,20 +1,7 @@
 {
-  "last_check": "2026-10-28T14:12:45.464120",
+  "last_check": "2026-10-29T14:34:02.292965",
   "documents": {
     "9": [
-      {
-        "title": "民航局2026/27年冬春航季换季颁发、注销国内航线经营许可信息通告",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/t20261023_231927.html",
-        "category": "通知公告",
-        "category_id": "9",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "",
-        "publish_date": "2026-10-23",
-        "validity": "",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/P020261023378688959993.pdf",
-        "has_pdf": false
-      },
       {
         "title": "民航局2026/27年冬春航季换季颁发、注销国内航线经营许可信息通告.pdf",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/P020261023378688959993.pdf",
@@ -27,6 +14,19 @@
         "validity": "",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/P020261023378688959993.pdf",
         "has_pdf": true
+      },
+      {
+        "title": "民航局2026/27年冬春航季换季颁发、注销国内航线经营许可信息通告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/t20261023_231927.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-10-23",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202610/P020261023378688959993.pdf",
+        "has_pdf": false
       },
       {
         "title": "中国民用航空局关于发布 《民用机场飞行区技术标准》第五修订案的公告",
@@ -14081,6 +14081,19 @@
     ],
     "15": [
       {
+        "title": "民航相干多普勒测风激光雷达建设规范.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-10-23",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
+        "has_pdf": true
+      },
+      {
         "title": "中国民用航空局关于发布《民用机场飞行区技术标准》（MH 5001—2021）第五修订案的公告.pdf",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202610/P020261019510439724172.pdf",
         "category": "标准规范",
@@ -14105,19 +14118,6 @@
         "validity": "",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202610/P020261019510439724172.pdf",
         "has_pdf": false
-      },
-      {
-        "title": "民航相干多普勒测风激光雷达建设规范.pdf",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
-        "category": "标准规范",
-        "category_id": "15",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "",
-        "publish_date": "2026-10-23",
-        "validity": "",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
-        "has_pdf": true
       },
       {
         "title": "民用无人驾驶航空器综合管理平台与民用无人驾驶航空器航行服务提供方系统数据接口要求",
@@ -29806,6 +29806,17 @@
   ],
   "standards": [
     {
+      "title": "民航相干多普勒测风激光雷达建设规范.pdf",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
+      "validity": "",
+      "doc_number": "",
+      "office_unit": "",
+      "doc_type": "standard",
+      "sign_date": "",
+      "publish_date": "2026-10-23",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf"
+    },
+    {
       "title": "中国民用航空局关于发布《民用机场飞行区技术标准》（MH 5001—2021）第五修订案的公告.pdf",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202610/P020261019510439724172.pdf",
       "validity": "",
@@ -29826,17 +29837,6 @@
       "sign_date": "",
       "publish_date": "2026-10-19",
       "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202610/P020261019510439724172.pdf"
-    },
-    {
-      "title": "民航相干多普勒测风激光雷达建设规范.pdf",
-      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
-      "validity": "",
-      "doc_number": "",
-      "office_unit": "",
-      "doc_type": "standard",
-      "sign_date": "",
-      "publish_date": "2026-10-23",
-      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf"
     },
     {
       "title": "民用无人驾驶航空器综合管理平台与民用无人驾驶航空器航行服务提供方系统数据接口要求",
