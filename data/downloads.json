@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-10-27T13:36:13.796228",
+  "last_update": "2026-11-02T17:21:15.580635",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6932,6 +6932,22 @@
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261027_231948.html": {
       "relative_path": "normative/关于加强民航专业工程施工工期管理的通知.pdf",
       "updated_at": "2026-10-27T13:36:13.796210"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/ZCFBJD/202611/t20261102_231978.html": {
+      "relative_path": "other/解读丨《民航绿色发展“十五五”实施方案》.txt",
+      "updated_at": "2026-11-02T17:20:51.927270"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/ZCFBJD/202611/t20261102_231977.html": {
+      "relative_path": "other/一图读懂丨《民航绿色发展“十五五”实施方案》.txt",
+      "updated_at": "2026-11-02T17:20:56.537268"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202611/t20261102_231978.html": {
+      "relative_path": "other/解读丨《民航绿色发展“十五五”实施方案》.txt",
+      "updated_at": "2026-11-02T17:21:00.644834"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/FZGH/202611/t20261102_231979.html": {
+      "relative_path": "other/中国民用航空局关于印发《民航绿色发展“十五五”实施方案》的通知.doc",
+      "updated_at": "2026-11-02T17:21:15.580619"
     }
   }
 }
