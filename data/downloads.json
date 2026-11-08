@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-06T15:16:04.900006",
+  "last_update": "2026-11-08T14:27:06.860262",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6952,6 +6952,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/t20261106_232015.html": {
       "relative_path": "other/关于2027年民航发展基金补贴预算方案的公示.txt",
       "updated_at": "2026-11-06T15:15:58.252288"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202611/t20261102_231977.html": {
+      "relative_path": "other/一图读懂丨《民航绿色发展“十五五”实施方案》.txt",
+      "updated_at": "2026-11-08T14:27:06.860243"
     }
   }
 }
