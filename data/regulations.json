@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-11-08T14:27:09.367639",
+  "last_check": "2026-11-09T17:45:33.047451",
   "documents": {
     "9": [
       {
@@ -14,6 +14,58 @@
         "validity": "",
         "pdf_url": "",
         "has_pdf": false
+      },
+      {
+        "title": "关于江苏云航空港建设工程有限公司等1家企业民航专业工程资质动态核查整改材料的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/t20261109_232024.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261109449420328523.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "企业资质核查整改材料自查表.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261109449420328523.pdf",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261109449420328523.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "关于新疆天聚建设工程有限公司资质动态核查材料的公示",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/t20261109_232023.html",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261109447057561028.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "企业资质核查材料自查表.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261109447057561028.pdf",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261109447057561028.pdf",
+        "has_pdf": true
       },
       {
         "title": "2027年通用航空发展专项资金预算方案.xlsx",
@@ -14158,6 +14210,97 @@
       }
     ],
     "15": [
+      {
+        "title": "航空5G AeroMACS技术应用要求 场面车辆协同运行服务.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109631946129336.pdf",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109631946129336.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "航班唯一飞行标识符数据规范.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "航班唯一飞行标识符数据规范",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "民用航空空中交通管制自动化系统 第4部分：人机界面.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109626941528563.pdf",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109626941528563.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "航空5G AeroMACS地面终端技术要求.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109629772719885.pdf",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109629772719885.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "航空5G AeroMACS技术应用要求 场面滑行引导可视化服务.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109632910948798.pdf",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109632910948798.pdf",
+        "has_pdf": true
+      },
+      {
+        "title": "航空5G AeroMACS地面终端测试方法.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109630790672229.pdf",
+        "category": "标准规范",
+        "category_id": "15",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-09",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109630790672229.pdf",
+        "has_pdf": true
+      },
       {
         "title": "民航相干多普勒测风激光雷达建设规范.pdf",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
@@ -29909,6 +30052,83 @@
     }
   ],
   "standards": [
+    {
+      "title": "航空5G AeroMACS技术应用要求 场面车辆协同运行服务.pdf",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109631946129336.pdf",
+      "validity": "",
+      "doc_number": "",
+      "office_unit": "",
+      "doc_type": "standard",
+      "sign_date": "",
+      "publish_date": "2026-11-09",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109631946129336.pdf"
+    },
+    {
+      "title": "航班唯一飞行标识符数据规范.pdf",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf",
+      "validity": "",
+      "doc_number": "",
+      "office_unit": "",
+      "doc_type": "standard",
+      "sign_date": "",
+      "publish_date": "2026-11-09",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf"
+    },
+    {
+      "title": "航班唯一飞行标识符数据规范",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html",
+      "validity": "",
+      "doc_number": "",
+      "office_unit": "",
+      "doc_type": "standard",
+      "sign_date": "",
+      "publish_date": "2026-11-09",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf"
+    },
+    {
+      "title": "民用航空空中交通管制自动化系统 第4部分：人机界面.pdf",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109626941528563.pdf",
+      "validity": "",
+      "doc_number": "",
+      "office_unit": "",
+      "doc_type": "standard",
+      "sign_date": "",
+      "publish_date": "2026-11-09",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109626941528563.pdf"
+    },
+    {
+      "title": "航空5G AeroMACS地面终端技术要求.pdf",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109629772719885.pdf",
+      "validity": "",
+      "doc_number": "",
+      "office_unit": "",
+      "doc_type": "standard",
+      "sign_date": "",
+      "publish_date": "2026-11-09",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109629772719885.pdf"
+    },
+    {
+      "title": "航空5G AeroMACS技术应用要求 场面滑行引导可视化服务.pdf",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109632910948798.pdf",
+      "validity": "",
+      "doc_number": "",
+      "office_unit": "",
+      "doc_type": "standard",
+      "sign_date": "",
+      "publish_date": "2026-11-09",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109632910948798.pdf"
+    },
+    {
+      "title": "航空5G AeroMACS地面终端测试方法.pdf",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109630790672229.pdf",
+      "validity": "",
+      "doc_number": "",
+      "office_unit": "",
+      "doc_type": "standard",
+      "sign_date": "",
+      "publish_date": "2026-11-09",
+      "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109630790672229.pdf"
+    },
     {
       "title": "民航相干多普勒测风激光雷达建设规范.pdf",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
