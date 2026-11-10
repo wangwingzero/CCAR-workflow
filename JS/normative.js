@@ -1,25 +1,15 @@
 var data = [
   {
-    "title": "关于加强民航专业工程施工工期管理的通知.pdf",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261027498349793521.pdf",
-    "doc_type": "规范性文件",
-    "validity": "",
-    "sign_date": "",
-    "publish_date": "2026年10月27日",
-    "doc_number": "",
-    "file_number": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%BC%BA%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E5%B7%A5%E6%9C%9F%E7%AE%A1%E7%90%86%E7%9A%84%E9%80%9A%E7%9F%A5.pdf.pdf"
-  },
-  {
     "title": "关于加强民航专业工程施工工期管理的通知",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261027_231948.html",
     "doc_type": "规范性文件",
-    "validity": "",
-    "sign_date": "",
-    "publish_date": "2026年10月27日",
-    "doc_number": "",
-    "file_number": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%BC%BA%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E5%B7%A5%E6%9C%9F%E7%AE%A1%E7%90%86%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
+    "validity": "有效",
+    "sign_date": "2026年10月23日",
+    "publish_date": "2026年10月23日",
+    "doc_number": "民航规〔2026〕24 号",
+    "office_unit": "机场司",
+    "file_number": "文号：民航规〔2026〕24 号",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/normative/%E6%B0%91%E8%88%AA%E8%A7%84%E3%80%942026%E3%80%9524%20%E5%8F%B7%E5%85%B3%E4%BA%8E%E5%8A%A0%E5%BC%BA%E6%B0%91%E8%88%AA%E4%B8%93%E4%B8%9A%E5%B7%A5%E7%A8%8B%E6%96%BD%E5%B7%A5%E5%B7%A5%E6%9C%9F%E7%AE%A1%E7%90%86%E7%9A%84%E9%80%9A%E7%9F%A5.pdf"
   },
   {
     "title": "民航专业工程建设项目 《建设工程质量管理条例》第六十四条行政处罚裁量基准",

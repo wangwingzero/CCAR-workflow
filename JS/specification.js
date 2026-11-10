@@ -1,92 +1,13 @@
 var data = [
   {
-    "title": "航空5G AeroMACS技术应用要求 场面车辆协同运行服务.pdf",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109631946129336.pdf",
-    "doc_type": "标准规范",
-    "validity": "",
-    "publish_date": "2026年11月09日",
-    "doc_number": "",
-    "office_unit": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E8%88%AA%E7%A9%BA5G%20AeroMACS%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8%E8%A6%81%E6%B1%82%20%E5%9C%BA%E9%9D%A2%E8%BD%A6%E8%BE%86%E5%8D%8F%E5%90%8C%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1.pdf.pdf"
-  },
-  {
-    "title": "航班唯一飞行标识符数据规范.pdf",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf",
-    "doc_type": "标准规范",
-    "validity": "",
-    "publish_date": "2026年11月09日",
-    "doc_number": "",
-    "office_unit": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E8%88%AA%E7%8F%AD%E5%94%AF%E4%B8%80%E9%A3%9E%E8%A1%8C%E6%A0%87%E8%AF%86%E7%AC%A6%E6%95%B0%E6%8D%AE%E8%A7%84%E8%8C%83.pdf.pdf"
-  },
-  {
     "title": "航班唯一飞行标识符数据规范",
     "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html",
     "doc_type": "标准规范",
-    "validity": "",
-    "publish_date": "2026年11月09日",
-    "doc_number": "",
-    "office_unit": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E8%88%AA%E7%8F%AD%E5%94%AF%E4%B8%80%E9%A3%9E%E8%A1%8C%E6%A0%87%E8%AF%86%E7%AC%A6%E6%95%B0%E6%8D%AE%E8%A7%84%E8%8C%83.pdf"
-  },
-  {
-    "title": "民用航空空中交通管制自动化系统 第4部分：人机界面.pdf",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109626941528563.pdf",
-    "doc_type": "标准规范",
-    "validity": "",
-    "publish_date": "2026年11月09日",
-    "doc_number": "",
-    "office_unit": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E6%B0%91%E7%94%A8%E8%88%AA%E7%A9%BA%E7%A9%BA%E4%B8%AD%E4%BA%A4%E9%80%9A%E7%AE%A1%E5%88%B6%E8%87%AA%E5%8A%A8%E5%8C%96%E7%B3%BB%E7%BB%9F%20%E7%AC%AC4%E9%83%A8%E5%88%86%EF%BC%9A%E4%BA%BA%E6%9C%BA%E7%95%8C%E9%9D%A2.pdf.pdf"
-  },
-  {
-    "title": "航空5G AeroMACS地面终端技术要求.pdf",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109629772719885.pdf",
-    "doc_type": "标准规范",
-    "validity": "",
-    "publish_date": "2026年11月09日",
-    "doc_number": "",
-    "office_unit": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E8%88%AA%E7%A9%BA5G%20AeroMACS%E5%9C%B0%E9%9D%A2%E7%BB%88%E7%AB%AF%E6%8A%80%E6%9C%AF%E8%A6%81%E6%B1%82.pdf.pdf"
-  },
-  {
-    "title": "航空5G AeroMACS技术应用要求 场面滑行引导可视化服务.pdf",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109632910948798.pdf",
-    "doc_type": "标准规范",
-    "validity": "",
-    "publish_date": "2026年11月09日",
-    "doc_number": "",
-    "office_unit": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E8%88%AA%E7%A9%BA5G%20AeroMACS%E6%8A%80%E6%9C%AF%E5%BA%94%E7%94%A8%E8%A6%81%E6%B1%82%20%E5%9C%BA%E9%9D%A2%E6%BB%91%E8%A1%8C%E5%BC%95%E5%AF%BC%E5%8F%AF%E8%A7%86%E5%8C%96%E6%9C%8D%E5%8A%A1.pdf.pdf"
-  },
-  {
-    "title": "航空5G AeroMACS地面终端测试方法.pdf",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109630790672229.pdf",
-    "doc_type": "标准规范",
-    "validity": "",
-    "publish_date": "2026年11月09日",
-    "doc_number": "",
-    "office_unit": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E8%88%AA%E7%A9%BA5G%20AeroMACS%E5%9C%B0%E9%9D%A2%E7%BB%88%E7%AB%AF%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95.pdf.pdf"
-  },
-  {
-    "title": "民航相干多普勒测风激光雷达建设规范.pdf",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf",
-    "doc_type": "标准规范",
-    "validity": "",
+    "validity": "有效",
     "publish_date": "2026年10月23日",
-    "doc_number": "",
-    "office_unit": "",
-    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/%E6%B0%91%E8%88%AA%E7%9B%B8%E5%B9%B2%E5%A4%9A%E6%99%AE%E5%8B%92%E6%B5%8B%E9%A3%8E%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E5%BB%BA%E8%AE%BE%E8%A7%84%E8%8C%83.pdf.pdf"
-  },
-  {
-    "title": "中国民用航空局关于发布《民用机场飞行区技术标准》（MH 5001—2021）第五修订案的公告.pdf",
-    "url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202610/P020261019510439724172.pdf",
-    "doc_type": "标准规范",
-    "validity": "",
-    "publish_date": "2026年10月19日",
-    "doc_number": "",
-    "office_unit": ""
+    "doc_number": "MH/T 4067-2026",
+    "office_unit": "航空器适航审定司",
+    "pdf_url": "https://flighttoolbox.hudawang.cn/specification/MH_T%204067-2026%E8%88%AA%E7%8F%AD%E5%94%AF%E4%B8%80%E9%A3%9E%E8%A1%8C%E6%A0%87%E8%AF%86%E7%AC%A6%E6%95%B0%E6%8D%AE%E8%A7%84%E8%8C%83.pdf"
   },
   {
     "title": "中国民用航空局关于发布 《民用机场飞行区技术标准》第五修订案的公告",

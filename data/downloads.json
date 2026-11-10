@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-09T17:45:10.810754",
+  "last_update": "2026-11-10T09:39:50.039590",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6909,10 +6909,6 @@
       "relative_path": "other/中国民用航空局2026_27年冬春航季换季国内航线经营许可新增情况表.pdf",
       "updated_at": "2026-10-24T12:10:26.044073"
     },
-    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202609/P020261023381833058404.pdf": {
-      "relative_path": "specification/民航相干多普勒测风激光雷达建设规范.pdf.pdf",
-      "updated_at": "2026-10-24T12:11:09.181456"
-    },
     "http://www.caac.gov.cn/XXGK/XXGK/SBGX/XYBFDQ/SJALB/SHXD/202610/U020261021332176407413.pdf": {
       "relative_path": "other/沙特民航总局和中国民用航空局关于适航审定合作的工作安排.pdf",
       "updated_at": "2026-10-23T21:37:09.045303"
@@ -6925,13 +6921,9 @@
       "relative_path": "other/中国民航2026年9月份主要生产指标统计.pdf.pdf",
       "updated_at": "2026-10-24T12:10:29.295960"
     },
-    "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/P020261027498349793521.pdf": {
-      "relative_path": "normative/关于加强民航专业工程施工工期管理的通知.pdf.pdf",
-      "updated_at": "2026-10-27T13:36:00.077678"
-    },
     "http://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261027_231948.html": {
-      "relative_path": "normative/关于加强民航专业工程施工工期管理的通知.pdf",
-      "updated_at": "2026-10-27T13:36:13.796210"
+      "relative_path": "normative/民航规〔2026〕24 号关于加强民航专业工程施工工期管理的通知.pdf",
+      "updated_at": "2026-11-10T09:39:50.039574"
     },
     "http://www.caac.gov.cn/XXGK/XXGK/ZCFBJD/202611/t20261102_231978.html": {
       "relative_path": "other/解读丨《民航绿色发展“十五五”实施方案》.txt",
@@ -6973,33 +6965,9 @@
       "relative_path": "other/企业资质核查材料自查表.pdf.pdf",
       "updated_at": "2026-11-09T17:44:30.667349"
     },
-    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109631946129336.pdf": {
-      "relative_path": "specification/航空5G AeroMACS技术应用要求 场面车辆协同运行服务.pdf.pdf",
-      "updated_at": "2026-11-09T17:44:35.060191"
-    },
-    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf": {
-      "relative_path": "specification/航班唯一飞行标识符数据规范.pdf.pdf",
-      "updated_at": "2026-11-09T17:44:38.259463"
-    },
     "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html": {
-      "relative_path": "specification/航班唯一飞行标识符数据规范.pdf",
-      "updated_at": "2026-11-09T17:44:50.293685"
-    },
-    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109626941528563.pdf": {
-      "relative_path": "specification/民用航空空中交通管制自动化系统 第4部分：人机界面.pdf.pdf",
-      "updated_at": "2026-11-09T17:44:55.678533"
-    },
-    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109629772719885.pdf": {
-      "relative_path": "specification/航空5G AeroMACS地面终端技术要求.pdf.pdf",
-      "updated_at": "2026-11-09T17:44:59.540492"
-    },
-    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109632910948798.pdf": {
-      "relative_path": "specification/航空5G AeroMACS技术应用要求 场面滑行引导可视化服务.pdf.pdf",
-      "updated_at": "2026-11-09T17:45:03.614924"
-    },
-    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109630790672229.pdf": {
-      "relative_path": "specification/航空5G AeroMACS地面终端测试方法.pdf.pdf",
-      "updated_at": "2026-11-09T17:45:10.810736"
+      "relative_path": "specification/MH_T 4067-2026航班唯一飞行标识符数据规范.pdf",
+      "updated_at": "2026-11-10T09:39:44.171840"
     }
   }
 }
