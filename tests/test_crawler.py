@@ -1,41 +1,124 @@
 import unittest
 
-from src.crawler import CaacCrawler, _looks_like_waf_block
+from src.crawler import (
+    CaacCrawler,
+    Document,
+    _looks_like_waf_block,
+    generate_filename,
+    is_attachment_url,
+    parse_detail_metadata,
+)
 
 
-class SearchUrlTests(unittest.TestCase):
-    def setUp(self):
-        self.crawler = CaacCrawler()
+STANDARD_DETAIL_HTML = """
+<div class="content_nav">
+  <ul id="li_ztfl"><li class="content_nav_left special"><b>主题分类：</b>行业标准</li></ul>
+  <ul>
+    <li class="content_nav_left" id="libwdw"><b>办文单位：</b>航空器适航审定司</li>
+    <li id="lifwrq"><b>发文日期：</b>2026-10-23</li>
+    <li id="lichengwen" style="display:none"><b>成文日期：</b>2026-10-23</li>
+  </ul>
+  <ul>
+    <li id="lifwrq2" style="display:none"><b>发文日期：</b>2026-10-23</li>
+    <li id="liyouxiao2" style="display:none"><b>有效性：</b>有效</li>
+  </ul>
+  <ul>
+    <li class="content_nav_left"><b>名称：</b></li><li>航班唯一飞行标识符数据规范</li>
+  </ul>
+  <ul><li id="normWenHao" style="display:none"><b>字号：</b></li></ul>
+  <ul>
+    <li class="content_nav_left" id="liwenhao"><b>文号：</b>MH/T 4067-2026</li>
+    <li id="liyouxiao"><b>有效性：</b>有效</li>
+  </ul>
+  <ul id="ulBuhao" style="display:none">
+    <li class="content_nav_left"><b><span id="CCAR"></span>部号：</b></li>
+  </ul>
+</div>
+"""
 
-    def test_regulation_uses_official_regulation_channel(self):
-        url = self.crawler._build_search_url("13", 200, "-fabuDate")
+REGULATION_DETAIL_HTML = """
+<div class="other_wrapper">
+  <ul>
+    <li class="content_nav_left" id="libwdw"><b>办文单位：</b>政策法规司</li>
+    <li id="lifwrq"><b>发文日期：</b>2026-07-01</li>
+  </ul>
+  <ul>
+    <li class="content_nav_left" id="liwenhao" style="display: none;"><b>文号：</b>交通运输部令2026年第14号</li>
+    <li class="content_nav_left" id="liyouxiao"><b>有效性：</b>有效</li>
+  </ul>
+  <ul id="ulBuhao">
+    <li class="content_nav_left"><b><span id="CCAR">CCAR</span>部号：</b>CCAR-290-R4</li>
+  </ul>
+</div>
+"""
 
-        self.assertIn("page=1", url)
-        self.assertIn("channelid=269689", url)
-        self.assertIn("perpage=200", url)
-        self.assertIn("orderby=-fabuDate", url)
-        self.assertNotIn("was_custom_expr", url)
-        self.assertNotIn("fl=13", url)
 
-    def test_normative_uses_official_normative_channel_with_fl(self):
-        url = self.crawler._build_search_url("14", 50, "-DOCRELTIME")
+class DetailMetadataParsingTests(unittest.TestCase):
+    def test_standard_page_yields_doc_number_and_validity(self):
+        metadata = parse_detail_metadata(STANDARD_DETAIL_HTML, "15")
 
-        self.assertIn("page=1", url)
-        self.assertIn("channelid=238066", url)
-        self.assertIn("perpage=50", url)
-        self.assertIn("orderby=-DOCRELTIME", url)
-        self.assertIn("fl=14", url)
-        self.assertNotIn("was_custom_expr", url)
+        self.assertEqual("MH/T 4067-2026", metadata["doc_number"])
+        self.assertEqual("有效", metadata["validity"])
+        self.assertEqual("航空器适航审定司", metadata["office_unit"])
+        self.assertEqual("2026-10-23", metadata["publish_date"])
+        self.assertEqual("2026-10-23", metadata["sign_date"])
 
-    def test_default_category_uses_public_topic_channel_with_fl(self):
-        url = self.crawler._build_search_url("9", 10, "-fabuDate")
+    def test_regulation_page_prefers_ccar_part_number(self):
+        metadata = parse_detail_metadata(REGULATION_DETAIL_HTML, "13")
 
-        self.assertIn("page=1", url)
-        self.assertIn("channelid=211383", url)
-        self.assertIn("perpage=10", url)
-        self.assertIn("orderby=-fabuDate", url)
-        self.assertIn("fl=9", url)
-        self.assertNotIn("was_custom_expr", url)
+        self.assertEqual("CCAR-290-R4", metadata["doc_number"])
+        self.assertEqual("有效", metadata["validity"])
+        self.assertEqual("政策法规司", metadata["office_unit"])
+
+    def test_page_without_metadata_returns_empty(self):
+        self.assertEqual({}, parse_detail_metadata("<html><body>无</body></html>", "15"))
+        self.assertEqual({}, parse_detail_metadata("", "15"))
+
+    def test_filename_uses_parsed_doc_number(self):
+        document = Document(
+            title="航班唯一飞行标识符数据规范",
+            url="http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html",
+            category="标准规范",
+            category_id="15",
+            doc_number="",
+            office_unit="",
+        )
+        for field_name, value in parse_detail_metadata(STANDARD_DETAIL_HTML, "15").items():
+            setattr(document, field_name, value)
+
+        self.assertEqual("MH_T 4067-2026航班唯一飞行标识符数据规范.pdf", generate_filename(document))
+
+
+class AttachmentUrlTests(unittest.TestCase):
+    def test_detects_attachment_urls(self):
+        self.assertTrue(is_attachment_url(
+            "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf"
+        ))
+        self.assertTrue(is_attachment_url("http://www.caac.gov.cn/a/b/file.DOCX?x=1"))
+
+    def test_detail_pages_are_not_attachments(self):
+        self.assertFalse(is_attachment_url(
+            "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html"
+        ))
+        self.assertFalse(is_attachment_url(""))
+
+    def test_needs_detail_metadata_only_for_bare_13_14_15_pages(self):
+        bare_standard = Document(
+            title="t", url="http://x/XXGK/XXGK/BZGF/t1_1.html", category="标准规范",
+            category_id="15", doc_number="", office_unit="",
+        )
+        numbered_standard = Document(
+            title="t", url="http://x/XXGK/XXGK/BZGF/t1_2.html", category="标准规范",
+            category_id="15", doc_number="MH/T 1-2026", office_unit="",
+        )
+        notice = Document(
+            title="t", url="http://x/XXGK/XXGK/TZTG/t1_3.html", category="通知公告",
+            category_id="9", doc_number="", office_unit="",
+        )
+
+        self.assertTrue(CaacCrawler.needs_detail_metadata(bare_standard))
+        self.assertFalse(CaacCrawler.needs_detail_metadata(numbered_standard))
+        self.assertFalse(CaacCrawler.needs_detail_metadata(notice))
 
 
 class WafDetectionTests(unittest.TestCase):

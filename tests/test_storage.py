@@ -215,5 +215,52 @@ class DetectChangesRepostTests(unittest.TestCase):
             self.assertEqual(0, changes.reposted_count)
 
 
+class PurgeDocumentsTests(unittest.TestCase):
+    ATTACHMENT_URL = "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf"
+    DETAIL_URL = "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html"
+
+    def test_purge_removes_row_from_state_indexes_and_js(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            data_dir = Path(tmp) / "data"
+            js_dir = Path(tmp) / "JS"
+            storage = Storage(str(data_dir / "regulations.json"))
+            storage.save(StorageState(
+                last_check="2026-11-09T00:00:00",
+                documents={
+                    "15": [
+                        make_spec_doc(self.ATTACHMENT_URL, "", "航班唯一飞行标识符数据规范.pdf", "2026-11-09").to_dict(),
+                        make_spec_doc(self.DETAIL_URL, "", "航班唯一飞行标识符数据规范", "2026-11-09").to_dict(),
+                    ],
+                },
+            ))
+            attachment_relative_path = "specification/航班唯一飞行标识符数据规范.pdf.pdf"
+            detail_relative_path = "specification/航班唯一飞行标识符数据规范.pdf"
+            storage.save_download_index({
+                self.ATTACHMENT_URL: {"relative_path": attachment_relative_path, "updated_at": ""},
+                self.DETAIL_URL: {"relative_path": detail_relative_path, "updated_at": ""},
+            })
+            (data_dir / "r2_uploads.json").write_text(json.dumps({"records": {
+                attachment_relative_path: {"r2_url": "https://r2.test/a", "file_size": 1},
+                detail_relative_path: {"r2_url": "https://r2.test/b", "file_size": 1},
+            }}, ensure_ascii=False), encoding="utf-8")
+            js_dir.mkdir()
+            js_rows = [{"url": self.ATTACHMENT_URL}, {"url": self.DETAIL_URL}]
+            (js_dir / "specification.js").write_text(
+                "var data = " + json.dumps(js_rows) + ";\n\nmodule.exports = {\n  standardData: data\n};\n",
+                encoding="utf-8",
+            )
+
+            removal_counts = storage.purge_documents({self.ATTACHMENT_URL}, js_dir=str(js_dir))
+
+            self.assertEqual({"state": 1, "downloads": 1, "r2_index": 1, "js": 1}, removal_counts)
+            remaining_state_urls = [row["url"] for row in storage.load().documents["15"]]
+            self.assertEqual([self.DETAIL_URL], remaining_state_urls)
+            self.assertEqual([self.DETAIL_URL], list(storage.load_download_index()))
+            remaining_r2 = json.loads((data_dir / "r2_uploads.json").read_text(encoding="utf-8"))["records"]
+            self.assertEqual([detail_relative_path], list(remaining_r2))
+            remaining_json = json.loads((js_dir / "specification.json").read_text(encoding="utf-8"))
+            self.assertEqual([self.DETAIL_URL], [row["url"] for row in remaining_json])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -4,10 +4,13 @@ from unittest import mock
 from src import main as src_main
 from src.crawler import Document
 from src.main import (
+    _carry_over_known_metadata,
+    _collect_metadata_repair_targets,
     _filter_documents_by_category,
     _find_missing_r2_urls,
     _parse_category_filter,
     _select_download_documents,
+    _select_metadata_backfilled_documents,
     _select_notify_attachments,
 )
 from src.storage import ChangeResult, StorageState
@@ -134,6 +137,79 @@ class NotifyCategoryFilterTests(unittest.TestCase):
         )
 
 
+class DetailMetadataHelperTests(unittest.TestCase):
+    def test_carry_over_reuses_stored_doc_number_for_known_url(self):
+        crawled = make_doc("https://example.test/15/known", "15")
+        stored_rows = {
+            "15": [{
+                "url": "https://example.test/15/known",
+                "doc_number": "MH/T 4067-2026",
+                "validity": "有效",
+                "office_unit": "航空器适航审定司",
+                "publish_date": "2026-10-23",
+            }],
+        }
+
+        carried_count = _carry_over_known_metadata({"15": [crawled]}, stored_rows)
+
+        self.assertEqual(1, carried_count)
+        self.assertEqual("MH/T 4067-2026", crawled.doc_number)
+        self.assertEqual("有效", crawled.validity)
+        self.assertEqual("2026-10-23", crawled.publish_date)
+
+    def test_carry_over_ignores_rows_that_never_had_metadata(self):
+        crawled = make_doc("https://example.test/15/known", "15")
+        stored_rows = {"15": [{"url": "https://example.test/15/known", "doc_number": ""}]}
+
+        self.assertEqual(0, _carry_over_known_metadata({"15": [crawled]}, stored_rows))
+        self.assertEqual("", crawled.doc_number)
+
+    def test_backfilled_selection_only_picks_newly_numbered_rows(self):
+        newly_numbered = make_doc("https://example.test/15/a", "15")
+        newly_numbered.doc_number = "MH/T 4067-2026"
+        already_numbered = make_doc("https://example.test/15/b", "15")
+        already_numbered.doc_number = "MH/T 4068-2026"
+        stored_rows = {
+            "15": [
+                {"url": "https://example.test/15/a", "doc_number": ""},
+                {"url": "https://example.test/15/b", "doc_number": "MH/T 4068-2026"},
+            ],
+        }
+
+        selected = _select_metadata_backfilled_documents(
+            {"15": [newly_numbered, already_numbered]}, stored_rows
+        )
+
+        self.assertEqual({"15": [newly_numbered]}, selected)
+
+    def test_repair_targets_split_attachments_from_rows_missing_metadata(self):
+        stored_rows = {
+            "15": [
+                {"url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf",
+                 "category_id": "15", "title": "航班唯一飞行标识符数据规范.pdf"},
+                {"url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html",
+                 "category_id": "15", "title": "航班唯一飞行标识符数据规范"},
+                {"url": "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202610/t20261015_231865.html",
+                 "category_id": "15", "title": "已有文号", "doc_number": "MH/T 4066-2026"},
+            ],
+            "9": [
+                {"url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261109449420328523.pdf",
+                 "category_id": "9", "title": "通知公告附件.pdf"},
+            ],
+        }
+
+        missing_metadata, attachment_urls = _collect_metadata_repair_targets(stored_rows)
+
+        self.assertEqual(
+            {"http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf"},
+            attachment_urls,
+        )
+        self.assertEqual(
+            ["http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html"],
+            [document.url for document in missing_metadata["15"]],
+        )
+
+
 class _FakeStorage:
     """Storage stub: one known doc per crawled category, no download index."""
 
@@ -177,6 +253,9 @@ class _FakeCrawler:
 
     def fetch_all_categories(self, category_ids, perpage):
         return {cat: list(docs) for cat, docs in self.storage.new_documents.items()}
+
+    def enrich_documents_with_detail_metadata(self, documents_by_category):
+        return 0
 
     def download_document_file(self, doc, save_base_path):
         return f"{save_base_path}.pdf"
@@ -245,14 +324,34 @@ class NotifyCategoryFlowTests(unittest.TestCase):
         # Crawling/state must stay complete even though only 13/15 were emailed.
         self.assertEqual(["13", "15", "9"], sorted(updated_state))
 
-    def test_stays_quiet_when_only_other_categories_changed(self):
+    def test_sends_heartbeat_when_only_other_categories_changed(self):
         sent, updated_state = self._run(
             {"9": [make_doc("https://example.test/9/notice", "9")]},
             ["--notify-categories", "13,14,15"],
         )
 
-        self.assertIsNone(sent)
+        # --notify 1 means a daily "暂无更新" email even when nothing in
+        # the notified categories changed.
+        self.assertIsNotNone(sent)
+        self.assertEqual([], sent["categories"])
+        self.assertEqual([], sent["attachments"])
         self.assertEqual(["9"], sorted(updated_state))
+
+    def test_stays_quiet_with_notify_zero_when_nothing_relevant_changed(self):
+        storage = _FakeStorage("data/regulations.json")
+        storage.new_documents = {"9": [make_doc("https://example.test/9/notice", "9")]}
+        notifier = _FakeNotifier()
+        notifier.sent = None
+
+        with mock.patch.object(src_main, "Storage", return_value=storage), \
+             mock.patch.object(src_main, "CaacCrawler", lambda: _FakeCrawler(storage)), \
+             mock.patch.object(src_main, "Notifier", lambda: notifier), \
+             mock.patch.object(src_main, "R2Uploader", lambda: _FakeR2()), \
+             mock.patch("sys.argv", ["main", "--notify-categories", "13,14,15", "--notify", "0"]), \
+             mock.patch.dict("os.environ", {"NOTIFY_CATEGORIES": ""}):
+            self.assertEqual(0, src_main.main())
+
+        self.assertIsNone(notifier.sent)
 
     def test_without_filter_every_category_is_notified(self):
         new_documents = {

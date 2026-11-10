@@ -20,7 +20,16 @@ from pathlib import Path
 
 from loguru import logger
 
-from .crawler import CaacCrawler, generate_filename, get_download_subdir, CATEGORIES, Document
+from .crawler import (
+    CaacCrawler,
+    generate_filename,
+    get_download_subdir,
+    is_attachment_url,
+    CATEGORIES,
+    DETAIL_METADATA_CATEGORIES,
+    DETAIL_METADATA_FIELDS,
+    Document,
+)
 from .notifier import Notifier
 from .r2_uploader import R2Uploader
 from .storage import Storage, filter_by_days, JS_EXPORT_CONFIG
@@ -72,6 +81,92 @@ def _parse_category_filter(raw: str | None) -> set[str]:
     if not raw:
         return set()
     return {item.strip() for item in raw.split(",") if item.strip()}
+
+
+def _has_detail_metadata(row: dict) -> bool:
+    """True if a stored state row already carries metadata read from a detail page."""
+    return any(str(row.get(field_name, "")).strip() for field_name in ("doc_number", "validity", "office_unit"))
+
+
+def _carry_over_known_metadata(
+    documents_by_category: dict[str, list[Document]],
+    stored_documents: dict[str, list],
+) -> int:
+    """Reuse 13/14/15 metadata already recorded for known URLs.
+
+    so-gov search hits never carry 文号/有效性, so without this every known
+    document would look "updated" with its metadata wiped, and would be
+    re-fetched from its detail page on every run.
+
+    Returns the number of documents that received stored metadata.
+    """
+    carried_count = 0
+    for category_id in DETAIL_METADATA_CATEGORIES:
+        stored_row_by_url = {
+            str(row.get("url", "")).strip(): row
+            for row in stored_documents.get(category_id, [])
+            if isinstance(row, dict) and row.get("url")
+        }
+        for document in documents_by_category.get(category_id, []):
+            stored_row = stored_row_by_url.get(document.url)
+            if not stored_row or not _has_detail_metadata(stored_row):
+                continue
+            for field_name in DETAIL_METADATA_FIELDS:
+                stored_value = str(stored_row.get(field_name, "")).strip()
+                if stored_value:
+                    setattr(document, field_name, stored_value)
+            carried_count += 1
+    return carried_count
+
+
+def _select_metadata_backfilled_documents(
+    updated_documents: dict[str, list[Document]],
+    stored_documents: dict[str, list],
+) -> dict[str, list[Document]]:
+    """Pick updated 13/14/15 documents whose 文号 was only just read from the detail page.
+
+    Their earlier download was saved without 文号, so the file has to be
+    re-synced under the {文号}{标题} name even without --download-updated.
+    """
+    backfilled_documents: dict[str, list[Document]] = {}
+    for category_id, documents in updated_documents.items():
+        if category_id not in DETAIL_METADATA_CATEGORIES:
+            continue
+        stored_doc_number_by_url = {
+            str(row.get("url", "")).strip(): str(row.get("doc_number", "")).strip()
+            for row in stored_documents.get(category_id, [])
+            if isinstance(row, dict) and row.get("url")
+        }
+        newly_numbered = [
+            document
+            for document in documents
+            if document.doc_number and not stored_doc_number_by_url.get(document.url)
+        ]
+        if newly_numbered:
+            backfilled_documents[category_id] = newly_numbered
+    return backfilled_documents
+
+
+def _collect_metadata_repair_targets(
+    stored_documents: dict[str, list],
+) -> tuple[dict[str, list[Document]], set[str]]:
+    """Find 13/14/15 state rows damaged by raw so-gov search hits.
+
+    Returns:
+        (detail-page documents still missing 文号/有效性, attachment-only URLs to purge)
+    """
+    documents_missing_metadata: dict[str, list[Document]] = {}
+    attachment_only_urls: set[str] = set()
+    for category_id in DETAIL_METADATA_CATEGORIES:
+        for row in stored_documents.get(category_id, []):
+            if not isinstance(row, dict):
+                continue
+            document = Document.from_dict(row)
+            if is_attachment_url(document.url):
+                attachment_only_urls.add(document.url)
+            elif CaacCrawler.needs_detail_metadata(document):
+                documents_missing_metadata.setdefault(category_id, []).append(document)
+    return documents_missing_metadata, attachment_only_urls
 
 
 def _filter_documents_by_category(
@@ -244,6 +339,13 @@ def parse_args() -> argparse.Namespace:
         help="Re-upload exported-category (13/14/15) PDFs missing from the R2 index "
              "(e.g. after an upload outage). No notification, state untouched.",
     )
+    parser.add_argument(
+        "--repair-metadata",
+        action="store_true",
+        help="One-off repair for 13/14/15: drop attachment-only rows (duplicate *.pdf entries) "
+             "and re-read 文号/有效性 for rows missing them, re-syncing files under "
+             "{文号}{标题}.pdf. Skips the crawl and never notifies.",
+    )
     return parser.parse_args()
 
 
@@ -279,6 +381,9 @@ def main() -> int:
     # never rewrite state. Force --no-notify so a stray --notify can't flood.
     if args.backfill_r2:
         args.no_notify = True
+    if args.repair_metadata:
+        args.no_notify = True
+        args.days = None
     
     # Parse category IDs
     category_ids = None
@@ -328,15 +433,39 @@ def main() -> int:
         
         with CaacCrawler() as crawler, Notifier() as notifier, R2Uploader() as r2:
             # 1. Crawl document list from all categories
-            logger.info("Step 1/7: Crawling document list...")
-            all_documents = crawler.fetch_all_categories(category_ids, args.perpage)
+            stored_documents = storage.load().documents
+            if args.repair_metadata:
+                logger.info("Step 1/7: Repair-metadata mode, collecting damaged 13/14/15 rows (no crawl)...")
+                all_documents, attachment_only_urls = _collect_metadata_repair_targets(stored_documents)
+                repair_total = sum(len(docs) for docs in all_documents.values())
+                logger.info(
+                    f"Repair-metadata: purging {len(attachment_only_urls)} attachment-only rows, "
+                    f"re-reading {repair_total} rows missing 文号/有效性"
+                )
+                if attachment_only_urls and not args.dry_run:
+                    storage.purge_documents(attachment_only_urls)
+                    stored_documents = storage.load().documents
+                if repair_total == 0:
+                    logger.info("Repair-metadata: no rows left to re-read, done")
+                    return 0
+            else:
+                logger.info("Step 1/7: Crawling document list...")
+                all_documents = crawler.fetch_all_categories(category_ids, args.perpage)
 
-            total_docs = sum(len(docs) for docs in all_documents.values())
-            if total_docs == 0:
-                logger.error("No documents fetched, may be blocked by anti-crawler")
-                return 1
+                total_docs = sum(len(docs) for docs in all_documents.values())
+                if total_docs == 0:
+                    logger.error("No documents fetched, may be blocked by anti-crawler")
+                    return 1
 
-            logger.info(f"Fetch complete: {total_docs} documents from {len(all_documents)} categories")
+                logger.info(f"Fetch complete: {total_docs} documents from {len(all_documents)} categories")
+                carried_count = _carry_over_known_metadata(all_documents, stored_documents)
+                if carried_count:
+                    logger.info(f"Reused stored 文号/有效性 for {carried_count} known documents")
+
+            # --days filters on publish_date, which the detail page rewrites to
+            # the official 发文日期; that branch enriches after filtering instead.
+            if not args.days and not args.backfill_r2:
+                crawler.enrich_documents_with_detail_metadata(all_documents)
 
             # 2. Detect changes or filter by days
             logger.info("Step 2/7: Filtering documents...")
@@ -384,6 +513,7 @@ def main() -> int:
                     return 0
                 
                 logger.info(f"Last {args.days} days: {total_filtered} documents")
+                crawler.enrich_documents_with_detail_metadata(filtered_documents)
                 target_documents = filtered_documents
                 download_documents = filtered_documents
             else:
@@ -392,7 +522,7 @@ def main() -> int:
                 # this run, so first-time monitoring of a NEW category against an
                 # already-populated state still hits the baseline-only guard below
                 # instead of flooding with every document in that category.
-                stored_docs = storage.load().documents
+                stored_docs = stored_documents
                 known_total = sum(len(stored_docs.get(cat_id, [])) for cat_id in all_documents)
                 changes = storage.detect_changes(all_documents)
 
@@ -449,6 +579,13 @@ def main() -> int:
                         changes.updated_documents,
                         include_updated=args.download_updated,
                     )
+                    metadata_backfilled_documents = _select_metadata_backfilled_documents(
+                        changes.updated_documents, stored_documents
+                    )
+                    if metadata_backfilled_documents:
+                        backfilled_count = sum(len(docs) for docs in metadata_backfilled_documents.values())
+                        logger.info(f"Re-syncing {backfilled_count} files whose 文号 was just filled in")
+                        download_documents = _merge_documents(download_documents, metadata_backfilled_documents)
 
                     if known_total == 0:
                         logger.warning(
@@ -657,19 +794,15 @@ def main() -> int:
                 logger.info("Step 6/7: Dry-run, skipping notifications")
             elif not args.no_notify:
                 notify_total = sum(len(docs) for docs in notify_target_documents.values())
-                if notify_total == 0 and notify_category_ids:
-                    # Filtered digest: stay quiet rather than emailing a
-                    # "0 条 / 暂无更新" digest for changes the filter excludes.
-                    logger.info(
-                        "Step 6/7: Skipping notifications "
-                        "(no new documents in the notified categories)"
-                    )
-                elif args.notify == 0 and notify_total == 0:
+                # --notify 1 means a daily heartbeat email even with nothing new,
+                # including when the only changes were outside --notify-categories.
+                if args.notify == 0 and notify_total == 0:
                     logger.info("Step 6/7: Skipping notifications (no new documents)")
                 else:
                     logger.info("Step 6/7: Sending notifications...")
 
-                    # Group by category name for notification
+                    # Group by category name for notification. An empty mapping
+                    # renders as the "暂无更新" heartbeat email.
                     docs_by_category = {}
                     for cat_id, docs in notify_target_documents.items():
                         cat_name = CATEGORIES.get(cat_id, f"未知分类({cat_id})")

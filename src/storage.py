@@ -634,6 +634,73 @@ class Storage:
         atomic_write_json(self.download_index_path, payload)
         logger.info(f"Download index saved: {len(records)} entries")
 
+    def purge_documents(self, urls: set[str], js_dir: str = "JS") -> dict[str, int]:
+        """Remove documents by URL from state, download/R2 indexes and JS exports.
+
+        Used to clean up rows that should never have been recorded (e.g. raw
+        attachment hits returned by the search API). Objects already uploaded
+        to R2 are only dropped from the index, not deleted from the bucket.
+
+        Returns per-store removal counts.
+        """
+        removal_counts = {"state": 0, "downloads": 0, "r2_index": 0, "js": 0}
+        if not urls:
+            return removal_counts
+
+        state = self.load()
+        cleaned_documents: dict[str, list] = {}
+        for cat_id, rows in state.documents.items():
+            kept_rows = [
+                row for row in rows
+                if not (isinstance(row, dict) and str(row.get("url", "")).strip() in urls)
+            ]
+            removal_counts["state"] += len(rows) - len(kept_rows)
+            cleaned_documents[cat_id] = kept_rows
+        self.save(StorageState(last_check=state.last_check, documents=cleaned_documents))
+
+        download_index = self.load_download_index()
+        purged_relative_paths = {
+            record["relative_path"] for url, record in download_index.items() if url in urls
+        }
+        remaining_download_index = {
+            url: record for url, record in download_index.items() if url not in urls
+        }
+        removal_counts["downloads"] = len(download_index) - len(remaining_download_index)
+        if removal_counts["downloads"]:
+            self.save_download_index(remaining_download_index)
+
+        # Only drop R2 entries no surviving download record still points to.
+        still_referenced_paths = {record["relative_path"] for record in remaining_download_index.values()}
+        orphaned_relative_paths = purged_relative_paths - still_referenced_paths
+        r2_index_path = Path(self.data_path).parent / "r2_uploads.json"
+        if orphaned_relative_paths and r2_index_path.exists():
+            with open(r2_index_path, "r", encoding="utf-8") as f:
+                r2_payload = json.load(f)
+            r2_records = r2_payload.get("records", {})
+            for relative_path in orphaned_relative_paths:
+                if r2_records.pop(relative_path, None) is not None:
+                    removal_counts["r2_index"] += 1
+            if removal_counts["r2_index"]:
+                r2_payload["last_update"] = datetime.now().isoformat()
+                atomic_write_json(str(r2_index_path), r2_payload)
+
+        js_root = Path(js_dir)
+        for config in JS_EXPORT_CONFIG.values():
+            js_path = js_root / config["filename"]
+            existing_rows = _read_js_data(js_path)
+            kept_rows = [row for row in existing_rows if str(row.get("url", "")).strip() not in urls]
+            if len(kept_rows) == len(existing_rows):
+                continue
+            removal_counts["js"] += len(existing_rows) - len(kept_rows)
+            _write_js_data(js_path, kept_rows, config["export_name"])
+            _write_json_data(js_path.with_suffix(".json"), kept_rows)
+
+        logger.info(
+            "Purged documents: "
+            + ", ".join(f"{store}={count}" for store, count in removal_counts.items())
+        )
+        return removal_counts
+
     def update_state(self, current_documents: dict) -> None:
         """Update state with current document list.
 

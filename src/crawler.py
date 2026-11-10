@@ -13,7 +13,7 @@ from datetime import datetime
 from dataclasses import dataclass, asdict
 import os
 from typing import Optional
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 import httpx
 from bs4 import BeautifulSoup
@@ -79,6 +79,72 @@ DOWNLOAD_SUBDIRS_CN = {
     "14": "规范性文件",
     "15": "标准规范",
 }
+
+# so-gov 检索会把详情页的附件（P0xxxx.pdf 等）当成独立结果返回。
+# 对规章/规范性文件/标准规范，附件只能经由详情页获取，否则同一文件会出现两条、
+# 且附件条目没有文号/有效性，命名也就丢了文号。
+ATTACHMENT_URL_PATTERN = re.compile(r"\.(pdf|docx?|xlsx?|wps|ofd|zip|rar)$", re.I)
+
+# 这三类文件按 {文号}{标题}.pdf 命名，而 so-gov 检索结果不带文号/有效性等字段，
+# 必须回详情页的 <li><b>标签：</b>值</li> 元数据里取。
+DETAIL_METADATA_CATEGORIES = frozenset({"13", "14", "15"})
+DETAIL_METADATA_FIELDS = ("doc_number", "validity", "office_unit", "sign_date", "publish_date")
+DETAIL_METADATA_LABELS = frozenset({"文号", "有效性", "办文单位", "成文日期", "发文日期"})
+
+
+def is_attachment_url(url: str) -> bool:
+    """True if the URL points to a file attachment rather than a detail page."""
+    if not url:
+        return False
+    return bool(ATTACHMENT_URL_PATTERN.search(urlparse(url).path))
+
+
+def parse_detail_metadata(html_content: str, category_id: str) -> dict[str, str]:
+    """Extract 文号/有效性/办文单位/日期 from a CAAC detail page.
+
+    Metadata is rendered as ``<li><b>标签：</b>值</li>`` items. The container
+    differs between templates (``div.content_nav`` on 规范性文件/标准规范, a
+    different wrapper on 民航规章), so items are matched by label instead.
+    Some items are hidden duplicates (发文日期/有效性 appear twice with the
+    same value), so the first non-empty value per label wins.
+    Regulations carry the CCAR part number in a separate "CCAR部号" item,
+    which is what historical filenames use (e.g. ``CCAR-290-R4``).
+
+    Returns only the fields that were found, keyed by Document attribute.
+    """
+    if not html_content:
+        return {}
+
+    soup = BeautifulSoup(html_content, "lxml")
+    value_by_label: dict[str, str] = {}
+    for label_tag in soup.select("li > b"):
+        label_match = re.match(r"^(.*?)[：:]\s*$", label_tag.get_text("", strip=True))
+        if not label_match:
+            continue
+        label = re.sub(r"\s+", "", label_match.group(1))
+        if label not in DETAIL_METADATA_LABELS and not label.endswith("部号"):
+            continue
+        item_text = label_tag.parent.get_text("", strip=True)
+        value = re.sub(r"^.*?[：:]", "", item_text, count=1).strip()
+        if value and label not in value_by_label:
+            value_by_label[label] = value
+
+    regulation_part_number = next(
+        (value for label, value in value_by_label.items() if label.endswith("部号")),
+        "",
+    )
+    document_number = value_by_label.get("文号", "")
+    if category_id == "13" and regulation_part_number:
+        document_number = regulation_part_number
+
+    metadata = {
+        "doc_number": document_number,
+        "validity": value_by_label.get("有效性", ""),
+        "office_unit": value_by_label.get("办文单位", ""),
+        "sign_date": normalize_date(value_by_label.get("成文日期", "")),
+        "publish_date": normalize_date(value_by_label.get("发文日期", "")),
+    }
+    return {field_name: value for field_name, value in metadata.items() if value}
 
 
 @dataclass
@@ -224,6 +290,9 @@ class CaacCrawler:
         self._http_client: Optional[httpx.Client] = None
         self._playwright = None
         self._browser = None
+        # Detail pages fetched for metadata are reused by the download step,
+        # so each new document costs one page load instead of two.
+        self._detail_html_by_url: dict[str, str] = {}
 
     def _get_http_client(self) -> httpx.Client:
         """Get HTTP client (lazy loading)"""
@@ -364,6 +433,59 @@ class CaacCrawler:
         """抓取单个分类（内部委托给 fetch_all_categories）。"""
         return self.fetch_all_categories([category_id], perpage=perpage, days=days).get(category_id, [])
 
+    @staticmethod
+    def needs_detail_metadata(document: Document) -> bool:
+        """True for 13/14/15 detail pages that have never had their metadata read."""
+        if document.category_id not in DETAIL_METADATA_CATEGORIES:
+            return False
+        if is_attachment_url(document.url):
+            return False
+        return not (document.doc_number or document.validity or document.office_unit)
+
+    def apply_detail_metadata(self, document: Document) -> bool:
+        """Read 文号/有效性/办文单位/日期 from the detail page into the document."""
+        self._random_delay(2.0, 5.0)
+        html_content = self._fetch_with_browser(document.url)
+        if not html_content:
+            logger.warning(f"Detail page unavailable, metadata not filled: {document.url}")
+            return False
+
+        self._detail_html_by_url[document.url] = html_content
+        metadata = parse_detail_metadata(html_content, document.category_id)
+        if not metadata:
+            logger.warning(f"No metadata block on detail page: {document.url}")
+            return False
+
+        for field_name, value in metadata.items():
+            setattr(document, field_name, value)
+        logger.info(
+            f"Detail metadata: [{document.category}] {document.doc_number or '(无文号)'} "
+            f"{document.title} | 有效性={document.validity or '-'}"
+        )
+        return True
+
+    def enrich_documents_with_detail_metadata(
+        self,
+        documents_by_category: dict[str, list[Document]],
+    ) -> int:
+        """Fill detail-page metadata for every 13/14/15 document still missing it.
+
+        Returns the number of documents successfully enriched.
+        """
+        pending_documents = [
+            document
+            for category_id in DETAIL_METADATA_CATEGORIES
+            for document in documents_by_category.get(category_id, [])
+            if self.needs_detail_metadata(document)
+        ]
+        if not pending_documents:
+            return 0
+
+        logger.info(f"Reading detail-page metadata for {len(pending_documents)} documents...")
+        enriched_count = sum(1 for document in pending_documents if self.apply_detail_metadata(document))
+        logger.info(f"Detail metadata filled: {enriched_count}/{len(pending_documents)}")
+        return enriched_count
+
     def fetch_all_categories(
         self,
         category_ids: list[str] = None,
@@ -411,6 +533,7 @@ class CaacCrawler:
         counters: dict[str, int] = {}
         skipped_unknown = 0
         skipped_other = 0
+        skipped_attachments = 0
 
         for hit in hits:
             cid = classify_url(hit.url)
@@ -423,6 +546,9 @@ class CaacCrawler:
                 continue
             if cid not in wanted:
                 skipped_other += 1
+                continue
+            if cid in DETAIL_METADATA_CATEGORIES and is_attachment_url(hit.url):
+                skipped_attachments += 1
                 continue
             results[cid].append(self._hit_to_document(hit, cid))
             counters[cid] = counters.get(cid, 0) + 1
@@ -437,7 +563,7 @@ class CaacCrawler:
         logger.info(
             f"Total: {total} documents from {len([k for k, v in results.items() if v])} "
             f"categories (hits={len(hits)}, unmapped_url={skipped_unknown}, "
-            f"other_category={skipped_other})"
+            f"other_category={skipped_other}, attachment_only={skipped_attachments})"
         )
 
         if total == 0:
@@ -587,8 +713,10 @@ class CaacCrawler:
                     return direct_path
                 logger.warning(f"Direct PDF download failed: {document.url}")
 
-            self._random_delay(0.5, 1.5)
-            html_content = self._fetch_with_browser(document.url)
+            html_content = self._detail_html_by_url.get(document.url, "")
+            if not html_content:
+                self._random_delay(0.5, 1.5)
+                html_content = self._fetch_with_browser(document.url)
 
             if not html_content:
                 logger.warning("Failed to access detail page")
