@@ -74,6 +74,11 @@ on:
         required: false
         type: boolean
         default: false
+      repair_metadata:
+        description: '修复规章/规范性文件/标准规范：删除重复的附件条目，补抓缺失的文号/有效性并按 {文号}{标题}.pdf 重新命名上传（不发通知）'
+        required: false
+        type: boolean
+        default: false
 
 # Prevent concurrent runs
 concurrency:
@@ -170,6 +175,10 @@ jobs:
 
           if [ "${{ github.event.inputs.backfill_r2 }}" = "true" ]; then
             CMD+=(--backfill-r2)
+          fi
+
+          if [ "${{ github.event.inputs.repair_metadata }}" = "true" ]; then
+            CMD+=(--repair-metadata)
           fi
 
           # 固定每个分类抓取条数，提高 JSON 更新覆盖率
