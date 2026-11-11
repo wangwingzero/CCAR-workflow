@@ -322,6 +322,29 @@ class SoGovSearch:
 
         return hits
 
+    def search_title(self, title: str) -> list[SearchHit]:
+        """不带时间过滤地按标题检索第 1 页，用于给孤立附件找回所属详情页。"""
+        if not title:
+            return []
+        data = self._query(title, page=1, days=0)
+        hits: list[SearchHit] = []
+        for item in data.get("resultDocs") or []:
+            raw = item.get("data") or {}
+            url = (raw.get("url") or "").strip()
+            if not url:
+                continue
+            api_date = (raw.get("docDate") or "").strip()
+            hits.append(
+                SearchHit(
+                    title=(raw.get("titleO") or "").strip(),
+                    url=url,
+                    doc_date=date_from_url(url) or api_date,
+                    site_name=((raw.get("siteLabel") or {}).get("value") or "").strip(),
+                    file_type=(raw.get("fileType") or "").strip(),
+                )
+            )
+        return hits
+
     def fetch_recent(self, days: int, keywords: Optional[Iterable[str]] = None) -> list[SearchHit]:
         """多关键词并集，按 URL 去重。"""
         kws = list(keywords or self.keywords)

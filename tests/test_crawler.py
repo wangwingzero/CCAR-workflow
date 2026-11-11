@@ -4,10 +4,13 @@ from src.crawler import (
     CaacCrawler,
     Document,
     _looks_like_waf_block,
+    find_detail_hit_for_attachment,
     generate_filename,
     is_attachment_url,
     parse_detail_metadata,
+    strip_attachment_extension,
 )
+from src.search_api import SearchHit
 
 
 STANDARD_DETAIL_HTML = """
@@ -119,6 +122,92 @@ class AttachmentUrlTests(unittest.TestCase):
         self.assertTrue(CaacCrawler.needs_detail_metadata(bare_standard))
         self.assertFalse(CaacCrawler.needs_detail_metadata(numbered_standard))
         self.assertFalse(CaacCrawler.needs_detail_metadata(notice))
+
+
+HYBZ_DIRECTORY = "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611"
+
+
+def make_hit(title, url):
+    return SearchHit(title=title, url=url, doc_date="2026-11-09", site_name="", file_type="")
+
+
+class FakeTitleSearcher:
+    def __init__(self, hits_by_title):
+        self.hits_by_title = hits_by_title
+        self.searched_titles = []
+
+    def search_title(self, title):
+        self.searched_titles.append(title)
+        return self.hits_by_title.get(title, [])
+
+
+class OrphanAttachmentTests(unittest.TestCase):
+    def setUp(self):
+        self.attachment_hit = make_hit(
+            "航空5G AeroMACS地面终端技术要求.pdf", f"{HYBZ_DIRECTORY}/P020261109629772719885.pdf"
+        )
+        self.detail_hit = make_hit(
+            "航空5G AeroMACS地面终端技术要求", f"{HYBZ_DIRECTORY}/t20261109_232034.html"
+        )
+
+    def test_strip_attachment_extension(self):
+        self.assertEqual("标准A", strip_attachment_extension("标准A.pdf"))
+        self.assertEqual("标准A", strip_attachment_extension("标准A"))
+
+    def test_matches_detail_page_in_same_directory(self):
+        comment_attachment = make_hit(
+            "附件10：航空5G AeroMACS地面终端技术要求（征求意见稿）.pdf",
+            "http://www.caac.gov.cn/HDJL/YJZJ/202511/P020251104612414641962.pdf",
+        )
+        candidates = [comment_attachment, self.attachment_hit, self.detail_hit]
+
+        self.assertIs(self.detail_hit, find_detail_hit_for_attachment(self.attachment_hit, candidates))
+
+    def test_ignores_detail_page_in_other_directory(self):
+        other_directory_hit = make_hit(
+            "航空5G AeroMACS地面终端技术要求",
+            "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202610/t20261009_1.html",
+        )
+        self.assertIsNone(find_detail_hit_for_attachment(self.attachment_hit, [other_directory_hit]))
+
+    def test_detail_already_in_hits_needs_no_lookup(self):
+        searcher = FakeTitleSearcher({})
+        resolved, outcomes = CaacCrawler()._resolve_orphan_attachments(
+            [self.attachment_hit], [self.detail_hit], searcher
+        )
+
+        self.assertEqual([], resolved)
+        self.assertEqual(1, outcomes["already_listed"])
+        self.assertEqual([], searcher.searched_titles)
+
+    def test_title_lookup_recovers_missing_detail_page(self):
+        searcher = FakeTitleSearcher({
+            "航空5G AeroMACS地面终端技术要求": [self.attachment_hit, self.detail_hit],
+        })
+        resolved, outcomes = CaacCrawler()._resolve_orphan_attachments(
+            [self.attachment_hit], [], searcher
+        )
+
+        self.assertEqual([self.detail_hit], resolved)
+        self.assertEqual(1, outcomes["detail_found"])
+
+    def test_unresolved_attachment_is_kept_without_extension(self):
+        resolved, outcomes = CaacCrawler()._resolve_orphan_attachments(
+            [self.attachment_hit], [], FakeTitleSearcher({})
+        )
+
+        self.assertEqual(1, outcomes["kept_attachment"])
+        self.assertEqual("航空5G AeroMACS地面终端技术要求", resolved[0].title)
+        self.assertTrue(resolved[0].url.endswith(".pdf"))
+
+    def test_supporting_file_attachments_are_skipped(self):
+        supporting_file = make_hit("附件1：意见反馈表.pdf", f"{HYBZ_DIRECTORY}/P0202611090001.pdf")
+        searcher = FakeTitleSearcher({})
+        resolved, outcomes = CaacCrawler()._resolve_orphan_attachments([supporting_file], [], searcher)
+
+        self.assertEqual([], resolved)
+        self.assertEqual(1, outcomes["skipped"])
+        self.assertEqual([], searcher.searched_titles)
 
 
 class WafDetectionTests(unittest.TestCase):

@@ -99,6 +99,57 @@ def is_attachment_url(url: str) -> bool:
     return bool(ATTACHMENT_URL_PATTERN.search(urlparse(url).path))
 
 
+# 一轮最多为多少个孤立附件做标题反查，防止异常情况下请求量失控
+MAX_ORPHAN_ATTACHMENT_LOOKUPS = 30
+
+
+def strip_attachment_extension(title: str) -> str:
+    """Drop a trailing file extension such as ``.pdf`` from an attachment title."""
+    return ATTACHMENT_URL_PATTERN.sub("", (title or "").strip()).strip()
+
+
+def normalize_title_for_match(title: str) -> str:
+    """Comparable form of a title: no extension, no whitespace, ASCII colons."""
+    without_extension = strip_attachment_extension(title)
+    return re.sub(r"\s+", "", without_extension).replace("：", ":").lower()
+
+
+def url_directory(url: str) -> str:
+    """Directory part of a URL path, e.g. ``/XXGK/XXGK/BZGF/HYBZ/202611``."""
+    return urlparse(url or "").path.rsplit("/", 1)[0]
+
+
+def find_detail_hit_for_attachment(attachment_hit, candidate_hits):
+    """Return the detail-page hit that owns ``attachment_hit``, if any.
+
+    CAAC stores an attachment (``P0xxxx.pdf``) in the same directory as its
+    detail page (``t2026xxxx_nnnnnn.html``), and for standards the attachment
+    title is the detail title plus ``.pdf``. An exact (normalized) title match
+    wins; otherwise a title that contains the other one is accepted.
+    """
+    attachment_directory = url_directory(attachment_hit.url)
+    attachment_title = normalize_title_for_match(attachment_hit.title)
+    if not attachment_title:
+        return None
+
+    same_directory_detail_hits = [
+        candidate
+        for candidate in candidate_hits
+        if candidate.url
+        and not is_attachment_url(candidate.url)
+        and url_directory(candidate.url) == attachment_directory
+        and normalize_title_for_match(candidate.title)
+    ]
+    for candidate in same_directory_detail_hits:
+        if normalize_title_for_match(candidate.title) == attachment_title:
+            return candidate
+    for candidate in same_directory_detail_hits:
+        candidate_title = normalize_title_for_match(candidate.title)
+        if candidate_title in attachment_title or attachment_title in candidate_title:
+            return candidate
+    return None
+
+
 def parse_detail_metadata(html_content: str, category_id: str) -> dict[str, str]:
     """Extract 文号/有效性/办文单位/日期 from a CAAC detail page.
 
@@ -486,6 +537,63 @@ class CaacCrawler:
         logger.info(f"Detail metadata filled: {enriched_count}/{len(pending_documents)}")
         return enriched_count
 
+    def _resolve_orphan_attachments(
+        self,
+        attachment_hits: list,
+        all_hits: list,
+        searcher: SoGovSearch,
+    ) -> tuple[list, dict[str, int]]:
+        """Turn 13/14/15 attachment hits into the hits that should become documents.
+
+        so-gov sometimes returns only the P0xxxx.pdf attachment of a standard and
+        not its detail page. Dropping such hits loses the document entirely, so
+        each one is resolved in this order:
+
+        1. its detail page is already among this run's hits -> nothing to add;
+        2. a title search finds the detail page -> add that detail page hit;
+        3. otherwise keep the attachment itself, with the .pdf suffix removed.
+
+        Titles starting with 附件 are supporting files of a notice; keeping them
+        on their own would recreate the duplicate entries, so they are skipped.
+        """
+        resolved_hits = []
+        outcome_counts = {"already_listed": 0, "detail_found": 0, "kept_attachment": 0, "skipped": 0}
+        lookup_count = 0
+
+        for attachment_hit in attachment_hits:
+            if find_detail_hit_for_attachment(attachment_hit, all_hits):
+                outcome_counts["already_listed"] += 1
+                continue
+
+            bare_title = strip_attachment_extension(attachment_hit.title)
+            if not bare_title or bare_title.startswith("附件"):
+                outcome_counts["skipped"] += 1
+                continue
+
+            detail_hit = None
+            if lookup_count < MAX_ORPHAN_ATTACHMENT_LOOKUPS:
+                lookup_count += 1
+                try:
+                    title_search_hits = searcher.search_title(bare_title)
+                except Exception as error:  # noqa: BLE001 - fall back to the attachment
+                    logger.warning(f"[so-gov] title lookup failed for {bare_title}: {error}")
+                    title_search_hits = []
+                detail_hit = find_detail_hit_for_attachment(attachment_hit, title_search_hits)
+
+            if detail_hit:
+                logger.info(f"[so-gov] attachment -> detail page: {bare_title} -> {detail_hit.url}")
+                all_hits.append(detail_hit)
+                resolved_hits.append(detail_hit)
+                outcome_counts["detail_found"] += 1
+                continue
+
+            logger.warning(f"[so-gov] detail page not found, keeping attachment: {attachment_hit.url}")
+            attachment_hit.title = bare_title
+            resolved_hits.append(attachment_hit)
+            outcome_counts["kept_attachment"] += 1
+
+        return resolved_hits, outcome_counts
+
     def fetch_all_categories(
         self,
         category_ids: list[str] = None,
@@ -526,6 +634,20 @@ class CaacCrawler:
         searcher = SoGovSearch()
         try:
             hits = searcher.fetch_recent(days=days)
+
+            # 13/14/15 的附件结果要先找回所属详情页，否则文号/有效性无从读取
+            orphan_attachment_hits = [
+                hit
+                for hit in hits
+                if classify_url(hit.url) in DETAIL_METADATA_CATEGORIES
+                and classify_url(hit.url) in wanted
+                and is_attachment_url(hit.url)
+            ]
+            orphan_attachment_urls = {hit.url for hit in orphan_attachment_hits}
+            regular_hits = [hit for hit in hits if hit.url not in orphan_attachment_urls]
+            resolved_hits, attachment_outcomes = self._resolve_orphan_attachments(
+                orphan_attachment_hits, list(regular_hits), searcher
+            )
         finally:
             searcher.close()
 
@@ -533,9 +655,12 @@ class CaacCrawler:
         counters: dict[str, int] = {}
         skipped_unknown = 0
         skipped_other = 0
-        skipped_attachments = 0
+        seen_urls: set[str] = set()
 
-        for hit in hits:
+        for hit in regular_hits + resolved_hits:
+            if hit.url in seen_urls:
+                continue
+            seen_urls.add(hit.url)
             cid = classify_url(hit.url)
             if cid == UNCLASSIFIED or cid not in CATEGORIES:
                 skipped_unknown += 1
@@ -546,9 +671,6 @@ class CaacCrawler:
                 continue
             if cid not in wanted:
                 skipped_other += 1
-                continue
-            if cid in DETAIL_METADATA_CATEGORIES and is_attachment_url(hit.url):
-                skipped_attachments += 1
                 continue
             results[cid].append(self._hit_to_document(hit, cid))
             counters[cid] = counters.get(cid, 0) + 1
@@ -563,7 +685,8 @@ class CaacCrawler:
         logger.info(
             f"Total: {total} documents from {len([k for k, v in results.items() if v])} "
             f"categories (hits={len(hits)}, unmapped_url={skipped_unknown}, "
-            f"other_category={skipped_other}, attachment_only={skipped_attachments})"
+            f"other_category={skipped_other}, attachments={len(orphan_attachment_hits)} "
+            f"{attachment_outcomes})"
         )
 
         if total == 0:
