@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-10T09:39:50.039590",
+  "last_update": "2026-11-11T11:56:25.789755",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -6968,6 +6968,26 @@
     "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html": {
       "relative_path": "specification/MH_T 4067-2026航班唯一飞行标识符数据规范.pdf",
       "updated_at": "2026-11-10T09:39:44.171840"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232036.html": {
+      "relative_path": "specification/MH_T 4070-2026航空5G AeroMACS技术应用要求 场面车辆协同运行服务.pdf",
+      "updated_at": "2026-11-11T11:55:38.751948"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232032.html": {
+      "relative_path": "specification/MH_T 4029.4-2026民用航空空中交通管制自动化系统 第4部分：人机界面.pdf",
+      "updated_at": "2026-11-11T11:55:49.683888"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232034.html": {
+      "relative_path": "specification/MH_T 4068-2026航空5G AeroMACS地面终端技术要求.pdf",
+      "updated_at": "2026-11-11T11:56:00.900824"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232037.html": {
+      "relative_path": "specification/MH_T 4071-2026航空5G AeroMACS技术应用要求 场面滑行引导可视化服务.pdf",
+      "updated_at": "2026-11-11T11:56:11.870101"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232035.html": {
+      "relative_path": "specification/MH_T 4069-2026航空5G AeroMACS地面终端测试方法.pdf",
+      "updated_at": "2026-11-11T11:56:25.789741"
     }
   }
 }
