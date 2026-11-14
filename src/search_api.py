@@ -24,7 +24,6 @@ import re
 import time
 from dataclasses import dataclass
 from typing import Iterable, Optional
-from urllib.parse import urlencode
 
 import httpx
 from loguru import logger
@@ -54,6 +53,9 @@ COLUMN_CODE_TO_CATEGORY = {
     "ZCJD": "11",     # 政策解读
     "TJSJ": "12",     # 统计数据
     "SBGX": "16",     # 对外关系（双边关系）
+    "DWGX": "16",     # 对外关系（多边关系）
+    "GATSHHZ": "17",  # 港澳台合作
+    "GJGY": "18",     # 国际公约
     "RSXX": "19",     # 人事信息
     "CZXX": "20",     # 财政信息
     "FZGH": "21",     # 发展规划
@@ -63,6 +65,8 @@ COLUMN_CODE_TO_CATEGORY = {
     "JGZN": "25",     # 机构职能
     "DWZC": "26",     # 对外政策
     "ZFDXAL": "27",   # 执法典型案例
+    "JYTNDF": "28",   # 建议提案答复
+    "ZFWZNDBB": "29", # 政府网站年度报表
     "FLFG": "47",     # 法律法规
 }
 
@@ -102,7 +106,12 @@ def classify_url(url: str) -> str:
     return UNCLASSIFIED
 
 
-_URL_DATE_RE = re.compile(r"/(\d{4})(\d{2})/(?:t(\d{4})(\d{2})(\d{2})_|P0\d+(\d{4})(\d{2})(\d{2}))")
+class SearchBannedError(RuntimeError):
+    """Raised when so-gov blocks the client (IP ban / rate limit).
+
+    This is intentionally fatal for the whole run: continuing to query the
+    remaining keywords only deepens the ban.
+    """
 
 
 def date_from_url(url: str) -> str:
@@ -204,6 +213,10 @@ class SoGovSearch:
         self._last_request = time.time()
         self.request_count += 1
 
+        if resp.status_code in (403, 429):
+            raise SearchBannedError(
+                f"search blocked by so-gov (HTTP {resp.status_code}); aborting run"
+            )
         if resp.status_code != 200:
             raise RuntimeError(f"search HTTP {resp.status_code}")
 
@@ -212,21 +225,23 @@ class SoGovSearch:
             code = data.get("code")
             msg = data.get("msg") or ""
             if code == -101:
-                raise RuntimeError(f"IP banned by so-gov: {msg}")
+                raise SearchBannedError(f"IP banned by so-gov: {msg}")
             raise RuntimeError(f"search rejected: code={code} msg={msg}")
         return data
 
     # ---- 对外接口 -------------------------------------------------------
 
     def fetch_keyword(self, keyword: str, days: int, max_pages: int = 0) -> list[SearchHit]:
-        max_pages = max_pages or _env_int("SO_GOV_MAX_PAGES", MAX_PAGE)
         """按关键词翻页抓取，遇到空页/重复页即停。"""
+        max_pages = max_pages or _env_int("SO_GOV_MAX_PAGES", MAX_PAGE)
         hits: list[SearchHit] = []
         seen_first: set[str] = set()
 
         for page in range(1, max_pages + 1):
             try:
                 data = self._query(keyword, page, days)
+            except SearchBannedError:
+                raise
             except Exception as exc:  # noqa: BLE001 —— 单关键词失败不拖垮整轮
                 logger.warning(f"[so-gov] keyword={keyword} page={page} failed: {exc}")
                 break
@@ -268,7 +283,6 @@ class SoGovSearch:
         return hits
 
     def fetch_keyword_wide(self, keyword: str, cutoff: str, max_pages: int = 0) -> list[SearchHit]:
-        max_pages = max_pages or _env_int("SO_GOV_WIDE_PAGES", 2)
         """不带时间过滤的补充抓取，本地按 docDate 卡 cutoff。
 
         为什么需要这一趟：`timeOption=1&days=N` 过滤用的不是返回里的 docDate。
@@ -276,12 +290,15 @@ class SoGovSearch:
         但 days=30 查不到；去掉时间过滤后第 1 页就能找到。说明平台用的是另一个
         日期字段（成文日期之类），部分文档因此被窗口漏掉。补一趟宽查询兜住。
         """
+        max_pages = max_pages or _env_int("SO_GOV_WIDE_PAGES", 2)
         hits: list[SearchHit] = []
         stale_pages = 0
 
         for page in range(1, max_pages + 1):
             try:
                 data = self._query(keyword, page, days=0)
+            except SearchBannedError:
+                raise
             except Exception as exc:  # noqa: BLE001
                 logger.warning(f"[so-gov] wide kw={keyword} page={page} failed: {exc}")
                 break
