@@ -14,6 +14,7 @@ Required env vars:
 
 import json
 import os
+import tempfile
 from pathlib import Path
 from typing import Optional
 from urllib.parse import quote
@@ -161,10 +162,12 @@ class R2Uploader:
                     skipped += 1
                 continue
 
-            # Check cache: skip upload if file size matches
+            # Check cache: skip upload if file size matches (and the cached
+            # record actually carries a public URL).
             file_size = os.path.getsize(local_path)
-            if cached_record and cached_record.get("file_size") == file_size:
-                r2_url_map[caac_url] = normalize_public_url(cached_record["r2_url"])
+            cached_url = normalize_public_url(cached_record.get("r2_url", "")) if cached_record else ""
+            if cached_url and cached_record.get("file_size") == file_size:
+                r2_url_map[caac_url] = cached_url
                 cached += 1
                 continue
 
@@ -178,8 +181,8 @@ class R2Uploader:
                 uploaded += 1
             else:
                 # Still use cached URL if upload fails
-                if cached_record:
-                    r2_url_map[caac_url] = normalize_public_url(cached_record["r2_url"])
+                if cached_url:
+                    r2_url_map[caac_url] = cached_url
                     cached += 1
                 else:
                     failed += 1
@@ -214,12 +217,20 @@ class R2Uploader:
             "last_update": datetime.now().isoformat(),
             "records": records,
         }
-        tmp_path = path + ".tmp"
-        with open(tmp_path, "w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2)
-            f.flush()
-            os.fsync(f.fileno())
-        os.replace(tmp_path, path)
+        directory = os.path.dirname(path) or "."
+        fd, tmp_path = tempfile.mkstemp(dir=directory, suffix=".tmp")
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as f:
+                json.dump(payload, f, ensure_ascii=False, indent=2)
+                f.write("\n")
+                f.flush()
+                os.fsync(f.fileno())
+            os.chmod(tmp_path, 0o644)
+            os.replace(tmp_path, path)
+        except Exception:
+            if os.path.exists(tmp_path):
+                os.remove(tmp_path)
+            raise
 
     def close(self):
         if hasattr(self, "_client") and self._client:
