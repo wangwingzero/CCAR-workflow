@@ -46,3 +46,9 @@ scripts/reports/
 
 # Local backups
 *.localbak
+
+# Corrupted-state backups written by Storage.load(); never commit these.
+data/*.corrupted.*
+# Atomic-write leftovers (should not survive a clean run, but never commit).
+data/*.json.tmp
+JS/*.tmp
