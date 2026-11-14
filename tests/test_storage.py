@@ -2,6 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from src.crawler import Document
 from src.storage import Storage, StorageState
@@ -260,6 +261,94 @@ class PurgeDocumentsTests(unittest.TestCase):
             self.assertEqual([detail_relative_path], list(remaining_r2))
             remaining_json = json.loads((js_dir / "specification.json").read_text(encoding="utf-8"))
             self.assertEqual([self.DETAIL_URL], [row["url"] for row in remaining_json])
+
+
+class RepostCategoryScopeTests(unittest.TestCase):
+    def _storage(self, tmp: str) -> Storage:
+        storage = Storage(str(Path(tmp) / "regulations.json"))
+        notice = Document(
+            title="关于开展专项检查的通知",
+            url="http://www.caac.gov.cn/old/notice.html",
+            category="通知公告",
+            category_id="9",
+            doc_number="",
+            office_unit="",
+            publish_date="2026-11-11",
+        )
+        storage.save(StorageState(
+            last_check="2026-11-11T00:00:00",
+            documents={"9": [notice.to_dict()]},
+        ))
+        return storage
+
+    def test_same_title_and_date_in_notice_category_is_new(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            storage = self._storage(tmp)
+            notice = Document(
+                title="关于开展专项检查的通知",
+                url="http://www.caac.gov.cn/new/notice.html",
+                category="通知公告",
+                category_id="9",
+                doc_number="",
+                office_unit="",
+                publish_date="2026-11-11",
+            )
+
+            changes = storage.detect_changes({"9": [notice]})
+
+            self.assertEqual(1, changes.new_count)
+            self.assertEqual(0, changes.reposted_count)
+
+    def test_same_title_and_date_in_export_category_is_reposted(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            storage = Storage(str(Path(tmp) / "regulations.json"))
+            storage.save(StorageState(
+                last_check="2026-11-11T00:00:00",
+                documents={"15": [make_spec_doc(
+                    "http://www.caac.gov.cn/old/t1.html", "MH/T 1-2026",
+                    "同标题标准", "2026-11-11",
+                ).to_dict()]},
+            ))
+            repost = make_spec_doc(
+                "http://www.caac.gov.cn/new/t2.html", "MH/T 9-2026",
+                "同标题标准", "2026-11-11",
+            )
+
+            changes = storage.detect_changes({"15": [repost]})
+
+            self.assertEqual(0, changes.new_count)
+            self.assertEqual(1, changes.reposted_count)
+
+    def test_same_doc_number_is_reposted_in_any_category(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            storage = Storage(str(Path(tmp) / "regulations.json"))
+            known = Document(
+                title="甲通知", url="http://www.caac.gov.cn/old/a.html",
+                category="通知公告", category_id="9", doc_number="民航局函〔2026〕1号",
+                office_unit="", publish_date="2026-01-01",
+            )
+            storage.save(StorageState(last_check="", documents={"9": [known.to_dict()]}))
+            repost = Document(
+                title="乙通知", url="http://www.caac.gov.cn/new/b.html",
+                category="通知公告", category_id="9", doc_number="民航局函〔2026〕1号",
+                office_unit="", publish_date="2026-02-02",
+            )
+
+            changes = storage.detect_changes({"9": [repost]})
+
+            self.assertEqual(1, changes.reposted_count)
+
+
+class StorageLoadFailureTests(unittest.TestCase):
+    def test_unreadable_state_raises_instead_of_returning_empty_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "regulations.json"
+            path.write_text("{}", encoding="utf-8")
+            storage = Storage(str(path))
+
+            with mock.patch("builtins.open", side_effect=OSError("disk error")):
+                with self.assertRaises(OSError):
+                    storage.load()
 
 
 if __name__ == "__main__":

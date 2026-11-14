@@ -228,11 +228,15 @@ def atomic_write_json(file_path: str, data: dict) -> None:
     
     fd, temp_path = tempfile.mkstemp(dir=dir_name, suffix=".tmp")
     try:
-        with os.fdopen(fd, 'w', encoding='utf-8') as f:
+        # newline="\n" keeps generated JSON byte-identical across platforms;
+        # without it Windows rewrites every line as CRLF and pollutes git diffs.
+        with os.fdopen(fd, 'w', encoding='utf-8', newline="\n") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
+            f.write("\n")
             f.flush()
             os.fsync(f.fileno())
-        
+        # mkstemp creates 0600 files; restore the usual 0644 mode.
+        os.chmod(temp_path, 0o644)
         os.replace(temp_path, file_path)
         logger.debug(f"Atomic write successful: {file_path}")
     except Exception:
@@ -308,12 +312,21 @@ def _is_repost(doc: Any, known_docs: list) -> bool:
     """
     doc_number = _compact(_doc_field_value(doc, "doc_number"))
     doc_title = _compact(_doc_field_value(doc, "title"))
+    category_id = _doc_field_value(doc, "category_id")
     publish_date = _doc_field_value(doc, "publish_date")
     sign_date = _doc_field_value(doc, "sign_date")
+
+    # Title+date matching is only meaningful for the exported document
+    # categories (13/14/15), where a re-post really is the same document.
+    # Notice-type categories reuse generic titles ("通知", "公告") on the same
+    # day, so the heuristic would silently swallow distinct documents there.
+    title_date_match_allowed = category_id in ("13", "14", "15")
 
     for known in known_docs:
         if doc_number and doc_number == _compact(_doc_field_value(known, "doc_number")):
             return True
+        if not title_date_match_allowed:
+            continue
         if doc_title and doc_title == _compact(_doc_field_value(known, "title")):
             if publish_date and publish_date == _doc_field_value(known, "publish_date"):
                 return True
@@ -384,15 +397,16 @@ def _write_js_data(file_path: Path, records: list[dict], export_name: str) -> No
         f"  {export_name}: data\n"
         f"}};\n"
     )
-    file_path.write_text(content, encoding="utf-8")
+    file_path.write_text(content, encoding="utf-8", newline="\n")
 
 
 def _write_json_data(file_path: Path, records: list[dict]) -> None:
     """Write pure JSON array for R2 hot-update endpoint"""
     file_path.parent.mkdir(parents=True, exist_ok=True)
     file_path.write_text(
-        json.dumps(records, ensure_ascii=False, indent=2),
+        json.dumps(records, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
+        newline="\n",
     )
 
 
@@ -501,9 +515,11 @@ class Storage:
             return self._state
             
         except Exception as e:
+            # Do NOT fall back to an empty state here: the next save() would
+            # silently overwrite the real history. A corrupt/unreadable state
+            # must abort the run instead.
             logger.error(f"Failed to load state: {e}")
-            self._state = StorageState()
-            return self._state
+            raise
 
     def save(self, state: StorageState) -> None:
         """Save state"""
@@ -674,15 +690,25 @@ class Storage:
         orphaned_relative_paths = purged_relative_paths - still_referenced_paths
         r2_index_path = Path(self.data_path).parent / "r2_uploads.json"
         if orphaned_relative_paths and r2_index_path.exists():
-            with open(r2_index_path, "r", encoding="utf-8") as f:
-                r2_payload = json.load(f)
-            r2_records = r2_payload.get("records", {})
-            for relative_path in orphaned_relative_paths:
-                if r2_records.pop(relative_path, None) is not None:
-                    removal_counts["r2_index"] += 1
-            if removal_counts["r2_index"]:
-                r2_payload["last_update"] = datetime.now().isoformat()
-                atomic_write_json(str(r2_index_path), r2_payload)
+            try:
+                with open(r2_index_path, "r", encoding="utf-8") as f:
+                    r2_payload = json.load(f)
+            except (OSError, json.JSONDecodeError) as e:
+                logger.warning(f"Skip R2 index cleanup, cannot read {r2_index_path}: {e}")
+                r2_payload = None
+            if isinstance(r2_payload, dict):
+                r2_records = r2_payload.get("records", {})
+                sentinel = object()
+                for relative_path in orphaned_relative_paths:
+                    if r2_records.pop(relative_path, sentinel) is not sentinel:
+                        removal_counts["r2_index"] += 1
+                if removal_counts["r2_index"]:
+                    r2_payload["last_update"] = datetime.now().isoformat()
+                    atomic_write_json(str(r2_index_path), r2_payload)
+            elif r2_payload is not None:
+                logger.warning(
+                    f"Skip R2 index cleanup, unexpected JSON shape in {r2_index_path}"
+                )
 
         js_root = Path(js_dir)
         for config in JS_EXPORT_CONFIG.values():
@@ -774,7 +800,7 @@ class Storage:
         url_map = r2_url_map or {}
         fallback_urls, fallback_filenames = build_pdf_url_fallback(self.data_path)
 
-        def resolve_pdf_url(doc: Document) -> str:
+        def resolve_pdf_url(doc: Document, existing_pdf_url_by_url: dict[str, str]) -> str:
             """Resolve pdf_url: this run's R2 map > committed indexes > existing JS."""
             url = url_map.get(doc.url) or fallback_urls.get(doc.url)
             if url:
@@ -816,6 +842,8 @@ class Storage:
                 if existing_rows:
                     reason = "未抓取该分类" if docs is None else "该分类本次抓取为空"
                     logger.warning(f"{cat_name}: {reason}，保留现有 JS 文件 {file_path}")
+                    # Keep the hot-update JSON in sync with the retained JS.
+                    _write_json_data(file_path.with_suffix(".json"), existing_rows)
                     summary[file_path.name] = len(existing_rows)
                     continue
 
@@ -828,7 +856,7 @@ class Storage:
                 records = [
                     _build_regulation_record(
                         doc, doc_type,
-                        pdf_url=_normalize_pdf_url(resolve_pdf_url(doc))
+                        pdf_url=_normalize_pdf_url(resolve_pdf_url(doc, existing_pdf_url_by_url))
                     )
                     for doc in docs
                 ]
@@ -837,7 +865,7 @@ class Storage:
                     _build_normative_record(
                         doc, doc_type,
                         existing_file_number_by_url.get(doc.url, ""),
-                        pdf_url=_normalize_pdf_url(resolve_pdf_url(doc))
+                        pdf_url=_normalize_pdf_url(resolve_pdf_url(doc, existing_pdf_url_by_url))
                     )
                     for doc in docs
                 ]
@@ -845,7 +873,7 @@ class Storage:
                 records = [
                     _build_standard_record(
                         doc, doc_type,
-                        pdf_url=_normalize_pdf_url(resolve_pdf_url(doc))
+                        pdf_url=_normalize_pdf_url(resolve_pdf_url(doc, existing_pdf_url_by_url))
                     )
                     for doc in docs
                 ]
