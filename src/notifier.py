@@ -6,11 +6,14 @@ Supports multiple push channels: Email, PushPlus, Telegram.
 """
 
 import html
+import mimetypes
 import os
 import smtplib
 from datetime import datetime, timezone, timedelta
+from email import encoders
 from email.header import Header
 from email.mime.application import MIMEApplication
+from email.mime.base import MIMEBase
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.utils import formataddr
@@ -34,7 +37,14 @@ class Notifier:
         self.email_sender = os.getenv("EMAIL_SENDER", "CAAC 文件监控")
         # SMTP host/port: explicit override falls back to smtp.<domain>:465 (SSL)
         self.email_smtp_host = os.getenv("EMAIL_SMTP_HOST")
-        self.email_smtp_port = int(os.getenv("EMAIL_SMTP_PORT", "465"))
+        try:
+            self.email_smtp_port = int(os.getenv("EMAIL_SMTP_PORT", "465"))
+        except ValueError:
+            logger.warning(
+                "Invalid EMAIL_SMTP_PORT=%r, falling back to 465",
+                os.getenv("EMAIL_SMTP_PORT"),
+            )
+            self.email_smtp_port = 465
         
         # PushPlus config
         self.pushplus_token = os.getenv("PUSHPLUS_TOKEN")
@@ -145,9 +155,21 @@ class Notifier:
                     continue
                 
                 try:
+                    mime_type, _ = mimetypes.guess_type(path.name)
+                    maintype, subtype = (
+                        mime_type.split("/", 1)
+                        if mime_type
+                        else ("application", "octet-stream")
+                    )
                     with open(path, "rb") as f:
-                        attachment = MIMEApplication(f.read(), _subtype="pdf")
-                    
+                        data = f.read()
+                    if maintype == "application":
+                        attachment = MIMEApplication(data, _subtype=subtype)
+                    else:
+                        attachment = MIMEBase(maintype, subtype)
+                        attachment.set_payload(data)
+                        encoders.encode_base64(attachment)
+
                     filename = path.name
                     attachment.add_header(
                         "Content-Disposition",
@@ -176,7 +198,7 @@ class Notifier:
                 f"(no '@'); set EMAIL_SMTP_HOST explicitly"
             )
 
-        with smtplib.SMTP_SSL(smtp_server, self.email_smtp_port) as server:
+        with smtplib.SMTP_SSL(smtp_server, self.email_smtp_port, timeout=30) as server:
             server.login(self.email_user, self.email_pass)
             server.sendmail(self.email_user, recipients, msg.as_string())
 
@@ -214,7 +236,8 @@ class Notifier:
         url = f"https://api.telegram.org/bot{self.telegram_bot_token}/sendMessage"
 
         def escape_markdown(text: str) -> str:
-            """Escape Markdown special characters"""
+            """Escape Markdown special characters (backslash itself first)."""
+            text = text.replace("\\", "\\\\")
             special_chars = ['_', '*', '[', ']', '(', ')', '~', '`', '>', '#', '+', '-', '=', '|', '{', '}', '.', '!']
             for char in special_chars:
                 text = text.replace(char, f'\\{char}')
@@ -261,17 +284,25 @@ class Notifier:
         self,
         documents_by_category: dict,
         max_docs_per_category: int = 50,
+        updated_urls: Optional[set[str]] = None,
     ) -> tuple[str, str, str]:
         """Format update notification message
 
         Args:
             documents_by_category: Dict mapping category name to list of documents
             max_docs_per_category: Max documents to show per category (rest summarized)
+            updated_urls: URLs of documents whose metadata changed (rendered with
+                an "更新" marker). None means every document is new.
 
         Returns:
             (title, plain text content, HTML content)
         """
+        updated_urls = updated_urls or set()
         total = sum(len(docs) for docs in documents_by_category.values())
+        updated_total = sum(
+            1 for docs in documents_by_category.values() for doc in docs
+            if doc.url in updated_urls
+        )
         beijing_tz = timezone(timedelta(hours=8))
         timestamp = datetime.now(beijing_tz)
 
@@ -286,7 +317,11 @@ class Notifier:
         # Plain text content
         lines = [
             f"检测时间: {timestamp.strftime('%Y-%m-%d %H:%M:%S')}",
-            f"新增文件: {total} 条",
+            (
+                f"新增文件: {total} 条（其中更新 {updated_total} 条）"
+                if updated_total
+                else f"新增文件: {total} 条"
+            ),
             "",
         ]
 
@@ -296,7 +331,11 @@ class Notifier:
             lines.append(f"【{cat_name}】({len(docs)} 条)")
             display_docs = truncated[cat_name]
             for doc in display_docs:
-                lines.append(f"  • {doc.doc_number} {doc.title}" if doc.doc_number else f"  • {doc.title}")
+                marker = "🔄 [更新] " if doc.url in updated_urls else ""
+                if doc.doc_number:
+                    lines.append(f"  • {marker}{doc.doc_number} {doc.title}")
+                else:
+                    lines.append(f"  • {marker}{doc.title}")
                 details = []
                 if doc.validity:
                     details.append(f"状态: {doc.validity}")
@@ -313,7 +352,9 @@ class Notifier:
             lines.append("")
 
         text_content = "\n".join(lines)
-        html_content = self._generate_html_email(truncated, timestamp, documents_by_category)
+        html_content = self._generate_html_email(
+            truncated, timestamp, documents_by_category, updated_urls=updated_urls
+        )
 
         return title, text_content, html_content
 
@@ -322,6 +363,7 @@ class Notifier:
         documents_by_category: dict,
         timestamp: datetime,
         full_counts: Optional[dict] = None,
+        updated_urls: Optional[set[str]] = None,
     ) -> str:
         """Generate HTML email content - Apple style clean design
 
@@ -329,7 +371,9 @@ class Notifier:
             documents_by_category: Possibly truncated dict of docs to render
             timestamp: Current timestamp
             full_counts: Original full dict for accurate counts (optional)
+            updated_urls: URLs of documents whose metadata changed (marked "更新")
         """
+        updated_urls = updated_urls or set()
         if full_counts is None:
             full_counts = documents_by_category
         total = sum(len(docs) for docs in full_counts.values())
@@ -417,6 +461,13 @@ class Notifier:
             raw_title = f"{doc.doc_number} {doc.title}" if doc.doc_number else doc.title
             doc_title = html.escape(raw_title or "")
             doc_href = html.escape(doc.url or "", quote=True)
+            update_badge = (
+                '<span style="font-size: 11px; color: #FF9500; border: 1px solid #FF9500;'
+                ' border-radius: 4px; padding: 1px 5px; margin-left: 8px;'
+                ' white-space: nowrap;">更新</span>'
+                if doc.url in updated_urls
+                else ""
+            )
             
             separator = '<div style="height: 1px; background: #E5E5EA; margin: 16px 0;"></div>' if index > 0 else ""
             
@@ -430,7 +481,7 @@ class Notifier:
             return f'''{separator}
                 <div style="padding: 4px 0;">
                     <div style="display: flex; align-items: flex-start; margin-bottom: 6px;">
-                        <a href="{doc_href}" style="font-size: 14px; font-weight: 500; color: #1D1D1F; text-decoration: none; line-height: 1.4; flex: 1;">{doc_title}</a>
+                        <a href="{doc_href}" style="font-size: 14px; font-weight: 500; color: #1D1D1F; text-decoration: none; line-height: 1.4; flex: 1;">{doc_title}</a>{update_badge}
                         {validity_badge}
                     </div>
                     <div style="font-size: 12px; color: #86868B;">{details_html}</div>
