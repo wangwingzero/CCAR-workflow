@@ -90,27 +90,38 @@ concurrency:
 jobs:
   check-updates:
     runs-on: ubuntu-22.04
+    # The crawl + download + R2/static publish normally finishes well under an
+    # hour; cap the job so a hung browser or SSH session cannot burn the runner.
+    timeout-minutes: 90
 
     permissions:
       contents: write  # Required for committing state file
       actions: write   # Clean up old workflow runs
 
+    env:
+      # Cutoffs and notification timestamps are expressed in Beijing time.
+      TZ: Asia/Shanghai
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        # v4.4.0
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v4
+        # v4.2.0
+        uses: astral-sh/setup-uv@38f3f104447c67c051c4a08e39b64a148898af3a
         with:
-          version: "latest"
+          # Pin the toolchain tested locally instead of floating "latest":
+          # a new uv release can change lockfile/resolver behaviour overnight.
+          version: "0.7.8"
 
       - name: Set up Python
         run: uv python install 3.12
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --frozen
 
       # Install Patchright browser (anti-detection)
       # --with-deps installs system dependencies (libgbm, libasound2, etc.)
@@ -181,9 +192,6 @@ jobs:
             CMD+=(--repair-metadata)
           fi
 
-          # 固定每个分类抓取条数，提高 JSON 更新覆盖率
-          CMD+=(--perpage 200)
-
           echo "Running: ${CMD[*]}"
           "${CMD[@]}"
 
@@ -235,6 +243,7 @@ jobs:
           (js_dir / "manifest.json").write_text(
               json.dumps(manifest, ensure_ascii=False, indent=2) + "\n",
               encoding="utf-8",
+              newline="\n",
           )
           print(f"Generated JS/manifest.json totalCount={manifest['totalCount']}")
           PY
@@ -368,21 +377,39 @@ jobs:
             exit 0
           fi
           git commit -m "chore: update regulation state $(date +'%Y-%m-%d')"
-          git pull --rebase --autostash origin main
-          git push origin main
+
+          # Another run (or a human push) can land between commit and push.
+          # Rebase and retry a few times instead of failing the whole job.
+          pushed=0
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin main && git push origin main; then
+              pushed=1
+              break
+            fi
+            echo "⚠️  Push attempt ${attempt}/3 failed, retrying after rebase" >&2
+            git rebase --abort 2>/dev/null || true
+            sleep $(( attempt * 10 ))
+          done
+          if [ "$pushed" -ne 1 ]; then
+            echo "❌ Could not push state update after 3 attempts" >&2
+            exit 1
+          fi
 
       - name: Upload downloaded files
         if: always()
-        uses: actions/upload-artifact@v4
+        # v4.6.2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: downloaded-regulations-${{ github.run_number }}
           path: downloads/
           retention-days: 30
           if-no-files-found: ignore
 
-      # Clean up old workflow runs
+      # Clean up old workflow runs (even when an earlier step failed).
       - name: Delete workflow runs
-        uses: Mattraks/delete-workflow-runs@v2
+        if: always()
+        # v2.1.0
+        uses: Mattraks/delete-workflow-runs@b3018382ca039b53d238908238bd35d1fb14f8ee
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}

@@ -26,18 +26,20 @@ jobs:
   validate:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
+      # v4.4.0
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v4
+        # v4.2.0
+        uses: astral-sh/setup-uv@38f3f104447c67c051c4a08e39b64a148898af3a
         with:
-          version: "latest"
+          version: "0.7.8"
 
       - name: Set up Python
         run: uv python install 3.12
 
       - name: Install dependencies
-        run: uv sync
+        run: uv sync --frozen
 
       - name: Runner egress IP
         run: curl -s --max-time 15 https://ipinfo.io/json | head -12 || true
