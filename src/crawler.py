@@ -310,10 +310,15 @@ def normalize_date(date_str: str) -> str:
     if match:
         year, month, day = match.groups()
         return f"{year}-{month.zfill(2)}-{day.zfill(2)}"
-    
-    if re.match(r'\d{4}-\d{2}-\d{2}', date_str):
-        return date_str
-    
+
+    match = re.match(r'(\d{4})[-/.](\d{1,2})[-/.](\d{1,2})', date_str)
+    if match:
+        year, month, day = match.groups()
+        return f"{year}-{month.zfill(2)}-{day.zfill(2)}"
+
+    if re.fullmatch(r'\d{8}', date_str):
+        return f"{date_str[:4]}-{date_str[4:6]}-{date_str[6:]}"
+
     return date_str
 
 
@@ -826,15 +831,21 @@ class CaacCrawler:
         logger.info(f"Checking attachment: [{document.category}] {document.doc_number} {document.title}")
 
         try:
-            # 检索结果本身就是 .pdf 直链时，跳过详情页直接下载
-            if document.url and document.url.lower().split("?")[0].endswith(".pdf"):
+            # 检索结果本身就是附件直链时（pdf/doc/docx/xls/zip/...），跳过
+            # 详情页直接下载。此前只认 .pdf，导致孤立 doc/docx 附件被当成
+            # 详情页解析，最终错误地保存成 .txt。
+            if document.url and is_attachment_url(document.url):
                 ext = self._guess_file_extension(document.url, preferred_ext)
                 direct_path = f"{save_base_path}{ext}"
                 if self._download_binary_file(document.url, direct_path):
-                    document.pdf_url = document.url
-                    document.has_pdf = True
+                    if ext.lower() == ".pdf":
+                        document.pdf_url = document.url
+                        document.has_pdf = True
+                    else:
+                        document.pdf_url = ""
+                        document.has_pdf = False
                     return direct_path
-                logger.warning(f"Direct PDF download failed: {document.url}")
+                logger.warning(f"Direct attachment download failed: {document.url}")
 
             html_content = self._detail_html_by_url.get(document.url, "")
             if not html_content:
@@ -884,10 +895,17 @@ class CaacCrawler:
         ext = ext.lower()
         if ext == ".pdf":
             return body[:4] == b"%PDF"
-        if ext == ".docx":
+        if ext in (".docx", ".xlsx", ".pptx", ".ofd", ".zip"):
             return body[:2] == b"PK"
-        if ext == ".doc":
+        if ext in (".doc", ".xls", ".ppt", ".wps"):
             return body[:4] == b"\xd0\xcf\x11\xe0"
+        if ext == ".rar":
+            return body[:4] == b"Rar!"
+        # Unknown extension: still reject obvious HTML/XML error pages, which
+        # the WAF returns with HTTP 200 and which used to be saved as if valid.
+        head = body[:512].lstrip().lower()
+        if head.startswith(b"<") or b"<html" in head or b"<!doctype" in head:
+            return False
         return True
 
     def _save_binary_body(self, body: bytes, save_path: str) -> bool:
@@ -979,7 +997,9 @@ class CaacCrawler:
 
     def _guess_file_extension(self, file_url: str, default_ext: str = ".pdf") -> str:
         """Guess extension from URL, fallback to default"""
-        match = re.search(r"\.(pdf|docx?)($|[?#])", file_url, re.I)
+        match = re.search(
+            r"\.(pdf|docx?|xlsx?|pptx?|wps|ofd|zip|rar)($|[?#])", file_url, re.I
+        )
         if match:
             return f".{match.group(1).lower()}"
 
@@ -989,66 +1009,86 @@ class CaacCrawler:
         return ext or ".pdf"
 
     def _find_attachment_link(self, soup: BeautifulSoup, doc_url: str) -> Optional[str]:
-        """Find downloadable attachment link in detail page"""
-        file_pattern = re.compile(r"\.(pdf|doc|docx)$", re.I)
+        """Find the most likely downloadable attachment link in a detail page.
 
-        # Pattern 1: links near "附件"
-        attachment_texts = soup.find_all(string=re.compile(r"附件[：:]?", re.I))
-        for text in attachment_texts:
-            parent = text.parent
+        Links are scored rather than taking the first match: CAAC detail pages
+        mix real attachments with "related document" links, and a container may
+        hold several file links. Preference order: same directory as the detail
+        page, anchor text mentioning 附件/下载, and PDF files.
+        """
+        doc_dir = url_directory(doc_url)
+        best_url = ""
+        best_score = 0
+
+        def score_link(href: str, text: str) -> int:
+            if not href:
+                return 0
+            full_url = self._build_full_url(href, doc_url)
+            if not full_url:
+                return 0
+            path = urlparse(full_url).path.lower()
+            is_file = bool(ATTACHMENT_URL_PATTERN.search(path))
+            if not is_file and not any(k in text for k in ("附件", "下载")):
+                return 0
+            score = 0
+            if is_file:
+                score += 2
+            if path.endswith(".pdf"):
+                score += 1
+            if url_directory(full_url) == doc_dir:
+                score += 2
+            if "附件" in text or "下载" in text:
+                score += 2
+            if "/XXGK/" in href:
+                score += 1
+            if href.lower().startswith("http"):
+                score += 1
+            if any(k in text for k in ("相关链接", "相关政策", "相关新闻")):
+                score -= 5
+            return score
+
+        def consider(href: str, text: str) -> None:
+            nonlocal best_url, best_score
+            score = score_link(href, text)
+            if score > best_score:
+                full_url = self._build_full_url(href, doc_url)
+                if full_url:
+                    best_url = full_url
+                    best_score = score
+
+        # 1) Links in the container that holds an "附件" label (usual layout).
+        for text_node in soup.find_all(string=re.compile(r"附件[：:]?")):
+            parent = text_node.parent
             if not parent:
                 continue
             container = parent.parent or parent
-            links = container.find_all("a", href=file_pattern)
-            if links:
-                full_url = self._build_full_url(links[0].get("href"), doc_url)
-                if full_url:
-                    return full_url
+            for link in container.find_all("a", limit=10):
+                consider(link.get("href", ""), link.get_text(" ", strip=True))
 
-        # Pattern 2: all file links, prefer official XXGK path or absolute URL
-        file_links = soup.find_all("a", href=file_pattern)
-        for link in file_links:
-            href = link.get("href", "")
-            if href and ("/XXGK/" in href or href.startswith("http")):
-                full_url = self._build_full_url(href, doc_url)
-                if full_url:
-                    return full_url
-        if file_links:
-            full_url = self._build_full_url(file_links[0].get("href"), doc_url)
-            if full_url:
-                return full_url
-
-        # Pattern 3: keyword links (download / attachment)
-        keyword_links = soup.find_all("a")
-        for link in keyword_links:
-            href = link.get("href", "")
-            text = link.get_text(strip=True)
-            if not href:
+        # 2) Every link on the page, including onclick-embedded URLs.
+        for link in soup.find_all("a"):
+            href = link.get("href", "") or ""
+            text = link.get_text(" ", strip=True)
+            consider(href, text)
+            onclick = link.get("onclick", "") or ""
+            if not onclick:
                 continue
-            href_lower = href.lower()
-            if (
-                "download" in href_lower
-                or "attachment" in href_lower
-                or ".pdf" in href_lower
-                or ".doc" in href_lower
-                or "附件" in text
-                or "下载" in text
-            ):
-                full_url = self._build_full_url(href, doc_url)
-                if full_url:
-                    return full_url
-
-        # Pattern 4: onclick embedded file URL
-        onclick_links = soup.find_all("a", onclick=True)
-        for link in onclick_links:
-            onclick = link.get("onclick", "")
-            match = re.search(r"['\"]([^'\"]*(?:\.pdf|\.doc|\.docx|download|attachment)[^'\"]*)['\"]", onclick, re.I)
+            match = re.search(
+                r"['\"]([^'\"]*(?:\.pdf|\.docx?|\.xlsx?|\.wps|\.ofd|\.zip|\.rar|download|attachment)[^'\"]*)['\"]",
+                onclick,
+                re.I,
+            )
             if match:
-                full_url = self._build_full_url(match.group(1), doc_url)
+                consider(match.group(1), text)
+
+        # 3) Last resort: a file-looking link even without useful anchor text.
+        if best_score < 2:
+            for link in soup.find_all("a", href=ATTACHMENT_URL_PATTERN):
+                full_url = self._build_full_url(link.get("href", ""), doc_url)
                 if full_url:
                     return full_url
 
-        return None
+        return best_url
 
     def _extract_and_save_text_content(self, document: Document, soup: BeautifulSoup, txt_path: str) -> bool:
         """Extract main text from detail page and save as .txt"""
@@ -1093,7 +1133,7 @@ class CaacCrawler:
                 normalized = normalized[:50000] + "\n\n[内容过长，已截取前50KB]"
 
             os.makedirs(os.path.dirname(txt_path) or ".", exist_ok=True)
-            with open(txt_path, "w", encoding="utf-8") as f:
+            with open(txt_path, "w", encoding="utf-8", newline="\n") as f:
                 f.write(f"文档标题: {document.title}\n")
                 f.write(f"文档链接: {document.url}\n")
                 f.write(f"提取时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
@@ -1107,32 +1147,24 @@ class CaacCrawler:
             return False
 
     def _build_full_url(self, link: str, doc_url: str) -> str:
-        """Build full URL"""
+        """Resolve a possibly relative link against the detail-page URL."""
         if not link:
             return ""
 
         link = link.strip()
-        if link.lower().startswith("javascript:"):
+        if link.startswith("#"):
+            return ""
+        scheme = urlparse(link).scheme.lower()
+        if scheme and scheme not in ("http", "https"):
             return ""
 
-        if link.startswith('http'):
-            return link
-        
-        if link.startswith('/'):
-            from urllib.parse import urlparse
-            parsed = urlparse(doc_url)
-            return f"{parsed.scheme}://{parsed.netloc}{link}"
-        
-        doc_dir = '/'.join(doc_url.split('/')[:-1])
-        
-        while link.startswith('../'):
-            link = link[3:]
-            doc_dir = '/'.join(doc_dir.split('/')[:-1])
-        
-        if link.startswith('./'):
-            link = link[2:]
-        
-        return f"{doc_dir}/{link}"
+        # urljoin handles absolute/protocol-relative/relative-query links,
+        # "../" segments and doc_urls that already carry a query string.
+        full_url = urljoin(doc_url, link)
+        parsed = urlparse(full_url)
+        if parsed.scheme not in ("http", "https") or not parsed.netloc:
+            return ""
+        return full_url
 
 
 # Legacy compatibility - map old types to new categories

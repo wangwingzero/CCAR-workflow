@@ -239,5 +239,90 @@ class WafDetectionTests(unittest.TestCase):
         self.assertFalse(_looks_like_waf_block(html))
 
 
+class UrlResolutionTests(unittest.TestCase):
+    DETAIL_URL = "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html"
+
+    def setUp(self):
+        self.crawler = CaacCrawler()
+
+    def test_protocol_relative_link_uses_page_scheme(self):
+        self.assertEqual(
+            "http://www.caac.gov.cn/a.pdf",
+            self.crawler._build_full_url("//www.caac.gov.cn/a.pdf", self.DETAIL_URL),
+        )
+
+    def test_query_only_link_keeps_detail_path(self):
+        self.assertEqual(
+            f"{self.DETAIL_URL}?download=1",
+            self.crawler._build_full_url("?download=1", self.DETAIL_URL),
+        )
+
+    def test_parent_directory_link_is_resolved(self):
+        self.assertEqual(
+            "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202610/P1.pdf",
+            self.crawler._build_full_url("../202610/P1.pdf", self.DETAIL_URL),
+        )
+
+    def test_non_http_scheme_is_rejected(self):
+        self.assertEqual("", self.crawler._build_full_url("javascript:void(0)", self.DETAIL_URL))
+        self.assertEqual("", self.crawler._build_full_url("#top", self.DETAIL_URL))
+
+
+class BinaryValidationTests(unittest.TestCase):
+    def setUp(self):
+        self.crawler = CaacCrawler()
+
+    def test_valid_pdf_is_accepted(self):
+        self.assertTrue(self.crawler._is_valid_binary(b"%PDF-1.7" + b"\x00" * 2000, ".pdf"))
+
+    def test_html_disguised_as_pdf_is_rejected(self):
+        body = b"<html><body>WAF challenge</body></html>" + b" " * 2000
+        self.assertFalse(self.crawler._is_valid_binary(body, ".pdf"))
+
+    def test_html_disguised_as_zip_is_rejected(self):
+        body = b"<!DOCTYPE html><html><body>error</body></html>" + b" " * 2000
+        self.assertFalse(self.crawler._is_valid_binary(body, ".zip"))
+
+    def test_valid_docx_is_accepted(self):
+        body = b"PK\x03\x04" + b"\x00" * 2000
+        self.assertTrue(self.crawler._is_valid_binary(body, ".docx"))
+
+    def test_tiny_response_is_rejected(self):
+        self.assertFalse(self.crawler._is_valid_binary(b"%PDF-1.7", ".pdf"))
+
+
+class AttachmentLinkScoringTests(unittest.TestCase):
+    DETAIL_URL = "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/t20261109_232033.html"
+
+    def setUp(self):
+        self.crawler = CaacCrawler()
+
+    def test_prefers_same_directory_attachment_over_related_pdf(self):
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div class="related">
+          <a href="/XXGK/XXGK/BZGF/HYBZ/202501/P0202501010001.pdf">相关链接：旧标准</a>
+        </div>
+        <div class="article">
+          <p>附件：<a href="P020261109628802830918.pdf">点击下载</a></p>
+        </div>
+        """
+        soup = BeautifulSoup(html, "lxml")
+
+        link = self.crawler._find_attachment_link(soup, self.DETAIL_URL)
+
+        self.assertEqual(
+            "http://www.caac.gov.cn/XXGK/XXGK/BZGF/HYBZ/202611/P020261109628802830918.pdf",
+            link,
+        )
+
+    def test_returns_empty_without_attachment_links(self):
+        from bs4 import BeautifulSoup
+
+        soup = BeautifulSoup("<p>无附件</p>", "lxml")
+        self.assertEqual("", self.crawler._find_attachment_link(soup, self.DETAIL_URL))
+
+
 if __name__ == "__main__":
     unittest.main()
