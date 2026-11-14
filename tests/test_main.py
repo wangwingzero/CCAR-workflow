@@ -1,17 +1,25 @@
+import json
+import tempfile
 import unittest
+from pathlib import Path
 from unittest import mock
 
 from src import main as src_main
 from src.crawler import Document
 from src.main import (
+    MAX_DOWNLOAD_ATTEMPTS,
     _carry_over_known_metadata,
     _collect_metadata_repair_targets,
     _filter_documents_by_category,
     _find_missing_r2_urls,
+    _load_download_retries,
     _parse_category_filter,
+    _retry_documents_by_category,
+    _save_download_retries,
     _select_download_documents,
     _select_metadata_backfilled_documents,
     _select_notify_attachments,
+    _update_download_retries,
 )
 from src.storage import ChangeResult, StorageState
 
@@ -211,22 +219,28 @@ class DetailMetadataHelperTests(unittest.TestCase):
 
 
 class _FakeStorage:
-    """Storage stub: one known doc per crawled category, no download index."""
+    """Storage stub: one known doc per stored category, no download index."""
 
-    def __init__(self, path):
+    def __init__(self, path, stored_categories=("9", "13", "15")):
         self.data_path = path
+        self.stored_categories = tuple(stored_categories)
         self.updated_state = None
+        self.new_documents = {}
+        self.updated_documents = {}
 
     def load(self):
         state = StorageState()
         state.documents = {
             cat: [make_doc(f"https://example.test/{cat}/known", cat)]
-            for cat in ("9", "13", "15")
+            for cat in self.stored_categories
         }
         return state
 
     def detect_changes(self, current_documents):
-        return ChangeResult(new_documents=self.new_documents)
+        return ChangeResult(
+            new_documents=self.new_documents,
+            updated_documents=self.updated_documents,
+        )
 
     def load_download_index(self):
         return {}
@@ -244,6 +258,7 @@ class _FakeStorage:
 class _FakeCrawler:
     def __init__(self, storage):
         self.storage = storage
+        self.downloaded: list[str] = []
 
     def __enter__(self):
         return self
@@ -258,6 +273,7 @@ class _FakeCrawler:
         return 0
 
     def download_document_file(self, doc, save_base_path):
+        self.downloaded.append(doc.url)
         return f"{save_base_path}.pdf"
 
 
@@ -270,8 +286,15 @@ class _FakeNotifier:
     def __exit__(self, *args):
         return False
 
-    def format_update_message(self, docs_by_category):
-        self.sent = {"categories": sorted(docs_by_category), "attachments": []}
+    def format_update_message(self, docs_by_category, updated_urls=None):
+        self.sent = {
+            "categories": sorted(docs_by_category),
+            "attachments": [],
+            "document_urls": sorted(
+                doc.url for docs in docs_by_category.values() for doc in docs
+            ),
+            "updated_urls": set(updated_urls or ()),
+        }
         return ("title", "text", "html")
 
     def send_all(self, title, text, html, attachments=None):
@@ -292,14 +315,16 @@ class _FakeR2:
 class NotifyCategoryFlowTests(unittest.TestCase):
     """Run main() with stubbed collaborators to check the end-to-end filtering."""
 
-    def _run(self, new_documents, argv):
-        storage = _FakeStorage("data/regulations.json")
+    def _run(self, new_documents, argv, stored_categories=("9", "13", "15")):
+        storage = _FakeStorage("data/regulations.json", stored_categories)
         storage.new_documents = new_documents
+        crawler = _FakeCrawler(storage)
+        self.crawler = crawler
         notifier = _FakeNotifier()
         notifier.sent = None
 
         with mock.patch.object(src_main, "Storage", return_value=storage), \
-             mock.patch.object(src_main, "CaacCrawler", lambda: _FakeCrawler(storage)), \
+             mock.patch.object(src_main, "CaacCrawler", lambda: crawler), \
              mock.patch.object(src_main, "Notifier", lambda: notifier), \
              mock.patch.object(src_main, "R2Uploader", lambda: _FakeR2()), \
              mock.patch("sys.argv", ["main", *argv, "--notify", "1"]), \
@@ -362,6 +387,189 @@ class NotifyCategoryFlowTests(unittest.TestCase):
         sent, _ = self._run(new_documents, [])
 
         self.assertEqual(["民航规章", "通知公告"], sent["categories"])
+
+
+class DownloadRetryQueueTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.path = str(Path(self.tmp.name) / "download_retry.json")
+
+    def test_load_missing_file_returns_empty(self):
+        self.assertEqual({}, _load_download_retries(self.path))
+
+    def test_succeeded_url_is_removed(self):
+        doc_a = make_doc("https://example.test/a", "13")
+        doc_b = make_doc("https://example.test/b", "13")
+        _save_download_retries(self.path, {
+            doc_a.url: {"attempts": 1, "document": doc_a.to_dict()},
+            doc_b.url: {"attempts": 2, "document": doc_b.to_dict()},
+        })
+
+        _update_download_retries(
+            self.path, _load_download_retries(self.path), {doc_a.url}, []
+        )
+
+        records = _load_download_retries(self.path)
+        self.assertEqual([doc_b.url], list(records))
+        self.assertEqual(2, records[doc_b.url]["attempts"])
+
+    def test_failed_attempts_are_counted_then_given_up(self):
+        doc = make_doc("https://example.test/fail", "13")
+
+        for attempt in range(1, MAX_DOWNLOAD_ATTEMPTS):
+            _update_download_retries(
+                self.path, _load_download_retries(self.path), set(), [doc]
+            )
+            records = _load_download_retries(self.path)
+            self.assertEqual(attempt, records[doc.url]["attempts"])
+
+        _update_download_retries(
+            self.path, _load_download_retries(self.path), set(), [doc]
+        )
+        self.assertEqual({}, _load_download_retries(self.path))
+
+    def test_retry_documents_are_limited_to_crawled_categories(self):
+        doc_13 = make_doc("https://example.test/13/retry", "13")
+        doc_14 = make_doc("https://example.test/14/retry", "14")
+        retries = {
+            doc_13.url: {"attempts": 1, "document": doc_13.to_dict()},
+            doc_14.url: {"attempts": 1, "document": doc_14.to_dict()},
+        }
+
+        result = _retry_documents_by_category(retries, {"13": []})
+
+        self.assertEqual(
+            [doc_13.url], [doc.url for docs in result.values() for doc in docs]
+        )
+
+
+class MetadataValidityResyncTests(unittest.TestCase):
+    def test_validity_change_affecting_filename_prefix_is_resynced(self):
+        doc = make_doc("https://example.test/15/a", "15")
+        doc.validity = "失效"
+        stored = {"15": [{"url": doc.url, "doc_number": "", "validity": "有效"}]}
+
+        selected = _select_metadata_backfilled_documents({"15": [doc]}, stored)
+
+        self.assertEqual([doc], selected["15"])
+
+    def test_empty_to_effective_validity_does_not_need_resync(self):
+        doc = make_doc("https://example.test/15/b", "15")
+        doc.validity = "有效"
+        stored = {"15": [{"url": doc.url, "doc_number": "", "validity": ""}]}
+
+        self.assertEqual({}, _select_metadata_backfilled_documents({"15": [doc]}, stored))
+
+
+class BaselineCategoryFlowTests(unittest.TestCase):
+    def test_new_category_is_recorded_without_notifying_or_downloading(self):
+        storage = _FakeStorage("data/regulations.json", stored_categories=("13",))
+        existing_doc = make_doc("https://example.test/13/new", "13")
+        new_category_doc = make_doc("https://example.test/14/first", "14")
+        storage.new_documents = {"13": [existing_doc], "14": [new_category_doc]}
+        crawler = _FakeCrawler(storage)
+        notifier = _FakeNotifier()
+        notifier.sent = None
+
+        with mock.patch.object(src_main, "Storage", return_value=storage), \
+             mock.patch.object(src_main, "CaacCrawler", lambda: crawler), \
+             mock.patch.object(src_main, "Notifier", lambda: notifier), \
+             mock.patch.object(src_main, "R2Uploader", lambda: _FakeR2()), \
+             mock.patch("sys.argv", ["main", "--notify", "1"]), \
+             mock.patch.dict("os.environ", {"NOTIFY_CATEGORIES": ""}):
+            self.assertEqual(0, src_main.main())
+
+        # Only the genuinely new document in the already-known category is
+        # notified/downloaded; the new category is baseline-only.
+        self.assertEqual(["民航规章"], notifier.sent["categories"])
+        self.assertEqual([existing_doc.url], crawler.downloaded)
+        self.assertEqual(["13", "14"], sorted(storage.updated_state))
+
+
+class BackfillGuardTests(unittest.TestCase):
+    def _run(self, argv, r2_enabled):
+        storage = _FakeStorage("data/regulations.json")
+        storage.new_documents = {"13": [make_doc("https://example.test/13/known", "13")]}
+        crawler = _FakeCrawler(storage)
+        notifier = _FakeNotifier()
+        notifier.sent = None
+        r2 = _FakeR2()
+        r2.enabled = r2_enabled
+
+        with mock.patch.object(src_main, "Storage", return_value=storage), \
+             mock.patch.object(src_main, "CaacCrawler", lambda: crawler), \
+             mock.patch.object(src_main, "Notifier", lambda: notifier), \
+             mock.patch.object(src_main, "R2Uploader", lambda: r2), \
+             mock.patch("sys.argv", ["main", *argv]), \
+             mock.patch.dict("os.environ", {"NOTIFY_CATEGORIES": ""}):
+            exit_code = src_main.main()
+
+        self.assertIsNone(notifier.sent)
+        return exit_code
+
+    def test_backfill_requires_configured_r2(self):
+        self.assertEqual(1, self._run(["--backfill-r2"], r2_enabled=False))
+
+    def test_backfill_rejects_no_download(self):
+        self.assertEqual(1, self._run(["--backfill-r2", "--no-download"], r2_enabled=True))
+
+
+class NotifyUpdatedFlowTests(unittest.TestCase):
+    """--notify-updated surfaces metadata-only changes in the notification."""
+
+    def _run(self, argv):
+        storage = _FakeStorage("data/regulations.json", stored_categories=("13",))
+        new_doc = make_doc("https://example.test/13/new", "13")
+        updated_doc = make_doc("https://example.test/13/updated", "13")
+        storage.new_documents = {"13": [new_doc]}
+        storage.updated_documents = {"13": [updated_doc]}
+        crawler = _FakeCrawler(storage)
+        notifier = _FakeNotifier()
+        notifier.sent = None
+
+        with mock.patch.object(src_main, "Storage", return_value=storage), \
+             mock.patch.object(src_main, "CaacCrawler", lambda: crawler), \
+             mock.patch.object(src_main, "Notifier", lambda: notifier), \
+             mock.patch.object(src_main, "R2Uploader", lambda: _FakeR2()), \
+             mock.patch("sys.argv", ["main", *argv]), \
+             mock.patch.dict("os.environ", {"NOTIFY_CATEGORIES": ""}):
+            self.assertEqual(0, src_main.main())
+
+        return notifier.sent
+
+    def test_updated_documents_are_not_notified_by_default(self):
+        sent = self._run([])
+
+        self.assertEqual(["https://example.test/13/new"], sent["document_urls"])
+        self.assertEqual(set(), sent["updated_urls"])
+
+    def test_notify_updated_merges_updated_documents_into_notification(self):
+        sent = self._run(["--notify-updated"])
+
+        self.assertEqual(
+            {
+                "https://example.test/13/new",
+                "https://example.test/13/updated",
+            },
+            set(sent["document_urls"]),
+        )
+        self.assertEqual({"https://example.test/13/updated"}, sent["updated_urls"])
+
+
+class RepoPathDefaultsTests(unittest.TestCase):
+    """Paths default to the repository root so the CLI works from any cwd."""
+
+    def test_defaults_are_absolute_repo_paths(self):
+        with mock.patch("sys.argv", ["main"]):
+            args = src_main.parse_args()
+
+        self.assertEqual(str(src_main.DEFAULT_DOWNLOAD_DIR), args.download_dir)
+        self.assertTrue(Path(args.download_dir).is_absolute())
+        self.assertEqual(src_main.PROJECT_ROOT, src_main.DATA_DIR.parent)
+        self.assertEqual(src_main.PROJECT_ROOT, src_main.JS_DIR.parent)
+        self.assertEqual(src_main.PROJECT_ROOT, src_main.DEFAULT_DOWNLOAD_DIR.parent)
+        self.assertEqual(src_main.DATA_DIR, src_main.PROJECT_ROOT / "data")
 
 
 if __name__ == "__main__":

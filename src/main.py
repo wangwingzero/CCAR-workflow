@@ -12,6 +12,7 @@ Flow:
 """
 
 import argparse
+import json
 import os
 import sys
 import traceback
@@ -32,7 +33,18 @@ from .crawler import (
 )
 from .notifier import Notifier
 from .r2_uploader import R2Uploader
-from .storage import Storage, filter_by_days, JS_EXPORT_CONFIG
+from .storage import Storage, atomic_write_json, filter_by_days, JS_EXPORT_CONFIG
+
+
+DOWNLOAD_RETRY_FILENAME = "download_retry.json"
+MAX_DOWNLOAD_ATTEMPTS = 3
+
+# Resolve default data locations from the package location instead of the
+# current working directory, so `python -m src.main` also works from elsewhere.
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = PROJECT_ROOT / "data"
+JS_DIR = PROJECT_ROOT / "JS"
+DEFAULT_DOWNLOAD_DIR = PROJECT_ROOT / "downloads"
 
 
 def _merge_documents(*documents_by_category: dict[str, list[Document]]) -> dict[str, list[Document]]:
@@ -123,27 +135,42 @@ def _select_metadata_backfilled_documents(
     updated_documents: dict[str, list[Document]],
     stored_documents: dict[str, list],
 ) -> dict[str, list[Document]]:
-    """Pick updated 13/14/15 documents whose 文号 was only just read from the detail page.
+    """Pick updated 13/14/15 documents whose 文号/有效性 changed.
 
-    Their earlier download was saved without 文号, so the file has to be
-    re-synced under the {文号}{标题} name even without --download-updated.
+    Their earlier download was saved without the {文号}{标题} name (or without
+    the 失效! prefix), so the file has to be re-synced under the new name even
+    without --download-updated.
     """
     backfilled_documents: dict[str, list[Document]] = {}
     for category_id, documents in updated_documents.items():
         if category_id not in DETAIL_METADATA_CATEGORIES:
             continue
-        stored_doc_number_by_url = {
-            str(row.get("url", "")).strip(): str(row.get("doc_number", "")).strip()
+        stored_by_url = {
+            str(row.get("url", "")).strip(): {
+                "doc_number": str(row.get("doc_number", "")).strip(),
+                "validity": str(row.get("validity", "")).strip(),
+            }
             for row in stored_documents.get(category_id, [])
             if isinstance(row, dict) and row.get("url")
         }
-        newly_numbered = [
-            document
-            for document in documents
-            if document.doc_number and not stored_doc_number_by_url.get(document.url)
-        ]
-        if newly_numbered:
-            backfilled_documents[category_id] = newly_numbered
+        needs_resync: list[Document] = []
+        for document in documents:
+            stored = stored_by_url.get(document.url)
+            if stored is None:
+                continue
+            old_number = stored["doc_number"]
+            old_validity = stored["validity"]
+            number_changed = bool(document.doc_number) and document.doc_number != old_number
+            # Only a validity change that affects the filename prefix matters:
+            # both "" and "有效" produce no prefix, anything else adds one.
+            validity_changed = document.validity != old_validity and (
+                document.validity not in ("", "有效")
+                or old_validity not in ("", "有效")
+            )
+            if number_changed or validity_changed:
+                needs_resync.append(document)
+        if needs_resync:
+            backfilled_documents[category_id] = needs_resync
     return backfilled_documents
 
 
@@ -226,6 +253,89 @@ def _load_txt_repair_documents(storage: Storage) -> list[Document]:
     return repair_docs
 
 
+def _load_download_retries(path: str) -> dict[str, dict]:
+    """Load the persisted retry queue for failed downloads."""
+    if not os.path.exists(path):
+        return {}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            payload = json.load(f)
+    except (OSError, json.JSONDecodeError) as exc:
+        logger.warning(f"Could not read download retry queue {path}: {exc}")
+        return {}
+
+    records = payload.get("records", {}) if isinstance(payload, dict) else {}
+    if not isinstance(records, dict):
+        return {}
+    return {str(url): rec for url, rec in records.items() if isinstance(rec, dict)}
+
+
+def _save_download_retries(path: str, records: dict[str, dict]) -> None:
+    """Persist the retry queue atomically (LF newlines)."""
+    atomic_write_json(
+        path,
+        {"last_update": datetime.now().isoformat(), "records": records},
+    )
+
+
+def _retry_documents_by_category(
+    retries: dict[str, dict],
+    all_documents: dict[str, list[Document]],
+) -> dict[str, list[Document]]:
+    """Turn retry-queue entries back into Documents for this run's categories."""
+    result: dict[str, list[Document]] = {}
+    for url, record in retries.items():
+        raw = record.get("document")
+        if not isinstance(raw, dict):
+            logger.warning(f"Dropping malformed download retry entry: {url}")
+            continue
+        doc = Document.from_dict(raw)
+        if not doc.url or doc.category_id not in all_documents:
+            continue
+        result.setdefault(doc.category_id, []).append(doc)
+    return result
+
+
+def _update_download_retries(
+    path: str,
+    records: dict[str, dict],
+    succeeded_urls: set[str],
+    failed_documents: list[Document],
+) -> None:
+    """Drop succeeded URLs, count failed attempts, and persist the queue."""
+    updated = dict(records)
+    changed = False
+
+    for url in succeeded_urls:
+        if url in updated:
+            updated.pop(url)
+            changed = True
+
+    for doc in failed_documents:
+        attempts = int(updated.get(doc.url, {}).get("attempts", 0)) + 1
+        if attempts >= MAX_DOWNLOAD_ATTEMPTS:
+            logger.error(
+                f"Giving up download after {attempts} attempts: "
+                f"[{doc.category}] {doc.title} ({doc.url})"
+            )
+            updated.pop(doc.url, None)
+            changed = True
+            continue
+        updated[doc.url] = {
+            "attempts": attempts,
+            "document": doc.to_dict(),
+            "last_error_at": datetime.now().isoformat(),
+        }
+        changed = True
+
+    if not changed:
+        return
+    try:
+        _save_download_retries(path, updated)
+    except Exception as exc:  # best-effort: never fail a run over the queue
+        logger.warning(f"Could not save download retry queue {path}: {exc}")
+
+
 def setup_logging():
     """Configure logging"""
     logger.remove()
@@ -284,9 +394,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--download-dir",
         type=str,
-        default="downloads",
+        default=str(DEFAULT_DOWNLOAD_DIR),
         metavar="DIR",
-        help="Base directory for file downloads (default: downloads)",
+        help=f"Base directory for file downloads (default: {DEFAULT_DOWNLOAD_DIR})",
     )
     parser.add_argument(
         "--cn-dirs",
@@ -317,11 +427,18 @@ def parse_args() -> argparse.Namespace:
         help="Force send notification: 0=only when new, 1=send even if no new (default)",
     )
     parser.add_argument(
+        "--notify-updated",
+        action="store_true",
+        help="Also include documents whose tracked metadata changed in notifications "
+             "(default: notify new documents only). Downloads still follow --download-updated.",
+    )
+    parser.add_argument(
         "--perpage",
         type=int,
         default=50,
         metavar="N",
-        help="Number of documents to fetch per category (default: 50)",
+        help="Deprecated/ignored: so-gov returns 20 per page and caps at 10 pages; "
+             "kept for CLI compatibility (any value other than 50 logs a warning)",
     )
     parser.add_argument(
         "--repair-txt",
@@ -407,6 +524,11 @@ def main() -> int:
     
     logger.info("=" * 50)
     logger.info("CAAC Document Update Monitor - Starting")
+    if args.perpage != 50:
+        logger.warning(
+            "--perpage is ignored: so-gov returns 20 results per page and caps at "
+            "10 pages, so the crawler always reads up to 200 hits per keyword"
+        )
     if args.days:
         logger.info(f"Mode: Send documents from last {args.days} days")
     else:
@@ -420,7 +542,7 @@ def main() -> int:
             CATEGORIES.get(c, f"未知分类({c})") for c in sorted(notify_category_ids)
         )
         logger.info(f"Notify only: {notify_names} (all categories are still crawled)")
-    if args.download_dir != "downloads":
+    if args.download_dir != str(DEFAULT_DOWNLOAD_DIR):
         logger.info(f"Download dir: {args.download_dir}")
     if args.cn_dirs:
         logger.info("Using Chinese subdirectory names")
@@ -429,7 +551,9 @@ def main() -> int:
     exit_code = 0
     
     try:
-        storage = Storage("data/regulations.json")
+        storage = Storage(str(DATA_DIR / "regulations.json"))
+        retry_queue_path = str(Path(storage.data_path).parent / DOWNLOAD_RETRY_FILENAME)
+        retry_records = _load_download_retries(retry_queue_path)
         
         with CaacCrawler() as crawler, Notifier() as notifier, R2Uploader() as r2:
             # 1. Crawl document list from all categories
@@ -471,8 +595,23 @@ def main() -> int:
             logger.info("Step 2/7: Filtering documents...")
             
             download_documents: dict[str, list[Document]] = {}
+            # Documents whose tracked metadata changed this run. Kept separately
+            # from target_documents so notifications only include them when
+            # --notify-updated is passed.
+            updated_notify_documents: dict[str, list[Document]] = {}
             
             if args.backfill_r2:
+                if not r2.enabled:
+                    logger.error(
+                        "Backfill-R2 requires R2_WORKER_URL/R2_WORKER_SECRET/R2_DOMAIN"
+                    )
+                    return 1
+                if args.no_download:
+                    logger.error(
+                        "Backfill-R2 requires file downloads to upload; "
+                        "remove --no-download"
+                    )
+                    return 1
                 # Re-upload only exported-category (13/14/15) PDFs missing from
                 # the R2 index — repair after an upload outage. CAAC retroactive
                 # docs carry old publish_date, so a date filter (--days) would
@@ -525,6 +664,38 @@ def main() -> int:
                 stored_docs = stored_documents
                 known_total = sum(len(stored_docs.get(cat_id, [])) for cat_id in all_documents)
                 changes = storage.detect_changes(all_documents)
+                retry_documents = _retry_documents_by_category(retry_records, all_documents)
+
+                # A category absent from the stored state is newly monitored
+                # scope: record its current documents as the baseline instead of
+                # treating every one of them as "new" (notification flood).
+                baseline_categories = {
+                    cat_id for cat_id in all_documents if cat_id not in stored_docs
+                }
+                if baseline_categories:
+                    baseline_names = ", ".join(
+                        f"{cat_id} {CATEGORIES.get(cat_id, '?')}"
+                        for cat_id in sorted(baseline_categories)
+                    )
+                    logger.warning(
+                        f"New category scope ({baseline_names}): recording baseline only — "
+                        "skipping notification and download for these categories"
+                    )
+                    changes.new_documents = {
+                        cat: docs
+                        for cat, docs in changes.new_documents.items()
+                        if cat not in baseline_categories
+                    }
+                    changes.updated_documents = {
+                        cat: docs
+                        for cat, docs in changes.updated_documents.items()
+                        if cat not in baseline_categories
+                    }
+                    changes.reposted_documents = {
+                        cat: docs
+                        for cat, docs in changes.reposted_documents.items()
+                        if cat not in baseline_categories
+                    }
 
                 # Drop CAAC re-posts (same document re-published under a new
                 # URL) so they never reach state, JS export, or notifications.
@@ -546,7 +717,14 @@ def main() -> int:
 
                 if not changes.has_changes:
                     logger.info("No new or updated documents detected")
-                    if args.notify == 1 and not args.no_notify:
+                    if retry_documents:
+                        retry_count = sum(len(docs) for docs in retry_documents.values())
+                        logger.info(
+                            f"Retrying {retry_count} previously failed downloads"
+                        )
+                        target_documents = {}
+                        download_documents = retry_documents
+                    elif args.notify == 1 and not args.no_notify:
                         logger.info("Force notify enabled, will send notification with empty results")
                         target_documents = {}
                         download_documents = {}
@@ -571,6 +749,9 @@ def main() -> int:
 
                     logger.info(f"Detected {new_count} new documents")
 
+                    # Only surfaced in the digest when --notify-updated is set.
+                    updated_notify_documents = dict(changes.updated_documents)
+
                     if updated_count > 0:
                         logger.info(f"Detected {updated_count} updated documents (status/title/doc_number etc.)")
 
@@ -584,7 +765,7 @@ def main() -> int:
                     )
                     if metadata_backfilled_documents:
                         backfilled_count = sum(len(docs) for docs in metadata_backfilled_documents.values())
-                        logger.info(f"Re-syncing {backfilled_count} files whose 文号 was just filled in")
+                        logger.info(f"Re-syncing {backfilled_count} files whose 文号/有效性 changed")
                         download_documents = _merge_documents(download_documents, metadata_backfilled_documents)
 
                     if known_total == 0:
@@ -595,6 +776,16 @@ def main() -> int:
                         )
                         target_documents = {}
                         download_documents = {}
+                        updated_notify_documents = {}
+
+                    if retry_documents:
+                        retry_count = sum(len(docs) for docs in retry_documents.values())
+                        logger.info(
+                            f"Retrying {retry_count} previously failed downloads"
+                        )
+                        download_documents = _merge_documents(
+                            download_documents, retry_documents
+                        )
 
             # 3. Download/rename files (optional)
             downloaded_files: list[str] = []
@@ -626,6 +817,8 @@ def main() -> int:
                     repair_pdf_count = 0
                     repair_txt_count = 0
                     repair_fail_count = 0
+                    succeeded_urls: set[str] = set()
+                    failed_documents: list[Document] = []
 
                     for doc in docs_to_sync:
                         subdir = get_download_subdir(doc.category_id, use_cn=args.cn_dirs)
@@ -664,6 +857,7 @@ def main() -> int:
                                     "updated_at": datetime.now().isoformat(),
                                 }
                                 synced_count += 1
+                                succeeded_urls.add(doc.url)
                                 continue
 
                         existing_local = None
@@ -679,6 +873,7 @@ def main() -> int:
                                 "updated_at": datetime.now().isoformat(),
                             }
                             synced_count += 1
+                            succeeded_urls.add(doc.url)
                             continue
 
                         old_was_txt = (
@@ -700,6 +895,7 @@ def main() -> int:
                                 "updated_at": datetime.now().isoformat(),
                             }
                             synced_count += 1
+                            succeeded_urls.add(doc.url)
                             if saved_path.lower().endswith(".pdf"):
                                 downloaded_files.append(saved_path)
                                 downloaded_files_by_category.setdefault(
@@ -713,10 +909,18 @@ def main() -> int:
                                     repair_txt_count += 1
                         else:
                             failed_count += 1
+                            failed_documents.append(doc)
                             if old_was_txt:
                                 repair_fail_count += 1
-                            logger.debug(f"Download failed: [{doc.category}] {doc.title}")
+                            logger.warning(f"Download failed: [{doc.category}] {doc.title}")
 
+                    if not args.dry_run:
+                        _update_download_retries(
+                            retry_queue_path,
+                            retry_records,
+                            succeeded_urls,
+                            failed_documents,
+                        )
                     storage.save_download_index(download_index)
                     logger.info(
                         f"Download sync complete: total={len(docs_to_sync)}, synced={synced_count}, "
@@ -762,7 +966,7 @@ def main() -> int:
                 logger.info("Step 5/7: Dry-run, skipping JS data sync")
             else:
                 logger.info("Step 5/7: Syncing JS data files...")
-                js_summary = storage.sync_js_files(all_documents, "JS", r2_url_map=r2_url_map or None)
+                js_summary = storage.sync_js_files(all_documents, str(JS_DIR), r2_url_map=r2_url_map or None)
                 if js_summary:
                     summary_text = ", ".join(f"{name}={count}" for name, count in js_summary.items())
                     logger.info(f"JS sync complete: {summary_text}")
@@ -773,7 +977,7 @@ def main() -> int:
                 json_uploaded = 0
                 for cat_id, config in JS_EXPORT_CONFIG.items():
                     json_filename = config["filename"].replace(".js", ".json")
-                    json_local = os.path.join("JS", json_filename)
+                    json_local = str(JS_DIR / json_filename)
                     if os.path.exists(json_local):
                         r2_key = f"data/v1/{json_filename}"
                         url = r2.upload_file(json_local, r2_key)
@@ -790,6 +994,21 @@ def main() -> int:
             notify_target_documents = _filter_documents_by_category(
                 target_documents, notify_category_ids
             )
+            updated_urls: set[str] = set()
+            if args.notify_updated and updated_notify_documents:
+                notify_updated = _filter_documents_by_category(
+                    updated_notify_documents, notify_category_ids
+                )
+                updated_urls = {
+                    doc.url for docs in notify_updated.values() for doc in docs
+                }
+                if updated_urls:
+                    logger.info(
+                        f"Including {len(updated_urls)} updated documents in the notification"
+                    )
+                    notify_target_documents = _merge_documents(
+                        notify_target_documents, notify_updated
+                    )
             if args.dry_run:
                 logger.info("Step 6/7: Dry-run, skipping notifications")
             elif not args.no_notify:
@@ -808,7 +1027,9 @@ def main() -> int:
                         cat_name = CATEGORIES.get(cat_id, f"未知分类({cat_id})")
                         docs_by_category[cat_name] = docs
 
-                    title, text_content, html_content = notifier.format_update_message(docs_by_category)
+                    title, text_content, html_content = notifier.format_update_message(
+                        docs_by_category, updated_urls=updated_urls or None
+                    )
 
                     notify_attachments = _select_notify_attachments(
                         downloaded_files,
