@@ -23,7 +23,6 @@ class VerifyReport:
     matched: int = 0
     missing: list[str] = field(default_factory=list)
     orphan: list[str] = field(default_factory=list)
-    ext_mismatch: list[tuple[str, str, str]] = field(default_factory=list)
     txt_stale_header: list[tuple[str, str]] = field(default_factory=list)
     txt_empty_body: list[str] = field(default_factory=list)
     repair_txt_to_pdf: list[str] = field(default_factory=list)
@@ -37,6 +36,8 @@ def load_index(index_path: Path) -> dict[str, dict]:
     records = data.get("records", data)
     filtered: dict[str, dict] = {}
     for url, rec in records.items():
+        if not isinstance(rec, dict):
+            continue
         rel = str(rec.get("relative_path", "")).strip()
         if any(rel.startswith(p) for p in PREFIXES):
             filtered[url] = {**rec, "relative_path": rel.replace("\\", "/")}
@@ -91,14 +92,6 @@ def verify(
 
     for rel, path in disk.items():
         report.by_ext_disk[Path(rel).suffix.lower()] += 1
-        indexed_rec = next(
-            (r for r in index.values() if r["relative_path"] == rel),
-            None,
-        )
-        if indexed_rec:
-            idx_ext = Path(rel).suffix.lower()
-            if idx_ext != path.suffix.lower():
-                report.ext_mismatch.append((rel, idx_ext, path.suffix.lower()))
         if path.suffix.lower() == ".txt":
             extract_time, body_chars = inspect_txt(path)
             if body_chars < 80:
@@ -166,7 +159,7 @@ def print_report(report: VerifyReport, since: str | None) -> None:
 
     ok = (
         not report.missing
-        and not report.ext_mismatch
+        and not report.orphan
         and not report.txt_empty_body
     )
     print("总体:", "[OK] 索引与磁盘一致" if ok else "[WARN] 存在差异（见上）")
@@ -232,10 +225,20 @@ def main() -> int:
             "since": since,
         }
         args.json_out.parent.mkdir(parents=True, exist_ok=True)
-        args.json_out.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        args.json_out.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+            newline="\n",
+        )
         print(f"JSON 报告: {args.json_out}")
 
-    return 0 if not report.missing and not report.txt_empty_body else 2
+    return (
+        0
+        if not report.missing
+        and not report.orphan
+        and not report.txt_empty_body
+        else 2
+    )
 
 
 if __name__ == "__main__":

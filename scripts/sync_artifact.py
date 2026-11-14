@@ -9,6 +9,20 @@ import sys
 from pathlib import Path
 
 
+def _files_equal(left: Path, right: Path, chunk_size: int = 1024 * 1024) -> bool:
+    """Compare two files by size first, then byte content (not just size)."""
+    if left.stat().st_size != right.stat().st_size:
+        return False
+    with left.open("rb") as lf, right.open("rb") as rf:
+        while True:
+            left_chunk = lf.read(chunk_size)
+            right_chunk = rf.read(chunk_size)
+            if left_chunk != right_chunk:
+                return False
+            if not left_chunk:
+                return True
+
+
 def sync_tree(source: Path, target: Path, dry_run: bool = False) -> tuple[int, int]:
     copied = 0
     skipped = 0
@@ -21,7 +35,7 @@ def sync_tree(source: Path, target: Path, dry_run: bool = False) -> tuple[int, i
             continue
         rel = path.relative_to(source)
         dest = target / rel
-        if dest.exists() and dest.stat().st_size == path.stat().st_size:
+        if dest.exists() and _files_equal(dest, path):
             skipped += 1
             continue
         if not dry_run:
