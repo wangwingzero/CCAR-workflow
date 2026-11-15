@@ -112,7 +112,7 @@
 | 37 | `sync_artifact.py` 只比较文件大小，同大小不同内容会漏拷 | 增加分块内容比较 |
 | 38 | `verify_downloads.py` 的扩展名检查永远为真（死检查）、orphan 不影响退出码 | 删除死检查；orphan 计入结论与退出码 2；JSON 报告显式 LF |
 | 39 | README 仅 2 行、DEVELOPMENT 与实现脱节（仍描述 was5）、AGENTS 模块/Python 版本过时 | 全部重写/更新，覆盖参数、数据契约、重试队列、so-gov 策略、CI、排障 |
-| 40 | GitHub Actions 仍用可移动的 tag，存在供应链风险 | 4 个 action 全部 pin 到核实过的 commit SHA（checkout v4.4.0、setup-uv v4.2.0、upload-artifact v4.6.2、delete-workflow-runs v2.1.0）；`validate-so-gov.yml` 同步 pin 与 `--frozen` |
+| 40 | GitHub Actions 仍用可移动的 tag，存在供应链风险 | 4 个 action 全部 pin 到核实过的 commit SHA（checkout v7.0.1、setup-uv v10.3.3、upload-artifact v7.0.2、delete-workflow-runs v2.1.0）；全部为 Node 24 runtime，消除 Node 20 弃用警告；`validate-so-gov.yml` 同步 pin 与 `--frozen` |
 | 41 | 默认路径相对 cwd，离开仓库根运行会把状态写错位置 | `PROJECT_ROOT`/`DATA_DIR`/`JS_DIR`/`DEFAULT_DOWNLOAD_DIR` 锚定仓库根；显式相对 `--download-dir` 仍按 cwd 解析 |
 | 42 | 元数据变化的文档完全静默，无法选择接收 | 新增 `--notify-updated`：默认行为不变；开启后 updated 文档并入通知，plain 前缀 `🔄 [更新]`、HTML 增加“更新”徽章 |
 | 43 | 17/18/28/29 的历史 state 行按旧 was5 频道错标，新映射无法纠正存量数据 | 新增 `scripts/repair_categories.py`（默认 dry-run，`--apply` 才写回）与 9 个测试；实跑：1942→1686 行，移动 47 行、去重 255 行，17/28/29 清零、18 补足 39 行，9/11/19 分别补入 |
