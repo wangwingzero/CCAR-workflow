@@ -1,5 +1,5 @@
 {
-  "last_check": "2026-11-17T01:14:53.817286",
+  "last_check": "2026-11-18T01:02:35.592333",
   "documents": {
     "9": [
       {
@@ -3306,6 +3306,19 @@
       }
     ],
     "10": [
+      {
+        "title": "发布丨中国民用航空局关于发布《民用机场水泥混凝土道面设计规范》 （MH/T5004-2025）第一修订案的公告",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202611/t20261117_232094.html",
+        "category": "政策发布",
+        "category_id": "10",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-17",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202611/P020261117358376901086.pdf",
+        "has_pdf": true
+      },
       {
         "title": "解读丨《民航绿色发展“十五五”实施方案》",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFBJD/202611/t20261102_231978.html",
@@ -17320,19 +17333,6 @@
     ],
     "16": [
       {
-        "title": "中国民航局和泰国民航局关于适航审定合作的谅解备忘录.pdf",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/SBGX/YZDQ/TG/SHXD/202611/P020261113316431411632.pdf",
-        "category": "对外关系",
-        "category_id": "16",
-        "doc_number": "",
-        "office_unit": "",
-        "sign_date": "",
-        "publish_date": "2026-11-13",
-        "validity": "",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/SBGX/YZDQ/TG/SHXD/202611/P020261113316431411632.pdf",
-        "has_pdf": true
-      },
-      {
         "title": "中国民航局和泰国民航局关于适航审定合作的谅解备忘录",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/SBGX/YZDQ/TG/SHXD/202611/t20261113_232064.html",
         "category": "对外关系",
@@ -17344,6 +17344,19 @@
         "validity": "",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/SBGX/YZDQ/TG/SHXD/202611/P020261113316431411632.pdf",
         "has_pdf": false
+      },
+      {
+        "title": "中国民航局和泰国民航局关于适航审定合作的谅解备忘录.pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/SBGX/YZDQ/TG/SHXD/202611/P020261113316431411632.pdf",
+        "category": "对外关系",
+        "category_id": "16",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-13",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/SBGX/YZDQ/TG/SHXD/202611/P020261113316431411632.pdf",
+        "has_pdf": true
       },
       {
         "title": "中国民用航空局和卢旺达民用航空局关于适航审定合作的谅解备忘录",

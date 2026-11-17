@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-15T22:57:20.225260",
+  "last_update": "2026-11-18T01:02:26.986247",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -7024,6 +7024,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/SBGX/YZDQ/TG/SHXD/202611/P020261113316431411632.pdf": {
       "relative_path": "other/中国民航局和泰国民航局关于适航审定合作的谅解备忘录.pdf.pdf",
       "updated_at": "2026-11-15T22:57:20.225232"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202611/t20261117_232094.html": {
+      "relative_path": "other/发布丨中国民用航空局关于发布《民用机场水泥混凝土道面设计规范》 （MH_T5004-2025）第一修订案的公告.pdf",
+      "updated_at": "2026-11-18T01:02:26.986214"
     }
   }
 }
