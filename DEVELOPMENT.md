@@ -172,21 +172,63 @@ The accompanying `.json` file contains the same array for direct HTTP loading;
 
 `.github/workflows/check-updates.yml` (daily at 07:25 UTC + manual dispatch):
 
-1. checkout → `uv sync --frozen` → Patchright Chromium
-2. run the crawler with `NOTIFY_CATEGORIES=9,10,13,14,15,16`
-3. regenerate `JS/manifest.json`
-4. publish the four JSON files to the static server over SSH (best effort,
+1. checkout, then **fast-forward to the branch tip** (`git reset --hard origin/main`)
+2. `uv sync --frozen` → Patchright Chromium
+3. run the crawler with `NOTIFY_CATEGORIES=9,10,13,14,15,16`
+4. regenerate `JS/manifest.json`
+5. publish the four JSON files to the static server over SSH (best effort,
    retried; the next run republishes even without content changes)
-5. commit `data/` + `JS/` with rebase/push retries — **only when
+6. commit `data/` + `JS/` — **only when
    `github.repository == 'wangwingzero/CCAR-workflow'`**; forks skip this step
    (see *Fork Workflow* below)
-6. upload `downloads/` as an artifact and prune old workflow runs
+7. upload `downloads/` as an artifact and prune old workflow runs
 
 `.github/workflows/validate-so-gov.yml` checks `classify_url`, runs a live
 search smoke test, compares recall against the committed state, and finishes
 with a dry run.
 
 Jobs run with `TZ=Asia/Shanghai`; keep date/cutoff logic in Beijing time.
+
+### Why the state commit does not rebase
+
+`data/*.json` and `JS/*` are machine-generated and rewritten in full every run
+(`JS/manifest.json` even embeds a per-run sha256/totalCount), so they are
+snapshots, not patches.
+
+For `schedule` events `github.sha` is the default-branch head *at trigger time*.
+The concurrency queue (`cancel-in-progress: false`) can delay the job by minutes,
+so a scheduled run can start on a commit that is already behind — and it will
+then commit a full stale snapshot. With two such runs, `git pull --rebase`
+conflicts on every generated file, and `git rebase --abort` returns to the same
+stale base, so all three retries reproduced the identical conflict. This is
+exactly what failed run 44348423270:
+
+```
+Auto-merging JS/manifest.json
+CONFLICT (content): Merge conflict in JS/manifest.json
+Auto-merging data/downloads.json
+CONFLICT (content): Merge conflict in data/downloads.json
+❌ Could not push state update after 3 attempts
+```
+
+The workflow therefore:
+
+- fast-forwards to the branch tip **before** crawling, so the run works on
+  current code and current state; and
+- commits only the files this run actually rewrote: it parks those paths, does
+  `git reset --hard origin/main`, copies the parked files back, and pushes a
+  single new commit. No content merge happens, so no conflict is possible.
+  Files this run did not write (e.g. `data/downloads.json` under
+  `--no-download`) keep the remote version instead of being clobbered by a stale
+  local copy; files another run created are preserved.
+
+`scripts/check_state_commit.sh` extracts those two `run:` blocks straight from the
+workflow file and replays the race scenarios locally (stale base, late push,
+identical content, untouched file) — run it after editing the workflow:
+
+```bash
+bash scripts/check_state_commit.sh   # needs git + ruby; exit 0 = pass
+```
 
 ## Fork Workflow
 

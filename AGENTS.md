@@ -7,7 +7,7 @@
 - `data/` contains state JSON files (auto-updated by the workflow); treat them as generated artifacts.
 - `JS/` contains mini-program data exports (`*.js` + `*.json`) generated from the state.
 - `downloads/` is used for optional PDF downloads (local runs and CI artifacts).
-- `scripts/` holds operational helpers (`sync_artifact.py`, `verify_downloads.py`, `repair_categories.py`).
+- `scripts/` holds operational helpers (`sync_artifact.py`, `verify_downloads.py`, `repair_categories.py`, `check_state_commit.sh`).
 - `tests/` holds `unittest` tests (`test_*.py`).
 - `.github/workflows/check-updates.yml` defines the scheduled GitHub Actions job; `validate-so-gov.yml` validates the search-API integration.
   The `Commit state update` step is guarded by `github.repository == 'wangwingzero/CCAR-workflow'`, so
@@ -54,6 +54,12 @@ Verify `downloads/` files against `data/downloads.json` (use `--downloads _artif
 uv run python scripts/sync_artifact.py --source _artifact174
 ```
 Merge a downloaded CI artifact into local `downloads/`.
+
+```bash
+bash scripts/check_state_commit.sh
+```
+Replay the CI state-commit race scenarios (stale base, late push) against the
+`run:` blocks extracted from `check-updates.yml`; needs git + ruby.
 
 ```bash
 uv run python scripts/repair_categories.py --categories 17,18,28,29

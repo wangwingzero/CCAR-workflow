@@ -287,3 +287,73 @@ uv run python -m unittest discover -s tests                 # Ran 120 tests — 
   state（CI 仍绿，属静默失败）。届时把这一行改成新的 `owner/repo` 即可；排查入口是把该 run 的
   `Commit state update` 步骤日志拉出来看是否 skipped。
 - 该守卫只解决“fork 不再分叉”，不解决“fork 的旧数据是脏的”——后者必须靠同步执行单里的硬重置。
+
+## 十四、2026-11-19 追加：定时任务 state 提交失败的根因修复
+
+**现象**：定时 run `44348423270`（2026-11-18T16:32:32Z，schedule，9m39s）**失败**，
+而同日手动 run `44347908106`（16:29:54Z，5m30s）成功。失败日志：
+
+```
+Auto-merging JS/manifest.json
+CONFLICT (content): Merge conflict in JS/manifest.json
+Auto-merging data/downloads.json
+CONFLICT (content): Merge conflict in data/downloads.json
+error: could not apply <sha>... chore: update regulation state 2026-11-19
+⚠️  Push attempt 1/3 failed, retrying after rebase
+...（同一冲突重复 3 次）...
+❌ Could not push state update after 3 attempts
+##[error]Process completed with exit code 1
+```
+
+**根因**（不是 concurrency 失效）：两个 run 的 job 时间并不重叠——手动 run 于
+16:35:23 结束，定时 run 于 16:35:24 才创建、16:35:26 开始，`concurrency`
+（`group: caac-check`、`cancel-in-progress: false`）确实把它们**串行化**了。
+真正的原因是 `actions/checkout` 默认检出 `github.sha`，而对 `schedule` 事件它是
+**触发时刻**的分支头；排队等待（这里约 3 分钟）后，该提交已落后于远端。于是：
+
+1. 定时 run 基于旧 base（`406a095`）跑完抓取，`--days 1` 又不写 state；
+2. `Generate data manifest` 重新生成了含新 sha256/totalCount 的 `JS/manifest.json`，
+   抓取步骤也写了 `data/downloads.json`；
+3. 这两个都是**整文件重写**的机器生成文件，在旧 base 上提交成了“完整快照”；
+4. `git pull --rebase` 把该快照 rebase 到已被手动 run 推送的 `20c4b32` 之上 →
+   两个文件必然内容冲突；`git rebase --abort` 又回到同一个旧 base，
+   3 次重试撞上的是**同一个冲突**，因此全废。
+
+**为什么 fork 守卫没挡住**：守卫只拦 fork，不拦上游自己基于旧 base 提交。
+
+**修复**（`.github/workflows/check-updates.yml`）：
+
+1. 新增步骤 `Fast-forward to the branch tip`（checkout 之后、抓取之前）：
+   `git fetch --prune origin main && git reset --hard origin/main`，仅
+   `if: github.ref == 'refs/heads/main'`。定时 run 因此总在**当前代码 + 当前 state**
+   上运行，不再产出基于旧 base 的快照；顺带修掉“排队期间的代码更新本轮不生效”。
+2. 重写 `Commit state update`：不再 rebase，改成**快照替换**——
+   - 用 `base_sha` 算出本轮真正改动的路径（`git diff --name-only` + 未跟踪文件）；
+   - 每轮尝试先 `mktemp -d` 把这些路径**暂存**，再 `git reset --hard origin/main`，
+     然后把暂存文件**复制回工作树**，`git add` 这些路径后提交、`push origin HEAD:main`；
+   - 如此永远不发生内容合并 → 不可能冲突；且**只提交本轮写过的文件**，本轮没写的
+     文件（如 `--no-download` 时的 `data/downloads.json`）保留远端版本，不会被本地
+     过期副本覆盖；远端新增的文件也不会被删。
+   - 失败仍在 3 次后退 `exit 1`（不静默）。
+
+**验证**：新增 `scripts/check_state_commit.sh`，用 Ruby 从 workflow 文件里**直接抽取**
+这两个 `run:` 块（不是手抄副本，避免与 CI 漂移）并在临时仓库里重放 5 个场景，全部 PASS：
+
+| 场景 | 断言 | 结果 |
+|---|---|---|
+| 旧 base + 另一 run 已推 state | 退出 0、推送落地、本轮快照胜出、远端新增文件保留、本轮未写文件不动 | PASS |
+| 本地无改动 | 退出 0、输出 `No state changes to commit`、不产生提交 | PASS |
+| 本地改动与远端一致 | 退出 0、识别 `already matches`、不产生冗余提交 | PASS |
+| 推送期间远端又前进一次 | 退出 0、本轮 state 胜出、并发写入保留 | PASS |
+| stale 检出的 fast-forward | 工作树落到分支头、新代码可见 | PASS |
+
+命令：`bash scripts/check_state_commit.sh`（需 git + ruby，Windows 用 Git Bash）。
+
+**残留风险**：
+- `--days N` 模式本来就不写 state（设计如此），因此定时 run 若被 `DAYS` secret 设成
+  非零值，`.gitignore` 之外的 `data/` 变更只来自 manifest/downloads 两处，仍会提交；
+  本轮修复保证这类提交不再冲突，但“用 `--days` 跑定时任务”本身会跳过增量的
+  state 检测，属既有设计，未改。
+- 快照替换语义是“最新一次成功推送的 state 生效”。若某轮抓取不完整（如 so-gov 封禁），
+  它仍会用自己的快照覆盖远端——这是既有行为（state 由每轮 crawl 全量重建），
+  本轮未改变。真正的护栏是 `SearchBannedError` 会让整轮失败退出，从而不提交。
