@@ -18,9 +18,13 @@ node_modules/
 # Downloads (archived to Cloudflare R2 + CI artifacts; not stored in git)
 downloads/
 
+# Local ad-hoc extractions of downloaded PDFs (never committed)
+pull54_extract/
+
 # IDE
 .idea/
 .vscode/
+*.code-workspace
 *.swp
 *.swo
 AGENTS.md
