@@ -127,7 +127,7 @@ uv run python -m py_compile src/*.py scripts/*.py tests/*.py
 # OK
 
 PYTHONIOENCODING=utf-8 uv run python -m unittest discover -s tests -v
-# Ran 93 tests in 0.456s — OK
+# 第一轮 93 tests — OK；接入 was5 与 fork 守卫后 120 tests — OK
 
 uv run python -m src.main --list-categories
 # 正常打印 22 个分类，不触网
@@ -164,6 +164,8 @@ git diff --check
 
 新增（6）：
 `.gitattributes`、`scripts/repair_categories.py`、`tests/test_notifier.py`、`tests/test_r2_uploader.py`、`tests/test_repair_categories.py`、`tests/test_search_api.py`
+
+后续追加（见第十一~十三节）：新增 `src/was5_api.py`、`tests/test_was5_api.py`、`FORK_SYNC_FOR_AI.md`。
 
 ---
 
@@ -228,3 +230,60 @@ uv run python -m unittest discover -s tests        # Ran 120 tests — OK（96 +
 - 15 类没有专用 channelid，只能靠总检索 + `fl=15`，若民航局调整该参数，15 的列表可能变空（同样只在日志里体现）。
 - 测试运行会把「state 里已有、旧 JS 里没有」的历史行补进 JS（本次 7 行），`pdf_url` 由 downloads / R2 索引回填（示例行已确认非空）；若某行从未成功下载过，`pdf_url` 仍为空——与旧行为一致，不是新引入的问题。
 - JS 行序按「本次抓取顺序 + 保留历史行」拼接，不按日期重排；新增文档会插入数组前部，因此接入 was5 后首次提交会出现约 36 行的纯顺序迁移 diff（内容不变，仅顺序变化），后续轮次趋于稳定。
+
+---
+
+## 十三、2026-11-19 追加：fork 永久分叉的根因修复
+
+**背景**：有用户 fork 了本仓库并**同样启用了每日定时任务**。fork 与上游各自 commit 同一批机器生成的
+`data/*.json`、`JS/*`，两条历史相互独立地重写同一批文件，因此 fork 一旦跑过一天就**永久分叉**，
+GitHub 网页的 *Sync fork* 只能给出 PR / Discard，无法快进。实测把上游 merge 进该 fork，会在这三个文件上
+直接冲突：
+
+```
+JS/manifest.json      CONFLICT
+data/downloads.json   CONFLICT
+data/regulations.json CONFLICT
+```
+
+**根因**：`Commit state update` 这一步对任何运行该 workflow 的仓库都生效，fork 也在写 state。
+
+**修复**（`.github/workflows/check-updates.yml`）：给 `Commit state update` 加仓库名守卫——
+
+```yaml
+      - name: Commit state update
+        if: github.repository == 'wangwingzero/CCAR-workflow'
+```
+
+fork 仍然可以跑抓取、上传 artifact、发布静态 JSON（这些步骤各自已有 secret 守卫，缺 secret 就跳过），
+但**不再提交 state**，因此永远保持可快进。同步方法也从“merge”改为硬重置：
+
+```bash
+gh repo sync <owner>/CCAR-workflow --source wangwingzero/CCAR-workflow --branch main --force
+```
+
+**配套文档**：
+- `DEVELOPMENT.md` 新增 *Fork Workflow* 章节：双写为何必然分叉、守卫代码、`gh repo sync --force`、
+  以及守卫的副作用（硬编码 `owner/repo`，上游改名或转移会导致 state 静默不提交，job 仍绿）。
+- 新增 `FORK_SYNC_FOR_AI.md`：给（对方仓库的）AI 执行者的同步执行单。因为 fork 的 state 提交每天都在增加，
+  执行单的判定依据是**内容特征**（每条 fork 独有提交都必须是 `chore: update regulation state <日期>`、
+  改动文件只有那 3 个自动生成文件），而不是写死的条数；验证步骤包含 compare 必须 `identical`、
+  17/28/29 三类脏行必须归零、`GATSHHZ` 栏目映射存在性。
+
+**为什么不能 merge**：fork 跑的是修复前的旧代码，其 state 里保留着 47 条栏目错标行（17=39、18=7、28=239、
+29=17），且仍在继续往里写。merge 会把这些脏数据当成本次改动“洗白”进上游，因此只能 discard 后硬重置。
+
+**验证**：
+```bash
+# 守卫生效：上游自己的 run 仍正常提交 state
+gh run view 44347908106 --repo wangwingzero/CCAR-workflow   # success
+# → 产生 20c4b32 chore: update regulation state 2026-11-19
+
+uv run python -m unittest discover -s tests                 # Ran 120 tests — OK
+```
+
+**残留风险**：
+- 守卫是字符串硬编码。上游若重命名或转移到组织名下，`github.repository` 变化会让**上游自己**也停止提交
+  state（CI 仍绿，属静默失败）。届时把这一行改成新的 `owner/repo` 即可；排查入口是把该 run 的
+  `Commit state update` 步骤日志拉出来看是否 skipped。
+- 该守卫只解决“fork 不再分叉”，不解决“fork 的旧数据是脏的”——后者必须靠同步执行单里的硬重置。

@@ -3,13 +3,15 @@
 ## 始终使用中文进行交流
 ## Project Structure & Module Organization
 
-- `src/` holds the Python package: `main.py` (entry point), `crawler.py`, `search_api.py`, `notifier.py`, `storage.py`, `r2_uploader.py`.
+- `src/` holds the Python package: `main.py` (entry point), `crawler.py`, `search_api.py`, `was5_api.py`, `notifier.py`, `storage.py`, `r2_uploader.py`.
 - `data/` contains state JSON files (auto-updated by the workflow); treat them as generated artifacts.
 - `JS/` contains mini-program data exports (`*.js` + `*.json`) generated from the state.
 - `downloads/` is used for optional PDF downloads (local runs and CI artifacts).
 - `scripts/` holds operational helpers (`sync_artifact.py`, `verify_downloads.py`, `repair_categories.py`).
 - `tests/` holds `unittest` tests (`test_*.py`).
 - `.github/workflows/check-updates.yml` defines the scheduled GitHub Actions job; `validate-so-gov.yml` validates the search-API integration.
+  The `Commit state update` step is guarded by `github.repository == 'wangwingzero/CCAR-workflow'`, so
+  forks run the crawl but never commit state — see DEVELOPMENT.md → *Fork Workflow*.
 
 ## Build, Test, and Development Commands
 

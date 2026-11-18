@@ -108,9 +108,8 @@ JS 导出；同一 URL 在目标分类已存在时会去重，并在输出里逐
 src/
   main.py          # 流程编排、模式开关、下载重试队列
   crawler.py       # 检索聚合（so-gov + was5）、详情页解析、附件下载、WAF 处理
-search_api.py    # so-gov 检索接口客户端
-was5_api.py      # was5 栏目列表客户端（13/14/15 补充源）
-  search_api.py    # 站内搜索客户端与栏目代码映射
+  search_api.py    # so-gov 检索接口客户端与栏目代码映射
+  was5_api.py      # was5 栏目列表客户端（13/14/15 补充源）
   storage.py       # 状态、变更检测、JS/JSON 原子写出
   notifier.py      # 邮件 / PushPlus / Telegram
   r2_uploader.py   # R2 Worker 上传
@@ -119,4 +118,6 @@ tests/             # unittest 测试
 .github/workflows/ # 每日检查、so-gov 校验
 ```
 
-更多实现细节见 [DEVELOPMENT.md](DEVELOPMENT.md)。
+更多实现细节见 [DEVELOPMENT.md](DEVELOPMENT.md)；审查与逐项修复记录见
+[REVIEW_REPORT.md](REVIEW_REPORT.md)；如果你是 fork 本仓库的用户，同步方法见
+[FORK_SYNC_FOR_AI.md](FORK_SYNC_FOR_AI.md)（fork 不再提交 state，可直接快进同步）。
