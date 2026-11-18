@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-18T01:02:26.986247",
+  "last_update": "2026-11-18T22:53:54.966228",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -7027,7 +7027,15 @@
     },
     "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202611/t20261117_232094.html": {
       "relative_path": "other/发布丨中国民用航空局关于发布《民用机场水泥混凝土道面设计规范》 （MH_T5004-2025）第一修订案的公告.pdf",
-      "updated_at": "2026-11-18T01:02:26.986214"
+      "updated_at": "2026-11-18T22:53:54.966204"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261118613607901673.pdf": {
+      "relative_path": "other/工程设计民航行业乙级资质企业整改材料自查表 .pdf.pdf",
+      "updated_at": "2026-11-18T22:53:28.855027"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/t20261118_232105.html": {
+      "relative_path": "other/关于北京航交科技发展有限公司等1家工程设计民航行业乙级资质企业动态核查整改材料的公示.pdf",
+      "updated_at": "2026-11-18T22:53:40.823594"
     }
   }
 }
