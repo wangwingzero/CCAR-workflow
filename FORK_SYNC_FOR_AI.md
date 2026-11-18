@@ -16,7 +16,7 @@
 |---|---|
 | 上游（source） | `wangwingzero/CCAR-workflow`，默认分支 `main` |
 | fork | `sunwocd/CCAR-workflow`，默认分支 `main`（注意：owner 是 `sunwocd`，不是 `sunwcod`） |
-| 当前关系 | **已分叉（diverged）**：fork 独有 7 个提交，落后上游 32 个提交（每天都在变，以实测为准） |
+| 当前关系 | **已分叉（diverged）**：fork 独有若干条 state 提交（11-19 实测 7 条），落后上游 30 余个提交——两个数字每天都在变，以实测为准 |
 | 共同祖先 | `6c6e0e3` |
 | fork 独有提交（11-19 实测 7 条） | `82e78fd` 11-12、`258f829` 11-13、`2b06f56` 11-14、`8aa10d9` 11-15、`e421c56` 11-16、`fe7cbc9` 11-17、`8d89a81` 11-18，**全部是 `chore: update regulation state <日期>`** |
 | 分支保护 | 需执行者自行确认（见第 1 节）；若有保护规则，`--force` 会被拒绝，此时停止并回报 |
@@ -191,7 +191,7 @@ git push --force-with-lease origin main
 
 1. 打开 `https://github.com/sunwocd/CCAR-workflow`
 2. 看到黄色横幅 “This branch is N commits ahead of and M commits behind wangwingzero/CCAR-workflow:main”
-   （N/M 每天在变，2026-11-19 实测为 7 ahead / 32 behind）
+   （N/M 每天在变，2026-11-19 实测为 7 ahead / 30+ behind）
 3. 点右侧 **Sync fork**
 
 ⚠️ **但要注意**：GitHub 官方当前文档写的是——*If the changes from the upstream repository cause conflicts,
