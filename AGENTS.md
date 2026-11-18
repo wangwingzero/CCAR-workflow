@@ -83,7 +83,7 @@ Dry-run re-classification of state rows by URL column code; add `--apply` to wri
 ## Configuration & Secrets
 
 - Local runs read environment variables such as `EMAIL_USER`, `EMAIL_PASS`, `EMAIL_TO`, `EMAIL_SENDER`, `EMAIL_SMTP_HOST`, `EMAIL_SMTP_PORT`, `PUSHPLUS_TOKEN`, `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`, `DAYS`, `NOTIFY`, `NOTIFY_CATEGORIES`, `SO_GOV_DAYS`, and `R2_WORKER_URL`/`R2_WORKER_SECRET`/`R2_DOMAIN` (R2 is enabled only when all three are set).
-- `NOTIFY_CATEGORIES` (or `--notify-categories`) only trims notification content and attachments to the given category IDs; crawling, the state file, R2 uploads and JS/JSON exports always cover every category. The scheduled workflow defaults it to `13,14,15` (民航规章/规范性文件/标准规范).
+- `NOTIFY_CATEGORIES` (or `--notify-categories`) only trims notification content and attachments to the given category IDs; crawling, the state file, R2 uploads and JS/JSON exports always cover every category. The scheduled workflow defaults it to `9,10,13,14,15,16` (通知公告/政策发布/民航规章/规范性文件/标准规范/对外关系).
 - Notifications default to new documents only; pass `--notify-updated` to also include metadata-changed documents (marked as updates).
 - Use GitHub Actions secrets for CI; never commit credentials or tokens.
 

@@ -22,8 +22,9 @@ server, notifies subscribers, and commits the new state back to the repo.
 | Module | Responsibility |
 | --- | --- |
 | `src/main.py` | CLI, 7-step pipeline, download-retry queue, notification filtering |
-| `src/crawler.py` | so-gov hits → `Document`, detail metadata, attachment download, WAF detection, filename generation |
+| `src/crawler.py` | so-gov + was5 hits → `Document`, detail metadata, attachment download, WAF detection, filename generation |
 | `src/search_api.py` | `api.so-gov.cn/query/s` client, keyword fan-out, column-code → category mapping |
+| `src/was5_api.py` | CAAC was5 column lists (13/14/15), row parsing with 文号/有效性/办文单位 |
 | `src/storage.py` | state load/save, change detection (new/updated/reposted), JS/JSON atomic export, purge |
 | `src/notifier.py` | Email (SMTP_SSL), PushPlus, Telegram (MarkdownV2 with plain fallback) |
 | `src/r2_uploader.py` | PDF upload via Worker proxy, public-URL index, legacy host normalization |
@@ -99,6 +100,32 @@ exports are untouched (13/14/15 are never re-categorised).
   `GJGY→18`, `JYTNDF→28`, `ZFWZNDBB→29`. Unknown codes land in `0`
   (UNCLASSIFIED) and are not exported.
 
+## was5 List Source
+
+so-gov recall depends on the configured keywords: a document whose title holds
+none of them is never returned. Categories 13/14/15 therefore also read the
+classic CAAC `was5` list service, which serves the complete, date-sorted column
+listing:
+
+| Category | URL |
+| --- | --- |
+| 13 民航规章 | `http://www.caac.gov.cn/was5/web/search?page=N&channelid=269689` |
+| 14 规范性文件 | `...?page=N&channelid=211383&fl=14` |
+| 15 标准规范 | `...?page=N&channelid=211383&fl=15` |
+
+- Rows carry 文号 (CCAR部号 / 文号) / 有效性 / 办文单位 / 发文日期, so
+  `was5_api.parse_list_rows()` fills those fields without a detail-page visit.
+- `Was5ListFetcher.fetch_recent()` pages newest-first and stops at the first page
+  entirely older than the window (`WAS5_DAYS`, default 7; `WAS5_MAX_PAGES`,
+  default 10).
+- `CaacCrawler._fetch_was5_list_hits()` merges the rows with the so-gov hits by
+  URL; so-gov values win, was5 only fills gaps. A was5 outage is logged and
+  tolerated — it never fails the run.
+- A complete was5 row still costs one detail visit for 14/15 to read 成文日期
+  (`_needs_detail_visit()`), and only while the document is newer than
+  `DETAIL_VISIT_MAX_AGE_DAYS` (30) so pages without 成文日期 are not re-read
+  forever.
+
 ## Data Contracts
 
 `data/regulations.json`:
@@ -146,7 +173,7 @@ The accompanying `.json` file contains the same array for direct HTTP loading;
 `.github/workflows/check-updates.yml` (daily at 07:25 UTC + manual dispatch):
 
 1. checkout → `uv sync --frozen` → Patchright Chromium
-2. run the crawler with `NOTIFY_CATEGORIES=13,14,15`
+2. run the crawler with `NOTIFY_CATEGORIES=9,10,13,14,15,16`
 3. regenerate `JS/manifest.json`
 4. publish the four JSON files to the static server over SSH (best effort,
    retried; the next run republishes even without content changes)

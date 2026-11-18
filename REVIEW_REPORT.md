@@ -187,3 +187,43 @@ git diff --check
 ```
 
 **未做**：默认通知分类仍为 13/14/15（产品口径不变）；是否扩大到 9/10/16 或改抓 was5 栏目列表，留待用户决定。
+
+---
+
+## 十二、2026-11-18 追加：was5 栏目列表补充源 + 通知分类扩展
+
+**背景**：上一节排查发现两个结构性缺口——(1) 13/14/15 的召回完全依赖 so-gov 的 32 个关键词搜索，标题里一个关键词都不含的规章会被永久漏掉（例如 `13` 的《基于飞行视角的运输机场运行保障能力反馈工作机制实施办法》不在 was5 第 1 页、也不在关键词命中里，只靠另一路命中）；(2) 默认通知分类只有 13/14/15，而这三类日常更新极少，导致心跳邮件长期是「0 条」。用户确认两个方向都要做。
+
+**新增 `src/was5_api.py`（262 行）**：民航局 was5 栏目列表抓取器，作为 13/14/15 的权威按日期排序补充源。
+- `LIST_CHANNELS`：13 用 `channelid=269689`（民航规章专用频道）；14 用 `channelid=211383&fl=14`；15 用 `channelid=211383&fl=15`。**15 没有专用 channelid**（栏目页 `goto()` 只对 `fl=13`/`fl=14`/`fl=guidingdd` 特判），只能走总检索 + `fl` 过滤。
+- 行解析：`table.t_table` 每行取第一个 `<a target="_blank" name=标题>` 作标题与 URL；行内 `<li>` 用 `^([^：:]{1,16})[：:]\s*(.*)$` 取 办文单位 / 发文日期 / 文号 / CCAR部号 / 有效性；同页去重。
+- `normalize_doc_url()`：**统一成 `http://`**（state 与 so-gov 历史数据都是 http；若归一到 https，每一行都会被判成新文档，产生历史洪水）。
+- 分页：`WAS5_MAX_PAGES`（默认 10）页；停止条件为「本页不足 10 行」或「本页所有日期都早于 cutoff」；无日期的行只在前 2 页保留。
+- 窗口：`WAS5_DAYS`（默认 `max(--days, 30)`），至少回溯 30 天，防止某轮漏跑把文档永久丢出窗口（重叠部分由 state 去重兜底）。
+- HTTP client 懒加载（构造不触网，便于单测）；`_pace()` 0.8–1.5 s 随机间隔。
+
+**`src/crawler.py`**：
+- `_fetch_was5_list_hits()` 只抓 `wanted ∩ LIST_CHANNELS`；每个分类独立 try/except，整体再包一层 try/except——**was5 只是补充源，任何失败都不得拖垮整轮**。
+- `_merge_search_hits(primary, extra)` 按 URL 并集，so-gov 值优先，was5 只补 so-gov 为空的 title / doc_date / 文号 / 有效性 / 办文单位。
+- `_hit_to_document()` 现在把 `doc_number` / `validity` / `office_unit` 带进 `Document`（此前硬编码为空串），因此 was5 行无需抓详情页即可命名与导出。
+- `_needs_detail_visit()`：`needs_detail_metadata()` 原语义不变（供 `--repair-metadata` 用），但 enrich 的 pending 判据改为——元数据齐备的 14/15 若只缺成文日期，仅当发布日在 `DETAIL_VISIT_MAX_AGE_DAYS`（30）天内才访问详情页，避免每轮重访无成文日期的老页面。
+- 汇总日志区分来源：`(so_gov_hits=..., was5_rows=..., unmapped_url=..., other_category=..., attachments=...)`。
+
+**`src/search_api.py`**：`SearchHit` 新增可选字段 `doc_number` / `validity` / `office_unit`（默认空串，was5 填充，so-gov 保持空）。
+
+**通知口径**：`.github/workflows/check-updates.yml` 的 `NOTIFY_CATEGORIES` 默认值改为 `9,10,13,14,15,16`（通知公告 / 政策发布 / 民航规章 / 规范性文件 / 标准规范 / 对外关系）；README / DEVELOPMENT / AGENTS 同步。
+
+**验证**：
+```bash
+uv run python -m compileall -q src scripts tests   # OK
+uv run python -m unittest discover -s tests        # Ran 120 tests — OK（96 + 24 新增）
+```
+- was5 全量与 state 对账（window=1000 天）：13 共 15 行、15 行全部同 URL；14 共 100 行、全部同 URL；15 共 100 行、97 行同 URL，3 行是民航局重新发布版（URL 日期 20260930 vs state 20260916），doc_number 相同 → `detect_changes` 判为转载，不会误报新增。
+- 端到端 `--days 3 --no-notify --dry-run`（约 3 min，so-gov 96 次请求）：`[was5] merged 7 list rows into search hits`，13/14/15 分别 0/1/6 条，退出码 0。
+- 端到端增量 `--no-download --no-notify`（约 4 min）：`so_gov_hits=38, was5_rows=7, unmapped_url=26`；**只检测到 2 条新增（都在 9 通知公告），13/14/15 无洪水**；state 1696 → 1698，证明 was5 新增行被 state 正确去重。
+
+**残留风险**：
+- 只有 13/14/15 有 was5 列表源；其余 19 个分类仍只靠关键词搜索召回。
+- was5 依赖 `www.caac.gov.cn` 的 was5 服务存活；站点改版或改接口会让补充源静默失效（日志会显示 `was5_rows=0`，不会报错）。
+- 15 类没有专用 channelid，只能靠总检索 + `fl=15`，若民航局调整该参数，15 的列表可能变空（同样只在日志里体现）。
+- 测试运行会把「state 里已有、旧 JS 里没有」的历史行补进 JS（本次 7 行），`pdf_url` 由 downloads / R2 索引回填（示例行已确认非空）；若某行从未成功下载过，`pdf_url` 仍为空——与旧行为一致，不是新引入的问题。

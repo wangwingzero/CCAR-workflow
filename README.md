@@ -11,8 +11,11 @@
 - 静态服务器数据发布（`data/v1/regulation.json` 等）
 - 状态文件提交回仓库，作为下一次增量的基线
 
-数据检索走 CAAC 站内搜索接口（so-gov），详情页解析文号、有效性、办文单位、
-成文日期、发文日期等元数据；网站有 WAF，抓取使用 Patchright 浏览器。
+数据检索走两条通道取并集：CAAC 站内搜索接口（so-gov，多关键词 + 时间窗）
+负责全网召回；13 民航规章 / 14 规范性文件 / 15 标准规范 另有 **was5 栏目列表**
+作为权威、按发布日期排序的补充源，列表行本身带文号/有效性/办文单位，可少抓
+详情页。详情页解析成文日期、发文日期等剩余元数据；网站有 WAF，抓取使用
+Patchright 浏览器。
 
 ## 快速开始
 
@@ -36,7 +39,7 @@ uv run python -m src.main --list-categories
 | --- | --- |
 | `--days N` | 只处理最近 N 天（按 `publish_date`）；不写状态文件 |
 | `--categories 9,13,14,15` | 只抓指定分类（默认全部 22 个） |
-| `--notify-categories 13,14,15` | 只通知指定分类；抓取/状态/R2/JS 不受影响 |
+| `--notify-categories 9,10,13,14,15,16` | 只通知指定分类；抓取/状态/R2/JS 不受影响（CI 默认即这 6 类） |
 | `--notify 1` | 即使没有新文件也发送心跳通知（并汇总其他分类新增条数） |
 | `--notify-updated` | 元数据变化的文件也并入通知（默认只通知新增文件） |
 | `--no-download` / `--no-notify` / `--dry-run` | 跳过下载 / 通知 / 全部写操作 |
@@ -71,7 +74,7 @@ uv run python -m src.main --list-categories
 - 通知：`EMAIL_USER`、`EMAIL_PASS`、`EMAIL_TO`、`EMAIL_SENDER`、`EMAIL_SMTP_HOST`、
   `EMAIL_SMTP_PORT`、`PUSHPLUS_TOKEN`、`TELEGRAM_BOT_TOKEN`、`TELEGRAM_CHAT_ID`
 - R2：`R2_WORKER_URL`、`R2_WORKER_SECRET`、`R2_DOMAIN`（三者齐全才启用）
-- 运行：`DAYS`、`NOTIFY_CATEGORIES`、`SO_GOV_DAYS`、`PLAYWRIGHT_TIMEOUT`
+- 运行：`DAYS`、`NOTIFY_CATEGORIES`、`SO_GOV_DAYS`、`WAS5_DAYS`、`WAS5_MAX_PAGES`、`PLAYWRIGHT_TIMEOUT`
 - CI 额外使用 `STATIC_SSH_*`、`STATIC_ROOT` 发布静态 JSON
 
 本地不要把凭据写进仓库；CI 使用 GitHub Secrets。
@@ -104,7 +107,9 @@ JS 导出；同一 URL 在目标分类已存在时会去重，并在输出里逐
 ```
 src/
   main.py          # 流程编排、模式开关、下载重试队列
-  crawler.py       # so-gov 检索、详情页解析、附件下载、WAF 处理
+  crawler.py       # 检索聚合（so-gov + was5）、详情页解析、附件下载、WAF 处理
+search_api.py    # so-gov 检索接口客户端
+was5_api.py      # was5 栏目列表客户端（13/14/15 补充源）
   search_api.py    # 站内搜索客户端与栏目代码映射
   storage.py       # 状态、变更检测、JS/JSON 原子写出
   notifier.py      # 邮件 / PushPlus / Telegram
