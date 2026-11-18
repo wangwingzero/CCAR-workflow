@@ -109,6 +109,18 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Fast-forward to the branch tip
+        # For `schedule` events github.sha is the default-branch head *at trigger
+        # time*, and the concurrency queue can delay the job by minutes. Without
+        # this the run crawls with stale code and commits state on top of a stale
+        # base — which is how two overlapping runs ended up fighting over
+        # machine-generated files (see "Commit state update").
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git fetch --prune origin main
+          git reset --hard origin/main
+          git log -1 --format='Running at %H (%s)'
+
       - name: Install uv
         # v10.3.3
         uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
@@ -378,23 +390,74 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add data/ JS/
-          if git diff --staged --quiet; then
-            echo "No state changes to commit"
+
+          # Why this does not use `git pull --rebase`:
+          #
+          # `data/*.json` and `JS/*` are machine-generated and rewritten in full on
+          # every run (`JS/manifest.json` even embeds per-run sha256/totalCount). For
+          # `schedule` events `github.sha` is the branch head *at trigger time*, so
+          # any delay (the concurrency queue alone adds minutes) makes the run start
+          # on a stale base and commit a full snapshot on top of it. With two runs
+          # doing that, rebasing conflicts on every generated file, and because
+          # `git rebase --abort` returns to the same stale base all three retries hit
+          # the identical conflict:
+          #   CONFLICT (content): Merge conflict in JS/manifest.json
+          #   CONFLICT (content): Merge conflict in data/downloads.json
+          #   ❌ Could not push state update after 3 attempts
+          #
+          # The state is a snapshot, not a patch, so the newest complete snapshot
+          # should win. Each attempt parks the files this run actually rewrote,
+          # hard-syncs the worktree to the newest branch tip, and copies just those
+          # files back on top before pushing. Two properties matter here:
+          #   * no content merge happens, so a conflict is impossible;
+          #   * only files this run rewrote are touched, so a remote update to a file
+          #     this run never wrote (e.g. `--no-download` leaves downloads.json
+          #     alone) is preserved instead of being clobbered by a stale copy.
+          base_sha=$(git rev-parse HEAD)
+          changed_paths=$(
+            {
+              git diff --name-only --diff-filter=ACMRT "$base_sha" -- data/ JS/ || true
+              git ls-files --others --exclude-standard -- data/ JS/ || true
+            } | sort -u
+          )
+          if [ -z "$changed_paths" ]; then
+            echo "✅ No state changes to commit"
             exit 0
           fi
-          git commit -m "chore: update regulation state $(date +'%Y-%m-%d')"
+          echo "State files produced by this run:"
+          printf '  %s\n' $changed_paths
 
-          # Another run (or a human push) can land between commit and push.
-          # Rebase and retry a few times instead of failing the whole job.
           pushed=0
           for attempt in 1 2 3; do
-            if git pull --rebase --autostash origin main && git push origin main; then
+            git fetch --prune origin main
+
+            state_keep=$(mktemp -d)
+            while IFS= read -r path; do
+              [ -e "$path" ] || continue
+              mkdir -p "$state_keep/$(dirname "$path")"
+              cp -a "$path" "$state_keep/$path"
+            done <<< "$changed_paths"
+            git reset --hard --quiet origin/main
+            while IFS= read -r path; do
+              [ -e "$state_keep/$path" ] || continue
+              mkdir -p "$(dirname "$path")"
+              cp -a "$state_keep/$path" "$path"
+            done <<< "$changed_paths"
+            rm -rf "$state_keep"
+
+            # shellcheck disable=SC2086
+            git add --all -- $changed_paths
+            if git diff --staged --quiet; then
+              echo "✅ Remote state already matches this run; nothing to commit"
               pushed=1
               break
             fi
-            echo "⚠️  Push attempt ${attempt}/3 failed, retrying after rebase" >&2
-            git rebase --abort 2>/dev/null || true
+            git commit -q -m "chore: update regulation state $(date +'%Y-%m-%d')"
+            if git push origin HEAD:main; then
+              pushed=1
+              break
+            fi
+            echo "⚠️  Push attempt ${attempt}/3 failed, re-staging on the newest tip" >&2
             sleep $(( attempt * 10 ))
           done
           if [ "$pushed" -ne 1 ]; then
