@@ -324,5 +324,186 @@ class AttachmentLinkScoringTests(unittest.TestCase):
         self.assertEqual("", self.crawler._find_attachment_link(soup, self.DETAIL_URL))
 
 
+class MergeSearchHitsTests(unittest.TestCase):
+    def test_merges_by_url_and_fills_missing_metadata(self):
+        primary = [SearchHit(title="标准", url="https://x/a.html", doc_date="", site_name="", file_type="")]
+        extra = [
+            SearchHit(
+                title="标准",
+                url="https://x/a.html",
+                doc_date="2026-11-09",
+                site_name="中国民用航空局",
+                file_type="",
+                doc_number="MH/T 1-2026",
+                validity="有效",
+                office_unit="适航司",
+            ),
+            SearchHit(title="只有was5有", url="https://x/b.html", doc_date="2026-11-10", site_name="", file_type=""),
+        ]
+
+        merged = CaacCrawler._merge_search_hits(primary, extra)
+
+        self.assertEqual(2, len(merged))
+        by_url = {hit.url: hit for hit in merged}
+        self.assertEqual("2026-11-09", by_url["https://x/a.html"].doc_date)
+        self.assertEqual("MH/T 1-2026", by_url["https://x/a.html"].doc_number)
+        self.assertEqual("适航司", by_url["https://x/a.html"].office_unit)
+        self.assertEqual("只有was5有", by_url["https://x/b.html"].title)
+
+    def test_primary_values_win_over_extra(self):
+        primary = [
+            SearchHit(title="so-gov 标题", url="https://x/a.html", doc_date="2026-11-09", site_name="", file_type="")
+        ]
+        extra = [
+            SearchHit(title="was5 标题", url="https://x/a.html", doc_date="2026-11-01", site_name="", file_type="")
+        ]
+
+        merged = CaacCrawler._merge_search_hits(primary, extra)
+
+        self.assertEqual("so-gov 标题", merged[0].title)
+        self.assertEqual("2026-11-09", merged[0].doc_date)
+
+
+class Was5DocumentConversionTests(unittest.TestCase):
+    def test_was5_hit_keeps_list_metadata(self):
+        crawler = CaacCrawler()
+        hit = SearchHit(
+            title="关于加强民航专业工程施工工期管理的通知",
+            url="https://www.caac.gov.cn/XXGK/XXGK/GFXWJ/202610/t20261027_231948.html",
+            doc_date="2026-10-23",
+            site_name="中国民用航空局",
+            file_type="",
+            doc_number="民航规〔2026〕24 号",
+            validity="有效",
+            office_unit="机场司",
+        )
+
+        document = crawler._hit_to_document(hit, "14")
+
+        self.assertEqual("民航规〔2026〕24 号", document.doc_number)
+        self.assertEqual("有效", document.validity)
+        self.assertEqual("机场司", document.office_unit)
+        self.assertEqual("2026-10-23", document.publish_date)
+        self.assertFalse(document.has_pdf)
+
+    def test_so_gov_hit_defaults_to_empty_metadata(self):
+        crawler = CaacCrawler()
+        hit = SearchHit(title="t", url="https://x/a.html", doc_date="", site_name="", file_type="")
+
+        document = crawler._hit_to_document(hit, "13")
+
+        self.assertEqual("", document.doc_number)
+        self.assertEqual("", document.validity)
+        self.assertEqual("", document.office_unit)
+
+
+class NeedsDetailVisitTests(unittest.TestCase):
+    def _doc(self, category_id, **overrides):
+        base = dict(
+            title="t",
+            url="http://x/XXGK/XXGK/MHGZ/t1.html",
+            category="c",
+            category_id=category_id,
+            doc_number="",
+            validity="",
+            office_unit="",
+            sign_date="",
+            publish_date="2026-11-10",
+        )
+        base.update(overrides)
+        return Document(**base)
+
+    def test_bare_page_always_needs_visit(self):
+        self.assertTrue(CaacCrawler._needs_detail_visit(self._doc("13")))
+
+    def test_complete_13_list_row_needs_no_visit(self):
+        document = self._doc("13", doc_number="CCAR-290-R4", validity="有效", office_unit="政策法规司")
+
+        self.assertFalse(CaacCrawler._needs_detail_visit(document))
+        self.assertFalse(CaacCrawler.needs_detail_metadata(document))
+
+    def test_complete_15_list_row_without_sign_date_still_gets_one_visit(self):
+        document = self._doc(
+            "15", doc_number="MH/T 4067-2026", validity="有效", office_unit="适航司"
+        )
+
+        self.assertTrue(CaacCrawler._needs_detail_visit(document))
+        self.assertFalse(CaacCrawler.needs_detail_metadata(document))
+
+    def test_complete_row_with_sign_date_needs_no_visit(self):
+        document = self._doc(
+            "15",
+            doc_number="MH/T 4067-2026",
+            validity="有效",
+            office_unit="适航司",
+            sign_date="2026-11-08",
+        )
+
+        self.assertFalse(CaacCrawler._needs_detail_visit(document))
+
+    def test_stale_document_is_not_revisited_for_sign_date(self):
+        document = self._doc(
+            "15",
+            doc_number="MH/T 4067-2026",
+            validity="有效",
+            office_unit="适航司",
+            publish_date="2020-01-01",
+        )
+
+        self.assertFalse(CaacCrawler._needs_detail_visit(document))
+
+    def test_attachment_rows_are_never_visited(self):
+        document = self._doc("15", url="http://x/XXGK/XXGK/BZGF/P0202611.pdf")
+
+        self.assertFalse(CaacCrawler._needs_detail_visit(document))
+
+
+class Was5ListHitFetchTests(unittest.TestCase):
+    def test_returns_empty_when_category_not_requested(self):
+        crawler = CaacCrawler()
+
+        self.assertEqual([], crawler._fetch_was5_list_hits({"9"}, days=7))
+
+    def test_failure_is_tolerated(self):
+        from unittest import mock
+
+        crawler = CaacCrawler()
+        with mock.patch("src.crawler.Was5ListFetcher", side_effect=RuntimeError("down")):
+            self.assertEqual([], crawler._fetch_was5_list_hits({"13"}, days=7))
+
+    def test_converts_items_into_hits(self):
+        from unittest import mock
+
+        from src.was5_api import Was5Item
+
+        class FakeFetcher:
+            def fetch_recent(self, category_id, days=None):
+                return [
+                    Was5Item(
+                        title="规定",
+                        url="https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202607/t1.html",
+                        publish_date="2026-07-01",
+                        doc_number="CCAR-290-R4",
+                        validity="有效",
+                        office_unit="政策法规司",
+                        category_id=category_id,
+                    )
+                ]
+
+            def close(self):
+                pass
+
+        crawler = CaacCrawler()
+        with mock.patch("src.crawler.Was5ListFetcher", return_value=FakeFetcher()):
+            hits = crawler._fetch_was5_list_hits({"13"}, days=30)
+
+        self.assertEqual(1, len(hits))
+        self.assertEqual("CCAR-290-R4", hits[0].doc_number)
+        self.assertEqual("2026-07-01", hits[0].doc_date)
+        self.assertEqual(
+            "https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202607/t1.html", hits[0].url
+        )
+
+
 if __name__ == "__main__":
     unittest.main()

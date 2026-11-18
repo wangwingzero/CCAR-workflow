@@ -92,6 +92,11 @@ class SearchHit:
     doc_date: str
     site_name: str
     file_type: str
+    # Optional metadata supplied by authoritative list sources (was5).  so-gov
+    # hits leave these empty and rely on the detail-page enrichment instead.
+    doc_number: str = ""
+    validity: str = ""
+    office_unit: str = ""
 
 
 def classify_url(url: str) -> str:

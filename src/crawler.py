@@ -20,7 +20,9 @@ from bs4 import BeautifulSoup
 from loguru import logger
 from patchright.sync_api import sync_playwright
 
-from .search_api import SoGovSearch, classify_url, UNCLASSIFIED
+from .search_api import SoGovSearch, SearchHit, classify_url, UNCLASSIFIED
+from .was5_api import LIST_CHANNELS as WAS5_LIST_CHANNELS
+from .was5_api import Was5ListFetcher
 
 # CAAC website configuration
 BASE_URL = "https://www.caac.gov.cn"
@@ -89,6 +91,12 @@ ATTACHMENT_URL_PATTERN = re.compile(r"\.(pdf|docx?|xlsx?|wps|ofd|zip|rar)$", re.
 # 必须回详情页的 <li><b>标签：</b>值</li> 元数据里取。
 DETAIL_METADATA_CATEGORIES = frozenset({"13", "14", "15"})
 DETAIL_METADATA_FIELDS = ("doc_number", "validity", "office_unit", "sign_date", "publish_date")
+# Only documents published within this many days are worth a detail-page visit
+# purely to fill 成文日期 (was5 list rows already carry the other fields).
+DETAIL_VISIT_MAX_AGE_DAYS = 30
+# The was5 list source always looks back at least this far so a skipped run
+# cannot permanently lose documents (the state file dedupes the overlap).
+WAS5_MIN_WINDOW_DAYS = 30
 DETAIL_METADATA_LABELS = frozenset({"文号", "有效性", "办文单位", "成文日期", "发文日期"})
 
 
@@ -463,8 +471,24 @@ class CaacCrawler:
         time.sleep(delay)
 
     # ------------------------------------------------------------------
-    # 取数层：so-gov 统一检索（was5 已于 2026-10 停止响应）
+    # 取数层：so-gov 统一检索 + was5 栏目列表（13/14/15 的权威补充源）
     # ------------------------------------------------------------------
+
+    @staticmethod
+    def _merge_search_hits(primary: list[SearchHit], extra: list[SearchHit]) -> list[SearchHit]:
+        """Merge two hit lists by URL, filling missing metadata from ``extra``."""
+        merged: dict[str, SearchHit] = {}
+        for hit in primary:
+            merged.setdefault(hit.url, hit)
+        for hit in extra:
+            existing = merged.get(hit.url)
+            if existing is None:
+                merged[hit.url] = hit
+                continue
+            for field in ("title", "doc_date", "doc_number", "validity", "office_unit"):
+                if not getattr(existing, field, "") and getattr(hit, field, ""):
+                    setattr(existing, field, getattr(hit, field))
+        return list(merged.values())
 
     def _hit_to_document(self, hit, category_id: str) -> Document:
         """把检索结果转换成 Document。"""
@@ -476,11 +500,11 @@ class CaacCrawler:
             url=url,
             category=category_name,
             category_id=category_id,
-            doc_number="",
-            office_unit="",
+            doc_number=hit.doc_number or "",
+            office_unit=hit.office_unit or "",
             sign_date="",
             publish_date=hit.doc_date or "",
-            validity="",
+            validity=hit.validity or "",
             pdf_url=url if is_pdf else "",
             has_pdf=is_pdf,
         )
@@ -497,6 +521,33 @@ class CaacCrawler:
         if is_attachment_url(document.url):
             return False
         return not (document.doc_number or document.validity or document.office_unit)
+
+    @staticmethod
+    def _needs_detail_visit(document: Document) -> bool:
+        """True when spending a browser visit on this document adds information.
+
+        A was5 list row already carries 文号/有效性/办文单位, so the generic
+        ``needs_detail_metadata`` says "done".  规范性文件/标准规范 pages also
+        expose 成文日期, which is exported to the site, so those are still worth
+        one visit — but only for documents currently in flight (never for the
+        historical rows scanned by --repair-metadata).
+        """
+        if CaacCrawler.needs_detail_metadata(document):
+            return True
+        if document.category_id not in ("14", "15"):
+            return False
+        if is_attachment_url(document.url):
+            return False
+        has_list_metadata = document.doc_number and document.validity and document.office_unit
+        if not has_list_metadata or document.sign_date:
+            return False
+        # Only chase 成文日期 for documents that are still fresh: a page that
+        # genuinely has no 成文日期 must not be re-visited on every run.
+        try:
+            published = datetime.strptime(document.publish_date[:10], "%Y-%m-%d").date()
+        except (ValueError, AttributeError):
+            return False
+        return (datetime.now().date() - published).days <= DETAIL_VISIT_MAX_AGE_DAYS
 
     def apply_detail_metadata(self, document: Document) -> bool:
         """Read 文号/有效性/办文单位/日期 from the detail page into the document."""
@@ -532,7 +583,7 @@ class CaacCrawler:
             document
             for category_id in DETAIL_METADATA_CATEGORIES
             for document in documents_by_category.get(category_id, [])
-            if self.needs_detail_metadata(document)
+            if self._needs_detail_visit(document)
         ]
         if not pending_documents:
             return 0
@@ -599,6 +650,55 @@ class CaacCrawler:
 
         return resolved_hits, outcome_counts
 
+    def _fetch_was5_list_hits(self, wanted: set[str], days: int) -> list[SearchHit]:
+        """Pull the authoritative was5 lists for categories 13/14/15.
+
+        The window is widened to ``WAS5_MIN_WINDOW_DAYS`` so a run that was
+        skipped (CI outage, holiday) does not permanently lose the documents
+        published in the gap: anything already known is deduped against the
+        state file anyway.
+
+        Returns [] (and logs) on any failure: this source is a supplement, so a
+        was5 outage must never take down the whole crawl.
+        """
+        categories = [cid for cid in WAS5_LIST_CHANNELS if cid in wanted]
+        if not categories:
+            return []
+        window = max(days, WAS5_MIN_WINDOW_DAYS)
+        hits: list[SearchHit] = []
+        fetcher = None
+        try:
+            fetcher = Was5ListFetcher()
+            for category_id in categories:
+                try:
+                    items = fetcher.fetch_recent(category_id, days=window)
+                except Exception as error:  # noqa: BLE001 - supplement only
+                    logger.warning(f"[was5] list fetch failed for category {category_id}: {error}")
+                    continue
+                logger.info(
+                    f"[was5] category {CATEGORIES.get(category_id, category_id)} "
+                    f"(ID: {category_id}): {len(items)} items in last {window} day(s)"
+                )
+                for item in items:
+                    hits.append(
+                        SearchHit(
+                            title=item.title,
+                            url=item.url,
+                            doc_date=item.publish_date,
+                            site_name="中国民用航空局",
+                            file_type="",
+                            doc_number=item.doc_number,
+                            validity=item.validity,
+                            office_unit=item.office_unit,
+                        )
+                    )
+        except Exception as error:  # noqa: BLE001 - supplement only
+            logger.warning(f"[was5] list source unavailable: {error}")
+        finally:
+            if fetcher is not None:
+                fetcher.close()
+        return hits
+
     def fetch_all_categories(
         self,
         category_ids: list[str] = None,
@@ -656,6 +756,20 @@ class CaacCrawler:
         finally:
             searcher.close()
 
+        # was5 栏目列表是 13/14/15 的权威、按日期排序的补充源：so-gov 的关键词
+        # 召回会漏掉标题不含任何关键词的文档，两者取并集才完整。
+        was5_hits = self._fetch_was5_list_hits(wanted, days)
+        was5_row_count = len(was5_hits)
+        if was5_hits:
+            before = len(regular_hits) + len(resolved_hits)
+            merged = self._merge_search_hits(regular_hits + resolved_hits, was5_hits)
+            logger.info(
+                f"[was5] merged {len(was5_hits)} list rows into search hits "
+                f"({before} -> {len(merged)})"
+            )
+            regular_hits = merged
+            resolved_hits = []
+
         results: dict[str, list[Document]] = {cid: [] for cid in category_ids}
         counters: dict[str, int] = {}
         skipped_unknown = 0
@@ -689,7 +803,8 @@ class CaacCrawler:
         total = sum(len(v) for v in results.values())
         logger.info(
             f"Total: {total} documents from {len([k for k, v in results.items() if v])} "
-            f"categories (hits={len(hits)}, unmapped_url={skipped_unknown}, "
+            f"categories (so_gov_hits={len(hits)}, was5_rows={was5_row_count}, "
+            f"unmapped_url={skipped_unknown}, "
             f"other_category={skipped_other}, attachments={len(orphan_attachment_hits)} "
             f"{attachment_outcomes})"
         )
