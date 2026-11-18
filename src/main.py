@@ -1009,6 +1009,14 @@ def main() -> int:
                     notify_target_documents = _merge_documents(
                         notify_target_documents, notify_updated
                     )
+            # New documents outside --notify-categories are summarized in one
+            # line so a "0 条" heartbeat still shows the job found something.
+            other_updates: dict[str, int] = {}
+            for cat_id, docs in target_documents.items():
+                if cat_id in notify_category_ids or not docs:
+                    continue
+                other_name = CATEGORIES.get(cat_id, f"未知分类({cat_id})")
+                other_updates[other_name] = len(docs)
             if args.dry_run:
                 logger.info("Step 6/7: Dry-run, skipping notifications")
             elif not args.no_notify:
@@ -1028,7 +1036,9 @@ def main() -> int:
                         docs_by_category[cat_name] = docs
 
                     title, text_content, html_content = notifier.format_update_message(
-                        docs_by_category, updated_urls=updated_urls or None
+                        docs_by_category,
+                        updated_urls=updated_urls or None,
+                        other_updates=other_updates or None,
                     )
 
                     notify_attachments = _select_notify_attachments(

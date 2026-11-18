@@ -54,5 +54,44 @@ class UpdateMarkingTests(unittest.TestCase):
         self.assertNotIn(">更新</span>", html)
 
 
+class OtherCategorySummaryTests(unittest.TestCase):
+    """A heartbeat still tells the reader how many other-category docs were seen."""
+
+    def test_plain_and_html_include_other_category_summary(self):
+        notifier = Notifier()
+        title, plain, html = notifier.format_update_message(
+            {},
+            other_updates={"通知公告": 2, "政策发布": 1},
+        )
+
+        self.assertIn("0 条", title)
+        self.assertIn("其他分类新增: 3 条", plain)
+        self.assertIn("通知公告 2", plain)
+        self.assertIn("政策发布 1", plain)
+        self.assertIn("未展开", plain)
+        self.assertIn("其他分类新增 3 条", html)
+        self.assertIn("未展开", html)
+
+    def test_other_category_summary_appears_next_to_notified_documents(self):
+        notifier = Notifier()
+        _, plain, html = notifier.format_update_message(
+            {"民航规章": [make_doc("https://example.test/13/new", "新增规章")]},
+            other_updates={"通知公告": 1},
+        )
+
+        self.assertIn("新增文件: 1 条", plain)
+        self.assertIn("其他分类新增: 1 条", plain)
+        self.assertIn("其他分类新增 1 条", html)
+
+    def test_no_other_category_summary_without_other_updates(self):
+        notifier = Notifier()
+        _, plain, html = notifier.format_update_message(
+            {"民航规章": [make_doc("https://example.test/13/new", "新增规章")]}
+        )
+
+        self.assertNotIn("其他分类新增", plain)
+        self.assertNotIn("其他分类新增", html)
+
+
 if __name__ == "__main__":
     unittest.main()

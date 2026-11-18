@@ -285,6 +285,7 @@ class Notifier:
         documents_by_category: dict,
         max_docs_per_category: int = 50,
         updated_urls: Optional[set[str]] = None,
+        other_updates: Optional[dict[str, int]] = None,
     ) -> tuple[str, str, str]:
         """Format update notification message
 
@@ -293,11 +294,15 @@ class Notifier:
             max_docs_per_category: Max documents to show per category (rest summarized)
             updated_urls: URLs of documents whose metadata changed (rendered with
                 an "更新" marker). None means every document is new.
+            other_updates: Optional mapping of category name to the number of new
+                documents detected outside --notify-categories. Rendered as one
+                summary line so a "0 条" heartbeat still proves the job ran.
 
         Returns:
             (title, plain text content, HTML content)
         """
         updated_urls = updated_urls or set()
+        other_updates = other_updates or {}
         total = sum(len(docs) for docs in documents_by_category.values())
         updated_total = sum(
             1 for docs in documents_by_category.values() for doc in docs
@@ -324,6 +329,15 @@ class Notifier:
             ),
             "",
         ]
+        other_total = sum(other_updates.values())
+        if other_total:
+            breakdown = "、".join(
+                f"{name} {count}"
+                for name, count in sorted(other_updates.items())
+                if count
+            )
+            lines.append(f"其他分类新增: {other_total} 条（{breakdown}，未展开）")
+            lines.append("")
 
         for cat_name, docs in documents_by_category.items():
             if not docs:
@@ -353,7 +367,11 @@ class Notifier:
 
         text_content = "\n".join(lines)
         html_content = self._generate_html_email(
-            truncated, timestamp, documents_by_category, updated_urls=updated_urls
+            truncated,
+            timestamp,
+            documents_by_category,
+            updated_urls=updated_urls,
+            other_updates=other_updates,
         )
 
         return title, text_content, html_content
@@ -364,6 +382,7 @@ class Notifier:
         timestamp: datetime,
         full_counts: Optional[dict] = None,
         updated_urls: Optional[set[str]] = None,
+        other_updates: Optional[dict[str, int]] = None,
     ) -> str:
         """Generate HTML email content - Apple style clean design
 
@@ -372,8 +391,10 @@ class Notifier:
             timestamp: Current timestamp
             full_counts: Original full dict for accurate counts (optional)
             updated_urls: URLs of documents whose metadata changed (marked "更新")
+            other_updates: New documents outside --notify-categories (summary only)
         """
         updated_urls = updated_urls or set()
+        other_updates = other_updates or {}
         if full_counts is None:
             full_counts = documents_by_category
         total = sum(len(docs) for docs in full_counts.values())
@@ -532,6 +553,24 @@ class Notifier:
                 <div style="font-size: 11px; color: #86868B; margin-top: 2px;">{cat_name}</div>
             </div>'''
         
+        # Summary card for new documents outside --notify-categories. This keeps
+        # the "0 条" heartbeat informative without listing unrelated documents.
+        other_updates_html = ""
+        other_total = sum(other_updates.values())
+        if other_total:
+            breakdown = "、".join(
+                f"{name} {count}"
+                for name, count in sorted(other_updates.items())
+                if count
+            )
+            other_updates_html = f'''
+    <!-- Other categories summary -->
+    <div style="background: #FFF8E6; border: 1px solid #FFE0A3; border-radius: 12px; padding: 14px 18px; margin-bottom: 12px;">
+        <div style="font-size: 13px; color: #8A6D1F; line-height: 1.5;">
+            其他分类新增 {other_total} 条（{breakdown}），未展开。
+        </div>
+    </div>'''
+
         html_doc = f'''<!DOCTYPE html>
 <html>
 <head>
@@ -556,7 +595,9 @@ class Notifier:
             {stats_items}
         </div>
     </div>
-    
+
+    {other_updates_html}
+
     {category_cards}
     
     <!-- Footer -->

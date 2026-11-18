@@ -286,7 +286,9 @@ class _FakeNotifier:
     def __exit__(self, *args):
         return False
 
-    def format_update_message(self, docs_by_category, updated_urls=None):
+    def format_update_message(
+        self, docs_by_category, updated_urls=None, other_updates=None
+    ):
         self.sent = {
             "categories": sorted(docs_by_category),
             "attachments": [],
@@ -294,6 +296,7 @@ class _FakeNotifier:
                 doc.url for docs in docs_by_category.values() for doc in docs
             ),
             "updated_urls": set(updated_urls or ()),
+            "other_updates": dict(other_updates or {}),
         }
         return ("title", "text", "html")
 
@@ -346,6 +349,7 @@ class NotifyCategoryFlowTests(unittest.TestCase):
         self.assertEqual(["标准规范", "民航规章"], sent["categories"])
         self.assertEqual(2, len(sent["attachments"]))
         self.assertTrue(all("notice" not in path for path in sent["attachments"]))
+        self.assertEqual({"通知公告": 1}, sent["other_updates"])
         # Crawling/state must stay complete even though only 13/15 were emailed.
         self.assertEqual(["13", "15", "9"], sorted(updated_state))
 
@@ -356,10 +360,12 @@ class NotifyCategoryFlowTests(unittest.TestCase):
         )
 
         # --notify 1 means a daily "暂无更新" email even when nothing in
-        # the notified categories changed.
+        # the notified categories changed; the summary line still reports the
+        # documents that were detected outside the notified categories.
         self.assertIsNotNone(sent)
         self.assertEqual([], sent["categories"])
         self.assertEqual([], sent["attachments"])
+        self.assertEqual({"通知公告": 1}, sent["other_updates"])
         self.assertEqual(["9"], sorted(updated_state))
 
     def test_stays_quiet_with_notify_zero_when_nothing_relevant_changed(self):

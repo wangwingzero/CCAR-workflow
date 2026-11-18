@@ -3,7 +3,7 @@
 审查对象：`D:\CCAR-workflow`（HEAD `451b7d2` + 本次工作树改动）
 审查范围：架构与流程、数据一致性、下载/重试可靠性、WAF 与附件解析、状态与 JS 导出、通知、R2、CI、脚本、文档、测试
 审查方式：逐文件通读 + 现有 44 个单元测试基线 + 新增针对性测试 + 静态编译/冒烟验证
-结论：两轮共修复 44 项缺陷（含 4 项会造成数据丢失/永久缺文件/通知洪水的高风险问题），测试从 44 个增加到 **93 个且全部通过**，数据文件与 JS 导出不再产生 CRLF 污染，历史错标分类已离线修复，4 个 GitHub Actions 已 pin 到 commit SHA。
+结论：两轮共修复 44 项缺陷（含 4 项会造成数据丢失/永久缺文件/通知洪水的高风险问题），测试从 44 个增加到 **96 个且全部通过**；数据文件与 JS 导出不再产生 CRLF 污染，历史错标分类已离线修复，4 个 GitHub Actions 已 pin 到 commit SHA；另追加心跳通知的“其他分类新增 N 条”摘要（见第十一节）。
 
 ---
 
@@ -164,3 +164,26 @@ git diff --check
 
 新增（6）：
 `.gitattributes`、`scripts/repair_categories.py`、`tests/test_notifier.py`、`tests/test_r2_uploader.py`、`tests/test_repair_categories.py`、`tests/test_search_api.py`
+
+---
+
+## 十一、2026-11-18 追加：心跳通知摘要
+
+**背景**：用户反馈 2026-11-15～11-18 的每日通知都是「0 条」。排查确认并非抓取失效：通知只覆盖 `--notify-categories` 默认的 13/14/15，而这几天民航局没有发布这三类新文件（state 中 13 最新 2026-08-25、14 最新 2026-10-27 发布、15 最新 2026-11-09 发布），实际新增的 9 条都在 9/10/16 类，被通知过滤；`--notify 1` 的每日心跳仍会发一封「0 条」邮件，因此看起来像“没动静”。
+
+**改动**：
+- `src/notifier.py`：`format_update_message()` 新增 `other_updates: dict[str, int] | None`；plain 增加一行 `其他分类新增: N 条（分类 A x、分类 B y，未展开）`，HTML 增加对应浅黄色摘要卡。
+- `src/main.py`：发送通知前统计 `target_documents` 中不在 `--notify-categories` 内的分类与条数，传给 notifier；`--notify 0` 且通知分类无新增时仍保持静默（不因其他分类变化发信）。
+- 测试：`tests/test_notifier.py` 新增 `OtherCategorySummaryTests`（3 例）；`tests/test_main.py` 的假 notifier 与两个心跳/过滤用例补充 `other_updates` 断言。全量 96 tests OK。
+- 文档：README / DEVELOPMENT 补充心跳摘要说明。
+
+**效果示例**：
+```
+📋 CAAC 文件更新通知 (0 条)
+检测时间: 2026-11-18 21:30:42
+新增文件: 0 条
+
+其他分类新增: 9 条（对外关系 2、政策发布 1、通知公告 6，未展开）
+```
+
+**未做**：默认通知分类仍为 13/14/15（产品口径不变）；是否扩大到 9/10/16 或改抓 was5 栏目列表，留待用户决定。

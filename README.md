@@ -5,7 +5,7 @@
 每日定时抓取 CAAC「法定主动公开内容」下的全部 22 个分类（通知公告、政策发布、
 民航规章、规范性文件、标准规范等），与本地状态比对，自动完成：
 
-- 新文件通知（邮件 / PushPlus / Telegram，默认只推送 13/14/15 三个专业分类）
+- 新文件通知（邮件 / PushPlus / Telegram，默认只推送 13/14/15 三个专业分类；0 条心跳邮件会附一行“其他分类新增 N 条”摘要）
 - PDF 附件下载与 `{文号}{标题}.pdf` 规范化命名
 - Cloudflare R2 托管 + 小程序端 `JS/*.js`、`JS/*.json` 数据导出
 - 静态服务器数据发布（`data/v1/regulation.json` 等）
@@ -37,7 +37,7 @@ uv run python -m src.main --list-categories
 | `--days N` | 只处理最近 N 天（按 `publish_date`）；不写状态文件 |
 | `--categories 9,13,14,15` | 只抓指定分类（默认全部 22 个） |
 | `--notify-categories 13,14,15` | 只通知指定分类；抓取/状态/R2/JS 不受影响 |
-| `--notify 1` | 即使没有新文件也发送心跳通知 |
+| `--notify 1` | 即使没有新文件也发送心跳通知（并汇总其他分类新增条数） |
 | `--notify-updated` | 元数据变化的文件也并入通知（默认只通知新增文件） |
 | `--no-download` / `--no-notify` / `--dry-run` | 跳过下载 / 通知 / 全部写操作 |
 | `--repair-txt` | 重新下载历史上只存成 `.txt` 的 PDF |

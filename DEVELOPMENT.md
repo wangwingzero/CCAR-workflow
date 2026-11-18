@@ -51,7 +51,9 @@ server, notifies subscribers, and commits the new state back to the repo.
 6. **Notify** — sends new documents, optionally filtered by
    `--notify-categories`; `--notify-updated` also merges metadata-changed
    documents (marked `🔄 [更新]` in plain text and with a badge in HTML).
-   Attachments are capped at 10.
+   A `--notify 1` heartbeat also lists how many documents were detected in
+   other categories (`其他分类新增: N 条`), so a "0 条" email still proves
+   the run completed. Attachments are capped at 10.
 7. **State** — commits the freshly merged state (skipped in `--days`,
    `--backfill-r2`, and `--dry-run` modes).
 
