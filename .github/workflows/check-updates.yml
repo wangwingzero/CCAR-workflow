@@ -137,10 +137,11 @@ jobs:
           # 手动触发时优先用 github.event.inputs，定时任务用 secrets
           DAYS: ${{ github.event.inputs.days || secrets.DAYS }}
 
-          # 邮件/推送只包含这几个板块：13 民航规章、14 规范性文件、15 标准规范。
+          # 邮件/推送包含：9 通知公告、10 政策发布、13 民航规章、14 规范性文件、
+          # 15 标准规范、16 对外关系。13/14/15 日常更新少，只报这三类时邮件常年是 0。
           # 抓取、状态文件、R2 PDF 与小程序 JSON 仍是全部 22 个分类，不受影响。
           # 想恢复"全部板块都通知"就把下一行改成空字符串，或新建同名 Secret 覆盖。
-          NOTIFY_CATEGORIES: ${{ secrets.NOTIFY_CATEGORIES || '13,14,15' }}
+          NOTIFY_CATEGORIES: ${{ secrets.NOTIFY_CATEGORIES || '9,10,13,14,15,16' }}
 
           # Notification - Email
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
