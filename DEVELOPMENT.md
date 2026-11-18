@@ -177,7 +177,9 @@ The accompanying `.json` file contains the same array for direct HTTP loading;
 3. regenerate `JS/manifest.json`
 4. publish the four JSON files to the static server over SSH (best effort,
    retried; the next run republishes even without content changes)
-5. commit `data/` + `JS/` with rebase/push retries
+5. commit `data/` + `JS/` with rebase/push retries — **only when
+   `github.repository == 'wangwingzero/CCAR-workflow'`**; forks skip this step
+   (see *Fork Workflow* below)
 6. upload `downloads/` as an artifact and prune old workflow runs
 
 `.github/workflows/validate-so-gov.yml` checks `classify_url`, runs a live
@@ -185,6 +187,33 @@ search smoke test, compares recall against the committed state, and finishes
 with a dry run.
 
 Jobs run with `TZ=Asia/Shanghai`; keep date/cutoff logic in Beijing time.
+
+## Fork Workflow
+
+Forks that keep the scheduled job enabled used to diverge permanently: both the
+fork and upstream commit regenerated `data/*.json` and `JS/*`, so the same
+machine-generated files were rewritten on two unconnected histories and the
+fork could never fast-forward again (merging back reintroduces stale data,
+including the pre-fix category mislabelling).
+
+The `Commit state update` step is therefore guarded:
+
+```yaml
+      - name: Commit state update
+        if: github.repository == 'wangwingzero/CCAR-workflow'
+```
+
+A fork runs the crawl, uploads the artifact, and skips the commit, so it always
+stays fast-forwardable. To pull it up to date **discard** the fork's own state
+commits instead of merging them:
+
+```bash
+gh repo sync <owner>/CCAR-workflow --source wangwingzero/CCAR-workflow --force
+```
+
+Caveat: the guard hardcodes the canonical `owner/repo`. Renaming or transferring
+upstream silently disables the state commit (the job still succeeds); update the
+string when that happens. `FORK_SYNC_FOR_AI.md` holds the step-by-step runbook.
 
 ## Local Development
 
