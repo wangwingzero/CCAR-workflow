@@ -349,6 +349,24 @@ error: could not apply <sha>... chore: update regulation state 2026-11-19
 
 命令：`bash scripts/check_state_commit.sh`（需 git + ruby，Windows 用 Git Bash）。
 
+**真实 CI 验证**（2026-11-19 01:23–01:35 北京时间）：连续手动触发两次
+`workflow_dispatch`（`days=1 notify=0`），刻意复现当初失败的条件——两次 run 记录的
+`headSha` 都是**同一个触发时 SHA `21e7602`**：
+
+| run | 开始 | 结束 | 结论 | 产出的 state 提交 |
+|---|---|---|---|---|
+| 44358080251 | 01:23:13 | 01:28:54 | success | `73a7326`（parent `21e7602`） |
+| 44358105290 | 01:28:58 | 01:34:52 | success | `77b6bbd`（parent `73a7326`） |
+
+- 两次 job **串行不重叠**（第一次 01:28:54 结束，第二次 01:28:58 才开始），证实
+  `concurrency` 本身没坏，当初失败的根因确实是“基于过期 SHA 提交整份快照”。
+- run 2 在 run 1 结束后 4 秒启动、且 `headSha` 仍是过期的 `21e7602`——**旧代码在这里
+  必然再次冲突**；新逻辑先在 `Fast-forward to the branch tip` 把它推进到
+  `73a7326`，再以快照替换方式提交，因此形成线性链，没有冲突、没有 merge 提交、
+  没有 force push。
+- 两次 state 提交改动的文件都只有 `JS/manifest.json` 与 `data/downloads.json`
+  （本轮真正重写的那两个），没有把整棵树重写，也没误带其他文件。
+
 **残留风险**：
 - `--days N` 模式本来就不写 state（设计如此），因此定时 run 若被 `DAYS` secret 设成
   非零值，`.gitignore` 之外的 `data/` 变更只来自 manifest/downloads 两处，仍会提交；
