@@ -246,7 +246,7 @@ PY
 - 17 / 28 / 29 三类 **必须为 0 或不存在**（这是本次同步的核心目的）
 - 18 国际公约 **必须大于 0**（约 39 条）
 - total 约 1690～1700
-- 若 17/28/29 仍是 39 / 239 / 17（fork 11-17 的旧值），说明**同步没生效**，或是不小心做了 merge 而非 reset —— 回到第 3 步重做
+- 若 17/28/29 仍是 39 / 239 / 17（fork 11-17 的旧值），说明**同步没生效**，或是不小心做了 merge 而非 reset —— 回到第 3 节重做
 
 ### 4.3 代码版本校验
 
@@ -277,7 +277,7 @@ curl -sL "https://raw.githubusercontent.com/sunwocd/CCAR-workflow/main/src/searc
 
 ### 因此操作四只剩"确认"这一件事
 
-同步完成后（此时 Actions 仍处于第 2 步的 disabled 状态），按顺序做：
+同步完成后（此时 Actions 仍处于第 2 节所设的 disabled 状态），按顺序做：
 
 1. **确认 fork 拿到了守卫**：
 
@@ -305,9 +305,9 @@ gh workflow run check-updates.yml --repo sunwocd/CCAR-workflow -f days=1 -f noti
    并且 `https://github.com/wangwingzero/CCAR-workflow/compare/main...sunwocd:main` 仍然显示
    `identical ahead=0 behind=0`。
 
-### 若第 1 项确认失败（fork 版本里没有守卫）
+### 若上面第 1 条确认失败（fork 版本里没有守卫）
 
-说明同步没拿到最新上游。**不要手工注释步骤**，回到第 3 步重新同步。手工改 fork 文件本身会造成
+说明同步没拿到最新上游。**不要手工注释步骤**，回到第 3 节重新同步。手工改 fork 文件本身会造成
 新的分叉（fork 会多一个"自己改 workflow"的提交）。
 
 ### 补充：静态发布与 R2 无需处理
