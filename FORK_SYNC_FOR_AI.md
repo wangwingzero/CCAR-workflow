@@ -6,17 +6,21 @@
 
 ---
 
-## 0. 背景事实（已由外部核实，可直接采信，无需重新调查）
+## 0. 背景事实（核实于 2026-11-19，可直接采信，无需重新调查）
+
+> **数量会随每日定时任务漂移**：fork 的 cron 每天北京时间 15:25 跑一次并提交 state，所以"落后多少个提交"
+> 每天都会变。**下面的确切数字只是参照，判定依据是"内容特征"而不是数字**：fork 独有提交必须全部是
+> `chore: update regulation state <日期>`，改动文件必须只有那 3 个自动生成文件。二者满足即安全。
 
 | 项 | 值 |
 |---|---|
 | 上游（source） | `wangwingzero/CCAR-workflow`，默认分支 `main` |
 | fork | `sunwocd/CCAR-workflow`，默认分支 `main`（注意：owner 是 `sunwocd`，不是 `sunwcod`） |
-| 当前关系 | **已分叉（diverged）**：fork 独有 6 个提交，落后上游 29 个提交 |
+| 当前关系 | **已分叉（diverged）**：fork 独有 7 个提交，落后上游 32 个提交（每天都在变，以实测为准） |
 | 共同祖先 | `6c6e0e3` |
-| fork 独有 6 个提交 | `82e78fd` 11-12、`258f829` 11-13、`2b06f56` 11-14、`8aa10d9` 11-15、`e421c56` 11-16、`fe7cbc9` 11-17，**全部是 `chore: update regulation state <日期>`** |
+| fork 独有提交（11-19 实测 7 条） | `82e78fd` 11-12、`258f829` 11-13、`2b06f56` 11-14、`8aa10d9` 11-15、`e421c56` 11-16、`fe7cbc9` 11-17、`8d89a81` 11-18，**全部是 `chore: update regulation state <日期>`** |
 | 分支保护 | 需执行者自行确认（见第 1 节）；若有保护规则，`--force` 会被拒绝，此时停止并回报 |
-| fork 的 Actions | 仍在运行，每天定时提交 state —— **这就是分叉的根因**（最近一次 run 成功于 2026-11-17T16:58Z） |
+| fork 的 Actions | 仍在运行，每天定时提交 state —— **这就是分叉的根因**（最近一次 run `44349342078` 成功于 2026-11-18T16:37Z，产生第 7 条 state 提交） |
 
 ### 为什么不能用"普通 merge / 打开 PR"
 
@@ -30,9 +34,9 @@ data/regulations.json CONFLICT
 
 原因：fork 自己的 workflow 每天也在写这 3 个文件，两边都在写同一批**机器自动生成**的文件。
 
-### 为什么必须"丢弃"fork 的 6 个提交
+### 为什么必须"丢弃"fork 的这些提交
 
-1. 这 6 个提交**不包含任何人工代码改动**，只有自动生成的 JSON/manifest 变化。
+1. 它们**不包含任何人工代码改动**，只有自动生成的 JSON/manifest 变化。
 2. fork 跑的是**旧版代码**，它产出的数据是已知错误的。对照上游修复后的数据：
 
    | 分类 | fork（11-17） | 上游（修复后） |
@@ -67,12 +71,17 @@ GitHub 官方文档明确：*People with write access for a forked repository ca
 
 ## 1. 执行前必须做的一件事：确认没有要保留的人工作品
 
+### 1.1 列出 fork 独有的提交，**每一条都必须是 state 提交**
+
 ```bash
 gh api repos/wangwingzero/CCAR-workflow/compare/main...sunwocd:main \
   --jq '.commits[] | "\(.sha[0:8]) \(.commit.message | split("\n")[0])"'
 ```
 
-**期望输出**（6 行，全是 state 提交）：
+**判定规则（不要按条数判断，条数每天在涨）**：输出的每一行都必须是
+`chore: update regulation state YYYY-MM-DD` 这一种形式。
+
+参考输出（2026-11-19 实测为 7 条）：
 
 ```
 82e78fd8 chore: update regulation state 2026-11-12
@@ -81,15 +90,18 @@ gh api repos/wangwingzero/CCAR-workflow/compare/main...sunwocd:main \
 8aa10d9d chore: update regulation state 2026-11-15
 e421c565 chore: update regulation state 2026-11-16
 fe7cbc9f chore: update regulation state 2026-11-17
+8d89a812 chore: update regulation state 2026-11-18
 ```
 
-补充确认 fork 侧改动只落在自动生成文件上：
+只要出现**任何一条**不是这个格式（例如 `feat:`、`fix:`、`docs:`、带人工描述）→ **立即停止，回报人类**。
+
+### 1.2 确认这些提交只改了自动生成的文件
 
 ```bash
-gh api repos/wangwingzero/CCAR-workflow/compare/6c6e0e3...sunwocd:main --jq '.files[].filename'
+gh api "repos/wangwingzero/CCAR-workflow/compare/sunwocd:main~<N>...sunwocd:main" --jq '.files[].filename'
 ```
 
-**期望输出（已实测，共 3 行）**：
+把 `<N>` 换成 1.1 里数出来的提交条数（2026-11-19 是 7）。**期望输出只有这 3 行**：
 
 ```
 JS/manifest.json
@@ -97,18 +109,21 @@ data/downloads.json
 data/regulations.json
 ```
 
-若出现 `src/`、`.github/`、`tests/` 等目录下的文件，或出现任何非 state 提交 → **停止执行，回报给人类，不要强推。**
+若出现 `src/`、`.github/`、`tests/`、`README.md` 等任何其它文件 → **停止执行，回报给人类，不要强推。**
 
-不依赖 `gh` 的等价校验（纯 git，只读）：
+### 1.3 不依赖 `gh` 的等价校验（纯 git，只读）
 
 ```bash
 git ls-remote https://github.com/sunwocd/CCAR-workflow.git main      # fork 的 main
 git ls-remote https://github.com/wangwingzero/CCAR-workflow.git main # 上游的 main
 ```
 
+两个 SHA 不同 → 确认需要同步，继续往下执行；相同 → 已经一致，可以跳过第 3 节（重置），
+但仍要执行第 2 节（停 Actions），否则下一次 cron 又会分叉。
+
 ---
 
-## 2. 第 1 步：先停掉 fork 的定时任务（顺序不能颠倒）
+## 2. 操作一：先停掉 fork 的定时任务（顺序不能颠倒）
 
 > 若不停，同步完当天（或次日北京时间 15:25）又会被它自己写分叉。
 
@@ -137,7 +152,7 @@ gh api -X PUT repos/sunwocd/CCAR-workflow/actions/permissions -F enabled=false
 
 ---
 
-## 3. 第 2 步：把 fork 的 main 重置为上游 main
+## 3. 操作二：把 fork 的 main 重置为上游 main
 
 > 前提：已用 **fork owner（sunwocd）本人**的凭据登录（`gh auth status` 里 active account 必须是 `sunwocd`）。
 > 上游 `wangwingzero/CCAR-workflow` 是公开仓库，读取不需要任何权限。
@@ -175,7 +190,8 @@ git push --force-with-lease origin main
 ### 方式 C：只有浏览器时（不装任何工具）
 
 1. 打开 `https://github.com/sunwocd/CCAR-workflow`
-2. 看到黄色横幅 “This branch is 6 commits ahead of and 29 commits behind wangwingzero/CCAR-workflow:main”
+2. 看到黄色横幅 “This branch is N commits ahead of and M commits behind wangwingzero/CCAR-workflow:main”
+   （N/M 每天在变，2026-11-19 实测为 7 ahead / 32 behind）
 3. 点右侧 **Sync fork**
 
 ⚠️ **但要注意**：GitHub 官方当前文档写的是——*If the changes from the upstream repository cause conflicts,
@@ -185,7 +201,7 @@ GitHub will prompt you to create a pull request to resolve the conflicts*（[官
 
 ---
 
-## 4. 第 3 步：验证同步结果（缺失任何一条都算失败）
+## 4. 操作三：验证同步结果（缺失任何一条都算失败）
 
 ### 4.1 两个仓库的 main 必须完全相同
 
@@ -205,6 +221,9 @@ echo "fork=$a"; echo "upstream=$b"
 ```
 
 ### 4.2 脏数据必须已被清除（关键业务校验）
+
+> 下面的命令示例按 bash / Linux / macOS 写。Windows PowerShell 里把 `/tmp/reg.json` 换成 `$env:TEMP\reg.json`、
+> `python3` 换成 `python`，其余不变。
 
 ```bash
 curl -sL "https://raw.githubusercontent.com/sunwocd/CCAR-workflow/main/data/regulations.json" -o /tmp/reg.json
@@ -227,7 +246,7 @@ PY
 - 17 / 28 / 29 三类 **必须为 0 或不存在**（这是本次同步的核心目的）
 - 18 国际公约 **必须大于 0**（约 39 条）
 - total 约 1690～1700
-- 若 17/28/29 仍是 39 / 239 / 17，说明**同步没生效**，或是不小心做了 merge 而非 reset —— 回到第 3 步重做
+- 若 17/28/29 仍是 39 / 239 / 17（fork 11-17 的旧值），说明**同步没生效**，或是不小心做了 merge 而非 reset —— 回到第 3 步重做
 
 ### 4.3 代码版本校验
 
@@ -238,7 +257,7 @@ curl -sL "https://raw.githubusercontent.com/sunwocd/CCAR-workflow/main/src/searc
 
 ---
 
-## 5. 第 4 步：以后还会不会再分叉？（上游已加防护，需确认生效）
+## 5. 操作四：确认以后不会再分叉（上游已加防护）
 
 ### 上游已经在代码层面修掉了根因
 
@@ -256,7 +275,7 @@ curl -sL "https://raw.githubusercontent.com/sunwocd/CCAR-workflow/main/src/searc
 在 fork 里是 `sunwocd/CCAR-workflow`，条件为假）。所以只要 fork 同步到包含该守卫的版本，就**自动变成只读跟随**，
 不需要手工注释任何步骤。
 
-### 因此第 4 步只剩"确认"这一件事
+### 因此操作四只剩"确认"这一件事
 
 同步完成后（此时 Actions 仍处于第 2 步的 disabled 状态），按顺序做：
 
