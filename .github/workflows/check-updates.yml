@@ -369,6 +369,12 @@ jobs:
           echo "✅ Published CCAR JSON to $STATIC_ROOT/data/v1"
 
       - name: Commit state update
+        # Only the canonical repository may write state back. A fork that runs the same
+        # scheduled job commits its own `data/*.json` + `JS/*` on top of the upstream
+        # history; because both sides rewrite the same machine-generated files, the fork
+        # permanently diverges and can never fast-forward again. Guarding on the repo
+        # name keeps forks read-only without patching their workflow copy.
+        if: github.repository == 'wangwingzero/CCAR-workflow'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
