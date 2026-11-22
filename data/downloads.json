@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-21T00:19:14.652969",
+  "last_update": "2026-11-22T23:32:48.771359",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -7040,6 +7040,14 @@
     "http://www.caac.gov.cn/XXGK/XXGK/SBGX/XYBFDQ/SJALB/SHXD/202610/P020261120411020389564.pdf": {
       "relative_path": "other/沙特民航总局和中国民用航空局关于适航审定合作的工作安排.pdf",
       "updated_at": "2026-11-21T00:19:14.652943"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202611/P020261121681265313818.pdf": {
+      "relative_path": "other/中国民航2026年10月份主要生产指标统计.pdf.pdf",
+      "updated_at": "2026-11-22T23:32:32.814261"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202611/t20261121_232114.html": {
+      "relative_path": "other/中国民航2026年10月份主要生产指标统计.pdf",
+      "updated_at": "2026-11-22T23:32:48.771334"
     }
   }
 }
