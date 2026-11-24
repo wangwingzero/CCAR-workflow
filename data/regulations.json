@@ -1,19 +1,19 @@
 {
-  "last_check": "2026-11-24T03:24:33.628217",
+  "last_check": "2026-11-25T03:05:04.543700",
   "documents": {
     "9": [
       {
-        "title": "工程设计民航行业乙级资质企业整改材料自查表 .pdf",
-        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261118613607901673.pdf",
+        "title": "中国民航局关于为国际航空碳抵消和减排机制的公平有效实施作出贡献有关行动的声明",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/t20261123_232120.html",
         "category": "通知公告",
         "category_id": "9",
         "doc_number": "",
         "office_unit": "",
         "sign_date": "",
-        "publish_date": "2026-11-18",
+        "publish_date": "2026-11-23",
         "validity": "",
-        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261118613607901673.pdf",
-        "has_pdf": true
+        "pdf_url": "",
+        "has_pdf": false
       },
       {
         "title": "关于北京航交科技发展有限公司等1家工程设计民航行业乙级资质企业动态核查整改材料的公示",
@@ -27,6 +27,19 @@
         "validity": "",
         "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261118613607901673.pdf",
         "has_pdf": false
+      },
+      {
+        "title": "工程设计民航行业乙级资质企业整改材料自查表 .pdf",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261118613607901673.pdf",
+        "category": "通知公告",
+        "category_id": "9",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-18",
+        "validity": "",
+        "pdf_url": "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/P020261118613607901673.pdf",
+        "has_pdf": true
       },
       {
         "title": "2026年第九批民航专业工程建设企业资质申报表.pdf",
@@ -3332,6 +3345,19 @@
       }
     ],
     "10": [
+      {
+        "title": "解读｜《中国民航局关于为国际航空碳抵消和减排机制的公平有效实施作出贡献》",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFBJD/202611/t20261123_232121.html",
+        "category": "政策发布",
+        "category_id": "10",
+        "doc_number": "",
+        "office_unit": "",
+        "sign_date": "",
+        "publish_date": "2026-11-23",
+        "validity": "",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "发布丨中国民用航空局关于发布《民用机场水泥混凝土道面设计规范》 （MH/T5004-2025）第一修订案的公告",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/ZCFB/202611/t20261117_232094.html",
@@ -8798,6 +8824,19 @@
       }
     ],
     "13": [
+      {
+        "title": "交通运输部关于修改〈运输机场专业工程建设质量和安全生产监督管理规定〉的决定",
+        "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202611/t20261124_232124.html",
+        "category": "民航规章",
+        "category_id": "13",
+        "doc_number": "CCAR165",
+        "office_unit": "政策法规司",
+        "sign_date": "",
+        "publish_date": "2026-11-24",
+        "validity": "有效",
+        "pdf_url": "",
+        "has_pdf": false
+      },
       {
         "title": "通用航空经营管理规定",
         "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202607/t20260717_231321.html",
@@ -22152,6 +22191,17 @@
     "27": []
   },
   "regulations": [
+    {
+      "title": "交通运输部关于修改〈运输机场专业工程建设质量和安全生产监督管理规定〉的决定",
+      "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202611/t20261124_232124.html",
+      "validity": "有效",
+      "doc_number": "CCAR165",
+      "office_unit": "政策法规司",
+      "doc_type": "regulation",
+      "sign_date": "",
+      "publish_date": "2026-11-24",
+      "pdf_url": ""
+    },
     {
       "title": "通用航空经营管理规定",
       "url": "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202607/t20260717_231321.html",

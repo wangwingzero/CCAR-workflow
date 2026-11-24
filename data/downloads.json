@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-22T23:32:48.771359",
+  "last_update": "2026-11-25T03:02:56.125771",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -7048,6 +7048,18 @@
     "http://www.caac.gov.cn/XXGK/XXGK/TJSJ/202611/t20261121_232114.html": {
       "relative_path": "other/中国民航2026年10月份主要生产指标统计.pdf",
       "updated_at": "2026-11-22T23:32:48.771334"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/t20261123_232120.html": {
+      "relative_path": "other/中国民航局关于为国际航空碳抵消和减排机制的公平有效实施作出贡献有关行动的声明.txt",
+      "updated_at": "2026-11-25T03:02:48.743197"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/ZCFBJD/202611/t20261123_232121.html": {
+      "relative_path": "other/解读｜《中国民航局关于为国际航空碳抵消和减排机制的公平有效实施作出贡献》.txt",
+      "updated_at": "2026-11-25T03:02:52.482261"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202611/t20261124_232124.html": {
+      "relative_path": "regulation/CCAR165交通运输部关于修改〈运输机场专业工程建设质量和安全生产监督管理规定〉的决定.txt",
+      "updated_at": "2026-11-25T03:02:56.125749"
     }
   }
 }
