@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-11-25T03:02:56.125771",
+  "last_update": "2026-11-27T01:52:18.601289",
   "records": {
     "http://www.caac.gov.cn/XXGK/XXGK/ZCJD/202512/t20251217_229434.html": {
       "relative_path": "regulation/解读丨《正常类旋翼航空器适航规定》.txt",
@@ -7060,6 +7060,10 @@
     "http://www.caac.gov.cn/XXGK/XXGK/MHGZ/202611/t20261124_232124.html": {
       "relative_path": "regulation/CCAR165交通运输部关于修改〈运输机场专业工程建设质量和安全生产监督管理规定〉的决定.txt",
       "updated_at": "2026-11-25T03:02:56.125749"
+    },
+    "http://www.caac.gov.cn/XXGK/XXGK/TZTG/202611/t20261126_232133.html": {
+      "relative_path": "other/民航专业工程招标投标领域违法违规典型案例通报（第四批）.txt",
+      "updated_at": "2026-11-27T01:52:18.600999"
     }
   }
 }
